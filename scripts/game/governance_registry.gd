@@ -1,6 +1,7 @@
 extends RefCounted
 ## Runtime ownership is independent from immutable officer biographies and map geometry.
 const PATH := "res://data/derived/governance/governance_1546.json"
+const POPULATION_PATH := "res://data/derived/population/district_population_1546.json"
 var data: Dictionary = {}
 var districts: Dictionary = {}
 var sites: Dictionary = {}
@@ -56,8 +57,61 @@ func load_data() -> Error:
 				sites[id].district_key = candidates[0] if candidates.size() == 1 else null
 				sites[id].district_link_status = "candidate" if candidates.size()==1 else ("ambiguous" if candidates.size()>1 else "unresolved")
 				for key in candidates: districts[key].site_ids.append(id)
+	var population_error := apply_initial_population()
+	if population_error != OK:
+		return population_error
 	recount_assignments()
 	return OK
+
+
+func apply_initial_population() -> Error:
+	if not FileAccess.file_exists(POPULATION_PATH):
+		last_error = "1546年郡人口台帳がありません"
+		return ERR_FILE_NOT_FOUND
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(POPULATION_PATH))
+	if not parsed is Dictionary or parsed.get("schema_version") != 1 or parsed.get("scenario_year") != 1546 or not parsed.get("districts") is Dictionary:
+		last_error = "1546年郡人口台帳の形式が不正です"
+		return ERR_PARSE_ERROR
+	var population_districts: Dictionary = parsed.districts
+	if population_districts.size() != districts.size():
+		last_error = "1546年郡人口台帳の件数が統治台帳と一致しません"
+		return ERR_INVALID_DATA
+	for id in districts:
+		if not population_districts.has(id):
+			last_error = "1546年郡人口台帳に郡がありません: " + id
+			return ERR_INVALID_DATA
+		var population: Variant = population_districts[id].get("population_estimate")
+		if not (population is int or population is float) or not is_finite(float(population)) or population < 0 or float(population) != floor(float(population)):
+			last_error = "1546年郡人口台帳の人口値が不正です: " + id
+			return ERR_INVALID_DATA
+		districts[id].initial_population = int(population)
+		districts[id].population = int(population)
+		districts[id].population_model_version = parsed.get("model_version", "unknown")
+	apply_initial_development()
+	return OK
+
+
+func apply_initial_development() -> void:
+	# The reference map expresses province-scale productive concentration.  The
+	# population ledger was allocated from the same kokudaka signal, so district
+	# population rank is its reproducible district-level proxy.  Keep 80% at 1.
+	var ranked: Array = districts.keys()
+	ranked.sort_custom(func(a, b):
+		var difference: int = int(districts[b].population) - int(districts[a].population)
+		return difference > 0 or (difference == 0 and str(a) < str(b)))
+	var count := ranked.size()
+	for index in count:
+		var percentile := float(index) / float(count)
+		var initial := 5 if percentile < 0.01 else (4 if percentile < 0.03 else (3 if percentile < 0.08 else (2 if percentile < 0.20 else 1)))
+		var record: Dictionary = districts[ranked[index]]
+		record.agriculture_development = initial
+		record.commerce_development = initial
+		record.agriculture_progress = float(initial - 1) * 5400.0 / 29.0
+		record.commerce_progress = float(initial - 1) * 5400.0 / 29.0
+		var governor: Variant = record.get("governor")
+		var officer_id: Variant = governor.get("officer_id") if governor is Dictionary else null
+		record.agriculture_developer_id = officer_id
+		record.commerce_developer_id = officer_id
 
 func recount_assignments() -> void:
 	var counts := {}
@@ -123,6 +177,10 @@ func describe(record: Dictionary) -> String:
 		result += "\n所在郡候補：" + (" / ".join(linked) if not linked.is_empty() else "未確認（地図の対象郡外を含む）") + "\n"
 		result += "座標上の包含・近傍候補であり、史料上の所属郡の確定ではありません。\n"
 	else:
+		var economy := preload("res://scripts/game/district_economy.gd")
+		var agriculture_income := roundi((economy.BASE_VALUE + int(record.agriculture_development)) * int(record.population) * economy.AGRICULTURE_POPULATION_FACTOR)
+		var commerce_income := roundi((economy.BASE_VALUE + int(record.commerce_development)) * int(record.population) * economy.COMMERCE_POPULATION_FACTOR)
+		result += "\n【人口・開発】\n人口：%d人\n農業開発度：%d / %d（9月1日見込兵糧：%d）\n商工業開発度：%d / %d（毎月1日見込金銭：%d）\n" % [int(record.population), int(record.agriculture_development), economy.MAX_DEVELOPMENT, agriculture_income, int(record.commerce_development), economy.MAX_DEVELOPMENT, commerce_income]
 		result += "\n【郡内の拠点候補】\n"
 		for id in record.get("site_ids", []):
 			if sites.has(id): result += "%s：%s / %s\n" % [sites[id].name, house_name(sites[id]), governor_name(sites[id])]

@@ -25,6 +25,38 @@ func run() -> void:
 	check(main.kamon_layer.kamon_by_house.size() == 151, "all controlling houses have a kamon mapping")
 	check(main.kamon_layer.kamon_textures.size() >= 39, "sourced and neutral kamon SVGs load at runtime")
 	check(registry.districts.size() == root.get_node("GameSession").catalog.district_ids.size(), "all districts remain available internally")
+	check(registry.districts.values().all(func(r): return r.population is int and r.population >= 0), "all districts have non-negative initial population")
+	check(registry.districts.values().all(func(r): return r.population == r.initial_population), "new game uses the 1546 population estimate")
+	var population_total := 0
+	for r in registry.districts.values(): population_total += r.population
+	check(population_total == 11108276, "initial district populations conserve the adopted in-map total")
+	var development_counts := {1:0, 2:0, 3:0, 4:0, 5:0}
+	for r in registry.districts.values():
+		check(r.agriculture_development == r.commerce_development, "initial agriculture and commerce use the same reference rank")
+		check(r.agriculture_development >= 1 and r.agriculture_development <= 5, "initial development stays in the requested range")
+		development_counts[r.agriculture_development] += 1
+	check(development_counts == {1:522, 2:78, 3:33, 4:13, 5:7}, "80 percent of districts start at development 1")
+	var commerce_at_one := 0
+	var agriculture_at_one := 0
+	for r in registry.districts.values():
+		var probe: Dictionary = r.duplicate(true)
+		probe.agriculture_development = 1
+		probe.commerce_development = 1
+		commerce_at_one += main.district_economy.income_for(probe, "commerce")
+		agriculture_at_one += main.district_economy.income_for(probe, "agriculture")
+	check(absf(float(commerce_at_one) / registry.districts.size() - 5.0) < 0.05, "development 1 averages about 5 money per district")
+	check(absf(float(agriculture_at_one) / registry.districts.size() - 50.0) < 0.05, "development 1 averages about 50 provisions per district")
+	var growth_probe := {"agriculture_development":1, "commerce_development":1, "agriculture_progress":0.0, "commerce_progress":0.0, "agriculture_developer_id":null, "commerce_developer_id":null}
+	var max_politics_id := ""
+	for officer_id in main.officer_registry.lookup:
+		if main.officer_registry.ability(officer_id, "politics") == 30: max_politics_id = officer_id; break
+	check(not max_politics_id.is_empty(), "a politics 30 officer is available for calibration")
+	growth_probe.agriculture_developer_id = max_politics_id
+	growth_probe.commerce_developer_id = max_politics_id
+	for month in 180:
+		main.district_economy.develop(growth_probe, "agriculture")
+		main.district_economy.develop(growth_probe, "commerce")
+	check(growth_probe.agriculture_development == 30 and growth_probe.commerce_development == 30, "politics 30 reaches both maxima in 15 years")
 	check(registry.sites.size() == 257, "accepted and deferred sites remain available internally")
 	check(main.get_node_or_null("GovernancePanel") == null, "governance information has no visible panel")
 	check(not main.district_info.panel.visible,"district-name window starts hidden")

@@ -86,6 +86,10 @@ func run() -> void:
 		if r.house_id == "hojo": hojo_record = r; break
 	for field in ["house_id","governor","ruler"]: main.governance_registry.districts[changed_id][field] = hojo_record[field]
 	session.relations[session.pair("oda_nobuhide","takeda")] = "enemy"
+	var capture_probe: Dictionary = session.capture(main)
+	check(session.validate(capture_probe),"captured version 3 session validates before saving")
+	var roundtrip_probe: Dictionary = JSON.parse_string(JSON.stringify(capture_probe))
+	check(session.validate(roundtrip_probe),"serialized version 3 session validates")
 	main.game_menu.show_slots(true)
 	main.game_menu.slots.choose(1)
 	check("保存しました" in main.game_menu.slots.status.text,"save slot UI succeeds")
@@ -94,12 +98,36 @@ func run() -> void:
 	check(not saved.is_empty(),"saved payload validates")
 	if saved.is_empty(): printerr(session.last_error); quit(1); return
 	check(saved.clock.day == 1 and saved.clock.month == 3,"calendar crosses February")
+	check(saved.version == 3,"current save format includes population and economy")
+	var population_id: String = saved.territories.districts.keys()[0]
+	check(saved.territories.districts[population_id].population == main.governance_registry.districts[population_id].population,"district population is saved")
+	check(saved.territories.districts[population_id].has("agriculture_development") and saved.economy.has("house_resources"),"development and resources are saved")
+	var version_two := saved.duplicate(true)
+	version_two.version = 2
+	version_two.erase("economy")
+	for id in version_two.territories.districts:
+		for field in ["agriculture_development","commerce_development","agriculture_progress","commerce_progress","agriculture_developer_id","commerce_developer_id"]: version_two.territories.districts[id].erase(field)
+	check(session.validate(version_two),"version 2 population save remains loadable")
+	var legacy := saved.duplicate(true)
+	legacy.version = 1
+	legacy.erase("economy")
+	for id in legacy.territories.districts:
+		for field in ["population","agriculture_development","commerce_development","agriculture_progress","commerce_progress","agriculture_developer_id","commerce_developer_id"]: legacy.territories.districts[id].erase(field)
+	check(session.validate(legacy),"version 1 save without population remains loadable")
+	main.governance_registry.districts[population_id].population = 1
+	check(main.governance_registry.apply_initial_population() == OK,"legacy-load scene initializes population from the adopted ledger")
+	session.pending = legacy
+	session.apply_to(main)
+	check(main.governance_registry.districts[population_id].population == main.governance_registry.districts[population_id].initial_population,"version 1 migration keeps the adopted initial population")
 	var wrong := saved.duplicate(true)
 	wrong.clock.day = 32
 	check(not session.validate(wrong),"invalid calendar rejected")
 	wrong = saved.duplicate(true)
 	wrong.player_house = "missing"
 	check(not session.validate(wrong),"unknown player rejected")
+	wrong = saved.duplicate(true)
+	wrong.territories.districts[population_id].population = -1
+	check(not session.validate(wrong),"negative population rejected")
 	var corrupt := FileAccess.open(session.path_for(2),FileAccess.WRITE)
 	corrupt.store_string("{\"payload\":\"broken\",\"sha256\":\"invalid\"}")
 	corrupt.close()
@@ -137,6 +165,7 @@ func run() -> void:
 	check(session.relations == saved.relations,"diplomacy restored")
 	for id in saved.territories.districts:
 		check(main.governance_registry.districts[id].house_id == saved.territories.districts[id].house_id,"district ownership restored")
+		check(main.governance_registry.districts[id].population == saved.territories.districts[id].population,"district population restored")
 		var expected: Variant = saved.territories.districts[id].governor
 		if expected is Dictionary:
 			expected = expected.duplicate(true)

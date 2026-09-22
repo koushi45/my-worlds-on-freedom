@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "scenario_year": 1546,
+  "model_version": "population-1546-v1",
+  "boundary_version": "district-connectivity-1546@d60a386b",
+  "assumptions": {
+    "national_temporal_adjustment": {
+      "assumption_id": "assumption_national_backcast_0018",
+      "formula": "P1546 = P1600 / (1 + 0.0018)^54",
+      "annual_rate": 0.0018,
+      "years": 54,
+      "basis_source_ids": ["maddison_world_economy_2006"],
+      "note": "全国総量だけの年代補正。地域別人口へ共通成長率を個別適用していない。"
+    },
+    "province_allocation": {
+      "assumption_id": "assumption_province_kokudaka_share",
+      "indicator": "1598年国別石高の構成比",
+      "basis_source_ids": ["keicho_kokudaka_transcription"],
+      "note": "人口への1石=1人換算ではなく、全国総人口を国別に配る補助指標。"
+    },
+    "district_allocation": {
+      "assumption_id": "assumption_district_village_points",
+      "indicator": "幕末期近世村代表点の現行郡内件数",
+      "basis_source_ids": ["rekihaku_kyudaka_database", "honda_kyudaka_agrivillage_v2_01", "game_boundary_1546"],
+      "zero_count_fallback": "同一配分群の村落点密度×測地面積",
+      "note": "約320年後の分布指標であり、1546年の村数・人口を表さない。0件のみ面積補完。"
+    },
+    "island_analogues": {
+      "assumption_id": "assumption_zero_koku_islands",
+      "equivalent_kokudaka": {"壱岐国": 20000, "対馬国": 25000},
+      "note": "1598年表に石高がない島を0人口にしないための低確度代理量。感度幅は全国ケースに含める。"
+    },
+    "rounding": {
+      "assumption_id": "assumption_largest_remainder",
+      "method": "最大剰余法",
+      "tie_break": "district_id昇順",
+      "note": "各ケースで全国総量と配分群総量を保存する。"
+    }
+  }
+}

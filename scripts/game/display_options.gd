@@ -45,17 +45,12 @@ func _ready() -> void:
 	status = UI.label("選択後に適用してください。",rows,14)
 	UI.button("適用",rows,_apply)
 	UI.button("戻る",rows,_close)
-	UI.label("BGM（交互再生）\nEight Mountains — Savfk\nRise Again (Alternative Version) — Alexander Nakarada\n両曲 CC BY 4.0 / 公式配布音源をOGGへ変換",rows,13)
-	var first_source := LinkButton.new()
-	first_source.text = "Eight Mountains 配布元・ライセンス"
-	first_source.uri = "https://savfkmusic.com/eight-mountains/index.html"
-	first_source.add_theme_font_size_override("font_size",13)
-	rows.add_child(first_source)
-	var second_source := LinkButton.new()
-	second_source.text = "Rise Again 配布元・ライセンス"
-	second_source.uri = "https://creatorchords.com/music/rise-again-alternative-version/"
-	second_source.add_theme_font_size_override("font_size",13)
-	rows.add_child(second_source)
+	UI.label("BGM（ループ再生）\nSymphony no. 3 'Scottish', Op. 56 - I. Andante con moto\nFelix Mendelssohn / Musopen Symphony\nPublic Domain Mark 1.0 / 配布音源をOGGへ変換",rows,13)
+	var music_source := LinkButton.new()
+	music_source.text = "Musopen 配布元・権利表示"
+	music_source.uri = "https://musopen.org/music/282-symphony-no-3-scottish-op-56/"
+	music_source.add_theme_font_size_override("font_size",13)
+	rows.add_child(music_source)
 
 func _apply() -> void:
 	DisplaySettings.apply_resolution(resolution_selector.selected)

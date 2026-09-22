@@ -4,7 +4,7 @@
 
 Windows版の初回起動サイズは1920×1080。オプションでは1280×720、1920×1080、2560×1440、3840×2160（4K）を選択し、適用時に即座にウィンドウをリサイズする。選択値は `user://display_settings.cfg` に保存して次回起動時に復元する。
 
-メインマップでは Savfk の「Eight Mountains」と Alexander Nakarada の「Rise Again (Alternative Version)」を曲の終了ごとに交互再生する。いずれも作者の公式配布ページで CC BY 4.0 と明記された音源をOGG Vorbisへ変換して同梱し、曲名・作者・配布元・ライセンス・改変内容を各 `assets/audio/*_LICENSE.txt` に記録する。オプションではBGM音量を0～100%で変更でき、初期値は40%。解像度と同じ設定ファイルへ保存し、再生中にも即時反映する。
+メインマップでは Felix Mendelssohn の「Symphony no. 3 'Scottish', Op. 56 - I. Andante con moto」（Musopen Symphony演奏）をループ再生する。MusopenでPublic Domain Mark 1.0が表示された配布音源をOGG Vorbisへ変換して同梱し、曲名・演奏者・配布元・権利表示・改変内容を `assets/audio/scottish_symphony_i_andante_con_moto_LICENSE.txt` に記録する。オプションではBGM音量を0～100%で変更でき、初期値は40%。解像度と同じ設定ファイルへ保存し、再生中にも即時反映する。
 
 ボタン、一覧項目、スライダー操作と、マップ上の拠点・国・郡の選択には、Breviceps の「Click / Cursor SFX - Scroll through files / folder / cabinet」（Freesound sound ID 445972）を共通の操作音として使う。効果音音量はBGMとは独立して0～100%で変更でき、初期値は100%。CC0によるゲームへの同梱・商用利用が可能であることを確認し、素材名・作者・配布元・ライセンス・ハッシュを `assets/audio/ui_click_breviceps_LICENSE.txt` に記録する。
 

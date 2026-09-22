@@ -27,12 +27,8 @@ func run() -> void:
 	check(main.initialized, "map initializes")
 	if not main.initialized: quit(1); return
 	check(main.bgm_player != null and main.bgm_player.playing,"main map BGM is playing")
-	check(main.bgm_tracks.size() == 2 and main.bgm_track_index == 0,"main map starts the two-track playlist with Eight Mountains")
-	var first_bgm: AudioStream = main.bgm_player.stream
-	main.bgm_player.finished.emit()
-	check(main.bgm_track_index == 1 and main.bgm_player.stream != first_bgm and main.bgm_player.playing,"BGM advances to Rise Again and keeps playing")
-	main.bgm_player.finished.emit()
-	check(main.bgm_track_index == 0 and main.bgm_player.stream == first_bgm and main.bgm_player.playing,"BGM alternates back to Eight Mountains")
+	check(main.bgm_player.stream.resource_path.ends_with("scottish_symphony_i_andante_con_moto.ogg"),"main map uses Mendelssohn's Scottish Symphony first movement")
+	check(main.bgm_player.stream is AudioStreamOggVorbis and main.bgm_player.stream.loop,"main map BGM loops")
 	check(is_equal_approx(main.bgm_player.volume_linear,0.4),"main map BGM defaults to 40 percent")
 	display.set_bgm_volume(0.2,false)
 	check(is_equal_approx(main.bgm_player.volume_linear,0.2),"BGM option updates the active player")

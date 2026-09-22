@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-09-22",
+  "sources": {
+    "ipss_population_statistics_2026": {
+      "author_or_editor": "国立社会保障・人口問題研究所",
+      "title": "人口統計資料集 2026",
+      "publication_year": 2026,
+      "record_year": 1600,
+      "url": "https://www.ipss.go.jp/syoushika/bunken/data/pdf/jinkokenshiryo341.pdf",
+      "locator": "表1-6（PDF 25頁）",
+      "access_status": "本文確認済み",
+      "coverage": "近代以前の日本人口（鬼頭宏『人口から読む日本の歴史』による）",
+      "population_scope": "1600年の推定総人口 12,273,000人",
+      "use": "採用ケースの全国総量"
+    },
+    "maddison_world_economy_2006": {
+      "author_or_editor": "Angus Maddison",
+      "title": "The World Economy: A Millennial Perspective",
+      "publication_year": 2006,
+      "record_year": 1600,
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2006/09/the-world-economy_g1gh69e4/9789264022621-en.pdf",
+      "locator": "Appendix B, pp. 237-238, Table B-7",
+      "access_status": "本文確認済み",
+      "coverage": "日本全国人口の代替推計と1500-1600年の補間仮定",
+      "population_scope": "Hayamiの1600年1,000万～1,400万人、Maddisonの1,850万人、年0.18%の増加仮定",
+      "use": "低位・高位ケースと1546年への年代補正"
+    },
+    "keicho_kokudaka_transcription": {
+      "author_or_editor": "Gohshi（国立公文書館所蔵史料の翻刻表）",
+      "title": "慶長三年国別石高",
+      "publication_year": 2020,
+      "record_year": 1598,
+      "url": "https://shiryobeya.com/shokuho/keicho3kokudaka.html",
+      "bibliographic_id": "国立公文書館『日本国総目録【日本國六拾余州御検地御蔵納金銀納高目録】』",
+      "locator": "国別石高表 全66国",
+      "access_status": "翻刻表および原史料リンク確認済み",
+      "coverage": "1598年の国別石高（壱岐・対馬は表外）",
+      "population_scope": "人口ではなく見積生産規模",
+      "use": "国別人口配分の補助指標。1石=1人とは換算しない"
+    },
+    "rekihaku_kyudaka_database": {
+      "author_or_editor": "国立歴史民俗博物館",
+      "title": "旧高旧領取調帳データベース",
+      "publication_year": 1990,
+      "record_year": 1870,
+      "url": "https://www.rekihaku.ac.jp/doc/gaiyou/kyuudaka.html",
+      "locator": "データベース概要・項目説明",
+      "access_status": "概要確認済み",
+      "coverage": "明治初年の国・郡・村名と旧高",
+      "population_scope": "人口資料ではない",
+      "use": "後代村落分布データの原資料。1546年値には直接使用しない"
+    },
+    "honda_kyudaka_agrivillage_v2_01": {
+      "author_or_editor": "本田謙一・夏目宗幸・根元裕樹",
+      "title": "幕末期近世村領域データ 02_kyudaka_v2.01",
+      "publication_year": 2026,
+      "record_year": 1868,
+      "url": "https://github.com/yaoyue00085856/Kyudaka_agrivillage",
+      "bibliographic_id": "Git commit 2994dfeb0424d90bfda84c0da2a766070041f39c; DOI 10.5638/thagis.34.1.1",
+      "locator": "02_kyudaka_v2.01/01_Data/01_Village_point_data_v2.csv",
+      "access_status": "データ本文確認・空間集計済み",
+      "coverage": "幕末期全国近世村の代表点。現代農業集落境界等から復元",
+      "population_scope": "人口資料ではなく村落所在の後代代理指標",
+      "license": "CC BY-SA 4.0（原データ個別条件は各提供元に従う）",
+      "use": "現行郡内の配分重み。年代差・境界差のため確度C以下"
+    },
+    "game_boundary_1546": {
+      "author_or_editor": "my-worlds-on-freedom project",
+      "title": "1546 scenario active district boundary inputs",
+      "publication_year": 2026,
+      "record_year": 1546,
+      "url": null,
+      "locator": "data/derived/scenarios/{district_connectivity_1546,house_selection_1546,independent_districts_1546}.json",
+      "access_status": "ローカル入力確認済み",
+      "coverage": "ゲーム用有効郡IDと形状",
+      "population_scope": "人口資料ではない",
+      "use": "対象集合・境界・測地面積・村落点の空間対応"
+    }
+  }
+}

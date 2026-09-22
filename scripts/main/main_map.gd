@@ -71,11 +71,10 @@ var officer_registry: RefCounted
 var game_clock: Node
 var time_hud: CanvasLayer
 var governance_registry: RefCounted
+var district_economy: Node
 var game_menu: CanvasLayer
 var territory_borders: Node2D
 var bgm_player: AudioStreamPlayer
-var bgm_tracks: Array[AudioStream] = []
-var bgm_track_index := 0
 var district_info: CanvasLayer
 
 
@@ -198,8 +197,13 @@ func _ready() -> void:
 	district_info = preload("res://scripts/game/district_selection_info.gd").new()
 	district_info.name = "DistrictSelectionInfo"
 	add_child(district_info)
+	district_economy = preload("res://scripts/game/district_economy.gd").new()
+	district_economy.name = "DistrictEconomy"
+	district_economy.setup(governance_registry, officer_registry)
+	add_child(district_economy)
 	var restoring: bool = not GameSession.pending.is_empty()
 	GameSession.apply_to(self)
+	game_clock.day_advanced.connect(district_economy.on_day_advanced)
 	if not restoring and not GameSession.player_house.is_empty():
 		for r in governance_registry.districts.values():
 			if r.house_id == GameSession.player_house:
@@ -227,23 +231,12 @@ func _ready() -> void:
 func _setup_bgm() -> void:
 	bgm_player = AudioStreamPlayer.new()
 	bgm_player.name = "MainMapBGM"
-	var eight_mountains := preload("res://assets/audio/eight_mountains.ogg").duplicate() as AudioStreamOggVorbis
-	eight_mountains.loop = false
-	var rise_again := preload("res://assets/audio/rise_again_alternative.ogg").duplicate() as AudioStreamOggVorbis
-	rise_again.loop = false
-	bgm_tracks = [eight_mountains,rise_again]
-	bgm_track_index = 0
-	bgm_player.stream = bgm_tracks[bgm_track_index]
+	var scottish_symphony := preload("res://assets/audio/scottish_symphony_i_andante_con_moto.ogg") as AudioStreamOggVorbis
+	scottish_symphony.loop = true
+	bgm_player.stream = scottish_symphony
 	add_child(bgm_player)
-	bgm_player.finished.connect(_play_next_bgm)
 	DisplaySettings.bgm_volume_changed.connect(_set_bgm_volume)
 	_set_bgm_volume(DisplaySettings.bgm_volume)
-	bgm_player.play()
-
-func _play_next_bgm() -> void:
-	if bgm_tracks.is_empty(): return
-	bgm_track_index = (bgm_track_index+1)%bgm_tracks.size()
-	bgm_player.stream = bgm_tracks[bgm_track_index]
 	bgm_player.play()
 
 func _set_bgm_volume(value: float) -> void:
