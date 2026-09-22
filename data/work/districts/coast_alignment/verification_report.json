@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "verified_at_utc": "2026-09-19T07:31:08.693320+00:00",
+  "verified_at_utc": "2026-09-22T06:29:09.947735+00:00",
   "status": "passed",
   "double_precision_tolerances": {
     "length": 1e-07,
@@ -9,16 +9,16 @@
   },
   "runtime_float32_coordinate_tolerance": 0.001,
   "input_hash_baseline": "data/work/districts/coast_alignment/baseline_20260919/input_hashes.json",
-  "district_sha256": "2bc92a0b4fea4913a0c823e2d676915c099c626d3507ea0cf028d5161ec22d81",
-  "registry_sha256": "e8e8ef0b76d4990619ff3ebe80f2f8a0e5514dff65e8e2f8922a73e5ee7c2aa0",
-  "district_count": 656,
-  "coastal_interval_count": 321,
+  "district_sha256": "12a5bb11a3dcb79a3b0e34060f4d80e9657817e262c02db437d49e2dcbdaa349",
+  "registry_sha256": "1247bd29c402827403ec5725c804329fbeac9232a156b5c88c235872bece0200",
+  "district_count": 654,
+  "coastal_interval_count": 313,
   "unresolved_registry_items": [],
   "coastlines": {
     "jp-coast-103576025d905fd4": {
       "length": 26059.881665609137,
-      "reference_count": 211,
-      "gap_length": 5.638867150992155e-11,
+      "reference_count": 203,
+      "gap_length": 5.547917680814862e-11,
       "overlap_length": 0.0,
       "boundary_difference_length": 0.0
     },
@@ -80,7 +80,7 @@
     }
   },
   "mainland_area": 5452135.947742452,
-  "mainland_unassigned_area": 2.6149173668482457e-05,
+  "mainland_unassigned_area": 2.6141415538295287e-05,
   "district_sea_excess_area": 0.0,
   "overlap_area": 0.0,
   "overlap_pairs": [],

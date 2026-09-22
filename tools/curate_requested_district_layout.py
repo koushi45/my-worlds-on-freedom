@@ -28,6 +28,9 @@ REMOVED = {
 }
 
 MERGED = {
+    "harima/unresolved-42cfaa8c657745ea": (
+        "bizen/candidate-district-candidate-g51004", "赤穂郡周辺（仮）", "和気郡"
+    ),
     "izumi/unresolved-42cfaa8c657745ea": (
         "izumi/candidate-district-candidate-g04001", "日根郡周辺（仮）", "大鳥郡"
     ),
