@@ -6,9 +6,9 @@
     "jp-coast-e4e520d341c65420",
     "jp-coast-d6bda8f108065a05"
   ],
-  "mainland_district_count": 650,
-  "gap_before_world2": 1456.3281734943255,
-  "gap_after_world2": 2.6141415538295287e-05,
+  "mainland_district_count": 649,
+  "gap_before_world2": 1456.3281734943203,
+  "gap_after_world2": 3.2526222881347947e-05,
   "outside_after_world2": 0.0,
   "gap_face_count": 10167,
   "nearest_only_face_count": 0,
@@ -77,7 +77,7 @@
     {
       "source": "harima/candidate-district-candidate-g49010",
       "target": "harima/candidate-district-candidate-g49011",
-      "area_world2": 0.0004746849254173564
+      "area_world2": 0.0004746849254173565
     },
     {
       "source": "hitachi/candidate-district-candidate-g20005",
@@ -105,34 +105,49 @@
       "area_world2": 87.6685033269064
     },
     {
+      "source": "honshu-area-03/candidate-district-candidate-g33004",
+      "target": "honshu-area-03/candidate-district-candidate-g33005",
+      "area_world2": 0.056893033317779895
+    },
+    {
       "source": "honshu-area-04/candidate-district-candidate-g30002",
       "target": "honshu-area-04/candidate-district-candidate-g30001",
       "area_world2": 3.4592272594240607e-13
     },
     {
-      "source": "honshu-area-09/candidate-district-candidate-g28006",
-      "target": "honshu-area-09/candidate-district-candidate-g28007",
-      "area_world2": 0.003372069527490267
+      "source": "honshu-area-04/candidate-district-candidate-g30003",
+      "target": "honshu-area-05/candidate-district-candidate-g29013",
+      "area_world2": 0.03981063763800485
+    },
+    {
+      "source": "honshu-area-04/candidate-district-candidate-g30006",
+      "target": "honshu-area-04/candidate-district-candidate-g30014",
+      "area_world2": 0.0022342593440303877
+    },
+    {
+      "source": "honshu-area-04/candidate-district-candidate-g30011",
+      "target": "honshu-area-04/candidate-district-candidate-g30012",
+      "area_world2": 0.027939621051343427
+    },
+    {
+      "source": "honshu-area-05/candidate-district-candidate-g29002",
+      "target": "honshu-area-08/candidate-district-candidate-g27010",
+      "area_world2": 7.003209892664192e-06
     },
     {
       "source": "honshu-area-09/candidate-district-candidate-g28008",
       "target": "honshu-area-08/candidate-district-candidate-g27008",
-      "area_world2": 0.03037627005237291
+      "area_world2": 0.030376270052372912
     },
     {
       "source": "honshu-area-30/candidate-district-candidate-g17003",
       "target": "honshu-area-30/candidate-district-candidate-g17004",
-      "area_world2": 0.038887212210384804
+      "area_world2": 0.0388872122103848
     },
     {
       "source": "hyuga/candidate-district-candidate-g69004",
       "target": "hyuga/merged-849bc727ff99800e",
       "area_world2": 0.029515005329743334
-    },
-    {
-      "source": "iga/candidate-district-candidate-g06003",
-      "target": "iga/candidate-district-candidate-g06004",
-      "area_world2": 0.029274690499375283
     },
     {
       "source": "iyo/candidate-district-candidate-g61016",
@@ -168,6 +183,11 @@
       "source": "kazusa/candidate-district-candidate-g18008",
       "target": "shimosa/candidate-district-candidate-g19001",
       "area_world2": 0.006895905457492484
+    },
+    {
+      "source": "kazusa/candidate-district-candidate-g18009",
+      "target": "shimosa/candidate-district-candidate-g19010",
+      "area_world2": 0.008012852712860794
     },
     {
       "source": "kozuke/candidate-district-candidate-g25010",
@@ -222,7 +242,7 @@
     {
       "source": "owari/candidate-district-candidate-g09008",
       "target": "owari/candidate-district-candidate-g09009",
-      "area_world2": 0.00042281360430572733
+      "area_world2": 0.0004228136043057273
     },
     {
       "source": "sagami/candidate-district-candidate-g15001",
@@ -240,11 +260,6 @@
       "area_world2": 0.21577329658935923
     },
     {
-      "source": "shimosa/candidate-district-candidate-g19010",
-      "target": "shimosa/candidate-district-candidate-g19011",
-      "area_world2": 0.010949154505306546
-    },
-    {
       "source": "tajima/candidate-district-candidate-g43003",
       "target": "tajima/candidate-district-candidate-g43001",
       "area_world2": 2.4380018903596044e-14
@@ -253,6 +268,16 @@
       "source": "tosa/candidate-district-candidate-g62005",
       "target": "tosa/candidate-district-candidate-g62006",
       "area_world2": 0.019324331372384443
+    },
+    {
+      "source": "totomi/candidate-district-candidate-g11004",
+      "target": "totomi/merged-65958d076944fd24",
+      "area_world2": 0.016724883162750184
+    },
+    {
+      "source": "totomi/candidate-district-candidate-g11004",
+      "target": "totomi/merged-65958d076944fd24",
+      "area_world2": 0.01157934124318602
     }
   ],
   "unjoined_point_contact_parts": [
@@ -273,14 +298,6 @@
       "area_world2": 3.900402900984172e-06
     },
     {
-      "district_id": "honshu-area-05/candidate-district-candidate-g29002",
-      "area_world2": 7.003208414258606e-06
-    },
-    {
-      "district_id": "honshu-area-08/candidate-district-candidate-g27012",
-      "area_world2": 0.0003769917643301155
-    },
-    {
       "district_id": "ise/candidate-district-candidate-g07010",
       "area_world2": 0.09842085414919571
     },
@@ -290,7 +307,7 @@
     },
     {
       "district_id": "izumi/candidate-district-candidate-g04004",
-      "area_world2": 0.0047495709916793635
+      "area_world2": 0.004749570991679363
     },
     {
       "district_id": "kazusa/candidate-district-candidate-g18002",
@@ -314,15 +331,11 @@
     },
     {
       "district_id": "tajima/candidate-district-candidate-g43008",
-      "area_world2": 0.018667112383528223
+      "area_world2": 0.018667112383528216
     },
     {
       "district_id": "tango/candidate-district-candidate-g42001",
       "area_world2": 7.636216984540582e-07
-    },
-    {
-      "district_id": "totomi/candidate-district-candidate-g11009",
-      "area_world2": 0.006984499843085378
     }
   ],
   "residual_precision_repairs": [
@@ -791,20 +804,24 @@
       "area_world2": 2.0244840995276014e-07
     },
     {
+      "district_id": "suo/candidate-district-candidate-g55001",
+      "area_world2": 7.758131553847747e-09
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56006",
+      "area_world2": 1.915183072275316e-14
+    },
+    {
       "district_id": "tango/candidate-district-candidate-g42002",
-      "area_world2": 1.4084828880989164e-07
+      "area_world2": 1.4084828884252443e-07
     },
     {
       "district_id": "kii/candidate-district-candidate-g57005",
-      "area_world2": 4.2519724892473715e-08
-    },
-    {
-      "district_id": "owari/candidate-district-candidate-g09002",
-      "area_world2": 8.614612547562005e-08
+      "area_world2": 4.251972489246075e-08
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 6.534332946161027e-07
+      "area_world2": 6.534332946161026e-07
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
@@ -812,11 +829,15 @@
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 8.475860955592385e-07
+      "area_world2": 5.939007955099098e-06
+    },
+    {
+      "district_id": "owari/candidate-district-candidate-g09002",
+      "area_world2": 8.614612547562005e-08
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 1.8254079906829494e-06
+      "area_world2": 1.82540799068295e-06
     },
     {
       "district_id": "honshu-area-01/candidate-district-candidate-g31002",
@@ -824,7 +845,7 @@
     },
     {
       "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 5.485037447112637e-08
+      "area_world2": 5.485037447123859e-08
     },
     {
       "district_id": "honshu-area-01/candidate-district-candidate-g31002",
@@ -911,10 +932,6 @@
       "area_world2": 7.376194383381937e-09
     },
     {
-      "district_id": "nagato/candidate-district-candidate-g56006",
-      "area_world2": 1.1676176504826774e-08
-    },
-    {
       "district_id": "nagato/candidate-district-candidate-g56005",
       "area_world2": 1.0564414587577176e-07
     },
@@ -935,8 +952,8 @@
       "area_world2": 1.642772913103248e-08
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55003",
-      "area_world2": 1.962784569645139e-09
+      "district_id": "suo/candidate-district-candidate-g55005",
+      "area_world2": 1.0299292790144632e-08
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -956,15 +973,11 @@
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 1.4505914870173884e-12
-    },
-    {
-      "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 6.789567989357037e-07
+      "area_world2": 1.2686968403254773e-06
     },
     {
       "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 1.9288413976436075e-07
+      "area_world2": 1.9288413976442653e-07
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
@@ -1028,7 +1041,7 @@
     },
     {
       "district_id": "nagato/candidate-district-candidate-g56006",
-      "area_world2": 1.1676126190907077e-08
+      "area_world2": 1.1676176504826774e-08
     },
     {
       "district_id": "nagato/candidate-district-candidate-g56005",
@@ -1052,15 +1065,7 @@
     },
     {
       "district_id": "suo/candidate-district-candidate-g55003",
-      "area_world2": 1.154198588474241e-09
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55003",
       "area_world2": 1.962784569645139e-09
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -1079,16 +1084,8 @@
       "area_world2": 7.157134376424689e-07
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55001",
-      "area_world2": 7.758131553847747e-09
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56006",
-      "area_world2": 1.915183072275316e-14
-    },
-    {
       "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 1.4956495147959517e-07
+      "area_world2": 2.595403312011065e-12
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
@@ -1176,7 +1173,7 @@
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 6.789567242913595e-07
+      "area_world2": 1.2686811306991674e-06
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
@@ -1248,11 +1245,11 @@
     },
     {
       "district_id": "suo/candidate-district-candidate-g55003",
-      "area_world2": 1.962784569645139e-09
+      "area_world2": 1.154198588474241e-09
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
+      "district_id": "suo/candidate-district-candidate-g55003",
+      "area_world2": 1.962784569645139e-09
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -1335,10 +1332,6 @@
       "area_world2": 1.962784569645139e-09
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
-    },
-    {
       "district_id": "aki/candidate-district-candidate-g54007",
       "area_world2": 3.807136721814558e-07
     },
@@ -1353,10 +1346,6 @@
     {
       "district_id": "bingo/merged-ca26d9b866720cdc",
       "area_world2": 7.157134376424689e-07
-    },
-    {
-      "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 6.789565409079552e-07
     },
     {
       "district_id": "totomi/merged-65958d076944fd24",
@@ -1431,8 +1420,88 @@
       "area_world2": 1.962784569645139e-09
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
+      "district_id": "aki/candidate-district-candidate-g54007",
+      "area_world2": 3.807136721814558e-07
+    },
+    {
+      "district_id": "aki/candidate-district-candidate-g54007",
+      "area_world2": 4.401002789304361e-06
+    },
+    {
+      "district_id": "bingo/merged-ca26d9b866720cdc",
+      "area_world2": 3.3640631768695856e-07
+    },
+    {
+      "district_id": "bingo/merged-ca26d9b866720cdc",
+      "area_world2": 7.157134376424689e-07
+    },
+    {
+      "district_id": "totomi/merged-65958d076944fd24",
+      "area_world2": 9.145855159919607e-05
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 4.871426888734959e-07
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 3.205276518378661e-05
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 3.1846585320240224e-07
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 4.701253107399e-06
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 4.839253513466701e-07
+    },
+    {
+      "district_id": "tango/candidate-district-candidate-g42002",
+      "area_world2": 4.3123174702726076e-07
+    },
+    {
+      "district_id": "izumo/candidate-district-candidate-g46004",
+      "area_world2": 1.643055823341566e-09
+    },
+    {
+      "district_id": "izumo/candidate-district-candidate-g46004",
+      "area_world2": 5.998894904501443e-09
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56003",
+      "area_world2": 7.376194383381937e-09
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56006",
+      "area_world2": 1.1676126190907077e-08
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56005",
+      "area_world2": 1.0564414587577176e-07
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56005",
+      "area_world2": 5.178226905699351e-08
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56005",
+      "area_world2": 3.268531439948319e-08
+    },
+    {
+      "district_id": "suo/candidate-district-candidate-g55001",
+      "area_world2": 1.9666587647293454e-07
+    },
+    {
+      "district_id": "suo/candidate-district-candidate-g55002",
+      "area_world2": 1.642772913103248e-08
+    },
+    {
+      "district_id": "suo/candidate-district-candidate-g55003",
+      "area_world2": 1.962784569645139e-09
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -1519,10 +1588,6 @@
       "area_world2": 1.962784569645139e-09
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
-    },
-    {
       "district_id": "aki/candidate-district-candidate-g54007",
       "area_world2": 3.807136721814558e-07
     },
@@ -1607,10 +1672,6 @@
       "area_world2": 1.962784569645139e-09
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
-    },
-    {
       "district_id": "aki/candidate-district-candidate-g54007",
       "area_world2": 3.807136721814558e-07
     },
@@ -1693,98 +1754,6 @@
     {
       "district_id": "suo/candidate-district-candidate-g55003",
       "area_world2": 1.962784569645139e-09
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
-    },
-    {
-      "district_id": "aki/candidate-district-candidate-g54007",
-      "area_world2": 3.807136721814558e-07
-    },
-    {
-      "district_id": "aki/candidate-district-candidate-g54007",
-      "area_world2": 4.401002789304361e-06
-    },
-    {
-      "district_id": "bingo/merged-ca26d9b866720cdc",
-      "area_world2": 3.3640631768695856e-07
-    },
-    {
-      "district_id": "bingo/merged-ca26d9b866720cdc",
-      "area_world2": 7.157134376424689e-07
-    },
-    {
-      "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 9.145855159919607e-05
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 4.871426888734959e-07
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 3.205276518378661e-05
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 3.1846585320240224e-07
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 4.701253107399e-06
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 4.839253513466701e-07
-    },
-    {
-      "district_id": "tango/candidate-district-candidate-g42002",
-      "area_world2": 4.3123174702726076e-07
-    },
-    {
-      "district_id": "izumo/candidate-district-candidate-g46004",
-      "area_world2": 1.643055823341566e-09
-    },
-    {
-      "district_id": "izumo/candidate-district-candidate-g46004",
-      "area_world2": 5.998894904501443e-09
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56003",
-      "area_world2": 7.376194383381937e-09
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56006",
-      "area_world2": 1.1676126190907077e-08
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56005",
-      "area_world2": 1.0564414587577176e-07
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56005",
-      "area_world2": 5.178226905699351e-08
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56005",
-      "area_world2": 3.268531439948319e-08
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55001",
-      "area_world2": 1.9666587647293454e-07
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55002",
-      "area_world2": 1.642772913103248e-08
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55003",
-      "area_world2": 1.962784569645139e-09
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -1875,8 +1844,88 @@
       "area_world2": 1.962784569645139e-09
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
+      "district_id": "aki/candidate-district-candidate-g54007",
+      "area_world2": 3.807136721814558e-07
+    },
+    {
+      "district_id": "aki/candidate-district-candidate-g54007",
+      "area_world2": 4.401002789304361e-06
+    },
+    {
+      "district_id": "bingo/merged-ca26d9b866720cdc",
+      "area_world2": 3.3640631768695856e-07
+    },
+    {
+      "district_id": "bingo/merged-ca26d9b866720cdc",
+      "area_world2": 7.157134376424689e-07
+    },
+    {
+      "district_id": "totomi/merged-65958d076944fd24",
+      "area_world2": 9.145855159919607e-05
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 4.871426888734959e-07
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 3.205276518378661e-05
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 3.1846585320240224e-07
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 4.701253107399e-06
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 4.839253513466701e-07
+    },
+    {
+      "district_id": "tango/candidate-district-candidate-g42002",
+      "area_world2": 4.3123174702726076e-07
+    },
+    {
+      "district_id": "izumo/candidate-district-candidate-g46004",
+      "area_world2": 1.643055823341566e-09
+    },
+    {
+      "district_id": "izumo/candidate-district-candidate-g46004",
+      "area_world2": 5.998894904501443e-09
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56003",
+      "area_world2": 7.376194383381937e-09
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56006",
+      "area_world2": 1.1676126190907077e-08
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56005",
+      "area_world2": 1.0564414587577176e-07
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56005",
+      "area_world2": 5.178226905699351e-08
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56005",
+      "area_world2": 3.268531439948319e-08
+    },
+    {
+      "district_id": "suo/candidate-district-candidate-g55001",
+      "area_world2": 1.9666587647293454e-07
+    },
+    {
+      "district_id": "suo/candidate-district-candidate-g55002",
+      "area_world2": 1.642772913103248e-08
+    },
+    {
+      "district_id": "suo/candidate-district-candidate-g55003",
+      "area_world2": 1.962784569645139e-09
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -1963,10 +2012,6 @@
       "area_world2": 1.962784569645139e-09
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
-    },
-    {
       "district_id": "aki/candidate-district-candidate-g54007",
       "area_world2": 3.807136721814558e-07
     },
@@ -2051,10 +2096,6 @@
       "area_world2": 1.962784569645139e-09
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
-    },
-    {
       "district_id": "aki/candidate-district-candidate-g54007",
       "area_world2": 3.807136721814558e-07
     },
@@ -2137,98 +2178,6 @@
     {
       "district_id": "suo/candidate-district-candidate-g55003",
       "area_world2": 1.962784569645139e-09
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
-    },
-    {
-      "district_id": "aki/candidate-district-candidate-g54007",
-      "area_world2": 3.807136721814558e-07
-    },
-    {
-      "district_id": "aki/candidate-district-candidate-g54007",
-      "area_world2": 4.401002789304361e-06
-    },
-    {
-      "district_id": "bingo/merged-ca26d9b866720cdc",
-      "area_world2": 3.3640631768695856e-07
-    },
-    {
-      "district_id": "bingo/merged-ca26d9b866720cdc",
-      "area_world2": 7.157134376424689e-07
-    },
-    {
-      "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 9.145855159919607e-05
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 4.871426888734959e-07
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 3.205276518378661e-05
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 3.1846585320240224e-07
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 4.701253107399e-06
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 4.839253513466701e-07
-    },
-    {
-      "district_id": "tango/candidate-district-candidate-g42002",
-      "area_world2": 4.3123174702726076e-07
-    },
-    {
-      "district_id": "izumo/candidate-district-candidate-g46004",
-      "area_world2": 1.643055823341566e-09
-    },
-    {
-      "district_id": "izumo/candidate-district-candidate-g46004",
-      "area_world2": 5.998894904501443e-09
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56003",
-      "area_world2": 7.376194383381937e-09
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56006",
-      "area_world2": 1.1676126190907077e-08
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56005",
-      "area_world2": 1.0564414587577176e-07
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56005",
-      "area_world2": 5.178226905699351e-08
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56005",
-      "area_world2": 3.268531439948319e-08
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55001",
-      "area_world2": 1.9666587647293454e-07
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55002",
-      "area_world2": 1.642772913103248e-08
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55003",
-      "area_world2": 1.962784569645139e-09
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -2315,8 +2264,88 @@
       "area_world2": 1.962784569645139e-09
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
+      "district_id": "aki/candidate-district-candidate-g54007",
+      "area_world2": 3.807136721814558e-07
+    },
+    {
+      "district_id": "aki/candidate-district-candidate-g54007",
+      "area_world2": 4.401002789304361e-06
+    },
+    {
+      "district_id": "bingo/merged-ca26d9b866720cdc",
+      "area_world2": 3.3640631768695856e-07
+    },
+    {
+      "district_id": "bingo/merged-ca26d9b866720cdc",
+      "area_world2": 7.157134376424689e-07
+    },
+    {
+      "district_id": "totomi/merged-65958d076944fd24",
+      "area_world2": 9.145855159919607e-05
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 4.871426888734959e-07
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 3.205276518378661e-05
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 3.1846585320240224e-07
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 4.701253107399e-06
+    },
+    {
+      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
+      "area_world2": 4.839253513466701e-07
+    },
+    {
+      "district_id": "tango/candidate-district-candidate-g42002",
+      "area_world2": 4.3123174702726076e-07
+    },
+    {
+      "district_id": "izumo/candidate-district-candidate-g46004",
+      "area_world2": 1.643055823341566e-09
+    },
+    {
+      "district_id": "izumo/candidate-district-candidate-g46004",
+      "area_world2": 5.998894904501443e-09
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56003",
+      "area_world2": 7.376194383381937e-09
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56006",
+      "area_world2": 1.1676126190907077e-08
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56005",
+      "area_world2": 1.0564414587577176e-07
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56005",
+      "area_world2": 5.178224458681016e-08
+    },
+    {
+      "district_id": "nagato/candidate-district-candidate-g56005",
+      "area_world2": 3.268531439948319e-08
+    },
+    {
+      "district_id": "suo/candidate-district-candidate-g55001",
+      "area_world2": 1.9666587647293454e-07
+    },
+    {
+      "district_id": "suo/candidate-district-candidate-g55002",
+      "area_world2": 1.642772913103248e-08
+    },
+    {
+      "district_id": "suo/candidate-district-candidate-g55003",
+      "area_world2": 1.962784569645139e-09
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -2399,8 +2428,8 @@
       "area_world2": 1.642772913103248e-08
     },
     {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
+      "district_id": "suo/candidate-district-candidate-g55003",
+      "area_world2": 1.962784569645139e-09
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -2481,94 +2510,6 @@
     {
       "district_id": "suo/candidate-district-candidate-g55002",
       "area_world2": 1.642772913103248e-08
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
-    },
-    {
-      "district_id": "aki/candidate-district-candidate-g54007",
-      "area_world2": 3.807136721814558e-07
-    },
-    {
-      "district_id": "aki/candidate-district-candidate-g54007",
-      "area_world2": 4.401002789304361e-06
-    },
-    {
-      "district_id": "bingo/merged-ca26d9b866720cdc",
-      "area_world2": 3.3640631768695856e-07
-    },
-    {
-      "district_id": "bingo/merged-ca26d9b866720cdc",
-      "area_world2": 7.157134376424689e-07
-    },
-    {
-      "district_id": "totomi/merged-65958d076944fd24",
-      "area_world2": 9.145855159919607e-05
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 4.871426888734959e-07
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 3.205276518378661e-05
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 3.1846585320240224e-07
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 4.701253107399e-06
-    },
-    {
-      "district_id": "honshu-area-01/candidate-district-candidate-g31002",
-      "area_world2": 4.839253513466701e-07
-    },
-    {
-      "district_id": "tango/candidate-district-candidate-g42002",
-      "area_world2": 4.3123174702726076e-07
-    },
-    {
-      "district_id": "izumo/candidate-district-candidate-g46004",
-      "area_world2": 1.643055823341566e-09
-    },
-    {
-      "district_id": "izumo/candidate-district-candidate-g46004",
-      "area_world2": 5.998894904501443e-09
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56003",
-      "area_world2": 7.376194383381937e-09
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56006",
-      "area_world2": 1.1676126190907077e-08
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56005",
-      "area_world2": 1.0564414587577176e-07
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56005",
-      "area_world2": 5.178224458681016e-08
-    },
-    {
-      "district_id": "nagato/candidate-district-candidate-g56005",
-      "area_world2": 3.268531439948319e-08
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55001",
-      "area_world2": 1.9666587647293454e-07
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55002",
-      "area_world2": 1.642772913103248e-08
-    },
-    {
-      "district_id": "suo/candidate-district-candidate-g55005",
-      "area_world2": 1.0299292790144632e-08
     },
     {
       "district_id": "aki/candidate-district-candidate-g54007",
@@ -2589,7 +2530,7 @@
   ],
   "shared_coast_node_canonicalization": {
     "tolerance": 5e-06,
-    "moved_coordinate_count": 14429,
+    "moved_coordinate_count": 14401,
     "max_movement": 4.998624241400862e-06,
     "skipped_invalid_districts": [
       "aki/candidate-district-candidate-g54002",
@@ -2602,9 +2543,7 @@
       "harima/candidate-district-candidate-g49005",
       "harima/candidate-district-candidate-g49014",
       "hitachi/candidate-district-candidate-g20010",
-      "honshu-area-03/candidate-district-candidate-g33001",
       "honshu-area-03/candidate-district-candidate-g33006",
-      "honshu-area-04/candidate-district-candidate-g30012",
       "honshu-area-05/candidate-district-candidate-g29002",
       "honshu-area-06/candidate-district-candidate-g32005",
       "honshu-area-08/candidate-district-candidate-g27007",
@@ -2722,40 +2661,40 @@
     "chikuzen/merged-efad3c15cc7a3e86": 1.1114458970350825,
     "chikuzen/unresolved-42cfaa8c657745ea": 0.039130771209329396,
     "echigo/candidate-district-candidate-g39001": -327.31667074744473,
-    "echigo/candidate-district-candidate-g39002": -38.774037488819886,
+    "echigo/candidate-district-candidate-g39002": -38.776973707517755,
     "echigo/candidate-district-candidate-g39003": 0.5393015772706349,
-    "echigo/candidate-district-candidate-g39004": -157.24564558247948,
+    "echigo/candidate-district-candidate-g39004": -157.24564558247857,
     "echigo/candidate-district-candidate-g39005": 0.1946130366413854,
     "echigo/candidate-district-candidate-g39006": -87.01202635606205,
     "echigo/candidate-district-candidate-g39007": -14.483523475630136,
     "echigo/candidate-district-candidate-g39008": 0.17021279404980305,
     "echigo/candidate-district-candidate-g39009": -127.3583949930835,
-    "echigo/candidate-district-candidate-g39010": 1.4402050340431742,
-    "echigo/candidate-district-candidate-g39011": 0.502401156918495,
-    "echigo/candidate-district-candidate-g39012": 1.0569207779935823,
-    "echigo/candidate-district-candidate-g39013": 0.5341785974133018,
-    "echigo/candidate-district-candidate-g39014": -47.31249218867015,
-    "echigo/candidate-district-candidate-g39015": -78.52387157973499,
+    "echigo/candidate-district-candidate-g39010": 1.443141252730129,
+    "echigo/candidate-district-candidate-g39011": 0.5024011569366849,
+    "echigo/candidate-district-candidate-g39012": 1.185275207471932,
+    "echigo/candidate-district-candidate-g39013": 0.17836549523599388,
+    "echigo/candidate-district-candidate-g39014": -47.27421269638944,
+    "echigo/candidate-district-candidate-g39015": -78.24681991368197,
     "echizen/candidate-district-candidate-g35001": -21.491730380968875,
     "echizen/candidate-district-candidate-g35002": 0.10099940138479724,
     "echizen/candidate-district-candidate-g35003": -25.280752675027543,
-    "echizen/candidate-district-candidate-g35004": -4.535976929840217,
-    "echizen/candidate-district-candidate-g35005": 0.4843057819234673,
+    "echizen/candidate-district-candidate-g35004": -4.476742320634912,
+    "echizen/candidate-district-candidate-g35005": 0.4250711727199814,
     "echizen/candidate-district-candidate-g35006": -17.736472034070175,
     "echizen/candidate-district-candidate-g35007": 0.08871579528431539,
-    "echizen/candidate-district-candidate-g35008": 0.39197618026082637,
+    "echizen/candidate-district-candidate-g35008": 0.39197618024991243,
     "echizen/unresolved-42cfaa8c657745ea": -0.028507813241958502,
-    "etchu/candidate-district-candidate-g38001": -73.99315975603895,
-    "etchu/candidate-district-candidate-g38002": -14.668489086456248,
-    "etchu/candidate-district-candidate-g38003": -9.698234331767708,
-    "etchu/candidate-district-candidate-g38004": 0.6721405381467775,
+    "etchu/candidate-district-candidate-g38001": -73.95779421402403,
+    "etchu/candidate-district-candidate-g38002": -14.694005832785479,
+    "etchu/candidate-district-candidate-g38003": -9.519248822561167,
+    "etchu/candidate-district-candidate-g38004": 0.4931550289147708,
     "etchu/candidate-district-candidate-g38005": -23.12263634498231,
     "harima/candidate-district-candidate-g49001": -2.5958534249621152,
-    "harima/candidate-district-candidate-g49002": -75.73774461956327,
-    "harima/candidate-district-candidate-g49003": -13.215059542787003,
+    "harima/candidate-district-candidate-g49002": -75.76091098711618,
+    "harima/candidate-district-candidate-g49003": -13.215059542784275,
     "harima/candidate-district-candidate-g49004": -22.32708123719749,
     "harima/candidate-district-candidate-g49005": -11.672728741185892,
-    "harima/candidate-district-candidate-g49006": 1.1129363675445347,
+    "harima/candidate-district-candidate-g49006": 1.1361027350976656,
     "harima/candidate-district-candidate-g49007": 0.2610340649043792,
     "harima/candidate-district-candidate-g49008": 0.3209363528294489,
     "harima/candidate-district-candidate-g49009": 0.12901443086229847,
@@ -2766,9 +2705,9 @@
     "harima/candidate-district-candidate-g49014": -31.317879505766996,
     "harima/candidate-district-candidate-g49015": -77.09949648029487,
     "harima/candidate-district-candidate-g49016": 0.19315804874895548,
-    "hida/candidate-district-candidate-g23001": 0.4031590429331118,
+    "hida/candidate-district-candidate-g23001": 0.3503418839391088,
     "hida/candidate-district-candidate-g23002": 0.5297209626514814,
-    "hida/candidate-district-candidate-g23003": 0.5319663216032495,
+    "hida/candidate-district-candidate-g23003": 0.5221175258739095,
     "higo/candidate-district-candidate-g68001": -98.84842300125183,
     "higo/candidate-district-candidate-g68002": -41.10344557884764,
     "higo/candidate-district-candidate-g68003": 0.1727174936929714,
@@ -2783,18 +2722,18 @@
     "higo/candidate-district-candidate-g68012": -418.71454580130376,
     "higo/candidate-district-candidate-g68013": -198.42886033167997,
     "higo/candidate-district-candidate-g68014": 0.7717933978165092,
-    "hitachi/candidate-district-candidate-g20001": 0.7192871196575652,
+    "hitachi/candidate-district-candidate-g20001": 0.5648394742465825,
     "hitachi/candidate-district-candidate-g20002": 0.21793221747702773,
     "hitachi/candidate-district-candidate-g20003": 0.0017675059589237208,
     "hitachi/candidate-district-candidate-g20004": 0.3688448339025854,
     "hitachi/candidate-district-candidate-g20005": -38.46981883418448,
     "hitachi/candidate-district-candidate-g20006": 0.17811368980255793,
     "hitachi/candidate-district-candidate-g20007": 0.42554197589925025,
-    "hitachi/candidate-district-candidate-g20008": 0.6280543406564902,
-    "hitachi/candidate-district-candidate-g20009": 1.4144875959773344,
+    "hitachi/candidate-district-candidate-g20008": 0.6055889584549732,
+    "hitachi/candidate-district-candidate-g20009": 1.436952978183399,
     "hitachi/candidate-district-candidate-g20010": -5.054410212514995,
     "hitachi/candidate-district-candidate-g20011": -13.199483060283455,
-    "hitachi/candidate-district-candidate-g20012": -80.36171273932996,
+    "hitachi/candidate-district-candidate-g20012": -80.30475618507808,
     "hizen/candidate-district-candidate-g67005": -30.88576379006099,
     "hizen/candidate-district-candidate-g67006": 0.8502960483374409,
     "hizen/candidate-district-candidate-g67007": -5.335283395470469,
@@ -2822,84 +2761,84 @@
     "honshu-area-01/candidate-district-candidate-g31007": 0.00028017118347634096,
     "honshu-area-01/candidate-district-candidate-g31008": 0.7246137770925998,
     "honshu-area-01/candidate-district-candidate-g31009": 31.673716480638177,
-    "honshu-area-03/candidate-district-candidate-g33001": -59.16820433549037,
+    "honshu-area-03/candidate-district-candidate-g33001": -59.28982044044642,
     "honshu-area-03/candidate-district-candidate-g33002": -169.97952429539873,
     "honshu-area-03/candidate-district-candidate-g33003": 0.42346196882863296,
     "honshu-area-03/candidate-district-candidate-g33004": 0.15268229097091535,
-    "honshu-area-03/candidate-district-candidate-g33005": 1.2760879486668273,
+    "honshu-area-03/candidate-district-candidate-g33005": 1.309787076424982,
     "honshu-area-03/candidate-district-candidate-g33006": -8.455725843898108,
     "honshu-area-03/candidate-district-candidate-g33007": -101.26769315392448,
-    "honshu-area-03/candidate-district-candidate-g33008": 1.2917486496298807,
+    "honshu-area-03/candidate-district-candidate-g33008": 1.2917486496007768,
     "honshu-area-03/candidate-district-candidate-g33009": -85.95854592832256,
-    "honshu-area-04/candidate-district-candidate-g30001": 0.1583901721987786,
+    "honshu-area-04/candidate-district-candidate-g30001": 0.17882832221766876,
     "honshu-area-04/candidate-district-candidate-g30002": 0.08875911838367756,
-    "honshu-area-04/candidate-district-candidate-g30003": 0.0019186997751603485,
+    "honshu-area-04/candidate-district-candidate-g30003": 0.18911445171670493,
     "honshu-area-04/candidate-district-candidate-g30004": 0.46958283506864973,
     "honshu-area-04/candidate-district-candidate-g30005": 0.7644976958690677,
-    "honshu-area-04/candidate-district-candidate-g30006": 0.9670652422646526,
-    "honshu-area-04/candidate-district-candidate-g30007": 0.9758486244536471,
+    "honshu-area-04/candidate-district-candidate-g30006": 0.9333661145847145,
+    "honshu-area-04/candidate-district-candidate-g30007": 1.0829439774934144,
     "honshu-area-04/candidate-district-candidate-g30008": 0.12293611052427877,
-    "honshu-area-04/candidate-district-candidate-g30009": -291.29398098372985,
-    "honshu-area-04/candidate-district-candidate-g30010": 1.7949113130380283,
-    "honshu-area-04/candidate-district-candidate-g30011": 1.1533138545764814,
-    "honshu-area-04/candidate-district-candidate-g30012": -115.6311625399594,
-    "honshu-area-04/candidate-district-candidate-g30013": -54.94857886012687,
-    "honshu-area-04/candidate-district-candidate-g30014": 1.6290185905891121,
+    "honshu-area-04/candidate-district-candidate-g30009": -291.2326567508171,
+    "honshu-area-04/candidate-district-candidate-g30010": 1.6942527337214415,
+    "honshu-area-04/candidate-district-candidate-g30011": 1.1533138545673864,
+    "honshu-area-04/candidate-district-candidate-g30012": -115.53050400403663,
+    "honshu-area-04/candidate-district-candidate-g30013": -55.00990309303961,
+    "honshu-area-04/candidate-district-candidate-g30014": 1.5219232375675347,
     "honshu-area-04/candidate-district-candidate-g30016": -18.19207432400981,
     "honshu-area-04/candidate-district-candidate-g30017": -10.262478890530474,
-    "honshu-area-04/merged-c8e0a9b3a00d450c": 1.029390899631835,
+    "honshu-area-04/merged-c8e0a9b3a00d450c": 1.029390899624559,
     "honshu-area-05/candidate-district-candidate-g29001": 0.059558834750532696,
-    "honshu-area-05/candidate-district-candidate-g29002": -1.5050568447240948,
-    "honshu-area-05/candidate-district-candidate-g29003": -34.58085952021611,
+    "honshu-area-05/candidate-district-candidate-g29002": -1.1752847791240129,
+    "honshu-area-05/candidate-district-candidate-g29003": -34.91063858898269,
     "honshu-area-05/candidate-district-candidate-g29004": 0.05670311494031921,
     "honshu-area-05/candidate-district-candidate-g29005": 0.04567570718245406,
     "honshu-area-05/candidate-district-candidate-g29006": 0.08199660041100287,
-    "honshu-area-05/candidate-district-candidate-g29007": 1.1368867775890976,
+    "honshu-area-05/candidate-district-candidate-g29007": 1.1164486275647505,
     "honshu-area-05/candidate-district-candidate-g29008": 0.5797941898126737,
-    "honshu-area-05/candidate-district-candidate-g29009": 1.2814881063950452,
-    "honshu-area-05/candidate-district-candidate-g29010": -51.49826541427683,
-    "honshu-area-05/candidate-district-candidate-g29011": -183.0841776661482,
+    "honshu-area-05/candidate-district-candidate-g29009": 1.2814881063941357,
+    "honshu-area-05/candidate-district-candidate-g29010": -51.523653027576074,
+    "honshu-area-05/candidate-district-candidate-g29011": -183.05879005285533,
     "honshu-area-05/candidate-district-candidate-g29012": 0.726094300065597,
-    "honshu-area-05/candidate-district-candidate-g29013": -195.28008351048993,
+    "honshu-area-05/candidate-district-candidate-g29013": -195.46727926244057,
     "honshu-area-05/candidate-district-candidate-g29014": -113.32210935227158,
     "honshu-area-06/candidate-district-candidate-g32001": 0.31304459493912873,
-    "honshu-area-06/candidate-district-candidate-g32002": 0.5106506986749082,
-    "honshu-area-06/candidate-district-candidate-g32003": 0.4996189205267001,
-    "honshu-area-06/candidate-district-candidate-g32004": 0.4397173237884999,
+    "honshu-area-06/candidate-district-candidate-g32002": 0.5764406387497729,
+    "honshu-area-06/candidate-district-candidate-g32003": 0.5108930617971055,
+    "honshu-area-06/candidate-district-candidate-g32004": 0.49397920913179405,
     "honshu-area-06/candidate-district-candidate-g32005": -196.723811248934,
     "honshu-area-06/candidate-district-candidate-g32006": 1.8148101314000087,
-    "honshu-area-06/candidate-district-candidate-g32007": 0.24999485221633222,
+    "honshu-area-06/candidate-district-candidate-g32007": 0.17293077086833364,
     "honshu-area-06/candidate-district-candidate-g32008": 0.07734401092875487,
-    "honshu-area-06/candidate-district-candidate-g32009": 1.542590345165081,
-    "honshu-area-06/candidate-district-candidate-g32010": 0.4982073485007277,
+    "honshu-area-06/candidate-district-candidate-g32009": 1.6099445648142137,
+    "honshu-area-06/candidate-district-candidate-g32010": 0.49820734850254667,
     "honshu-area-08/candidate-district-candidate-g27001": 0.2699632043222664,
     "honshu-area-08/candidate-district-candidate-g27002": 0.49120566711098945,
     "honshu-area-08/candidate-district-candidate-g27003": 0.9926742949101026,
-    "honshu-area-08/candidate-district-candidate-g27004": 0.4061074918108716,
+    "honshu-area-08/candidate-district-candidate-g27004": 0.349150937565355,
     "honshu-area-08/candidate-district-candidate-g27005": -39.129433054893525,
     "honshu-area-08/candidate-district-candidate-g27006": 1.1577567378631102,
     "honshu-area-08/candidate-district-candidate-g27007": -39.731417396649704,
-    "honshu-area-08/candidate-district-candidate-g27008": -21.224686011735685,
-    "honshu-area-08/candidate-district-candidate-g27009": -21.94855414029007,
-    "honshu-area-08/candidate-district-candidate-g27010": -15.259188503783662,
-    "honshu-area-08/candidate-district-candidate-g27011": 1.6820845968218237,
-    "honshu-area-08/candidate-district-candidate-g27012": 0.13335630824985856,
-    "honshu-area-08/candidate-district-candidate-g27013": 0.3997813256482914,
+    "honshu-area-08/candidate-district-candidate-g27008": -21.22468601172841,
+    "honshu-area-08/candidate-district-candidate-g27009": -21.95044221794342,
+    "honshu-area-08/candidate-district-candidate-g27010": -15.252197992318543,
+    "honshu-area-08/candidate-district-candidate-g27011": 1.6820845968227331,
+    "honshu-area-08/candidate-district-candidate-g27012": 0.12787721002769104,
+    "honshu-area-08/candidate-district-candidate-g27013": 0.40015831740311114,
     "honshu-area-08/candidate-district-candidate-g27014": 0.625043595344323,
     "honshu-area-09/candidate-district-candidate-g28001": 0.6283535469337949,
-    "honshu-area-09/candidate-district-candidate-g28002": 0.39639347544016346,
+    "honshu-area-09/candidate-district-candidate-g28002": 0.49124188392579526,
     "honshu-area-09/candidate-district-candidate-g28003": 0.1576388896573917,
     "honshu-area-09/candidate-district-candidate-g28004": 0.15575509820428124,
     "honshu-area-09/candidate-district-candidate-g28005": 0.43667033650854137,
-    "honshu-area-09/candidate-district-candidate-g28006": 0.5581768953270512,
-    "honshu-area-09/candidate-district-candidate-g28007": 0.14524498924220097,
+    "honshu-area-09/candidate-district-candidate-g28006": 0.46670055636786856,
+    "honshu-area-09/candidate-district-candidate-g28007": 0.1418729197102948,
     "honshu-area-09/candidate-district-candidate-g28008": 0.6453423662078421,
-    "honshu-area-09/candidate-district-candidate-g28009": 0.278713652613078,
+    "honshu-area-09/candidate-district-candidate-g28009": 0.278713652614897,
     "honshu-area-09/candidate-district-candidate-g28010": 1.2451882035711606,
     "honshu-area-30/candidate-district-candidate-g17001": -233.73338854223675,
     "honshu-area-30/candidate-district-candidate-g17002": -57.776365106130015,
-    "honshu-area-30/candidate-district-candidate-g17003": -14.623342623548979,
-    "honshu-area-30/candidate-district-candidate-g17004": -10.250106804883671,
+    "honshu-area-30/candidate-district-candidate-g17003": -14.62334262354534,
+    "honshu-area-30/candidate-district-candidate-g17004": -10.250106804885036,
     "hyuga/candidate-district-candidate-g69001": -102.94252605503425,
     "hyuga/candidate-district-candidate-g69002": 0.6252262680318381,
     "hyuga/candidate-district-candidate-g69003": -8.714023965058004,
@@ -2909,10 +2848,9 @@
     "hyuga/candidate-district-candidate-g69009": -318.6588649611531,
     "hyuga/candidate-district-candidate-g69010": -103.83974993638276,
     "hyuga/merged-849bc727ff99800e": 64.16377334729259,
-    "iga/candidate-district-candidate-g06003": 0.022148675696371356,
-    "iga/candidate-district-candidate-g06004": 0.4906432321936336,
+    "iga/candidate-district-candidate-g06003": 0.12539081620616344,
+    "iga/candidate-district-candidate-g06004": 0.43656991684474633,
     "iga/merged-dff55b62903ec44f": 0.13829402693590964,
-    "iga/unresolved-42cfaa8c657745ea": 0.10324214051738068,
     "inaba/candidate-district-candidate-g44001": -100.58331345489478,
     "inaba/candidate-district-candidate-g44002": 0.24593374547043823,
     "inaba/candidate-district-candidate-g44003": -2.315615503600611,
@@ -2923,17 +2861,17 @@
     "inaba/candidate-district-candidate-g44008": 0.07741351356708037,
     "ise/candidate-district-candidate-g07001": -5.373248190207505,
     "ise/candidate-district-candidate-g07002": 0.021382215963058115,
-    "ise/candidate-district-candidate-g07003": -45.31108809159855,
-    "ise/candidate-district-candidate-g07004": -11.08025522891785,
-    "ise/candidate-district-candidate-g07005": 0.22642889149938128,
+    "ise/candidate-district-candidate-g07003": -45.323777745581765,
+    "ise/candidate-district-candidate-g07004": -11.067565574934633,
+    "ise/candidate-district-candidate-g07005": 0.2253657216206193,
     "ise/candidate-district-candidate-g07006": 0.8617246909046798,
     "ise/candidate-district-candidate-g07007": -25.17761180676962,
-    "ise/candidate-district-candidate-g07008": -3.2578466053146258,
-    "ise/candidate-district-candidate-g07009": -137.2921382990935,
+    "ise/candidate-district-candidate-g07008": -3.338552538794829,
+    "ise/candidate-district-candidate-g07009": -137.1573590502594,
     "ise/candidate-district-candidate-g07010": -25.294045485505194,
     "ise/candidate-district-candidate-g07011": -54.292395842548444,
-    "ise/candidate-district-candidate-g07012": -66.77051650274188,
-    "ise/candidate-district-candidate-g07013": -531.4426544096823,
+    "ise/candidate-district-candidate-g07012": -66.73974271348743,
+    "ise/candidate-district-candidate-g07013": -531.4231786732016,
     "iwami/candidate-district-candidate-g47001": 13.726567793956292,
     "iwami/candidate-district-candidate-g47002": -38.648060203889145,
     "iwami/candidate-district-candidate-g47003": 0.32841437108436367,
@@ -2960,12 +2898,12 @@
     "iyo/candidate-district-candidate-g61018": -54.525950645842386,
     "izu/candidate-district-candidate-g14001": -2.2709973551795883,
     "izu/candidate-district-candidate-g14002": -126.89208542505003,
-    "izu/candidate-district-candidate-g14003": 1.4963926419559357,
+    "izu/candidate-district-candidate-g14003": 1.4653894310968099,
     "izu/candidate-district-candidate-g14004": -26.024053653872215,
     "izumi/candidate-district-candidate-g04001": -59.11978948753176,
-    "izumi/candidate-district-candidate-g04002": -3.17824277044906,
-    "izumi/candidate-district-candidate-g04003": -4.930349871974613,
-    "izumi/candidate-district-candidate-g04004": -135.86317908703495,
+    "izumi/candidate-district-candidate-g04002": -3.1782427704488327,
+    "izumi/candidate-district-candidate-g04003": -4.930349871974158,
+    "izumi/candidate-district-candidate-g04004": -135.862996773526,
     "izumo/candidate-district-candidate-g46001": 0.7129622463799024,
     "izumo/candidate-district-candidate-g46002": 0.03800058744218404,
     "izumo/candidate-district-candidate-g46003": -26.144486459613745,
@@ -2978,8 +2916,8 @@
     "izumo/candidate-district-candidate-g46010": 0.6050900171230751,
     "kaga/candidate-district-candidate-g36001": -21.783999677712018,
     "kaga/candidate-district-candidate-g36002": -4.906635077360988,
-    "kaga/candidate-district-candidate-g36003": -0.9179399255217504,
-    "kaga/candidate-district-candidate-g36004": -17.981736983134397,
+    "kaga/candidate-district-candidate-g36003": -0.8797566776902386,
+    "kaga/candidate-district-candidate-g36004": -18.019920230968637,
     "kai/unresolved-1daff391d7d465f8": 1.774787932396066,
     "kai/unresolved-9b61530a41070de6": 1.1289522627339466,
     "kai/unresolved-b48d2f62146c8828": 1.2942850519921194,
@@ -2990,10 +2928,10 @@
     "kai/unresolved-ecfc292ae0476f16": 0.054598565882770345,
     "kai/unresolved-ffdb3c4007cda493": 0.7148983359857084,
     "kawachi/candidate-district-candidate-g03003": 0.1747664783270011,
-    "kawachi/candidate-district-candidate-g03013": 0.10258281129245006,
-    "kawachi/candidate-district-candidate-g03014": 0.09231321713696161,
-    "kawachi/merged-17f71891f5bb383a": 0.6968560565226198,
-    "kawachi/merged-3de478a550bb2d85": 0.3397932651978408,
+    "kawachi/candidate-district-candidate-g03013": 0.10258281129131319,
+    "kawachi/candidate-district-candidate-g03014": 0.14240280208105105,
+    "kawachi/merged-17f71891f5bb383a": 0.6467664715778483,
+    "kawachi/merged-3de478a550bb2d85": 0.3397932651980682,
     "kawachi/merged-6273af59ef621164": 0.05736288995058203,
     "kawachi/merged-b29822a66993bbf3": 0.6048437827637372,
     "kawachi/merged-f0a94e40d751ab91": 0.07518989770778717,
@@ -3005,19 +2943,19 @@
     "kazusa/candidate-district-candidate-g18006": 0.0921695707879735,
     "kazusa/candidate-district-candidate-g18007": -31.566276252166972,
     "kazusa/candidate-district-candidate-g18008": -9.998725145214394,
-    "kazusa/candidate-district-candidate-g18009": -3.195542643115914,
+    "kazusa/candidate-district-candidate-g18009": -3.1955426431131855,
     "kii/candidate-district-candidate-g57001": -13.99154091512537,
     "kii/candidate-district-candidate-g57002": -31.29013037746347,
-    "kii/candidate-district-candidate-g57003": 0.3262914945753437,
-    "kii/candidate-district-candidate-g57004": 0.4588586093432241,
+    "kii/candidate-district-candidate-g57003": 0.3261091810591097,
+    "kii/candidate-district-candidate-g57004": 0.4588586093395861,
     "kii/candidate-district-candidate-g57005": -122.32352138870556,
     "kii/candidate-district-candidate-g57006": -84.12363478039697,
     "kii/candidate-district-candidate-g57007": -48.932414158851316,
     "kii/candidate-district-candidate-g57008": -194.46045913975468,
-    "kii/candidate-district-candidate-g57009": -63.77443714109722,
+    "kii/candidate-district-candidate-g57009": -63.8246866668178,
     "kii/candidate-district-candidate-g57010": -96.61914191765936,
     "kozuke/candidate-district-candidate-g25001": 1.8189894035458565e-12,
-    "kozuke/candidate-district-candidate-g25002": 0.6473963969947363,
+    "kozuke/candidate-district-candidate-g25002": 0.6446065333439037,
     "kozuke/candidate-district-candidate-g25003": 1.1175397427432472,
     "kozuke/candidate-district-candidate-g25004": 0.7232217072269123,
     "kozuke/candidate-district-candidate-g25005": 0.06038492652351124,
@@ -3031,8 +2969,8 @@
     "kozuke/candidate-district-candidate-g25017": 0.4011498616600875,
     "kozuke/merged-d4ddcff0ec5395ae": 0.648353161624982,
     "kozuke/merged-f070fbb272c2ce29": 1.4682486739184242,
-    "mikawa/candidate-district-candidate-g10001": -48.56835111531018,
-    "mikawa/candidate-district-candidate-g10002": 0.7690117405045385,
+    "mikawa/candidate-district-candidate-g10001": -48.62776828786991,
+    "mikawa/candidate-district-candidate-g10002": 0.76901174050181,
     "mikawa/candidate-district-candidate-g10003": 0.2574280788521719,
     "mikawa/candidate-district-candidate-g10004": 0.5103830816515256,
     "mikawa/candidate-district-candidate-g10005": -24.121337198648234,
@@ -3049,34 +2987,34 @@
     "mimasaka/candidate-district-candidate-g50010": 0.5615669192593487,
     "mimasaka/candidate-district-candidate-g50011": 0.321983176086178,
     "mimasaka/candidate-district-candidate-g50012": 0.2349038514912536,
-    "mimasaka/merged-c483c6648fd4f8c9": 0.4048316863809305,
+    "mimasaka/merged-c483c6648fd4f8c9": 0.4048316863918444,
     "mimasaka/merged-c5888a75596f043e": 0.4892757043635356,
     "mino/candidate-district-candidate-g22001": 0.01915580073705314,
     "mino/candidate-district-candidate-g22002": 0.2397530777943757,
-    "mino/candidate-district-candidate-g22005": 0.510908833882695,
+    "mino/candidate-district-candidate-g22005": 0.5109088338836045,
     "mino/candidate-district-candidate-g22006": 0.25740026422136,
     "mino/candidate-district-candidate-g22007": 0.346309881075058,
-    "mino/candidate-district-candidate-g22008": 0.41893758863807307,
-    "mino/candidate-district-candidate-g22009": 1.2222443935188494,
-    "mino/candidate-district-candidate-g22014": 0.13633887130072253,
-    "mino/candidate-district-candidate-g22015": 0.4980974583108946,
+    "mino/candidate-district-candidate-g22008": 0.4963595740700839,
+    "mino/candidate-district-candidate-g22009": 1.1920741074955004,
+    "mino/candidate-district-candidate-g22014": 0.1363388713000404,
+    "mino/candidate-district-candidate-g22015": 0.45638272404812597,
     "mino/candidate-district-candidate-g22016": 0.2287549527259216,
-    "mino/candidate-district-candidate-g22017": 1.7139539493164193,
+    "mino/candidate-district-candidate-g22017": 1.7139539492982294,
     "mino/candidate-district-candidate-g22018": 1.0322604849061463,
-    "mino/candidate-district-candidate-g22019": 0.2203964829823235,
+    "mino/candidate-district-candidate-g22019": 0.2249565060628811,
     "mino/candidate-district-candidate-g22020": 0.7831784117151983,
     "mino/candidate-district-candidate-g22021": 0.6216565714112221,
     "mino/candidate-district-candidate-g22022": 0.7099810355175578,
-    "mino/merged-2c24e4258362e1fa": 1.1014780039249672,
+    "mino/merged-2c24e4258362e1fa": 1.1431927381888727,
     "mino/merged-5639788de5e3e90a": 0.4289006517949474,
     "mino/merged-8d11359111dd8d99": 0.4168228905791693,
-    "musashi/candidate-district-candidate-g16001": 0.6178301573818317,
+    "musashi/candidate-district-candidate-g16001": 0.5948568440480813,
     "musashi/candidate-district-candidate-g16002": 0.3271246020253784,
     "musashi/candidate-district-candidate-g16003": 0.47060207749018446,
     "musashi/candidate-district-candidate-g16004": 0.8108646856944688,
     "musashi/candidate-district-candidate-g16005": 0.5012286903620407,
     "musashi/candidate-district-candidate-g16006": 0.3619385283184329,
-    "musashi/candidate-district-candidate-g16007": -43.758852639914494,
+    "musashi/candidate-district-candidate-g16007": -43.90627413726588,
     "musashi/candidate-district-candidate-g16008": 0.42524026478986343,
     "musashi/candidate-district-candidate-g16009": 0.9734129108437628,
     "musashi/candidate-district-candidate-g16010": 0.6361691038073332,
@@ -3089,11 +3027,11 @@
     "musashi/candidate-district-candidate-g16017": 0.2842987010108118,
     "musashi/candidate-district-candidate-g16020": 0.0751173969501906,
     "musashi/candidate-district-candidate-g16021": 1.5429934569110628,
-    "musashi/candidate-district-candidate-g16022": 0.01715995804124759,
+    "musashi/candidate-district-candidate-g16022": 0.040133271378863355,
     "musashi/candidate-district-candidate-g16023": 0.5806256682244566,
-    "musashi/candidate-district-candidate-g16024": 0.33597743090285803,
+    "musashi/candidate-district-candidate-g16024": 0.3029843051226635,
     "musashi/candidate-district-candidate-g16025": 0.951839807572469,
-    "musashi/candidate-district-candidate-g16026": -12.23970502526663,
+    "musashi/candidate-district-candidate-g16026": -12.059290402135957,
     "musashi/candidate-district-candidate-g16027": 0.175882237866972,
     "musashi/candidate-district-candidate-g16028": -38.121699404773835,
     "musashi/merged-d94f6522d3efe430": 0.7670198499199614,
@@ -3102,23 +3040,23 @@
     "nagato/candidate-district-candidate-g56003": -167.03579663926394,
     "nagato/candidate-district-candidate-g56004": 0.202084788132197,
     "nagato/candidate-district-candidate-g56005": -81.12609840672303,
-    "nagato/candidate-district-candidate-g56006": -179.6596422876337,
-    "noto/candidate-district-candidate-g37001": 42.88079275269956,
+    "nagato/candidate-district-candidate-g56006": -179.6596422875973,
+    "noto/candidate-district-candidate-g37001": 42.844142290516174,
     "noto/candidate-district-candidate-g37002": -186.70097292066202,
-    "noto/candidate-district-candidate-g37003": 15.10171960896514,
+    "noto/candidate-district-candidate-g37003": 15.13837007114671,
     "noto/candidate-district-candidate-g37004": -89.42060797782051,
     "omi/candidate-district-candidate-g21001": 3.4074033389752003,
-    "omi/candidate-district-candidate-g21002": 0.20420030927562038,
+    "omi/candidate-district-candidate-g21002": 0.1652221842578001,
     "omi/candidate-district-candidate-g21003": 0.24430437447426812,
-    "omi/candidate-district-candidate-g21004": 0.40527224412653595,
+    "omi/candidate-district-candidate-g21004": 0.4063354140289448,
     "omi/candidate-district-candidate-g21005": 0.7147761005480788,
     "omi/candidate-district-candidate-g21006": 0.5459316164842676,
     "omi/candidate-district-candidate-g21007": 0.04221350994112072,
-    "omi/candidate-district-candidate-g21008": 0.647852709577819,
-    "omi/candidate-district-candidate-g21009": 0.4788271067372989,
+    "omi/candidate-district-candidate-g21008": 0.6673082191609865,
+    "omi/candidate-district-candidate-g21009": 0.4593715971586789,
     "omi/candidate-district-candidate-g21010": 0.31301093805541313,
-    "omi/candidate-district-candidate-g21011": 0.3875379439459721,
-    "omi/candidate-district-candidate-g21012": 0.8333921277826448,
+    "omi/candidate-district-candidate-g21011": 0.4265160689658387,
+    "omi/candidate-district-candidate-g21012": 0.786140428373983,
     "omi/candidate-district-candidate-g21013": 0.15881320191874693,
     "osumi/candidate-district-candidate-g70002": 0.05063287812208728,
     "osumi/candidate-district-candidate-g70003": -14.959957677665443,
@@ -3127,22 +3065,22 @@
     "osumi/candidate-district-candidate-g70006": -105.36780833973899,
     "osumi/candidate-district-candidate-g70007": -196.55829202916357,
     "osumi/candidate-district-candidate-g70008": -128.19156724074037,
-    "owari/candidate-district-candidate-g09001": -91.03740145523898,
+    "owari/candidate-district-candidate-g09001": -90.9779842826756,
     "owari/candidate-district-candidate-g09002": -178.20089167353945,
     "owari/candidate-district-candidate-g09003": 0.11310327056958158,
     "owari/candidate-district-candidate-g09004": 0.8359456822072389,
-    "owari/candidate-district-candidate-g09007": 0.4858726396387283,
+    "owari/candidate-district-candidate-g09007": 0.48587263963554506,
     "owari/candidate-district-candidate-g09008": 0.18856230211122238,
-    "owari/candidate-district-candidate-g09009": -29.19159779000256,
+    "owari/candidate-district-candidate-g09009": -29.191597790003016,
     "owari/merged-132e9d6a8bdd0bfe": 1.7077529669627438,
     "sagami/candidate-district-candidate-g15001": -2.724460108722269,
-    "sagami/candidate-district-candidate-g15002": -14.092576300894507,
+    "sagami/candidate-district-candidate-g15002": -14.061087206783668,
     "sagami/candidate-district-candidate-g15005": 0.3797657148611506,
     "sagami/candidate-district-candidate-g15006": 0.2470299290789626,
-    "sagami/candidate-district-candidate-g15007": -1.8367802374777966,
+    "sagami/candidate-district-candidate-g15007": -1.8367802374759776,
     "sagami/candidate-district-candidate-g15008": -7.389698172071803,
     "sagami/candidate-district-candidate-g15009": -71.09831922978174,
-    "sagami/merged-f953c50bb6b68769": 2.689410035034598,
+    "sagami/merged-f953c50bb6b68769": 2.689410035032779,
     "sagami/unresolved-42cfaa8c657745ea": 0.21286954542347303,
     "sanuki/candidate-district-candidate-g60001": -69.15529083963202,
     "sanuki/candidate-district-candidate-g60002": -151.94072647078883,
@@ -3177,18 +3115,19 @@
     "settsu/merged-63e8d60c157e0c0b": 0.6991744925485364,
     "settsu/merged-ec1a78bc41e8d6a6": 0.5768444582581651,
     "shimosa/candidate-district-candidate-g19001": -36.590208947827705,
-    "shimosa/candidate-district-candidate-g19003": 0.3956624357815599,
-    "shimosa/candidate-district-candidate-g19004": 0.13073648143972605,
+    "shimosa/candidate-district-candidate-g19003": 0.3956624357842884,
+    "shimosa/candidate-district-candidate-g19004": 0.13073648143858918,
     "shimosa/candidate-district-candidate-g19005": 0.7803724022614915,
-    "shimosa/candidate-district-candidate-g19006": 0.8929724555639496,
-    "shimosa/candidate-district-candidate-g19008": 1.4625158527046551,
+    "shimosa/candidate-district-candidate-g19006": 0.892972455560539,
+    "shimosa/candidate-district-candidate-g19007": 0.03374031481928341,
+    "shimosa/candidate-district-candidate-g19008": 1.6052768119971006,
     "shimosa/candidate-district-candidate-g19009": 0.9523397615757858,
-    "shimosa/candidate-district-candidate-g19010": 0.7262721109041195,
-    "shimosa/candidate-district-candidate-g19011": 1.0744682729873603,
+    "shimosa/candidate-district-candidate-g19010": 0.7372212654108807,
+    "shimosa/candidate-district-candidate-g19011": 1.0635191184883297,
     "shimosa/candidate-district-candidate-g19012": 103.89499275936896,
     "shimosa/candidate-district-candidate-g19013": -24.153125966032803,
-    "shimosa/candidate-district-candidate-g19014": 0.45463388844700603,
-    "shimosa/merged-3acc18b6734198e3": -11.010611098025038,
+    "shimosa/candidate-district-candidate-g19014": 0.45463388844837027,
+    "shimosa/merged-3acc18b6734198e3": -11.03266472672476,
     "shimotsuke/candidate-district-candidate-g26001": 0.777048576262132,
     "shimotsuke/candidate-district-candidate-g26002": 0.3683250870935808,
     "shimotsuke/candidate-district-candidate-g26003": 0.5681967389682541,
@@ -3197,33 +3136,33 @@
     "shimotsuke/candidate-district-candidate-g26008": 1.730530817701947,
     "shimotsuke/candidate-district-candidate-g26009": 1.868652779412514,
     "shimotsuke/merged-5e050977ef66e7ce": 1.2371662558725802,
-    "shinano/candidate-district-candidate-g24001": 0.6712708372069756,
-    "shinano/candidate-district-candidate-g24002": 0.5755383054602135,
-    "shinano/candidate-district-candidate-g24003": 0.37499367898271885,
+    "shinano/candidate-district-candidate-g24001": 0.719527973109507,
+    "shinano/candidate-district-candidate-g24002": 0.5814602620812366,
+    "shinano/candidate-district-candidate-g24003": 0.37499367901546066,
     "shinano/candidate-district-candidate-g24004": 0.6950757448648801,
-    "shinano/candidate-district-candidate-g24005": 0.8122117869261274,
-    "shinano/candidate-district-candidate-g24006": 1.334494197370077,
-    "shinano/candidate-district-candidate-g24007": 1.3130843023554917,
-    "shinano/candidate-district-candidate-g24008": 0.2560884327740496,
-    "shinano/candidate-district-candidate-g24009": 0.5917224431113937,
+    "shinano/candidate-district-candidate-g24005": 0.8122117869297654,
+    "shinano/candidate-district-candidate-g24006": 1.0742294974224933,
+    "shinano/candidate-district-candidate-g24007": 1.3071623457235546,
+    "shinano/candidate-district-candidate-g24008": 0.20102197438609437,
+    "shinano/candidate-district-candidate-g24009": 0.6092124199258251,
     "shinano/candidate-district-candidate-g24010": 0.45938771273540624,
-    "shinano/candidate-district-candidate-g24011": 0.19820290794632456,
-    "shinano/candidate-district-candidate-g24012": 1.0392102404221077,
-    "shinano/candidate-district-candidate-g24013": 0.17192773324859445,
-    "shinano/candidate-district-candidate-g24014": 1.0381224660413864,
+    "shinano/candidate-district-candidate-g24011": 0.200992771615347,
+    "shinano/candidate-district-candidate-g24012": 1.2491789363157295,
+    "shinano/candidate-district-candidate-g24013": 0.17192773324268273,
+    "shinano/candidate-district-candidate-g24014": 1.0381224660668522,
     "shinano/candidate-district-candidate-g24015": 1.3836027782708697,
     "shinano/candidate-district-candidate-g24016": 0.9985946337310452,
     "suo/candidate-district-candidate-g55001": -117.53665773784087,
     "suo/candidate-district-candidate-g55002": -43.237799629619985,
-    "suo/candidate-district-candidate-g55003": -124.12146078294609,
+    "suo/candidate-district-candidate-g55003": -124.12146078292972,
     "suo/candidate-district-candidate-g55004": -26.67948719508604,
-    "suo/candidate-district-candidate-g55005": -231.06616007498815,
+    "suo/candidate-district-candidate-g55005": -231.0661600750318,
     "suruga/candidate-district-candidate-g12001": -10.089758045786766,
     "suruga/candidate-district-candidate-g12002": -41.516981946705755,
     "suruga/candidate-district-candidate-g12003": 0.7841522649105173,
     "suruga/candidate-district-candidate-g12004": -41.09653495712064,
-    "suruga/candidate-district-candidate-g12005": -43.047869780435576,
-    "suruga/candidate-district-candidate-g12006": -28.949490513239653,
+    "suruga/candidate-district-candidate-g12005": -43.0478697804283,
+    "suruga/candidate-district-candidate-g12006": -28.949976396508646,
     "tajima/candidate-district-candidate-g43001": -15.501227168051173,
     "tajima/candidate-district-candidate-g43002": 0.16465216622327716,
     "tajima/candidate-district-candidate-g43003": -21.734088288676503,
@@ -3238,8 +3177,8 @@
     "tanba/candidate-district-candidate-g41004": 0.11786393479724211,
     "tanba/candidate-district-candidate-g41005": 0.8931458723372998,
     "tanba/candidate-district-candidate-g41006": 0.5495134995071567,
-    "tanba/candidate-district-candidate-g41007": 0.8752827102489391,
-    "tango/candidate-district-candidate-g42001": -206.33002728071006,
+    "tanba/candidate-district-candidate-g41007": 0.8369934548954916,
+    "tango/candidate-district-candidate-g42001": -206.2917380253566,
     "tango/candidate-district-candidate-g42002": -113.60619202934504,
     "tango/candidate-district-candidate-g42003": 0.46942390406593404,
     "tango/candidate-district-candidate-g42004": -63.26752537362563,
@@ -3253,30 +3192,30 @@
     "tosa/candidate-district-candidate-g62007": -107.09971406729892,
     "totomi/candidate-district-candidate-g11001": 0.1109113789359526,
     "totomi/candidate-district-candidate-g11003": -5.115814614649935,
-    "totomi/candidate-district-candidate-g11004": 0.4528038209132319,
+    "totomi/candidate-district-candidate-g11004": 0.45280382091368665,
     "totomi/candidate-district-candidate-g11008": -23.029422949126456,
-    "totomi/candidate-district-candidate-g11009": 0.8744438058292872,
+    "totomi/candidate-district-candidate-g11009": 0.6366696221830352,
     "totomi/candidate-district-candidate-g11010": 0.01448715454307603,
     "totomi/candidate-district-candidate-g11011": -23.987612456724946,
-    "totomi/candidate-district-candidate-g11012": 27.843224026106327,
-    "totomi/merged-65958d076944fd24": 0.8983995363505528,
+    "totomi/candidate-district-candidate-g11012": 28.08099820975258,
+    "totomi/merged-65958d076944fd24": 0.8983992586418026,
     "yamashiro/candidate-district-candidate-g01001": 0.2823721876629861,
     "yamashiro/candidate-district-candidate-g01002": 0.2556356451514148,
     "yamashiro/candidate-district-candidate-g01003": 0.3321928718887648,
     "yamashiro/candidate-district-candidate-g01007": 0.8879517455361565,
     "yamashiro/candidate-district-candidate-g01008": 0.05014239890897443,
-    "yamashiro/merged-1facecf90dae45ac": 0.8088531478915684,
+    "yamashiro/merged-1facecf90dae45ac": 0.8088531478933874,
     "yamato/candidate-district-candidate-g02002": 0.15714556000693847,
-    "yamato/candidate-district-candidate-g02003": 0.0596871762045339,
-    "yamato/candidate-district-candidate-g02005": 0.06476061883404327,
+    "yamato/candidate-district-candidate-g02003": 0.024750858176503243,
+    "yamato/candidate-district-candidate-g02005": 0.06476061883495277,
     "yamato/candidate-district-candidate-g02006": 0.298540640776082,
     "yamato/candidate-district-candidate-g02008": 0.01097535993017118,
     "yamato/candidate-district-candidate-g02009": 0.5983004769107083,
-    "yamato/candidate-district-candidate-g02014": 0.274057631412461,
+    "yamato/candidate-district-candidate-g02014": 0.27405763141086936,
     "yamato/candidate-district-candidate-g02015": 1.9405226692033466,
     "yamato/merged-053fe8c3a9218b5e": 0.8315510155334778,
-    "yamato/merged-4f8b27072b106cbb": 0.5734046625655083,
-    "yamato/merged-71329caa12e7ae87": 0.23955934480159158
+    "yamato/merged-4f8b27072b106cbb": 0.6083409805955853,
+    "yamato/merged-71329caa12e7ae87": 0.23955934480113683
   },
   "unseeded_hokkaido_policy": "No active 1546 district overlaps the Hokkaido ring; no district was invented."
 }

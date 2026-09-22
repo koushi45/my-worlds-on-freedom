@@ -38,7 +38,7 @@ class IndependentDistrictTests(unittest.TestCase):
         removals=[item for item in curation['operations'] if item['kind']=='remove']
         merges=[item for item in curation['operations'] if item['kind']=='merge']
         self.assertEqual(15,len(removals))
-        self.assertEqual(7,len(merges))
+        self.assertEqual(8,len(merges))
         for item in removals+merges:
             self.assertNotIn(item['source'],d['regions'])
         for item in merges:
