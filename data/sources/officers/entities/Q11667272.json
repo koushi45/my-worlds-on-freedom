@@ -1,0 +1,184 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:44Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12807331,
+    "ns": 0,
+    "title": "Q11667272",
+    "lastrevid": 2354833749,
+    "modified": "2025-05-30T22:34:53Z",
+    "type": "item",
+    "id": "Q11667272",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "香川元景"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "室町～戦国時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11667272$AD3B8584-6173-4818-AA30-7AC149BF10EF",
+          "rank": "normal"
+        }
+      ],
+      "P1814": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1814",
+            "hash": "094dec532bd8db590797cca888e179dbcc422974",
+            "datavalue": {
+              "value": "かがわ もとかげ",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q11667272$A049C485-FA25-4405-A430-4537B534F073",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11667272$42bac950-df9d-43b2-acf8-7a38bd95635d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11667272$05CBD6D8-EE7F-4358-BE51-658B28CEDD32",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "6769e817f2d56ac816b66aa546405edd54d2bd05",
+            "datavalue": {
+              "value": "/g/122ddzr_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11667272$22158049-77FF-4A95-89A3-E2121A3F46CA",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "香川元景",
+        "badges": []
+      }
+    }
+  }
+}

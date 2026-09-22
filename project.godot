@@ -1,0 +1,42 @@
+; Engine configuration file.
+; Edit through the Godot editor when possible.
+
+config_version=5
+
+[application]
+
+config/name="My Worlds on Freedom"
+run/main_scene="res://scenes/start/start.tscn"
+
+[autoload]
+
+MapDiagnostics="*res://scripts/map/map_diagnostics.gd"
+GameSession="*res://scripts/game/game_session.gd"
+DisplaySettings="*res://scripts/game/display_settings.gd"
+InteractionAudio="*res://scripts/game/interaction_audio.gd"
+
+[debug]
+
+file_logging/enable_file_logging=true
+file_logging/log_path="user://logs/godot.log"
+file_logging/max_log_files=5
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+textures/vram_compression/import_etc2_astc=true
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true

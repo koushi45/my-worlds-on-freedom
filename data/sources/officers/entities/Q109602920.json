@@ -1,0 +1,186 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:16Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 104728938,
+    "ns": 0,
+    "title": "Q109602920",
+    "lastrevid": 2511538948,
+    "modified": "2026-06-28T16:29:05Z",
+    "type": "item",
+    "id": "Q109602920",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "高田信頼"
+      },
+      "en": {
+        "language": "en",
+        "value": "Takada Nobuyori"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese person"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109602920$6c5d80ef-4ba2-0c6f-f6b2-b9a3aef9c281",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109602920$8f613088-4c0b-5e4e-bfbf-d02c1e9ce35d",
+          "rank": "normal"
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "6d66333acb2f97c1935d7ecd0ebe5e11b6a42bb0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 109597479,
+                "id": "Q109597479"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109602920$5EB8D9A0-E005-4F42-A71F-D3FCB02B5641",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "564b4410e5359fcd71a9554aaf736b628186e644",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c8b13e34e8a2ecc16e18eb5ce645fc9b2fe5d0c8",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-02-19T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "d4253b7b4d9ebf563a4e9423d20f9fb511853aaf",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E9%AB%98%E7%94%B0%E4%BF%A1%E9%A0%BC&oldid=86549087",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109602920$ee749c08-4c89-0a3e-e30e-d41b767813f0",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "高田信頼",
+        "badges": []
+      }
+    }
+  }
+}

@@ -1,0 +1,2650 @@
+{
+  "schema_version": 1,
+  "edition": "district-survey-ab-2026-09-12-v1",
+  "missing_parents": [
+    {
+      "issue_id": "scope-missing-k08",
+      "external_country_id": "K08",
+      "name": "志摩",
+      "historical_province_id": "province-p042",
+      "status": "unrepresented_parent_backlog",
+      "source_ref": "kg-index",
+      "locator": "K08行",
+      "parent_region_id": null,
+      "reason": "現行親IDとの明示対応がない。国の未収録と、面が他国に含まれるかの確認は別。郡を先行作成しない。"
+    },
+    {
+      "issue_id": "scope-missing-k34",
+      "external_country_id": "K34",
+      "name": "若狭",
+      "historical_province_id": "province-p027",
+      "status": "unrepresented_parent_backlog",
+      "source_ref": "kg-index",
+      "locator": "K34行",
+      "parent_region_id": null,
+      "reason": "現行親IDとの明示対応がない。国の未収録と、面が他国に含まれるかの確認は別。郡を先行作成しない。"
+    },
+    {
+      "issue_id": "scope-missing-k40",
+      "external_country_id": "K40",
+      "name": "佐渡",
+      "historical_province_id": "province-p022",
+      "status": "unrepresented_parent_backlog",
+      "source_ref": "kg-index",
+      "locator": "K40行",
+      "parent_region_id": null,
+      "reason": "現行親IDとの明示対応がない。国の未収録と、面が他国に含まれるかの確認は別。郡を先行作成しない。"
+    },
+    {
+      "issue_id": "scope-missing-k48",
+      "external_country_id": "K48",
+      "name": "隠岐",
+      "historical_province_id": "province-p054",
+      "status": "unrepresented_parent_backlog",
+      "source_ref": "kg-index",
+      "locator": "K48行",
+      "parent_region_id": null,
+      "reason": "現行親IDとの明示対応がない。国の未収録と、面が他国に含まれるかの確認は別。郡を先行作成しない。"
+    },
+    {
+      "issue_id": "scope-missing-k58",
+      "external_country_id": "K58",
+      "name": "淡路",
+      "historical_province_id": "province-p034",
+      "status": "unrepresented_parent_backlog",
+      "source_ref": "kg-index",
+      "locator": "K58行",
+      "parent_region_id": null,
+      "reason": "現行親IDとの明示対応がない。国の未収録と、面が他国に含まれるかの確認は別。郡を先行作成しない。"
+    },
+    {
+      "issue_id": "scope-missing-k72",
+      "external_country_id": "K72",
+      "name": "壱岐",
+      "historical_province_id": "province-p063",
+      "status": "unrepresented_parent_backlog",
+      "source_ref": "kg-index",
+      "locator": "K72行",
+      "parent_region_id": null,
+      "reason": "現行親IDとの明示対応がない。国の未収録と、面が他国に含まれるかの確認は別。郡を先行作成しない。"
+    },
+    {
+      "issue_id": "scope-missing-k73",
+      "external_country_id": "K73",
+      "name": "對馬",
+      "historical_province_id": "province-p064",
+      "status": "unrepresented_parent_backlog",
+      "source_ref": "kg-index",
+      "locator": "K73行",
+      "parent_region_id": null,
+      "reason": "現行親IDとの明示対応がない。国の未収録と、面が他国に含まれるかの確認は別。郡を先行作成しない。"
+    },
+    {
+      "issue_id": "scope-missing-k74",
+      "external_country_id": "K74",
+      "name": "琉球",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K74行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k75",
+      "external_country_id": "K75",
+      "name": "石狩",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K75行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k76",
+      "external_country_id": "K76",
+      "name": "膽振",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K76行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k77",
+      "external_country_id": "K77",
+      "name": "後志",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K77行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k78",
+      "external_country_id": "K78",
+      "name": "渡島",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K78行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k79",
+      "external_country_id": "K79",
+      "name": "天塩",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K79行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k80",
+      "external_country_id": "K80",
+      "name": "北見",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K80行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k81",
+      "external_country_id": "K81",
+      "name": "日高",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K81行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k82",
+      "external_country_id": "K82",
+      "name": "十勝",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K82行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k83",
+      "external_country_id": "K83",
+      "name": "釧路",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K83行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k84",
+      "external_country_id": "K84",
+      "name": "根室",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K84行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    },
+    {
+      "issue_id": "scope-missing-k85",
+      "external_country_id": "K85",
+      "name": "千島",
+      "historical_province_id": null,
+      "status": "out_of_scope_later_partition_or_ryukyu",
+      "source_ref": "kg-index",
+      "locator": "K85行",
+      "parent_region_id": null,
+      "reason": "本工程の現行親領域がない。蝦夷地の明治分割区分・琉球は1582年の郡として取り込まない。"
+    }
+  ],
+  "uncovered_land": [
+    {
+      "issue_id": "land-outside-parent-000-000",
+      "canonical_feature_index": 0,
+      "canonical_part_index": 0,
+      "component_sha256": "1e4859d66c62caf92ee069c74838b89613c859c8f50e985262cd0a5900c7eca1",
+      "outside_area_world2": 11414.37397486611,
+      "canonical_component_area_world2": 11414.373974866112,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        130.09183911872384,
+        32.36988164146715
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-001-000",
+      "canonical_feature_index": 1,
+      "canonical_part_index": 0,
+      "component_sha256": "d6b96d7fbbf62b1e232a49819d185f96e283243d55b4c01a23ceea23585bcb35",
+      "outside_area_world2": 133.2447596120763,
+      "canonical_component_area_world2": 133.24475961207628,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        131.14521513986693,
+        34.77663621526482
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-002-000",
+      "canonical_feature_index": 2,
+      "canonical_part_index": 0,
+      "component_sha256": "69d94f8e9e53257cd0bc8becb1c5e8a607ae309ce930e8b5c04153cac05b0e7e",
+      "outside_area_world2": 61.82543386524066,
+      "canonical_component_area_world2": 61.82543386524066,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        129.85477801675475,
+        33.601562982389694
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-003-000",
+      "canonical_feature_index": 3,
+      "canonical_part_index": 0,
+      "component_sha256": "1842d029ee399a22c6fe74d8fdd0bc359a1fc88557d6c48a96440300f45f057e",
+      "outside_area_world2": 414.1891196328893,
+      "canonical_component_area_world2": 414.18911963288934,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        133.0959798513342,
+        34.21592387437725
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-004-000",
+      "canonical_feature_index": 4,
+      "canonical_part_index": 0,
+      "component_sha256": "270b3cae4018df88fc5d536ab54f0650ad617c452d439fd28a2040bec46b64c7",
+      "outside_area_world2": 106.0750211949123,
+      "canonical_component_area_world2": 106.07502119491232,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        131.7036372719833,
+        34.005631244550784
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-005-000",
+      "canonical_feature_index": 5,
+      "canonical_part_index": 0,
+      "component_sha256": "05edcf1997eb396ae41622243e3ab7d52d1cb14f4a9d94b6775c9c3accf5e819",
+      "outside_area_world2": 155.03382720221694,
+      "canonical_component_area_world2": 155.03382720221694,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        133.21222567943448,
+        34.26738854262365
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-006-000",
+      "canonical_feature_index": 6,
+      "canonical_part_index": 0,
+      "component_sha256": "8c42e94b2a13c1aecd4032b7f76b627a67dc97a63d625fa02c5c0072c1714c0c",
+      "outside_area_world2": 126.62801088266042,
+      "canonical_component_area_world2": 126.62801088266046,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        130.47138030863852,
+        32.56837293968327
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-007-000",
+      "canonical_feature_index": 7,
+      "canonical_part_index": 0,
+      "component_sha256": "0019344c99e5774cae15dcdba693b622de285bd906ae0b271f807d89f8620a2b",
+      "outside_area_world2": 320.4649163698127,
+      "canonical_component_area_world2": 320.4649163698127,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        129.42287825751595,
+        33.396301030972445
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-008-000",
+      "canonical_feature_index": 8,
+      "canonical_part_index": 0,
+      "component_sha256": "7ececfb09f5930ceb8eb197de61124670c769cab2e5b8327318ea7e8b1cebb1b",
+      "outside_area_world2": 1039.6087441956843,
+      "canonical_component_area_world2": 1039.6087441956847,
+      "outside_fraction": 0.9999999999999996,
+      "representative_point_lonlat": [
+        133.01994955856895,
+        36.0931282141916
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-009-000",
+      "canonical_feature_index": 9,
+      "canonical_part_index": 0,
+      "component_sha256": "c0e5ad26588e3ebe78f79180467b94f66517426f32a181c5095096f2809f479b",
+      "outside_area_world2": 95.4366003815814,
+      "canonical_component_area_world2": 95.43660038158139,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        132.14513819098687,
+        33.73437693411241
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-010-000",
+      "canonical_feature_index": 10,
+      "canonical_part_index": 0,
+      "component_sha256": "4b7d4fe3f1a5589cc6693fff8d6d9c5e9c0b229f4c9454108fe9a5870249767c",
+      "outside_area_world2": 137.07799648334654,
+      "canonical_component_area_world2": 137.07799648334657,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        130.85130082500868,
+        30.741758587468926
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-011-000",
+      "canonical_feature_index": 11,
+      "canonical_part_index": 0,
+      "component_sha256": "5ac1cc073ab3702e69dd622fcbd553912d355ce9c79d2eb892c8458d5bc845c0",
+      "outside_area_world2": 303.5016500249543,
+      "canonical_component_area_world2": 303.5016500249543,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        134.07067674116237,
+        34.47961206885452
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-012-000",
+      "canonical_feature_index": 12,
+      "canonical_part_index": 0,
+      "component_sha256": "0b3d538982381ba2c0c30c994e9077266acd4d370387dea3f6b5f9279297225d",
+      "outside_area_world2": 2728.7709705032935,
+      "canonical_component_area_world2": 2728.7709705032935,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        139.46289102776507,
+        42.146101498016904
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-013-000",
+      "canonical_feature_index": 13,
+      "canonical_part_index": 0,
+      "component_sha256": "0f2c6fb33dc7fa0f7fc30d1a194725e36f80727e6a61476b828915197c92dda7",
+      "outside_area_world2": 516.4665924281752,
+      "canonical_component_area_world2": 516.4665924281753,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        139.28032606279203,
+        34.37825393255981
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-014-000",
+      "canonical_feature_index": 14,
+      "canonical_part_index": 0,
+      "component_sha256": "a6e790215c445317692394847e9cf5391ff8bbddd199fd816405c458a2516013",
+      "outside_area_world2": 159.1785966812417,
+      "canonical_component_area_world2": 159.1785966812417,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        129.8276033127839,
+        31.79532468638428
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-015-000",
+      "canonical_feature_index": 15,
+      "canonical_part_index": 0,
+      "component_sha256": "09a8112026429ba16b56473830535253835b38128dd49488796b24a965253cc1",
+      "outside_area_world2": 4638.918622888813,
+      "canonical_component_area_world2": 4638.918622888812,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        133.2855551618889,
+        36.23699095214197
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-016-000",
+      "canonical_feature_index": 16,
+      "canonical_part_index": 0,
+      "component_sha256": "525de166cc26ae3a2fadbf651da0e64737c25c13cc08abf5dbf7c5aea363a63a",
+      "outside_area_world2": 888.7673679806695,
+      "canonical_component_area_world2": 888.7673679806699,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        129.87517324471048,
+        31.84599991255682
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-017-000",
+      "canonical_feature_index": 17,
+      "canonical_part_index": 0,
+      "component_sha256": "267761596d1f15adc680472a632c68da8ed8bc88fdf9fc3d3e28c69782e74ff3",
+      "outside_area_world2": 101.13635486398563,
+      "canonical_component_area_world2": 101.13635486398563,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        136.88902705557206,
+        34.48860231379418
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-018-000",
+      "canonical_feature_index": 18,
+      "canonical_part_index": 0,
+      "component_sha256": "c50e809bc8cbe76da527653f182242f1c9137221869d43c5a47683c96928f445",
+      "outside_area_world2": 57.55778859292776,
+      "canonical_component_area_world2": 57.55778859292776,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        129.58601449020554,
+        33.17890944583582
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-019-000",
+      "canonical_feature_index": 19,
+      "canonical_part_index": 0,
+      "component_sha256": "dcd8a85db94d84ee4b4360a20647b24d426763a24f318b5b46d68ad0ac240fdf",
+      "outside_area_world2": 142.97590552677542,
+      "canonical_component_area_world2": 142.97590552677536,
+      "outside_fraction": 1.0000000000000004,
+      "representative_point_lonlat": [
+        129.36568816721254,
+        34.281594904612234
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-020-000",
+      "canonical_feature_index": 20,
+      "canonical_part_index": 0,
+      "component_sha256": "94e05d137babcc9b960bf7959a7081810c7d73e7a5c0a785305e4ef22a478514",
+      "outside_area_world2": 73.11687650469742,
+      "canonical_component_area_world2": 73.11687650469742,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        130.41726421149292,
+        32.38579245463638
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-021-000",
+      "canonical_feature_index": 21,
+      "canonical_part_index": 0,
+      "component_sha256": "5f6601633e5bab166ee715646ed7c7f5277df303b73e63c25e079c51f0bfc114",
+      "outside_area_world2": 248.43978159659895,
+      "canonical_component_area_world2": 248.43978159659892,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        130.29011749819796,
+        30.78749952515552
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-022-000",
+      "canonical_feature_index": 22,
+      "canonical_part_index": 0,
+      "component_sha256": "630122d1617125594d860b0d5749f1af27883ded50997fadabb98e759739b360",
+      "outside_area_world2": 54.78660703299173,
+      "canonical_component_area_world2": 54.78660703299174,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        128.94206753995286,
+        32.913466084183575
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-023-000",
+      "canonical_feature_index": 23,
+      "canonical_part_index": 0,
+      "component_sha256": "d8625f03fb9f896fa7a07f720432c01f3b6a7eebfe91737161c1cb38160e4e92",
+      "outside_area_world2": 290.9629092556674,
+      "canonical_component_area_world2": 290.9629092556675,
+      "outside_fraction": 0.9999999999999996,
+      "representative_point_lonlat": [
+        129.5436353521315,
+        33.48963775449968
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-024-000",
+      "canonical_feature_index": 24,
+      "canonical_part_index": 0,
+      "component_sha256": "181b66f6cb209a4f551b6d6d436742d857964145af2916da4b95cafd556c74db",
+      "outside_area_world2": 329.28572034332706,
+      "canonical_component_area_world2": 329.28572034332717,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        139.60391138592965,
+        33.87604414446521
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-025-000",
+      "canonical_feature_index": 25,
+      "canonical_part_index": 0,
+      "component_sha256": "f60072bab2a806188fad7943a94ffa1bed09b5dcf54bab43534ee4eff7aa40bf",
+      "outside_area_world2": 151.9480651362682,
+      "canonical_component_area_world2": 151.94806513626818,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        133.9815712574902,
+        34.46380286169756
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-026-000",
+      "canonical_feature_index": 26,
+      "canonical_part_index": 0,
+      "component_sha256": "94e89dc42b9eade122b0328ab870188f10a54472085733664dd3143a2c60c004",
+      "outside_area_world2": 67.28605915691031,
+      "canonical_component_area_world2": 67.28605915691031,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        132.5058993531001,
+        33.97814069801237
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-027-000",
+      "canonical_feature_index": 27,
+      "canonical_part_index": 0,
+      "component_sha256": "c3db2e5274d575bb8d1badaf0315bb1036264e60a7d4420349556e914ecce129",
+      "outside_area_world2": 46.935184733245215,
+      "canonical_component_area_world2": 46.93518473324524,
+      "outside_fraction": 0.9999999999999996,
+      "representative_point_lonlat": [
+        132.53353643220603,
+        33.93261825612319
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-028-000",
+      "canonical_feature_index": 28,
+      "canonical_part_index": 0,
+      "component_sha256": "58aca957af91c88da76af4adacffa7436b6e8521898eb6879829b20e2b88739c",
+      "outside_area_world2": 110.17812482737276,
+      "canonical_component_area_world2": 110.17812482737276,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        141.31950816065952,
+        44.42792242564418
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-029-000",
+      "canonical_feature_index": 29,
+      "canonical_part_index": 0,
+      "component_sha256": "e10825589dab5d62d42e201b5c0e06b487d7c10fa167e3faae9a4d866d89c78a",
+      "outside_area_world2": 210.71807634604335,
+      "canonical_component_area_world2": 210.71807634604335,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        133.70809903541084,
+        34.374883168312195
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-030-000",
+      "canonical_feature_index": 30,
+      "canonical_part_index": 0,
+      "component_sha256": "e3d5d3fce2e734748b5f6db38ca2ecd5746abc2b9ab54aa7c567cd8ea1e8ab48",
+      "outside_area_world2": 7080.942572685677,
+      "canonical_component_area_world2": 7080.942572685682,
+      "outside_fraction": 0.9999999999999993,
+      "representative_point_lonlat": [
+        128.753709468904,
+        32.68338132662491
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-031-000",
+      "canonical_feature_index": 31,
+      "canonical_part_index": 0,
+      "component_sha256": "b73ebcc70d94906417965d769b5adbd1511dfab19350e4305971880077eddd02",
+      "outside_area_world2": 310.833103135053,
+      "canonical_component_area_world2": 310.8331031350531,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        132.2309302190721,
+        33.78240088293722
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-032-000",
+      "canonical_feature_index": 32,
+      "canonical_part_index": 0,
+      "component_sha256": "8cd36c89316770ae1be7fa32607a23868b41f9405fdc6eadd6a3696bb9174cbc",
+      "outside_area_world2": 63.434749535369306,
+      "canonical_component_area_world2": 63.434749535369306,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        132.66330947297428,
+        33.96315436843727
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-033-000",
+      "canonical_feature_index": 33,
+      "canonical_part_index": 0,
+      "component_sha256": "ee4c55099cd852c4aff95fdf7b917cacdf73234852c4c4a4c0b8f837b09d0cf7",
+      "outside_area_world2": 332.33548138469985,
+      "canonical_component_area_world2": 332.3354813847,
+      "outside_fraction": 0.9999999999999994,
+      "representative_point_lonlat": [
+        130.2348664954611,
+        32.27425842794451
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-035-000",
+      "canonical_feature_index": 35,
+      "canonical_part_index": 0,
+      "component_sha256": "38ca738b75f2af066f8a65dc068b578ba4f24bb5b15fc37c02739f532397e599",
+      "outside_area_world2": 45.515893307533915,
+      "canonical_component_area_world2": 45.51589330753391,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        133.3599368900265,
+        33.997971253613365
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-036-000",
+      "canonical_feature_index": 36,
+      "canonical_part_index": 0,
+      "component_sha256": "fcef08b57fbf972d00b97cace55b6f1a86e999db6c12eb240e31e41a5d6a246d",
+      "outside_area_world2": 42.76567041990476,
+      "canonical_component_area_world2": 42.76567041990476,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        132.53093181575312,
+        34.061358056771354
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-037-000",
+      "canonical_feature_index": 37,
+      "canonical_part_index": 0,
+      "component_sha256": "0711315eb466ad9a3e59d1c5fbd7d2c4ddebece30d8429c5f6adb98aad0c4cd9",
+      "outside_area_world2": 120.22884243603434,
+      "canonical_component_area_world2": 120.22884243603434,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        136.81410769732722,
+        34.855539717120124
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-038-000",
+      "canonical_feature_index": 38,
+      "canonical_part_index": 0,
+      "component_sha256": "a5e7570e70626f8fc4e472b632777a01aa0f64a7929fbbfda635a1940b694dc7",
+      "outside_area_world2": 55.42222791072896,
+      "canonical_component_area_world2": 55.422227910728964,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        128.39819818873798,
+        32.04601732225946
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-039-000",
+      "canonical_feature_index": 39,
+      "canonical_part_index": 0,
+      "component_sha256": "64e68f480ff1c0c252a03e9f8739fb6fd3b3742fcc96f18dc74708097b5760ae",
+      "outside_area_world2": 3636.747730319374,
+      "canonical_component_area_world2": 3636.7477303193755,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        129.07285973146068,
+        32.99266460347232
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-040-000",
+      "canonical_feature_index": 40,
+      "canonical_part_index": 0,
+      "component_sha256": "d362614eec955693e9537a64ecacb4708ea0d9c4d9adf5a3b14064f343c7f5bc",
+      "outside_area_world2": 1156.7800165953458,
+      "canonical_component_area_world2": 1156.780016595346,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        130.15609542451054,
+        32.168239636708215
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-041-000",
+      "canonical_feature_index": 41,
+      "canonical_part_index": 0,
+      "component_sha256": "59e75c74843a5bd96fc356501be9d40b9d81973019d4243784c176ac0d94fbb7",
+      "outside_area_world2": 467.2498151823648,
+      "canonical_component_area_world2": 467.24981518236484,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        128.9352670034098,
+        32.842298314487934
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-042-000",
+      "canonical_feature_index": 42,
+      "canonical_part_index": 0,
+      "component_sha256": "da5d630a52dd71b86b756f885a06e0c1a5ab66b24838047ba238a8b6fa3a323b",
+      "outside_area_world2": 94.28558153382154,
+      "canonical_component_area_world2": 94.28558153382154,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        132.54616301509574,
+        33.97735728631052
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-043-000",
+      "canonical_feature_index": 43,
+      "canonical_part_index": 0,
+      "component_sha256": "ffd4f9e728847f86aa04cbd0d54078e19869dbbc5192ab53b1f91a29d909fed8",
+      "outside_area_world2": 73.35629050950834,
+      "canonical_component_area_world2": 73.35629050950831,
+      "outside_fraction": 1.0000000000000004,
+      "representative_point_lonlat": [
+        132.35956822625755,
+        33.203789682979185
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-044-000",
+      "canonical_feature_index": 44,
+      "canonical_part_index": 0,
+      "component_sha256": "f8d52c3379f03c6197262c43b1e94871f7eb58a0bd61240494dedc7ca4af17a8",
+      "outside_area_world2": 345.50129777761526,
+      "canonical_component_area_world2": 345.5012977776154,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        132.73249754208533,
+        34.17935920247149
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-045-000",
+      "canonical_feature_index": 45,
+      "canonical_part_index": 0,
+      "component_sha256": "72a97a1bee978a895be0f2320045a27d8c4d00abaa81945b5077d0ef8fd4d95c",
+      "outside_area_world2": 44.24644045200773,
+      "canonical_component_area_world2": 44.24644045200775,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        132.30523198630547,
+        34.19281586278335
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-046-000",
+      "canonical_feature_index": 46,
+      "canonical_part_index": 0,
+      "component_sha256": "a919035f54cf8620d318cf84ec69107f06653f5da74f8f9c673b3b6c5b46841a",
+      "outside_area_world2": 59.775664252864814,
+      "canonical_component_area_world2": 59.775664252864814,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        139.21237185710007,
+        34.326772311474095
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-047-000",
+      "canonical_feature_index": 47,
+      "canonical_part_index": 0,
+      "component_sha256": "cea32071af92e8b27be5b127cd672d52bca6cf450b309400c43a6b98ba0f6546",
+      "outside_area_world2": 495.60761102426443,
+      "canonical_component_area_world2": 495.6076110242643,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        129.11370293362066,
+        33.27269494517339
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-048-000",
+      "canonical_feature_index": 48,
+      "canonical_part_index": 0,
+      "component_sha256": "e740647bb371efb8e3c1fbde199abfbf33fff9fb0948099fdef8e6d099761929",
+      "outside_area_world2": 2831.5076539539637,
+      "canonical_component_area_world2": 2831.507653953965,
+      "outside_fraction": 0.9999999999999996,
+      "representative_point_lonlat": [
+        132.26037143422684,
+        33.895834492050476
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-049-000",
+      "canonical_feature_index": 49,
+      "canonical_part_index": 0,
+      "component_sha256": "513b342a6149e440ec2f66e9e7d1ec6b824d3a3914e34d64226763f16bd40594",
+      "outside_area_world2": 124.69700823136994,
+      "canonical_component_area_world2": 124.69700823136994,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        129.2397870290772,
+        33.00454589380879
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-050-000",
+      "canonical_feature_index": 50,
+      "canonical_part_index": 0,
+      "component_sha256": "2ad158b73ab5b2e2454f4819addda201f389845c73f6e92bd50696c4cbb322fd",
+      "outside_area_world2": 656.7892269308791,
+      "canonical_component_area_world2": 656.7892269308793,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        128.99741974247044,
+        32.88783191226608
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-051-000",
+      "canonical_feature_index": 51,
+      "canonical_part_index": 0,
+      "component_sha256": "d29bfc1897a45579e69447ccf05bbf2e0acca3257862617a1d04d4e61664211c",
+      "outside_area_world2": 604.4607325056206,
+      "canonical_component_area_world2": 604.4607325056207,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        130.43117267315932,
+        32.5809233353303
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-052-000",
+      "canonical_feature_index": 52,
+      "canonical_part_index": 0,
+      "component_sha256": "9274db1e9ceb14fcd0815c83da4520139d9cb677f7721d87f26129cfb98c9827",
+      "outside_area_world2": 1943.4703016810854,
+      "canonical_component_area_world2": 1943.470301681085,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        139.40443318910522,
+        34.72858283118975
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-053-000",
+      "canonical_feature_index": 53,
+      "canonical_part_index": 0,
+      "component_sha256": "6332176507e0c61192ccd27716b9e4c52ee67e5065662494c13021175bf52ce3",
+      "outside_area_world2": 77.45091389226508,
+      "canonical_component_area_world2": 77.45091389226508,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        132.78334140789548,
+        34.18037365833332
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-054-000",
+      "canonical_feature_index": 54,
+      "canonical_part_index": 0,
+      "component_sha256": "3619c3be3d280a402c7ca993706efe1564785d75955a2763e11f209a60ceaf41",
+      "outside_area_world2": 49.433977829451024,
+      "canonical_component_area_world2": 49.433977829451024,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        134.82079607370406,
+        34.16662342992766
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-055-000",
+      "canonical_feature_index": 55,
+      "canonical_part_index": 0,
+      "component_sha256": "1b21bb5bc23a1d94637e303097e24c962812e0a046fbb597a189bf56d3ab7f34",
+      "outside_area_world2": 38.9712278306267,
+      "canonical_component_area_world2": 38.971227830626695,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        129.77327719266938,
+        32.70364368249792
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-056-000",
+      "canonical_feature_index": 56,
+      "canonical_part_index": 0,
+      "component_sha256": "596c23e0628de35b97023cf8bf7861875fefb4a747d8aae7feb3dd679bf38278",
+      "outside_area_world2": 135.33268023211053,
+      "canonical_component_area_world2": 135.3326802321105,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        133.7728495348543,
+        34.384627138945866
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-057-000",
+      "canonical_feature_index": 57,
+      "canonical_part_index": 0,
+      "component_sha256": "f56e937051bd8f4c9222c9cb54a244398cacbaa8ddb934e8a3b870ad2d236e96",
+      "outside_area_world2": 175.9095014793326,
+      "canonical_component_area_world2": 175.90950147933262,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        141.61449849328204,
+        38.85774709958474
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-058-000",
+      "canonical_feature_index": 58,
+      "canonical_part_index": 0,
+      "component_sha256": "ebc9510f5fdc82b833193979181a2bff73355a186b3bcdf2ba605fd564cc2298",
+      "outside_area_world2": 62.8352015393084,
+      "canonical_component_area_world2": 62.8352015393084,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        131.82263421244033,
+        32.66448746810505
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-059-000",
+      "canonical_feature_index": 59,
+      "canonical_part_index": 0,
+      "component_sha256": "8c8824c89d0c4c62ab05bdf8175486bc2f9cf070aec6a494109bf5c62863e01e",
+      "outside_area_world2": 762.1287727683568,
+      "canonical_component_area_world2": 762.1287727683568,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        133.05410536519597,
+        34.152367520500405
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-060-000",
+      "canonical_feature_index": 60,
+      "canonical_part_index": 0,
+      "component_sha256": "212181591460e3bf078886ee680dd6879344b2417e0c3223d5b7d73a29b1c5db",
+      "outside_area_world2": 157.68586031855727,
+      "canonical_component_area_world2": 157.68586031855727,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        133.5358171547793,
+        34.38045106967039
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-061-000",
+      "canonical_feature_index": 61,
+      "canonical_part_index": 0,
+      "component_sha256": "358525610183d3d980c022d68b2d5b29bb758db841d50e6e0fb8559c8b5129ef",
+      "outside_area_world2": 694.8497524502136,
+      "canonical_component_area_world2": 694.8497524502134,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        132.8877424167494,
+        34.24400958533925
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-062-000",
+      "canonical_feature_index": 62,
+      "canonical_part_index": 0,
+      "component_sha256": "dcbae823374d2d77d5c293cbc22ae4b25318f788a994ee9cb94f0abee54ef01b",
+      "outside_area_world2": 85.89373632308174,
+      "canonical_component_area_world2": 85.89373632308174,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        131.74258751622637,
+        34.035470890912734
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-063-000",
+      "canonical_feature_index": 63,
+      "canonical_part_index": 0,
+      "component_sha256": "c0eb7fbd770829bb4d89be3d3ae02d6d019766bb220447ed50605a652f5d317f",
+      "outside_area_world2": 194.62633262805525,
+      "canonical_component_area_world2": 194.62633262805528,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        135.23773769104818,
+        34.445035639649014
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-064-000",
+      "canonical_feature_index": 64,
+      "canonical_part_index": 0,
+      "component_sha256": "df17582c234d2ef0bb2f2dd23e88791dcb0a24b62be7c7ab199b066470b18faf",
+      "outside_area_world2": 68.72146809154837,
+      "canonical_component_area_world2": 68.72146809154839,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        134.57817554192758,
+        34.66298491636034
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-065-000",
+      "canonical_feature_index": 65,
+      "canonical_part_index": 0,
+      "component_sha256": "a3e5b075d2b56487117205bbce501641e1d51a5080a4c40808c71978f41b5e60",
+      "outside_area_world2": 292.6631507104464,
+      "canonical_component_area_world2": 292.6631507104464,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        129.9331171199311,
+        30.831368541916557
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-066-000",
+      "canonical_feature_index": 66,
+      "canonical_part_index": 0,
+      "component_sha256": "f5d414464dd8630accc9a726c156d03b345133d1f6931902c41f35a11cbd1c1e",
+      "outside_area_world2": 1736.1238590042783,
+      "canonical_component_area_world2": 1736.1238590042788,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        129.73478473815297,
+        31.714941974958506
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-067-000",
+      "canonical_feature_index": 67,
+      "canonical_part_index": 0,
+      "component_sha256": "4232d9c3d98f1557d266c5281e0e20fbe9bf4ca5dc9482d0a53f546ca1f772bb",
+      "outside_area_world2": 38.382497920281956,
+      "canonical_component_area_world2": 38.382497920281956,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        133.15888904541828,
+        34.239634389606934
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-068-000",
+      "canonical_feature_index": 68,
+      "canonical_part_index": 0,
+      "component_sha256": "cec4b85fc8d8144610e09e78c9ba07cc59453e0452ee56c8191ebf96b3dc5764",
+      "outside_area_world2": 114.47899686944837,
+      "canonical_component_area_world2": 114.47899686944837,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        130.42462074512736,
+        33.90443383284417
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-069-000",
+      "canonical_feature_index": 69,
+      "canonical_part_index": 0,
+      "component_sha256": "3f2d3d5a1ddd475349f4c6e509d315297fccff405e4c72a67a8c50dd12596479",
+      "outside_area_world2": 933.6874982961435,
+      "canonical_component_area_world2": 933.6874982961438,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        136.97886015679302,
+        37.13241889495256
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-070-000",
+      "canonical_feature_index": 70,
+      "canonical_part_index": 0,
+      "component_sha256": "0daddb54eaca11c465befe34aab9cd2d8c1ae9be5ce890ffdefcaa1ab63e09cc",
+      "outside_area_world2": 256.2988073935603,
+      "canonical_component_area_world2": 256.29880739356037,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        130.34899414394337,
+        32.33435250258053
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-071-000",
+      "canonical_feature_index": 71,
+      "canonical_part_index": 0,
+      "component_sha256": "3dc47f6a3dbce8f7e88577cb64b14aba7bdf5baed47919c630a87f4886813e7c",
+      "outside_area_world2": 107.94098931752897,
+      "canonical_component_area_world2": 107.94098931752895,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        130.02971439093557,
+        32.17304703561035
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-072-000",
+      "canonical_feature_index": 72,
+      "canonical_part_index": 0,
+      "component_sha256": "998fe12e8b406defaf65b7c2df7cf42877084fb64bcf775585430051b0f5bc9e",
+      "outside_area_world2": 113.1767882733386,
+      "canonical_component_area_world2": 113.17678827333864,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        134.5293466799715,
+        34.67263825062652
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-073-000",
+      "canonical_feature_index": 73,
+      "canonical_part_index": 0,
+      "component_sha256": "c872fff0eb5dabaeb9a3e3a2ddb741d5347abefe05524408bbe110ac9d3394fb",
+      "outside_area_world2": 1128.018012338319,
+      "canonical_component_area_world2": 1128.018012338319,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        133.0216382439298,
+        34.246700462389406
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-074-000",
+      "canonical_feature_index": 74,
+      "canonical_part_index": 0,
+      "component_sha256": "eb538af7a7e870448ac395f9cb4c4fd8e545ddcdbc5117e4f537453a71c37adf",
+      "outside_area_world2": 3098.218752606821,
+      "canonical_component_area_world2": 3098.218752606821,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        134.26806319438677,
+        34.485122634496484
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-075-000",
+      "canonical_feature_index": 75,
+      "canonical_part_index": 0,
+      "component_sha256": "81c93cf3fe500c0eb219d9dbf6e24002c80408e26c861c3dda5546424cde739e",
+      "outside_area_world2": 190.29418745181357,
+      "canonical_component_area_world2": 190.2941874518136,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        141.56699751276238,
+        38.29242797321688
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-076-000",
+      "canonical_feature_index": 76,
+      "canonical_part_index": 0,
+      "component_sha256": "cb99e4f65b01bc8cae77c60748eabc127ce04d2025c522d4bca537b473161dc7",
+      "outside_area_world2": 139.91130661846694,
+      "canonical_component_area_world2": 139.9113066184669,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        134.47738082821311,
+        34.65593620764501
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-077-000",
+      "canonical_feature_index": 77,
+      "canonical_part_index": 0,
+      "component_sha256": "db04cd58fe661830255cd509f00e778c3bb7e6475e21bc48cac3a9300db8c2ea",
+      "outside_area_world2": 140.69330595721584,
+      "canonical_component_area_world2": 140.6933059572158,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        131.96859938433073,
+        33.78311351767059
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-078-000",
+      "canonical_feature_index": 78,
+      "canonical_part_index": 0,
+      "component_sha256": "1eb926eb650633235bfda049ab106b09fde83fd8d306a9844c97add953a3c50c",
+      "outside_area_world2": 104.74906652492294,
+      "canonical_component_area_world2": 104.74906652492294,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        136.89270587626575,
+        34.52810457362189
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-079-000",
+      "canonical_feature_index": 79,
+      "canonical_part_index": 0,
+      "component_sha256": "2336eef99c6816ad784444d868ad7c89d91c19a54ce30df6e4c945b48ca6cf25",
+      "outside_area_world2": 324.68392223337725,
+      "canonical_component_area_world2": 324.68392223337725,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        143.8739520217684,
+        44.15791843954806
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-080-000",
+      "canonical_feature_index": 80,
+      "canonical_part_index": 0,
+      "component_sha256": "b9f89b6b6a99a01676fb5621b979c70c79c850d167f1601825f866f11df352cd",
+      "outside_area_world2": 11515.409271830487,
+      "canonical_component_area_world2": 11515.409271830486,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        134.83310198427404,
+        34.39897333510506
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-081-000",
+      "canonical_feature_index": 81,
+      "canonical_part_index": 0,
+      "component_sha256": "e9813c3a36e90d844e72572345f708d29c8f052e6108f2c5b1a3d2ca8a8be124",
+      "outside_area_world2": 201.61905511737586,
+      "canonical_component_area_world2": 201.6190551173758,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        132.6727458267723,
+        33.8987504429148
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-082-000",
+      "canonical_feature_index": 82,
+      "canonical_part_index": 0,
+      "component_sha256": "bc5dd289e74e1b936d83807d338a06c905e441bec8fde1c0005b7335ef324882",
+      "outside_area_world2": 103.45706133128867,
+      "canonical_component_area_world2": 103.4570613312887,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        130.31757040690638,
+        32.355458373705645
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-083-000",
+      "canonical_feature_index": 83,
+      "canonical_part_index": 0,
+      "component_sha256": "afea849377d605290394e3358e1f73f378482ab8ed67e23e504882c06699ef12",
+      "outside_area_world2": 53.20824925289736,
+      "canonical_component_area_world2": 53.20824925289735,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        139.68546802778715,
+        33.12792946459363
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-084-000",
+      "canonical_feature_index": 84,
+      "canonical_part_index": 0,
+      "component_sha256": "c01a19e2b24d386ab476043da2196f92e39dd210f5417556142456bec154d148",
+      "outside_area_world2": 323.08869592462565,
+      "canonical_component_area_world2": 323.08869592462577,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        132.83289222625396,
+        34.17294062581506
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-085-000",
+      "canonical_feature_index": 85,
+      "canonical_part_index": 0,
+      "component_sha256": "a1ba6df613897cc8bc34af9dc2a0dadbeeb43565dc05ae63eeb641c248b7d5c8",
+      "outside_area_world2": 135.122664202712,
+      "canonical_component_area_world2": 135.122664202712,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        141.47602864667627,
+        38.26612898401688
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-086-000",
+      "canonical_feature_index": 86,
+      "canonical_part_index": 0,
+      "component_sha256": "e425518fc3997612f092d3ba99a8c2920a3e1cd4085a25e1a9834504f91c7d0f",
+      "outside_area_world2": 195.75618181723803,
+      "canonical_component_area_world2": 195.75618181723803,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        135.82753811935353,
+        33.465156107880134
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-087-000",
+      "canonical_feature_index": 87,
+      "canonical_part_index": 0,
+      "component_sha256": "d5e4ce4d0449cc044b257465425e7fa81ad7f2745582e8839db360a340f9311e",
+      "outside_area_world2": 2828.5721118861284,
+      "canonical_component_area_world2": 2828.5721118861297,
+      "outside_fraction": 0.9999999999999996,
+      "representative_point_lonlat": [
+        129.72723619910582,
+        33.78495079916697
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-088-000",
+      "canonical_feature_index": 88,
+      "canonical_part_index": 0,
+      "component_sha256": "c31a2153094add5256e60d17f3ea83c125c375be4b9a8799d52f930ccbf552e1",
+      "outside_area_world2": 208.57247898941546,
+      "canonical_component_area_world2": 208.5724789894155,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        132.5551174118107,
+        32.72932038068007
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-089-000",
+      "canonical_feature_index": 89,
+      "canonical_part_index": 0,
+      "component_sha256": "d148fa1d6fe18a55744cf12596080a9fbb94e0adb0e13326b870f1a11f55433c",
+      "outside_area_world2": 3972.9672416293474,
+      "canonical_component_area_world2": 3972.967241629348,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        130.31600916243434,
+        32.44979972873568
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-090-000",
+      "canonical_feature_index": 90,
+      "canonical_part_index": 0,
+      "component_sha256": "beaa722e3c48c94156f9883620f565ccd6daeb5644bc34115a5c69d7a060da2e",
+      "outside_area_world2": 49.36427244510081,
+      "canonical_component_area_world2": 49.36427244510081,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        128.59684682720805,
+        32.7259384759486
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-091-000",
+      "canonical_feature_index": 91,
+      "canonical_part_index": 0,
+      "component_sha256": "88683f1dc7c7bb644ca7eb74b2e5728e58b82e757811d22c653bbda7e5ce0ae9",
+      "outside_area_world2": 8988.758505315096,
+      "canonical_component_area_world2": 8988.758505315096,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        130.99648734002844,
+        30.59044583172116
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-092-000",
+      "canonical_feature_index": 92,
+      "canonical_part_index": 0,
+      "component_sha256": "36b7b9a1584ab84a0e57096de5bdcafd339169d32562fe86686e7e3987192822",
+      "outside_area_world2": 122.7533690563769,
+      "canonical_component_area_world2": 122.75336905637691,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        129.61072749573776,
+        32.93230303459913
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-093-000",
+      "canonical_feature_index": 93,
+      "canonical_part_index": 0,
+      "component_sha256": "385d0f83a0c54526be686c4fe711d3835d70afc83d7969e57bf1d09cd991387c",
+      "outside_area_world2": 91.99787079643002,
+      "canonical_component_area_world2": 91.99787079643,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        130.1715007026028,
+        32.248136356364625
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-094-000",
+      "canonical_feature_index": 94,
+      "canonical_part_index": 0,
+      "component_sha256": "a58602f658fca1bf94040e7500a3ad18638db761b5ca1e3791cb8a2712b7d892",
+      "outside_area_world2": 149.4029432579658,
+      "canonical_component_area_world2": 149.4029432579658,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        130.49515474360442,
+        32.59301216862921
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-095-000",
+      "canonical_feature_index": 95,
+      "canonical_part_index": 0,
+      "component_sha256": "f0e93aa459aab56b3a69ca1fabbdca2648060b0e84ee41663a09910f652ffb5e",
+      "outside_area_world2": 394.2719662782934,
+      "canonical_component_area_world2": 394.2719662782936,
+      "outside_fraction": 0.9999999999999996,
+      "representative_point_lonlat": [
+        129.60023169105838,
+        33.0318341394559
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-096-000",
+      "canonical_feature_index": 96,
+      "canonical_part_index": 0,
+      "component_sha256": "00c7cb672781b5c4d22615b6bc37aaf0db80961b3ce747c350a8fef6381532b2",
+      "outside_area_world2": 42.60503008833867,
+      "canonical_component_area_world2": 42.605030088338665,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        129.3469202891392,
+        33.014497841346746
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-097-000",
+      "canonical_feature_index": 97,
+      "canonical_part_index": 0,
+      "component_sha256": "851eed4d4e9f180c696d42a259268f6fff82cd5bb6fe677a3561e941fe400d84",
+      "outside_area_world2": 41.85512287599708,
+      "canonical_component_area_world2": 41.85512287599707,
+      "outside_fraction": 1.0000000000000004,
+      "representative_point_lonlat": [
+        134.0489233938034,
+        34.393173675105515
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-098-000",
+      "canonical_feature_index": 98,
+      "canonical_part_index": 0,
+      "component_sha256": "ee5c0856edead542e50dd2c0433fcf9ffacf4f36f7e3a2a0e646695e067078aa",
+      "outside_area_world2": 750.3602584507727,
+      "canonical_component_area_world2": 750.3602584507728,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        128.8536437157319,
+        32.798577326141476
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-099-000",
+      "canonical_feature_index": 99,
+      "canonical_part_index": 0,
+      "component_sha256": "30773bb12486d79a9e2dd328da5c935c51b183cbe6914e988f3282bfa76e8e86",
+      "outside_area_world2": 385.5760011277987,
+      "canonical_component_area_world2": 385.57600112779875,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        132.61879127094795,
+        33.982455936525646
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-100-000",
+      "canonical_feature_index": 100,
+      "canonical_part_index": 0,
+      "component_sha256": "696143b364c8274d0e102395e0ea1820b0780f9db30b0d7691420af3fb00f5f7",
+      "outside_area_world2": 268.19601494336786,
+      "canonical_component_area_world2": 268.1960149433678,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        129.0561686141195,
+        33.20080735133777
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-101-000",
+      "canonical_feature_index": 101,
+      "canonical_part_index": 0,
+      "component_sha256": "5b81769f829ac5053b38cd0895ff00cec174aac8edfdfca28e2d8983967d1095",
+      "outside_area_world2": 47.06593885128998,
+      "canonical_component_area_world2": 47.06593885128998,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        130.78712367714115,
+        34.10673257251572
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-102-000",
+      "canonical_feature_index": 102,
+      "canonical_part_index": 0,
+      "component_sha256": "66a93aac07b04ef95f2557019b884471ccfbf537be5bd8e2085578bc99d7034e",
+      "outside_area_world2": 181.06365435513504,
+      "canonical_component_area_world2": 181.06365435513501,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        139.23881642836838,
+        38.462344796200746
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-103-000",
+      "canonical_feature_index": 103,
+      "canonical_part_index": 0,
+      "component_sha256": "9e908e3594fa7f2516e99866d4655c3dea9abba5e9ac695901923239a46ec750",
+      "outside_area_world2": 266.616458220813,
+      "canonical_component_area_world2": 266.6164582208129,
+      "outside_fraction": 1.0000000000000004,
+      "representative_point_lonlat": [
+        131.85522028218622,
+        33.959352704545424
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-104-000",
+      "canonical_feature_index": 104,
+      "canonical_part_index": 0,
+      "component_sha256": "21ef1abdd9014b0404a12c94d069f6586e70ba611c9a6eb915cf3e86df3efb92",
+      "outside_area_world2": 46.737697466782706,
+      "canonical_component_area_world2": 46.737697466782706,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        133.43872295905462,
+        34.34467065076097
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-105-000",
+      "canonical_feature_index": 105,
+      "canonical_part_index": 0,
+      "component_sha256": "43ecc3233d76c8aba3d634a532d0791a3e4e2aa014f854e18b7d1487f9ee9528",
+      "outside_area_world2": 86.07011443404011,
+      "canonical_component_area_world2": 86.07011443404011,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        133.6378433686427,
+        34.27130621452741
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-106-000",
+      "canonical_feature_index": 106,
+      "canonical_part_index": 0,
+      "component_sha256": "a58ff94024c941d84c06389788632ab4c3157f6261f2e9d71885f78f5922c93a",
+      "outside_area_world2": 557.4306527725369,
+      "canonical_component_area_world2": 557.4306527725367,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        133.1040192428973,
+        36.07160131486769
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-107-000",
+      "canonical_feature_index": 107,
+      "canonical_part_index": 0,
+      "component_sha256": "83d77e30ebe5742f7d8f6d17d070719945766db50a24f3b6d0b48edb3b1be1ad",
+      "outside_area_world2": 39.37060439859794,
+      "canonical_component_area_world2": 39.37060439859793,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        132.01599040678428,
+        33.85717218600018
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-108-000",
+      "canonical_feature_index": 108,
+      "canonical_part_index": 0,
+      "component_sha256": "5149b932d2c80e25e1ea232ed55a72b52808c138a4e8acb1be21abcd561290bd",
+      "outside_area_world2": 42.88400700152756,
+      "canonical_component_area_world2": 42.88400700152756,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        131.40963714261696,
+        34.502806179649575
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-109-000",
+      "canonical_feature_index": 109,
+      "canonical_part_index": 0,
+      "component_sha256": "57f3ab30718086d64fc681bfdb6c4db727e7df3add7185dbf9c99221e00fabaf",
+      "outside_area_world2": 76.99014847672491,
+      "canonical_component_area_world2": 76.99014847672491,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        130.86570728242995,
+        34.36003955665496
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-110-000",
+      "canonical_feature_index": 110,
+      "canonical_part_index": 0,
+      "component_sha256": "a411432b65f7f65cf3cfc89df34fe06ac72c1bfd203a060c17def70cea03627e",
+      "outside_area_world2": 56.12228549519713,
+      "canonical_component_area_world2": 56.122285495197126,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        141.41626137807077,
+        38.29719549973362
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-111-000",
+      "canonical_feature_index": 111,
+      "canonical_part_index": 0,
+      "component_sha256": "a13858e4b6932de11dbf1a07880f40984e0ac5869eaa519cfa155e5e527b7489",
+      "outside_area_world2": 93.92541100282081,
+      "canonical_component_area_world2": 93.92541100282081,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        130.1999597040857,
+        32.22480744483758
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-112-000",
+      "canonical_feature_index": 112,
+      "canonical_part_index": 0,
+      "component_sha256": "246ced3f2bdfa4943bc74db14f798526256308e662b7173afb601d62b6f14f2e",
+      "outside_area_world2": 80.2049304281425,
+      "canonical_component_area_world2": 80.2049304281425,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        129.52384246397918,
+        33.43996811779861
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-113-000",
+      "canonical_feature_index": 113,
+      "canonical_part_index": 0,
+      "component_sha256": "feea177ce0ab67eb558038dbf5312ebe2d9e265fff97f2365994b967add572b7",
+      "outside_area_world2": 41.6239252054437,
+      "canonical_component_area_world2": 41.62392520544369,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        133.67401905794713,
+        34.31470209529747
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-114-000",
+      "canonical_feature_index": 114,
+      "canonical_part_index": 0,
+      "component_sha256": "088eab9d3ea0de938313f6a1ea3517f0d16ed549f1f46169d4948d4edeaf8853",
+      "outside_area_world2": 3438.281099945848,
+      "canonical_component_area_world2": 3438.2810999458484,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        141.23193324832147,
+        45.171197014090566
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-115-000",
+      "canonical_feature_index": 115,
+      "canonical_part_index": 0,
+      "component_sha256": "f68f684ef3afd9d305d2b7d409589a8a6d5945294dba89dff3128897bc72b9c5",
+      "outside_area_world2": 153.34061208191096,
+      "canonical_component_area_world2": 153.34061208191102,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        132.6648811018034,
+        34.187432269022345
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-116-000",
+      "canonical_feature_index": 116,
+      "canonical_part_index": 0,
+      "component_sha256": "4da339bf6a1c321870f63467a09d0d9bf97f8d6a2df86a0f144419a8f27f1bbc",
+      "outside_area_world2": 72.98239261216295,
+      "canonical_component_area_world2": 72.98239261216295,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        133.66854797168463,
+        34.39457432299534
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-117-000",
+      "canonical_feature_index": 117,
+      "canonical_part_index": 0,
+      "component_sha256": "114b17aa09a1e6b23c7ac73629a43dc2cf17881878fc0ff89afd8bded81ad2b1",
+      "outside_area_world2": 544.473418799226,
+      "canonical_component_area_world2": 544.473418799226,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        132.30767869772998,
+        34.271986770511596
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-118-000",
+      "canonical_feature_index": 118,
+      "canonical_part_index": 0,
+      "component_sha256": "4653c010b408f4f54083c36fb382f6ceb1bc41b816a1d68034525f82f6511041",
+      "outside_area_world2": 1508945.541597014,
+      "canonical_component_area_world2": 1508945.5415970145,
+      "outside_fraction": 0.9999999999999997,
+      "representative_point_lonlat": [
+        143.44852102879335,
+        43.36787981729591
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-119-000",
+      "canonical_feature_index": 119,
+      "canonical_part_index": 0,
+      "component_sha256": "b378c851124df1ca9d159ce4ea4874d82520065cf5436037fbfa2757f5c1de98",
+      "outside_area_world2": 1263.7453337240966,
+      "canonical_component_area_world2": 1263.7453337240968,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        132.5269603453187,
+        34.126535253393
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-120-000",
+      "canonical_feature_index": 120,
+      "canonical_part_index": 0,
+      "component_sha256": "91e44cd1a2b87b9f7386509dcee309ca98ba8397953530f94875dd659f133cfc",
+      "outside_area_world2": 81.6649281505632,
+      "canonical_component_area_world2": 81.66492815056321,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        130.42926882799728,
+        30.80901702874525
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-121-000",
+      "canonical_feature_index": 121,
+      "canonical_part_index": 0,
+      "component_sha256": "3433d846c9a763dfd7abb2a29fbd2c6d1af00d0e8502749851a8c031f01e9d02",
+      "outside_area_world2": 95.4644981143977,
+      "canonical_component_area_world2": 95.46449811439768,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        132.28779662394106,
+        33.16386257011141
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-122-000",
+      "canonical_feature_index": 122,
+      "canonical_part_index": 0,
+      "component_sha256": "5aad805c7231b5e052c1e8f9bb9f3cecad263f69c103a0fa178397cdf11e3d98",
+      "outside_area_world2": 191.45376361194116,
+      "canonical_component_area_world2": 191.45376361194113,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        128.9960290026067,
+        32.766858471866634
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-123-000",
+      "canonical_feature_index": 123,
+      "canonical_part_index": 0,
+      "component_sha256": "e77c7c161173dfcec74dcc42aae543ec9832494721a709472f1f4d1ff4d9285c",
+      "outside_area_world2": 3533.132038418186,
+      "canonical_component_area_world2": 3533.132038418184,
+      "outside_fraction": 1.0000000000000004,
+      "representative_point_lonlat": [
+        129.4687969946079,
+        33.28992400383815
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-124-000",
+      "canonical_feature_index": 124,
+      "canonical_part_index": 0,
+      "component_sha256": "f9bee70fd0ab23520aa623b26268fd15cb9d3d9ad8c32c376895acd00f3e3b84",
+      "outside_area_world2": 54.70842385610373,
+      "canonical_component_area_world2": 54.708423856103735,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        139.277562554951,
+        34.51819632277961
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-125-000",
+      "canonical_feature_index": 125,
+      "canonical_part_index": 0,
+      "component_sha256": "423e2ab7f6296a432b8cedfbb5c9a40b67aaf4945023d034a7cf3b5da807b828",
+      "outside_area_world2": 334.1895102506354,
+      "canonical_component_area_world2": 334.18951025063535,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        139.15194230952392,
+        34.21422712878805
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-126-000",
+      "canonical_feature_index": 126,
+      "canonical_part_index": 0,
+      "component_sha256": "f24a652c376fe164ab151f14947c4b6324a841ba867cb177aadfc1ff463ad9fa",
+      "outside_area_world2": 141.76897511315187,
+      "canonical_component_area_world2": 141.7689751131519,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        131.66173519195843,
+        33.72807700467082
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-127-000",
+      "canonical_feature_index": 127,
+      "canonical_part_index": 0,
+      "component_sha256": "cdeea276b5b3caf5be3bb0a129497b42b7288567a5c415030d00f3eb6cebcdb0",
+      "outside_area_world2": 1626.4181636597793,
+      "canonical_component_area_world2": 1626.418163659779,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        139.81453881412455,
+        33.09872456167684
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-128-000",
+      "canonical_feature_index": 128,
+      "canonical_part_index": 0,
+      "component_sha256": "eaf392cb38ac38f47e4e5b154551075f002790109d204225c1a8792db0978b1c",
+      "outside_area_world2": 46.75781775173161,
+      "canonical_component_area_world2": 46.75781775173161,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        132.34652511755817,
+        33.9496984321545
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-129-000",
+      "canonical_feature_index": 129,
+      "canonical_part_index": 0,
+      "component_sha256": "ec9c5d5aad69efbbc6c7dadde4eaa2a170c1cbb2c800bfe6e6dcecd88ffe4fce",
+      "outside_area_world2": 128.27794932308237,
+      "canonical_component_area_world2": 128.27794932308234,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        132.39813581668406,
+        34.16407141534267
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-130-000",
+      "canonical_feature_index": 130,
+      "canonical_part_index": 0,
+      "component_sha256": "36d77506780e0eb7f4f35a55c08c69a3cb8b9a425154e4c6ffb61f608c2799a3",
+      "outside_area_world2": 73.47075313911728,
+      "canonical_component_area_world2": 73.47075313911728,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        141.40885457431202,
+        44.43371011157332
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-131-000",
+      "canonical_feature_index": 131,
+      "canonical_part_index": 0,
+      "component_sha256": "65604227ec219794ed73132841c527544dd7d6014c62d0bbbb5752581462c4d1",
+      "outside_area_world2": 101.78185713356135,
+      "canonical_component_area_world2": 101.78185713356133,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        129.5280051018062,
+        33.1398013111101
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-132-000",
+      "canonical_feature_index": 132,
+      "canonical_part_index": 0,
+      "component_sha256": "8dfc3cd182c422632aa8eb604b1bb5c7bd22cc81131df6a88ba2807786faac2b",
+      "outside_area_world2": 1698.336372851601,
+      "canonical_component_area_world2": 1698.336372851601,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        141.03037138695674,
+        45.35948737465452
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-133-000",
+      "canonical_feature_index": 133,
+      "canonical_part_index": 0,
+      "component_sha256": "ebd3cc7af8eebbb66e09fa8cf4fd10fd012130d3a0206255032b99025c544006",
+      "outside_area_world2": 4871.747861944859,
+      "canonical_component_area_world2": 4871.747861944859,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        129.23767990797433,
+        34.21153332248216
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-134-000",
+      "canonical_feature_index": 134,
+      "canonical_part_index": 0,
+      "component_sha256": "428ab99a5bd438952d43cfc664c82a3d2eea2f4e86c5b9d80b85dbb9aa3c528f",
+      "outside_area_world2": 9003.715818268907,
+      "canonical_component_area_world2": 9003.715818268905,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        129.36354164670115,
+        34.50076085971559
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-135-000",
+      "canonical_feature_index": 135,
+      "canonical_part_index": 0,
+      "component_sha256": "b2f89ca416c003c6372cecc23857032aa7cc42bbba81c3b1235f88f60d83f5a1",
+      "outside_area_world2": 158.59543328733488,
+      "canonical_component_area_world2": 158.59543328733497,
+      "outside_fraction": 0.9999999999999994,
+      "representative_point_lonlat": [
+        129.1282912987528,
+        33.180966228729126
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-136-000",
+      "canonical_feature_index": 136,
+      "canonical_part_index": 0,
+      "component_sha256": "0843662bcc836f0e137cdafb4fba22560b59b561289b9ff3b1616a48883d14f1",
+      "outside_area_world2": 47.76708409432613,
+      "canonical_component_area_world2": 47.76708409432612,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        139.54695934053072,
+        39.193968374865534
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-137-000",
+      "canonical_feature_index": 137,
+      "canonical_part_index": 0,
+      "component_sha256": "ce402da7766551b2c30223879d656ad9eff01f317eedbfe8247b261efa1c1820",
+      "outside_area_world2": 251.56920069146815,
+      "canonical_component_area_world2": 251.56920069146813,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        133.0346693802459,
+        36.012063368269885
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-138-000",
+      "canonical_feature_index": 138,
+      "canonical_part_index": 0,
+      "component_sha256": "b067e7908c3a4d13621677a7fc7b30cea8f7ee39c695f218aaffea2655afb5fe",
+      "outside_area_world2": 40.42030169616118,
+      "canonical_component_area_world2": 40.42030169616119,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        129.44650824369447,
+        31.187410784630412
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-139-000",
+      "canonical_feature_index": 139,
+      "canonical_part_index": 0,
+      "component_sha256": "1e21ed0e80ceef0f407f03dadb487d0ce8badf298bda18dc59066c87775bc3c4",
+      "outside_area_world2": 118.99724321685909,
+      "canonical_component_area_world2": 118.99724321685912,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        131.92714480212857,
+        32.999324492408824
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-141-000",
+      "canonical_feature_index": 141,
+      "canonical_part_index": 0,
+      "component_sha256": "0ea42303ce623f48872af2ac7981b154e849ac7bd94ab6c9bd94d379056982d0",
+      "outside_area_world2": 962.4742882323663,
+      "canonical_component_area_world2": 962.4742882323665,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        139.5295054649563,
+        34.07544878782684
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-142-000",
+      "canonical_feature_index": 142,
+      "canonical_part_index": 0,
+      "component_sha256": "9439bc99a8b5022f1324eb933a8a7a5b09b95a1992a90e1e0c8c44d2323a1943",
+      "outside_area_world2": 17112.002282433252,
+      "canonical_component_area_world2": 17112.00228243326,
+      "outside_fraction": 0.9999999999999996,
+      "representative_point_lonlat": [
+        138.33933104318714,
+        38.059360158025264
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-143-000",
+      "canonical_feature_index": 143,
+      "canonical_part_index": 0,
+      "component_sha256": "8c28773632b8ee5ae7bd3460e5af9240721def036ca418f9b9973bdaadb864c7",
+      "outside_area_world2": 85.10699507015813,
+      "canonical_component_area_world2": 85.10699507015815,
+      "outside_fraction": 0.9999999999999998,
+      "representative_point_lonlat": [
+        132.43726363838744,
+        34.312685084142274
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-144-000",
+      "canonical_feature_index": 144,
+      "canonical_part_index": 0,
+      "component_sha256": "b37f4f622fbc2482d329d3a94ae1e8b49c03c003309932b405fabe37fb34c8b0",
+      "outside_area_world2": 171.38328399266044,
+      "canonical_component_area_world2": 171.38328399266044,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        139.35707446128572,
+        41.50770621304518
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-145-000",
+      "canonical_feature_index": 145,
+      "canonical_part_index": 0,
+      "component_sha256": "8ea94ba1a7e88cb6811a937eae090b4da8c60546c6b6b1abd8ecccb16ae4f33a",
+      "outside_area_world2": 38.91243243317679,
+      "canonical_component_area_world2": 38.91243243317678,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        131.41055323929675,
+        31.525701948480155
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-146-000",
+      "canonical_feature_index": 146,
+      "canonical_part_index": 0,
+      "component_sha256": "31e13797a77ead6f6fc38560713dac0e67e98808e7c3eb61586998850584b6c3",
+      "outside_area_world2": 59.81691274844525,
+      "canonical_component_area_world2": 59.816912748445255,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        130.30302060878682,
+        33.62944566534853
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-147-000",
+      "canonical_feature_index": 147,
+      "canonical_part_index": 0,
+      "component_sha256": "f83c88c9797ab937849bf332a5329412b8f636821a33377b4a4d75e9a485182e",
+      "outside_area_world2": 40.304409409710004,
+      "canonical_component_area_world2": 40.304409409710004,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        131.28438080105795,
+        34.51135815609936
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-148-000",
+      "canonical_feature_index": 148,
+      "canonical_part_index": 0,
+      "component_sha256": "0e9c4a7d109589def10a4383d868c87f450920dae62ba492a8c74c034ed81fb4",
+      "outside_area_world2": 76.77213625122869,
+      "canonical_component_area_world2": 76.77213625122867,
+      "outside_fraction": 1.0000000000000002,
+      "representative_point_lonlat": [
+        129.75442694001177,
+        33.574878085401814
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-149-000",
+      "canonical_feature_index": 149,
+      "canonical_part_index": 0,
+      "component_sha256": "0cd9651fbebbff140d9cdd809ce7480b2d9b7144461c795b3a3449efbed290f9",
+      "outside_area_world2": 53.664762110035255,
+      "canonical_component_area_world2": 53.664762110035255,
+      "outside_fraction": 1.0,
+      "representative_point_lonlat": [
+        129.8813247096789,
+        33.55590761258562
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-150-000",
+      "canonical_feature_index": 150,
+      "canonical_part_index": 0,
+      "component_sha256": "3ccb866502cd6e44a4024bf37ecae2a3a612452ec27d1c8b96937d2a06325ef1",
+      "outside_area_world2": 47.24506880535173,
+      "canonical_component_area_world2": 47.245068805351735,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        134.0161028152113,
+        34.49191516747833
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-151-000",
+      "canonical_feature_index": 151,
+      "canonical_part_index": 0,
+      "component_sha256": "ae58606ba61d73c833f92039e933ee58f724d092058d4ee2568fedf535ae6525",
+      "outside_area_world2": 353.37099262256663,
+      "canonical_component_area_world2": 353.3709926225667,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        129.75917505834485,
+        33.4380634716867
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-152-000",
+      "canonical_feature_index": 152,
+      "canonical_part_index": 0,
+      "component_sha256": "382324b1adca3dea5c3b2ad1c84f0033adc4841b550cd49e505efcbfc11c1a6d",
+      "outside_area_world2": 51.97615257823275,
+      "canonical_component_area_world2": 51.97615257823276,
+      "outside_fraction": 0.9999999999999999,
+      "representative_point_lonlat": [
+        132.41289011040755,
+        34.02124372768387
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    },
+    {
+      "issue_id": "land-outside-parent-153-000",
+      "canonical_feature_index": 153,
+      "canonical_part_index": 0,
+      "component_sha256": "472d87f215e42258a71dbdf52f00f20563d66b9add9db6e8d511286effee874f",
+      "outside_area_world2": 0.021409912111914436,
+      "canonical_component_area_world2": 4384336.479750463,
+      "outside_fraction": 4.8832730359082735e-09,
+      "representative_point_lonlat": [
+        141.68446026528278,
+        38.99563179974046
+      ],
+      "status": "unassigned_land_component_or_coastal_residual",
+      "name": null,
+      "action": "島名・親国未収録・国面差分を区別して確認。郡で自動補完しない。"
+    }
+  ],
+  "note": "台帳の全行調査完了と1582年史料調査完了は別。親外陸地の面は生成せず、面積・原本参照のみを保存。"
+}

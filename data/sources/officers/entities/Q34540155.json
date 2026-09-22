@@ -1,0 +1,438 @@
+{
+  "retrieved_utc": "2026-09-12T11:13:51Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 35978298,
+    "ns": 0,
+    "title": "Q34540155",
+    "lastrevid": 2523916798,
+    "modified": "2026-07-28T12:30:31Z",
+    "type": "item",
+    "id": "Q34540155",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Gotō Kōjō"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "後藤光乗"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese swordsmith (1529-1620)"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "室町時代から江戸時代にかけての彫金家"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "後藤光家"
+        },
+        {
+          "language": "ja",
+          "value": "後藤四郎兵衛"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q34540155$72A12864-18F1-4CFF-B52E-6EA487FFD8C4",
+          "rank": "normal"
+        }
+      ],
+      "P1472": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1472",
+            "hash": "322cb65db329cfbf1b3368c5e36b1ea054a760f8",
+            "datavalue": {
+              "value": "Gotô Kôjô",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q34540155$9DABAAD5-5AC6-4C64-A7ED-8AA5A570CE54",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q34540155$38a8983c-4515-2a8f-2bc1-12845a484a87",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "50fffb00fd18ae43653a201ff8e1e21c40f87adc",
+            "datavalue": {
+              "value": "Gotô Kôjô",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q34540155$BEF1DDDD-BB79-4978-9854-9D44CBBB1D50",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2c89ab1c7b7e6ab78d758a8714e6158f9b2bdac9",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "de9173306cbafe9b1deaee2a61813ed2dceffd43",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 24731821,
+                        "id": "Q24731821"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "7dc5acd459b0f275cbe3e4631ca9b998431188de",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2017-08-02T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "afa9b8809fca36b9ac19b3462440acb590e6bbf2",
+            "datavalue": {
+              "value": {
+                "time": "+1529-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q34540155$DC6D3A40-4DBF-41E5-9F50-10F11A2CF5E5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6d2f69f00f2ae898ad0e20a4fc9c6d7deefd98ff",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "1e61784c19c761bad49ea9de89031d59ce0ca6d2",
+                    "datavalue": {
+                      "value": "https://kotobank.jp/word/%E5%BE%8C%E8%97%A4%E5%85%89%E4%B9%97-1075185",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "9719ed7890d41c14e5f9c8828677d1f7599ab42f",
+            "datavalue": {
+              "value": {
+                "time": "+1620-04-16T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q34540155$8FA4E6EE-F138-4082-BE38-3B9E888E73DD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6d2f69f00f2ae898ad0e20a4fc9c6d7deefd98ff",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "1e61784c19c761bad49ea9de89031d59ce0ca6d2",
+                    "datavalue": {
+                      "value": "https://kotobank.jp/word/%E5%BE%8C%E8%97%A4%E5%85%89%E4%B9%97-1075185",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "374683d33459dfe84e3f4359efa478047a803632",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 108647208,
+                "id": "Q108647208"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q34540155$4aaed02e-4f42-8e88-ef3a-a038560bdbc0",
+          "rank": "normal"
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "442eed7751165909dcf1eb3e23702fbd4f08a258",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q34540155$7a9ce8be-4155-0c79-e206-dbdef265e83f",
+          "rank": "normal"
+        }
+      ],
+      "P19": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P19",
+            "hash": "96de03689e8383033cd8f0f4170b03e41ba01cdf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 740246,
+                "id": "Q740246"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q34540155$ef2a1fea-455f-c1fb-7bf5-164489d27ea9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6d2f69f00f2ae898ad0e20a4fc9c6d7deefd98ff",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "1e61784c19c761bad49ea9de89031d59ce0ca6d2",
+                    "datavalue": {
+                      "value": "https://kotobank.jp/word/%E5%BE%8C%E8%97%A4%E5%85%89%E4%B9%97-1075185",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P119": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P119",
+            "hash": "94b8263b247858a7ee82ee322d7ee0d0719b7783",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11447037,
+                "id": "Q11447037"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q34540155$e187dd3c-4fad-7bc5-5b36-f615b6dd119c",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6d2f69f00f2ae898ad0e20a4fc9c6d7deefd98ff",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "1e61784c19c761bad49ea9de89031d59ce0ca6d2",
+                    "datavalue": {
+                      "value": "https://kotobank.jp/word/%E5%BE%8C%E8%97%A4%E5%85%89%E4%B9%97-1075185",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "4d59e04927a88a74891a6dcf050978307cc7b12c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16870261,
+                "id": "Q16870261"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q34540155$0039c2e5-4a39-1ee5-dc6c-2ba77f94c52b",
+          "rank": "normal"
+        }
+      ],
+      "P2838": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2838",
+            "hash": "4b030daa9c194f23a2a8ce30fb6d2efc86759394",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11488442,
+                "id": "Q11488442"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q34540155$777cfdb0-438e-6613-d7cb-8acf525dd8f1",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Gotô Kôjô",
+        "badges": []
+      }
+    }
+  }
+}

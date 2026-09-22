@@ -1,0 +1,397 @@
+{
+  "retrieved_utc": "2026-09-12T11:14:55Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 95024163,
+    "ns": 0,
+    "title": "Q96273433",
+    "lastrevid": 2344455918,
+    "modified": "2025-05-04T07:48:09Z",
+    "type": "item",
+    "id": "Q96273433",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "酒井信政"
+      },
+      "en": {
+        "language": "en",
+        "value": "Sakai Nobumasa"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "日本の戦国時代から安土桃山時代の武将 (1536?-1579)"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q96273433$230AFF55-5DA9-4440-BF37-5B7C269A5B12",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q96273433$6809CE2E-E1F1-47A8-9BE6-FA17D4D9745B",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "073466ef8a42f49c909d3e49fc4fd832a7965b1f",
+            "datavalue": {
+              "value": "/g/11fvhbv5d3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q96273433$EB73BA18-2F7C-4375-86D3-F05FF93A1A0B",
+          "rank": "normal"
+        }
+      ],
+      "P3373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "3c0326032da2e00285ecc008dfe32b89195699da",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 109601277,
+                "id": "Q109601277"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q96273433$54C8C7EE-D040-4C40-AE16-DF6DA12DC2A8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a9b29995e8a779ca5177180d9fe66a8cdc20a367",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "9b7001794325f108a52dd793e905d11557d0ae63",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-11-29T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "5a9a3b035ed02670c2da429b8a64cf778bca0b6c",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E9%85%92%E4%BA%95%E4%BF%A1%E6%94%BF&oldid=86251766",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q96273433$112C1A81-7D2B-4A38-A0F6-69E001BE9C4F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a9b29995e8a779ca5177180d9fe66a8cdc20a367",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "9b7001794325f108a52dd793e905d11557d0ae63",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-11-29T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "5a9a3b035ed02670c2da429b8a64cf778bca0b6c",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E9%85%92%E4%BA%95%E4%BF%A1%E6%94%BF&oldid=86251766",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "2927285bbccefc2f7c69db0a3c677c76d9c434d4",
+            "datavalue": {
+              "value": "Nobumasa Sakai.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q96273433$c3c8ca62-46e8-1359-f105-50b9eede741b",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "ddc5209c1e0d4807de505346aab6c58b8167a1a3",
+            "datavalue": {
+              "value": "Sakai Nobumasa",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q96273433$2a741b27-9bfe-4404-817e-b97d98cc8d51",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "600f5d29af5f71692c28adb006c4490df5fd5e59",
+            "datavalue": {
+              "value": {
+                "text": "酒井 信政",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q96273433$a8ec16af-431d-13bb-338a-b424d3c071f6",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "526af24baacd37a3f693759081a6a6b5f2276924",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 134314444,
+                "id": "Q134314444"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q96273433$03deabae-4d16-5bd8-9294-578ba79aa315",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "54fce8db539518eeb7d43d08c09027d4a0f00ce5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 64810764,
+                "id": "Q64810764"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q96273433$346c7143-4f01-cd7c-a2ca-fa6dfefef279",
+          "rank": "normal"
+        }
+      ],
+      "P1814": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1814",
+            "hash": "eda3827756d0794151cdade31285a61e5acf8e94",
+            "datavalue": {
+              "value": "さかい のぶまさ",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q96273433$3d1fc1cd-4da3-3abd-6500-3d03a027baa6",
+          "rank": "normal"
+        }
+      ],
+      "P53": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P53",
+            "hash": "cbea82b6ccf68d991c360db9c248416f045bf398",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 97209579,
+                "id": "Q97209579"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q96273433$a010d98a-40e0-54bc-9e5a-78bf8b46aedf",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Sakai Nobumasa",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "酒井信政",
+        "badges": []
+      }
+    }
+  }
+}

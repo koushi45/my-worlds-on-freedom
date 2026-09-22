@@ -1,0 +1,329 @@
+{
+  "retrieved_utc": "2026-09-13T01:31:45Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 11856797,
+    "ns": 0,
+    "title": "Q10565618",
+    "lastrevid": 2519975240,
+    "modified": "2026-07-20T02:38:38Z",
+    "type": "item",
+    "id": "Q10565618",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Mizuno Tadayoshi"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "水野忠善"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "日本の江戸時代の大名"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565618$4D518410-CFE3-4223-8F6C-BF6FB3D50319",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "5dd198dcc4bf41aee27cbbfffb9572dc70d5a464",
+            "datavalue": {
+              "value": {
+                "time": "+1612-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q10565618$9E06B5BF-2081-4574-B59E-03D34278732D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "cff9f8db912726f5906549842edad8aa25a2090f",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "9c001f2a6dc898b4f7955bf702c7f064f3a88535",
+                    "datavalue": {
+                      "value": "https://mairi.me/-/1016733",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "b9ca284fd3b531f7a6478777d136d36946a4170b",
+                    "datavalue": {
+                      "value": "水野忠善",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P1810"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "31c70e5dab65dd860af86c13c8fa0357c4026065",
+            "datavalue": {
+              "value": {
+                "time": "+1676-10-06T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q10565618$39496611-A8B8-4594-9D87-A95F56225947",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "de57cfa07937dfd96f6127ee6e55f2a1c72ab5d7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16877259,
+                "id": "Q16877259"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565618$13118577-CF47-45C9-9A69-76D988EDD9F5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "41507ddde0e895eaa7ebbad2da36f2704d325ad5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7674406,
+                "id": "Q7674406"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565618$DD79086A-00F9-4713-9BE1-866EC268DCC2",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565618$999D776B-BCBE-4C42-85DC-933E895A8C16",
+          "rank": "normal"
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "442eed7751165909dcf1eb3e23702fbd4f08a258",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565618$0BAA3C35-5EC3-4A93-B6E7-110715701248",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "baf61c0773f7c09ee960b2ed758b7788673ed61e",
+            "datavalue": {
+              "value": {
+                "text": "水野忠善",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q10565618$1A1AFC45-048A-433D-8091-286D83E78333",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "e278debe9d53ea48895dcd9ccd5dd198a0397184",
+            "datavalue": {
+              "value": "/g/1210m8_y",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q10565618$686C11EB-7D80-482F-AC01-11A6679301DB",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "e39454b6d8858a531601fcce51cd64f77d061bd8",
+            "datavalue": {
+              "value": "Mizuno Tadayoshi.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q10565618$74128211-AD10-4F3F-A3C4-81CD53373009",
+          "rank": "normal"
+        }
+      ],
+      "P1442": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1442",
+            "hash": "ea8b24c58bc86a83c81ffae76b1f611f3d382544",
+            "datavalue": {
+              "value": "Mizunotomb.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q10565618$E16E89E3-C234-43B9-BFF8-07073938C414",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "水野忠善",
+        "badges": []
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "미즈노 다다요시 (1612년)",
+        "badges": []
+      }
+    }
+  }
+}

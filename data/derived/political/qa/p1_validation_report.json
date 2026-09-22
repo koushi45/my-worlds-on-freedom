@@ -1,0 +1,17 @@
+{
+  "phase": "P1",
+  "status": "pass_pending_user_acceptance",
+  "checks": {
+    "source_hash_and_dimensions": "pass",
+    "required_layers_and_attributes": "pass",
+    "line_geometry_validity_and_bounds": "pass",
+    "region_id_registry_and_component_conflicts": "pass",
+    "qa_scale_dimensions": "pass",
+    "no_pretrace_warp": "pass",
+    "master_promotion_blocked": "pass"
+  },
+  "counts": {
+    "boundaries": 104,
+    "region_labels": 69
+  }
+}

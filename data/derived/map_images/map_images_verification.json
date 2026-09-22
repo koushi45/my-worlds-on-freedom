@@ -1,0 +1,63 @@
+{
+  "phase": "E",
+  "all_passed": true,
+  "checks": {
+    "five_lod_profiles_and_three_families": {
+      "passed": true
+    },
+    "global_tile_partition": {
+      "passed": true,
+      "failures": []
+    },
+    "all_files_present_and_hashed": {
+      "passed": true,
+      "missing": [],
+      "hash_mismatches": []
+    },
+    "dimensions_and_modes": {
+      "passed": true,
+      "failures": []
+    },
+    "land_coverage_directly_from_lod_vectors": {
+      "passed": true,
+      "mismatches": []
+    },
+    "coverage_antialiasing_present": {
+      "passed": true,
+      "method": {
+        "method": "2x supersampled coverage",
+        "bleed_px": 4,
+        "filter": "LANCZOS"
+      }
+    },
+    "coastline_directly_from_matching_lod_vectors": {
+      "passed": true,
+      "mismatches": []
+    },
+    "coastline_ids_match_tile_intersections": {
+      "passed": true,
+      "failures": []
+    },
+    "terrain_layers_clipped_and_uninvented": {
+      "passed": true,
+      "failures": []
+    },
+    "ocean_and_lake_ids_separate": {
+      "passed": true,
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": []
+    },
+    "coastline_is_final_composite_layer": {
+      "passed": true,
+      "mismatches": []
+    },
+    "no_geometry_moving_filter_or_color_inference": {
+      "passed": true
+    },
+    "deterministic_regeneration": {
+      "passed": true,
+      "first_aggregate_sha256": "8F5C541CA8E19B3A44AC1A59C8FD80B70EDB6E4F99A26FA6E2E70523DD59A434",
+      "second_aggregate_sha256": "8F5C541CA8E19B3A44AC1A59C8FD80B70EDB6E4F99A26FA6E2E70523DD59A434"
+    }
+  }
+}

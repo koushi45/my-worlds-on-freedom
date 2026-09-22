@@ -1,0 +1,79 @@
+{
+  "purpose": "Phase A visual comparison only; not a canonical polygon",
+  "natural_earth_variant": "Natural Earth Land 5.1.1 only; Minor Islands excluded",
+  "rules": "same projected CRS, physical extent, pixel dimensions and styling per area",
+  "outputs": [
+    "data/phase_a/comparisons_natural_earth_land_only/01_hokkaido.png",
+    "data/phase_a/comparisons_natural_earth_land_only/02_tokyo_bay.png",
+    "data/phase_a/comparisons_natural_earth_land_only/03_ise_bay.png",
+    "data/phase_a/comparisons_natural_earth_land_only/04_osaka_bay.png",
+    "data/phase_a/comparisons_natural_earth_land_only/05_seto_inland_sea.png",
+    "data/phase_a/comparisons_natural_earth_land_only/06_western_kyushu.png",
+    "data/phase_a/comparisons_natural_earth_land_only/07_nansei_islands.png"
+  ],
+  "areas": {
+    "01_hokkaido": {
+      "center_lon_lat": [
+        142.15,
+        43.35
+      ],
+      "width_km": 720,
+      "height_km": 540,
+      "epsg": 6680
+    },
+    "02_tokyo_bay": {
+      "center_lon_lat": [
+        139.86,
+        35.46
+      ],
+      "width_km": 130,
+      "height_km": 115,
+      "epsg": 6677
+    },
+    "03_ise_bay": {
+      "center_lon_lat": [
+        136.79,
+        34.73
+      ],
+      "width_km": 155,
+      "height_km": 135,
+      "epsg": 6674
+    },
+    "04_osaka_bay": {
+      "center_lon_lat": [
+        135.2,
+        34.48
+      ],
+      "width_km": 150,
+      "height_km": 130,
+      "epsg": 6674
+    },
+    "05_seto_inland_sea": {
+      "center_lon_lat": [
+        133.55,
+        34.28
+      ],
+      "width_km": 520,
+      "height_km": 235,
+      "epsg": 6672
+    },
+    "06_western_kyushu": {
+      "center_lon_lat": [
+        129.8,
+        32.55
+      ],
+      "width_km": 390,
+      "height_km": 455,
+      "epsg": 6670
+    },
+    "07_nansei_islands": {
+      "center_lon_lat": [
+        127.1,
+        26.15
+      ],
+      "width_km": 930,
+      "height_km": 520,
+      "epsg": 6683
+    }
+  }
+}

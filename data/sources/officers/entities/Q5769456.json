@@ -1,0 +1,187 @@
+{
+  "retrieved_utc": "2026-09-12T11:14:15Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 5539823,
+    "ns": 0,
+    "title": "Q5769456",
+    "lastrevid": 2526197066,
+    "modified": "2026-08-02T11:08:57Z",
+    "type": "item",
+    "id": "Q5769456",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Hiraoka Michiyori"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "平岡通倚"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese samurai"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "日本の戦国時代～安土桃山時代の武将"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "平岡通奇"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5769456$9FBCF09A-51BA-45ED-8CB8-707F31D35C6F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5769456$9ACF4324-1C02-4BF3-B34A-D75F293F36FF",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5769456$73543257-e2f7-418c-b8ed-3840b053617f",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "e92393e12609f4ca6d379b6ca77e7071841ef46a",
+            "datavalue": {
+              "value": "/m/03y96k6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5769456$FF8C288D-60A4-4C22-91A7-00EEF5B2CB6B",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Hiraoka Michiyori",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "平岡通倚",
+        "badges": []
+      }
+    }
+  }
+}

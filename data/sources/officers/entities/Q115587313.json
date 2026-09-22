@@ -1,0 +1,157 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:25Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 110150957,
+    "ns": 0,
+    "title": "Q115587313",
+    "lastrevid": 1804195098,
+    "modified": "2023-01-05T23:19:46Z",
+    "type": "item",
+    "id": "Q115587313",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "恵光寺快川"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "日本・戦国時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587313$E4817EC1-547D-4453-81C8-EBB89B4E8DF3",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587313$65C3E902-7CEC-4FBE-A699-29616F34F67C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "93a5dad56d8eec33805dd53b10048fce587d1c15",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "435cc072f2d8c8552f2530c434fdfe4c6aed02f3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-12-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "fbd2590c5e7ea00b04390ca80cbb961f84416781",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E6%81%B5%E5%85%89%E5%AF%BA%E5%BF%AB%E5%B7%9D&oldid=92199813",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587313$ec1edacc-4ee0-cf07-cc32-3cbaa7b4ecf5",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "恵光寺快川",
+        "badges": []
+      }
+    }
+  }
+}

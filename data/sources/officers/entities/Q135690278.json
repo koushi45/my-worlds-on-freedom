@@ -1,0 +1,227 @@
+{
+  "retrieved_utc": "2026-09-12T11:13:12Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 129425474,
+    "ns": 0,
+    "title": "Q135690278",
+    "lastrevid": 2526150867,
+    "modified": "2026-08-02T09:26:11Z",
+    "type": "item",
+    "id": "Q135690278",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "行松康忠"
+      },
+      "en": {
+        "language": "en",
+        "value": "Yasutada Yukimatsu"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese military commander"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q135690278$B109B697-6E0E-4A49-9F59-9BB83BDDD302",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q135690278$730C5317-D7BF-43D5-ACE8-46CBB6997300",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5864604b9d47f3012160db08a62227b548e9719d",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "08c190a12389d8f89e5c89d5606c72564152d964",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2026-02-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "ab05fb25470c0e089b9cef597d979f352bf0bdcb",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E8%A1%8C%E6%9D%BE%E5%BA%B7%E5%BF%A0&oldid=105545846",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q135690278$ed7fb6a3-4efa-6a5d-0763-8814664a0acb",
+          "rank": "normal"
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "442eed7751165909dcf1eb3e23702fbd4f08a258",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q135690278$bffece2e-422f-fb56-cf76-387da6879589",
+          "rank": "normal"
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "8a468d6d72ea589cd9b7eb36e8c274aa94613b41",
+            "datavalue": {
+              "value": {
+                "time": "+1551-02-20T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q135690278$7eaac0b0-4c1c-3c2e-2cdd-6f42c4d677b2",
+          "rank": "normal"
+        }
+      ],
+      "P1412": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1412",
+            "hash": "793e190594b14ce471153f6fd9f0d8b4228d5112",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5287,
+                "id": "Q5287"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q135690278$58d403b8-43de-f2dc-08c6-67758673545c",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "行松康忠",
+        "badges": []
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "phase": "P1",
+  "source_sha256": "4B11BD5B77D713587F67173E230F382CBF450ADF4C06557127839C3FB1CD58A7",
+  "review_status": "pending_user_acceptance",
+  "geometry_inspection": {
+    "reviewer": "Codex assisted visual QA",
+    "scales_checked": [
+      "100%",
+      "200%",
+      "400%"
+    ],
+    "coastline_false_positives_seen": false,
+    "text_or_number_false_positives_seen": false,
+    "dashed_meiji_boundary_false_positives_seen": false,
+    "observation": "Confirmed features follow the visible solid source centreline. Features exceeding the 0.75 px ridge diagnostic are probable and remain pending."
+  },
+  "acceptance": {
+    "accepted_by": null,
+    "accepted_at_utc": null,
+    "note": "P1 work data only; do not promote to data/master/political before explicit approval."
+  }
+}

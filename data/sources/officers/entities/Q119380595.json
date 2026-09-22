@@ -1,0 +1,140 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:53Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 113871574,
+    "ns": 0,
+    "title": "Q119380595",
+    "lastrevid": 1951387633,
+    "modified": "2023-08-10T19:58:02Z",
+    "type": "item",
+    "id": "Q119380595",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "遠山秋忠"
+      },
+      "en": {
+        "language": "en",
+        "value": "Tōyama Akitada"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119380595$DE8E881D-4C27-428A-B8E6-AB87F0F829D9",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119380595$466AD061-4204-4CEE-9DE3-E5DDF38BDECF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d7d27ea99ef52b86bda3affde218c3d5f22ced64",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c20c6b873a731ff527ff9b010069a0fe2e922ab3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-08-10T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "5836ba5433c597d7180d56638470e117377f76a9",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E9%81%A0%E5%B1%B1%E7%A7%8B%E5%BF%A0&oldid=93247504",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "遠山秋忠",
+        "badges": []
+      }
+    }
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:25Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 110150951,
+    "ns": 0,
+    "title": "Q115587307",
+    "lastrevid": 2526146488,
+    "modified": "2026-08-02T09:17:03Z",
+    "type": "item",
+    "id": "Q115587307",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "多賀谷政経"
+      },
+      "en": {
+        "language": "en",
+        "value": "Tagaya Masatsune"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese military commander"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587307$2146CB7B-C885-4041-9AE3-1DE2E1B54A3E",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587307$B847A9E3-75F1-49F6-AB77-0A137A1D479C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f548402c4043844d8e6404f07f491150f26236a4",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "435cc072f2d8c8552f2530c434fdfe4c6aed02f3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-12-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "0850303807661c886f785049f1b89f9dc092c8ed",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%A4%9A%E8%B3%80%E8%B0%B7%E6%94%BF%E7%B5%8C&oldid=87668261",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P40": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "92966d669337f235d54f5dfbb2d7d6dc3585ee4f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11431106,
+                "id": "Q11431106"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587307$A85E7979-641D-40C5-8568-562CBA5F3AF2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f548402c4043844d8e6404f07f491150f26236a4",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "435cc072f2d8c8552f2530c434fdfe4c6aed02f3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-12-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "0850303807661c886f785049f1b89f9dc092c8ed",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%A4%9A%E8%B3%80%E8%B0%B7%E6%94%BF%E7%B5%8C&oldid=87668261",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587307$cbe979ba-4a5a-101d-922c-df108fbd5cc3",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "6625a1090f8fe0b41f01227574efb73bc9d4fd42",
+            "datavalue": {
+              "value": {
+                "text": "多賀谷政経",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q115587307$9eec394f-40f9-fdd2-f3e4-2707b027bf7d",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "多賀谷政経",
+        "badges": []
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "phase": "F",
+  "all_passed": true,
+  "checks": {
+    "historical_source_absence_explicit": {
+      "passed": true
+    },
+    "no_inferred_political_regions": {
+      "passed": true
+    },
+    "entire_master_land_explicitly_unassigned": {
+      "passed": true
+    },
+    "union_gap_overlap_audit": {
+      "passed": true,
+      "audit": {
+        "master_land_area_m2": 370015444691.9635,
+        "political_region_area_sum_m2": 0.0,
+        "political_region_union_area_m2": 0.0,
+        "gap_area_m2": 370015444691.9631,
+        "coverage_ratio": 0.0,
+        "overlap_count": 0,
+        "overlaps": [],
+        "gap_status": "explicitly_unassigned",
+        "excluded_source_regions": [],
+        "area_balance_error_m2": 0.00042724609375
+      }
+    },
+    "only_unassigned_layer_materialized": {
+      "passed": true,
+      "layers": [
+        "unassigned_land"
+      ]
+    },
+    "no_click_mask_used_for_drawing": {
+      "passed": true
+    },
+    "shared_edge_and_coast_reference_algorithm": {
+      "passed": true,
+      "region_count": 2,
+      "shared_boundary_count": 1,
+      "coastline_reference_count": 6
+    },
+    "selection_contract": {
+      "passed": true
+    },
+    "coastline_points_not_duplicated": {
+      "passed": true
+    },
+    "geopackage_integrity": {
+      "passed": true,
+      "result": "ok"
+    },
+    "deterministic_regeneration": {
+      "passed": true,
+      "first": {
+        "political_regions.gpkg": "78113FA597915026BA683FDDC14C2A85070D797744B301093D574DBDE5D37D66",
+        "political_registry.json": "F457BB41DD63948062F6658D1E5A3B5697D04715164BF89107C756B1A8E4640A",
+        "political_audit.json": "DDB5A5AD905471A68AD56F237D0FEF551BEA46C6B6CBB1126F1676920AD71BC3",
+        "phase_f_manifest.json": "C5CCCD377E93581EC5165EC57D1528CCE9363377A8D2B6ACEC2A4B9D4C8E65D0"
+      },
+      "second": {
+        "political_regions.gpkg": "78113FA597915026BA683FDDC14C2A85070D797744B301093D574DBDE5D37D66",
+        "political_registry.json": "F457BB41DD63948062F6658D1E5A3B5697D04715164BF89107C756B1A8E4640A",
+        "political_audit.json": "DDB5A5AD905471A68AD56F237D0FEF551BEA46C6B6CBB1126F1676920AD71BC3",
+        "phase_f_manifest.json": "C5CCCD377E93581EC5165EC57D1528CCE9363377A8D2B6ACEC2A4B9D4C8E65D0"
+      }
+    }
+  }
+}

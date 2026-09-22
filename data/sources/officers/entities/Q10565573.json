@@ -1,0 +1,480 @@
+{
+  "retrieved_utc": "2026-09-13T01:31:45Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 11856750,
+    "ns": 0,
+    "title": "Q10565573",
+    "lastrevid": 2049680938,
+    "modified": "2024-01-09T12:13:45Z",
+    "type": "item",
+    "id": "Q10565573",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Mizuno Shigenaka"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "水野重央"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "(1570-1621)"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "安土桃山時代から江戸時代初期の武将、大名。水戸藩家老、浜松藩主、紀伊新宮藩（紀州藩附家老）初代藩主。水野忠分の三男。従五位下・対馬守。子に水野定勝（忠重、藤次郎、従五位下、下総守）、水野義重の妻、小笠原義治の正室"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "重信"
+        },
+        {
+          "language": "ja",
+          "value": "重央"
+        },
+        {
+          "language": "ja",
+          "value": "重仲"
+        },
+        {
+          "language": "ja",
+          "value": "藤四郎"
+        },
+        {
+          "language": "ja",
+          "value": "藤次郎"
+        },
+        {
+          "language": "ja",
+          "value": "全龍院殿日山常春大居士"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565573$B922D281-CB40-413F-9120-CA79F51C5BDC",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "de57cfa07937dfd96f6127ee6e55f2a1c72ab5d7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16877259,
+                "id": "Q16877259"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565573$D6C98447-9DF9-4532-9D3B-05F76A837E1E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "68f369fe8b3e7b42c3eda62ad5f77a3507041d3c",
+            "datavalue": {
+              "value": {
+                "time": "+1570-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q10565573$21CC75E1-7624-4C9E-B91F-61C721F6FFB0",
+          "rank": "normal"
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "f13cbc22d1bd95ef4523a70f5e6621c5b1ada318",
+            "datavalue": {
+              "value": {
+                "time": "+1621-12-24T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q10565573$E924F156-49B9-475D-ABC4-D4AE81639FED",
+          "rank": "normal"
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "442eed7751165909dcf1eb3e23702fbd4f08a258",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565573$D7AA2989-78A7-4CF0-A5C4-BB3A0C6A5B44",
+          "rank": "normal"
+        }
+      ],
+      "P2949": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2949",
+            "hash": "4e3fddd59acc7bb94ed3bb79d6422f9f91182c8c",
+            "datavalue": {
+              "value": "水野-23",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "e3f5dda9a82f9b3e849312b09298f695dd07e06d",
+                "datavalue": {
+                  "value": "重信 重央 Shigenobu, Sigenobu, Zhongxin, Shigenaka, Sigenaka, Zhongyang, 重仲, Zhongzhong 水野 aka Mizuno, Shuiye (1570 - certain 24 Dec 1621)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q10565573$53d67e01-4739-ccc1-0b16-e35f2ad9d3b5",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565573$dfbaaeae-4bfb-77cf-8c6c-def9fc147d9a",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "0fa40adf63c663a4f63305c55a18ce3e89510692",
+            "datavalue": {
+              "value": "/g/121vrgx6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q10565573$B33B9C8A-18E6-40BF-AF13-DFC071BD44EE",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "c992d77b41919035323fa7789b77e636d5cf8bf3",
+            "datavalue": {
+              "value": "Mizuno Shigenaka.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q10565573$36A1588B-7CB2-4A2A-8E0A-0BE0B57CCC66",
+          "rank": "normal"
+        }
+      ],
+      "P40": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "f798e83572ac1662bb979eb4213ef3c9292824ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10565578,
+                "id": "Q10565578"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565573$9a162780-42a5-7c92-abce-2f7831ff8b5d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "7174bda5805d6d89910e353b4ed9bdeb6466fd83",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 108884546,
+                "id": "Q108884546"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565573$aa72d061-4e72-febd-620c-a504d4bf5f8d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "330be507d95f7d98d8570b7dbb451776596e9a05",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 108884522,
+                "id": "Q108884522"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565573$908e3b07-4583-0fdd-b73a-a423ce0095bf",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565573$12DD9109-F060-435B-806D-093C7B60383E",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "水野重央",
+        "badges": []
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "미즈노 시게나카",
+        "badges": []
+      }
+    }
+  }
+}

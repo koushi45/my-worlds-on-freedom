@@ -1,0 +1,617 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:34Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12736504,
+    "ns": 0,
+    "title": "Q11596381",
+    "lastrevid": 2541753582,
+    "modified": "2026-09-07T15:40:07Z",
+    "type": "item",
+    "id": "Q11596381",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "種子島時尭"
+      },
+      "en": {
+        "language": "en",
+        "value": "Tanegashima Tokitaka"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese daimyō of the Sengoku period"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1528-1579, 戦国時代の武将"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "種子島時堯"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11596381$598E41B9-771D-41B8-A189-29E5009671AF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "613f87558f637d7d76c3f4411f76cf3b31f77edd",
+            "datavalue": {
+              "value": {
+                "time": "+1579-10-21T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q11596381$7E12BF0A-9CF8-47C6-B2E7-2F7A8EBBA098",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11596381$724B1E91-1D26-4E7B-A06A-D71EF4AFAB77",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "8c4a0d9d4aabbe8796e5b7c6a147e9b55eb0ec25",
+            "datavalue": {
+              "value": {
+                "time": "+1528-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q11596381$0C84E860-E767-41CC-8497-B630ED3E0044",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11596381$3452c09c-9fcb-4608-ba91-4a167254f315",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "8b1a11307f5e84f872c37c5b7b4d7bde22d47edc",
+            "datavalue": {
+              "value": "Tanegashima Tokitaka.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q11596381$18AAE862-3169-4937-BC6A-9F650E8E062F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "85dacab436b0077ee83a2b054e09feab724efdc8",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "8965b3d69dcedc001659f24589d321575a5aa042",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Tanegashima_Tokitaka&oldid=885068952",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P39": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P39",
+            "hash": "66593ec2e328c215303da9448f725a4f21f4b402",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 61982,
+                "id": "Q61982"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11596381$460d2e17-6cc6-4902-9beb-2f9d8cf550f2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6698": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6698",
+            "hash": "7671e151a3f5de5a4a7446365183143216619b37",
+            "datavalue": {
+              "value": "種子島時尭",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11596381$4F46EDAE-A0A6-4BC1-89F9-6A6D2C11A170",
+          "rank": "normal"
+        }
+      ],
+      "P945": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P945",
+            "hash": "afef003bc0e400b4c33291a708606b5e418d67cf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2975383,
+                "id": "Q2975383"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11596381$993CF39C-4168-402A-80BF-8CC5221D6968",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d717d72fa107fbd3141528a0c759c83a15b21dbc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "78a054217fe1fcd135abc2b83769793d1eac1f68",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Tanegashima_Tokitaka&oldid=918349076",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "afbace266c3a02bccf20f053944a7a6083b404b8",
+            "datavalue": {
+              "value": "/g/121tszbv",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11596381$A599EE4A-F342-40F7-BFD0-BFF849D207B6",
+          "rank": "normal"
+        }
+      ],
+      "P26": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P26",
+            "hash": "1b9ad25452266233702aae31e53f6dd6fae0ed07",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 110689455,
+                "id": "Q110689455"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11596381$a8b0638c-48ee-ee8d-783b-c16d0807d275",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "ckbwiki": {
+        "site": "ckbwiki",
+        "title": "تانێگەشیما تۆکیتاکا",
+        "badges": []
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Tanegashima Tokitaka",
+        "badges": []
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Tanegashima Tokitaka",
+        "badges": []
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "تانه‌گاشیما توکیتاکا",
+        "badges": []
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Tanegashima Tokitaka",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "種子島時尭",
+        "badges": []
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "다네가시마 도키타카",
+        "badges": []
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Tanegashima Tokitaka",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "种子岛时尧",
+        "badges": []
+      }
+    }
+  }
+}

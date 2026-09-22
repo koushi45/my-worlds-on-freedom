@@ -1,0 +1,278 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:09Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12149280,
+    "ns": 0,
+    "title": "Q10877248",
+    "lastrevid": 2508155275,
+    "modified": "2026-06-20T00:51:31Z",
+    "type": "item",
+    "id": "Q10877248",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "丸目長恵"
+      },
+      "en": {
+        "language": "en",
+        "value": "Marume Nagayoshi"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Samurai in Japan's Sengoku period"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "丸目蔵人"
+        },
+        {
+          "language": "ja",
+          "value": "丸目蔵人佐"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10877248$5DC65E8A-BA49-4DD1-9894-6EE8375D7ECA",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10877248$37DB1D57-7A6C-4D13-BF76-723AB4E0C1BD",
+          "rank": "normal"
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "fb87b55e191fe8401b405c9f8eb1bfdf19155c69",
+            "datavalue": {
+              "value": {
+                "time": "+1629-03-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q10877248$3D153210-67F0-4177-9815-D04B840D6C79",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "52992fab1d581dc1c3f6b85be3321bff743d8aef",
+            "datavalue": {
+              "value": {
+                "time": "+1540-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q10877248$FB3C2D47-3085-4337-8D4F-D92679AA57AE",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10877248$151bd6ca-0111-4366-9c8c-4476f4a37530",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0ee3b3ba1c958f4c3dcba7ed8091fe4b57311348",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "cb49f6fa327b245e4a5aaf48c44b3f503bcd4265",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 30239,
+                        "id": "Q30239"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "caaf22631c6a68a4729bc7bee8f5d703a795c6a1",
+            "datavalue": {
+              "value": "Marume Kurando.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q10877248$F46A04BC-76FE-4925-9854-675B75F50749",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "4361d8328ed4e97efc42b58c7b35f10707de3689",
+            "datavalue": {
+              "value": "/g/121xk468",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q10877248$D4FF5B95-69EC-4AB3-A4C8-8E524AE8ECCE",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "54a42356da7965b52de51597d49a615c9ef345f6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 140298392,
+                "id": "Q140298392"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10877248$001649ae-4c74-5258-4208-4e7e4c8fa585",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Marume Nagayoshi",
+        "badges": []
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "مارومه ناگایوشی",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "丸目長恵",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "丸目長惠",
+        "badges": []
+      }
+    }
+  }
+}

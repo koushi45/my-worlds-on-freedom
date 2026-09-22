@@ -1,0 +1,150 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:09Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 101927104,
+    "ns": 0,
+    "title": "Q106648495",
+    "lastrevid": 1410980102,
+    "modified": "2021-04-29T16:44:06Z",
+    "type": "item",
+    "id": "Q106648495",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "長尾景直 (上杉謙信の旗本)"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代から安土桃山時代にかけての武将"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "椎名小四郎"
+        },
+        {
+          "language": "ja",
+          "value": "椎名景直"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106648495$7340460e-4342-5e1d-aa39-6a15b1fc1438",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106648495$e83ba9e5-41e7-4ba6-78f2-1327c34510fe",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106648495$9de28602-4ca0-8dc6-da57-ff4d49914547",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "fe65d0b52facaa56c5a560495ec0fdeccb716d55",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11651862,
+                "id": "Q11651862"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106648495$5aee6d49-4af3-b2e1-0b0e-20cd88335015",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {}
+  }
+}

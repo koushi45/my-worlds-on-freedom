@@ -1,0 +1,213 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:11Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 104019994,
+    "ns": 0,
+    "title": "Q108781510",
+    "lastrevid": 2526150283,
+    "modified": "2026-08-02T09:24:53Z",
+    "type": "item",
+    "id": "Q108781510",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "埴原八蔵"
+      },
+      "en": {
+        "language": "en",
+        "value": "Haibara Hachizō"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese military commander"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Haibara Hachizo"
+        },
+        {
+          "language": "en",
+          "value": "Haibara Hachizou"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781510$64026495-8158-4585-81B4-BF1520B1FA43",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781510$ca7f9f02-44e9-624c-783d-0c4783a60397",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781510$C25BB8B4-E650-4D16-B59E-B60927AA4EEF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e15738da5b194f563ccc55de90a34cc7c0bc77b5",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "2245b8a3fd2e9a50964301b26acaa99099ed5175",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-10-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "e6c3b24e616fd660cc136d97ce43bd3001e4e3e5",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%9F%B4%E5%8E%9F%E5%85%AB%E8%94%B5&oldid=85912081",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "245846bebf1b081265b596b288ec03f5c31ee2b0",
+            "datavalue": {
+              "value": {
+                "text": "埴原八蔵",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q108781510$b9cbbc70-4ffa-a34c-f045-69eba006ff81",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "7540453b4993836d3e36e5e89f84078ded06235a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 39239273,
+                "id": "Q39239273"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781510$f883a508-4128-3ca0-659d-8b9b412c9605",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "埴原八蔵",
+        "badges": []
+      }
+    }
+  }
+}

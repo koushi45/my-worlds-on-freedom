@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "coordinate_space": "canonical game 8192 pixels; origin top-left; y down",
+  "construction": "exact planar noding and polygonize_full",
+  "forbidden_operations_used": {
+    "buffer": false,
+    "tolerance_snap": false,
+    "voronoi": false
+  },
+  "inputs": {
+    "shared_boundaries": "data/work/political/regional_warped_boundaries.gpkg",
+    "canonical_coastline": "data/derived/coastline/coastline_master.gpkg",
+    "canonical_land": "data/base/japan_land.gpkg"
+  },
+  "counts": {
+    "input_shared_boundaries": 104,
+    "canonical_coastlines": 154,
+    "polygonized_faces": 157,
+    "dangles": 3,
+    "cuts": 142,
+    "invalid_rings": 0,
+    "unconfirmed_endpoints": 110
+  },
+  "lake_reference_status": {
+    "status": "unavailable",
+    "reason": "approved japan_land has no interior rings and no approved lake master with lake_id exists",
+    "coastline_ids_substituted": false
+  }
+}

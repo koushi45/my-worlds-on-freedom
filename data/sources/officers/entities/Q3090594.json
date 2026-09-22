@@ -1,0 +1,286 @@
+{
+  "retrieved_utc": "2026-09-12T11:13:51Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 2953720,
+    "ns": 0,
+    "title": "Q3090594",
+    "lastrevid": 2521641512,
+    "modified": "2026-07-23T12:51:54Z",
+    "type": "item",
+    "id": "Q3090594",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Nagao Fujikage"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "長尾藤景"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese samurai"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "日本の侍 (-1568)"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090594$70849F64-446E-4831-82A8-E194071EB3C3",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090594$A1046BB6-BEBC-46C7-9227-0CABCCA39876",
+          "rank": "normal"
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "442eed7751165909dcf1eb3e23702fbd4f08a258",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090594$DB918DCF-C849-4A1B-87B0-357E20C78494",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "34771f1ac3c8428849fe604125a6bb3a5683ba6b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 38142,
+                "id": "Q38142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090594$6A978BB1-A01B-4240-885B-AAF75665E4A5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "9e25d467c54967ab1fae2cf1a8c97cbd6dbc9798",
+            "datavalue": {
+              "value": {
+                "time": "+1568-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3090594$7FC25989-4D0A-4453-8902-188C33DC9632",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "5d025c831edd6d91a6d793c94c1c36a7190758dd",
+            "datavalue": {
+              "value": {
+                "text": "長尾藤景",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3090594$6B2F69D6-2D45-4DB3-B4A4-D952F2A583D2",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ca06b5dcb859d658eeb856fa13aaea88e0a60e11",
+            "datavalue": {
+              "value": "/m/02qshdk",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3090594$DB86A021-0F19-4F20-AC0B-AD3B1EAE5EB3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Nagao Fujikage",
+        "badges": []
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "ناگائو فوجیکاگه",
+        "badges": []
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Fujikage Nagao",
+        "badges": []
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Nagao Fujikage",
+        "badges": []
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Nagao Fujikage",
+        "badges": []
+      }
+    }
+  }
+}

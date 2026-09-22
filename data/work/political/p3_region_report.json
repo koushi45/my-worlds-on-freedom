@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "phase": "P3",
+  "status": "generated_candidates_pending_manual_closure_and_review",
+  "generated_at_utc": "2026-09-07T16:37:39.150096Z",
+  "formula": "political_region = traced_historical_region intersection japan_land_master",
+  "source_review": {
+    "p1": "generated_pending_manual_review",
+    "p2": "generated_pending_manual_review",
+    "promotion_to_master": false
+  },
+  "rules": {
+    "interior_source": "P2 shared boundaries only; source approval state preserved",
+    "sea_closure": "canonical coastline_id segment references only",
+    "lake_closure": "not fabricated; blocked until approved lake IDs exist",
+    "raster_coastline_copied": false,
+    "automatic_gap_ownership": false,
+    "buffer_snap_or_voronoi_used": false
+  },
+  "counts": {
+    "regions_in_registry": 69,
+    "closed_region_candidate_parts": 1,
+    "candidate_region_ids": 1,
+    "ambiguous_closed_faces": 156,
+    "unassigned_region_labels": 68,
+    "unconfirmed_endpoints": 110,
+    "coastline_segment_references": 1,
+    "shared_boundary_references": 0,
+    "adjacency_matches": 0,
+    "adjacency_mismatches": 0,
+    "adjacency_not_testable": 78
+  },
+  "blocking_review": {
+    "reason": "most transformed boundary endpoints do not exactly meet another approved boundary or canonical coastline",
+    "policy": "left open for manual P4 correction; no automatic ownership assignment"
+  },
+  "input_hashes": {
+    "japan_land_master": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+    "coastline_master": "099F8CFB8175BCC5B217900FCCC5663FD858D31F2DEE372F1FB13BC4B66A0BAF",
+    "p2_boundaries": "E4F0D7082789CAAC356EEE55A158BD016C171F6AA680F6095A1784DD0A0072CC",
+    "p1_trace": "E04BF7278537682B2198C173558AF517BDB6438E9E6CA09DA459D52F4EF7E68D"
+  },
+  "outputs": {
+    "candidate_gpkg": "data/work/political/political_regions_candidate.gpkg",
+    "candidate_geojson": "data/work/political/political_regions_candidate.geojson",
+    "planar_graph": "data/work/political/political_planar_graph.json",
+    "coastline_references": "data/work/political/political_coastline_references.json",
+    "boundary_references": "data/work/political/political_boundary_references.json",
+    "adjacency_audit": "data/work/political/political_adjacency_audit.json",
+    "qa": "data/derived/political/qa/p3/p3_national_candidate_audit.png"
+  },
+  "libraries": {
+    "python": "3.14.3",
+    "numpy": "2.4.4",
+    "shapely": "2.1.2",
+    "geopandas": "1.1.4",
+    "pyogrio": "0.13.0"
+  }
+}

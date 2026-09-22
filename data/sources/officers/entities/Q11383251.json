@@ -1,0 +1,162 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:24Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12521625,
+    "ns": 0,
+    "title": "Q11383251",
+    "lastrevid": 2351614895,
+    "modified": "2025-05-23T17:06:35Z",
+    "type": "item",
+    "id": "Q11383251",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "佐治重家"
+      },
+      "en": {
+        "language": "en",
+        "value": "Saji Shigeie"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "鎌倉時代の武士"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11383251$45775CC9-1897-499E-B6CC-F278C661BE50",
+          "rank": "normal"
+        }
+      ],
+      "P1814": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1814",
+            "hash": "3cb4f981fdd47464241749ad5bb6656192f10d05",
+            "datavalue": {
+              "value": "さじ しげいえ",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q11383251$0119A785-BB7F-4206-85C8-1CF5A95D2315",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11383251$143b435d-4738-e557-0bb3-4f8ef66762c7",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "25889808015d8243098a74e78184d6cb265c4b4b",
+            "datavalue": {
+              "value": "/g/1215vt_y",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11383251$3A458D1D-A38A-408F-B765-9646483F432F",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "34771f1ac3c8428849fe604125a6bb3a5683ba6b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 38142,
+                "id": "Q38142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11383251$e12f2b4a-4fc3-ff62-06a3-147d9031a27f",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "佐治重家",
+        "badges": []
+      }
+    }
+  }
+}

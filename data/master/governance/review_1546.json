@@ -1,0 +1,2322 @@
+{
+  "stats": {
+    "districts": 709,
+    "sites": 257,
+    "accepted_sites": 254,
+    "deferred_sites": 3,
+    "district_bases": {
+      "existing_daimyo_placement": 86,
+      "regional_scenario_estimate": 473,
+      "existing_house_pool": 43,
+      "existing_officer_placement": 105,
+      "user_direction": 2
+    },
+    "named_district_governors": 664,
+    "named_site_governors": 214,
+    "future_sites": 14,
+    "uncertain_site_district_links": 63
+  },
+  "unresolved": [
+    {
+      "id": "awa_shikoku/candidate-district-candidate-g59009",
+      "name": "那賀郡",
+      "note": "既存の家別配置候補をゲーム支配家へ適用。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39001",
+      "name": "岩舩郡",
+      "note": "既存の家別配置候補をゲーム支配家へ適用。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-03/candidate-district-candidate-g33003",
+      "name": "雄勝郡",
+      "note": "既存の家別配置候補をゲーム支配家へ適用。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-03/candidate-district-candidate-g33004",
+      "name": "平鹿郡",
+      "note": "既存の家別配置候補をゲーム支配家へ適用。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30005",
+      "name": "東和賀郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30006",
+      "name": "西和賀郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30007",
+      "name": "稗貫郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30008",
+      "name": "紫波郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30009",
+      "name": "東閇伊郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30010",
+      "name": "西閇伊郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30011",
+      "name": "中閇伊郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30012",
+      "name": "南閇伊郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30013",
+      "name": "北閇伊郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30016",
+      "name": "南九戸郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/candidate-district-candidate-g30017",
+      "name": "北九戸郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-04/unresolved-42cfaa8c657745ea",
+      "name": "東閇伊郡周辺（仮）",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "honshu-area-06/candidate-district-candidate-g32006",
+      "name": "最上郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "iga/candidate-district-candidate-g06003",
+      "name": "伊賀郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "iga/candidate-district-candidate-g06004",
+      "name": "名張郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "iga/unresolved-42cfaa8c657745ea",
+      "name": "名張郡周辺（仮）",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "ise/candidate-district-candidate-g07001",
+      "name": "桑名郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "ise/candidate-district-candidate-g07002",
+      "name": "員弁郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "ise/candidate-district-candidate-g07003",
+      "name": "朝明郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "ise/candidate-district-candidate-g07004",
+      "name": "三重郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "ise/candidate-district-candidate-g07005",
+      "name": "鈴鹿郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "ise/candidate-district-candidate-g07006",
+      "name": "河曲郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "ise/unresolved-42cfaa8c657745ea",
+      "name": "度会郡周辺（仮）",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57001",
+      "name": "名草郡",
+      "note": "既存の家別配置候補をゲーム支配家へ適用。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57002",
+      "name": "海部郡",
+      "note": "既存の家別配置候補をゲーム支配家へ適用。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57004",
+      "name": "伊都郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57005",
+      "name": "有田郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57006",
+      "name": "日高郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57007",
+      "name": "東牟婁郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57008",
+      "name": "西牟婁郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57009",
+      "name": "北牟婁郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57010",
+      "name": "南牟婁郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "kii/unresolved-42cfaa8c657745ea",
+      "name": "西牟婁郡周辺（仮）",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "osumi/candidate-district-candidate-g70002",
+      "name": "桑原郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "osumi/candidate-district-candidate-g70003",
+      "name": "姶良郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "osumi/candidate-district-candidate-g70007",
+      "name": "南大隅郡",
+      "note": "既存の家別配置候補をゲーム支配家へ適用。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "osumi/unresolved-42cfaa8c657745ea",
+      "name": "南大隅郡周辺（仮）",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "satsuma/candidate-district-candidate-g71009",
+      "name": "伊佐郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "satsuma/candidate-district-candidate-g71011",
+      "name": "高城郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "shinano/candidate-district-candidate-g24004",
+      "name": "下伊那郡",
+      "note": "既存武将の配置だけでは判別不可。家の活動圏・地域資料から暫定のゲーム支配家を設定。郡全域の排他的領有・現地官職は未確定。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "shinano/candidate-district-candidate-g24007",
+      "name": "諏訪郡",
+      "note": "既存の家別配置候補をゲーム支配家へ適用。 元の配置は居住・領有の史実証明ではない。"
+    },
+    {
+      "id": "uchi_castle",
+      "name": "鹿児島・内城",
+      "note": "1550年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "usuki_castle",
+      "name": "臼杵",
+      "note": "1562年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "nagasaki_port",
+      "name": "長崎",
+      "note": "1571年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "sakai_town",
+      "name": "堺",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 合議・寺社運営。大名任命の城主を架空に設定しない。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "saika_town",
+      "name": "雑賀・鷺森付近",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 合議・寺社運営。大名任命の城主を架空に設定しない。"
+    },
+    {
+      "id": "azuchi_castle",
+      "name": "安土城",
+      "note": "1576年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "sakamoto_castle",
+      "name": "坂本城",
+      "note": "1571年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "nejime_port",
+      "name": "根占付近",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "kajiki_port",
+      "name": "加治木の港域付近",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "site_1582_mutsu_002",
+      "name": "九戸城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_mutsu_003",
+      "name": "高水寺城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "site_1582_mutsu_004",
+      "name": "鳥谷ヶ崎城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "site_1582_mutsu_013",
+      "name": "小浜城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_dewa_020",
+      "name": "鮭延城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "site_1582_dewa_021",
+      "name": "横手城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "site_1582_hitachi_053",
+      "name": "水戸城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 1590年以前の約160年間は江戸氏が水戸城主。1546年の佐竹直轄とはしない。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_hitachi_057",
+      "name": "笠間城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_hitachi_058",
+      "name": "真壁城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 平安期以降の真壁氏の領域。特定年の当主名は別途留保。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_kai_065",
+      "name": "谷村城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 1532年小山田信有が谷村へ移る。複数世代の信有の区別は留保。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_shinano_070",
+      "name": "飯田城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "site_1582_shinano_071",
+      "name": "海津城",
+      "note": "1560年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "site_1582_kaga_078",
+      "name": "金沢御堂予定地（年内創建・月日未詳）",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 金沢御堂は1546年創建だが月日不詳。1月1日に完成済みとは扱わない。"
+    },
+    {
+      "id": "site_1582_echigo_097",
+      "name": "本庄城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "site_1582_ise_102",
+      "name": "長島城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "site_1582_ise_103",
+      "name": "桑名",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_ise_104",
+      "name": "亀山城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。"
+    },
+    {
+      "id": "site_1582_ise_105",
+      "name": "神戸城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 神戸氏の城と奉行衆。1546年の当主継承は未確定。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_ise_111",
+      "name": "宇治山田",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 合議・寺社運営。大名任命の城主を架空に設定しない。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_mino_114",
+      "name": "苗木城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 遠山氏の領域。後年の遠山直廉を1546年城主へ遡及しない。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_mino_116",
+      "name": "郡上八幡城",
+      "note": "1559年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "site_1582_mikawa_121",
+      "name": "西尾城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_mikawa_123",
+      "name": "新城城",
+      "note": "1576年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "site_1582_suruga_125",
+      "name": "三枚橋城",
+      "note": "1579年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "site_1582_tajima_135",
+      "name": "有子山城",
+      "note": "1574年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "site_1582_tanba_138",
+      "name": "横山城（現表示：福知山城）",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 横山城は塩見頼勝・頼氏の城と伝える。光秀の本格築城は1579年以後。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_tango_140",
+      "name": "宮津城",
+      "note": "1580年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "site_1582_kii_146",
+      "name": "高野山",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 合議・寺社運営。大名任命の城主を架空に設定しない。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_kii_148",
+      "name": "新宮",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_omi_149",
+      "name": "長浜城",
+      "note": "1574年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。"
+    },
+    {
+      "id": "site_1582_izumo_153",
+      "name": "三沢城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_bingo_158",
+      "name": "三原城",
+      "note": "1567年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_aki_159",
+      "name": "新高山城",
+      "note": "1552年の築城・開港。1546年は未成立のため城主・港の担当者は任命しない。支配家は周辺地域のゲーム設定。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    },
+    {
+      "id": "site_1582_awa_shikoku_192",
+      "name": "白地城",
+      "note": "家の現行設定・本拠圏から支配家をゲーム設定。現地城主の史実確定とは区別。 白地城主大西氏。主に1576～1578年の記録で1546年の個人は確定できない。 所在郡の代表支配家とは異なる拠点（飛地・競合を含むゲーム設定）。"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "aki/candidate-district-candidate-g54001",
+      "name": "豊田郡",
+      "house_ids": [
+        "kobayakawa",
+        "kobayakawa_numata"
+      ]
+    },
+    {
+      "id": "awa_shikoku/candidate-district-candidate-g59001",
+      "name": "阿波郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "awa_shikoku/candidate-district-candidate-g59002",
+      "name": "麻植郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "awa_shikoku/candidate-district-candidate-g59003",
+      "name": "板野郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "awa_shikoku/candidate-district-candidate-g59004",
+      "name": "名東郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "awa_shikoku/candidate-district-candidate-g59005",
+      "name": "名西郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "awa_shikoku/candidate-district-candidate-g59006",
+      "name": "美馬郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "awa_shikoku/candidate-district-candidate-g59008",
+      "name": "勝浦郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "awa_shikoku/candidate-district-candidate-g59010",
+      "name": "海部郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "awa_shikoku/unresolved-42cfaa8c657745ea",
+      "name": "海部郡周辺（仮）",
+      "house_ids": [
+        "hosokawa_awa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53001",
+      "name": "安那郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53003",
+      "name": "神石郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53005",
+      "name": "品治郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53006",
+      "name": "蘆田郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53007",
+      "name": "甲奴郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53008",
+      "name": "御調郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53009",
+      "name": "世羅郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53010",
+      "name": "三裕郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53011",
+      "name": "三次郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53012",
+      "name": "三上郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/candidate-district-candidate-g53013",
+      "name": "奴可郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/merged-ca26d9b866720cdc",
+      "name": "沼隈郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bingo/unresolved-42cfaa8c657745ea",
+      "name": "御調郡周辺（仮）",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "bitchu/candidate-district-candidate-g52001",
+      "name": "小田郡",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bitchu/candidate-district-candidate-g52002",
+      "name": "浅口郡",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bitchu/candidate-district-candidate-g52005",
+      "name": "川上郡",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bitchu/candidate-district-candidate-g52006",
+      "name": "下道郡",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bitchu/candidate-district-candidate-g52007",
+      "name": "賀陽郡",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bitchu/candidate-district-candidate-g52009",
+      "name": "阿賀郡",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bitchu/candidate-district-candidate-g52010",
+      "name": "哲多郡",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bitchu/candidate-district-candidate-g52011",
+      "name": "後月郡",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bitchu/merged-dc8d42a1275831b7",
+      "name": "窪屋郡",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bitchu/unresolved-42cfaa8c657745ea",
+      "name": "哲多郡周辺（仮）",
+      "house_ids": [
+        "amago",
+        "mimura"
+      ]
+    },
+    {
+      "id": "bizen/candidate-district-candidate-g51001",
+      "name": "邑久郡",
+      "house_ids": [
+        "ukita",
+        "uragami"
+      ]
+    },
+    {
+      "id": "bizen/candidate-district-candidate-g51002",
+      "name": "赤坂郡",
+      "house_ids": [
+        "uragami",
+        "amago"
+      ]
+    },
+    {
+      "id": "bizen/candidate-district-candidate-g51003",
+      "name": "磐梨郡",
+      "house_ids": [
+        "uragami",
+        "amago"
+      ]
+    },
+    {
+      "id": "bizen/candidate-district-candidate-g51005",
+      "name": "上道郡",
+      "house_ids": [
+        "uragami",
+        "amago"
+      ]
+    },
+    {
+      "id": "bizen/candidate-district-candidate-g51006",
+      "name": "御野郡",
+      "house_ids": [
+        "uragami",
+        "amago"
+      ]
+    },
+    {
+      "id": "bizen/candidate-district-candidate-g51007",
+      "name": "津高郡",
+      "house_ids": [
+        "uragami",
+        "amago"
+      ]
+    },
+    {
+      "id": "bizen/candidate-district-candidate-g51008",
+      "name": "児嶋郡",
+      "house_ids": [
+        "uragami",
+        "amago"
+      ]
+    },
+    {
+      "id": "bizen/unresolved-42cfaa8c657745ea",
+      "name": "児嶋郡周辺（仮）",
+      "house_ids": [
+        "uragami",
+        "amago"
+      ]
+    },
+    {
+      "id": "chikuzen/candidate-district-candidate-g63001",
+      "name": "志摩郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/candidate-district-candidate-g63002",
+      "name": "怡土郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/candidate-district-candidate-g63003",
+      "name": "早良郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/candidate-district-candidate-g63004",
+      "name": "那珂郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/candidate-district-candidate-g63006",
+      "name": "御笠郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/candidate-district-candidate-g63008",
+      "name": "穂波郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/candidate-district-candidate-g63009",
+      "name": "嘉麻郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/candidate-district-candidate-g63014",
+      "name": "鞍手郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/candidate-district-candidate-g63015",
+      "name": "遠賀郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/merged-e3451d53567162b9",
+      "name": "粕屋郡",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "chikuzen/unresolved-42cfaa8c657745ea",
+      "name": "遠賀郡周辺（仮）",
+      "house_ids": [
+        "ouchi",
+        "otomo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39002",
+      "name": "刈羽郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39004",
+      "name": "三嶋郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39005",
+      "name": "東蒲原郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39006",
+      "name": "西蒲原郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39007",
+      "name": "中蒲原郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39008",
+      "name": "南蒲原郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39009",
+      "name": "北蒲原郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39010",
+      "name": "北魚沼郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39011",
+      "name": "南魚沼郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39012",
+      "name": "中魚沼郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39013",
+      "name": "東頸城郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/candidate-district-candidate-g39014",
+      "name": "中頸城郡",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "echigo/unresolved-42cfaa8c657745ea",
+      "name": "岩舩郡周辺（仮）",
+      "house_ids": [
+        "nagao",
+        "uesugi_echigo"
+      ]
+    },
+    {
+      "id": "harima/candidate-district-candidate-g49004",
+      "name": "飾東郡",
+      "house_ids": [
+        "akamatsu",
+        "kodera"
+      ]
+    },
+    {
+      "id": "harima/candidate-district-candidate-g49005",
+      "name": "飾西郡",
+      "house_ids": [
+        "akamatsu",
+        "kodera",
+        "miki_aga"
+      ]
+    },
+    {
+      "id": "higo/candidate-district-candidate-g68001",
+      "name": "玉名郡",
+      "house_ids": [
+        "otomo",
+        "aso",
+        "sagara"
+      ]
+    },
+    {
+      "id": "higo/candidate-district-candidate-g68002",
+      "name": "飽田郡",
+      "house_ids": [
+        "otomo",
+        "aso",
+        "sagara"
+      ]
+    },
+    {
+      "id": "higo/candidate-district-candidate-g68003",
+      "name": "託麻郡",
+      "house_ids": [
+        "otomo",
+        "aso",
+        "sagara"
+      ]
+    },
+    {
+      "id": "higo/candidate-district-candidate-g68005",
+      "name": "菊池郡",
+      "house_ids": [
+        "otomo",
+        "aso",
+        "sagara"
+      ]
+    },
+    {
+      "id": "higo/candidate-district-candidate-g68006",
+      "name": "合志郡",
+      "house_ids": [
+        "otomo",
+        "aso",
+        "sagara"
+      ]
+    },
+    {
+      "id": "higo/candidate-district-candidate-g68007",
+      "name": "山本郡",
+      "house_ids": [
+        "otomo",
+        "aso",
+        "sagara"
+      ]
+    },
+    {
+      "id": "higo/candidate-district-candidate-g68011",
+      "name": "宇土郡",
+      "house_ids": [
+        "otomo",
+        "aso",
+        "sagara"
+      ]
+    },
+    {
+      "id": "hitachi/candidate-district-candidate-g20002",
+      "name": "河内郡",
+      "house_ids": [
+        "satake",
+        "oda_hitachi"
+      ]
+    },
+    {
+      "id": "hitachi/candidate-district-candidate-g20003",
+      "name": "信太郡",
+      "house_ids": [
+        "satake",
+        "oda_hitachi"
+      ]
+    },
+    {
+      "id": "hitachi/candidate-district-candidate-g20004",
+      "name": "行方郡",
+      "house_ids": [
+        "satake",
+        "oda_hitachi"
+      ]
+    },
+    {
+      "id": "hitachi/candidate-district-candidate-g20005",
+      "name": "鹿島郡",
+      "house_ids": [
+        "satake",
+        "oda_hitachi"
+      ]
+    },
+    {
+      "id": "hitachi/candidate-district-candidate-g20007",
+      "name": "東茨城郡",
+      "house_ids": [
+        "satake",
+        "oda_hitachi"
+      ]
+    },
+    {
+      "id": "hitachi/candidate-district-candidate-g20008",
+      "name": "西茨城郡",
+      "house_ids": [
+        "satake",
+        "oda_hitachi"
+      ]
+    },
+    {
+      "id": "hitachi/candidate-district-candidate-g20012",
+      "name": "多賀郡",
+      "house_ids": [
+        "satake",
+        "oda_hitachi"
+      ]
+    },
+    {
+      "id": "hitachi/unresolved-42cfaa8c657745ea",
+      "name": "鹿島郡周辺（仮）",
+      "house_ids": [
+        "satake",
+        "oda_hitachi"
+      ]
+    },
+    {
+      "id": "hizen/candidate-district-candidate-g67007",
+      "name": "杵島郡",
+      "house_ids": [
+        "shoni",
+        "ryuzoji",
+        "arima",
+        "matsuura"
+      ]
+    },
+    {
+      "id": "hizen/candidate-district-candidate-g67008",
+      "name": "藤津郡",
+      "house_ids": [
+        "shoni",
+        "ryuzoji",
+        "arima",
+        "matsuura"
+      ]
+    },
+    {
+      "id": "hizen/candidate-district-candidate-g67015",
+      "name": "北松浦郡",
+      "house_ids": [
+        "matsuura",
+        "so"
+      ]
+    },
+    {
+      "id": "honshu-area-01/candidate-district-candidate-g31003",
+      "name": "三戸郡",
+      "house_ids": [
+        "hachinohe",
+        "nanbu"
+      ]
+    },
+    {
+      "id": "honshu-area-01/candidate-district-candidate-g31004",
+      "name": "二戸郡",
+      "house_ids": [
+        "kunohe",
+        "nanbu"
+      ]
+    },
+    {
+      "id": "honshu-area-03/candidate-district-candidate-g33002",
+      "name": "由利郡",
+      "house_ids": [
+        "ando",
+        "onodera",
+        "tozawa"
+      ]
+    },
+    {
+      "id": "honshu-area-05/candidate-district-candidate-g29003",
+      "name": "宮城郡",
+      "house_ids": [
+        "kokubun_miyagi",
+        "rusu"
+      ]
+    },
+    {
+      "id": "honshu-area-05/candidate-district-candidate-g29009",
+      "name": "志田郡",
+      "house_ids": [
+        "osaki",
+        "osaki_yoshinobu"
+      ]
+    },
+    {
+      "id": "honshu-area-09/candidate-district-candidate-g28007",
+      "name": "安積郡",
+      "house_ids": [
+        "ashina",
+        "date"
+      ]
+    },
+    {
+      "id": "hyuga/candidate-district-candidate-g69010",
+      "name": "北那珂郡",
+      "house_ids": [
+        "ito",
+        "shimazu_hoshu"
+      ]
+    },
+    {
+      "id": "ise/candidate-district-candidate-g07011",
+      "name": "飯野郡",
+      "house_ids": [
+        "kitabatake",
+        "kitashirakawa"
+      ]
+    },
+    {
+      "id": "iwami/candidate-district-candidate-g47001",
+      "name": "安濃郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "iwami/candidate-district-candidate-g47002",
+      "name": "邇摩郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "iwami/candidate-district-candidate-g47004",
+      "name": "那賀郡",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "iwami/unresolved-42cfaa8c657745ea",
+      "name": "邑智郡周辺（仮）",
+      "house_ids": [
+        "ouchi",
+        "amago"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61001",
+      "name": "宇摩郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61002",
+      "name": "新居郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61003",
+      "name": "周布郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61004",
+      "name": "桑村郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61006",
+      "name": "野間郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61008",
+      "name": "和気郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61010",
+      "name": "久米郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61011",
+      "name": "伊予郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61012",
+      "name": "上浮穴郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "iyo/candidate-district-candidate-g61013",
+      "name": "下浮穴郡",
+      "house_ids": [
+        "kono",
+        "saionji"
+      ]
+    },
+    {
+      "id": "izumo/candidate-district-candidate-g46009",
+      "name": "仁多郡",
+      "house_ids": [
+        "amago",
+        "misawa_izumo"
+      ]
+    },
+    {
+      "id": "kai/unresolved-b48d2f62146c8828",
+      "name": "都留郡周辺（仮1）",
+      "house_ids": [
+        "oyamada_gunnai",
+        "takeda"
+      ]
+    },
+    {
+      "id": "kazusa/candidate-district-candidate-g18001",
+      "name": "天羽郡",
+      "house_ids": [
+        "satomi",
+        "mariyatsu_shiizu"
+      ]
+    },
+    {
+      "id": "kazusa/candidate-district-candidate-g18002",
+      "name": "周淮郡",
+      "house_ids": [
+        "satomi",
+        "mariyatsu_shiizu"
+      ]
+    },
+    {
+      "id": "kazusa/candidate-district-candidate-g18003",
+      "name": "望陀郡",
+      "house_ids": [
+        "satomi",
+        "mariyatsu_shiizu"
+      ]
+    },
+    {
+      "id": "kazusa/candidate-district-candidate-g18005",
+      "name": "夷隅郡",
+      "house_ids": [
+        "satomi",
+        "mariyatsu_shiizu"
+      ]
+    },
+    {
+      "id": "kazusa/candidate-district-candidate-g18006",
+      "name": "上埴生郡",
+      "house_ids": [
+        "satomi",
+        "mariyatsu_shiizu"
+      ]
+    },
+    {
+      "id": "kazusa/candidate-district-candidate-g18007",
+      "name": "長柄郡",
+      "house_ids": [
+        "satomi",
+        "mariyatsu_shiizu"
+      ]
+    },
+    {
+      "id": "kazusa/candidate-district-candidate-g18008",
+      "name": "山辺郡",
+      "house_ids": [
+        "satomi",
+        "mariyatsu_shiizu"
+      ]
+    },
+    {
+      "id": "kazusa/candidate-district-candidate-g18009",
+      "name": "武射郡",
+      "house_ids": [
+        "satomi",
+        "mariyatsu_shiizu"
+      ]
+    },
+    {
+      "id": "kazusa/unresolved-42cfaa8c657745ea",
+      "name": "武射郡周辺（仮）",
+      "house_ids": [
+        "satomi",
+        "mariyatsu_shiizu"
+      ]
+    },
+    {
+      "id": "kii/candidate-district-candidate-g57003",
+      "name": "那賀郡",
+      "house_ids": [
+        "negoro",
+        "tsuda_ogura"
+      ]
+    },
+    {
+      "id": "kozuke/candidate-district-candidate-g25016",
+      "name": "新田郡",
+      "house_ids": [
+        "iwamatsu",
+        "yura"
+      ]
+    },
+    {
+      "id": "kozuke/merged-f070fbb272c2ce29",
+      "name": "西群馬郡",
+      "house_ids": [
+        "aizu_nagano",
+        "uesugi_yamanouchi"
+      ]
+    },
+    {
+      "id": "mikawa/candidate-district-candidate-g10001",
+      "name": "碧海郡",
+      "house_ids": [
+        "matsudaira",
+        "mizuno"
+      ]
+    },
+    {
+      "id": "mikawa/candidate-district-candidate-g10002",
+      "name": "額田郡",
+      "house_ids": [
+        "matsudaira",
+        "matsudaira_nomi"
+      ]
+    },
+    {
+      "id": "mikawa/candidate-district-candidate-g10003",
+      "name": "西加茂郡",
+      "house_ids": [
+        "matsudaira",
+        "imagawa"
+      ]
+    },
+    {
+      "id": "mikawa/candidate-district-candidate-g10004",
+      "name": "東加茂郡",
+      "house_ids": [
+        "matsudaira",
+        "imagawa"
+      ]
+    },
+    {
+      "id": "mikawa/candidate-district-candidate-g10005",
+      "name": "幡豆郡",
+      "house_ids": [
+        "matsudaira",
+        "imagawa"
+      ]
+    },
+    {
+      "id": "mikawa/candidate-district-candidate-g10006",
+      "name": "宝飯郡",
+      "house_ids": [
+        "matsudaira_goi",
+        "takenoya"
+      ]
+    },
+    {
+      "id": "mikawa/candidate-district-candidate-g10007",
+      "name": "北設楽郡",
+      "house_ids": [
+        "matsudaira",
+        "imagawa"
+      ]
+    },
+    {
+      "id": "mikawa/candidate-district-candidate-g10008",
+      "name": "南設楽郡",
+      "house_ids": [
+        "matsudaira",
+        "imagawa"
+      ]
+    },
+    {
+      "id": "mikawa/candidate-district-candidate-g10009",
+      "name": "八名郡",
+      "house_ids": [
+        "matsudaira",
+        "imagawa"
+      ]
+    },
+    {
+      "id": "mikawa/unresolved-42cfaa8c657745ea",
+      "name": "渥美郡周辺（仮）",
+      "house_ids": [
+        "matsudaira",
+        "imagawa"
+      ]
+    },
+    {
+      "id": "mimasaka/candidate-district-candidate-g50001",
+      "name": "英田郡",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mimasaka/candidate-district-candidate-g50003",
+      "name": "勝南郡",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mimasaka/candidate-district-candidate-g50007",
+      "name": "西西条郡",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mimasaka/candidate-district-candidate-g50008",
+      "name": "西北条郡",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mimasaka/candidate-district-candidate-g50009",
+      "name": "久米南条郡",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mimasaka/candidate-district-candidate-g50010",
+      "name": "久米北条郡",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mimasaka/candidate-district-candidate-g50011",
+      "name": "大庭郡",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mimasaka/merged-c483c6648fd4f8c9",
+      "name": "勝北郡",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mimasaka/merged-c5888a75596f043e",
+      "name": "東北条郡",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mimasaka/unresolved-42cfaa8c657745ea",
+      "name": "眞島郡周辺（仮）",
+      "house_ids": [
+        "amago",
+        "uragami"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22001",
+      "name": "多芸郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22002",
+      "name": "上石津郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22005",
+      "name": "安八郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22007",
+      "name": "不破郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22008",
+      "name": "池田郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22009",
+      "name": "大野郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22017",
+      "name": "武儀郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22018",
+      "name": "郡上郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22019",
+      "name": "加茂郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22020",
+      "name": "可児郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22021",
+      "name": "土岐郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/candidate-district-candidate-g22022",
+      "name": "恵那郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/merged-5639788de5e3e90a",
+      "name": "下石津郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/merged-8d11359111dd8d99",
+      "name": "本巣郡",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "mino/unresolved-42cfaa8c657745ea",
+      "name": "恵那郡周辺（仮）",
+      "house_ids": [
+        "saito",
+        "toki"
+      ]
+    },
+    {
+      "id": "musashi/candidate-district-candidate-g16003",
+      "name": "北葛飾郡",
+      "house_ids": [
+        "hojo",
+        "uesugi_yamanouchi",
+        "uesugi_ogigayatsu"
+      ]
+    },
+    {
+      "id": "musashi/candidate-district-candidate-g16005",
+      "name": "北足立郡",
+      "house_ids": [
+        "hojo",
+        "uesugi_yamanouchi",
+        "uesugi_ogigayatsu"
+      ]
+    },
+    {
+      "id": "musashi/candidate-district-candidate-g16006",
+      "name": "新座郡",
+      "house_ids": [
+        "hojo",
+        "uesugi_yamanouchi",
+        "uesugi_ogigayatsu"
+      ]
+    },
+    {
+      "id": "musashi/candidate-district-candidate-g16011",
+      "name": "高麗郡",
+      "house_ids": [
+        "hojo",
+        "uesugi_yamanouchi",
+        "uesugi_ogigayatsu"
+      ]
+    },
+    {
+      "id": "musashi/candidate-district-candidate-g16013",
+      "name": "横見郡",
+      "house_ids": [
+        "hojo",
+        "uesugi_yamanouchi",
+        "uesugi_ogigayatsu"
+      ]
+    },
+    {
+      "id": "osumi/candidate-district-candidate-g70004",
+      "name": "東囎唹郡",
+      "house_ids": [
+        "kimotsuki",
+        "shimazu"
+      ]
+    },
+    {
+      "id": "osumi/candidate-district-candidate-g70005",
+      "name": "西囎唹郡",
+      "house_ids": [
+        "kimotsuki",
+        "shimazu"
+      ]
+    },
+    {
+      "id": "osumi/candidate-district-candidate-g70008",
+      "name": "北大隅郡",
+      "house_ids": [
+        "kimotsuki",
+        "shimazu"
+      ]
+    },
+    {
+      "id": "owari/candidate-district-candidate-g09002",
+      "name": "知多郡",
+      "house_ids": [
+        "hisamatsu_agui",
+        "mizuno"
+      ]
+    },
+    {
+      "id": "owari/candidate-district-candidate-g09003",
+      "name": "西春日井郡",
+      "house_ids": [
+        "oda_kiyosu",
+        "shiba"
+      ]
+    },
+    {
+      "id": "owari/candidate-district-candidate-g09004",
+      "name": "東春日井郡",
+      "house_ids": [
+        "oda_nobuhide",
+        "oda_iwakura",
+        "oda_kiyosu"
+      ]
+    },
+    {
+      "id": "owari/candidate-district-candidate-g09007",
+      "name": "中島郡",
+      "house_ids": [
+        "oda_nobuhide",
+        "oda_iwakura",
+        "oda_kiyosu"
+      ]
+    },
+    {
+      "id": "owari/candidate-district-candidate-g09008",
+      "name": "海東郡",
+      "house_ids": [
+        "oda_nobuhide",
+        "oda_nobutsugu"
+      ]
+    },
+    {
+      "id": "owari/unresolved-42cfaa8c657745ea",
+      "name": "知多郡周辺（仮）",
+      "house_ids": [
+        "oda_nobuhide",
+        "oda_iwakura",
+        "oda_kiyosu"
+      ]
+    },
+    {
+      "id": "sanuki/candidate-district-candidate-g60001",
+      "name": "大内郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "kagawa",
+        "sogo"
+      ]
+    },
+    {
+      "id": "sanuki/candidate-district-candidate-g60002",
+      "name": "寒川郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "kagawa",
+        "sogo"
+      ]
+    },
+    {
+      "id": "sanuki/candidate-district-candidate-g60003",
+      "name": "三木郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "kagawa",
+        "sogo"
+      ]
+    },
+    {
+      "id": "sanuki/candidate-district-candidate-g60005",
+      "name": "香川郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "kagawa",
+        "sogo"
+      ]
+    },
+    {
+      "id": "sanuki/candidate-district-candidate-g60006",
+      "name": "阿野郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "kagawa",
+        "sogo"
+      ]
+    },
+    {
+      "id": "sanuki/candidate-district-candidate-g60007",
+      "name": "鵜足郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "kagawa",
+        "sogo"
+      ]
+    },
+    {
+      "id": "sanuki/candidate-district-candidate-g60010",
+      "name": "三野郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "kagawa",
+        "sogo"
+      ]
+    },
+    {
+      "id": "sanuki/candidate-district-candidate-g60011",
+      "name": "豊田郡",
+      "house_ids": [
+        "hosokawa_awa",
+        "kagawa",
+        "sogo"
+      ]
+    },
+    {
+      "id": "sanuki/unresolved-42cfaa8c657745ea",
+      "name": "三野郡周辺（仮）",
+      "house_ids": [
+        "hosokawa_awa",
+        "kagawa",
+        "sogo"
+      ]
+    },
+    {
+      "id": "satsuma/candidate-district-candidate-g71010",
+      "name": "薩摩郡",
+      "house_ids": [
+        "kedo",
+        "shibuya"
+      ]
+    },
+    {
+      "id": "settsu/candidate-district-candidate-g05008",
+      "name": "武庫郡",
+      "house_ids": [
+        "hosokawa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "settsu/candidate-district-candidate-g05009",
+      "name": "兎原郡",
+      "house_ids": [
+        "hosokawa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "settsu/candidate-district-candidate-g05010",
+      "name": "八部郡",
+      "house_ids": [
+        "hosokawa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "settsu/candidate-district-candidate-g05012",
+      "name": "有馬郡",
+      "house_ids": [
+        "hosokawa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "settsu/merged-48f4626a9b864685",
+      "name": "川辺郡",
+      "house_ids": [
+        "itami",
+        "shiokawa",
+        "takayama_settsu"
+      ]
+    },
+    {
+      "id": "settsu/merged-63e8d60c157e0c0b",
+      "name": "豊島郡",
+      "house_ids": [
+        "ikeda_settsu",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "settsu/unresolved-42cfaa8c657745ea",
+      "name": "八部郡周辺（仮）",
+      "house_ids": [
+        "hosokawa",
+        "miyoshi"
+      ]
+    },
+    {
+      "id": "shimosa/candidate-district-candidate-g19005",
+      "name": "豊田郡",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimosa/candidate-district-candidate-g19006",
+      "name": "岡田郡",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimosa/candidate-district-candidate-g19007",
+      "name": "南相馬郡",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimosa/candidate-district-candidate-g19008",
+      "name": "北相馬郡",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimosa/candidate-district-candidate-g19010",
+      "name": "下埴生郡",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimosa/candidate-district-candidate-g19011",
+      "name": "香取郡",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimosa/candidate-district-candidate-g19012",
+      "name": "匝瑳郡",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimosa/candidate-district-candidate-g19013",
+      "name": "海上郡",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimosa/merged-3acc18b6734198e3",
+      "name": "東葛飾郡",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimosa/unresolved-42cfaa8c657745ea",
+      "name": "豊田郡周辺（仮）",
+      "house_ids": [
+        "chiba",
+        "koga"
+      ]
+    },
+    {
+      "id": "shimotsuke/candidate-district-candidate-g26002",
+      "name": "足利郡",
+      "house_ids": [
+        "utsunomiya",
+        "nasu"
+      ]
+    },
+    {
+      "id": "shimotsuke/candidate-district-candidate-g26003",
+      "name": "上都賀郡",
+      "house_ids": [
+        "utsunomiya",
+        "nasu"
+      ]
+    },
+    {
+      "id": "shimotsuke/candidate-district-candidate-g26008",
+      "name": "塩谷郡",
+      "house_ids": [
+        "utsunomiya",
+        "nasu"
+      ]
+    },
+    {
+      "id": "shimotsuke/merged-5e050977ef66e7ce",
+      "name": "下都賀郡",
+      "house_ids": [
+        "minagawa",
+        "oyama"
+      ]
+    },
+    {
+      "id": "shimotsuke/unresolved-42cfaa8c657745ea",
+      "name": "那須郡周辺（仮）",
+      "house_ids": [
+        "utsunomiya",
+        "nasu"
+      ]
+    },
+    {
+      "id": "tanba/candidate-district-candidate-g41001",
+      "name": "南桑田郡",
+      "house_ids": [
+        "hosokawa",
+        "hatano"
+      ]
+    },
+    {
+      "id": "tanba/candidate-district-candidate-g41002",
+      "name": "北桑田郡",
+      "house_ids": [
+        "hosokawa",
+        "hatano"
+      ]
+    },
+    {
+      "id": "tanba/candidate-district-candidate-g41003",
+      "name": "船井郡",
+      "house_ids": [
+        "hosokawa",
+        "hatano"
+      ]
+    },
+    {
+      "id": "tanba/candidate-district-candidate-g41004",
+      "name": "何鹿郡",
+      "house_ids": [
+        "hosokawa",
+        "hatano"
+      ]
+    },
+    {
+      "id": "tanba/candidate-district-candidate-g41006",
+      "name": "氷上郡",
+      "house_ids": [
+        "akai",
+        "ogino_kuroi"
+      ]
+    },
+    {
+      "id": "tanba/candidate-district-candidate-g41007",
+      "name": "天田郡",
+      "house_ids": [
+        "hosokawa",
+        "hatano"
+      ]
+    },
+    {
+      "id": "tanba/unresolved-42cfaa8c657745ea",
+      "name": "多紀郡周辺（仮）",
+      "house_ids": [
+        "hosokawa",
+        "hatano"
+      ]
+    },
+    {
+      "id": "tosa/candidate-district-candidate-g62002",
+      "name": "香美郡",
+      "house_ids": [
+        "ichijo",
+        "motoyama",
+        "chosokabe"
+      ]
+    },
+    {
+      "id": "tosa/candidate-district-candidate-g62005",
+      "name": "吾川郡",
+      "house_ids": [
+        "ichijo",
+        "motoyama",
+        "chosokabe"
+      ]
+    },
+    {
+      "id": "tosa/candidate-district-candidate-g62006",
+      "name": "高岡郡",
+      "house_ids": [
+        "ichijo",
+        "motoyama",
+        "chosokabe"
+      ]
+    },
+    {
+      "id": "tosa/unresolved-42cfaa8c657745ea",
+      "name": "幡多郡周辺（仮）",
+      "house_ids": [
+        "ichijo",
+        "motoyama",
+        "chosokabe"
+      ]
+    },
+    {
+      "id": "yamashiro/candidate-district-candidate-g01006",
+      "name": "久世郡",
+      "house_ids": [
+        "ashikaga",
+        "hosokawa"
+      ]
+    },
+    {
+      "id": "yamashiro/candidate-district-candidate-g01007",
+      "name": "綴喜郡",
+      "house_ids": [
+        "ashikaga",
+        "hosokawa"
+      ]
+    },
+    {
+      "id": "yamashiro/candidate-district-candidate-g01008",
+      "name": "相楽郡",
+      "house_ids": [
+        "ashikaga",
+        "hosokawa"
+      ]
+    },
+    {
+      "id": "yamashiro/merged-1facecf90dae45ac",
+      "name": "紀伊郡",
+      "house_ids": [
+        "ashikaga",
+        "hosokawa"
+      ]
+    },
+    {
+      "id": "yamashiro/unresolved-42cfaa8c657745ea",
+      "name": "愛宕郡周辺（仮）",
+      "house_ids": [
+        "ashikaga",
+        "hosokawa"
+      ]
+    },
+    {
+      "id": "yamato/candidate-district-candidate-g02003",
+      "name": "平群郡",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    },
+    {
+      "id": "yamato/candidate-district-candidate-g02005",
+      "name": "宇陀郡",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    },
+    {
+      "id": "yamato/candidate-district-candidate-g02006",
+      "name": "式上郡",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    },
+    {
+      "id": "yamato/candidate-district-candidate-g02008",
+      "name": "十市郡",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    },
+    {
+      "id": "yamato/candidate-district-candidate-g02014",
+      "name": "宇智郡",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    },
+    {
+      "id": "yamato/candidate-district-candidate-g02015",
+      "name": "吉野郡",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    },
+    {
+      "id": "yamato/merged-053fe8c3a9218b5e",
+      "name": "山辺郡",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    },
+    {
+      "id": "yamato/merged-4f8b27072b106cbb",
+      "name": "葛下郡",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    },
+    {
+      "id": "yamato/merged-71329caa12e7ae87",
+      "name": "葛上郡",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    },
+    {
+      "id": "yamato/unresolved-42cfaa8c657745ea",
+      "name": "吉野郡周辺（仮）",
+      "house_ids": [
+        "tsutsui",
+        "ochi"
+      ]
+    }
+  ]
+}

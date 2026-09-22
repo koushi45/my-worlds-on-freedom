@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "target_year": 1582,
+  "evidence": [
+    {
+      "evidence_id": "ishiyama-higashinari-apedia",
+      "site_id": "ishiyama_honganji",
+      "candidate_id": "district-candidate-g05002",
+      "historical_province_id": "province-p035",
+      "district_name": "東成郡",
+      "status": "supported_retrospective_affiliation",
+      "source_title": "Web版尼崎地域史事典 apedia・石山本願寺（浄土真宗）",
+      "publisher": "尼崎市立歴史博物館・地域研究史料館",
+      "url": "https://www.archives.city.amagasaki.hyogo.jp/apedia/index.php?key=%E7%9F%B3%E5%B1%B1%E6%9C%AC%E9%A1%98%E5%AF%BA%EF%BC%88%E6%B5%84%E5%9C%9F%E7%9C%9F%E5%AE%97%EF%BC%89",
+      "locator": "田中勇執筆、項目冒頭：戦国時代の摂津国東成郡生玉荘内の大坂坊舎についての説明",
+      "access_scope": "2026-09-12 web検索に提供された項目本文を確認。直接openはtimeout。原典史料の直接閲覧ではない。",
+      "source_epoch": "retrospective account of 1496–1580",
+      "target_year_continuity": "1580年焼亡後の1582年には、旧寺域としてのユーザー指定採用。寺院の稼働を意味しない。",
+      "location_limit": "登録座標は後世の大坂城跡代表点。旧寺域の正確な位置は未確定。",
+      "decision": "所属の文献記述と面判定を比較する。これだけで郡境や拠点座標を移動しない。",
+      "reuse": "事実と出典を記録。本文・図形の再配布許諾は未確認。"
+    },
+    {
+      "evidence_id": "tsutsui-soejimo-mura-lead",
+      "site_id": "tsutsui_castle",
+      "candidate_id": "district-candidate-g02002",
+      "historical_province_id": "province-p038",
+      "district_name": "添下郡",
+      "status": "indirect_village_affiliation_lead",
+      "source_title": "ムラの戸籍簿データベース・大和国",
+      "url": "https://drfh.jp/mura/index.php?title=%E5%A4%A7%E5%92%8C%E5%9B%BD",
+      "locator": "筒井郷☆、郡欄(添下)、文明11.8.26（1479）、大乗院寺社雑事記、橿原市史2 p.410",
+      "access_scope": "2026-09-12 公開表の本文を確認。引用先の市史・原文書は未閲覧。",
+      "source_epoch": "1479 through modern database transcription",
+      "target_year_continuity": "郷から城域への対応と1582年までの継続は個別確認待ち。括弧付きの郡比定を確定扱いしない。",
+      "location_limit": "同名の郷と城の一致のみで所属を確定しない。",
+      "decision": "候補のみ記録し、確定した史料所属として自動比較しない。",
+      "reuse": "書誌・判断を記録。転載条件は未確認。"
+    },
+    {
+      "evidence_id": "kishiwada-minami-genroku-map",
+      "site_id": "kishiwada_castle",
+      "candidate_id": "district-candidate-g04003",
+      "historical_province_id": "province-p036",
+      "district_name": "南郡",
+      "status": "supported_later_map_affiliation",
+      "source_title": "元禄国絵図和泉国",
+      "source_file": "data/sources/districts/stage_c/izumi/original.jpg",
+      "source_sha256": "091ed75ea5a0b0da9506b4f94ff714421fd0d1f778f469b787f4390441bebe8b",
+      "locator": "画像010_izumi.jp2、配信画像1410×3000上の岸和田城記号(303,1290)、南郡の黄色の村記号群と原図凡例",
+      "access_scope": "工程Cの原図と注記画像を目視照合。補正後の面判定を原図の証拠に流用していない。",
+      "source_epoch": "元禄期、メタデータ1696年、写本年代未確認",
+      "target_year_continuity": "後世資料の所属比較。1582年への継続は未確認。",
+      "decision": "原図の読み取りと比較面は一致するが、1582年の確定所属へ昇格しない。",
+      "reuse": "国立公文書館画像。工程Cの画像資料台帳の条件を継承。"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:44Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 113202958,
+    "ns": 0,
+    "title": "Q118697854",
+    "lastrevid": 2411029694,
+    "modified": "2025-09-30T11:47:37Z",
+    "type": "item",
+    "id": "Q118697854",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "石川正信"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "日本の戦国時代～安土桃山時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q118697854$4EC31536-20B1-4E08-96B2-8B5513A05301",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q118697854$D1026421-BD76-468B-B2A0-095AB377931A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5cd99c5aa90da659ea9cde1f7afd0e3be5d98cc7",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a4d98c4e5548e53733a37846668c7e9a98673833",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-07-25T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "12bbbda6690d8873cb80d05cc70c9382f07e14d2",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E7%9F%B3%E5%B7%9D%E6%AD%A3%E4%BF%A1&oldid=94393424",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q118697854$a7ec0d05-4166-aa66-d238-ebf0df682477",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "石川正信",
+        "badges": []
+      }
+    }
+  }
+}

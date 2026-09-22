@@ -1,0 +1,562 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:09Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 103928058,
+    "ns": 0,
+    "title": "Q108701254",
+    "lastrevid": 2521008198,
+    "modified": "2026-07-22T09:36:17Z",
+    "type": "item",
+    "id": "Q108701254",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "坪内頼定"
+      },
+      "en": {
+        "language": "en",
+        "value": "Tsubouchi Yorisada"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "室町時代 - 戦国時代ごろの武将"
+      },
+      "en": {
+        "language": "en",
+        "value": "Japanese military commander"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "富樫頼定"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108701254$ac4f4d77-4125-2f53-3e9b-8ff3f848727c",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108701254$3ea78c7e-48f4-a3b0-1493-28e65c50ac52",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2d0a40f32a78f0b5767288b57a62cf3e9132a2cb",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a0d3b9fb3bb3512ee6cf6a1437f173f7b26b2ff4",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/wiki/前野為定",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1038": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1038",
+            "hash": "685c9ef38c269dd1a05a31a7296f757b720c1ec9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 108701203,
+                "id": "Q108701203"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1039": [
+              {
+                "snaktype": "value",
+                "property": "P1039",
+                "hash": "bdebd3bf74d5d189900d4d28eea0b79950388a54",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 58837291,
+                    "id": "Q58837291"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1039"
+          ],
+          "id": "Q108701254$4b86d641-47ee-5116-e19a-4bba24ee9bd8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6f15e0bdf72cec2758bf5acb23ee6073df132673",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "3dc4e6aed0f7e8e6aafcc968a1aae6385d02b55d",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/wiki/富樫氏",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1038",
+            "hash": "dcdfc60ecb019e00588fab662023caad02e7c7f0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 108701507,
+                "id": "Q108701507"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1039": [
+              {
+                "snaktype": "value",
+                "property": "P1039",
+                "hash": "6bb59b838f3f17de1cc77966cbf6f07c519e7ac3",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 183905,
+                    "id": "Q183905"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1039"
+          ],
+          "id": "Q108701254$67be2dd2-46b6-b41c-977c-0027c2d05edf",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a0a6b452b4e0915c725a6c95249e52c3255e1a22",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "1c7b1b5ef1894f06f0c3b67f4ae637c66a047856",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/wiki/坪内氏#藤原利仁流富樫氏族坪内氏",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P40": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "66c88c035b713a3bbe26930874c48c3220da7a0b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 108701282,
+                "id": "Q108701282"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108701254$15462c33-423d-db32-2c16-7b1bc3af048a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2d0a40f32a78f0b5767288b57a62cf3e9132a2cb",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a0d3b9fb3bb3512ee6cf6a1437f173f7b26b2ff4",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/wiki/前野為定",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "e1c230f1ff01fce6cc2c0c3b200aff5cde290c11",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 108701785,
+                "id": "Q108701785"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108701254$6f4272bc-477f-546b-ac84-1479319156c1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "613dc45399f5ec67cb07e915c33863bd43b9897a",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "59658b6acd96693cdda3f94d3e18af750ae57163",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/wiki/坪内勝定",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "de98824f839d6bc1aa0fc0254fa418778712ec3b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 109598880,
+                "id": "Q109598880"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108701254$8E10510C-7A09-4D51-8C2C-52E1D4796605",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "286bc19dbc9ba5e355fe7c33eecc54e063da6814",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a727fe92c14c0eb1c0e38ab653aed11bb8635dce",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "2c572d7e129ddee4285c9b50063fe2b381598607",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%9D%AA%E5%86%85%E9%A0%BC%E5%AE%9A&oldid=94052132",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108701254$88A5B295-8EE5-4847-9522-5D84D1F7D737",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "1fd06b5b89e88192e106937fb74f5a3d36620911",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "39dd0bddf31d86effff1d8344a1dc3654add6ef6",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-12-18T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "68788bf277655c607ae622a39ac36fcadb7e6eec",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%9D%AA%E5%86%85%E9%A0%BC%E5%AE%9A&oldid=86914130",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "acaeec453daae0ef0f75ff282909e70b53c8c13c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 109598935,
+                "id": "Q109598935"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108701254$55DAE30E-A7D2-403C-9FC1-F09178B8913A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "286bc19dbc9ba5e355fe7c33eecc54e063da6814",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a727fe92c14c0eb1c0e38ab653aed11bb8635dce",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "2c572d7e129ddee4285c9b50063fe2b381598607",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%9D%AA%E5%86%85%E9%A0%BC%E5%AE%9A&oldid=94052132",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "坪内頼定",
+        "badges": []
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "scope_id": "shikoku",
+  "status": "pending",
+  "unconfirmed_endpoint_ids": [
+    "img-boundary-0032:start",
+    "img-boundary-0032:end",
+    "img-boundary-0033:start",
+    "img-boundary-0033:end",
+    "img-boundary-0034:start",
+    "img-boundary-0034:end"
+  ],
+  "unconfirmed_boundary_ids": [
+    "img-boundary-0032",
+    "img-boundary-0033",
+    "img-boundary-0034"
+  ],
+  "non_simple_boundary_ids": [],
+  "ambiguous_face_ids": [
+    "p3-face-0008",
+    "p3-face-0052",
+    "p3-face-0055",
+    "p3-face-0056",
+    "p3-face-0057",
+    "p3-face-0059",
+    "p3-face-0060",
+    "p3-face-0061",
+    "p3-face-0062",
+    "p3-face-0063",
+    "p3-face-0064",
+    "p3-face-0066",
+    "p3-face-0067",
+    "p3-face-0068",
+    "p3-face-0069",
+    "p3-face-0070",
+    "p3-face-0071",
+    "p3-face-0072",
+    "p3-face-0076",
+    "p3-face-0080",
+    "p3-face-0084",
+    "p3-face-0085",
+    "p3-face-0086",
+    "p3-face-0087",
+    "p3-face-0088",
+    "p3-face-0089",
+    "p3-face-0090",
+    "p3-face-0091",
+    "p3-face-0092",
+    "p3-face-0115",
+    "p3-face-0132"
+  ],
+  "overlap_pairs": [],
+  "unassigned_gap_area_8192": 363938.1458736224,
+  "adjacency_items": [
+    {
+      "left_region_id": "jp-ryoseikoku-28-iyo",
+      "right_region_id": "jp-ryoseikoku-29-tosa",
+      "source_boundary_ids": [
+        "img-boundary-0032"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-29-tosa",
+      "right_region_id": "jp-ryoseikoku-30-awa_shikoku",
+      "source_boundary_ids": [
+        "img-boundary-0033"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-30-awa_shikoku",
+      "right_region_id": "jp-ryoseikoku-31-sanuki",
+      "source_boundary_ids": [
+        "img-boundary-0034"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    }
+  ],
+  "coastline_reference_items": []
+}

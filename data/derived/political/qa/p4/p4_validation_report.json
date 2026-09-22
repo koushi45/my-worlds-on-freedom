@@ -1,0 +1,18 @@
+{
+  "phase": "P4",
+  "status": "pass_pending_user_review",
+  "checks": {
+    "seven_views_per_scope": "pass",
+    "national_and_nine_regional_scopes": "pass",
+    "review_order": "pass",
+    "all_scopes_pending": "pass",
+    "unapproved_regions_excluded_from_accepted_national_set": "pass",
+    "artifact_hashes": "pass",
+    "canonical_inputs_immutable": "pass"
+  },
+  "counts": {
+    "scopes": 10,
+    "images": 70,
+    "accepted_scopes": 0
+  }
+}

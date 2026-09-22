@@ -1,0 +1,240 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:16Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 104725978,
+    "ns": 0,
+    "title": "Q109599354",
+    "lastrevid": 2427891990,
+    "modified": "2025-11-10T12:46:49Z",
+    "type": "item",
+    "id": "Q109599354",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "小林吉隆"
+      },
+      "en": {
+        "language": "en",
+        "value": "Kobayashi Yoshitaka"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代から安土桃山時代にかけての武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109599354$21572B2D-F5D1-4356-85E2-089B02241280",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109599354$479AC542-D12E-4499-8114-81755EE2EBCE",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109599354$D8B3C5EF-18C7-4DA5-B2E0-2A0D808BB1BE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4fc23b231ce3129fc77256a7f98644bc881d559",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a727fe92c14c0eb1c0e38ab653aed11bb8635dce",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "289748b4b44d89893c3dbdd0f69ec90b47dfb8b7",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%B0%8F%E6%9E%97%E5%90%89%E9%9A%86&oldid=94466231",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "4cdc9f7041ed37c532f7186cc1410a9789d78ab3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 947991,
+                "id": "Q947991"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109599354$e817a8e6-4950-369c-a40f-88b590b10f48",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "19887fa74b5b8718681e848d3f83cf309c2a8cb7",
+            "datavalue": {
+              "value": {
+                "text": "小林 吉隆",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q109599354$1B7B3F37-EB4F-49CD-8D62-2B928913942D",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "6c6d0ca0c43cbe8b0e42e0e5338cdbda876ff3f5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 136753210,
+                "id": "Q136753210"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109599354$B67782A9-E5DE-4204-ABEB-445B13B3CA80",
+          "rank": "normal"
+        }
+      ],
+      "P1814": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1814",
+            "hash": "d3d14270fef0e35c2c73b7be7fcb59c8f5227195",
+            "datavalue": {
+              "value": "こばやし よしたか",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q109599354$3F02A2BB-DE68-44BF-864E-F61A5B2B6122",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "小林吉隆",
+        "badges": []
+      }
+    }
+  }
+}

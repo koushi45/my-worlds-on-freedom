@@ -1,0 +1,27 @@
+{
+  "suite": "map_pipeline_minimum_requirements",
+  "passed": false,
+  "test_count": 42,
+  "requirements": {
+    "master_validity_and_hash": "test_01_master_validity_and_fixed_hash",
+    "crs_8192_round_trip": "test_02_crs_game_coordinate_round_trip",
+    "lod_coastline_land_distance_zero": "test_03_each_lod_coastline_equals_land_exterior",
+    "normal_selection_same_coastline_ids": "test_04_normal_and_selection_share_coastline_ids",
+    "national_regional_local_overlap": "test_05_overlapping_view_families_have_consistent_land",
+    "tile_seams": "test_06_tile_seams_only_change_at_vector_coast",
+    "top_down_oblique_inverse": "test_07_top_down_oblique_inverse",
+    "click_target_display_boundary": "test_08_click_targets_match_display_contract",
+    "offscreen_tile_culling": "test_09_offscreen_tile_culling_contract",
+    "windows_android_ios_web_loading": "test_10_platform_runtime_asset_compatibility"
+  },
+  "runtime": {
+    "godot_headless_test": "tests/base_map/godot/test_map_runtime.gd",
+    "platforms": [
+      "Windows",
+      "Android",
+      "iOS",
+      "Web"
+    ],
+    "scope": "portable JSON/PNG resource and export-preset loading contract; not signed native exports"
+  }
+}

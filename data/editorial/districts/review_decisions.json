@@ -1,0 +1,250 @@
+{
+  "edition": "district-survey-ab-2026-09-12-v1",
+  "decisions": [
+    {
+      "decision_id": "ab-osaka-names",
+      "district_entity_ids": [
+        "district-candidate-g03001",
+        "district-candidate-g03002",
+        "district-candidate-g03003",
+        "district-candidate-g03004",
+        "district-candidate-g03005",
+        "district-candidate-g03006",
+        "district-candidate-g03007",
+        "district-candidate-g03008",
+        "district-candidate-g03009",
+        "district-candidate-g03010",
+        "district-candidate-g03011",
+        "district-candidate-g03012",
+        "district-candidate-g03013",
+        "district-candidate-g03014",
+        "district-candidate-g03015",
+        "district-candidate-g03016",
+        "district-candidate-g02001",
+        "district-candidate-g02002",
+        "district-candidate-g02003",
+        "district-candidate-g02004",
+        "district-candidate-g02005",
+        "district-candidate-g02006",
+        "district-candidate-g02007",
+        "district-candidate-g02008",
+        "district-candidate-g02009",
+        "district-candidate-g02010",
+        "district-candidate-g02011",
+        "district-candidate-g02012",
+        "district-candidate-g02013",
+        "district-candidate-g02014",
+        "district-candidate-g02015",
+        "district-candidate-g05001",
+        "district-candidate-g05002",
+        "district-candidate-g05003",
+        "district-candidate-g05004",
+        "district-candidate-g05005",
+        "district-candidate-g05006",
+        "district-candidate-g05007",
+        "district-candidate-g04001",
+        "district-candidate-g04002",
+        "district-candidate-g04003",
+        "district-candidate-g04004"
+      ],
+      "topic": "later_name_corroboration",
+      "decision": "大阪府公文書館の明治期27郡＋大和15郡を照合。摂津の兵庫県側5郡にはこの証拠を付与しない。境界も1582年の存在も確定しない。",
+      "evidence": [
+        {
+          "source_ref": "osaka-archives38",
+          "locator": "p.1 三新法体制下と郡長・郡役所"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-unit-G60013",
+      "district_entity_ids": [
+        "district-candidate-g60013"
+      ],
+      "topic": "unit_type",
+      "decision": "比較データの旧郡欄にある地域項目。郡の名称・種別は未確定のため「郡」を付加しない。",
+      "evidence": [
+        {
+          "source_ref": "kg-K60",
+          "locator": "#gun-list G60013"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-unit-G60014",
+      "district_entity_ids": [
+        "district-candidate-g60014"
+      ],
+      "topic": "unit_type",
+      "decision": "比較データの旧郡欄にある地域項目。郡の名称・種別は未確定のため「郡」を付加しない。",
+      "evidence": [
+        {
+          "source_ref": "kg-K60",
+          "locator": "#gun-list G60014"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-uda-spelling",
+      "district_entity_ids": [
+        "district-candidate-g02005"
+      ],
+      "topic": "name_correction",
+      "decision": "原一覧は宇蛇。大阪府公文書館と宇陀市の宇陀表記を優先する編集案。1585年の回顧記述あり、1582年は未確定。",
+      "evidence": [
+        {
+          "source_ref": "kg-K02",
+          "locator": "#gun-list G02005 宇蛇"
+        },
+        {
+          "source_ref": "osaka-archives38",
+          "locator": "p.1 大和15郡列挙"
+        },
+        {
+          "source_ref": "uda-history",
+          "locator": "近世・1585年"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-kai-yamanashi",
+      "district_entity_ids": [
+        "district-candidate-kai-yamanashi"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "kai-four",
+          "locator": "甲斐の四郡と現在の山梨県"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-kai-yatsushiro",
+      "district_entity_ids": [
+        "district-candidate-kai-yatsushiro"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "kai-four",
+          "locator": "甲斐の四郡と現在の山梨県"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-kai-koma",
+      "district_entity_ids": [
+        "district-candidate-kai-koma"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "kai-four",
+          "locator": "甲斐の四郡と現在の山梨県"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-kai-tsuru",
+      "district_entity_ids": [
+        "district-candidate-kai-tsuru"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "kai-four",
+          "locator": "甲斐の四郡と現在の山梨県"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-shinano-ina",
+      "district_entity_ids": [
+        "district-candidate-shinano-ina"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "shinano-ten",
+          "locator": "延喜式の信濃10郡を列挙する段落"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-shinano-chikuma",
+      "district_entity_ids": [
+        "district-candidate-shinano-chikuma"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "shinano-ten",
+          "locator": "延喜式の信濃10郡を列挙する段落"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-shinano-azumi",
+      "district_entity_ids": [
+        "district-candidate-shinano-azumi"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "shinano-ten",
+          "locator": "延喜式の信濃10郡を列挙する段落"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-shinano-minochi",
+      "district_entity_ids": [
+        "district-candidate-shinano-minochi"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "shinano-ten",
+          "locator": "延喜式の信濃10郡を列挙する段落"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-shinano-takai",
+      "district_entity_ids": [
+        "district-candidate-shinano-takai"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "shinano-ten",
+          "locator": "延喜式の信濃10郡を列挙する段落"
+        }
+      ]
+    },
+    {
+      "decision_id": "ab-add-shinano-saku",
+      "district_entity_ids": [
+        "district-candidate-shinano-saku"
+      ],
+      "topic": "earlier_candidate_added",
+      "decision": "後世の分郡を遡及させず、別資料で見つかった旧区分を追加。",
+      "evidence": [
+        {
+          "source_ref": "shinano-ten",
+          "locator": "延喜式の信濃10郡を列挙する段落"
+        }
+      ]
+    }
+  ]
+}

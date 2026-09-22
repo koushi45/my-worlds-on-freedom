@@ -1,0 +1,202 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:13Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 104020086,
+    "ns": 0,
+    "title": "Q108781603",
+    "lastrevid": 1763616751,
+    "modified": "2022-11-03T14:00:15Z",
+    "type": "item",
+    "id": "Q108781603",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "遠山景前"
+      },
+      "en": {
+        "language": "en",
+        "value": "Tōyama Kagemae"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese military commander and daimyō"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781603$143126CB-8D2F-414D-BE54-4C1CFBD24B4E",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781603$09E50493-87A2-4E2A-B5C0-059334C2E8E8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5649c424e5fc601cdde195d4e83a7f8c1bbff30c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a69bf06577b822d732c77d401cfa7b0a96b1dcf6",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-10-14T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "97450e42303664458cfafeaab5ce9c003115cbff",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E9%81%A0%E5%B1%B1%E6%99%AF%E5%89%8D&oldid=83232644",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781603$a443ff59-4bc2-f4d9-9e0e-da9794bad73e",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "6c2ae72f652fea3327e6f0c90112b9a1e144aa5e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 26212816,
+                "id": "Q26212816"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781603$d31c6b6f-4bcc-bfdf-fc3a-b1b1b15fc93f",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "1f51a8bc1ce26fedde2c7f90a871502659c2be69",
+            "datavalue": {
+              "value": {
+                "text": "遠山景前",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q108781603$6aa78efe-48ff-fb2c-0850-1a2434839e28",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "遠山景前",
+        "badges": []
+      }
+    }
+  }
+}

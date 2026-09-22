@@ -1,0 +1,73 @@
+{
+  "manifest_schema_version": 1,
+  "master_version": "1.0.0",
+  "status": "approved",
+  "canonical_file": "data/base/japan_land.gpkg",
+  "canonical_layer": "japan_land",
+  "canonical_sha256": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+  "geojson_mirror_file": "data/base/japan_land.geojson",
+  "geojson_mirror_sha256": "CFC5C7DADFCDD11975B9945B1B03DADECDB87E5B6476AA2573C48D5A680444DE",
+  "source": "Natural Earth 1:10m Land 5.1.1 only",
+  "gate1": {
+    "passed": true,
+    "report": "data/base/verification/gate1_report.json",
+    "report_sha256": "F6E6E0560AC842F6728B825580A2A053EB5848FD9AC445B9FDF684F30646C7F5"
+  },
+  "approval": {
+    "approved": true,
+    "approved_version": "1.0.0",
+    "approved_by": "user",
+    "approved_at": "2026-09-06T11:36:00.7127872Z",
+    "note": "Approved by the user's explicit instruction to proceed with Phase C."
+  },
+  "derived_layers_allowed": true,
+  "test_suite": {
+    "status": "passed",
+    "report": "data/derived/testing/map_test_report.json",
+    "report_sha256": "1DCA7B0282F1945D8456133DC1008D6706E733C5AE7875EACABA2837E183A098",
+    "test_count": 10,
+    "runner": "python tools/run_map_test_suite.py"
+  },
+  "derived_phases": {
+    "phase_c": {
+      "status": "verified",
+      "manifest": "data/derived/phase_c_manifest.json",
+      "manifest_sha256": "F54ED8C15388A0E165DC85DF0544D5AC56B6B2F1771AF4B50DFB3094CC27006E",
+      "verification": "data/derived/phase_c_verification.json",
+      "verification_sha256": "754D75D5B54174C8AF4FB098720DFE16F7D3967DA86578EE6BF57BA9401F4301"
+    },
+    "phase_d": {
+      "status": "verified",
+      "manifest": "data/derived/lod/lod_manifest.json",
+      "manifest_sha256": "EFA8DA2A827BD146C1557AB138A9791A640B40EBCA9BD0DE53226001B94E797D",
+      "verification": "data/derived/lod/lod_verification.json",
+      "verification_sha256": "08A70036048DC0CE01E0A617685AA60C4149875BE2F19BDCB0FF5C99D1086DED"
+    },
+    "phase_e": {
+      "status": "verified",
+      "manifest": "data/derived/map_images/map_images_manifest.json",
+      "manifest_sha256": "9564BA65734D289EF6434B9CE32DF17E605EE49FFA1CBD92EDF142C7DE45A29F",
+      "verification": "data/derived/map_images/map_images_verification.json",
+      "verification_sha256": "D7FAD1E4C8DE051817C6ED32DA4CE1C93F11222BD395F515793E605BEDAE7736",
+      "terrain_data_status": "awaiting_approved_sources"
+    },
+    "phase_f": {
+      "status": "verified_pipeline_awaiting_historical_source",
+      "manifest": "data/derived/political/phase_f_manifest.json",
+      "manifest_sha256": "C5CCCD377E93581EC5165EC57D1528CCE9363377A8D2B6ACEC2A4B9D4C8E65D0",
+      "verification": "data/derived/political/phase_f_verification.json",
+      "verification_sha256": "B7BAF53791865DC7EA297915A90C4C65F0D44347F9F8696F163EDF0244C14346",
+      "historical_source_status": "missing",
+      "political_regions": 0,
+      "unassigned_land_status": "explicit"
+    },
+    "phase_g": {
+      "status": "verified_pipeline_awaiting_approved_sources",
+      "manifest": "data/derived/phase_g/phase_g_manifest.json",
+      "manifest_sha256": "BCBDC540687D928F64757F8CF282C21CD0A38767BFC80B3D8C826BF489C8D7A3",
+      "verification": "data/derived/phase_g/phase_g_verification.json",
+      "verification_sha256": "462BA12B98D0B202E9FEFD2D2919D9E62B570A9AC0E50AFD5C426E637F171916",
+      "approved_source_count": 0
+    }
+  }
+}

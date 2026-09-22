@@ -1,0 +1,242 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:19Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12306601,
+    "ns": 0,
+    "title": "Q11098612",
+    "lastrevid": 1939090453,
+    "modified": "2023-07-23T08:03:48Z",
+    "type": "item",
+    "id": "Q11098612",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "山浦景国"
+      },
+      "en": {
+        "language": "en",
+        "value": "Yamaura Kagekuni"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "日本の武将"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "山浦国清"
+        },
+        {
+          "language": "ja",
+          "value": "村上国清"
+        },
+        {
+          "language": "ja",
+          "value": "上杉景国"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Murakami Kunikiyo"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11098612$CAEA1D91-2199-41B3-80F2-3F3E959F2D8B",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11098612$F2DC8E6F-78DC-4634-9DAE-BF873920FFF2",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "0c86bfdf43a50218e5123a78db5a40d8da83e400",
+            "datavalue": {
+              "value": {
+                "time": "+1546-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q11098612$A0548395-F705-47BC-BAF8-5875C22F8486",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11098612$44f724a5-0b19-4300-8c4a-663436671fd8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0ee3b3ba1c958f4c3dcba7ed8091fe4b57311348",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "cb49f6fa327b245e4a5aaf48c44b3f503bcd4265",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 30239,
+                        "id": "Q30239"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "11cddad0528f660860dcc78876b73e1fe8c51457",
+            "datavalue": {
+              "value": "/g/1213nyz2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11098612$604927E0-2986-42F4-A89F-A9E28B42F381",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "3add2b48554a474334656aad83e5924e6279e19b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 26446458,
+                "id": "Q26446458"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11098612$ea9ae4e1-4fda-87f1-07e4-f7c385e2f121",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Murakami Kunikiyo",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "山浦景国",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "村上國清",
+        "badges": []
+      }
+    }
+  }
+}

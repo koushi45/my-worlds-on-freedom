@@ -1,0 +1,240 @@
+{
+  "retrieved_utc": "2026-09-12T11:13:12Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 128347149,
+    "ns": 0,
+    "title": "Q134508767",
+    "lastrevid": 2517190293,
+    "modified": "2026-07-13T21:48:28Z",
+    "type": "item",
+    "id": "Q134508767",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "山中元孝"
+      },
+      "en": {
+        "language": "en",
+        "value": "Yamanaka Mototaka"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134508767$3D1485E8-2619-4FA8-AAD9-EC0F364C9131",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134508767$13248CEA-CB7F-4851-92DB-B59DBB5AC300",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0bd8aba94be216fa800285fc736526b0d14e7fcc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "ac50826d42aca45df7ba9f711c4d42d8c54ce31b",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2026-01-25T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "69d65119781960babfd6fdabf5d491316476f4b0",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%B1%B1%E4%B8%AD%E5%85%83%E5%AD%9D&oldid=106446843",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134508767$04f66b17-4882-4346-f363-5875d07f8404",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "72e0fd47dfa42bbbc77abe1b1cfa6c63b5d937eb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19963367,
+                "id": "Q19963367"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134508767$4861999e-402f-5881-55bf-5beda3db8e82",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "0b89c1ad82700c5a883f484c4bcd6b8dc514858f",
+            "datavalue": {
+              "value": {
+                "text": "山中 元孝",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q134508767$53B07BF9-2BFD-497F-BA96-0C4BDFAA23DA",
+          "rank": "normal"
+        }
+      ],
+      "P1814": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1814",
+            "hash": "2a0666bc7a8c7e7cec5d062f5d6540a25fdd3158",
+            "datavalue": {
+              "value": "やまなか もとたか",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q134508767$D51CDAD1-99F9-41FC-87A7-61D9B3521A2A",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "9630065612a8630ad010366b2b26ecd49406e2f1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 140540993,
+                "id": "Q140540993"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134508767$0F4901BE-DC34-4F6C-B2DA-5AADF87959EC",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "山中元孝",
+        "badges": []
+      }
+    }
+  }
+}

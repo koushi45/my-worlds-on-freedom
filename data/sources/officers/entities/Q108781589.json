@@ -1,0 +1,181 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:11Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 104020072,
+    "ns": 0,
+    "title": "Q108781589",
+    "lastrevid": 2526150333,
+    "modified": "2026-08-02T09:25:03Z",
+    "type": "item",
+    "id": "Q108781589",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "堀無手右衛門"
+      },
+      "en": {
+        "language": "en",
+        "value": "Hori Muzuemon"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese military commander"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781589$617D9E16-F793-4AF2-BCBC-78972EC5D17C",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781589$5DAF5F9D-2C31-4E11-8705-4ABA3B2D01FB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7a2c8550f579ae9e7e2a3ec630f4d8816b2db3bc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a69bf06577b822d732c77d401cfa7b0a96b1dcf6",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-10-14T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "d97b8bdbea5a42e9dce2329214040b4da8b635c4",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%A0%80%E7%84%A1%E6%89%8B%E5%8F%B3%E8%A1%9B%E9%96%80&oldid=82762046",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781589$4407151a-4268-a3fa-2920-47ef796d0cd5",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "20dd878d225c21567bcfd165e96f8a0456a32d3a",
+            "datavalue": {
+              "value": {
+                "text": "堀無手右衛門",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q108781589$f11357e2-48de-1af6-49c6-a17b23498611",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "堀無手右衛門",
+        "badges": []
+      }
+    }
+  }
+}

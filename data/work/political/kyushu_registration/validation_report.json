@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "approval": "pending",
+  "tests": [
+    "immutable_hashes",
+    "nine_valid_regions",
+    "no_gaps_or_overlaps",
+    "shared_boundaries_match_both_regions",
+    "canonical_coast_points_identical",
+    "coast_reference_full_coverage",
+    "no_extra_loops",
+    "no_folded_or_overlapping_warp_triangles",
+    "inverse_roundtrip",
+    "actual_raster_inverse_resampling"
+  ],
+  "max_roundtrip_source_px": 3.595093471822542e-13,
+  "raster_resampling_max_alpha_difference": 0
+}

@@ -1,0 +1,26 @@
+{
+  "status": "approved",
+  "version": "1.0.0",
+  "scope": "shikoku",
+  "approval": {
+    "approved_by": "user",
+    "recorded_at_utc": "2026-09-10T00:18:21.496279+00:00",
+    "instruction": "画像の桃色線と水色線を確認しましたが、問題ありませんでしたので本番反映をお願いします。"
+  },
+  "limitations": [
+    "Mainland provinces only; offshore ownership unresolved. Historical certainty remains probable."
+  ],
+  "candidate_sha256": "00361e985060e4485473e4044f7113f31a51bf37c6975a873e0d94c537b5d8b0",
+  "canonical_hashes": {
+    "data\\base\\japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data\\derived\\coastline\\coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+    "data\\work\\political\\coast_alignment_v2\\source_rgba.png": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d",
+    "data\\master\\political\\kyushu\\1.0.0\\political_master_manifest.json": "a0645687abfb700c0ad88708dcc86da382e35598785a980221baa4f8a2795bcf",
+    "data\\derived\\political\\approved_kyushu\\political_registry.json": "d7cf502e530d1a1a95cfe91abbbd529963081708062b8b3900e49897b7361fce"
+  },
+  "files": {
+    "political_regions_master.gpkg": "4e1a6daab91050bbeaaec06410fd9700b3a5bd35989c8236f7b794f10495d189",
+    "political_registry_master.json": "3b4c3d9efe5020d865b5c23f0a9093374973b5fb7366119002b5ed209df80462",
+    "approved_registration_report.json": "278770694b69c951a1975b9e1b57a8c60a062d652fd9dc24f45ca0e87920203d"
+  }
+}

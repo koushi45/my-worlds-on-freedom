@@ -1,0 +1,2516 @@
+{
+  "schema_version": 1,
+  "phase": "E",
+  "status": "generated",
+  "generation_record": "deterministic_from_phase_d",
+  "source_master_version": "1.0.0",
+  "source_master_sha256": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+  "source_lod_sha256": "C91086697AE7E1F87C4BEDE2F412EA93F11FD9AA24C7BFC2DAC31A7027DAB8DD",
+  "global_coordinate_space": [
+    0,
+    0,
+    8192,
+    8192
+  ],
+  "tile_size": 2048,
+  "coverage_antialiasing": {
+    "method": "2x supersampled coverage",
+    "bleed_px": 4,
+    "filter": "LANCZOS"
+  },
+  "render_order": [
+    "water",
+    "land_fill",
+    "terrain",
+    "vegetation",
+    "soil",
+    "snow",
+    "coastline"
+  ],
+  "terrain_layers": {
+    "terrain": {
+      "status": "empty_awaiting_approved_source",
+      "clipped_to": "land_coverage"
+    },
+    "vegetation": {
+      "status": "empty_awaiting_approved_source",
+      "clipped_to": "land_coverage"
+    },
+    "soil": {
+      "status": "empty_awaiting_approved_source",
+      "clipped_to": "land_coverage"
+    },
+    "snow": {
+      "status": "empty_awaiting_approved_source",
+      "clipped_to": "land_coverage"
+    }
+  },
+  "rules": {
+    "land_sea_source": "LOD polygon rasterization only; no color threshold inference",
+    "geometry_moving_filters": false,
+    "global_tile_coordinates": true,
+    "coastline_above_textures": true,
+    "coastline_vector_source": "matching coastline_lod* layer"
+  },
+  "water_registry": {
+    "file": "data/derived/map_images/water_registry.json",
+    "sha256": "1D23E4EE80C423F6539E0AFCB79921CAEA7B2E7D5C43A6CA057B0230D7A6374B"
+  },
+  "profiles": [
+    {
+      "lod": 0,
+      "family": "national",
+      "grid": 1
+    },
+    {
+      "lod": 1,
+      "family": "regional",
+      "grid": 2
+    },
+    {
+      "lod": 2,
+      "family": "regional",
+      "grid": 2
+    },
+    {
+      "lod": 3,
+      "family": "local",
+      "grid": 4
+    },
+    {
+      "lod": 4,
+      "family": "local",
+      "grid": 4
+    }
+  ],
+  "tile_count": 41,
+  "tiles": [
+    {
+      "tile_id": "lod0-r00-c00",
+      "lod": 0,
+      "family": "national",
+      "row": 0,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        0.0,
+        8192.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod0",
+        "coastline_ids": [
+          "jp-coast-02d1c1853fd45d04-lod0",
+          "jp-coast-08b88696cb1e51c2-lod0",
+          "jp-coast-0b31083587965724-lod0",
+          "jp-coast-0f285e6ca7a65cb9-lod0",
+          "jp-coast-103576025d905fd4-lod0",
+          "jp-coast-1291644799c652d6-lod0",
+          "jp-coast-1f241e9ef00c51d0-lod0",
+          "jp-coast-205917af2c1f5790-lod0",
+          "jp-coast-38890922db6a52eb-lod0",
+          "jp-coast-4acc97c6d7f5563f-lod0",
+          "jp-coast-5a8606adb3c65cba-lod0",
+          "jp-coast-7ba744f267265e37-lod0",
+          "jp-coast-a6b6b00b343655f9-lod0",
+          "jp-coast-c069e845da2756f1-lod0",
+          "jp-coast-c48b7a8a750c53fa-lod0",
+          "jp-coast-ca9b3e49e11650ce-lod0",
+          "jp-coast-cc3283e1dd5c55ee-lod0",
+          "jp-coast-d3765ae43e3558a7-lod0",
+          "jp-coast-d6bda8f108065a05-lod0",
+          "jp-coast-d94ac6aacd075007-lod0",
+          "jp-coast-e4e520d341c65420-lod0"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod0_national/r00_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod0_national/r00_c00/land_fill.png",
+        "water": "assets/map/generated/lod0_national/r00_c00/water.png",
+        "coastline": "assets/map/generated/lod0_national/r00_c00/coastline.png",
+        "composite": "assets/map/generated/lod0_national/r00_c00/composite.png",
+        "terrain": "assets/map/generated/lod0_national/r00_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod0_national/r00_c00/vegetation.png",
+        "soil": "assets/map/generated/lod0_national/r00_c00/soil.png",
+        "snow": "assets/map/generated/lod0_national/r00_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "40233DECF5E88E093B19126850E75C62DC22F079088576F322AC1E510EBCBBCE",
+        "land_fill": "8DFA5DB53E7D12210B8103713C255FA7A8F6497D80491614ADC36318307848CE",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "55587F14503E7BF13718F0D0FC4AF4408BC1023EB732621B45AF61F3D73AAD11",
+        "composite": "9FEE04F6CE711A540457C43266B17BAD2238CBEC754DE71B62BD5B741796C9B3",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod1-r00-c00",
+      "lod": 1,
+      "family": "regional",
+      "row": 0,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        0.0,
+        4096.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod1",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod1_regional/r00_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod1_regional/r00_c00/land_fill.png",
+        "water": "assets/map/generated/lod1_regional/r00_c00/water.png",
+        "coastline": "assets/map/generated/lod1_regional/r00_c00/coastline.png",
+        "composite": "assets/map/generated/lod1_regional/r00_c00/composite.png",
+        "terrain": "assets/map/generated/lod1_regional/r00_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod1_regional/r00_c00/vegetation.png",
+        "soil": "assets/map/generated/lod1_regional/r00_c00/soil.png",
+        "snow": "assets/map/generated/lod1_regional/r00_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod1-r00-c01",
+      "lod": 1,
+      "family": "regional",
+      "row": 0,
+      "column": 1,
+      "global_viewport": [
+        4096.0,
+        0.0,
+        8192.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod1",
+        "coastline_ids": [
+          "jp-coast-02d1c1853fd45d04-lod1",
+          "jp-coast-03fcd9ab15f858e5-lod1",
+          "jp-coast-103576025d905fd4-lod1",
+          "jp-coast-1291644799c652d6-lod1",
+          "jp-coast-c069e845da2756f1-lod1",
+          "jp-coast-cc3283e1dd5c55ee-lod1"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod1_regional/r00_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod1_regional/r00_c01/land_fill.png",
+        "water": "assets/map/generated/lod1_regional/r00_c01/water.png",
+        "coastline": "assets/map/generated/lod1_regional/r00_c01/coastline.png",
+        "composite": "assets/map/generated/lod1_regional/r00_c01/composite.png",
+        "terrain": "assets/map/generated/lod1_regional/r00_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod1_regional/r00_c01/vegetation.png",
+        "soil": "assets/map/generated/lod1_regional/r00_c01/soil.png",
+        "snow": "assets/map/generated/lod1_regional/r00_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "D75CE3D5CB6D41E5098F194186B435B23B51D45949BFCD2AD9530702580CF051",
+        "land_fill": "C95F3350C64AC4040EB9374017D465E230CC4895420B99FB0059E8489AE763A0",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "2942ED7C365DE63BE5E0324DBCFF5C4063B6B9E81C7913B2E5305F8C8B84D980",
+        "composite": "1715A23FCB98CCC6EFC83FBF98343D5E5BF57649EBC37EB466AD8BFF092BC178",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod1-r01-c00",
+      "lod": 1,
+      "family": "regional",
+      "row": 1,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        4096.0,
+        4096.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod1",
+        "coastline_ids": [
+          "jp-coast-08b88696cb1e51c2-lod1",
+          "jp-coast-0b31083587965724-lod1",
+          "jp-coast-0f285e6ca7a65cb9-lod1",
+          "jp-coast-103576025d905fd4-lod1",
+          "jp-coast-1673475e4fe85c44-lod1",
+          "jp-coast-17539bdc707f5a4b-lod1",
+          "jp-coast-1f241e9ef00c51d0-lod1",
+          "jp-coast-205917af2c1f5790-lod1",
+          "jp-coast-2bef447e857652ca-lod1",
+          "jp-coast-31fa5e511ad859aa-lod1",
+          "jp-coast-38890922db6a52eb-lod1",
+          "jp-coast-4b2f95a47b965319-lod1",
+          "jp-coast-4f1314aff1125379-lod1",
+          "jp-coast-5a8606adb3c65cba-lod1",
+          "jp-coast-5c07244793cb5d07-lod1",
+          "jp-coast-5c7d0c23da8653b5-lod1",
+          "jp-coast-7ba744f267265e37-lod1",
+          "jp-coast-8510db854dd955c3-lod1",
+          "jp-coast-896e652f5b5657d4-lod1",
+          "jp-coast-95c30e6490455009-lod1",
+          "jp-coast-a6b6b00b343655f9-lod1",
+          "jp-coast-c48b7a8a750c53fa-lod1",
+          "jp-coast-c5074297e85251a9-lod1",
+          "jp-coast-ca9b3e49e11650ce-lod1",
+          "jp-coast-d3765ae43e3558a7-lod1",
+          "jp-coast-d5ef98c4be385c07-lod1",
+          "jp-coast-d6bda8f108065a05-lod1",
+          "jp-coast-d94ac6aacd075007-lod1",
+          "jp-coast-e0e97939c8d25f42-lod1",
+          "jp-coast-e4e520d341c65420-lod1",
+          "jp-coast-f30aae064b88549f-lod1"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod1_regional/r01_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod1_regional/r01_c00/land_fill.png",
+        "water": "assets/map/generated/lod1_regional/r01_c00/water.png",
+        "coastline": "assets/map/generated/lod1_regional/r01_c00/coastline.png",
+        "composite": "assets/map/generated/lod1_regional/r01_c00/composite.png",
+        "terrain": "assets/map/generated/lod1_regional/r01_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod1_regional/r01_c00/vegetation.png",
+        "soil": "assets/map/generated/lod1_regional/r01_c00/soil.png",
+        "snow": "assets/map/generated/lod1_regional/r01_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "FF843D9D691C171B083E7B2FF610624D9FFDD305AB8F44ACF347F7551165C50F",
+        "land_fill": "19D0110708F626CDDC639F560A4C4613BAEE2FDFE0710A45E1CF82EDE3343C24",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "D8E30C9664B71AD6742BE4CB00AEF99FA068B10CE836105D17506BAD86240E47",
+        "composite": "D788DA6498FD4C02BDF31CBFD924EDFC628EE16572EF9ED5BB687620100AC85F",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod1-r01-c01",
+      "lod": 1,
+      "family": "regional",
+      "row": 1,
+      "column": 1,
+      "global_viewport": [
+        4096.0,
+        4096.0,
+        8192.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod1",
+        "coastline_ids": [
+          "jp-coast-0eb7fc691ee75281-lod1",
+          "jp-coast-103576025d905fd4-lod1",
+          "jp-coast-1291644799c652d6-lod1",
+          "jp-coast-416652f8b08b5004-lod1",
+          "jp-coast-4acc97c6d7f5563f-lod1",
+          "jp-coast-8510db854dd955c3-lod1",
+          "jp-coast-b355a001bf9d5d1d-lod1"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod1_regional/r01_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod1_regional/r01_c01/land_fill.png",
+        "water": "assets/map/generated/lod1_regional/r01_c01/water.png",
+        "coastline": "assets/map/generated/lod1_regional/r01_c01/coastline.png",
+        "composite": "assets/map/generated/lod1_regional/r01_c01/composite.png",
+        "terrain": "assets/map/generated/lod1_regional/r01_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod1_regional/r01_c01/vegetation.png",
+        "soil": "assets/map/generated/lod1_regional/r01_c01/soil.png",
+        "snow": "assets/map/generated/lod1_regional/r01_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "94005CF7DED2A967B103ECE2D75435942C80A5BC6380BF9D57E608DED8ECFC9D",
+        "land_fill": "BDDCB5A17BAE17E77EF2A4D6A7D3A94BD05F0996C658CD441FCCA6251043A9DD",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "1D466F1440C4EE947265AE8A1928D4A78286618DC7D7C836480414D785D5F2C4",
+        "composite": "30319B8BA01EB11F771F05A224DD74C21944235118A56648F5C49E4C369FF22B",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod2-r00-c00",
+      "lod": 2,
+      "family": "regional",
+      "row": 0,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        0.0,
+        4096.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod2",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod2_regional/r00_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod2_regional/r00_c00/land_fill.png",
+        "water": "assets/map/generated/lod2_regional/r00_c00/water.png",
+        "coastline": "assets/map/generated/lod2_regional/r00_c00/coastline.png",
+        "composite": "assets/map/generated/lod2_regional/r00_c00/composite.png",
+        "terrain": "assets/map/generated/lod2_regional/r00_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod2_regional/r00_c00/vegetation.png",
+        "soil": "assets/map/generated/lod2_regional/r00_c00/soil.png",
+        "snow": "assets/map/generated/lod2_regional/r00_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod2-r00-c01",
+      "lod": 2,
+      "family": "regional",
+      "row": 0,
+      "column": 1,
+      "global_viewport": [
+        4096.0,
+        0.0,
+        8192.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod2",
+        "coastline_ids": [
+          "jp-coast-02d1c1853fd45d04-lod2",
+          "jp-coast-03fcd9ab15f858e5-lod2",
+          "jp-coast-103576025d905fd4-lod2",
+          "jp-coast-1291644799c652d6-lod2",
+          "jp-coast-9d29832fdec35825-lod2",
+          "jp-coast-c069e845da2756f1-lod2",
+          "jp-coast-cc3283e1dd5c55ee-lod2"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod2_regional/r00_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod2_regional/r00_c01/land_fill.png",
+        "water": "assets/map/generated/lod2_regional/r00_c01/water.png",
+        "coastline": "assets/map/generated/lod2_regional/r00_c01/coastline.png",
+        "composite": "assets/map/generated/lod2_regional/r00_c01/composite.png",
+        "terrain": "assets/map/generated/lod2_regional/r00_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod2_regional/r00_c01/vegetation.png",
+        "soil": "assets/map/generated/lod2_regional/r00_c01/soil.png",
+        "snow": "assets/map/generated/lod2_regional/r00_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "DC557AC93E5195021C0253604A5A9140106628E4216B3A4868B0FE1DB568671C",
+        "land_fill": "50281C7A018AFBBFBC07A7A9D21D8B271D57F4CF7E7581A0ED5038CC029AA7AA",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "FFB1C8F363148306B673C387FBC5DDC704CBAB9331BF20165031CA87F2259BC1",
+        "composite": "C2CCC7D5197E5AD4918BFD50C876BAFC89BC24F45B5DDE253C846D49DEA5A006",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod2-r01-c00",
+      "lod": 2,
+      "family": "regional",
+      "row": 1,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        4096.0,
+        4096.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod2",
+        "coastline_ids": [
+          "jp-coast-02e61fce41545e50-lod2",
+          "jp-coast-0599c98d1c66555f-lod2",
+          "jp-coast-08b88696cb1e51c2-lod2",
+          "jp-coast-0b31083587965724-lod2",
+          "jp-coast-0d503799a4cd521a-lod2",
+          "jp-coast-0f285e6ca7a65cb9-lod2",
+          "jp-coast-103576025d905fd4-lod2",
+          "jp-coast-133e6e22b27f565b-lod2",
+          "jp-coast-1673475e4fe85c44-lod2",
+          "jp-coast-17539bdc707f5a4b-lod2",
+          "jp-coast-1f241e9ef00c51d0-lod2",
+          "jp-coast-205917af2c1f5790-lod2",
+          "jp-coast-2bef447e857652ca-lod2",
+          "jp-coast-31fa5e511ad859aa-lod2",
+          "jp-coast-38890922db6a52eb-lod2",
+          "jp-coast-3eac289307735c4d-lod2",
+          "jp-coast-464d3a4191bb5c9e-lod2",
+          "jp-coast-49b2b981bea15fee-lod2",
+          "jp-coast-4b2f95a47b965319-lod2",
+          "jp-coast-4f1314aff1125379-lod2",
+          "jp-coast-50f9911426ec55a7-lod2",
+          "jp-coast-55da84d404be52f2-lod2",
+          "jp-coast-5a8606adb3c65cba-lod2",
+          "jp-coast-5c07244793cb5d07-lod2",
+          "jp-coast-5c7d0c23da8653b5-lod2",
+          "jp-coast-6d13883c60665e44-lod2",
+          "jp-coast-7827b9f3fcc75d56-lod2",
+          "jp-coast-7ba744f267265e37-lod2",
+          "jp-coast-8510db854dd955c3-lod2",
+          "jp-coast-896e652f5b5657d4-lod2",
+          "jp-coast-89bef197639d5315-lod2",
+          "jp-coast-939098975486576b-lod2",
+          "jp-coast-95c30e6490455009-lod2",
+          "jp-coast-95ee528aa0a9537c-lod2",
+          "jp-coast-a1318b819972506f-lod2",
+          "jp-coast-a6b6b00b343655f9-lod2",
+          "jp-coast-a8cbbcd86f435528-lod2",
+          "jp-coast-b1466dd264e4501f-lod2",
+          "jp-coast-baf6fa99fb6f5f71-lod2",
+          "jp-coast-c48b7a8a750c53fa-lod2",
+          "jp-coast-c5074297e85251a9-lod2",
+          "jp-coast-ca9b3e49e11650ce-lod2",
+          "jp-coast-d3765ae43e3558a7-lod2",
+          "jp-coast-d54c09feeba25eb3-lod2",
+          "jp-coast-d5ef98c4be385c07-lod2",
+          "jp-coast-d6bda8f108065a05-lod2",
+          "jp-coast-d94ac6aacd075007-lod2",
+          "jp-coast-dfab02ad99935b84-lod2",
+          "jp-coast-e0e97939c8d25f42-lod2",
+          "jp-coast-e4e520d341c65420-lod2",
+          "jp-coast-e7cf28b09df15544-lod2",
+          "jp-coast-f30aae064b88549f-lod2",
+          "jp-coast-f6d258f9a2e75db1-lod2",
+          "jp-coast-fd7f97ca66095372-lod2"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod2_regional/r01_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod2_regional/r01_c00/land_fill.png",
+        "water": "assets/map/generated/lod2_regional/r01_c00/water.png",
+        "coastline": "assets/map/generated/lod2_regional/r01_c00/coastline.png",
+        "composite": "assets/map/generated/lod2_regional/r01_c00/composite.png",
+        "terrain": "assets/map/generated/lod2_regional/r01_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod2_regional/r01_c00/vegetation.png",
+        "soil": "assets/map/generated/lod2_regional/r01_c00/soil.png",
+        "snow": "assets/map/generated/lod2_regional/r01_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "F2800CC512F1BB7BE84EEF03D16812C0161C9B1F99C8759282216898933FC8AC",
+        "land_fill": "1669064DF0BFB018E2B66F2B8CDDD9BE7FC52EFE92DC06D84640B27EE277F3AF",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "6A25D98F4ABFF94F20E95B7186A4B252E50C711B2610516E43645B3AA576EBA0",
+        "composite": "EEBCD421F7C33706D55207264C3555CE002DA34DE46F85817CB54CE4DB017D77",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod2-r01-c01",
+      "lod": 2,
+      "family": "regional",
+      "row": 1,
+      "column": 1,
+      "global_viewport": [
+        4096.0,
+        4096.0,
+        8192.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod2",
+        "coastline_ids": [
+          "jp-coast-0eb7fc691ee75281-lod2",
+          "jp-coast-103576025d905fd4-lod2",
+          "jp-coast-1291644799c652d6-lod2",
+          "jp-coast-1b6a8befdad654e0-lod2",
+          "jp-coast-416652f8b08b5004-lod2",
+          "jp-coast-4acc97c6d7f5563f-lod2",
+          "jp-coast-76e129da3a9f5182-lod2",
+          "jp-coast-8510db854dd955c3-lod2",
+          "jp-coast-b355a001bf9d5d1d-lod2"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod2_regional/r01_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod2_regional/r01_c01/land_fill.png",
+        "water": "assets/map/generated/lod2_regional/r01_c01/water.png",
+        "coastline": "assets/map/generated/lod2_regional/r01_c01/coastline.png",
+        "composite": "assets/map/generated/lod2_regional/r01_c01/composite.png",
+        "terrain": "assets/map/generated/lod2_regional/r01_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod2_regional/r01_c01/vegetation.png",
+        "soil": "assets/map/generated/lod2_regional/r01_c01/soil.png",
+        "snow": "assets/map/generated/lod2_regional/r01_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "AA46DC995164CC255DF3E5B7E0F265A81D4CD83B21F144BDE7F351A8D4B31CB2",
+        "land_fill": "08EAB9217EC58DB1254FB9D5B692EEFBA52B8A7D128397B8A49608BB79C21575",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "2D55D1A28D99A76027E9CC6191763A1635604CAFAF7FC478DEEF52366B6FAB43",
+        "composite": "119A9053B9C8920CC0D8ACF9DF4589D5A1F84032265482C5D6343CBF364F5D84",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r00-c00",
+      "lod": 3,
+      "family": "local",
+      "row": 0,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        0.0,
+        2048.0,
+        2048.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r00_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r00_c00/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r00_c00/water.png",
+        "coastline": "assets/map/generated/lod3_local/r00_c00/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r00_c00/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r00_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r00_c00/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r00_c00/soil.png",
+        "snow": "assets/map/generated/lod3_local/r00_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r00-c01",
+      "lod": 3,
+      "family": "local",
+      "row": 0,
+      "column": 1,
+      "global_viewport": [
+        2048.0,
+        0.0,
+        4096.0,
+        2048.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r00_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r00_c01/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r00_c01/water.png",
+        "coastline": "assets/map/generated/lod3_local/r00_c01/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r00_c01/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r00_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r00_c01/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r00_c01/soil.png",
+        "snow": "assets/map/generated/lod3_local/r00_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r00-c02",
+      "lod": 3,
+      "family": "local",
+      "row": 0,
+      "column": 2,
+      "global_viewport": [
+        4096.0,
+        0.0,
+        6144.0,
+        2048.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-007be07c62ad589e-lod3",
+          "jp-coast-03fcd9ab15f858e5-lod3",
+          "jp-coast-33ee4594a29d58a1-lod3",
+          "jp-coast-c069e845da2756f1-lod3",
+          "jp-coast-cc3283e1dd5c55ee-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r00_c02/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r00_c02/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r00_c02/water.png",
+        "coastline": "assets/map/generated/lod3_local/r00_c02/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r00_c02/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r00_c02/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r00_c02/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r00_c02/soil.png",
+        "snow": "assets/map/generated/lod3_local/r00_c02/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "DFC06DB5F5A8F631E1264DDAAA7B968123D6EF641CB3F1165DC1FA6F5FC247DC",
+        "land_fill": "8F6AD5707282A1C26CBB7EC1BC4D94049C2813AB9D40181C757B484AD81F9DAB",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "2B2B3AF5B122F59B57167F6D0E061ADB85FB65C87623107C9EEF779C1BCA1780",
+        "composite": "AE92E70182D7F583CCA3F1A32F33597F3CBA19FC85CD3EB8B77BC51991746058",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r00-c03",
+      "lod": 3,
+      "family": "local",
+      "row": 0,
+      "column": 3,
+      "global_viewport": [
+        6144.0,
+        0.0,
+        8192.0,
+        2048.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-9d29832fdec35825-lod3",
+          "jp-coast-cc3283e1dd5c55ee-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r00_c03/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r00_c03/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r00_c03/water.png",
+        "coastline": "assets/map/generated/lod3_local/r00_c03/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r00_c03/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r00_c03/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r00_c03/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r00_c03/soil.png",
+        "snow": "assets/map/generated/lod3_local/r00_c03/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "196C314907AD57F1D26920C0569FED6A54BC51A6B93221E6A206992993A4149E",
+        "land_fill": "AE255D3678CEBA626050CDAB3C6744CB1844A6450E83257E201C34955730E018",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "037DD531E3FAE21C24D162C79095ACD8C0048F418DD838B8BD1D59D06ADADE54",
+        "composite": "C670167697C9133479E201F3B1DD21F4B2A6F732C30C1ABFB89F37BC81364BF3",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r01-c00",
+      "lod": 3,
+      "family": "local",
+      "row": 1,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        2048.0,
+        2048.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r01_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r01_c00/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r01_c00/water.png",
+        "coastline": "assets/map/generated/lod3_local/r01_c00/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r01_c00/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r01_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r01_c00/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r01_c00/soil.png",
+        "snow": "assets/map/generated/lod3_local/r01_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r01-c01",
+      "lod": 3,
+      "family": "local",
+      "row": 1,
+      "column": 1,
+      "global_viewport": [
+        2048.0,
+        2048.0,
+        4096.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r01_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r01_c01/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r01_c01/water.png",
+        "coastline": "assets/map/generated/lod3_local/r01_c01/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r01_c01/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r01_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r01_c01/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r01_c01/soil.png",
+        "snow": "assets/map/generated/lod3_local/r01_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r01-c02",
+      "lod": 3,
+      "family": "local",
+      "row": 1,
+      "column": 2,
+      "global_viewport": [
+        4096.0,
+        2048.0,
+        6144.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-02d1c1853fd45d04-lod3",
+          "jp-coast-103576025d905fd4-lod3",
+          "jp-coast-1291644799c652d6-lod3",
+          "jp-coast-388e289efdc45810-lod3",
+          "jp-coast-3cee50b4e2ae5f72-lod3",
+          "jp-coast-4706ada73bd75bf4-lod3",
+          "jp-coast-6b01ca033f645a69-lod3",
+          "jp-coast-8ad1bfc89ce75420-lod3",
+          "jp-coast-9dc66a3b4abc5438-lod3",
+          "jp-coast-cc3283e1dd5c55ee-lod3",
+          "jp-coast-d7b6bf38e4395b86-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r01_c02/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r01_c02/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r01_c02/water.png",
+        "coastline": "assets/map/generated/lod3_local/r01_c02/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r01_c02/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r01_c02/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r01_c02/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r01_c02/soil.png",
+        "snow": "assets/map/generated/lod3_local/r01_c02/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "58EE7E7E07B38259AFEEB1953C3755E59286C2900D564BC935A859817BE2C7F7",
+        "land_fill": "9D067B6C31EC6D6EC1A6BD26325FD9E2741C5FC84222D39533C61D3AF3103165",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "FA7E001A15E4EFB4ECF7D386AC1F01E7914A3792ED039F20C2F5F07872CEAA23",
+        "composite": "5DFB69C5BDA00BF621191437B5A62282826A6E03BBAB4388752E548120A23FE0",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r01-c03",
+      "lod": 3,
+      "family": "local",
+      "row": 1,
+      "column": 3,
+      "global_viewport": [
+        6144.0,
+        2048.0,
+        8192.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-cc3283e1dd5c55ee-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r01_c03/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r01_c03/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r01_c03/water.png",
+        "coastline": "assets/map/generated/lod3_local/r01_c03/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r01_c03/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r01_c03/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r01_c03/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r01_c03/soil.png",
+        "snow": "assets/map/generated/lod3_local/r01_c03/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "730ADDBBF9EBB435ADF01234BD8C58CA126697E360D5A02C06BA500BD88F8D30",
+        "land_fill": "AC3F612725CAD6151824E01A78A61156D3874E510D7DCCF13DB0FB57E0B0716E",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "EF2BCB95DA61C66B7DB2B9044121FE9C5B28529E3372F40828E00DFC84E5837C",
+        "composite": "44FB49A103435C0C1FD3026511C9A30441A705B8829C71E6472F6D1C92B3975A",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r02-c00",
+      "lod": 3,
+      "family": "local",
+      "row": 2,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        4096.0,
+        2048.0,
+        6144.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-044d04c17c9453b8-lod3",
+          "jp-coast-0f285e6ca7a65cb9-lod3",
+          "jp-coast-103576025d905fd4-lod3",
+          "jp-coast-27222eed97cf5df7-lod3",
+          "jp-coast-3eac289307735c4d-lod3",
+          "jp-coast-5e9082e8f56e54ef-lod3",
+          "jp-coast-654b422a62005241-lod3",
+          "jp-coast-7ba744f267265e37-lod3",
+          "jp-coast-94bc13eb54bc505b-lod3",
+          "jp-coast-a4e417ce08485c8f-lod3",
+          "jp-coast-af9e0199b91157b5-lod3",
+          "jp-coast-b2b1c2b6f8235a30-lod3",
+          "jp-coast-c48b7a8a750c53fa-lod3",
+          "jp-coast-dca476df5f4259c1-lod3",
+          "jp-coast-e4e520d341c65420-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r02_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r02_c00/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r02_c00/water.png",
+        "coastline": "assets/map/generated/lod3_local/r02_c00/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r02_c00/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r02_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r02_c00/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r02_c00/soil.png",
+        "snow": "assets/map/generated/lod3_local/r02_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "6EA24A4460FE4661D83EBAE20BEAEA7EAB474D7C752769243546699528941F43",
+        "land_fill": "76DFF696E2BD56078E29A24F66EDCF525B69D429908C56E1C5B0AA36A9CBF3E1",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "5E0070332C95703247D21A1081E0A03841206E243C936A534FAA6E7D8BC34712",
+        "composite": "F5AA85A0CDE763355DB7C8483376B6AF7A1CCDE3C72BCFF2564C16820BA5D5D4",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r02-c01",
+      "lod": 3,
+      "family": "local",
+      "row": 2,
+      "column": 1,
+      "global_viewport": [
+        2048.0,
+        4096.0,
+        4096.0,
+        6144.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-0245237df3165cfe-lod3",
+          "jp-coast-02e61fce41545e50-lod3",
+          "jp-coast-046f8b922bc1549c-lod3",
+          "jp-coast-05864e641b715614-lod3",
+          "jp-coast-0599c98d1c66555f-lod3",
+          "jp-coast-08b88696cb1e51c2-lod3",
+          "jp-coast-0bd0ef76f93357ef-lod3",
+          "jp-coast-103576025d905fd4-lod3",
+          "jp-coast-133e6e22b27f565b-lod3",
+          "jp-coast-1673475e4fe85c44-lod3",
+          "jp-coast-20cd2e353aea5704-lod3",
+          "jp-coast-250a0bab40905ad9-lod3",
+          "jp-coast-2bef447e857652ca-lod3",
+          "jp-coast-3584c4ef741d57dd-lod3",
+          "jp-coast-38890922db6a52eb-lod3",
+          "jp-coast-3bb29c6462ea5ccf-lod3",
+          "jp-coast-3c0207a5f5c552a2-lod3",
+          "jp-coast-464d3a4191bb5c9e-lod3",
+          "jp-coast-4b0f99fc4b6459b0-lod3",
+          "jp-coast-50f9911426ec55a7-lod3",
+          "jp-coast-511a42e1a1b458af-lod3",
+          "jp-coast-5a8606adb3c65cba-lod3",
+          "jp-coast-5b88f72eedd95a2d-lod3",
+          "jp-coast-5c7d0c23da8653b5-lod3",
+          "jp-coast-5d225fc7f9a55e0a-lod3",
+          "jp-coast-5dcc1e8b67855058-lod3",
+          "jp-coast-5f8a199c9f2b5f77-lod3",
+          "jp-coast-7827b9f3fcc75d56-lod3",
+          "jp-coast-790e079720de5595-lod3",
+          "jp-coast-7abb9e4c6abe5b5a-lod3",
+          "jp-coast-80728616e19f545a-lod3",
+          "jp-coast-822f48b4478e5814-lod3",
+          "jp-coast-8510db854dd955c3-lod3",
+          "jp-coast-85bb693c8c2d5e8a-lod3",
+          "jp-coast-896e652f5b5657d4-lod3",
+          "jp-coast-8c3c6a3761ba5318-lod3",
+          "jp-coast-92b1ec3cc52b5e40-lod3",
+          "jp-coast-95ee528aa0a9537c-lod3",
+          "jp-coast-9c5b574d09b25c56-lod3",
+          "jp-coast-9f1cbfaefc6b5a15-lod3",
+          "jp-coast-a1318b819972506f-lod3",
+          "jp-coast-a8d618ca6dbd55b3-lod3",
+          "jp-coast-ac611e65500058af-lod3",
+          "jp-coast-c28fa87b3cbc5913-lod3",
+          "jp-coast-c5074297e85251a9-lod3",
+          "jp-coast-d2d457195f8b58bc-lod3",
+          "jp-coast-d37d9cf570065113-lod3",
+          "jp-coast-d5ef98c4be385c07-lod3",
+          "jp-coast-d6bda8f108065a05-lod3",
+          "jp-coast-d94ac6aacd075007-lod3",
+          "jp-coast-dfab02ad99935b84-lod3",
+          "jp-coast-e0e97939c8d25f42-lod3",
+          "jp-coast-ecb079acf3cf57e3-lod3",
+          "jp-coast-f0aa22f57c685b97-lod3",
+          "jp-coast-ff0c8830929e5a15-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r02_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r02_c01/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r02_c01/water.png",
+        "coastline": "assets/map/generated/lod3_local/r02_c01/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r02_c01/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r02_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r02_c01/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r02_c01/soil.png",
+        "snow": "assets/map/generated/lod3_local/r02_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "408FE47EE3B20391BEC35F1019DBA2116A08889E58A97FFF2309E38526CA643F",
+        "land_fill": "AAA322540892A3C684CE3E7F09444D48B9BAB713399A4D77342CAD1ACE7D0377",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "21A38E53D238D33E1BA45F13041F82B133D33205DBF434135CCCEF020C386AD2",
+        "composite": "BFB7DA28F9B68D851E29019EE3CD36303825CC63897480EA03372D0AE155125F",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r02-c02",
+      "lod": 3,
+      "family": "local",
+      "row": 2,
+      "column": 2,
+      "global_viewport": [
+        4096.0,
+        4096.0,
+        6144.0,
+        6144.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-0eb7fc691ee75281-lod3",
+          "jp-coast-103576025d905fd4-lod3",
+          "jp-coast-1291644799c652d6-lod3",
+          "jp-coast-416652f8b08b5004-lod3",
+          "jp-coast-4acc97c6d7f5563f-lod3",
+          "jp-coast-4f95d1ae875d58b6-lod3",
+          "jp-coast-76e129da3a9f5182-lod3",
+          "jp-coast-8510db854dd955c3-lod3",
+          "jp-coast-e43787091ee951d0-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r02_c02/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r02_c02/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r02_c02/water.png",
+        "coastline": "assets/map/generated/lod3_local/r02_c02/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r02_c02/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r02_c02/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r02_c02/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r02_c02/soil.png",
+        "snow": "assets/map/generated/lod3_local/r02_c02/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "2D1E91D59DD54A400511B6AE546963F6B6075CD84F0149B8CCE9357603B2D539",
+        "land_fill": "49221BE74B3D6C9177EA3DB17D74839DC257D4F3C75B538AB96A5CB9EDC73BEF",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "FFBDFF6B5A074322F18144769633C65DD2B96C85D1D5AE2F57339AFD2DF1D55D",
+        "composite": "79F75FD5886F72A48B30432DEBCE5AA877F04038490FC4A3783E5C686C788DB8",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r02-c03",
+      "lod": 3,
+      "family": "local",
+      "row": 2,
+      "column": 3,
+      "global_viewport": [
+        6144.0,
+        4096.0,
+        8192.0,
+        6144.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r02_c03/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r02_c03/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r02_c03/water.png",
+        "coastline": "assets/map/generated/lod3_local/r02_c03/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r02_c03/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r02_c03/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r02_c03/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r02_c03/soil.png",
+        "snow": "assets/map/generated/lod3_local/r02_c03/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r03-c00",
+      "lod": 3,
+      "family": "local",
+      "row": 3,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        6144.0,
+        2048.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-0b128cf360ab51bd-lod3",
+          "jp-coast-0b31083587965724-lod3",
+          "jp-coast-0f285e6ca7a65cb9-lod3",
+          "jp-coast-1346a1dfd8165866-lod3",
+          "jp-coast-15020b29c6505936-lod3",
+          "jp-coast-17539bdc707f5a4b-lod3",
+          "jp-coast-1f241e9ef00c51d0-lod3",
+          "jp-coast-205917af2c1f5790-lod3",
+          "jp-coast-20efd193f3245494-lod3",
+          "jp-coast-30a34bde07ed5f73-lod3",
+          "jp-coast-31fa5e511ad859aa-lod3",
+          "jp-coast-36717d283be75c33-lod3",
+          "jp-coast-38cc32f94fe05df3-lod3",
+          "jp-coast-3f0c7041fa4a50fa-lod3",
+          "jp-coast-49b2b981bea15fee-lod3",
+          "jp-coast-4b2f95a47b965319-lod3",
+          "jp-coast-4be226aba6c65d79-lod3",
+          "jp-coast-4f1314aff1125379-lod3",
+          "jp-coast-506910e0e2c654be-lod3",
+          "jp-coast-51d385fa554c5d13-lod3",
+          "jp-coast-52cf94041e745971-lod3",
+          "jp-coast-5c07244793cb5d07-lod3",
+          "jp-coast-5ecbc7fdf69e57c3-lod3",
+          "jp-coast-60ae010837975ddf-lod3",
+          "jp-coast-6b62935baf5b508f-lod3",
+          "jp-coast-6d13883c60665e44-lod3",
+          "jp-coast-7abe34e765e75251-lod3",
+          "jp-coast-7bcc4fd1de3f5aaf-lod3",
+          "jp-coast-80a4e6e928f85e6c-lod3",
+          "jp-coast-89bef197639d5315-lod3",
+          "jp-coast-8bb17f6976d3507d-lod3",
+          "jp-coast-939098975486576b-lod3",
+          "jp-coast-9508c38b79a052ae-lod3",
+          "jp-coast-95c30e6490455009-lod3",
+          "jp-coast-a4f8546edada5284-lod3",
+          "jp-coast-a6b6b00b343655f9-lod3",
+          "jp-coast-a89285fcaddc568e-lod3",
+          "jp-coast-a8cbbcd86f435528-lod3",
+          "jp-coast-b1466dd264e4501f-lod3",
+          "jp-coast-b85d5936899250fa-lod3",
+          "jp-coast-baf6fa99fb6f5f71-lod3",
+          "jp-coast-c25ccb63e3215b58-lod3",
+          "jp-coast-ca9b3e49e11650ce-lod3",
+          "jp-coast-cd09ae2dbe1f5144-lod3",
+          "jp-coast-d3765ae43e3558a7-lod3",
+          "jp-coast-d54c09feeba25eb3-lod3",
+          "jp-coast-d7c9d7761555504b-lod3",
+          "jp-coast-dee197c54bbb5239-lod3",
+          "jp-coast-e111854a238e529e-lod3",
+          "jp-coast-e27550275be85822-lod3",
+          "jp-coast-e4e520d341c65420-lod3",
+          "jp-coast-eccca73748c75dc0-lod3",
+          "jp-coast-f30aae064b88549f-lod3",
+          "jp-coast-f331d1001fa65671-lod3",
+          "jp-coast-f35473e41c1559ba-lod3",
+          "jp-coast-f6d258f9a2e75db1-lod3",
+          "jp-coast-fd7f97ca66095372-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r03_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r03_c00/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r03_c00/water.png",
+        "coastline": "assets/map/generated/lod3_local/r03_c00/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r03_c00/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r03_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r03_c00/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r03_c00/soil.png",
+        "snow": "assets/map/generated/lod3_local/r03_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "85BBD588F999F38C76A24F21E10D5A0EF00730F40557E90E23E2A1EDBCEC132C",
+        "land_fill": "D8884849FE894BCF733C165DE862C847910B344B67164A7B841906F169EDDD23",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "E867BC8E13242A4760DF67D2ABA19F560F3A4484B65DDB79F5AF310CE6E92B48",
+        "composite": "73FD5DCD3C6F8CC44D16C6CB356028850345D20A0E2310277A61B3012F2E09EA",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r03-c01",
+      "lod": 3,
+      "family": "local",
+      "row": 3,
+      "column": 1,
+      "global_viewport": [
+        2048.0,
+        6144.0,
+        4096.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-0cbdafefec705bca-lod3",
+          "jp-coast-0d503799a4cd521a-lod3",
+          "jp-coast-103576025d905fd4-lod3",
+          "jp-coast-32244c27518157af-lod3",
+          "jp-coast-3de1269457a9564c-lod3",
+          "jp-coast-55da84d404be52f2-lod3",
+          "jp-coast-6b62935baf5b508f-lod3",
+          "jp-coast-d6bda8f108065a05-lod3",
+          "jp-coast-d94ac6aacd075007-lod3",
+          "jp-coast-e4e520d341c65420-lod3",
+          "jp-coast-e7cf28b09df15544-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r03_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r03_c01/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r03_c01/water.png",
+        "coastline": "assets/map/generated/lod3_local/r03_c01/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r03_c01/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r03_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r03_c01/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r03_c01/soil.png",
+        "snow": "assets/map/generated/lod3_local/r03_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "76B1701D767AC6EEB50EF331F7767CE32B19E4ABDF1A6E11202EF40A5AD1A5A8",
+        "land_fill": "5960334F355FDFBD1094C16E39824BCF7AC44B989BA073DE039227F81EB9DC17",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "574A3EA8E06B5868B5D665FE9CDBC6D81981370DEC3C2201B705C1AA5FBA336A",
+        "composite": "7D8B13188513A7ED5BB6BFDA1EEF927F594A7C2BA95D897B4DAF3F2C1DE6A632",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r03-c02",
+      "lod": 3,
+      "family": "local",
+      "row": 3,
+      "column": 2,
+      "global_viewport": [
+        4096.0,
+        6144.0,
+        6144.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [
+          "jp-coast-1b6a8befdad654e0-lod3",
+          "jp-coast-5fc11d3bc6a859cb-lod3",
+          "jp-coast-b355a001bf9d5d1d-lod3"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r03_c02/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r03_c02/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r03_c02/water.png",
+        "coastline": "assets/map/generated/lod3_local/r03_c02/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r03_c02/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r03_c02/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r03_c02/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r03_c02/soil.png",
+        "snow": "assets/map/generated/lod3_local/r03_c02/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "61EE9A8DAFB3EA932E289B93D460867ACFD348295629050D6F03FBBBA725300D",
+        "land_fill": "30981378BC8ABA630D206BE59278BB17984E5B0FEFEF9DC711136EDA2C5C1B58",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "27FF6CC2584456106F93B5CCB41809D215372C6C08E4358EF7635E222812F705",
+        "composite": "7B620E655DB2D6EB9D80510505C55BC83BAE825CCC2EF2A74A0D3D0ACD52C1B6",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod3-r03-c03",
+      "lod": 3,
+      "family": "local",
+      "row": 3,
+      "column": 3,
+      "global_viewport": [
+        6144.0,
+        6144.0,
+        8192.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod3",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod3_local/r03_c03/land_coverage.png",
+        "land_fill": "assets/map/generated/lod3_local/r03_c03/land_fill.png",
+        "water": "assets/map/generated/lod3_local/r03_c03/water.png",
+        "coastline": "assets/map/generated/lod3_local/r03_c03/coastline.png",
+        "composite": "assets/map/generated/lod3_local/r03_c03/composite.png",
+        "terrain": "assets/map/generated/lod3_local/r03_c03/terrain.png",
+        "vegetation": "assets/map/generated/lod3_local/r03_c03/vegetation.png",
+        "soil": "assets/map/generated/lod3_local/r03_c03/soil.png",
+        "snow": "assets/map/generated/lod3_local/r03_c03/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r00-c00",
+      "lod": 4,
+      "family": "local",
+      "row": 0,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        0.0,
+        2048.0,
+        2048.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r00_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r00_c00/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r00_c00/water.png",
+        "coastline": "assets/map/generated/lod4_local/r00_c00/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r00_c00/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r00_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r00_c00/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r00_c00/soil.png",
+        "snow": "assets/map/generated/lod4_local/r00_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r00-c01",
+      "lod": 4,
+      "family": "local",
+      "row": 0,
+      "column": 1,
+      "global_viewport": [
+        2048.0,
+        0.0,
+        4096.0,
+        2048.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r00_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r00_c01/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r00_c01/water.png",
+        "coastline": "assets/map/generated/lod4_local/r00_c01/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r00_c01/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r00_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r00_c01/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r00_c01/soil.png",
+        "snow": "assets/map/generated/lod4_local/r00_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r00-c02",
+      "lod": 4,
+      "family": "local",
+      "row": 0,
+      "column": 2,
+      "global_viewport": [
+        4096.0,
+        0.0,
+        6144.0,
+        2048.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-007be07c62ad589e-lod4",
+          "jp-coast-03fcd9ab15f858e5-lod4",
+          "jp-coast-33ee4594a29d58a1-lod4",
+          "jp-coast-c069e845da2756f1-lod4",
+          "jp-coast-cc3283e1dd5c55ee-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r00_c02/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r00_c02/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r00_c02/water.png",
+        "coastline": "assets/map/generated/lod4_local/r00_c02/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r00_c02/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r00_c02/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r00_c02/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r00_c02/soil.png",
+        "snow": "assets/map/generated/lod4_local/r00_c02/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "188B55F269EEE6C3544863E46D4B9BAD749EA440AAA7B040D9FC6F714B224232",
+        "land_fill": "3604836D50C45A38981C9F4B0B0BE46BAE92E5B529C3CFCA2E3E0955F3A71E93",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "68C7A38E279F1B91874E448BFAD5B927D38488774EFE15093A1B02D113290D03",
+        "composite": "5F4129D8EC42A2774859FC199D3A9BF1290760D269A33C92C901FE61A247B265",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r00-c03",
+      "lod": 4,
+      "family": "local",
+      "row": 0,
+      "column": 3,
+      "global_viewport": [
+        6144.0,
+        0.0,
+        8192.0,
+        2048.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-9d29832fdec35825-lod4",
+          "jp-coast-cc3283e1dd5c55ee-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r00_c03/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r00_c03/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r00_c03/water.png",
+        "coastline": "assets/map/generated/lod4_local/r00_c03/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r00_c03/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r00_c03/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r00_c03/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r00_c03/soil.png",
+        "snow": "assets/map/generated/lod4_local/r00_c03/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "1DFCB98667149BABA48723292C9DD06E338FC2E78AA1B2306E5330016DA891D3",
+        "land_fill": "92EC036C64DB8E20B801748825BC1994AB9CFB6699017A99859E9DB27C3ECCBA",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4444A3993C78BA6DA01F8A0577D9B9D3ABA507DE64834A8C2CEEF5D6C85B228A",
+        "composite": "03063FF10F145744878B76924A1373C4440A3A412DD2DC402C63A34E702FC7FC",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r01-c00",
+      "lod": 4,
+      "family": "local",
+      "row": 1,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        2048.0,
+        2048.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r01_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r01_c00/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r01_c00/water.png",
+        "coastline": "assets/map/generated/lod4_local/r01_c00/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r01_c00/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r01_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r01_c00/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r01_c00/soil.png",
+        "snow": "assets/map/generated/lod4_local/r01_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r01-c01",
+      "lod": 4,
+      "family": "local",
+      "row": 1,
+      "column": 1,
+      "global_viewport": [
+        2048.0,
+        2048.0,
+        4096.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r01_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r01_c01/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r01_c01/water.png",
+        "coastline": "assets/map/generated/lod4_local/r01_c01/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r01_c01/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r01_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r01_c01/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r01_c01/soil.png",
+        "snow": "assets/map/generated/lod4_local/r01_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r01-c02",
+      "lod": 4,
+      "family": "local",
+      "row": 1,
+      "column": 2,
+      "global_viewport": [
+        4096.0,
+        2048.0,
+        6144.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-02d1c1853fd45d04-lod4",
+          "jp-coast-103576025d905fd4-lod4",
+          "jp-coast-1291644799c652d6-lod4",
+          "jp-coast-388e289efdc45810-lod4",
+          "jp-coast-3cee50b4e2ae5f72-lod4",
+          "jp-coast-4706ada73bd75bf4-lod4",
+          "jp-coast-6b01ca033f645a69-lod4",
+          "jp-coast-8ad1bfc89ce75420-lod4",
+          "jp-coast-9dc66a3b4abc5438-lod4",
+          "jp-coast-cc3283e1dd5c55ee-lod4",
+          "jp-coast-d7b6bf38e4395b86-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r01_c02/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r01_c02/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r01_c02/water.png",
+        "coastline": "assets/map/generated/lod4_local/r01_c02/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r01_c02/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r01_c02/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r01_c02/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r01_c02/soil.png",
+        "snow": "assets/map/generated/lod4_local/r01_c02/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "8923A9C05BAB36BDF3D49B28649863642C6061A3D72274024788D744ED3B6A8C",
+        "land_fill": "EA69744845E2D3C3BF2F0400E2EC491E5636CA48A1CD161E5BE4C8B4130A0782",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "F0033151208973809AE3A00410B2CCDAC37D2E43719BF4877721AC845AC2E6EC",
+        "composite": "7E0B068354967E384AC648CB9D663528385629CB78EAD9EB3B393A5B1665EBB5",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r01-c03",
+      "lod": 4,
+      "family": "local",
+      "row": 1,
+      "column": 3,
+      "global_viewport": [
+        6144.0,
+        2048.0,
+        8192.0,
+        4096.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-cc3283e1dd5c55ee-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r01_c03/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r01_c03/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r01_c03/water.png",
+        "coastline": "assets/map/generated/lod4_local/r01_c03/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r01_c03/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r01_c03/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r01_c03/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r01_c03/soil.png",
+        "snow": "assets/map/generated/lod4_local/r01_c03/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "B4768FC9063C890FC2E10ABA832A76DA69096A38F6E5520834B78019C6424252",
+        "land_fill": "D10D161EA870741C81110DE07829F8427AB05338B87363181E7148F6E7D4473B",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "FD6805CBEF1C10304595FE979EE130CE8AD5E4A55710588176D60E5E8D8A907C",
+        "composite": "FEFBE23DE386C9DFDC2264BBB732E632E7FA278999AF9693113BC51C071BF801",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r02-c00",
+      "lod": 4,
+      "family": "local",
+      "row": 2,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        4096.0,
+        2048.0,
+        6144.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-044d04c17c9453b8-lod4",
+          "jp-coast-0f285e6ca7a65cb9-lod4",
+          "jp-coast-103576025d905fd4-lod4",
+          "jp-coast-27222eed97cf5df7-lod4",
+          "jp-coast-3eac289307735c4d-lod4",
+          "jp-coast-5e9082e8f56e54ef-lod4",
+          "jp-coast-654b422a62005241-lod4",
+          "jp-coast-7ba744f267265e37-lod4",
+          "jp-coast-94bc13eb54bc505b-lod4",
+          "jp-coast-a4e417ce08485c8f-lod4",
+          "jp-coast-af9e0199b91157b5-lod4",
+          "jp-coast-b2b1c2b6f8235a30-lod4",
+          "jp-coast-c48b7a8a750c53fa-lod4",
+          "jp-coast-dca476df5f4259c1-lod4",
+          "jp-coast-e4e520d341c65420-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r02_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r02_c00/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r02_c00/water.png",
+        "coastline": "assets/map/generated/lod4_local/r02_c00/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r02_c00/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r02_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r02_c00/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r02_c00/soil.png",
+        "snow": "assets/map/generated/lod4_local/r02_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "87914F69401CD81D2A7C080887002A94138DB36B3787C146395948F9950293FE",
+        "land_fill": "5F1554807D93BBFA6B0C465B44DFF0896677219D131BC4CEB073C9820DA83A1D",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "EB9A3677881278267545E86B8542ABF1C60A36BDB066EE1172F037582AD5E093",
+        "composite": "BFB31418B8388954A07EA54F2581B8E8716FF361B8C9ABCF9C376AEC99757039",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r02-c01",
+      "lod": 4,
+      "family": "local",
+      "row": 2,
+      "column": 1,
+      "global_viewport": [
+        2048.0,
+        4096.0,
+        4096.0,
+        6144.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-0245237df3165cfe-lod4",
+          "jp-coast-02e61fce41545e50-lod4",
+          "jp-coast-046f8b922bc1549c-lod4",
+          "jp-coast-05864e641b715614-lod4",
+          "jp-coast-0599c98d1c66555f-lod4",
+          "jp-coast-08b88696cb1e51c2-lod4",
+          "jp-coast-0bd0ef76f93357ef-lod4",
+          "jp-coast-103576025d905fd4-lod4",
+          "jp-coast-133e6e22b27f565b-lod4",
+          "jp-coast-1673475e4fe85c44-lod4",
+          "jp-coast-20cd2e353aea5704-lod4",
+          "jp-coast-250a0bab40905ad9-lod4",
+          "jp-coast-2bef447e857652ca-lod4",
+          "jp-coast-3584c4ef741d57dd-lod4",
+          "jp-coast-38890922db6a52eb-lod4",
+          "jp-coast-3bb29c6462ea5ccf-lod4",
+          "jp-coast-3c0207a5f5c552a2-lod4",
+          "jp-coast-464d3a4191bb5c9e-lod4",
+          "jp-coast-4b0f99fc4b6459b0-lod4",
+          "jp-coast-50f9911426ec55a7-lod4",
+          "jp-coast-511a42e1a1b458af-lod4",
+          "jp-coast-5a8606adb3c65cba-lod4",
+          "jp-coast-5b88f72eedd95a2d-lod4",
+          "jp-coast-5c7d0c23da8653b5-lod4",
+          "jp-coast-5d225fc7f9a55e0a-lod4",
+          "jp-coast-5dcc1e8b67855058-lod4",
+          "jp-coast-5f8a199c9f2b5f77-lod4",
+          "jp-coast-7827b9f3fcc75d56-lod4",
+          "jp-coast-790e079720de5595-lod4",
+          "jp-coast-7abb9e4c6abe5b5a-lod4",
+          "jp-coast-80728616e19f545a-lod4",
+          "jp-coast-822f48b4478e5814-lod4",
+          "jp-coast-8510db854dd955c3-lod4",
+          "jp-coast-85bb693c8c2d5e8a-lod4",
+          "jp-coast-896e652f5b5657d4-lod4",
+          "jp-coast-8c3c6a3761ba5318-lod4",
+          "jp-coast-92b1ec3cc52b5e40-lod4",
+          "jp-coast-95ee528aa0a9537c-lod4",
+          "jp-coast-9c5b574d09b25c56-lod4",
+          "jp-coast-9f1cbfaefc6b5a15-lod4",
+          "jp-coast-a1318b819972506f-lod4",
+          "jp-coast-a8d618ca6dbd55b3-lod4",
+          "jp-coast-ac611e65500058af-lod4",
+          "jp-coast-c28fa87b3cbc5913-lod4",
+          "jp-coast-c5074297e85251a9-lod4",
+          "jp-coast-d2d457195f8b58bc-lod4",
+          "jp-coast-d37d9cf570065113-lod4",
+          "jp-coast-d5ef98c4be385c07-lod4",
+          "jp-coast-d6bda8f108065a05-lod4",
+          "jp-coast-d94ac6aacd075007-lod4",
+          "jp-coast-dfab02ad99935b84-lod4",
+          "jp-coast-e0e97939c8d25f42-lod4",
+          "jp-coast-ecb079acf3cf57e3-lod4",
+          "jp-coast-f0aa22f57c685b97-lod4",
+          "jp-coast-ff0c8830929e5a15-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r02_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r02_c01/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r02_c01/water.png",
+        "coastline": "assets/map/generated/lod4_local/r02_c01/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r02_c01/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r02_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r02_c01/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r02_c01/soil.png",
+        "snow": "assets/map/generated/lod4_local/r02_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "23932165E707CB8E1C1B306672F4E54578DE8715ABC751E23E522117BD92D721",
+        "land_fill": "6EFE6BD4602D36578DDC666CD7844287E497752597C0598778A5BDE010FBCC01",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "7EE52E2846A55A7BE7A033D3BE1099BD5E1FD85906662CA456A6A00751E90A2B",
+        "composite": "C1AFA7A190EC9D4C73F9886AFF6A3D911DE9460A8ADC8CF3F806E7D14B3419A5",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r02-c02",
+      "lod": 4,
+      "family": "local",
+      "row": 2,
+      "column": 2,
+      "global_viewport": [
+        4096.0,
+        4096.0,
+        6144.0,
+        6144.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-0eb7fc691ee75281-lod4",
+          "jp-coast-103576025d905fd4-lod4",
+          "jp-coast-1291644799c652d6-lod4",
+          "jp-coast-416652f8b08b5004-lod4",
+          "jp-coast-4acc97c6d7f5563f-lod4",
+          "jp-coast-4f95d1ae875d58b6-lod4",
+          "jp-coast-76e129da3a9f5182-lod4",
+          "jp-coast-8510db854dd955c3-lod4",
+          "jp-coast-e43787091ee951d0-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r02_c02/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r02_c02/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r02_c02/water.png",
+        "coastline": "assets/map/generated/lod4_local/r02_c02/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r02_c02/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r02_c02/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r02_c02/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r02_c02/soil.png",
+        "snow": "assets/map/generated/lod4_local/r02_c02/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "8040EF61FD630C6E55256D0AF63F64A6B29B0759AAEF9203CC9BBF306150FC2C",
+        "land_fill": "7969BCFD705EEC2763DFD38BA429C23CF2FC4EE7DCC4697417E61773022F0F4C",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "A42489B2A1F3A6C8D2AEFFD87CAF233B1CB01147A037FC955BB59D684FA32330",
+        "composite": "2039CD51291B34592862BDAA8DF6587887B251343D79EF73A5A9927758CB6CEF",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r02-c03",
+      "lod": 4,
+      "family": "local",
+      "row": 2,
+      "column": 3,
+      "global_viewport": [
+        6144.0,
+        4096.0,
+        8192.0,
+        6144.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r02_c03/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r02_c03/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r02_c03/water.png",
+        "coastline": "assets/map/generated/lod4_local/r02_c03/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r02_c03/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r02_c03/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r02_c03/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r02_c03/soil.png",
+        "snow": "assets/map/generated/lod4_local/r02_c03/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r03-c00",
+      "lod": 4,
+      "family": "local",
+      "row": 3,
+      "column": 0,
+      "global_viewport": [
+        0.0,
+        6144.0,
+        2048.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-0b128cf360ab51bd-lod4",
+          "jp-coast-0b31083587965724-lod4",
+          "jp-coast-0f285e6ca7a65cb9-lod4",
+          "jp-coast-1346a1dfd8165866-lod4",
+          "jp-coast-15020b29c6505936-lod4",
+          "jp-coast-17539bdc707f5a4b-lod4",
+          "jp-coast-1f241e9ef00c51d0-lod4",
+          "jp-coast-205917af2c1f5790-lod4",
+          "jp-coast-20efd193f3245494-lod4",
+          "jp-coast-30a34bde07ed5f73-lod4",
+          "jp-coast-31fa5e511ad859aa-lod4",
+          "jp-coast-36717d283be75c33-lod4",
+          "jp-coast-38cc32f94fe05df3-lod4",
+          "jp-coast-3f0c7041fa4a50fa-lod4",
+          "jp-coast-49b2b981bea15fee-lod4",
+          "jp-coast-4b2f95a47b965319-lod4",
+          "jp-coast-4be226aba6c65d79-lod4",
+          "jp-coast-4f1314aff1125379-lod4",
+          "jp-coast-506910e0e2c654be-lod4",
+          "jp-coast-51d385fa554c5d13-lod4",
+          "jp-coast-52cf94041e745971-lod4",
+          "jp-coast-5c07244793cb5d07-lod4",
+          "jp-coast-5ecbc7fdf69e57c3-lod4",
+          "jp-coast-60ae010837975ddf-lod4",
+          "jp-coast-6b62935baf5b508f-lod4",
+          "jp-coast-6d13883c60665e44-lod4",
+          "jp-coast-7abe34e765e75251-lod4",
+          "jp-coast-7bcc4fd1de3f5aaf-lod4",
+          "jp-coast-80a4e6e928f85e6c-lod4",
+          "jp-coast-89bef197639d5315-lod4",
+          "jp-coast-8bb17f6976d3507d-lod4",
+          "jp-coast-939098975486576b-lod4",
+          "jp-coast-9508c38b79a052ae-lod4",
+          "jp-coast-95c30e6490455009-lod4",
+          "jp-coast-a4f8546edada5284-lod4",
+          "jp-coast-a6b6b00b343655f9-lod4",
+          "jp-coast-a89285fcaddc568e-lod4",
+          "jp-coast-a8cbbcd86f435528-lod4",
+          "jp-coast-b1466dd264e4501f-lod4",
+          "jp-coast-b85d5936899250fa-lod4",
+          "jp-coast-baf6fa99fb6f5f71-lod4",
+          "jp-coast-c25ccb63e3215b58-lod4",
+          "jp-coast-ca9b3e49e11650ce-lod4",
+          "jp-coast-cd09ae2dbe1f5144-lod4",
+          "jp-coast-d3765ae43e3558a7-lod4",
+          "jp-coast-d54c09feeba25eb3-lod4",
+          "jp-coast-d7c9d7761555504b-lod4",
+          "jp-coast-dee197c54bbb5239-lod4",
+          "jp-coast-e111854a238e529e-lod4",
+          "jp-coast-e27550275be85822-lod4",
+          "jp-coast-e4e520d341c65420-lod4",
+          "jp-coast-eccca73748c75dc0-lod4",
+          "jp-coast-f30aae064b88549f-lod4",
+          "jp-coast-f331d1001fa65671-lod4",
+          "jp-coast-f35473e41c1559ba-lod4",
+          "jp-coast-f6d258f9a2e75db1-lod4",
+          "jp-coast-fd7f97ca66095372-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r03_c00/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r03_c00/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r03_c00/water.png",
+        "coastline": "assets/map/generated/lod4_local/r03_c00/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r03_c00/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r03_c00/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r03_c00/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r03_c00/soil.png",
+        "snow": "assets/map/generated/lod4_local/r03_c00/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "DEAAFED29EC11685BB18BC81780387DD8DA021EE9E73A998DFB16253F10FD05F",
+        "land_fill": "82CB2F76BACB3A789BB1A9C341A38FD2A3F8931899EAA2080D2F23F604093859",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "1D3ED704D876AD5A1269B001428B08C768F7EEFB9B5228477D42AC431BD4A5DC",
+        "composite": "D82999757A0F2315D406509714E73F420D0E017ACA090904A33DB67613A0FAE0",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r03-c01",
+      "lod": 4,
+      "family": "local",
+      "row": 3,
+      "column": 1,
+      "global_viewport": [
+        2048.0,
+        6144.0,
+        4096.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-0cbdafefec705bca-lod4",
+          "jp-coast-0d503799a4cd521a-lod4",
+          "jp-coast-103576025d905fd4-lod4",
+          "jp-coast-32244c27518157af-lod4",
+          "jp-coast-3de1269457a9564c-lod4",
+          "jp-coast-55da84d404be52f2-lod4",
+          "jp-coast-6b62935baf5b508f-lod4",
+          "jp-coast-d6bda8f108065a05-lod4",
+          "jp-coast-d94ac6aacd075007-lod4",
+          "jp-coast-e4e520d341c65420-lod4",
+          "jp-coast-e7cf28b09df15544-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r03_c01/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r03_c01/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r03_c01/water.png",
+        "coastline": "assets/map/generated/lod4_local/r03_c01/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r03_c01/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r03_c01/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r03_c01/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r03_c01/soil.png",
+        "snow": "assets/map/generated/lod4_local/r03_c01/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "E85378A4ACC836C6EE70680DB1DC97735236C0F8CCEE4105E215F60F7C9E2BB4",
+        "land_fill": "9CCE389778A2258FC11B4334DCD3A3E74A862FF86DAB161A9E25C44567C090C7",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "BB9153C580EEDA6EFE9159D887A1A7526B0E263AC9F84376B633856EB683E223",
+        "composite": "AC9A1AC3A8F00920AAF6F86A8A9953B0812FFC82F0FA4ACFC793A1DE3618E710",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r03-c02",
+      "lod": 4,
+      "family": "local",
+      "row": 3,
+      "column": 2,
+      "global_viewport": [
+        4096.0,
+        6144.0,
+        6144.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [
+          "jp-coast-1b6a8befdad654e0-lod4",
+          "jp-coast-5fc11d3bc6a859cb-lod4",
+          "jp-coast-b355a001bf9d5d1d-lod4"
+        ],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r03_c02/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r03_c02/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r03_c02/water.png",
+        "coastline": "assets/map/generated/lod4_local/r03_c02/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r03_c02/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r03_c02/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r03_c02/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r03_c02/soil.png",
+        "snow": "assets/map/generated/lod4_local/r03_c02/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "97184B2B39A7BEFEC8CE088EC2F56FD16CABA085A04580E8CB886B1E947420C6",
+        "land_fill": "0CC732C7F082C09BB93D7A2B48F7D9E7B80BEB6B22CD87BD6ABF27BDBE64C446",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "1AC8463F384089B042E2B19B504C41F23311CED868B504B58198F25F41BFD627",
+        "composite": "C1B4A873F76AED783599AD106749F520298AE84ECED303B5CFC5EDE4BD77A59C",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    },
+    {
+      "tile_id": "lod4-r03-c03",
+      "lod": 4,
+      "family": "local",
+      "row": 3,
+      "column": 3,
+      "global_viewport": [
+        6144.0,
+        6144.0,
+        8192.0,
+        8192.0
+      ],
+      "output_size": [
+        2048,
+        2048
+      ],
+      "ocean_id": "jp-ocean-001",
+      "lake_ids": [],
+      "coastline_vector": {
+        "geopackage": "data/derived/lod/japan_lod.gpkg",
+        "layer": "coastline_lod4",
+        "coastline_ids": [],
+        "draw_order": "above_all_textures"
+      },
+      "files": {
+        "land_coverage": "assets/map/generated/lod4_local/r03_c03/land_coverage.png",
+        "land_fill": "assets/map/generated/lod4_local/r03_c03/land_fill.png",
+        "water": "assets/map/generated/lod4_local/r03_c03/water.png",
+        "coastline": "assets/map/generated/lod4_local/r03_c03/coastline.png",
+        "composite": "assets/map/generated/lod4_local/r03_c03/composite.png",
+        "terrain": "assets/map/generated/lod4_local/r03_c03/terrain.png",
+        "vegetation": "assets/map/generated/lod4_local/r03_c03/vegetation.png",
+        "soil": "assets/map/generated/lod4_local/r03_c03/soil.png",
+        "snow": "assets/map/generated/lod4_local/r03_c03/snow.png"
+      },
+      "sha256": {
+        "land_coverage": "BC1CCAEDB8AAD8DE3E64EF7B2D4FA2099F917E9995488E376BC94899C40C6FA8",
+        "land_fill": "4C4CA7A51D6B37EF1AD1A8DBDB12B3569A3220490E1BD45C5421FFB0087F5BCC",
+        "water": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "coastline": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "composite": "F6CC3544B6411F6039E0697D42DCAC46AA2EF920A28A0C87DC61E0671363BFE2",
+        "terrain": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "vegetation": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "soil": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA",
+        "snow": "4366893496C99F69CEF48E1359EC843E15879BA94879171D8596E5514EA615AA"
+      }
+    }
+  ]
+}

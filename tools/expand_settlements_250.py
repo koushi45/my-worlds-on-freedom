@@ -1,0 +1,225 @@
+"""Editorial expansion helpers. Candidates are reviewed before adoption."""
+import json, csv, re
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+OUT=ROOT/'data/editorial/settlements/expansion_250'
+TARGETS=dict(tohoku=31,kanto=37,koshin=13,hokuriku=25,tokai=29,kinki=30,chugoku=35,shikoku=15,kyushu=34,hokkaido=1)
+CANDIDATES={
+'tohoku': '''大浦城|mutsu
+堀越城|mutsu
+九戸城|mutsu
+高水寺城|mutsu
+鳥谷ヶ崎城|mutsu
+寺池城|mutsu
+白石城|mutsu
+丸森城|mutsu
+小高城|mutsu
+須賀川城|mutsu
+白河小峰城|mutsu
+赤館城|mutsu
+二本松城|mutsu
+小浜城|mutsu
+本宮城|mutsu
+山形城|dewa
+上山城|dewa
+天童城|dewa
+延沢城|dewa
+尾浦城|dewa
+鮭延城|dewa
+横手城|dewa
+檜山城|dewa
+湊城|dewa
+角館城|dewa
+大館城|dewa
+酒田|dewa|port
+塩竈|mutsu|port''',
+'kanto': '''江戸城|musashi
+川越城|musashi
+岩付城|musashi
+忍城|musashi
+鉢形城|musashi
+滝山城|musashi
+松山城|musashi
+深谷城|musashi
+騎西城|musashi
+小机城|musashi
+玉縄城|sagami
+三崎城|sagami
+津久井城|sagami
+鎌倉|sagami|settlement
+品川湊|musashi|port
+館山城|awa_boso
+岡本城|awa_boso
+久留里城|kazusa
+佐貫城|kazusa
+小田喜城|kazusa
+本佐倉城|shimosa
+臼井城|shimosa
+関宿城|shimosa
+古河城|shimosa
+結城城|shimosa
+水戸城|hitachi
+太田城|hitachi
+小田城|hitachi
+土浦城|hitachi
+笠間城|hitachi
+真壁城|hitachi
+宇都宮城|shimotsuke
+唐沢山城|shimotsuke
+箕輪城|kozuke
+厩橋城|kozuke
+金山城|kozuke''',
+'koshin': '''岩殿城|kai
+谷村城|kai
+若神子城|kai
+小諸城|shinano
+深志城|shinano
+高島古城|shinano
+飯田城|shinano
+海津城|shinano
+飯山城|shinano
+荒砥城|shinano
+戸石城|shinano
+木曽福島|shinano|settlement''',
+'hokuriku': '''北ノ庄城|echizen
+府中城|echizen
+金沢城|kaga
+大聖寺城|kaga
+小松城|kaga
+松任城|kaga
+富山城|etchu
+魚津城|etchu
+松倉城|etchu
+増山城|etchu
+守山城|etchu
+木舟城|etchu
+城生城|etchu
+放生津|etchu|port
+輪島|noto|port
+直江津|echigo|port
+柏崎|echigo|port
+与板城|echigo
+栃尾城|echigo
+坂戸城|echigo
+新発田城|echigo
+本庄城|echigo
+敦賀|echizen|port
+小浜|wakasa|port''',
+'tokai': '''清洲城|owari
+犬山城|owari
+長島城|ise
+桑名|ise|port
+亀山城|ise
+神戸城|ise
+安濃津城|ise
+松ヶ島城|ise
+鳥羽|shima|port
+田丸城|ise
+大河内城|ise
+安濃城|ise
+大垣城|mino
+岩村城|mino
+苗木城|mino
+美濃金山城|mino
+郡上八幡城|mino
+桜洞城|hida
+帰雲城|hida
+岡崎城|mikawa
+刈谷城|mikawa
+西尾城|mikawa
+吉田城|mikawa
+新城城|mikawa
+掛川城|totomi
+三枚橋城|suruga
+熱田|owari|port''',
+'kinki': '''高槻城|settsu
+茨木城|settsu
+尼崎|settsu|port
+兵庫津|settsu|port
+三木城|harima
+姫路城|harima
+龍野城|harima
+利神城|harima
+有子山城|tajima
+竹田城|tajima
+亀山城|tanba
+福知山城|tanba
+黒井城|tanba
+宮津城|tango
+田辺城|tango
+勝龍寺城|yamashiro
+淀古城|yamashiro
+奈良|yamato|settlement
+郡山城|yamato
+高取城|yamato
+根来寺|kii|settlement
+新宮|kii|settlement
+長浜城|omi
+日野城|omi''',
+'chugoku': '''月山富田城|izumo
+三刀屋城|izumo
+三沢城|izumo
+赤穴城|izumo
+桜尾城|aki
+宮島|aki|port
+草津|aki|port
+三原城|bingo
+新高山城|aki
+竹原|aki|port
+鞆|bingo|port
+神辺城|bingo
+備中松山城|bitchu
+備中高松城|bitchu
+岡山城|bizen
+岩屋城|mimasaka
+高田城|mimasaka
+林野城|mimasaka
+矢筈城|mimasaka
+鳥取城|inaba
+鹿野城|inaba
+羽衣石城|hoki
+打吹城|hoki
+若桜鬼ヶ城|inaba
+江美城|hoki
+米子城|hoki
+尾高城|hoki
+周布城|iwami
+七尾城|iwami
+三本松城|iwami
+山口|suo|settlement
+赤間関|nagato|port
+上関|suo|port
+日野山城|aki''',
+'shikoku': '''湯築城|iyo
+大洲城|iyo
+黒瀬城|iyo
+板島丸串城|iyo
+川之江城|iyo
+金子城|iyo
+勝瑞城|awa_shikoku
+白地城|awa_shikoku
+撫養城|awa_shikoku
+十河城|sanuki
+引田城|sanuki
+天霧城|sanuki
+中村御所|tosa''',
+'kyushu': '''村中城|hizen
+隈本城|higo
+岡城|bungo
+岩石城|buzen
+古処山城|chikuzen
+佐敷城|higo'''
+}
+
+def prepare():
+    OUT.mkdir(parents=True,exist_ok=True)
+    poi=list(csv.DictReader((ROOT/'data/sources/settlements/nrct-poi-20250515.csv').open(encoding='utf-8-sig')))
+    records=[]
+    for region,rows in CANDIDATES.items():
+        for line in rows.splitlines():
+            f=line.split('|');name,province=f[:2];role=f[2] if len(f)>2 else 'castle'
+            matches=[r for r in poi if name.replace('城','') in r['名称'] and (role!='castle' or '城' in r['名称'])]
+            records.append(dict(key=region+'_'+province+'_'+name,name=name,province=province,region=region,role=role,poi_candidates=matches))
+    (OUT/'candidates.json').write_text(json.dumps(records,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print({r:len(v.splitlines()) for r,v in CANDIDATES.items()},len(records))
+if __name__=='__main__':prepare()

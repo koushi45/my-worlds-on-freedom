@@ -1,0 +1,223 @@
+{
+  "scope_id": "koshinetsu_hokuriku",
+  "status": "pending",
+  "unconfirmed_endpoint_ids": [
+    "img-boundary-0053:end",
+    "img-boundary-0054:end",
+    "img-boundary-0056:start",
+    "img-boundary-0056:end",
+    "img-boundary-0057:start",
+    "img-boundary-0058:start",
+    "img-boundary-0060:start",
+    "img-boundary-0061:end",
+    "img-boundary-0062:start",
+    "img-boundary-0064:start",
+    "img-boundary-0064:end",
+    "img-boundary-0065:start",
+    "img-boundary-0066:end",
+    "img-boundary-0076:start",
+    "img-boundary-0079:start",
+    "img-boundary-0081:start",
+    "img-boundary-0082:end",
+    "img-boundary-0090:start",
+    "img-boundary-0092:start",
+    "img-boundary-0092:end"
+  ],
+  "unconfirmed_boundary_ids": [
+    "img-boundary-0053",
+    "img-boundary-0054",
+    "img-boundary-0055",
+    "img-boundary-0056",
+    "img-boundary-0057",
+    "img-boundary-0058",
+    "img-boundary-0059",
+    "img-boundary-0060",
+    "img-boundary-0061",
+    "img-boundary-0062",
+    "img-boundary-0063",
+    "img-boundary-0064",
+    "img-boundary-0065",
+    "img-boundary-0066",
+    "img-boundary-0076",
+    "img-boundary-0078",
+    "img-boundary-0079",
+    "img-boundary-0080",
+    "img-boundary-0081",
+    "img-boundary-0082",
+    "img-boundary-0090",
+    "img-boundary-0091",
+    "img-boundary-0092",
+    "img-boundary-0093"
+  ],
+  "non_simple_boundary_ids": [
+    "img-boundary-0056",
+    "img-boundary-0090"
+  ],
+  "ambiguous_face_ids": [
+    "p3-face-0008",
+    "p3-face-0012",
+    "p3-face-0016",
+    "p3-face-0017",
+    "p3-face-0019",
+    "p3-face-0026",
+    "p3-face-0027",
+    "p3-face-0028"
+  ],
+  "overlap_pairs": [],
+  "unassigned_gap_area_8192": 2165607.8118471913,
+  "adjacency_items": [
+    {
+      "left_region_id": "jp-ryoseikoku-40-echizen",
+      "right_region_id": "jp-ryoseikoku-41-kaga",
+      "source_boundary_ids": [
+        "img-boundary-0053"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-40-echizen",
+      "right_region_id": "jp-ryoseikoku-61-omi",
+      "source_boundary_ids": [
+        "img-boundary-0054"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-40-echizen",
+      "right_region_id": "jp-ryoseikoku-62-mino",
+      "source_boundary_ids": [
+        "img-boundary-0055"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-41-kaga",
+      "right_region_id": "jp-ryoseikoku-42-etchu",
+      "source_boundary_ids": [
+        "img-boundary-0056"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-41-kaga",
+      "right_region_id": "jp-ryoseikoku-63-hida",
+      "source_boundary_ids": [
+        "img-boundary-0057"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-42-etchu",
+      "right_region_id": "jp-ryoseikoku-63-hida",
+      "source_boundary_ids": [
+        "img-boundary-0058"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-42-etchu",
+      "right_region_id": "jp-ryoseikoku-64-shinano",
+      "source_boundary_ids": [
+        "img-boundary-0059",
+        "img-boundary-0060",
+        "img-boundary-0061"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-44-echigo",
+      "right_region_id": "jp-ryoseikoku-64-shinano",
+      "source_boundary_ids": [
+        "img-boundary-0062"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-44-echigo",
+      "right_region_id": "jp-ryoseikoku-65-kozuke",
+      "source_boundary_ids": [
+        "img-boundary-0063"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-44-echigo",
+      "right_region_id": "jp-ryoseikoku-67-mutsu",
+      "source_boundary_ids": [
+        "img-boundary-0064",
+        "img-boundary-0065"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-44-echigo",
+      "right_region_id": "jp-ryoseikoku-68-dewa",
+      "source_boundary_ids": [
+        "img-boundary-0066"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-52-suruga",
+      "right_region_id": "jp-ryoseikoku-54-kai",
+      "source_boundary_ids": [
+        "img-boundary-0076"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-54-kai",
+      "right_region_id": "jp-ryoseikoku-64-shinano",
+      "source_boundary_ids": [
+        "img-boundary-0078",
+        "img-boundary-0079",
+        "img-boundary-0080",
+        "img-boundary-0081",
+        "img-boundary-0082"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-62-mino",
+      "right_region_id": "jp-ryoseikoku-64-shinano",
+      "source_boundary_ids": [
+        "img-boundary-0090"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-63-hida",
+      "right_region_id": "jp-ryoseikoku-64-shinano",
+      "source_boundary_ids": [
+        "img-boundary-0091"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    },
+    {
+      "left_region_id": "jp-ryoseikoku-64-shinano",
+      "right_region_id": "jp-ryoseikoku-65-kozuke",
+      "source_boundary_ids": [
+        "img-boundary-0092",
+        "img-boundary-0093"
+      ],
+      "actual_shared_length_8192": 0.0,
+      "status": "not_testable_missing_region"
+    }
+  ],
+  "coastline_reference_items": []
+}

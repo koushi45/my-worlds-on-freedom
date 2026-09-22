@@ -1,0 +1,261 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:25Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 110150931,
+    "ns": 0,
+    "title": "Q115587273",
+    "lastrevid": 2344541527,
+    "modified": "2025-05-04T13:08:14Z",
+    "type": "item",
+    "id": "Q115587273",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "須田信正"
+      },
+      "en": {
+        "language": "en",
+        "value": "Suda Nobumasa"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "日本の戦国時代の武将 (?-1585)"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587273$C04259FC-A152-4D71-8EBB-26F787335798",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587273$7950322d-4e55-248d-cf97-aa69453bae90",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587273$62de26f8-45d2-85a5-33de-c3f7219498e0",
+          "rank": "normal"
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "27790ca8374c0fc44081a0818694a0a1f2b260b1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11664615,
+                "id": "Q11664615"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587273$0EB4F9FE-69D9-437D-B249-3AC6948F0569",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "04ec47ebbeb08cbd4d999888dc7615b256c3de9b",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "6669ebcb598d8674e28dc6597cb85e03f80d6d71",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-01-15T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "346a60d649d74fc0bcd6a49dd2858400b2a14bb8",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E9%A0%88%E7%94%B0%E4%BF%A1%E6%AD%A3&oldid=89529705",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "bd223f14fdecd34eed517464055edd1520515fc5",
+            "datavalue": {
+              "value": {
+                "text": "須田 信正",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q115587273$3481a44b-44cf-481d-9523-941039113e3b",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "33c015b71dc21af6858831b311dd951935b6843f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 134320702,
+                "id": "Q134320702"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587273$ccb08947-4ab1-9bd1-b48e-6ace23eb7b70",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "9551c6be0a80086a68d2864c248648059aabad50",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 26157629,
+                "id": "Q26157629"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115587273$1166b3cd-4348-615d-533a-c77f05fdf924",
+          "rank": "normal"
+        }
+      ],
+      "P1814": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1814",
+            "hash": "aa81ac094cb1ea3ff5521a5710220492fe22d866",
+            "datavalue": {
+              "value": "すだ のぶまさ",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q115587273$c0897f9e-4f4c-1b7f-658d-f11b56da3f3c",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "須田信正",
+        "badges": []
+      }
+    }
+  }
+}

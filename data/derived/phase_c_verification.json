@@ -1,0 +1,90 @@
+{
+  "phase": "C",
+  "all_passed": true,
+  "checks": {
+    "approved_master_hash": {
+      "passed": true
+    },
+    "coastline_count_matches_outer_rings": {
+      "passed": true,
+      "expected": 154,
+      "master": 154,
+      "game": 154
+    },
+    "master_coastline_exactly_matches_exteriors": {
+      "passed": true,
+      "mismatches": []
+    },
+    "game_coastline_uses_shared_transform": {
+      "passed": true,
+      "mismatches": []
+    },
+    "json_coastline_points_match_game_layer": {
+      "passed": true,
+      "mismatches": []
+    },
+    "normal_selection_share_id_list_and_registry": {
+      "passed": true,
+      "normal": {
+        "registry": "coastlines",
+        "id_list": "all_coastline_ids"
+      },
+      "selection": {
+        "registry": "coastlines",
+        "id_list": "all_coastline_ids"
+      }
+    },
+    "coastline_ids_unique_and_complete": {
+      "passed": true,
+      "count": 154
+    },
+    "transform_metadata_matches_generator": {
+      "passed": true
+    },
+    "mask_dimensions_and_binary_values": {
+      "passed": true,
+      "size": [
+        8192,
+        8192
+      ],
+      "mode": "L",
+      "values": [
+        0,
+        255
+      ]
+    },
+    "mask_land_and_sea_samples": {
+      "passed": true,
+      "land_sample_failures": [],
+      "sea_corner_values": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "geopackage_integrity_and_layers": {
+      "passed": true,
+      "integrity": "ok",
+      "layers": [
+        "coastline_8192",
+        "coastline_master"
+      ]
+    },
+    "deterministic_regeneration_hashes": {
+      "passed": true,
+      "first": {
+        "coastline_master.gpkg": "099F8CFB8175BCC5B217900FCCC5663FD858D31F2DEE372F1FB13BC4B66A0BAF",
+        "land_mask_8192.png": "03A737232236FF1046CEDB20984DB14BD3D85CB8A3494AA174D3F82358291117",
+        "land_master_8192.json": "C504CC36CDDD8E7D854E08A14BCAF2CE8D0D9F4865004C05A4A45C842D5897FC",
+        "phase_c_manifest.json": "F54ED8C15388A0E165DC85DF0544D5AC56B6B2F1771AF4B50DFB3094CC27006E"
+      },
+      "second": {
+        "coastline_master.gpkg": "099F8CFB8175BCC5B217900FCCC5663FD858D31F2DEE372F1FB13BC4B66A0BAF",
+        "land_mask_8192.png": "03A737232236FF1046CEDB20984DB14BD3D85CB8A3494AA174D3F82358291117",
+        "land_master_8192.json": "C504CC36CDDD8E7D854E08A14BCAF2CE8D0D9F4865004C05A4A45C842D5897FC",
+        "phase_c_manifest.json": "F54ED8C15388A0E165DC85DF0544D5AC56B6B2F1771AF4B50DFB3094CC27006E"
+      }
+    }
+  }
+}

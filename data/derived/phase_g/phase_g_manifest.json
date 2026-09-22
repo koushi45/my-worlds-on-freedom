@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "phase": "G",
+  "status": "verified_pipeline_awaiting_approved_sources",
+  "source_master_version": "1.0.0",
+  "source_master_sha256": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+  "source_contracts": {
+    "rivers": {
+      "status": "missing",
+      "expected_file": "data/sources/approved/phase_g/rivers.gpkg",
+      "layer": "rivers",
+      "required_fields": [
+        "river_id",
+        "name",
+        "geometry"
+      ],
+      "geometry": "line"
+    },
+    "lakes": {
+      "status": "missing",
+      "expected_file": "data/sources/approved/phase_g/lakes.gpkg",
+      "layer": "lakes",
+      "required_fields": [
+        "lake_id",
+        "name",
+        "geometry"
+      ],
+      "geometry": "polygon"
+    },
+    "roads": {
+      "status": "missing",
+      "expected_file": "data/sources/approved/phase_g/roads.gpkg",
+      "layer": "roads",
+      "required_fields": [
+        "road_id",
+        "name",
+        "geometry"
+      ],
+      "geometry": "line"
+    },
+    "castles": {
+      "status": "missing",
+      "expected_file": "data/sources/approved/phase_g/castles.gpkg",
+      "layer": "castles",
+      "required_fields": [
+        "castle_id",
+        "name",
+        "rank",
+        "geometry"
+      ],
+      "geometry": "point"
+    },
+    "cultures": {
+      "status": "missing",
+      "expected_file": "data/sources/approved/phase_g/cultures.gpkg",
+      "layer": "culture_regions",
+      "required_fields": [
+        "culture_id",
+        "name",
+        "geometry"
+      ],
+      "geometry": "polygon"
+    },
+    "population": {
+      "status": "missing",
+      "expected_file": "data/sources/approved/phase_g/population.gpkg",
+      "layer": "population_regions",
+      "required_fields": [
+        "population_id",
+        "population",
+        "year",
+        "geometry"
+      ],
+      "geometry": "polygon"
+    },
+    "terrain": {
+      "status": "missing",
+      "expected_file": "data/sources/approved/phase_g/terrain.gpkg",
+      "layer": "terrain_regions",
+      "required_fields": [
+        "terrain_id",
+        "terrain_class",
+        "geometry"
+      ],
+      "geometry": "polygon"
+    }
+  },
+  "counts": {
+    "rivers": 0,
+    "lakes": 0,
+    "roads": 0,
+    "castles": 0,
+    "cultures": 0,
+    "population": 0,
+    "terrain_regions": 0
+  },
+  "rules": {
+    "river_and_road_transform": "same WGS84 to shared 8192 transform",
+    "castle_coordinate_storage": "geographic master only; no saved display coordinate",
+    "land_containment": "linear and polygonal inputs clipped to master land; castles outside rejected",
+    "terrain_mask": "references exact Phase C land mask",
+    "oblique_display": "runtime visual transform only; no oblique coordinates persisted",
+    "missing_source_policy": "do not infer data"
+  },
+  "land_mask_reference": {
+    "file": "data/derived/land_masks/land_mask_8192.png",
+    "sha256": "03A737232236FF1046CEDB20984DB14BD3D85CB8A3494AA174D3F82358291117"
+  },
+  "outputs": {
+    "geopackage": {
+      "file": "data/derived/phase_g/phase_g_layers.gpkg",
+      "sha256": "9B7E2472A51F5DEBF4748A780A6E905BA9129442950F322CDF987B671779CAB4",
+      "layers": [
+        "unassigned_land"
+      ]
+    },
+    "registry": {
+      "file": "data/derived/phase_g/phase_g_registry.json",
+      "sha256": "B4F1EF5822EAF41DF8D601E627A130DB338025B26A49F56EB9612033680D0320"
+    },
+    "terrain_classification": {
+      "file": "data/derived/phase_g/terrain_classification_8192.png",
+      "sha256": "D01510CFDA453BDB4361401FE9642DCF261C68924CAB1E27FE8326F4FCCA70E3"
+    },
+    "terrain_codes": {
+      "file": "data/derived/phase_g/terrain_codes.json",
+      "sha256": "656CAF32E90CCD788F65C848078332A70169553F489AD9451436E8A62B52117F"
+    }
+  }
+}

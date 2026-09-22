@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "approval": "pending",
+  "scope": "chugoku",
+  "regions": 11,
+  "border_parts": 23,
+  "max_roundtrip_source_px": 5.796914039811764e-13,
+  "checks": [
+    "immutable_source_and_base_hashes",
+    "valid_regions",
+    "gap_and_overlap_below_1e-6_game_px2",
+    "shared_lines_match_adjacent_regions",
+    "canonical_coast_points_and_arc_references",
+    "no_mesh_folds_or_overlaps",
+    "forward_inverse_roundtrip"
+  ],
+  "not_certified": [
+    "historical_accuracy",
+    "coastal_registration_visual_acceptance",
+    "offshore_island_ownership"
+  ]
+}

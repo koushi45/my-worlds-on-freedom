@@ -1,0 +1,232 @@
+{
+  "status": "pending_user_review",
+  "scope": "chugoku",
+  "counts": {
+    "regions": 11,
+    "shared_boundaries": 23,
+    "controls": 32,
+    "triangles": 90,
+    "coast_arcs": 10
+  },
+  "spec_sha256": "c8df90170d524bb88fe0a4ff582bf5e6adc7a5fb9b8d3b1298c1b9180f1bf5f7",
+  "generator_sha256": "d8a12adb0752b0e44b737ff521b75802d591d6966427d28ccaa7efb0f29fbe31",
+  "junction_cleanup": [
+    {
+      "boundary_id": "chugoku:nagato:iwami",
+      "removed_length_game_px": 14.89431414491807,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:nagato:suo",
+      "removed_length_game_px": 8.94031045106874,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:iwami:suo",
+      "removed_length_game_px": 8.940310451068655,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:iwami:aki",
+      "removed_length_game_px": 19.051554510910137,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:suo:aki",
+      "removed_length_game_px": 18.238112959503127,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:iwami:bingo",
+      "removed_length_game_px": 0.0,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:iwami:izumo",
+      "removed_length_game_px": 2.409259872886537,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:izumo:bingo",
+      "removed_length_game_px": 30.900289648142433,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:izumo:hoki",
+      "removed_length_game_px": 12.498924868372256,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:hoki:bingo",
+      "removed_length_game_px": 55.31840309049625,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:aki:bingo",
+      "removed_length_game_px": 6.403847000800624,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:bingo:bitchu",
+      "removed_length_game_px": 38.287401117487036,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:hoki:bitchu",
+      "removed_length_game_px": 32.07938230180727,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:hoki:mimasaka",
+      "removed_length_game_px": 0.0,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:hoki:inaba",
+      "removed_length_game_px": 0.0,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:bitchu:mimasaka",
+      "removed_length_game_px": 97.85659920770522,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:mimasaka:bizen",
+      "removed_length_game_px": 18.078370807893464,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:bitchu:bizen",
+      "removed_length_game_px": 37.61604522190322,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:inaba:mimasaka",
+      "removed_length_game_px": 14.75506821413633,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:inaba:harima",
+      "removed_length_game_px": 0.0,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:mimasaka:harima",
+      "removed_length_game_px": 12.973645971301579,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:bizen:harima",
+      "removed_length_game_px": 24.428621054791535,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "chugoku:inaba:tajima",
+      "removed_length_game_px": 9.553324683359534,
+      "runs": 1,
+      "status": "pending"
+    }
+  ],
+  "source_sha256": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d",
+  "immutable_before": {
+    "data\\base\\japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data\\derived\\coastline\\coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+    "data\\work\\political\\coast_alignment_v2\\source_rgba.png": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d",
+    "data\\master\\political\\kyushu\\1.0.0\\political_master_manifest.json": "a0645687abfb700c0ad88708dcc86da382e35598785a980221baa4f8a2795bcf",
+    "data\\derived\\political\\approved_kyushu\\political_registry.json": "d7cf502e530d1a1a95cfe91abbbd529963081708062b8b3900e49897b7361fce"
+  },
+  "immutable_after": {
+    "data\\base\\japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data\\derived\\coastline\\coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+    "data\\work\\political\\coast_alignment_v2\\source_rgba.png": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d",
+    "data\\master\\political\\kyushu\\1.0.0\\political_master_manifest.json": "a0645687abfb700c0ad88708dcc86da382e35598785a980221baa4f8a2795bcf",
+    "data\\derived\\political\\approved_kyushu\\political_registry.json": "d7cf502e530d1a1a95cfe91abbbd529963081708062b8b3900e49897b7361fce"
+  },
+  "coastal_endpoint_adjustments": [
+    {
+      "node_id": "ns",
+      "original": [
+        1814.1474502142953,
+        6046.962206090827
+      ],
+      "clipped": [
+        1832.0610237690216,
+        6031.691616895074
+      ],
+      "distance_game_px": 23.539052909708136,
+      "status": "pending"
+    },
+    {
+      "node_id": "bb",
+      "original": [
+        2657.272179860855,
+        5858.3269922899435
+      ],
+      "clipped": [
+        2654.2397281098642,
+        5864.599918753267
+      ],
+      "distance_game_px": 6.967450755933004,
+      "status": "pending"
+    },
+    {
+      "node_id": "hi",
+      "original": [
+        2925.4793231734348,
+        5356.884803305611
+      ],
+      "clipped": [
+        2918.594948263502,
+        5356.78953878552
+      ],
+      "distance_game_px": 6.8850340034963455,
+      "status": "pending"
+    }
+  ],
+  "gap_area_game_px2": 1.9568868773018076e-10,
+  "overlap_area_game_px2": -1.1641532182693481e-10,
+  "folded_triangles": 0,
+  "leave_one_out_control_error_game_px": {
+    "median": 27.94733879648949,
+    "p95": 74.21107033858385,
+    "max": 96.50514016755709
+  },
+  "coordinate_spaces": {
+    "image": "pixels x-right/y-down",
+    "game": "canonical 8192 plane, NOT geographic coordinates",
+    "source_crs": "EPSG:4326"
+  },
+  "limitations": [
+    "Visual source registration, not independent historical accuracy.",
+    "Coastline detail does not match perfectly.",
+    "Offshore ownership unresolved. No production integration."
+  ],
+  "outputs_sha256": {
+    "political_candidate.gpkg": "536aa23c03a8feccb69d51638feae4ed62b780b44b5378ab57484c2f71bda7b4",
+    "review_layer.json": "3968635025586edadd8b98fcec4601bbc79188a328b9a394c7c076f4192b0018",
+    "warped_raster.png": "f34341a03bbf5447cb8b967d38efdd64a687213518f7390bfa56b2ce91b38911"
+  }
+}

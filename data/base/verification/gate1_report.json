@@ -1,0 +1,98 @@
+{
+  "gate": 1,
+  "master_version_candidate": "1.0.0-rc.1",
+  "generated_at_utc": "2026-09-06T11:17:07.604447+00:00",
+  "all_passed": true,
+  "checks": {
+    "geometry_valid": {
+      "passed": true,
+      "invalid_count": 0
+    },
+    "empty_geometry_zero": {
+      "passed": true,
+      "count": 0
+    },
+    "self_intersection_zero": {
+      "passed": true,
+      "count": 0
+    },
+    "duplicate_surface_zero": {
+      "passed": true,
+      "count": 0
+    },
+    "nan_coordinate_zero": {
+      "passed": true,
+      "count": 0
+    },
+    "inside_expected_japan_scope": {
+      "passed": true,
+      "scope": [
+        128.0,
+        30.0,
+        146.0,
+        46.0
+      ],
+      "actual_bounds": [
+        128.383718295,
+        30.34385066400006,
+        145.82496178500003,
+        45.520412502000056
+      ]
+    },
+    "unintended_overlap_zero": {
+      "passed": true,
+      "count": 0,
+      "tolerance_m2": 0.01,
+      "overlaps": []
+    },
+    "repair_area_delta_within_tolerance": {
+      "passed": true,
+      "delta_m2": 0,
+      "tolerance_m2": 1.0
+    },
+    "gpkg_geojson_area_match": {
+      "passed": true,
+      "gpkg_area_m2": 370015571369.6568,
+      "geojson_area_m2": 370015571369.65686,
+      "difference_m2": 6.103515625e-05,
+      "tolerance_m2": 0.01
+    },
+    "gpkg_geojson_component_count_match": {
+      "passed": true,
+      "gpkg_components": 154,
+      "geojson_components": 154
+    },
+    "regeneration_sha256_match": {
+      "passed": true,
+      "gpkg_first": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+      "gpkg_second": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+      "geojson_first": "CFC5C7DADFCDD11975B9945B1B03DADECDB87E5B6476AA2573C48D5A680444DE",
+      "geojson_second": "CFC5C7DADFCDD11975B9945B1B03DADECDB87E5B6476AA2573C48D5A680444DE"
+    },
+    "geopackage_integrity": {
+      "passed": true,
+      "result": "ok"
+    },
+    "no_unapproved_derived_layer": {
+      "passed": true,
+      "layers": [
+        "japan_land"
+      ]
+    },
+    "canonical_source_coordinate_match": {
+      "passed": true,
+      "mismatch_count": 0,
+      "maximum_hausdorff_distance_m": 0.0,
+      "mismatches": []
+    }
+  },
+  "repair_locations": [],
+  "visuals": {
+    "national_overview": "data/base/verification/visual/national_overview.png",
+    "regional_directory": "data/base/verification/visual/regions",
+    "regional_index": "data/base/verification/visual/regions_index.png",
+    "coast_vertices": "data/base/verification/visual/coast_vertices.png",
+    "source_difference_heatmap": "data/base/verification/visual/source_difference_heatmap.png",
+    "repair_locations": "data/base/verification/visual/repair_locations.png"
+  }
+}

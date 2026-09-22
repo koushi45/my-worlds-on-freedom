@@ -1,0 +1,90 @@
+{
+  "captured_at_utc": "2026-09-19T04:54:57.423649+00:00",
+  "purpose": "district coastline alignment pre-change baseline",
+  "files": {
+    "data/base/japan_land.gpkg": {
+      "exists": true,
+      "size": 262144,
+      "sha256": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+      "captured_from_backup": false
+    },
+    "data/base/japan_land_master_manifest.json": {
+      "exists": true,
+      "size": 3379,
+      "sha256": "f5711f41ba826290225495148a405e1668e49b486b9a230cd6b4df10dba307bc",
+      "captured_from_backup": false
+    },
+    "data/derived/land_masks/land_master_8192.json": {
+      "exists": true,
+      "size": 703963,
+      "sha256": "c504cc36cddd8e7d854e08a14bcaf2ce8d0d9f4865004c05a4a45c842d5897fc",
+      "captured_from_backup": false
+    },
+    "data/derived/coastline/coastline_master.gpkg": {
+      "exists": true,
+      "size": 454656,
+      "sha256": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+      "captured_from_backup": false
+    },
+    "data/derived/political/approved_western/political_registry.json": {
+      "exists": true,
+      "size": 1298207,
+      "sha256": "a0a4e1119b8af2822fa31c396d3563b02938b01be9472ecaa2e98c1211a6b4c5",
+      "captured_from_backup": false
+    },
+    "data/derived/scenarios/independent_districts_1546.json": {
+      "exists": true,
+      "size": 13014996,
+      "sha256": "b59d2b8c7d1a2327ea556fc87a16bf909e9b244082a9f7e1fb19ac70125bf077",
+      "captured_from_backup": true
+    },
+    "data/derived/scenarios/district_connectivity_1546.json": {
+      "exists": true,
+      "size": 917431,
+      "sha256": "f9740756ce9737f35bbf6f55fc1bba23b1237028d61fc5614cf27839cadc0f47",
+      "captured_from_backup": true
+    },
+    "data/derived/governance/governance_1546.json": {
+      "exists": true,
+      "size": 1997972,
+      "sha256": "dc7c0fabbc5cbd8ecd91acccf6b0f8e8087ecabba8c423ed934bf80b05ce6323",
+      "captured_from_backup": false
+    },
+    "tools/build_independent_districts.py": {
+      "exists": true,
+      "size": 3121,
+      "sha256": "5dea0627575cd54fb28d970cc7b37c53947f91c2eb53bde7d6d8f0dc6b1207af",
+      "captured_from_backup": true
+    },
+    "tools/curate_island_districts.py": {
+      "exists": true,
+      "size": 5275,
+      "sha256": "24fe73015d56424e4a46d32e8bc985364fb55244a055d93ed4fb89841b8616bc",
+      "captured_from_backup": true
+    },
+    "tools/build_independent_district_fills.py": {
+      "exists": true,
+      "size": 2777,
+      "sha256": "b79a73ca0e3f29fe3f924f5814b4d9a04b5ae880383c568d9b1f8eefac849273",
+      "captured_from_backup": true
+    },
+    "tools/build_territory_fades.py": {
+      "exists": true,
+      "size": 2802,
+      "sha256": "843e82e49d79245e010ee0efa87e30781fb1583a138d51e5c1ebb49eb4c1741f",
+      "captured_from_backup": true
+    },
+    "builds/windows-latest/MyWorldsOnFreedom.exe": {
+      "exists": true,
+      "size": 109127680,
+      "sha256": "4a9eaded8955ef789ab02651ed9d2dde80328fbb342bd2a6db4db33e86305668",
+      "captured_from_backup": true
+    },
+    "builds/windows-latest/MyWorldsOnFreedom.pck": {
+      "exists": true,
+      "size": 791323456,
+      "sha256": "b6bb993987420db5f2447da6ce7949c136034a4a29e888d6ae7729f8c28410c7",
+      "captured_from_backup": true
+    }
+  }
+}

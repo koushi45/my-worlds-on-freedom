@@ -1,0 +1,140 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:53Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 113871558,
+    "ns": 0,
+    "title": "Q119380579",
+    "lastrevid": 1951391489,
+    "modified": "2023-08-10T20:06:15Z",
+    "type": "item",
+    "id": "Q119380579",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "渡辺義綱"
+      },
+      "en": {
+        "language": "en",
+        "value": "Watanabe Yoshitsuna"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119380579$22A4D99B-E9D8-4CD7-9F76-6012CA025A0F",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119380579$BC640171-A932-4B8C-AE3B-2B0FAB03C568",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "54aaca76102f53ae167f2ef205c2f9441c4013fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c20c6b873a731ff527ff9b010069a0fe2e922ab3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-08-10T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "678fde17f6d82851b48ca26bbe64796592a71e44",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E6%B8%A1%E8%BE%BA%E7%BE%A9%E7%B6%B1&oldid=93245782",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "渡辺義綱",
+        "badges": []
+      }
+    }
+  }
+}

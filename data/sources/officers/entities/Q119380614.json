@@ -1,0 +1,161 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:53Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 113871593,
+    "ns": 0,
+    "title": "Q119380614",
+    "lastrevid": 2330942607,
+    "modified": "2025-03-27T01:37:52Z",
+    "type": "item",
+    "id": "Q119380614",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "生駒正純"
+      },
+      "en": {
+        "language": "en",
+        "value": "Ikoma no Masazumi"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "日本の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119380614$407B00E2-21A4-49A4-A5E6-968246FA7BD7",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119380614$D361FEB0-57FD-4ECB-ABBC-DD4E8E73F4CB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5aada4a81de72df541e64b15b921370f2b3c41d",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c20c6b873a731ff527ff9b010069a0fe2e922ab3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-08-10T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "7188c82b7de7fc3dee12077971d131cf04c4caee",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E7%94%9F%E9%A7%92%E6%AD%A3%E7%B4%94&oldid=95391893",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "c69bafc3e75cdb491613f620ca8b3426de94d3f4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 205662,
+                "id": "Q205662"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119380614$DE03518C-2694-4842-858F-4DD4D8A34D88",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "生駒正純",
+        "badges": []
+      }
+    }
+  }
+}

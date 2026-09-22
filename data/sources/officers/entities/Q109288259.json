@@ -1,0 +1,161 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:13Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 104460476,
+    "ns": 0,
+    "title": "Q109288259",
+    "lastrevid": 2386618949,
+    "modified": "2025-08-01T01:52:35Z",
+    "type": "item",
+    "id": "Q109288259",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "狭間鎮秀"
+      },
+      "en": {
+        "language": "en",
+        "value": "Hazama Shizuhide"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109288259$EA6ADA86-A475-4A98-AE5A-B1F158A44EC4",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109288259$1fd627ad-4bfe-0875-54bf-aa02bed1757f",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109288259$5C150A0D-03B4-4608-B150-BF69A827E489",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "affd95dccaff29ac6a796183ff5a9db34be2e4da",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a727fe92c14c0eb1c0e38ab653aed11bb8635dce",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "2f0f1980f6a71be10237e5be57642ca1a6201eae",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E7%8B%AD%E9%96%93%E9%8E%AE%E7%A7%80&oldid=102219728",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "狭間鎮秀",
+        "badges": []
+      }
+    }
+  }
+}

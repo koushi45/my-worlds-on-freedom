@@ -1,0 +1,615 @@
+{
+  "selection": "既存1,360人の未評価者から、知名度を目安に100人を編集選定。幼少・未誕生者も対象。掲載順は今回100人内の編集判断であり、統計上の人気順位や能力順位ではない。",
+  "identity_notes": [
+    "篠原長重は登録IDと生年に対応する尾張篠原氏（まつの兄）。阿波篠原氏の長重とは区別する。",
+    "武田信実は安芸武田氏、島津忠康は奥州家の忠良、加藤昌頼は加藤虎景、伊丹総堅は伊丹続堅の異名として照合。松平正朝は大草松平家、酒井忠勝は左衛門尉系第2世。",
+    "開始年前の死去や対象時期の不適合が確認された足利基頼・稲葉通則・長井秀弘・長屋吉親・内藤元康・己斐宗瑞・村上隆勝・千葉興常・今泉盛泰・盛高等は今回の候補から除外。原台帳は変更しない。",
+    "大崎勝長など根拠に重大な疑義がある候補は差し替え、柴田勝義の不確かな系譜を父の実績として採用しない。",
+    "松平親次の父との事績混同、十河景滋の軍記年次、長野賢忠・道安の同定などは個別に留保。生没年・開始時分類は今回変更しない。",
+    "公開人物伝とその参考文献案内に基づく暫定編集評価。原史料の全件精査ではなく、未確認は今回参照した範囲を指す。",
+    "今回100人内の知名度の編集目安であり、人気統計や能力順ではない。既存880人の評価を保持。"
+  ],
+  "previous_880_sha256": "23fa29bf8f8a6011d53564a616f667c87daef07a45e321d78131292a5af58f4e",
+  "officers": [
+    {
+      "external_id": "Q108781569",
+      "display_name": "正木利英",
+      "research_name": "正木利英",
+      "selection_rank": 1
+    },
+    {
+      "external_id": "Q108781595",
+      "display_name": "母里武兵衛",
+      "research_name": "母里武兵衛",
+      "selection_rank": 2
+    },
+    {
+      "external_id": "Q108111568",
+      "display_name": "飯沼勘平",
+      "research_name": "飯沼勘平",
+      "selection_rank": 3
+    },
+    {
+      "external_id": "Q108781074",
+      "display_name": "花井吉高",
+      "research_name": "花井吉高",
+      "selection_rank": 4
+    },
+    {
+      "external_id": "Q108781073",
+      "display_name": "千坂長朝",
+      "research_name": "千坂長朝",
+      "selection_rank": 5
+    },
+    {
+      "external_id": "Q15830879",
+      "display_name": "多功建昌",
+      "research_name": "多功建昌",
+      "selection_rank": 6
+    },
+    {
+      "external_id": "Q15830890",
+      "display_name": "多功秀朝",
+      "research_name": "多功秀朝",
+      "selection_rank": 7
+    },
+    {
+      "external_id": "Q20041079",
+      "display_name": "高木法斎",
+      "research_name": "高木法斎",
+      "selection_rank": 8
+    },
+    {
+      "external_id": "Q11636803",
+      "display_name": "足利義助",
+      "research_name": "足利義助",
+      "selection_rank": 9
+    },
+    {
+      "external_id": "Q11546097",
+      "display_name": "武田信実",
+      "research_name": "武田信実",
+      "selection_rank": 10
+    },
+    {
+      "external_id": "Q24894252",
+      "display_name": "大道寺直繁",
+      "research_name": "大道寺直繁",
+      "selection_rank": 11
+    },
+    {
+      "external_id": "Q22126002",
+      "display_name": "間宮綱信",
+      "research_name": "間宮綱信",
+      "selection_rank": 12
+    },
+    {
+      "external_id": "Q108781531",
+      "display_name": "間宮直元",
+      "research_name": "間宮直元",
+      "selection_rank": 13
+    },
+    {
+      "external_id": "Q11410050",
+      "display_name": "原虎吉",
+      "research_name": "原虎吉",
+      "selection_rank": 14
+    },
+    {
+      "external_id": "Q62085465",
+      "display_name": "跡部勝忠",
+      "research_name": "跡部勝忠",
+      "selection_rank": 15
+    },
+    {
+      "external_id": "Q6527431",
+      "display_name": "跡部昌忠",
+      "research_name": "跡部昌忠",
+      "selection_rank": 16
+    },
+    {
+      "external_id": "Q17225659",
+      "display_name": "金丸正直",
+      "research_name": "金丸正直",
+      "selection_rank": 17
+    },
+    {
+      "external_id": "Q124176694",
+      "display_name": "小幡信氏",
+      "research_name": "小幡信氏",
+      "selection_rank": 18
+    },
+    {
+      "external_id": "Q108781580",
+      "display_name": "海野幸貞",
+      "research_name": "海野幸貞",
+      "selection_rank": 19
+    },
+    {
+      "external_id": "Q108929098",
+      "display_name": "日根野弘勝",
+      "research_name": "日根野弘勝",
+      "selection_rank": 20
+    },
+    {
+      "external_id": "Q108653891",
+      "display_name": "長谷川重成",
+      "research_name": "長谷川重成",
+      "selection_rank": 21
+    },
+    {
+      "external_id": "Q11439029",
+      "display_name": "大谷吉房",
+      "research_name": "大谷吉房",
+      "selection_rank": 22
+    },
+    {
+      "external_id": "Q11399251",
+      "display_name": "加藤昌頼",
+      "research_name": "加藤昌頼",
+      "selection_rank": 23
+    },
+    {
+      "external_id": "Q108530286",
+      "display_name": "一柳宣高",
+      "research_name": "一柳宣高",
+      "selection_rank": 24
+    },
+    {
+      "external_id": "Q11666267",
+      "display_name": "飯尾尚清",
+      "research_name": "飯尾尚清",
+      "selection_rank": 25
+    },
+    {
+      "external_id": "Q11417913",
+      "display_name": "和田信維",
+      "research_name": "和田信維",
+      "selection_rank": 26
+    },
+    {
+      "external_id": "Q11364629",
+      "display_name": "中島重房",
+      "research_name": "中島重房",
+      "selection_rank": 27
+    },
+    {
+      "external_id": "Q11480546",
+      "display_name": "市橋利尚",
+      "research_name": "市橋利尚",
+      "selection_rank": 28
+    },
+    {
+      "external_id": "Q27920777",
+      "display_name": "尾藤道休",
+      "research_name": "尾藤道休",
+      "selection_rank": 29
+    },
+    {
+      "external_id": "Q11438937",
+      "display_name": "大西頼包",
+      "research_name": "大西頼包",
+      "selection_rank": 30
+    },
+    {
+      "external_id": "Q18011477",
+      "display_name": "長宗我部盛恒",
+      "research_name": "長宗我部盛恒",
+      "selection_rank": 31
+    },
+    {
+      "external_id": "Q11405125",
+      "display_name": "十河景滋",
+      "research_name": "十河景滋",
+      "selection_rank": 32
+    },
+    {
+      "external_id": "Q41699342",
+      "display_name": "篠原長重",
+      "research_name": "篠原長重",
+      "selection_rank": 33
+    },
+    {
+      "external_id": "Q11603637",
+      "display_name": "篠原重之",
+      "research_name": "篠原重之",
+      "selection_rank": 34
+    },
+    {
+      "external_id": "Q48744437",
+      "display_name": "篠原一計",
+      "research_name": "篠原一計",
+      "selection_rank": 35
+    },
+    {
+      "external_id": "Q11667300",
+      "display_name": "香川春継",
+      "research_name": "香川春継",
+      "selection_rank": 36
+    },
+    {
+      "external_id": "Q17227978",
+      "display_name": "岡本元綱",
+      "research_name": "岡本元綱",
+      "selection_rank": 37
+    },
+    {
+      "external_id": "Q11468873",
+      "display_name": "山本光幸",
+      "research_name": "山本光幸",
+      "selection_rank": 38
+    },
+    {
+      "external_id": "Q20041913",
+      "display_name": "中山田泰吉",
+      "research_name": "中山田泰吉",
+      "selection_rank": 39
+    },
+    {
+      "external_id": "Q11497022",
+      "display_name": "手嶋景繁",
+      "research_name": "手嶋景繁",
+      "selection_rank": 40
+    },
+    {
+      "external_id": "Q38277390",
+      "display_name": "河尻鎮行",
+      "research_name": "河尻鎮行",
+      "selection_rank": 41
+    },
+    {
+      "external_id": "Q11163026",
+      "display_name": "島津忠親",
+      "research_name": "島津忠親",
+      "selection_rank": 42
+    },
+    {
+      "external_id": "Q18226809",
+      "display_name": "島津忠康",
+      "research_name": "島津忠康",
+      "selection_rank": 43
+    },
+    {
+      "external_id": "Q11372012",
+      "display_name": "五代友喜",
+      "research_name": "五代友喜",
+      "selection_rank": 44
+    },
+    {
+      "external_id": "Q17220144",
+      "display_name": "森迫親正",
+      "research_name": "森迫親正",
+      "selection_rank": 45
+    },
+    {
+      "external_id": "Q4222351",
+      "display_name": "北就勝",
+      "research_name": "北就勝",
+      "selection_rank": 46
+    },
+    {
+      "external_id": "Q7972984",
+      "display_name": "渡辺長",
+      "research_name": "渡辺長",
+      "selection_rank": 47
+    },
+    {
+      "external_id": "Q11388721",
+      "display_name": "児玉就光",
+      "research_name": "児玉就光",
+      "selection_rank": 48
+    },
+    {
+      "external_id": "Q51574313",
+      "display_name": "天野元定",
+      "research_name": "天野元定",
+      "selection_rank": 49
+    },
+    {
+      "external_id": "Q121648626",
+      "display_name": "中村元勝",
+      "research_name": "中村元勝",
+      "selection_rank": 50
+    },
+    {
+      "external_id": "Q11364532",
+      "display_name": "中島正時",
+      "research_name": "中島正時",
+      "selection_rank": 51
+    },
+    {
+      "external_id": "Q11364622",
+      "display_name": "中島豊後守",
+      "research_name": "中島豊後守",
+      "selection_rank": 52
+    },
+    {
+      "external_id": "Q123415134",
+      "display_name": "乃美景興",
+      "research_name": "乃美景興",
+      "selection_rank": 53
+    },
+    {
+      "external_id": "Q123415143",
+      "display_name": "乃美景継",
+      "research_name": "乃美景継",
+      "selection_rank": 54
+    },
+    {
+      "external_id": "Q121644831",
+      "display_name": "松平忠広",
+      "research_name": "松平忠広",
+      "selection_rank": 55
+    },
+    {
+      "external_id": "Q11412173",
+      "display_name": "右田隆次",
+      "research_name": "右田隆次",
+      "selection_rank": 56
+    },
+    {
+      "external_id": "Q29425193",
+      "display_name": "杉興相",
+      "research_name": "杉興相",
+      "selection_rank": 57
+    },
+    {
+      "external_id": "Q108781565",
+      "display_name": "加賀井重宗",
+      "research_name": "加賀井重宗",
+      "selection_rank": 58
+    },
+    {
+      "external_id": "Q108780964",
+      "display_name": "村上高国",
+      "research_name": "村上高国",
+      "selection_rank": 59
+    },
+    {
+      "external_id": "Q11652409",
+      "display_name": "長崎元家",
+      "research_name": "長崎元家",
+      "selection_rank": 60
+    },
+    {
+      "external_id": "Q24874448",
+      "display_name": "室賀久太夫",
+      "research_name": "室賀久太夫",
+      "selection_rank": 61
+    },
+    {
+      "external_id": "Q11427258",
+      "display_name": "堀内俊胤",
+      "research_name": "堀内俊胤",
+      "selection_rank": 62
+    },
+    {
+      "external_id": "Q11438190",
+      "display_name": "大石定仲",
+      "research_name": "大石定仲",
+      "selection_rank": 63
+    },
+    {
+      "external_id": "Q11460629",
+      "display_name": "小川長資",
+      "research_name": "小川長資",
+      "selection_rank": 64
+    },
+    {
+      "external_id": "Q11510230",
+      "display_name": "日置忠勝",
+      "research_name": "日置忠勝",
+      "selection_rank": 65
+    },
+    {
+      "external_id": "Q11556993",
+      "display_name": "浅井道忠",
+      "research_name": "浅井道忠",
+      "selection_rank": 66
+    },
+    {
+      "external_id": "Q11356537",
+      "display_name": "三浦義就",
+      "research_name": "三浦義就",
+      "selection_rank": 67
+    },
+    {
+      "external_id": "Q121355905",
+      "display_name": "朝比奈元永",
+      "research_name": "朝比奈元永",
+      "selection_rank": 68
+    },
+    {
+      "external_id": "Q11405598",
+      "display_name": "千本義隆",
+      "research_name": "千本義隆",
+      "selection_rank": 69
+    },
+    {
+      "external_id": "Q119922739",
+      "display_name": "松平清成",
+      "research_name": "松平清成",
+      "selection_rank": 70
+    },
+    {
+      "external_id": "Q11406739",
+      "display_name": "千葉胤頼",
+      "research_name": "千葉胤頼",
+      "selection_rank": 71
+    },
+    {
+      "external_id": "Q11410031",
+      "display_name": "原胤義",
+      "research_name": "原胤義",
+      "selection_rank": 72
+    },
+    {
+      "external_id": "Q11490215",
+      "display_name": "徳島胤順",
+      "research_name": "徳島胤順",
+      "selection_rank": 73
+    },
+    {
+      "external_id": "Q115587291",
+      "display_name": "服部久太夫",
+      "research_name": "服部久太夫",
+      "selection_rank": 74
+    },
+    {
+      "external_id": "Q11385059",
+      "display_name": "佐野泰綱",
+      "research_name": "佐野泰綱",
+      "selection_rank": 75
+    },
+    {
+      "external_id": "Q109318856",
+      "display_name": "菅沼定重",
+      "research_name": "菅沼定重",
+      "selection_rank": 76
+    },
+    {
+      "external_id": "Q109318853",
+      "display_name": "菅沼正勝",
+      "research_name": "菅沼正勝",
+      "selection_rank": 77
+    },
+    {
+      "external_id": "Q11501587",
+      "display_name": "新城直継",
+      "research_name": "新城直継",
+      "selection_rank": 78
+    },
+    {
+      "external_id": "Q11520250",
+      "display_name": "本庄久長",
+      "research_name": "本庄久長",
+      "selection_rank": 79
+    },
+    {
+      "external_id": "Q11554785",
+      "display_name": "泉山古康",
+      "research_name": "泉山古康",
+      "selection_rank": 80
+    },
+    {
+      "external_id": "Q11354142",
+      "display_name": "三上輝房",
+      "research_name": "三上輝房",
+      "selection_rank": 81
+    },
+    {
+      "external_id": "Q11355442",
+      "display_name": "三戸景道",
+      "research_name": "三戸景道",
+      "selection_rank": 82
+    },
+    {
+      "external_id": "Q48764960",
+      "display_name": "伊藤実信",
+      "research_name": "伊藤実信",
+      "selection_rank": 83
+    },
+    {
+      "external_id": "Q11378792",
+      "display_name": "伊丹総堅",
+      "research_name": "伊丹総堅",
+      "selection_rank": 84
+    },
+    {
+      "external_id": "Q11364086",
+      "display_name": "中山勝時",
+      "research_name": "中山勝時",
+      "selection_rank": 85
+    },
+    {
+      "external_id": "Q11364066",
+      "display_name": "中山勝政",
+      "research_name": "中山勝政",
+      "selection_rank": 86
+    },
+    {
+      "external_id": "Q27920819",
+      "display_name": "諏訪部定勝",
+      "research_name": "諏訪部定勝",
+      "selection_rank": 87
+    },
+    {
+      "external_id": "Q48759315",
+      "display_name": "大井信広",
+      "research_name": "大井信広",
+      "selection_rank": 88
+    },
+    {
+      "external_id": "Q115587288",
+      "display_name": "松平重忠",
+      "research_name": "松平重忠",
+      "selection_rank": 89
+    },
+    {
+      "external_id": "Q118697854",
+      "display_name": "石川正信",
+      "research_name": "石川正信",
+      "selection_rank": 90
+    },
+    {
+      "external_id": "Q11432227",
+      "display_name": "大井行頼",
+      "research_name": "大井行頼",
+      "selection_rank": 91
+    },
+    {
+      "external_id": "Q11432232",
+      "display_name": "大井貞重",
+      "research_name": "大井貞重",
+      "selection_rank": 92
+    },
+    {
+      "external_id": "Q118749018",
+      "display_name": "本多光忠",
+      "research_name": "本多光忠",
+      "selection_rank": 93
+    },
+    {
+      "external_id": "Q17226942",
+      "display_name": "長野賢忠",
+      "research_name": "長野賢忠",
+      "selection_rank": 94
+    },
+    {
+      "external_id": "Q118748430",
+      "display_name": "松平親次",
+      "research_name": "松平親次",
+      "selection_rank": 95
+    },
+    {
+      "external_id": "Q118748689",
+      "display_name": "松平正朝",
+      "research_name": "松平正朝",
+      "selection_rank": 96
+    },
+    {
+      "external_id": "Q11644108",
+      "display_name": "酒井忠勝 (左衛門尉系第2世)",
+      "research_name": "酒井忠勝 (左衛門尉系第2世)",
+      "selection_rank": 97
+    },
+    {
+      "external_id": "Q22129298",
+      "display_name": "水野信近",
+      "research_name": "水野信近",
+      "selection_rank": 98
+    },
+    {
+      "external_id": "Q11549456",
+      "display_name": "水野義純",
+      "research_name": "水野義純",
+      "selection_rank": 99
+    },
+    {
+      "external_id": "Q7877453",
+      "display_name": "植村正勝",
+      "research_name": "植村正勝",
+      "selection_rank": 100
+    }
+  ]
+}

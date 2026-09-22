@@ -1,0 +1,518 @@
+{
+  "retrieved_utc": "2026-09-12T11:14:15Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 5142196,
+    "ns": 0,
+    "title": "Q5376212",
+    "lastrevid": 2527894703,
+    "modified": "2026-08-06T00:55:11Z",
+    "type": "item",
+    "id": "Q5376212",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Endō Naotsune"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "遠藤直経"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "samurai"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の武将 (?-1570)"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "遠藤喜右衛門"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Endou Naotsune"
+        },
+        {
+          "language": "en",
+          "value": "Endo Naotsune"
+        },
+        {
+          "language": "en",
+          "value": "Naotsune Endō"
+        },
+        {
+          "language": "en",
+          "value": "Naotsune Endou"
+        },
+        {
+          "language": "en",
+          "value": "Naotsune Endo"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5376212$769D153A-CB24-4E76-B102-EE7E14CA6168",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5376212$926CF961-31F6-476D-BCD1-87CC1F5D25B2",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "891b9887c3e4526dd3571bba1a3eca039653c09c",
+            "datavalue": {
+              "value": {
+                "time": "+1531-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q5376212$CD5A4438-0EBA-4454-8B37-E97E4B11C4D5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e7a1d7c3f0ebff3f0cbaa630eb961c33a02fbba9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "739f8ad7dbf75be23e46797186d0b247073a8df8",
+                    "datavalue": {
+                      "value": "https://mairi.me/-/1011662",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "770a0c237bbd3aed2eb78fff5332439c2f2043fb",
+                    "datavalue": {
+                      "value": "遠藤直経",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P1810"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "85bc0812652201a8e39241bfa49b27ce5bb3a62b",
+            "datavalue": {
+              "value": {
+                "time": "+1570-08-09T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q5376212$521F326D-7D52-497B-8F96-839662C5007B",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "b6e41551ed826370aaab26d8c58b848429319c8c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 56686655,
+                "id": "Q56686655"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5376212$6516de8a-4ad0-3e0f-a1da-40f9f30d1c46",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5376212$742511ea-50bb-4161-80cc-f8f0c2766ef4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0ee3b3ba1c958f4c3dcba7ed8091fe4b57311348",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "cb49f6fa327b245e4a5aaf48c44b3f503bcd4265",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 30239,
+                        "id": "Q30239"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "cfd337a2185c67429b5ea4994910b0ff4e979d2e",
+            "datavalue": {
+              "value": "Endo Naotsune2.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q5376212$8AED3BE3-D9C2-49EB-A731-F30015C1D71F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "e1bfd74302ee8b8735908d572d433ee6d305f2c1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 24090400,
+                "id": "Q24090400"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5376212$53554bd7-4c81-1d20-7934-a8f0077ae0d5",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b5607db4a14cacf3e2749b348bd844eafc0fa60f",
+            "datavalue": {
+              "value": "Endo Naotsune",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q5376212$62668d4a-1748-416e-be77-d3b8b56c4b73",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "af2e1e76ed11b59a178c1a86ad6380b8a83e2659",
+            "datavalue": {
+              "value": "/m/09x201",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5376212$ADC426C1-5934-4A25-9D73-30CB7BA38A01",
+          "rank": "normal"
+        }
+      ],
+      "P3368": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3368",
+            "hash": "7ca2333e5626aa0db5e8b50589bbd9c2410a0912",
+            "datavalue": {
+              "value": "2419155",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5376212$64E0ABF5-439F-4CF0-8AE3-4762B26322DB",
+          "rank": "normal"
+        }
+      ],
+      "P5648": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5648",
+            "hash": "5aae2ad65465be04c27e131cdd5e4c106a28b35b",
+            "datavalue": {
+              "value": "107504",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5376212$BD21AECF-32FD-4BE7-B9A7-D5C4C3AC2087",
+          "rank": "normal"
+        }
+      ],
+      "P535": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P535",
+            "hash": "325ae293f17dae144aec49dd5ebf6e3e728b1e3e",
+            "datavalue": {
+              "value": "223791677",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5376212$784FA660-B110-4406-9F5C-4970289F5932",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "966288776fafe0abf125ac7256688656732e950b",
+            "datavalue": {
+              "value": {
+                "text": "遠藤 直経",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q5376212$4c840015-4a61-a9e4-863b-3e52667dde01",
+          "rank": "normal"
+        }
+      ],
+      "P1814": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1814",
+            "hash": "b8aebf12130b6673c1000aa16a09165ee38385b6",
+            "datavalue": {
+              "value": "えんどう なおつね",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q5376212$7b1ad25b-4df9-3af9-a37c-fee2bc7e9613",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Endo Naotsune",
+        "badges": []
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Endō Naotsune",
+        "badges": []
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "اندو نائوتسونه",
+        "badges": []
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Endō Naotsune",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "遠藤直経",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "遠藤直經",
+        "badges": []
+      }
+    }
+  }
+}

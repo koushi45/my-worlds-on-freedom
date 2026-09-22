@@ -1,0 +1,629 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:29Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12586652,
+    "ns": 0,
+    "title": "Q11447199",
+    "lastrevid": 2463892905,
+    "modified": "2026-02-16T08:37:07Z",
+    "type": "item",
+    "id": "Q11447199",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "妻木煕子"
+      },
+      "en": {
+        "language": "en",
+        "value": "Tsumaki Hiroko"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代から安土桃山時代の女性。妻木範熙の長女。明智光秀の正室"
+      },
+      "en": {
+        "language": "en",
+        "value": "(1550-1576)"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "煕子"
+        },
+        {
+          "language": "ja",
+          "value": "明智熙子"
+        },
+        {
+          "language": "ja",
+          "value": "明智煕子"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$69EBD62F-B5E2-48B5-B235-68B9F95EA269",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "5760796ff6ebc63aae12cdcbf509b07ebf0bd201",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581072,
+                "id": "Q6581072"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$5D5CA1D8-2E5F-49ED-AE01-6B6CB9E9572E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0ee3b3ba1c958f4c3dcba7ed8091fe4b57311348",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "cb49f6fa327b245e4a5aaf48c44b3f503bcd4265",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 30239,
+                        "id": "Q30239"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "635a0cc7f29b1ebd1604dbef3852c97367e400f5",
+            "datavalue": {
+              "value": {
+                "time": "+1576-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q11447199$B722B820-96AD-4E6C-8351-6876BE2426CF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1442": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1442",
+            "hash": "1b1a2a941cdc6ed590e0676075421adf17079527",
+            "datavalue": {
+              "value": "Grave of Akechi Hiroko.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q11447199$ECBAE8B3-3C41-43CD-83C2-D492F7DEBE04",
+          "rank": "normal"
+        }
+      ],
+      "P2949": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2949",
+            "hash": "402e856ab17b730fe1e4c97a75a42bd5c29de4e1",
+            "datavalue": {
+              "value": "妻木-1",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "855c644e73bf64d9257c72480699f7a0206e316b",
+                "datavalue": {
+                  "value": "煕子 Hiroko 明智 (妻木) aka Tsumaki, Akechi ( - uncertain 1576)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q11447199$19D2A395-7AFD-4CC3-82B6-A49E9A86FF5A",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "5e6135c9af6e4d562eba8cf11cc34d7f2d2f97d4",
+            "datavalue": {
+              "value": {
+                "time": "+1530-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1480": [
+              {
+                "snaktype": "value",
+                "property": "P1480",
+                "hash": "5b591238c48408fa6de711853837e199de207930",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 13649246,
+                    "id": "Q13649246"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1480"
+          ],
+          "id": "Q11447199$1ea975be-8093-4fe1-a67e-921f25cb27a2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "6172f82ece662dc6055a7485562bf116aa672dda",
+            "datavalue": {
+              "value": "/g/1224103b",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11447199$1F12C911-88BB-46AD-B7A5-8B799EE27343",
+          "rank": "normal"
+        }
+      ],
+      "P26": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P26",
+            "hash": "d1793fcb8aca51d2ecb3163389e1c9fe67beb175",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 313320,
+                "id": "Q313320"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$fdf3a2fb-4081-5910-c69d-68fc4cd6c7a5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "2a01b3b062c021f16069d9641ba964c1a86f0a5b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11447194,
+                "id": "Q11447194"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$3c253349-44ae-9bee-138c-39a20ec7193c",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "e830bb67a4c2de91c5abeec0d2885dc5f028f22a",
+            "datavalue": {
+              "value": "Tsumaki Hiroko.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q11447199$F9AD15BF-E109-4162-9461-39567D872E7B",
+          "rank": "normal"
+        }
+      ],
+      "P1412": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1412",
+            "hash": "793e190594b14ce471153f6fd9f0d8b4228d5112",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5287,
+                "id": "Q5287"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$2C203C12-6661-4EA1-8959-F8B4D4B0CA9E",
+          "rank": "normal"
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "442eed7751165909dcf1eb3e23702fbd4f08a258",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$88E859AD-85E0-4AA4-A696-ED96670C430C",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "f88a1264794cfd01cc562b72d0a42514c03d1950",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5770364,
+                "id": "Q5770364"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$637281a5-48b5-9f3d-126f-a75239b044df",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "10af9ab09cc8c38e673bfc9da977913653024aff",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 39240216,
+                "id": "Q39240216"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$f74d8b85-4744-46df-dd21-4e732c71e5a0",
+          "rank": "normal"
+        }
+      ],
+      "P119": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P119",
+            "hash": "cbcd23c11ba56176034dbb6ec1aae1b60814a4ba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11628291,
+                "id": "Q11628291"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$551304ae-48e8-3ffa-d118-11a78453593e",
+          "rank": "normal"
+        }
+      ],
+      "P53": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P53",
+            "hash": "59c84774025b0d1f6f6ab9028104059b6256a722",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 97191973,
+                "id": "Q97191973"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$69c98c93-47c6-4531-3667-5d09529b0e27",
+          "rank": "normal"
+        }
+      ],
+      "P40": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "d937936d23e6aa49aaa7b2105376cec8785b39a2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 256864,
+                "id": "Q256864"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$da784d72-4abe-5673-e754-b60e4f02d704",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "e8efc788d114c038c1b22ce9a55856133d022c3e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4700562,
+                "id": "Q4700562"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11447199$931fea49-48a4-27d7-64ca-c3f95612bbf3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ed177a7c18bce72a8e057e287d269e4ae5e5c5f1",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "0eb5a9c37da12c94af38b1305b2024f7c7e75c48",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/wiki/明智光慶",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Tsumaki Hiroko",
+        "badges": []
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "تسوماکی هیروکو",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "妻木煕子",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "妻木熙子",
+        "badges": []
+      }
+    }
+  }
+}

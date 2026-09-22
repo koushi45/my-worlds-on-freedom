@@ -1,0 +1,6 @@
+{
+  "reason": "ユーザー依頼による前回と重複しない100人の所属・立場・配置の追加。家系検証用の所属ハッシュだけを更新。",
+  "old_affiliations_sha256": "bf22ee0d65302d273b6537882e0a81e139414dbc991cca36172d3bc1c2ed9897",
+  "new_affiliations_sha256": "b988faec7b50d7bf311a5e578b8004004a9872fd96182d1c5e5b7234ca5182bc",
+  "hash_format": "sha256(json.dumps(value, ensure_ascii=False, sort_keys=True).encode())"
+}

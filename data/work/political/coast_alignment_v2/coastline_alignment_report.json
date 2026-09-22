@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "status": "generated_pending_correspondence_review",
+  "generated_at_utc": "2026-09-08T03:32:36.088275Z",
+  "source": {
+    "file": "data/work/political/coast_alignment_v2/source_rgba.png",
+    "sha256": "119E88FDE4245025F5450B9D26F226ECAAAF8A5FCF242CC41ADA671E9C07A75D",
+    "rgba_size": [
+      1672,
+      941
+    ],
+    "alpha_threshold": 96,
+    "retained_line_components": 12,
+    "retained_enclosed_cells": 101,
+    "exterior_contours": 9
+  },
+  "method": {
+    "transparent_rgb_ignored": true,
+    "initial_transform": "robust affine ICP used for coastline identity search",
+    "final_coast_alignment": "each accepted source sample projected onto its identified canonical coastline_id",
+    "canonical_geometry_modified": false,
+    "political_boundaries_transformed": false,
+    "note": "controls require review before they are used to transform inland political boundaries"
+  },
+  "counts": {
+    "source_contours": 9,
+    "source_samples": 1469,
+    "accepted_controls": 1392,
+    "rejected_controls": 77,
+    "aligned_segments": 1253,
+    "target_coastline_ids_referenced": 24
+  },
+  "residuals": {
+    "before_projection_game_px": {
+      "median": 16.605283898032894,
+      "p95": 103.95211141381627,
+      "max": 343.67294898941583
+    },
+    "before_projection_km": {
+      "median": 3.762673540461925,
+      "p95": 23.55502390044965
+    },
+    "after_projection_game_px": {
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    }
+  },
+  "affine_matrix": [
+    [
+      8.230054041683887,
+      -0.22691362737154155,
+      -2250.7924923015494
+    ],
+    [
+      -0.05336825821535472,
+      8.365520303499938,
+      -75.6968367077667
+    ]
+  ],
+  "input_hashes": {
+    "japan_land_master": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+    "coastline_master": "099F8CFB8175BCC5B217900FCCC5663FD858D31F2DEE372F1FB13BC4B66A0BAF"
+  },
+  "outputs": {
+    "controls": "data/work/political/coast_alignment_v2/coastline_alignment_controls.gpkg",
+    "controls_sha256": "E10D89AE328A0B5F58DA0DAF43D083FB3B4D98D760F0E635115DC8D145022A97",
+    "source_alpha": "data/work/political/coast_alignment_v2/source_alpha.png",
+    "source_land": "data/work/political/coast_alignment_v2/source_land_recovered.png",
+    "source_coast": "data/work/political/coast_alignment_v2/source_coast_extracted.png",
+    "qa_dir": "data/derived/political/qa/coast_alignment_v2"
+  },
+  "libraries": {
+    "python": "3.14.3",
+    "opencv": "4.13.0",
+    "numpy": "2.4.4",
+    "shapely": "2.1.2",
+    "geopandas": "1.1.4",
+    "pyogrio": "0.13.0"
+  }
+}

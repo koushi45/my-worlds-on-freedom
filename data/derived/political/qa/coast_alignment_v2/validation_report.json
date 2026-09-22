@@ -1,0 +1,19 @@
+{
+  "status": "pass_pending_correspondence_review",
+  "checks": {
+    "alpha_only_source_extraction": "pass",
+    "canonical_master_immutable": "pass",
+    "identified_coastline_references": "pass",
+    "aligned_points_on_referenced_coast": "pass",
+    "political_boundaries_untouched": "pass",
+    "national_and_kyushu_qa": "pass"
+  },
+  "counts": {
+    "source_contours": 9,
+    "source_samples": 1469,
+    "accepted_controls": 1392,
+    "rejected_controls": 77,
+    "aligned_segments": 1253,
+    "target_coastline_ids_referenced": 24
+  }
+}

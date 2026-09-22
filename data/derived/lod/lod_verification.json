@@ -1,0 +1,168 @@
+{
+  "phase": "D",
+  "all_passed": true,
+  "checks": {
+    "five_lod_levels": {
+      "passed": true
+    },
+    "all_features_retained_at_every_level": {
+      "passed": true,
+      "counts": {
+        "0": 154,
+        "1": 154,
+        "2": 154,
+        "3": 154,
+        "4": 154
+      }
+    },
+    "topology_valid_empty_and_overlap_free": {
+      "passed": true,
+      "levels": {
+        "0": {
+          "valid": true,
+          "empty_count": 0,
+          "overlap_count": 0,
+          "feature_count": 154,
+          "coastline_count": 154,
+          "visible_feature_count": 21,
+          "coastline_from_land_mismatch_count": 0,
+          "shared_render_profiles": true
+        },
+        "1": {
+          "valid": true,
+          "empty_count": 0,
+          "overlap_count": 0,
+          "feature_count": 154,
+          "coastline_count": 154,
+          "visible_feature_count": 40,
+          "coastline_from_land_mismatch_count": 0,
+          "shared_render_profiles": true
+        },
+        "2": {
+          "valid": true,
+          "empty_count": 0,
+          "overlap_count": 0,
+          "feature_count": 154,
+          "coastline_count": 154,
+          "visible_feature_count": 66,
+          "coastline_from_land_mismatch_count": 0,
+          "shared_render_profiles": true
+        },
+        "3": {
+          "valid": true,
+          "empty_count": 0,
+          "overlap_count": 0,
+          "feature_count": 154,
+          "coastline_count": 154,
+          "visible_feature_count": 154,
+          "coastline_from_land_mismatch_count": 0,
+          "shared_render_profiles": true
+        },
+        "4": {
+          "valid": true,
+          "empty_count": 0,
+          "overlap_count": 0,
+          "feature_count": 154,
+          "coastline_count": 154,
+          "visible_feature_count": 154,
+          "coastline_from_land_mismatch_count": 0,
+          "shared_render_profiles": true
+        }
+      }
+    },
+    "coastline_generated_from_same_lod_polygon": {
+      "passed": true
+    },
+    "normal_selection_share_points": {
+      "passed": true
+    },
+    "json_matches_geopackage_coastlines": {
+      "passed": true,
+      "mismatches": []
+    },
+    "lod_vertices_provenance_from_detailed_master": {
+      "passed": true,
+      "failures": []
+    },
+    "detailed_lod_matches_phase_c_exactly": {
+      "passed": true,
+      "mismatches": []
+    },
+    "lod_transition_difference_within_budget": {
+      "passed": true,
+      "transitions": [
+        {
+          "from_lod": 0,
+          "to_lod": 1,
+          "maximum_hausdorff_distance_px": 2.6687921481970793,
+          "allowed_distance_px": 4.000000001,
+          "maximum_retained_anchor_shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "from_lod": 1,
+          "to_lod": 2,
+          "maximum_hausdorff_distance_px": 1.1719643085224563,
+          "allowed_distance_px": 2.000000001,
+          "maximum_retained_anchor_shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "from_lod": 2,
+          "to_lod": 3,
+          "maximum_hausdorff_distance_px": 0.3970898229354464,
+          "allowed_distance_px": 1.000000001,
+          "maximum_retained_anchor_shift_px": 0.0,
+          "passed": true
+        },
+        {
+          "from_lod": 3,
+          "to_lod": 4,
+          "maximum_hausdorff_distance_px": 0.7144829921014367,
+          "allowed_distance_px": 1.000000001,
+          "maximum_retained_anchor_shift_px": 0.0,
+          "passed": true
+        }
+      ]
+    },
+    "geopackage_integrity_and_layers": {
+      "passed": true,
+      "integrity": "ok",
+      "layers": [
+        "coastline_lod0",
+        "coastline_lod1",
+        "coastline_lod2",
+        "coastline_lod3",
+        "coastline_lod4",
+        "land_lod0",
+        "land_lod1",
+        "land_lod2",
+        "land_lod3",
+        "land_lod4"
+      ]
+    },
+    "deterministic_regeneration_hashes": {
+      "passed": true,
+      "first": {
+        "japan_lod.gpkg": "C91086697AE7E1F87C4BEDE2F412EA93F11FD9AA24C7BFC2DAC31A7027DAB8DD",
+        "japan_lod.json": "CF12E223AACE1CD4553CD1845F3A866C61562DABD55205FBD90D7D256666FD14",
+        "lod_manifest.json": "EFA8DA2A827BD146C1557AB138A9791A640B40EBCA9BD0DE53226001B94E797D",
+        "lod0_national.png": "DA77959F4D7810A4B0DD1A5E4590B69FE262EB89C43CA446035FC0EB1ADD9CED",
+        "lod1_regional.png": "79F2CAAEE30C0839B288172E133E467D1DF346E5A92B32CC98775B564C923E7B",
+        "lod2_subregional.png": "BF4FDCAC0AE1B55D5FDFD0F01F4566A3BA984E637214041DD07AD2EF2A43BC4F",
+        "lod3_local.png": "5D7858FF5E059A3AD234000883AD5BF2948CB86329D27D68201CCE7CAE726A37",
+        "lod4_detailed.png": "323D35805AF67F06FB3509FF3B60E0E7450376C478EC9CA94276B1898000AD89"
+      },
+      "second": {
+        "japan_lod.gpkg": "C91086697AE7E1F87C4BEDE2F412EA93F11FD9AA24C7BFC2DAC31A7027DAB8DD",
+        "japan_lod.json": "CF12E223AACE1CD4553CD1845F3A866C61562DABD55205FBD90D7D256666FD14",
+        "lod_manifest.json": "EFA8DA2A827BD146C1557AB138A9791A640B40EBCA9BD0DE53226001B94E797D",
+        "lod0_national.png": "DA77959F4D7810A4B0DD1A5E4590B69FE262EB89C43CA446035FC0EB1ADD9CED",
+        "lod1_regional.png": "79F2CAAEE30C0839B288172E133E467D1DF346E5A92B32CC98775B564C923E7B",
+        "lod2_subregional.png": "BF4FDCAC0AE1B55D5FDFD0F01F4566A3BA984E637214041DD07AD2EF2A43BC4F",
+        "lod3_local.png": "5D7858FF5E059A3AD234000883AD5BF2948CB86329D27D68201CCE7CAE726A37",
+        "lod4_detailed.png": "323D35805AF67F06FB3509FF3B60E0E7450376C478EC9CA94276B1898000AD89"
+      }
+    }
+  }
+}

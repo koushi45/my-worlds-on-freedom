@@ -1,0 +1,98 @@
+{
+  "status": "pending_user_review",
+  "scope": "shikoku",
+  "counts": {
+    "regions": 4,
+    "shared_boundaries": 5,
+    "controls": 31,
+    "triangles": 88,
+    "coast_arcs": 4
+  },
+  "spec_sha256": "c8df90170d524bb88fe0a4ff582bf5e6adc7a5fb9b8d3b1298c1b9180f1bf5f7",
+  "generator_sha256": "d8a12adb0752b0e44b737ff521b75802d591d6966427d28ccaa7efb0f29fbe31",
+  "junction_cleanup": [
+    {
+      "boundary_id": "shikoku:iyo:sanuki",
+      "removed_length_game_px": 0.0,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "shikoku:sanuki:awa_shikoku",
+      "removed_length_game_px": 7.294697881424611,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "shikoku:iyo:awa_shikoku",
+      "removed_length_game_px": 0.1560697175489878,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "shikoku:iyo:tosa",
+      "removed_length_game_px": 0.0,
+      "runs": 1,
+      "status": "pending"
+    },
+    {
+      "boundary_id": "shikoku:tosa:awa_shikoku",
+      "removed_length_game_px": 0.15606971754897359,
+      "runs": 1,
+      "status": "pending"
+    }
+  ],
+  "source_sha256": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d",
+  "immutable_before": {
+    "data\\base\\japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data\\derived\\coastline\\coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+    "data\\work\\political\\coast_alignment_v2\\source_rgba.png": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d",
+    "data\\master\\political\\kyushu\\1.0.0\\political_master_manifest.json": "a0645687abfb700c0ad88708dcc86da382e35598785a980221baa4f8a2795bcf",
+    "data\\derived\\political\\approved_kyushu\\political_registry.json": "d7cf502e530d1a1a95cfe91abbbd529963081708062b8b3900e49897b7361fce"
+  },
+  "immutable_after": {
+    "data\\base\\japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data\\derived\\coastline\\coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+    "data\\work\\political\\coast_alignment_v2\\source_rgba.png": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d",
+    "data\\master\\political\\kyushu\\1.0.0\\political_master_manifest.json": "a0645687abfb700c0ad88708dcc86da382e35598785a980221baa4f8a2795bcf",
+    "data\\derived\\political\\approved_kyushu\\political_registry.json": "d7cf502e530d1a1a95cfe91abbbd529963081708062b8b3900e49897b7361fce"
+  },
+  "coastal_endpoint_adjustments": [
+    {
+      "node_id": "west",
+      "original": [
+        2264.6429973668332,
+        6607.239334281499
+      ],
+      "clipped": [
+        2267.161968518734,
+        6591.182222857782
+      ],
+      "distance_game_px": 16.253493253383397,
+      "status": "pending"
+    }
+  ],
+  "gap_area_game_px2": 1.0658940396979233e-10,
+  "overlap_area_game_px2": -2.3283064365386963e-10,
+  "folded_triangles": 0,
+  "leave_one_out_control_error_game_px": {
+    "median": 26.056778315865188,
+    "p95": 72.44409008838704,
+    "max": 100.00312988685864
+  },
+  "coordinate_spaces": {
+    "image": "pixels x-right/y-down",
+    "game": "canonical 8192 plane, NOT geographic coordinates",
+    "source_crs": "EPSG:4326"
+  },
+  "limitations": [
+    "Visual source registration, not independent historical accuracy.",
+    "Coastline detail does not match perfectly.",
+    "Offshore ownership unresolved. No production integration."
+  ],
+  "outputs_sha256": {
+    "political_candidate.gpkg": "00361e985060e4485473e4044f7113f31a51bf37c6975a873e0d94c537b5d8b0",
+    "review_layer.json": "f92fb55f04a1e8379a73256d001446bba0a1149886f2f6ec68fb06ec3b81770c",
+    "warped_raster.png": "65faebda7b6c7f9fdfecce62d036cb2a400661f4865ca505f79ff9efeaf2f7e2"
+  }
+}

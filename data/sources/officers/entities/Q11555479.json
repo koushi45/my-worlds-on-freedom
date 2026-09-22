@@ -1,0 +1,307 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:16Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12695389,
+    "ns": 0,
+    "title": "Q11555479",
+    "lastrevid": 1783778222,
+    "modified": "2022-12-04T00:59:32Z",
+    "type": "item",
+    "id": "Q11555479",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "波多野元秀"
+      },
+      "en": {
+        "language": "en",
+        "value": "Hatano Motohide"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の武将"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "はたの もとひで"
+        },
+        {
+          "language": "ja",
+          "value": "波多野晴通"
+        },
+        {
+          "language": "ja",
+          "value": "はたの はるみち"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11555479$3F822AFC-4D90-4D0C-AA4C-FA8FAE0A62E9",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11555479$C12B64BB-0546-4EA4-A391-02F2C03C63B7",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "8c7bc70627a41fa41c8f4fbde5110502524aa453",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 26230041,
+                "id": "Q26230041"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11555479$01C8C3C7-575D-4F5C-B159-3AC3EA1EC9BD",
+          "rank": "normal"
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "8e0545e2c3ed4b0472834808b4dcdf02e43ef5a3",
+            "datavalue": {
+              "value": {
+                "time": "+1560-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q11555479$8F17B5D3-C4BE-4244-97A1-169FFA4B2262",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "40be50784ed20fb8a6dbae9c212d4811e15bd74d",
+            "datavalue": {
+              "value": {
+                "time": "+1520-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q11555479$9766ef0b-0b77-4623-b831-e337710e6012",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0ee3b3ba1c958f4c3dcba7ed8091fe4b57311348",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "cb49f6fa327b245e4a5aaf48c44b3f503bcd4265",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 30239,
+                        "id": "Q30239"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "5e970285a188ccd649b7a2b05546abde1db60dde",
+            "datavalue": {
+              "value": "/g/11bc598hgg",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11555479$D3FF1FD9-B7EF-4BAA-B5F7-9EE99CBDFE50",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "ce97988ca8dca4588fcdedb725a1cc537bcbaa90",
+            "datavalue": {
+              "value": {
+                "text": "波多野 元秀",
+                "language": "ja-hani"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1814": [
+              {
+                "snaktype": "value",
+                "property": "P1814",
+                "hash": "ba5823faaac8aa45f27d72991da0316d0cc967d9",
+                "datavalue": {
+                  "value": "はたの もとひで",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P2125": [
+              {
+                "snaktype": "value",
+                "property": "P2125",
+                "hash": "83c25905ce28eeb3e0ddf0c44700c560489fb5b6",
+                "datavalue": {
+                  "value": "Hatano Motohide",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1814",
+            "P2125"
+          ],
+          "id": "Q11555479$a3bd133f-46b3-b0a5-babd-da60645de50a",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11555479$91173f23-4cc1-78f1-6fac-5d115339d0f3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "波多野晴通",
+        "badges": [
+          "Q70893996"
+        ]
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "波多野晴通",
+        "badges": []
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "status": "approved",
+  "version": "1.0.0",
+  "scope": "honshu",
+  "approval": {
+    "approved_by": "user",
+    "recorded_at_utc": "2026-09-10T13:22:14.019216+00:00",
+    "instruction": "近畿以東を編集しました。これでほぼ同じ位置にある描画点を1つにまとめるなど、細部を修正した後で国境線を確定させて下さい。その後で本番ビルドをお願いします。"
+  },
+  "candidate_sha256": "ddbe57b84a911d8a0543d515adbc4038c90b93795317b954e28483645570dbac",
+  "name_status": "Geometry approved; unresolved names retained explicitly",
+  "canonical_hashes": {
+    "data/base/japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data/derived/coastline/coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf"
+  },
+  "files": {
+    "approved_input_edits.json": "ddbe57b84a911d8a0543d515adbc4038c90b93795317b954e28483645570dbac",
+    "cleanup_report.json": "8f1207c95ac2e7e8967b9822353e667a5b5e637b35507093b724e5f3246f8a2e",
+    "name_review.json": "a0629bac35327cbd1ae46f1436f3c8ecc37f025f4cd0cf12de28e895bb27e95d",
+    "political_regions_master.gpkg": "0e945c187081c386aaebe75bad52e69006785d1e79379521a3f4155072d0aaa9",
+    "political_registry_master.json": "32acf4981f8b87fc204de1e369b666426d68df2b126ff59385d2191245f7ffd7"
+  }
+}

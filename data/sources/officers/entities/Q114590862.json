@@ -1,0 +1,178 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:29Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 109279685,
+    "ns": 0,
+    "title": "Q114590862",
+    "lastrevid": 2369987432,
+    "modified": "2025-06-29T13:12:37Z",
+    "type": "item",
+    "id": "Q114590862",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "久松定益"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "日本の室町時代～戦国時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q114590862$8476a1ba-40cf-302e-0d05-40fc0f49b163",
+          "rank": "normal"
+        }
+      ],
+      "P40": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "f9c81d2fb1d19f2f48daf1955377693fe1692be4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 118747063,
+                "id": "Q118747063"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q114590862$1AEF0D2E-8755-4209-8BBE-F1BEF1007CDB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c79fa2cf00fa3ce9ee800f9fab53f144a693e979",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "6f3fa0fba151654ab1a25279bdca406793b44e98",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-08-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "df99b84298ba2662921c7d29caaca176600a121f",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E4%B9%85%E6%9D%BE%E5%AE%9A%E7%9B%8A&oldid=97864868",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q114590862$3f1e0375-4bdf-b822-1c4a-e1cb628930ac",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q114590862$3255a103-4dd8-8f5a-18bb-d3ca3344afe7",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "久松定益",
+        "badges": []
+      }
+    }
+  }
+}

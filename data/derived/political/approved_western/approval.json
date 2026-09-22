@@ -1,0 +1,80 @@
+{
+  "status": "approved",
+  "regions": {
+    "shikoku": {
+      "status": "approved",
+      "version": "1.0.0",
+      "scope": "shikoku",
+      "approval": {
+        "approved_by": "user",
+        "recorded_at_utc": "2026-09-10T00:18:21.496279+00:00",
+        "instruction": "画像の桃色線と水色線を確認しましたが、問題ありませんでしたので本番反映をお願いします。"
+      },
+      "limitations": [
+        "Mainland provinces only; offshore ownership unresolved. Historical certainty remains probable."
+      ],
+      "candidate_sha256": "00361e985060e4485473e4044f7113f31a51bf37c6975a873e0d94c537b5d8b0",
+      "canonical_hashes": {
+        "data\\base\\japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+        "data\\derived\\coastline\\coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+        "data\\work\\political\\coast_alignment_v2\\source_rgba.png": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d",
+        "data\\master\\political\\kyushu\\1.0.0\\political_master_manifest.json": "a0645687abfb700c0ad88708dcc86da382e35598785a980221baa4f8a2795bcf",
+        "data\\derived\\political\\approved_kyushu\\political_registry.json": "d7cf502e530d1a1a95cfe91abbbd529963081708062b8b3900e49897b7361fce"
+      },
+      "files": {
+        "political_regions_master.gpkg": "4e1a6daab91050bbeaaec06410fd9700b3a5bd35989c8236f7b794f10495d189",
+        "political_registry_master.json": "3b4c3d9efe5020d865b5c23f0a9093374973b5fb7366119002b5ed209df80462",
+        "approved_registration_report.json": "278770694b69c951a1975b9e1b57a8c60a062d652fd9dc24f45ca0e87920203d"
+      }
+    },
+    "chugoku": {
+      "status": "approved",
+      "version": "1.1.0",
+      "scope": "chugoku",
+      "candidate_sha256": "d241a2b4837ddf735e8129c867faa53817421faa60bb103bf73e38da9247168e",
+      "approval": {
+        "approved_by": "user",
+        "recorded_at_utc": "2026-09-10T09:02:15.195383+00:00",
+        "instruction": "中国地方はこれで確定・ビルドをお願いします。"
+      },
+      "canonical_hashes": {
+        "data/base/japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+        "data/derived/coastline/coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf"
+      },
+      "files": {
+        "approved_alignment_report.json": "406743a8a1ae8c2a7e2baa5661a3e05a85d94660fd5102fe9daf37068a284b15",
+        "political_regions_master.gpkg": "2fda89242c16a105b6d81e2a87b559ad669f12ae79774d21403c30145e3f60bb",
+        "political_registry_master.json": "a2b7479fc814c14d26245b9ce3cf3b27392afee033c8ff3860def01a3a5ee7b1"
+      }
+    },
+    "honshu": {
+      "status": "approved",
+      "version": "1.0.4",
+      "scope": "honshu",
+      "approval": {
+        "approved_by": "user",
+        "recorded_at_utc": "2026-09-10T14:51:00.185584+00:00",
+        "instruction": "region36_border_edits.json: これでお願いします。"
+      },
+      "candidate_sha256": "ddbe57b84a911d8a0543d515adbc4038c90b93795317b954e28483645570dbac",
+      "name_status": "All names resolved; Settsu and Izumi split by user line",
+      "canonical_hashes": {
+        "data/base/japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+        "data/derived/coastline/coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf"
+      },
+      "files": {
+        "approved_input_edits.json": "ddbe57b84a911d8a0543d515adbc4038c90b93795317b954e28483645570dbac",
+        "approved_region36_edits.json": "da9a383ea5bfd0a92a01e6dfe781ff069545a1137db1d6022df8151ff9a68ad1",
+        "cleanup_report.json": "8f1207c95ac2e7e8967b9822353e667a5b5e637b35507093b724e5f3246f8a2e",
+        "merge_report.json": "6f3927feb7b962904b7403b0b3e634a9a4c8ce0b6984926f23a21ef9834e53e5",
+        "name_resolution.json": "378f458428c9ff7edfaea377f50ebf3f413d41b3f0dc02a164a0e8501fd7ba6a",
+        "name_review.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "political_regions_master.gpkg": "503d2c9e4115bec3584e8d5f3ee67539ce3d1f61abc87df29adff19132527989",
+        "political_registry_master.json": "c940d1880b422eb76c89e3520a6c6f01cdfdad19d3afb2cab8e9362ee83065d1",
+        "region36_split_report.json": "713848f34fba436cc4b9ff4455b9be931cdd54574bbca7546299afa987cb4663",
+        "split_report.json": "8db87fdf7849ca9890829c2f658fe2931eacf05098235e87b3bd82ab91a07f95"
+      }
+    }
+  },
+  "kyushu_manifest_sha256": "a0645687abfb700c0ad88708dcc86da382e35598785a980221baa4f8a2795bcf"
+}

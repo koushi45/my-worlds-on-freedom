@@ -1,0 +1,269 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:25Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 110158507,
+    "ns": 0,
+    "title": "Q115596114",
+    "lastrevid": 2255655699,
+    "modified": "2024-10-03T03:15:20Z",
+    "type": "item",
+    "id": "Q115596114",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "松平信康"
+      },
+      "en": {
+        "language": "en",
+        "value": "Matsudaira Nobuyasu"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "[松平信康] son of Matsudaira Kiyoyasu"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の武将、松平清康の子"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "松平源次郎"
+        },
+        {
+          "language": "ja",
+          "value": "松平信家"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Matsudaira Nobuie"
+        },
+        {
+          "language": "en",
+          "value": "Matsudaira Genjirō"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115596114$82B57866-AD6D-4478-A33A-CD609EFE2309",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115596114$a96ccd1f-4b53-c971-75d1-cc60f9b45d8d",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115596114$8866f018-440e-e4ae-184a-5749cd26392b",
+          "rank": "normal"
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "57f1bc1719a22a47c5fb5e3737e2f331abdb960c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1041434,
+                "id": "Q1041434"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115596114$50073FAA-DC9B-49DE-A095-315ED6CF6FA6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "795e000d232462f4b7c4d0feabed7bcd4b52c6e3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b0974e2517a8f4e56fe837ff86ed35dcb3599d55",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-12-17T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "1dbc653a1b5887ce43d452c7f2e161dee36e6bf8",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%BE%E5%B9%B3%E4%BF%A1%E5%BA%B7_(%E6%BA%90%E6%AC%A1%E9%83%8E)&oldid=92877068",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "0232fc010ecd7b6a8ef3e459eef4004a72dc4fd3",
+            "datavalue": {
+              "value": {
+                "text": "松平信康",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q115596114$cdbe150f-4189-313f-8f75-a99e1e011462",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "e33bf41c388a74e2a779f557823b10c9d83c86f6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 39256460,
+                "id": "Q39256460"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115596114$8de5ab5f-4c6f-e49c-4452-d4c5ea7ce757",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "cb3ffd81519ef7691ff2cfbff4f3f9b6a63840b9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7046257,
+                "id": "Q7046257"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q115596114$57d63582-4e7d-326e-42ac-537b2b06906b",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "松平信康 (源次郎)",
+        "badges": []
+      }
+    }
+  }
+}

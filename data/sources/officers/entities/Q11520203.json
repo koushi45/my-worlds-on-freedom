@@ -1,0 +1,368 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:15Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12660056,
+    "ns": 0,
+    "title": "Q11520203",
+    "lastrevid": 2535809322,
+    "modified": "2026-08-24T13:27:23Z",
+    "type": "item",
+    "id": "Q11520203",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "本山茂宗"
+      },
+      "en": {
+        "language": "en",
+        "value": "Motoyama Shigemune"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Kunishū (local warload) in Tosa province, Japan"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の土佐国の武将"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "本山梅渓"
+        },
+        {
+          "language": "ja",
+          "value": "本山左近大夫"
+        },
+        {
+          "language": "ja",
+          "value": "本山豊前守"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520203$3785C0A4-6807-4EB7-86F1-9ACEAD7A1883",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520203$691AFEE7-9975-46A2-A88A-E3EB1D690F00",
+          "rank": "normal"
+        }
+      ],
+      "P40": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "f5bab170f1feb4b650213bbfa780a05f04c2ed20",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 60404,
+                "id": "Q60404"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520203$A0C581E6-7302-45A5-932B-549B14C3B3C4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "60578fb84466e2498458a9d811d928ad5b11e424",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "de0e209656e6828932b64f53f0d7862d30a4865d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 60404,
+                        "id": "Q60404"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452"
+              ]
+            }
+          ]
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "3ce7a884414e5386084f172d5412208326f32a81",
+            "datavalue": {
+              "value": {
+                "time": "+1508-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q11520203$9622F2EF-DEC2-4283-9220-B019AD6D7F99",
+          "rank": "normal"
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "ece591b6d2be25e46950ca126575dfef3e3b6155",
+            "datavalue": {
+              "value": {
+                "time": "+1555-02-24T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q11520203$E0DFEB38-8E18-47B9-9809-A886556209A0",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520203$5f6d3c8d-afb1-4348-a880-0baf2314fed4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "760edf7548953ba4fc9a2b8e6c4a86df4055e858",
+            "datavalue": {
+              "value": "/g/121tby3c",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11520203$95187D3A-6265-4078-850D-3901A9C11B86",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "25b66caafbc4dcd42662e1c01e393a2ac7d66d14",
+            "datavalue": {
+              "value": {
+                "text": "本山 茂宗",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q11520203$6fb276a8-404f-4c1b-b6b6-735836365b2f",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "dfd8a47fa7a3cc5a2d5f65c24e8b97fd962b597e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 140088919,
+                "id": "Q140088919"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520203$15c49e2a-4c21-eeaf-71cd-59ee2b071e93",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "80eb5f1aac841f38fe2bf7f13bc655139038dcc7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 29915873,
+                "id": "Q29915873"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520203$8453b0c7-4b4b-4233-57f8-d07d18e60845",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "本山清茂",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "本山茂宗",
+        "badges": []
+      }
+    }
+  }
+}

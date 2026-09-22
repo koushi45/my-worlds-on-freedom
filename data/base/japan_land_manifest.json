@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "status": "canonical",
+  "created_at_utc": "2026-09-06T11:17:07.146172+00:00",
+  "approval": {
+    "approved_source": "Natural Earth 1:10m Land 5.1.1 only",
+    "approved_by": "user",
+    "approval_context": "Nansei Islands are outside the Sengoku game unit scope"
+  },
+  "canonical": {
+    "file": "data/base/japan_land.gpkg",
+    "sha256": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+    "layer": "japan_land",
+    "geometry_type": "MultiPolygon",
+    "crs": "EPSG:4326",
+    "crs_wkt": "GEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"geodetic latitude (Lat)\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"geodetic longitude (Lon)\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],USAGE[SCOPE[\"Horizontal component of 3D system.\"],AREA[\"World.\"],BBOX[-90,-180,90,180]],ID[\"EPSG\",4326]]",
+    "extent": [
+      128.383718295,
+      30.34385066400006,
+      145.82496178500003,
+      45.520412502000056
+    ],
+    "geodesic_area_m2": 370015571369.6568,
+    "feature_count": 154,
+    "mainland_count": 1,
+    "island_count": 153,
+    "inner_ring_count": 0,
+    "vertex_count": 7499
+  },
+  "geojson_mirror": {
+    "file": "data/base/japan_land.geojson",
+    "sha256": "CFC5C7DADFCDD11975B9945B1B03DADECDB87E5B6476AA2573C48D5A680444DE",
+    "crs": "RFC 7946 WGS 84 longitude/latitude",
+    "feature_count": 154
+  },
+  "source": {
+    "name": "Natural Earth 1:10m Land",
+    "version": "5.1.1",
+    "archive": "data/sources/candidates/natural_earth_10m/raw/ne_10m_land.zip",
+    "archive_sha256": "E547D749445EAA0964ABA76738090EC88F5E63C4585122170F98C67A7EA922DC",
+    "crs": "EPSG:4326",
+    "license": "public domain"
+  },
+  "selection": {
+    "game_geographic_scope": [
+      128.0,
+      30.0,
+      146.0,
+      46.0
+    ],
+    "corridors": [
+      {
+        "name": "hokkaido",
+        "bounds": [
+          139.0,
+          41.0,
+          145.0,
+          46.0
+        ]
+      },
+      {
+        "name": "eastern_japan",
+        "bounds": [
+          134.0,
+          32.5,
+          142.5,
+          42.5
+        ]
+      },
+      {
+        "name": "shikoku_and_setouchi",
+        "bounds": [
+          131.5,
+          32.5,
+          135.5,
+          34.8
+        ]
+      },
+      {
+        "name": "western_japan",
+        "bounds": [
+          129.1,
+          33.7,
+          136.0,
+          36.8
+        ]
+      },
+      {
+        "name": "kyushu_and_western_islands",
+        "bounds": [
+          128.2,
+          30.5,
+          132.2,
+          33.7
+        ]
+      },
+      {
+        "name": "izu_islands",
+        "bounds": [
+          138.5,
+          30.5,
+          141.0,
+          35.5
+        ]
+      }
+    ],
+    "min_island_area_km2": 2.0,
+    "selected_feature_count": 154,
+    "excluded_below_area_threshold_count": 62,
+    "nansen_ogasawara_excluded_by_scope": true
+  },
+  "repairs": {
+    "allowed_only": [
+      "self-intersection repair",
+      "duplicate vertex and zero-length edge removal",
+      "duplicate polygon merge",
+      "obvious ring orientation normalization"
+    ],
+    "visual_smoothing": false,
+    "simplification": false,
+    "event_count": 0,
+    "area_delta_m2": 0,
+    "vertex_delta": 0
+  },
+  "game_transform": {
+    "layer": null,
+    "materialized": false,
+    "materialization_gate": "Gate 1 user approval",
+    "coordinate_space": [
+      0,
+      0,
+      8192,
+      8192
+    ],
+    "north_up": true,
+    "y_axis": "down",
+    "projection": "+proj=lcc +lat_1=30 +lat_2=46 +lat_0=38 +lon_0=137 +datum=WGS84 +units=m +no_defs",
+    "fixed_geographic_scope": [
+      128.0,
+      30.0,
+      146.0,
+      46.0
+    ],
+    "projected_scope_bounds_m": [
+      -867014.5426871292,
+      -881712.0726759076,
+      867014.5426871292,
+      916545.4819957833
+    ],
+    "uniform_scale_px_per_m": 0.004413160939812585,
+    "offset_x_px": 269.72528596369057,
+    "offset_y_px": 128.00000000000045,
+    "content_height_px": 7935.999999999999,
+    "padding_px": 128,
+    "deterministic_formula": "WGS84 -> stated LCC; x=offset_x+(X-minX)*scale; y=offset_y+content_height-(Y-minY)*scale"
+  },
+  "holes": {
+    "layer": null,
+    "count": 0,
+    "policy": "Each source inner ring is preserved and linked to a deterministic lake_id."
+  },
+  "tools": {
+    "python": "3.14.3",
+    "geopandas": "1.1.4",
+    "pandas": "3.0.5",
+    "pyogrio": "0.13.0",
+    "shapely": "2.1.2",
+    "pyproj": "3.7.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "script": "tools/build_japan_land_base.py"
+  }
+}

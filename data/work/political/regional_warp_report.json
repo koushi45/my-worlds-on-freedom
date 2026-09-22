@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "phase": "P2",
+  "status": "generated_pending_manual_review",
+  "generated_at_utc": "2026-09-07T16:18:06.017721Z",
+  "rules": {
+    "single_global_affine_adopted": false,
+    "global_affine_role": "initial nearest-coast search only",
+    "final_transform": "Delaunay piecewise-linear mesh from accepted region-tagged controls",
+    "canonical_land_or_coast_modified": false,
+    "sea_snap_applied": false,
+    "tps_comparison": "compared_not_adopted_after_piecewise_seam_repair",
+    "tps_candidates": [
+      {
+        "regularization": 1e-06,
+        "median_residual_input_px": 0.00014119921406550737,
+        "p95_residual_input_px": 0.004500194868493974,
+        "inverted_triangles": 20,
+        "adopted": false
+      },
+      {
+        "regularization": 0.0001,
+        "median_residual_input_px": 0.0135350501295074,
+        "p95_residual_input_px": 0.32255394598564735,
+        "inverted_triangles": 16,
+        "adopted": false
+      },
+      {
+        "regularization": 0.01,
+        "median_residual_input_px": 0.4010837051959899,
+        "p95_residual_input_px": 1.9703490752010004,
+        "inverted_triangles": 0,
+        "adopted": false
+      },
+      {
+        "regularization": 0.1,
+        "median_residual_input_px": 0.6504209466211487,
+        "p95_residual_input_px": 3.212316516067104,
+        "inverted_triangles": 0,
+        "adopted": false
+      },
+      {
+        "regularization": 1.0,
+        "median_residual_input_px": 0.8751063063781139,
+        "p95_residual_input_px": 3.7974671183054873,
+        "inverted_triangles": 0,
+        "adopted": false
+      }
+    ]
+  },
+  "source_hashes": {
+    "reference_image": "4B11BD5B77D713587F67173E230F382CBF450ADF4C06557127839C3FB1CD58A7",
+    "p1_trace": "E04BF7278537682B2198C173558AF517BDB6438E9E6CA09DA459D52F4EF7E68D",
+    "japan_land_master": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+    "coastline_master": "099F8CFB8175BCC5B217900FCCC5663FD858D31F2DEE372F1FB13BC4B66A0BAF"
+  },
+  "coordinate_spaces": {
+    "source": "1280x1341 image pixels, origin top-left, y down",
+    "target": "canonical game 8192 pixels, origin top-left, y down"
+  },
+  "counts": {
+    "controls_total": 292,
+    "controls_accepted": 226,
+    "mesh_triangles": 437,
+    "initial_inverted_triangles": 28,
+    "inverted_triangles": 0,
+    "topology_rejected_controls": 21,
+    "boundaries": 104,
+    "junction_nodes": 217,
+    "fallback_point_transforms": 0,
+    "sea_endpoint_or_interior_reviews": 3
+  },
+  "residual_targets": {
+    "median_input_px_max": 1.5,
+    "p95_input_px_max": 4.0
+  },
+  "regional_results": {
+    "hokkaido_tohoku": {
+      "count": 24,
+      "median_input_px": 0.25259435369702365,
+      "p95_input_px": 0.33544861734222564,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "kanto": {
+      "count": 22,
+      "median_input_px": 0.232001441671439,
+      "p95_input_px": 1.4115510133111437,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "hokuriku_koshinetsu": {
+      "count": 22,
+      "median_input_px": 0.24337853432425088,
+      "p95_input_px": 0.9825812196327004,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "tokai": {
+      "count": 22,
+      "median_input_px": 0.29266842075758115,
+      "p95_input_px": 1.601234261955426,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "kinki": {
+      "count": 24,
+      "median_input_px": 0.3962585524670339,
+      "p95_input_px": 0.75,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "sanin": {
+      "count": 20,
+      "median_input_px": 0.18101256989155345,
+      "p95_input_px": 0.3951886730991107,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "sanyo": {
+      "count": 21,
+      "median_input_px": 0.23452584458216252,
+      "p95_input_px": 0.3679540497826289,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "shikoku": {
+      "count": 18,
+      "median_input_px": 0.2805835140281192,
+      "p95_input_px": 0.515526387618575,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "north_kyushu": {
+      "count": 23,
+      "median_input_px": 0.29550428978398735,
+      "p95_input_px": 0.5693489194341792,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "central_south_kyushu": {
+      "count": 21,
+      "median_input_px": 0.2960604886407258,
+      "p95_input_px": 0.6626143384315741,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    },
+    "major_islands": {
+      "count": 9,
+      "median_input_px": 0.0,
+      "p95_input_px": 0.0,
+      "target_met": true,
+      "adopted_method": "piecewise_linear"
+    }
+  },
+  "topology_rejected_control_ids": [
+    "p2-hokuriku_koshinetsu-024",
+    "p2-shikoku-009",
+    "p2-sanyo-009",
+    "p2-shikoku-008",
+    "p2-central_south_kyushu-001",
+    "p2-central_south_kyushu-015",
+    "p2-tokai-008",
+    "p2-hokuriku_koshinetsu-002",
+    "p2-kinki-014",
+    "p2-kinki-020",
+    "p2-sanin-018",
+    "p2-sanin-023",
+    "p2-kanto-019",
+    "p2-kanto-007",
+    "p2-central_south_kyushu-007",
+    "p2-tokai-022",
+    "p2-sanin-011",
+    "p2-kinki-003",
+    "p2-sanyo-014",
+    "p2-kinki-010",
+    "p2-shikoku-012"
+  ],
+  "sea_excursion_review": [
+    {
+      "boundary_id": "img-boundary-0023",
+      "status": "endpoint_review",
+      "outside_samples": 1
+    },
+    {
+      "boundary_id": "img-boundary-0042",
+      "status": "endpoint_review",
+      "outside_samples": 1
+    },
+    {
+      "boundary_id": "img-boundary-0074",
+      "status": "endpoint_review",
+      "outside_samples": 1
+    }
+  ],
+  "libraries": {
+    "python": "3.14.3",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "shapely": "2.1.2",
+    "geopandas": "1.1.4",
+    "pyogrio": "0.13.0"
+  },
+  "outputs": {
+    "control_points": {
+      "file": "data/work/political/control_points.gpkg",
+      "sha256": "AA09F93BCD8B77E4467D6336440291F7ABC135975C8C65F9AC8E496EF69E20A9"
+    },
+    "warped_boundaries": {
+      "file": "data/work/political/regional_warped_boundaries.gpkg",
+      "sha256": "E4F0D7082789CAAC356EEE55A158BD016C171F6AA680F6095A1784DD0A0072CC"
+    },
+    "qa_national": {
+      "file": "data/derived/political/qa/p2/p2_national_overlay.png",
+      "sha256": "DE729F0BFF2C4E9F3CAB12AC9D4A3E282AA94BB8A527E8A26A26AE0453481A93"
+    },
+    "qa_source_controls": {
+      "file": "data/derived/political/qa/p2/p2_source_control_points.png",
+      "sha256": "5137482D34713F341CF64002EC66F0261E8BFF12DE4D1E8FFDAFAF078314E462"
+    }
+  },
+  "quality_note": "Residuals measure image-to-canonical positional alignment only and do not guarantee historical accuracy."
+}

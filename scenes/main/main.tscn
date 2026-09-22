@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/main/main_map.gd" id="1_main"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="MapTiles" type="Node2D" parent="."]
+
+[node name="MapCamera" type="Camera2D" parent="."]
+position = Vector2(4096, 4096)
+
+[node name="Interface" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="InfoPanel" type="PanelContainer" parent="Interface"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 378.0
+offset_bottom = 123.0
+
+[node name="Margin" type="MarginContainer" parent="Interface/InfoPanel"]
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="Interface/InfoPanel/Margin"]
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Interface/InfoPanel/Margin/VBox"]
+theme_override_font_sizes/font_size = 20
+text = "日本地図"
+
+[node name="LodLabel" type="Label" parent="Interface/InfoPanel/Margin/VBox"]
+text = "全国表示  1 / 5"
+
+[node name="TileLabel" type="Label" parent="Interface/InfoPanel/Margin/VBox"]
+text = "地図を読み込み中…"
+
+[node name="Help" type="Label" parent="Interface/InfoPanel/Margin/VBox"]
+modulate = Color(0.78, 0.82, 0.84, 1)
+text = "ホイール: 表示段階　ドラッグ / 矢印キー: 移動"

@@ -1,0 +1,161 @@
+{
+  "retrieved_utc": "2026-09-12T11:13:02Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 116026249,
+    "ns": 0,
+    "title": "Q121651940",
+    "lastrevid": 1967002526,
+    "modified": "2023-09-03T01:23:43Z",
+    "type": "item",
+    "id": "Q121651940",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "石川通昌"
+      },
+      "en": {
+        "language": "en",
+        "value": "Ishikawa Michimasa"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q121651940$E99EB845-5C39-49FE-A9CE-0921813A2F8C",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q121651940$02EEBD13-9E90-4A02-A01C-18E0DBE4E75A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "31af1452c4497b655398fe40e6855ae82359e5b7",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "ff2ae33a351dff66d0ef0bbb233aa5aba21a3bb3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-09-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "806c3b0b1f69f0c7756c72589425eec07592a818",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E7%9F%B3%E5%B7%9D%E9%80%9A%E6%98%8C&oldid=96149509",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q121651940$8be57366-48b7-523c-bd8f-e05e6de98e60",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "石川通昌",
+        "badges": []
+      }
+    }
+  }
+}

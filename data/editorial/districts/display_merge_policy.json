@@ -1,0 +1,18 @@
+{
+  "threshold_km2": 35.0,
+  "measure": "WGS84 ellipsoidal area of displayed geometry",
+  "scope": "unconfirmed game display only; same parent; candidate districts only",
+  "neighbor": "shared edge longer than numerical tolerance; longest common boundary, then larger area, then stable ID",
+  "order": "smallest eligible district first",
+  "name": "larger input component name at each merge; stable ID breaks exact ties",
+  "stop": "newly merged components strictly above 35 km2 are excluded from all further merges",
+  "unresolved": "unchanged",
+  "authorization": "User request: merge districts at or below 35.000 km2; preserve larger name; stop once above 35.000 km2; leave unknown areas alone",
+  "forced_merges": [
+    {
+      "source": "hizen/candidate-district-candidate-g67002",
+      "target": "hizen/candidate-district-candidate-g67004",
+      "authorization": "User explicitly requested merging Yabu into the adjacent already-stopped merged Kanzaki district"
+    }
+  ]
+}

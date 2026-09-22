@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "phase": "P0",
+  "status": "verified_source_locked",
+  "asset_role": "political boundary tracing reference; never a coastline or land-polygon source",
+  "asset": {
+    "file": "data/sources/political_reference/ryoseikoku_1280.png",
+    "requested_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Ancient_Provinces_of_Japan_Ryoseikoku_Map.png/1280px-Ancient_Provinces_of_Japan_Ryoseikoku_Map.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20221205181920",
+    "normalized_download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Ancient_Provinces_of_Japan_Ryoseikoku_Map.png/1280px-Ancient_Provinces_of_Japan_Ryoseikoku_Map.png",
+    "retrieved_at_utc": "2026-09-07T12:22:39Z",
+    "http": {
+      "content_type": "image/png",
+      "content_length": 647436,
+      "last_modified": "Tue, 01 Sep 2026 20:32:12 GMT",
+      "etag": "9b0f1ae92f3b4e8d3273b0da474bc533"
+    },
+    "sha256": "4B11BD5B77D713587F67173E230F382CBF450ADF4C06557127839C3FB1CD58A7",
+    "format": "PNG",
+    "width_px": 1280,
+    "height_px": 1341,
+    "color_mode": "RGBA",
+    "channels": [
+      "R",
+      "G",
+      "B",
+      "A"
+    ],
+    "bits_per_channel": 8,
+    "embedded_color_profile": "Display P3",
+    "immutable_input": true
+  },
+  "commons_source": {
+    "title": "Ancient Provinces of Japan Ryoseikoku Map.png",
+    "description_url": "https://commons.wikimedia.org/wiki/File:Ancient_Provinces_of_Japan_Ryoseikoku_Map.png",
+    "creator": "Artanisen",
+    "source_statement": "Own work",
+    "initial_date": "2022-07-06",
+    "current_revision": {
+      "timestamp_utc": "2022-12-05T18:19:20Z",
+      "uploader": "まいまいようお",
+      "change_note": "長門国・周防国・豊前国の国境線と関門海峡の地形を修正",
+      "original_width_px": 3031,
+      "original_height_px": 3176,
+      "original_size_bytes": 2324554,
+      "original_sha1": "26c61c920f3b32586e80bf3fcfed75057eda61de",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ancient_Provinces_of_Japan_Ryoseikoku_Map.png"
+    },
+    "historical_scope_note": "Solid borders represent ancient provinces from the Kamakura period to the Meiji Restoration. Dashed borders include post-Sengoku 1869 divisions and must not be traced into the Sengoku layer."
+  },
+  "license": {
+    "identifier": "CC-BY-SA-4.0",
+    "name": "Creative Commons Attribution-ShareAlike 4.0 International",
+    "canonical_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "legal_code_url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+    "legal_code_file": "data/sources/political_reference/LICENSE-CC-BY-SA-4.0.txt",
+    "legal_code_sha256": "28A9529C7D0BB4DC51F4BF5C116A3D16EF247A052F7591466768DDF563FD1CF5",
+    "legal_code_size_bytes": 20138,
+    "commercial_use": "permitted subject to license terms",
+    "attribution_required": true,
+    "indicate_changes_required": true,
+    "share_alike_required_for_adapted_material": true
+  },
+  "attribution": {
+    "file": "data/sources/political_reference/ATTRIBUTION.md",
+    "languages": [
+      "ja",
+      "en"
+    ]
+  },
+  "gate_p0": {
+    "status": "passed",
+    "checked_at_utc": "2026-09-07T12:22:39Z",
+    "checks": {
+      "image_exists": true,
+      "sha256_matches": true,
+      "dimensions_match": true,
+      "format_and_color_mode_recorded": true,
+      "source_url_and_retrieval_time_recorded": true,
+      "commons_author_description_revision_recorded": true,
+      "license_legal_code_saved": true,
+      "japanese_attribution_saved": true,
+      "english_attribution_saved": true,
+      "image_marked_read_only": true
+    },
+    "next_allowed_phase": "P1 image-coordinate tracing",
+    "game_inclusion_allowed": false
+  }
+}

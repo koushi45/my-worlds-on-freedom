@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "phase": "F",
+  "status": "verified_pipeline_awaiting_historical_source",
+  "source_contract": {
+    "expected_file": "data/sources/approved/historical_regions.gpkg",
+    "layer": "historical_regions",
+    "required_fields": [
+      "region_id",
+      "region_name",
+      "certainty",
+      "geometry"
+    ],
+    "current_status": "missing",
+    "missing_data_policy": "Do not infer boundaries; preserve uncovered master land as unassigned."
+  },
+  "operation": "political_region = historical_region intersection approved japan_land master",
+  "rules": {
+    "shared_edges_only": true,
+    "coastline_storage": "coastline_id plus linear-reference fractions; no duplicated coastline points",
+    "selection_display": "shared boundary IDs plus referenced coastline segments",
+    "click_masks_are_hit_test_only": true,
+    "boundaries_never_derived_from_click_masks": true
+  },
+  "outputs": {
+    "geopackage": {
+      "file": "data/derived/political/political_regions.gpkg",
+      "sha256": "78113FA597915026BA683FDDC14C2A85070D797744B301093D574DBDE5D37D66",
+      "layers": [
+        "unassigned_land"
+      ]
+    },
+    "registry": {
+      "file": "data/derived/political/political_registry.json",
+      "sha256": "F457BB41DD63948062F6658D1E5A3B5697D04715164BF89107C756B1A8E4640A"
+    },
+    "audit": {
+      "file": "data/derived/political/political_audit.json",
+      "sha256": "DDB5A5AD905471A68AD56F237D0FEF551BEA46C6B6CBB1126F1676920AD71BC3"
+    }
+  },
+  "counts": {
+    "political_regions": 0,
+    "shared_boundaries": 0,
+    "click_masks": 0,
+    "coastline_references": 0,
+    "unassigned_features": 1
+  }
+}

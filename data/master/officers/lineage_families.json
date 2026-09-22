@@ -1,0 +1,4632 @@
+{
+  "schema_version": 1,
+  "families": [
+    {
+      "id": "arima_hizen",
+      "display_name": "有馬家（肥前）",
+      "description": "肥前有馬氏。摂津有馬氏とは別系統。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "arima_settsu",
+      "display_name": "有馬家（摂津）",
+      "description": "摂津有馬氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "family_00e5a1d100705268",
+      "display_name": "久松家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "久松氏"
+    },
+    {
+      "id": "family_013844b200af6299",
+      "display_name": "甲斐内藤家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "内藤氏"
+    },
+    {
+      "id": "family_0162f5029dec6339",
+      "display_name": "母里家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "母里氏"
+    },
+    {
+      "id": "family_018289811a38aa2a",
+      "display_name": "蒔田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "蒔田氏"
+    },
+    {
+      "id": "family_025e5f214551b786",
+      "display_name": "佐々家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "佐々氏"
+    },
+    {
+      "id": "family_02781ae5918fea38",
+      "display_name": "乾家（清和源氏頼光流 土岐支流）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "乾氏#清和源氏頼光流 土岐支流 乾氏"
+    },
+    {
+      "id": "family_02d1a0c0bc275838",
+      "display_name": "福住家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "福住氏"
+    },
+    {
+      "id": "family_0367eaf699f5ec61",
+      "display_name": "矢沢家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "矢沢氏"
+    },
+    {
+      "id": "family_0375a9bf71d6e773",
+      "display_name": "新田家（八戸氏庶流）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "新田氏 (八戸氏庶流)"
+    },
+    {
+      "id": "family_03ede176291f8c9e",
+      "display_name": "南部家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "南部氏"
+    },
+    {
+      "id": "family_04a0ef5a3f28e61e",
+      "display_name": "飯田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "飯田氏"
+    },
+    {
+      "id": "family_04fc2d397e183cc2",
+      "display_name": "安房正木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安房正木氏"
+    },
+    {
+      "id": "family_0511e36bc9a069b4",
+      "display_name": "朝比奈家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "朝比奈氏"
+    },
+    {
+      "id": "family_05b67446a51973e1",
+      "display_name": "三枝家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三枝氏"
+    },
+    {
+      "id": "family_061bbcb48515db04",
+      "display_name": "最上家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "最上氏"
+    },
+    {
+      "id": "family_0626aa1ef3ccddfb",
+      "display_name": "佐渡家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "佐渡氏"
+    },
+    {
+      "id": "family_0710b1737b43497e",
+      "display_name": "松前家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "蠣崎氏"
+    },
+    {
+      "id": "family_0732be6f2e431c12",
+      "display_name": "松田家（小田原北条氏臣）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "松田氏#小田原北条氏臣 松田氏"
+    },
+    {
+      "id": "family_074b1e29468da1bb",
+      "display_name": "朽網家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "朽網氏"
+    },
+    {
+      "id": "family_076185f8a9e508fa",
+      "display_name": "大給松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大給松平家"
+    },
+    {
+      "id": "family_077c9e770c1c0bf4",
+      "display_name": "鬼庭家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "茂庭氏"
+    },
+    {
+      "id": "family_07c90f74a68b8311",
+      "display_name": "吉見家（石見）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "吉見氏#石見吉見氏"
+    },
+    {
+      "id": "family_08135bf543d3dadd",
+      "display_name": "南条家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "南条氏"
+    },
+    {
+      "id": "family_08edbdaa97fb84de",
+      "display_name": "村井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "村井氏"
+    },
+    {
+      "id": "family_091d6369fac7ab92",
+      "display_name": "益子家（下野国の・宇都宮氏家臣）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "益子氏#下野国の益子氏（宇都宮氏家臣）"
+    },
+    {
+      "id": "family_0a14733135c50fc4",
+      "display_name": "草野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "草野氏"
+    },
+    {
+      "id": "family_0a59701255a34f75",
+      "display_name": "竹谷松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "竹谷松平家"
+    },
+    {
+      "id": "family_0a741d2e795f8da1",
+      "display_name": "江上家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "江上氏"
+    },
+    {
+      "id": "family_0a7630fa41fd2f5b",
+      "display_name": "美作三浦家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "美作三浦氏"
+    },
+    {
+      "id": "family_0a9c5c98885fc99d",
+      "display_name": "越後長尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "越後長尾氏"
+    },
+    {
+      "id": "family_0af50ba2c07055ec",
+      "display_name": "多胡家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "多胡氏"
+    },
+    {
+      "id": "family_0b80c76804216ab8",
+      "display_name": "二宮家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "二宮氏"
+    },
+    {
+      "id": "family_0bb2d723bcef876d",
+      "display_name": "形原松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "形原松平家"
+    },
+    {
+      "id": "family_0c591d7aa7b9e2be",
+      "display_name": "長沢松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長沢松平家"
+    },
+    {
+      "id": "family_0cb32dce1087b4cf",
+      "display_name": "頴娃家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "頴娃氏"
+    },
+    {
+      "id": "family_0cf2d216316e7a17",
+      "display_name": "佐竹家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "佐竹氏"
+    },
+    {
+      "id": "family_0d026d13661bbf30",
+      "display_name": "太田垣家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "太田垣氏"
+    },
+    {
+      "id": "family_0dc6d72d38e372e6",
+      "display_name": "戸田家（康長の家系・戸田松平家、宗家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "戸田氏#康長の家系（戸田松平家、宗家）"
+    },
+    {
+      "id": "family_0ddf5f0e6286f6ec",
+      "display_name": "小島家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小島氏"
+    },
+    {
+      "id": "family_0de7c21b6af7bcaf",
+      "display_name": "山内家（土佐）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "土佐山内氏"
+    },
+    {
+      "id": "family_0e03286e901204b1",
+      "display_name": "平手家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "平手氏"
+    },
+    {
+      "id": "family_0e67b733c8e91fec",
+      "display_name": "三田村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三田村氏"
+    },
+    {
+      "id": "family_0ea0f0960a65bd4e",
+      "display_name": "戸田家（庄右衛門忠政・光忠の家系・田原戸田家、下野国宇都宮藩主）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "戸田氏#庄右衛門忠政（光忠）の家系（田原戸田家、下野国宇都宮藩主）"
+    },
+    {
+      "id": "family_0eb05b51a5386cbe",
+      "display_name": "都筑家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "都筑氏"
+    },
+    {
+      "id": "family_0ee765837ad4f99c",
+      "display_name": "隈部家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "隈部氏"
+    },
+    {
+      "id": "family_0fc2dea33051eec9",
+      "display_name": "小田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小田氏"
+    },
+    {
+      "id": "family_11475cd24e6de462",
+      "display_name": "伊奈家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "伊奈氏"
+    },
+    {
+      "id": "family_12a77061383aa776",
+      "display_name": "毛屋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "毛屋氏"
+    },
+    {
+      "id": "family_1309e52d5b0eb7f6",
+      "display_name": "荒木家（摂津国）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "荒木氏 (摂津国)"
+    },
+    {
+      "id": "family_135b095f62139adb",
+      "display_name": "大友家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大友氏"
+    },
+    {
+      "id": "family_14aec849ef6d2a8f",
+      "display_name": "下野宇都宮家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "下野宇都宮氏"
+    },
+    {
+      "id": "family_15074d3c1da8e9f7",
+      "display_name": "留守家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "留守氏"
+    },
+    {
+      "id": "family_15194c17c14c772d",
+      "display_name": "成松家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "成松氏"
+    },
+    {
+      "id": "family_15ffd89f15e7801d",
+      "display_name": "上井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "上井氏"
+    },
+    {
+      "id": "family_16336168335555ea",
+      "display_name": "色部家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "色部氏"
+    },
+    {
+      "id": "family_16d49bba19068e98",
+      "display_name": "飯尾家（平姓）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "飯尾氏#平姓飯尾氏"
+    },
+    {
+      "id": "family_17864b30d0baa2bb",
+      "display_name": "三刀屋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三刀屋氏"
+    },
+    {
+      "id": "family_17ee83edb17b9c5d",
+      "display_name": "亀井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "亀井氏"
+    },
+    {
+      "id": "family_1836c8081f7cd1be",
+      "display_name": "井上家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "井上氏"
+    },
+    {
+      "id": "family_1879d8eaf98543c5",
+      "display_name": "永井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "永井氏"
+    },
+    {
+      "id": "family_1881ab87615fc34c",
+      "display_name": "藤堂家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "藤堂氏"
+    },
+    {
+      "id": "family_190a4a631daa766f",
+      "display_name": "鍋島家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "鍋島氏"
+    },
+    {
+      "id": "family_19210cbf6f8f5403",
+      "display_name": "桜井松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "桜井松平家"
+    },
+    {
+      "id": "family_19ff76e3c2dd08f2",
+      "display_name": "大村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大村氏"
+    },
+    {
+      "id": "family_1aad26104d6b1cb3",
+      "display_name": "相木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "相木氏"
+    },
+    {
+      "id": "family_1b8811cebb152e97",
+      "display_name": "上条上杉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "上条上杉氏"
+    },
+    {
+      "id": "family_1bdf5a17e18d6262",
+      "display_name": "足立家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "足立氏"
+    },
+    {
+      "id": "family_1bec53319ef93824",
+      "display_name": "平野家（北条氏）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "平野氏#北条氏"
+    },
+    {
+      "id": "family_1c0151107ce12a85",
+      "display_name": "清野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "清野氏"
+    },
+    {
+      "id": "family_1c8560f102238332",
+      "display_name": "松永家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "松永氏"
+    },
+    {
+      "id": "family_1cdc65a8ecd501f7",
+      "display_name": "前波家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "前波氏"
+    },
+    {
+      "id": "family_1dad9a4c1b045336",
+      "display_name": "吉川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "吉川氏"
+    },
+    {
+      "id": "family_1e6dba241d237758",
+      "display_name": "茂庭家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "茂庭氏"
+    },
+    {
+      "id": "family_1e859fb777ab8907",
+      "display_name": "飯尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "飯尾氏"
+    },
+    {
+      "id": "family_1eb034926c5b9602",
+      "display_name": "海野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "海野氏"
+    },
+    {
+      "id": "family_1f114dc2689f1d5b",
+      "display_name": "生駒家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "生駒氏"
+    },
+    {
+      "id": "family_2061203328f35e11",
+      "display_name": "中野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "中野氏"
+    },
+    {
+      "id": "family_214694087d2a372d",
+      "display_name": "猪苗代家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "猪苗代氏"
+    },
+    {
+      "id": "family_214f756979a133da",
+      "display_name": "板垣家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "板垣氏"
+    },
+    {
+      "id": "family_214fc2a465008f64",
+      "display_name": "大嶋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大嶋氏"
+    },
+    {
+      "id": "family_22af5483af24c450",
+      "display_name": "長崎家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長崎氏"
+    },
+    {
+      "id": "family_22fb0af7e9741d66",
+      "display_name": "泉山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "泉山氏"
+    },
+    {
+      "id": "family_243d8fba0ba0692b",
+      "display_name": "宇喜多家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "宇喜多氏"
+    },
+    {
+      "id": "family_25bc80a871cadcc6",
+      "display_name": "山岡家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山岡氏"
+    },
+    {
+      "id": "family_25dd91289ad2bd06",
+      "display_name": "毛受家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "毛受氏"
+    },
+    {
+      "id": "family_2648586fa9295400",
+      "display_name": "冷泉家家（下冷泉家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "冷泉家#下冷泉家"
+    },
+    {
+      "id": "family_26629479eaa6e588",
+      "display_name": "白石家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "白石氏"
+    },
+    {
+      "id": "family_269904600d8180c6",
+      "display_name": "柿並家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "柿並氏"
+    },
+    {
+      "id": "family_27481c522c0e9ea6",
+      "display_name": "久野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "久野氏"
+    },
+    {
+      "id": "family_276b97795133342d",
+      "display_name": "坂本家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "坂本氏"
+    },
+    {
+      "id": "family_279702cc4c91d68b",
+      "display_name": "黒田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "黒田氏"
+    },
+    {
+      "id": "family_29652713bcc977fc",
+      "display_name": "阿部家（阿部定吉などの系統）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "阿部氏 (徳川譜代)#阿部定吉などの系統"
+    },
+    {
+      "id": "family_29e1c85f43c516a7",
+      "display_name": "小出家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小出氏"
+    },
+    {
+      "id": "family_29ec1fe479f846a7",
+      "display_name": "内田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "内田氏"
+    },
+    {
+      "id": "family_2aafe90aad72e9c3",
+      "display_name": "山県家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山県氏"
+    },
+    {
+      "id": "family_2b7a5892a912cd82",
+      "display_name": "今井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "今井氏"
+    },
+    {
+      "id": "family_2ba032a91b894741",
+      "display_name": "山吉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山吉氏"
+    },
+    {
+      "id": "family_2bbf8d058c3b73d3",
+      "display_name": "鎌原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "鎌原氏"
+    },
+    {
+      "id": "family_2c1ad209ca02bc95",
+      "display_name": "阿部家（徳川譜代）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "阿部氏 (徳川譜代)"
+    },
+    {
+      "id": "family_2c6d863fb658e41e",
+      "display_name": "国重家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "国重氏"
+    },
+    {
+      "id": "family_2d7d1b5933e38c5f",
+      "display_name": "森川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "森川氏"
+    },
+    {
+      "id": "family_2dcaa70f8f47d0a5",
+      "display_name": "入田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "入田氏"
+    },
+    {
+      "id": "family_2ded0d1f1cf0442f",
+      "display_name": "千種家家（別系）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "千種家#別系"
+    },
+    {
+      "id": "family_2ebf33eae3879130",
+      "display_name": "丹波波多野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "波多野氏"
+    },
+    {
+      "id": "family_2efb4745ab2f457d",
+      "display_name": "安藤家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "美濃安藤氏"
+    },
+    {
+      "id": "family_3102f6a1f63a0754",
+      "display_name": "水野家（忠守流 水野家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "水野氏#忠守流 水野家"
+    },
+    {
+      "id": "family_31bc4e57e5ca6383",
+      "display_name": "十河家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "十河氏"
+    },
+    {
+      "id": "family_324ac51e4cdbcbb1",
+      "display_name": "大野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大野氏"
+    },
+    {
+      "id": "family_32adac788b435844",
+      "display_name": "大岡家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大岡氏"
+    },
+    {
+      "id": "family_33765b1c111d3885",
+      "display_name": "簗田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "簗田氏"
+    },
+    {
+      "id": "family_3386fe0f5436aa98",
+      "display_name": "二階堂家（須賀川）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "二階堂氏#須賀川二階堂氏"
+    },
+    {
+      "id": "family_344234a60dfd593f",
+      "display_name": "山浦上杉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山浦上杉氏"
+    },
+    {
+      "id": "family_344e44868718c085",
+      "display_name": "岩村遠山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "岩村遠山氏"
+    },
+    {
+      "id": "family_348f84e17e041e85",
+      "display_name": "亘理伊達家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "亘理伊達家"
+    },
+    {
+      "id": "family_354d5789d5cec7e0",
+      "display_name": "尾張篠原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "篠原氏"
+    },
+    {
+      "id": "family_3556eab725348130",
+      "display_name": "広瀬家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "広瀬氏"
+    },
+    {
+      "id": "family_36769a25ff8945c3",
+      "display_name": "岡本家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "岡本氏"
+    },
+    {
+      "id": "family_36be7f5af415f896",
+      "display_name": "成恒家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "成恒氏"
+    },
+    {
+      "id": "family_373bede5e3383baa",
+      "display_name": "小幡家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小幡氏"
+    },
+    {
+      "id": "family_375413ffba5d7f08",
+      "display_name": "天野家（三河）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "天野氏#三河天野氏"
+    },
+    {
+      "id": "family_37caac7b61d24458",
+      "display_name": "下曽根家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "下曽根氏"
+    },
+    {
+      "id": "family_386a3bc1bf8fc058",
+      "display_name": "口羽家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "口羽氏"
+    },
+    {
+      "id": "family_38d591f73775d923",
+      "display_name": "山本寺上杉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山本寺上杉氏"
+    },
+    {
+      "id": "family_38f0cec7f8b862c7",
+      "display_name": "多田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "多田氏"
+    },
+    {
+      "id": "family_39097fd37975c907",
+      "display_name": "前田家（前田利家の）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "前田氏#前田利家の前田氏"
+    },
+    {
+      "id": "family_3b14e6e5ee91115b",
+      "display_name": "城井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "城井氏"
+    },
+    {
+      "id": "family_3b4d754622742864",
+      "display_name": "今川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "今川氏"
+    },
+    {
+      "id": "family_3b6658c35a450d1f",
+      "display_name": "夏目家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "夏目氏"
+    },
+    {
+      "id": "family_3b88e97401f3d157",
+      "display_name": "百武家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "百武氏"
+    },
+    {
+      "id": "family_3c06cf8e06ebe7eb",
+      "display_name": "大草松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大草松平家"
+    },
+    {
+      "id": "family_3ca3113cd77cafaf",
+      "display_name": "仙石家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "仙石氏"
+    },
+    {
+      "id": "family_3cf16483a1895e0e",
+      "display_name": "奥村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "奥村氏"
+    },
+    {
+      "id": "family_3d062e07cafebe2e",
+      "display_name": "別所家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "別所氏"
+    },
+    {
+      "id": "family_3d3e1db0d5f83475",
+      "display_name": "富士家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "富士氏"
+    },
+    {
+      "id": "family_3d6543b1ed3606ab",
+      "display_name": "河原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "河原氏"
+    },
+    {
+      "id": "family_3dc38f23ea543aec",
+      "display_name": "佐世家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "佐世氏"
+    },
+    {
+      "id": "family_3de45703129ed678",
+      "display_name": "宮本家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "宮本氏"
+    },
+    {
+      "id": "family_3ecac5c3bef81136",
+      "display_name": "岩城家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "岩城氏"
+    },
+    {
+      "id": "family_3eea3e766e5fdedd",
+      "display_name": "三木松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三木松平家"
+    },
+    {
+      "id": "family_3fa73cdbff7321df",
+      "display_name": "肝付家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "肝付氏"
+    },
+    {
+      "id": "family_3fdfd623b032bed4",
+      "display_name": "伊丹家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "伊丹氏"
+    },
+    {
+      "id": "family_40c35c1301266c4e",
+      "display_name": "高田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "高田氏"
+    },
+    {
+      "id": "family_40f1758b80edd0e5",
+      "display_name": "中島家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "中島氏"
+    },
+    {
+      "id": "family_4149603107763101",
+      "display_name": "深水家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "深水氏"
+    },
+    {
+      "id": "family_41978198e7f01df3",
+      "display_name": "金丸家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "金丸氏"
+    },
+    {
+      "id": "family_41caaa8c79d24533",
+      "display_name": "梁川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "梁川氏"
+    },
+    {
+      "id": "family_42b1949ae9560bca",
+      "display_name": "赤松家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "赤松氏"
+    },
+    {
+      "id": "family_42ed2756c643b194",
+      "display_name": "徳川家（水戸）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "水戸徳川家"
+    },
+    {
+      "id": "family_43272e842e14105e",
+      "display_name": "初鹿野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "初鹿野氏"
+    },
+    {
+      "id": "family_4337c3da53f62c21",
+      "display_name": "北家（大江姓の）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "北氏#大江姓の北氏"
+    },
+    {
+      "id": "family_43f5f0f6dc916cb6",
+      "display_name": "飯川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "飯川氏"
+    },
+    {
+      "id": "family_455782bbace733d7",
+      "display_name": "越前松平宗家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "越前松平家"
+    },
+    {
+      "id": "family_45a2d10fe15292b6",
+      "display_name": "原田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "原田氏"
+    },
+    {
+      "id": "family_4644275e256ae892",
+      "display_name": "天野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "天野氏"
+    },
+    {
+      "id": "family_46fb9aab94bca4b5",
+      "display_name": "三河松井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三河松井氏"
+    },
+    {
+      "id": "family_4762d21df5edb696",
+      "display_name": "紀家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "紀氏"
+    },
+    {
+      "id": "family_479fc3d57b72e469",
+      "display_name": "富樫家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "富樫氏"
+    },
+    {
+      "id": "family_48477164df41136b",
+      "display_name": "神吉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "神吉氏"
+    },
+    {
+      "id": "family_48fef84d5a6ed682",
+      "display_name": "手嶋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "手嶋氏"
+    },
+    {
+      "id": "family_49b096a054d139de",
+      "display_name": "大野家（尾張国）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大野氏 (尾張国)"
+    },
+    {
+      "id": "family_49fb6ff40082190d",
+      "display_name": "横田家（甲斐武田氏家臣の）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "横田氏#甲斐武田氏家臣の横田氏"
+    },
+    {
+      "id": "family_4bbed562aabe776e",
+      "display_name": "糟屋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "糟屋氏"
+    },
+    {
+      "id": "family_4c30c6a29aa369e7",
+      "display_name": "三宅家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三宅氏"
+    },
+    {
+      "id": "family_4c9a02002cf473bd",
+      "display_name": "丹波赤井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "丹波赤井氏"
+    },
+    {
+      "id": "family_4ce0a5955ac654f4",
+      "display_name": "大須賀家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大須賀氏"
+    },
+    {
+      "id": "family_4cf14cfed6570065",
+      "display_name": "里見家（安房）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "里見氏#安房里見氏"
+    },
+    {
+      "id": "family_4cf498aabbe5032f",
+      "display_name": "木村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "木村氏"
+    },
+    {
+      "id": "family_4e11288941eee74e",
+      "display_name": "島家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "島氏"
+    },
+    {
+      "id": "family_4eb540843fbbb5f8",
+      "display_name": "宗像家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "宗像氏"
+    },
+    {
+      "id": "family_4ed264c20171e515",
+      "display_name": "内藤家（安芸）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "内藤氏#安芸内藤氏"
+    },
+    {
+      "id": "family_4f5b3a900f152504",
+      "display_name": "春日家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "春日氏"
+    },
+    {
+      "id": "family_4f86f4a55c314a6c",
+      "display_name": "中原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "中原氏"
+    },
+    {
+      "id": "family_4ffb4b41c175a289",
+      "display_name": "香川家（安芸）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "香川氏#安芸香川氏"
+    },
+    {
+      "id": "family_5052458b7f4a7f04",
+      "display_name": "真柄家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "真柄氏"
+    },
+    {
+      "id": "family_5211d593abc0f796",
+      "display_name": "一色家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "一色氏"
+    },
+    {
+      "id": "family_521ca593c72cdad8",
+      "display_name": "九州千葉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "九州千葉氏"
+    },
+    {
+      "id": "family_52547c548f59d1dc",
+      "display_name": "芋川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "芋川氏"
+    },
+    {
+      "id": "family_5259546bc7b9032f",
+      "display_name": "池田家（摂津）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "池田氏#摂津池田氏"
+    },
+    {
+      "id": "family_52f36f3a06e6e75e",
+      "display_name": "一宮家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "一宮氏"
+    },
+    {
+      "id": "family_538b703e27fa2a86",
+      "display_name": "関口家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "関口氏"
+    },
+    {
+      "id": "family_53dd273a73c340fd",
+      "display_name": "津田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "津田氏"
+    },
+    {
+      "id": "family_54ef9445a5e6090c",
+      "display_name": "今泉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "今泉氏"
+    },
+    {
+      "id": "family_55074df0901bfc91",
+      "display_name": "丹羽家（児玉）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "丹羽氏#児玉丹羽氏"
+    },
+    {
+      "id": "family_566ff3aede6eb874",
+      "display_name": "金子家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "金子氏"
+    },
+    {
+      "id": "family_56a9767e38b8c72f",
+      "display_name": "樺山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "樺山氏"
+    },
+    {
+      "id": "family_573460bf1e99bde8",
+      "display_name": "三淵家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三淵氏"
+    },
+    {
+      "id": "family_576c45668cfedef7",
+      "display_name": "塩川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "塩川氏"
+    },
+    {
+      "id": "family_5797f5ef6e054297",
+      "display_name": "前野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "前野氏"
+    },
+    {
+      "id": "family_57d80137565c3290",
+      "display_name": "福島家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "福島氏"
+    },
+    {
+      "id": "family_582c1c3ef4831e64",
+      "display_name": "長岡内膳家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "細川内膳家"
+    },
+    {
+      "id": "family_59831136147961d3",
+      "display_name": "沢井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "沢井氏"
+    },
+    {
+      "id": "family_59983b8677823b6a",
+      "display_name": "武蔵遠山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "武蔵遠山氏"
+    },
+    {
+      "id": "family_59f17d6ade710976",
+      "display_name": "駿河宇津家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "宇津氏"
+    },
+    {
+      "id": "family_5a24aa2f94112df4",
+      "display_name": "七里家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "七里氏"
+    },
+    {
+      "id": "family_5b88062a73532d23",
+      "display_name": "大塚家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大塚氏"
+    },
+    {
+      "id": "family_5c28318fec477a1c",
+      "display_name": "浜尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "浜尾氏"
+    },
+    {
+      "id": "family_5c6e82b597c5b699",
+      "display_name": "延沢家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "延沢氏"
+    },
+    {
+      "id": "family_5dd17afaac4d70d9",
+      "display_name": "一柳家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "一柳氏"
+    },
+    {
+      "id": "family_5eea20dc4544b37e",
+      "display_name": "竹中家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "竹中氏"
+    },
+    {
+      "id": "family_5fd0a752f32cab9b",
+      "display_name": "前野家（下津）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "前野氏#下津前野氏"
+    },
+    {
+      "id": "family_5fe92097a3dc6031",
+      "display_name": "笠井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "笠井氏"
+    },
+    {
+      "id": "family_604d6a51aa40ee46",
+      "display_name": "後藤家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "後藤氏"
+    },
+    {
+      "id": "family_60e8f3f2df78f3b1",
+      "display_name": "大河内家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大河内氏"
+    },
+    {
+      "id": "family_61159f47de646b3f",
+      "display_name": "三戸家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三戸氏"
+    },
+    {
+      "id": "family_611da106600551f9",
+      "display_name": "太田家（清和源氏頼光流）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "太田氏#清和源氏頼光流太田氏"
+    },
+    {
+      "id": "family_617ef515d8ce6dea",
+      "display_name": "河窪家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "河窪氏"
+    },
+    {
+      "id": "family_6192e72836c04d24",
+      "display_name": "香川家（讃岐）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "香川氏#讃岐香川氏"
+    },
+    {
+      "id": "family_62f719bce63e5ac7",
+      "display_name": "正木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安房正木氏"
+    },
+    {
+      "id": "family_63644fe3ae2735d1",
+      "display_name": "宍戸家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "宍戸氏"
+    },
+    {
+      "id": "family_63b1a226264f56cc",
+      "display_name": "神保家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "神保氏"
+    },
+    {
+      "id": "family_645beb51b4478415",
+      "display_name": "泉田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "泉田氏"
+    },
+    {
+      "id": "family_64bbd9f6a9c748f9",
+      "display_name": "井上家（安芸）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "井上氏#安芸井上氏"
+    },
+    {
+      "id": "family_64d8c007ee2a0a97",
+      "display_name": "山中家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山中氏"
+    },
+    {
+      "id": "family_64e7969ae38a8134",
+      "display_name": "加藤家（上野原）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "加藤氏#上野原加藤氏"
+    },
+    {
+      "id": "family_65907922b157d405",
+      "display_name": "間宮家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "間宮氏"
+    },
+    {
+      "id": "family_65d15165b028f598",
+      "display_name": "山名家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山名氏"
+    },
+    {
+      "id": "family_65d8950dc143fdbf",
+      "display_name": "美濃斎藤家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "斎藤氏"
+    },
+    {
+      "id": "family_665aa87b34bff719",
+      "display_name": "甘糟家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "甘糟氏"
+    },
+    {
+      "id": "family_669acd7f54fdc971",
+      "display_name": "荒木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "荒木氏"
+    },
+    {
+      "id": "family_6788f58703766a4b",
+      "display_name": "佐田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "佐田氏"
+    },
+    {
+      "id": "family_67b9bca5606abd86",
+      "display_name": "細野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "細野氏"
+    },
+    {
+      "id": "family_67d89e00fd21e9ae",
+      "display_name": "滝脇松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "滝脇松平家"
+    },
+    {
+      "id": "family_682b313550ae0f02",
+      "display_name": "五井松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "五井松平家"
+    },
+    {
+      "id": "family_6884f925497fd21c",
+      "display_name": "荒尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "荒尾氏"
+    },
+    {
+      "id": "family_68d74d55804e81fb",
+      "display_name": "土井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "土井氏"
+    },
+    {
+      "id": "family_6a0e88a597c10698",
+      "display_name": "古田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "古田氏"
+    },
+    {
+      "id": "family_6a95cc31282a5430",
+      "display_name": "小山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小山氏"
+    },
+    {
+      "id": "family_6aa3049b33be549e",
+      "display_name": "吉良家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "吉良氏"
+    },
+    {
+      "id": "family_6b5ecb413fdd7a4e",
+      "display_name": "小山田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小山田氏"
+    },
+    {
+      "id": "family_6c3748d6034400af",
+      "display_name": "内藤家（三河系）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "内藤氏#内藤氏（三河系）"
+    },
+    {
+      "id": "family_6d00984010d8317e",
+      "display_name": "大沢家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大沢氏"
+    },
+    {
+      "id": "family_6d466431c3296a4e",
+      "display_name": "川上家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "川上氏"
+    },
+    {
+      "id": "family_6dba5b6aff90c480",
+      "display_name": "片岡家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "片岡氏"
+    },
+    {
+      "id": "family_6e5f2835be40b29d",
+      "display_name": "香宗我部家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "香宗我部氏"
+    },
+    {
+      "id": "family_6ea79547b4b61804",
+      "display_name": "坪内家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "坪内氏"
+    },
+    {
+      "id": "family_6ef3f6fc69b13121",
+      "display_name": "吉弘家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "吉弘氏"
+    },
+    {
+      "id": "family_6f04e8f04a6a6911",
+      "display_name": "織田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "織田氏"
+    },
+    {
+      "id": "family_6f19ba8da221c3c3",
+      "display_name": "留守家（水沢伊達家・江戸時代）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "留守氏#水沢伊達家（江戸時代）"
+    },
+    {
+      "id": "family_6f272f8b9b88c51e",
+      "display_name": "斯波家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "斯波氏"
+    },
+    {
+      "id": "family_6f28fd36cf371411",
+      "display_name": "己斐家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "己斐氏"
+    },
+    {
+      "id": "family_6f29b9911d58511c",
+      "display_name": "穴山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "穴山氏"
+    },
+    {
+      "id": "family_702c5505097cd9c3",
+      "display_name": "五代家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "五代氏"
+    },
+    {
+      "id": "family_711290ac283fef78",
+      "display_name": "三上家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三上氏"
+    },
+    {
+      "id": "family_71ace621994cb761",
+      "display_name": "立花家（三池藩主立花家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "立花氏#三池藩主立花家"
+    },
+    {
+      "id": "family_726c3af3f6222f4d",
+      "display_name": "塚原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "塚原氏"
+    },
+    {
+      "id": "family_7286751d348727d6",
+      "display_name": "紀州徳川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "紀州徳川家"
+    },
+    {
+      "id": "family_72d853e7c1426ee8",
+      "display_name": "久松松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "久松氏"
+    },
+    {
+      "id": "family_73546229903fb31f",
+      "display_name": "田村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "田村氏"
+    },
+    {
+      "id": "family_73a71361f34e37ee",
+      "display_name": "福田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "福田氏"
+    },
+    {
+      "id": "family_7461387ed27493e9",
+      "display_name": "東条松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "東条松平家"
+    },
+    {
+      "id": "family_747a259ee46c5ebb",
+      "display_name": "大野家（伊予国）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大野氏 (伊予国)"
+    },
+    {
+      "id": "family_74947be789e7afdc",
+      "display_name": "塩屋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "塩屋氏"
+    },
+    {
+      "id": "family_74ac0d1b29fcee73",
+      "display_name": "粟屋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "粟屋氏"
+    },
+    {
+      "id": "family_74b4e2b8f7e15b94",
+      "display_name": "栗原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "栗原氏"
+    },
+    {
+      "id": "family_7557674e76ba8e2a",
+      "display_name": "白井長尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "白井長尾氏"
+    },
+    {
+      "id": "family_755fe12296649ae6",
+      "display_name": "栗山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "栗山氏"
+    },
+    {
+      "id": "family_75ec29c49c870974",
+      "display_name": "海北家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "海北氏"
+    },
+    {
+      "id": "family_7652722a17d46058",
+      "display_name": "甘粕家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "甘粕氏"
+    },
+    {
+      "id": "family_76ff77db76e67029",
+      "display_name": "桂家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "桂氏"
+    },
+    {
+      "id": "family_771bfdafff72018e",
+      "display_name": "高梨家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "高梨氏"
+    },
+    {
+      "id": "family_77daa8419e54e96e",
+      "display_name": "増田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "増田氏"
+    },
+    {
+      "id": "family_77db3687be6a50b9",
+      "display_name": "上坂家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "上坂氏"
+    },
+    {
+      "id": "family_7825da72eab9ad5e",
+      "display_name": "宇山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "宇山氏"
+    },
+    {
+      "id": "family_783ab0ccb433bc9e",
+      "display_name": "土岐家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "土岐氏"
+    },
+    {
+      "id": "family_785d4d25d7089d36",
+      "display_name": "千賀家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "千賀氏"
+    },
+    {
+      "id": "family_785f4bc8da379284",
+      "display_name": "乃美家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "乃美氏"
+    },
+    {
+      "id": "family_795bbffc7a28fa90",
+      "display_name": "島津家（薩州）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "薩州家"
+    },
+    {
+      "id": "family_7a618a10de3b9d5c",
+      "display_name": "上林家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "上林氏"
+    },
+    {
+      "id": "family_7ae0d7b5c64a9d57",
+      "display_name": "波多野家（丹波）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "波多野氏#丹波波多野氏"
+    },
+    {
+      "id": "family_7aea2c3796b5cb85",
+      "display_name": "榊原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "榊原氏"
+    },
+    {
+      "id": "family_7ba8b8ac2f351608",
+      "display_name": "池内家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "池内氏"
+    },
+    {
+      "id": "family_7c692c80c2f75926",
+      "display_name": "多羅尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "多羅尾氏"
+    },
+    {
+      "id": "family_7caf580d727e56c2",
+      "display_name": "今川家（今川那古野家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "今川氏#今川那古野家"
+    },
+    {
+      "id": "family_7d140ab237fd2c63",
+      "display_name": "渡辺家（三河）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "渡辺氏#三河渡辺氏"
+    },
+    {
+      "id": "family_7d22e73e0dd69264",
+      "display_name": "陶家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "陶氏"
+    },
+    {
+      "id": "family_7d32342e5610e52b",
+      "display_name": "清水家（備中国の）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "清水氏#備中国の清水氏"
+    },
+    {
+      "id": "family_7d96ead1799b9cc8",
+      "display_name": "鹿伏兎家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "鹿伏兎氏"
+    },
+    {
+      "id": "family_7dbc900a2d10c4d5",
+      "display_name": "支倉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "支倉氏"
+    },
+    {
+      "id": "family_7dc9df8ff35c8ff9",
+      "display_name": "埴原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "埴原氏"
+    },
+    {
+      "id": "family_7e0138e732aa99f1",
+      "display_name": "加木屋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "加木屋氏"
+    },
+    {
+      "id": "family_7e3e53c7936def35",
+      "display_name": "柿崎家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "柿崎氏"
+    },
+    {
+      "id": "family_7e6f0efdd8b46ef5",
+      "display_name": "下曾根家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "下曾根氏"
+    },
+    {
+      "id": "family_7e7006021200d36f",
+      "display_name": "清水家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "清水氏"
+    },
+    {
+      "id": "family_7fb62d057fe3be25",
+      "display_name": "野上家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "野上氏"
+    },
+    {
+      "id": "family_80127a6d7ecd53b1",
+      "display_name": "備中三村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三村氏"
+    },
+    {
+      "id": "family_802fad53253acc3d",
+      "display_name": "片倉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "片倉氏"
+    },
+    {
+      "id": "family_803fc756a07ed97d",
+      "display_name": "一色家（式部一色家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "一色氏#式部一色家"
+    },
+    {
+      "id": "family_807cff1fc70c87c6",
+      "display_name": "進藤家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "進藤氏"
+    },
+    {
+      "id": "family_808cfd86fb5facbe",
+      "display_name": "畠山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "畠山氏"
+    },
+    {
+      "id": "family_8136b92118bf86f8",
+      "display_name": "弘中家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "弘中氏"
+    },
+    {
+      "id": "family_81c33b7c96b1953a",
+      "display_name": "大山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大山氏"
+    },
+    {
+      "id": "family_81e516d0a7b0691e",
+      "display_name": "清洲三奉行家（藤左衛門家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "清洲三奉行#藤左衛門家"
+    },
+    {
+      "id": "family_82753596ec31f9a3",
+      "display_name": "長谷川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長谷川氏"
+    },
+    {
+      "id": "family_82b08a5e746a47e1",
+      "display_name": "阿閉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "阿閉氏"
+    },
+    {
+      "id": "family_82d375fbe4db51fb",
+      "display_name": "千葉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "千葉氏"
+    },
+    {
+      "id": "family_8398b53227fd0adf",
+      "display_name": "阿部家（阿部正勝流）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "阿部氏 (徳川譜代)#阿部正勝流"
+    },
+    {
+      "id": "family_83df8935c5ef72ef",
+      "display_name": "湯家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "湯氏"
+    },
+    {
+      "id": "family_843b43b0711df16d",
+      "display_name": "明智家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "明智氏"
+    },
+    {
+      "id": "family_846ea62f08b8792d",
+      "display_name": "三好家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三好氏"
+    },
+    {
+      "id": "family_8579911b3f712938",
+      "display_name": "足利将軍家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "足利将軍家"
+    },
+    {
+      "id": "family_85d069d139cab8d1",
+      "display_name": "宇佐美家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "宇佐美氏"
+    },
+    {
+      "id": "family_86aececd8df1bb58",
+      "display_name": "赤座家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "赤座氏"
+    },
+    {
+      "id": "family_86eed8eae1b4e5bd",
+      "display_name": "今村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "今村氏"
+    },
+    {
+      "id": "family_871d2bc6abc88ae1",
+      "display_name": "吉江家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "吉江氏"
+    },
+    {
+      "id": "family_873b3b9f66b9e621",
+      "display_name": "伊木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "伊木家"
+    },
+    {
+      "id": "family_8748ec1eb5d30cbd",
+      "display_name": "小早川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小早川氏"
+    },
+    {
+      "id": "family_878a1f70a5d7bf67",
+      "display_name": "葛山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "葛山氏"
+    },
+    {
+      "id": "family_87ed65f5799596ca",
+      "display_name": "安見家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安見氏"
+    },
+    {
+      "id": "family_8855621a65b04796",
+      "display_name": "野村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "野村氏"
+    },
+    {
+      "id": "family_8865f60abec9d6f5",
+      "display_name": "近江和田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "近江和田氏"
+    },
+    {
+      "id": "family_88bc3c0005d37b79",
+      "display_name": "相馬家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "相馬氏"
+    },
+    {
+      "id": "family_89740df57102cff5",
+      "display_name": "堀家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "堀氏"
+    },
+    {
+      "id": "family_897f069ee54dfc10",
+      "display_name": "左右田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "左右田氏"
+    },
+    {
+      "id": "family_898c2c67b4e7ae77",
+      "display_name": "亘理家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "亘理氏"
+    },
+    {
+      "id": "family_89d7aac07a8e43e5",
+      "display_name": "朝倉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "朝倉氏"
+    },
+    {
+      "id": "family_8a07aaaee4791079",
+      "display_name": "黒木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "黒木氏"
+    },
+    {
+      "id": "family_8a47f4a489a58e4d",
+      "display_name": "富永家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "富永氏"
+    },
+    {
+      "id": "family_8a9ae99932addc76",
+      "display_name": "諏訪部家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "諏訪部氏"
+    },
+    {
+      "id": "family_8b413b97dea00305",
+      "display_name": "九鬼家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "九鬼氏"
+    },
+    {
+      "id": "family_8c07338fc5f48225",
+      "display_name": "大久保家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大久保氏"
+    },
+    {
+      "id": "family_8c0fdb949dfd98ba",
+      "display_name": "大舘家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大舘氏"
+    },
+    {
+      "id": "family_8c499192e0996d7a",
+      "display_name": "跡部家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "跡部氏"
+    },
+    {
+      "id": "family_8cd875b1db4f6d11",
+      "display_name": "内藤家家（信成系）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "内藤家 (信成系)"
+    },
+    {
+      "id": "family_8cec6c1fdaf619db",
+      "display_name": "杉原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "杉原氏"
+    },
+    {
+      "id": "family_8d7075a57aabdecd",
+      "display_name": "板倉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "板倉氏"
+    },
+    {
+      "id": "family_8d7369ac39e20b52",
+      "display_name": "相良家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "相良氏"
+    },
+    {
+      "id": "family_8d82493547e517eb",
+      "display_name": "大崎家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大崎氏"
+    },
+    {
+      "id": "family_8e234b5475015913",
+      "display_name": "一色家（丹後一色家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "一色氏#丹後一色家"
+    },
+    {
+      "id": "family_8e7858ba50296d7c",
+      "display_name": "国司家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "国司氏"
+    },
+    {
+      "id": "family_8f1ac706e364c9b1",
+      "display_name": "千本家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "千本氏"
+    },
+    {
+      "id": "family_8f4d8c0803a77501",
+      "display_name": "丸毛家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "丸毛氏"
+    },
+    {
+      "id": "family_904a6af44c0d7c07",
+      "display_name": "保科家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "保科氏"
+    },
+    {
+      "id": "family_90c08510b7e646c2",
+      "display_name": "高山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "高山氏"
+    },
+    {
+      "id": "family_90cd6307cb953db1",
+      "display_name": "椎名家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "椎名氏"
+    },
+    {
+      "id": "family_9150412cd99e5e79",
+      "display_name": "奥平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "奥平氏"
+    },
+    {
+      "id": "family_921ff5a010a278ef",
+      "display_name": "三雲家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三雲氏"
+    },
+    {
+      "id": "family_9249394c6a5d8b5c",
+      "display_name": "成沢家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "成沢氏"
+    },
+    {
+      "id": "family_9293820bbe5573e9",
+      "display_name": "小田切家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小田切氏"
+    },
+    {
+      "id": "family_932522d44df11fe4",
+      "display_name": "須田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "須田氏"
+    },
+    {
+      "id": "family_9349e246eb11d62e",
+      "display_name": "天羽家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "天羽氏"
+    },
+    {
+      "id": "family_937a8b45120c0655",
+      "display_name": "清洲織田家（織田大和守家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "織田氏"
+    },
+    {
+      "id": "family_93cdafe7595c6877",
+      "display_name": "秋田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "秋田氏"
+    },
+    {
+      "id": "family_94556fe1e5964a39",
+      "display_name": "桜庭家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "桜庭氏"
+    },
+    {
+      "id": "family_94c59a93c8474e06",
+      "display_name": "関家（美濃）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "関氏#美濃関氏"
+    },
+    {
+      "id": "family_951ab8d5db31569a",
+      "display_name": "高力家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "高力氏"
+    },
+    {
+      "id": "family_958b6a3d579dfaeb",
+      "display_name": "島津家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "島津氏"
+    },
+    {
+      "id": "family_95afd8ccc0e53ef9",
+      "display_name": "本庄家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "本庄氏"
+    },
+    {
+      "id": "family_95d2a8ce51783283",
+      "display_name": "土居家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "土居氏"
+    },
+    {
+      "id": "family_965cd86c80678cb3",
+      "display_name": "稲葉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "稲葉氏"
+    },
+    {
+      "id": "family_97ae13234e3d1ad4",
+      "display_name": "織田弾正忠家（勝幡織田氏）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "織田氏"
+    },
+    {
+      "id": "family_97b5051c9e009b8b",
+      "display_name": "甲斐家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "甲斐氏"
+    },
+    {
+      "id": "family_9801504624b97ef1",
+      "display_name": "赤池家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "赤池氏"
+    },
+    {
+      "id": "family_984c362beaae50e3",
+      "display_name": "森迫家（緒方一族の）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "森迫氏#緒方一族の森迫氏"
+    },
+    {
+      "id": "family_987b96bcb5528b10",
+      "display_name": "遊佐家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "遊佐氏"
+    },
+    {
+      "id": "family_993bd54949e1539d",
+      "display_name": "多功家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "多功氏"
+    },
+    {
+      "id": "family_993e7fc7249b89cc",
+      "display_name": "工藤家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "工藤氏"
+    },
+    {
+      "id": "family_99756c86febb4aee",
+      "display_name": "皆川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "皆川氏"
+    },
+    {
+      "id": "family_99d111cbeed96033",
+      "display_name": "安芸家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安芸氏"
+    },
+    {
+      "id": "family_9a1a09aa1a3898c8",
+      "display_name": "飯富家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "飯富氏"
+    },
+    {
+      "id": "family_9af42ba9b229df44",
+      "display_name": "菅沼家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "菅沼氏"
+    },
+    {
+      "id": "family_9b2ced4bcb0ce78a",
+      "display_name": "大熊家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大熊氏"
+    },
+    {
+      "id": "family_9baf3a065fc9ffb6",
+      "display_name": "北家（剣吉）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "北氏#剣吉北氏"
+    },
+    {
+      "id": "family_9bfc63aa37bcb9a2",
+      "display_name": "清田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "清田氏"
+    },
+    {
+      "id": "family_9c43562edccd2587",
+      "display_name": "戸田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "戸田氏"
+    },
+    {
+      "id": "family_9c604284d477c48a",
+      "display_name": "市橋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "市橋氏"
+    },
+    {
+      "id": "family_9cfe04cf4d214b32",
+      "display_name": "下野小野寺家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "下野小野寺氏"
+    },
+    {
+      "id": "family_9d145d0663a333d3",
+      "display_name": "依田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "依田氏"
+    },
+    {
+      "id": "family_9d485c0110873c6d",
+      "display_name": "今田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "今田氏"
+    },
+    {
+      "id": "family_9d83b384eb2ecfe9",
+      "display_name": "藤田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "藤田氏"
+    },
+    {
+      "id": "family_9dd777f9a63a9130",
+      "display_name": "岡田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "岡田氏"
+    },
+    {
+      "id": "family_9e88cff440e15951",
+      "display_name": "滝川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "滝川氏"
+    },
+    {
+      "id": "family_9e899e83fda581fc",
+      "display_name": "甘利家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "甘利氏"
+    },
+    {
+      "id": "family_9ed974ed38023978",
+      "display_name": "相模三浦家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "相模三浦氏"
+    },
+    {
+      "id": "family_9f3340133cfe02aa",
+      "display_name": "河尻家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "河尻氏"
+    },
+    {
+      "id": "family_9f9d2ae471b1ea46",
+      "display_name": "安田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安田氏"
+    },
+    {
+      "id": "family_9fa7a1553f7ba000",
+      "display_name": "三河安藤家（重信系）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三河安藤氏#重信系"
+    },
+    {
+      "id": "family_9fd05b7046dd53c2",
+      "display_name": "武田信貞家（曖昧さ回避）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "武田信貞 (曖昧さ回避)"
+    },
+    {
+      "id": "family_a03a0f454cb0f5e7",
+      "display_name": "植村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "植村氏"
+    },
+    {
+      "id": "family_a1db20e2ca5f8e07",
+      "display_name": "加藤家（利仁流）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "加藤氏#利仁流加藤氏"
+    },
+    {
+      "id": "family_a283a1a5239b6dd2",
+      "display_name": "志道家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "志道氏"
+    },
+    {
+      "id": "family_a31ce6414edbe084",
+      "display_name": "根津家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "根津氏"
+    },
+    {
+      "id": "family_a3544f5ce22e4b2a",
+      "display_name": "厳島神主家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "厳島神主家"
+    },
+    {
+      "id": "family_a36410e23d1b7ab3",
+      "display_name": "犬童家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "犬童氏"
+    },
+    {
+      "id": "family_a3b13245294d43a6",
+      "display_name": "深谷家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "深谷上杉氏"
+    },
+    {
+      "id": "family_a3c27bf6c5b4e902",
+      "display_name": "富田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "富田氏"
+    },
+    {
+      "id": "family_a4719f71bb840209",
+      "display_name": "花井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "花井氏"
+    },
+    {
+      "id": "family_a4a37ac5945cb95a",
+      "display_name": "木曾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "木曾氏"
+    },
+    {
+      "id": "family_a4d1256f8e6a289d",
+      "display_name": "備中清水家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "清水氏"
+    },
+    {
+      "id": "family_a55c5187191bb551",
+      "display_name": "真田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "真田氏"
+    },
+    {
+      "id": "family_a5d4250162df6d69",
+      "display_name": "小西家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小西氏"
+    },
+    {
+      "id": "family_a5f929e16a033372",
+      "display_name": "直江家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "直江氏"
+    },
+    {
+      "id": "family_a5f9c21179a323b7",
+      "display_name": "牧野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "牧野氏"
+    },
+    {
+      "id": "family_a724b81d84e4cc3d",
+      "display_name": "日根野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "日根野氏"
+    },
+    {
+      "id": "family_a77213a469477459",
+      "display_name": "水谷家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "水谷氏"
+    },
+    {
+      "id": "family_a7f829842f7ca7ab",
+      "display_name": "大川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大川氏"
+    },
+    {
+      "id": "family_a81ebc78d6e26b5f",
+      "display_name": "新城家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "新城氏"
+    },
+    {
+      "id": "family_a83b1275a23e9fdc",
+      "display_name": "保土原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "保土原氏"
+    },
+    {
+      "id": "family_a87101afc5d732c5",
+      "display_name": "長屋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長屋氏"
+    },
+    {
+      "id": "family_a8758743657115a9",
+      "display_name": "大井家（小笠原氏族）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大井氏#大井氏（小笠原氏族）"
+    },
+    {
+      "id": "family_a898b6fe2b7ee57c",
+      "display_name": "難波田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "難波田氏"
+    },
+    {
+      "id": "family_a898d52fc46153ce",
+      "display_name": "一条家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "甲斐一条氏"
+    },
+    {
+      "id": "family_a91672c5dca58913",
+      "display_name": "和智家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "和智氏"
+    },
+    {
+      "id": "family_a98738a230732c25",
+      "display_name": "浅井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "浅井氏"
+    },
+    {
+      "id": "family_a9d9d4785a5d7fe9",
+      "display_name": "林家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "林氏"
+    },
+    {
+      "id": "family_aa25168d3dd0530e",
+      "display_name": "佐久間家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "佐久間氏"
+    },
+    {
+      "id": "family_aa60effb68e11b23",
+      "display_name": "金森家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "金森氏"
+    },
+    {
+      "id": "family_aa7caebde10f4ba5",
+      "display_name": "小泉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小泉氏"
+    },
+    {
+      "id": "family_aad750af87a9581a",
+      "display_name": "宗家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "宗氏"
+    },
+    {
+      "id": "family_aadf11acff5eb838",
+      "display_name": "勝浦正木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安房正木氏"
+    },
+    {
+      "id": "family_ab429da15c9571b0",
+      "display_name": "大関家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大関氏"
+    },
+    {
+      "id": "family_ad2c7028713a0dbd",
+      "display_name": "河野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "河野氏"
+    },
+    {
+      "id": "family_ae0aaa9abfc69a07",
+      "display_name": "中村家（因幡国）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "中村氏 (因幡国)"
+    },
+    {
+      "id": "family_ae5429769403fff7",
+      "display_name": "蜂屋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "蜂屋氏"
+    },
+    {
+      "id": "family_aeaf626ba28aa561",
+      "display_name": "足利家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "足利氏"
+    },
+    {
+      "id": "family_aed0b69248d18728",
+      "display_name": "楠木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "楠木氏"
+    },
+    {
+      "id": "family_af9c6a85d355887f",
+      "display_name": "上田長尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "上田長尾氏"
+    },
+    {
+      "id": "family_aff40c6a1760edb0",
+      "display_name": "津軽家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "津軽氏"
+    },
+    {
+      "id": "family_b005d059a85ccf71",
+      "display_name": "明知遠山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "明知遠山氏"
+    },
+    {
+      "id": "family_b0ba98dd7a3e7b13",
+      "display_name": "鳥居家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "鳥居氏"
+    },
+    {
+      "id": "family_b0fba7daf3a7e72a",
+      "display_name": "馬場家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "馬場氏"
+    },
+    {
+      "id": "family_b1fdbcac077b985e",
+      "display_name": "明石家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "明石氏"
+    },
+    {
+      "id": "family_b3fdfb7b8b204362",
+      "display_name": "山内家（備後）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山内氏#備後山内氏"
+    },
+    {
+      "id": "family_b4169fa29c4e4dcf",
+      "display_name": "志田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "志田氏"
+    },
+    {
+      "id": "family_b42853477a571f83",
+      "display_name": "酒巻家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "酒巻氏"
+    },
+    {
+      "id": "family_b434984ff9e4dc5b",
+      "display_name": "天野家（金明山）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "天野氏#金明山天野氏"
+    },
+    {
+      "id": "family_b455438971244b9a",
+      "display_name": "赤尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "赤尾氏"
+    },
+    {
+      "id": "family_b4cc7996870f2a9a",
+      "display_name": "三沢家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三沢氏"
+    },
+    {
+      "id": "family_b52d658f35bb9b5f",
+      "display_name": "安東家（湊家・湊）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安東氏#湊家（湊安東氏）"
+    },
+    {
+      "id": "family_b58ece0592d8c404",
+      "display_name": "畠山家（畠山尾州家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "畠山氏#畠山尾州家"
+    },
+    {
+      "id": "family_b5d1c0c5106a9ca1",
+      "display_name": "新庄家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "新庄氏"
+    },
+    {
+      "id": "family_b616f3b06377731c",
+      "display_name": "右田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "右田氏"
+    },
+    {
+      "id": "family_b62a4bc7d1c5242e",
+      "display_name": "宇和島伊達家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "伊達氏"
+    },
+    {
+      "id": "family_b69626475eba42ed",
+      "display_name": "狭間家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "狭間氏"
+    },
+    {
+      "id": "family_b6e8ecddd7c8fcf6",
+      "display_name": "下間家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "下間氏"
+    },
+    {
+      "id": "family_b72a1f68e3eefbef",
+      "display_name": "亘理家（涌谷伊達家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "亘理氏#涌谷伊達家"
+    },
+    {
+      "id": "family_b7394a9b00513a90",
+      "display_name": "平佐家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "平佐氏"
+    },
+    {
+      "id": "family_b75d20c8f9304d0d",
+      "display_name": "長岡家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長岡氏"
+    },
+    {
+      "id": "family_b85545587dbbd469",
+      "display_name": "高木家（三河）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "高木氏#三河高木氏"
+    },
+    {
+      "id": "family_b8590ecd56f9b170",
+      "display_name": "安田家（桓武平氏）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安田氏#安田氏（桓武平氏）"
+    },
+    {
+      "id": "family_b8a96cb54586429c",
+      "display_name": "原家（土岐氏族）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "原氏#原氏 (土岐氏族)"
+    },
+    {
+      "id": "family_bb1933a2715c84f1",
+      "display_name": "妻木広忠家（妻木氏系譜）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "妻木広忠#妻木氏系譜"
+    },
+    {
+      "id": "family_bbafa2a2bb3b6da6",
+      "display_name": "山岡家（武家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山岡氏 (武家)"
+    },
+    {
+      "id": "family_bbbe87eac6ed3542",
+      "display_name": "小野家（筑後国）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小野氏 (筑後国)"
+    },
+    {
+      "id": "family_bc227b6e1c1e2049",
+      "display_name": "船越家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "船越氏"
+    },
+    {
+      "id": "family_bc36b88bde595e9e",
+      "display_name": "兼松家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "兼松氏"
+    },
+    {
+      "id": "family_bc66df5ad53a0f31",
+      "display_name": "和賀家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "和賀氏"
+    },
+    {
+      "id": "family_bd404e733c4a183d",
+      "display_name": "長束家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長束氏"
+    },
+    {
+      "id": "family_bd5d9234e1cf456b",
+      "display_name": "奥平家（奥平松平家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "奥平氏#奥平松平家"
+    },
+    {
+      "id": "family_be80f49c67988740",
+      "display_name": "平岩家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "平岩氏"
+    },
+    {
+      "id": "family_be876167d983850b",
+      "display_name": "尼子家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "尼子氏"
+    },
+    {
+      "id": "family_be9400c86d1c4534",
+      "display_name": "戸川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "戸川氏"
+    },
+    {
+      "id": "family_becb882bce7614ef",
+      "display_name": "安祥松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "松平氏"
+    },
+    {
+      "id": "family_becc6f800082502f",
+      "display_name": "大井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大井氏"
+    },
+    {
+      "id": "family_bf693b2169107a9e",
+      "display_name": "松田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "松田氏"
+    },
+    {
+      "id": "family_bfa9c13a29bd403e",
+      "display_name": "筑紫家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "筑紫氏"
+    },
+    {
+      "id": "family_bfbb929a9e1c78f3",
+      "display_name": "宮部家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "宮部氏"
+    },
+    {
+      "id": "family_c0345a692e7d3c4d",
+      "display_name": "長家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長氏"
+    },
+    {
+      "id": "family_c0620bf6dbd6ae9a",
+      "display_name": "木幡家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "木幡氏"
+    },
+    {
+      "id": "family_c0f083f7cc648864",
+      "display_name": "真里谷家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "真里谷氏"
+    },
+    {
+      "id": "family_c1863f402e6f9b3d",
+      "display_name": "松井松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三河松井氏"
+    },
+    {
+      "id": "family_c1a61ed9640cd435",
+      "display_name": "多賀谷家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "多賀谷氏"
+    },
+    {
+      "id": "family_c2332f2d97311a18",
+      "display_name": "越前松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "越前松平家"
+    },
+    {
+      "id": "family_c23927e91fa58d10",
+      "display_name": "中西家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "中西氏"
+    },
+    {
+      "id": "family_c2782a8c7e443ca3",
+      "display_name": "安東家（下国家・檜山）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安東氏#下国家（檜山安東氏）"
+    },
+    {
+      "id": "family_c2d313abff5a9516",
+      "display_name": "天野家（生城山）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "天野氏#生城山天野氏"
+    },
+    {
+      "id": "family_c3b83d72dfe14e4d",
+      "display_name": "西尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "西尾氏"
+    },
+    {
+      "id": "family_c3e5b99b19830a77",
+      "display_name": "大田原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大田原氏"
+    },
+    {
+      "id": "family_c3f8293aebebc83f",
+      "display_name": "脇坂家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "脇坂氏"
+    },
+    {
+      "id": "family_c40a56ee9ff8e573",
+      "display_name": "二本松家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "二本松氏"
+    },
+    {
+      "id": "family_c44b275cc452484f",
+      "display_name": "平井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "平井氏"
+    },
+    {
+      "id": "family_c47952f7a25cb329",
+      "display_name": "松下家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "松下氏"
+    },
+    {
+      "id": "family_c4ad4a4098930437",
+      "display_name": "近藤家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "近藤氏"
+    },
+    {
+      "id": "family_c4c10dc322e92a27",
+      "display_name": "三木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三木氏"
+    },
+    {
+      "id": "family_c54e6b5bdb648ea4",
+      "display_name": "安宅家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安宅氏"
+    },
+    {
+      "id": "family_c657d715e0136d6e",
+      "display_name": "福釜松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "福釜松平家"
+    },
+    {
+      "id": "family_c6f7271a3436dd25",
+      "display_name": "秋月家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "秋月氏"
+    },
+    {
+      "id": "family_c70aa19183a62dcc",
+      "display_name": "悪家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "悪氏"
+    },
+    {
+      "id": "family_c7135fa43df35353",
+      "display_name": "水野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "水野氏"
+    },
+    {
+      "id": "family_c7760b810ba63bf1",
+      "display_name": "庵原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "庵原氏"
+    },
+    {
+      "id": "family_c7cb99bb5ce76542",
+      "display_name": "伊集院家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "伊集院氏"
+    },
+    {
+      "id": "family_c7d6a62a3bd53a68",
+      "display_name": "勝家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "勝氏"
+    },
+    {
+      "id": "family_c7f714d3a3c57f95",
+      "display_name": "森家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "森氏"
+    },
+    {
+      "id": "family_c81008c4360e8c15",
+      "display_name": "牧村家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "牧村氏"
+    },
+    {
+      "id": "family_c8204366e084c3b8",
+      "display_name": "近江浅井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "浅井氏"
+    },
+    {
+      "id": "family_c85d81c6d6b02cc6",
+      "display_name": "木下家（足守木下家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "木下氏#足守木下家"
+    },
+    {
+      "id": "family_c8a0f99661dec1f7",
+      "display_name": "禰寝家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "禰寝氏"
+    },
+    {
+      "id": "family_c8ab407466f1afff",
+      "display_name": "松浦家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "松浦氏"
+    },
+    {
+      "id": "family_c8e638c67e7d2a5a",
+      "display_name": "将軍家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "足利将軍家"
+    },
+    {
+      "id": "family_c9963071c87000cb",
+      "display_name": "長坂家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長坂氏"
+    },
+    {
+      "id": "family_c9a38e99552755bb",
+      "display_name": "成田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "成田氏"
+    },
+    {
+      "id": "family_ca75c628770d16be",
+      "display_name": "大谷家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大谷氏"
+    },
+    {
+      "id": "family_cae10a44a5ad959f",
+      "display_name": "河崎家（日向国）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "河崎氏 (日向国)"
+    },
+    {
+      "id": "family_cb23d7f166b6ab4c",
+      "display_name": "千坂家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "千坂氏"
+    },
+    {
+      "id": "family_ccc506f31e9550b8",
+      "display_name": "小林家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小林氏"
+    },
+    {
+      "id": "family_cd1ee0ba0cbb8d54",
+      "display_name": "小野寺家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小野寺氏"
+    },
+    {
+      "id": "family_cd4151b52688ce6b",
+      "display_name": "龍造寺家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "龍造寺氏"
+    },
+    {
+      "id": "family_cd430a7a8ef22d79",
+      "display_name": "石田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "石田氏"
+    },
+    {
+      "id": "family_cd8f96135fdf630d",
+      "display_name": "入来院家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "入来院氏"
+    },
+    {
+      "id": "family_cde28254094d1290",
+      "display_name": "益田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "益田氏"
+    },
+    {
+      "id": "family_cf33d369de7a74a7",
+      "display_name": "谷家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "谷氏"
+    },
+    {
+      "id": "family_cf7e40e2df8898cd",
+      "display_name": "下総千葉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "千葉氏"
+    },
+    {
+      "id": "family_cf9fff73f03d598d",
+      "display_name": "播磨三木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "播磨三木氏"
+    },
+    {
+      "id": "family_d0185ec0c3d514d2",
+      "display_name": "本山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "本山氏"
+    },
+    {
+      "id": "family_d033b1320c615a50",
+      "display_name": "魚住家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "魚住氏"
+    },
+    {
+      "id": "family_d04e8c0d0651ee89",
+      "display_name": "伴家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大伴氏"
+    },
+    {
+      "id": "family_d0ec4862447f5426",
+      "display_name": "野田菅沼家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "菅沼氏"
+    },
+    {
+      "id": "family_d29960d69f8d49e3",
+      "display_name": "小寺家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小寺氏"
+    },
+    {
+      "id": "family_d2d134955f803d91",
+      "display_name": "島津家（豊州）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "豊州家"
+    },
+    {
+      "id": "family_d340ed4bb00b3377",
+      "display_name": "肥前石井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "肥前石井氏"
+    },
+    {
+      "id": "family_d3e43ce800953b20",
+      "display_name": "土佐一条家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "土佐一条氏"
+    },
+    {
+      "id": "family_d40c09c9b2eb8182",
+      "display_name": "種子島家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "種子島氏"
+    },
+    {
+      "id": "family_d58451fdd355e69f",
+      "display_name": "氏家家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "氏家氏"
+    },
+    {
+      "id": "family_d5861f22a0df6af0",
+      "display_name": "羽田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "羽田氏"
+    },
+    {
+      "id": "family_d60dbbf195024b4a",
+      "display_name": "竹中氏陣屋家（竹中氏）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "竹中氏陣屋#竹中氏"
+    },
+    {
+      "id": "family_d64d97be9de82b8d",
+      "display_name": "新納家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "新納氏"
+    },
+    {
+      "id": "family_d683eafc791f5621",
+      "display_name": "荻野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "荻野氏"
+    },
+    {
+      "id": "family_d6e835a7448b2563",
+      "display_name": "成富家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "成富氏"
+    },
+    {
+      "id": "family_d7221bf965f7a5c3",
+      "display_name": "長井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長井氏"
+    },
+    {
+      "id": "family_d73b437d4b15f6aa",
+      "display_name": "富岡家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "富岡氏"
+    },
+    {
+      "id": "family_d74656b7e8254eeb",
+      "display_name": "尾張徳川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "尾張徳川家"
+    },
+    {
+      "id": "family_d798fb10268457d2",
+      "display_name": "徳山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "徳山氏"
+    },
+    {
+      "id": "family_d86576d121bf2497",
+      "display_name": "樋口家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "樋口氏"
+    },
+    {
+      "id": "family_d882843fdced7e8a",
+      "display_name": "落合家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "落合氏"
+    },
+    {
+      "id": "family_d96c16d2afa7a82b",
+      "display_name": "九戸家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "九戸氏"
+    },
+    {
+      "id": "family_d99e03145cd46d32",
+      "display_name": "京極家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "京極氏"
+    },
+    {
+      "id": "family_d9aa8a2c1eccd519",
+      "display_name": "蒲生家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "蒲生氏"
+    },
+    {
+      "id": "family_d9f3fc400a868267",
+      "display_name": "青山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "青山氏"
+    },
+    {
+      "id": "family_da185e0ac7b38d9f",
+      "display_name": "大道寺家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大道寺氏"
+    },
+    {
+      "id": "family_da5363c0a3b0f9e5",
+      "display_name": "筒井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "筒井氏"
+    },
+    {
+      "id": "family_da6a692dba10e56f",
+      "display_name": "田丸家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "田丸氏"
+    },
+    {
+      "id": "family_db032875a64da290",
+      "display_name": "岡部家（藤原南家）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "岡部氏 (藤原南家)"
+    },
+    {
+      "id": "family_dbb570fce0a67dca",
+      "display_name": "品川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "品川氏"
+    },
+    {
+      "id": "family_dbe89acc116d587e",
+      "display_name": "丸目家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "丸目氏"
+    },
+    {
+      "id": "family_dc7bb04922821673",
+      "display_name": "古川家（飛騨）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "古川氏#飛騨古川氏"
+    },
+    {
+      "id": "family_dcda0cdb0d72bc96",
+      "display_name": "山本家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三河山本氏"
+    },
+    {
+      "id": "family_dd08cdfbb4c97ed6",
+      "display_name": "大内家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大内氏"
+    },
+    {
+      "id": "family_de2461cd992783ef",
+      "display_name": "能見松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "能見松平家"
+    },
+    {
+      "id": "family_de4f82572cf6ae82",
+      "display_name": "大石家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大石氏"
+    },
+    {
+      "id": "family_dee4cb8a39662483",
+      "display_name": "豊臣家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "豊臣氏"
+    },
+    {
+      "id": "family_df28226ee1d01d48",
+      "display_name": "蘆名家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "蘆名氏"
+    },
+    {
+      "id": "family_df74cfd1c9e001fd",
+      "display_name": "柴崎家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "柴崎氏"
+    },
+    {
+      "id": "family_df9ef5d447c282b3",
+      "display_name": "金上家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "金上氏"
+    },
+    {
+      "id": "family_e049ac55f8ef6ba7",
+      "display_name": "志賀家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "志賀氏"
+    },
+    {
+      "id": "family_e083f3ec6850668f",
+      "display_name": "花房家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "花房氏"
+    },
+    {
+      "id": "family_e29233867934f84b",
+      "display_name": "平賀家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "平賀氏"
+    },
+    {
+      "id": "family_e2c7d1085025efec",
+      "display_name": "丹羽家（一色）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "丹羽氏#一色丹羽氏"
+    },
+    {
+      "id": "family_e321e2d8ba97d37a",
+      "display_name": "知久家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "知久氏"
+    },
+    {
+      "id": "family_e3d9ab698eb362e4",
+      "display_name": "渋川家（九州探題系）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "渋川氏#九州探題系"
+    },
+    {
+      "id": "family_e5079d1451c0b649",
+      "display_name": "小畠家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小畠氏"
+    },
+    {
+      "id": "family_e51bdb21bf37d54e",
+      "display_name": "奥山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "奥山氏"
+    },
+    {
+      "id": "family_e53ae4f18dc116b3",
+      "display_name": "美濃横山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "横山氏"
+    },
+    {
+      "id": "family_e5c958d1dd21845b",
+      "display_name": "渡辺家（摂津国と摂津源氏）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "渡辺氏#摂津国渡辺氏と摂津源氏"
+    },
+    {
+      "id": "family_e684ba5ab3f5a153",
+      "display_name": "水原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "水原氏"
+    },
+    {
+      "id": "family_e759c74374b69d92",
+      "display_name": "中川家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "中川氏"
+    },
+    {
+      "id": "family_e7de2497a3db4aa6",
+      "display_name": "喜入家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "喜入氏"
+    },
+    {
+      "id": "family_e7e75e16c77bb6e5",
+      "display_name": "片桐家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "片桐氏"
+    },
+    {
+      "id": "family_e7edf80b99836e3b",
+      "display_name": "長宗我部家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "長宗我部氏"
+    },
+    {
+      "id": "family_e7f5c5b12e0b4814",
+      "display_name": "阿蘇家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "阿蘇氏"
+    },
+    {
+      "id": "family_e7f781362b0f8849",
+      "display_name": "瀬名家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "瀬名氏"
+    },
+    {
+      "id": "family_e80f6375c50d866f",
+      "display_name": "遠江松井家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "遠江松井氏"
+    },
+    {
+      "id": "family_e8a9cc1328f28fdc",
+      "display_name": "一戸家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "一戸氏"
+    },
+    {
+      "id": "family_e8f7b8c0ef19fcc4",
+      "display_name": "井伊家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "井伊氏"
+    },
+    {
+      "id": "family_ea98aa12fddb18b1",
+      "display_name": "小里家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "小里氏"
+    },
+    {
+      "id": "family_eb8eaa75249b025f",
+      "display_name": "池田家（近世大名→華族の）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "池田氏#近世大名→華族の池田氏"
+    },
+    {
+      "id": "family_ebe77facd7a13e85",
+      "display_name": "柴田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "柴田氏"
+    },
+    {
+      "id": "family_ec1a923631d9e6c0",
+      "display_name": "十時家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "十時氏"
+    },
+    {
+      "id": "family_ec7e3778982d26dc",
+      "display_name": "桑折家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "桑折氏"
+    },
+    {
+      "id": "family_ec8d81a5ea8ed2a0",
+      "display_name": "北郷家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "北郷氏"
+    },
+    {
+      "id": "family_ecb29f4831cc4464",
+      "display_name": "朽木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "朽木氏"
+    },
+    {
+      "id": "family_ed7cd08ab03b219c",
+      "display_name": "三奈木黒田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三奈木黒田家"
+    },
+    {
+      "id": "family_ed859e67f022df78",
+      "display_name": "山田家（薩摩国の）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "山田氏#薩摩国の山田氏"
+    },
+    {
+      "id": "family_edf551a9b16ecb8a",
+      "display_name": "柳生家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "柳生氏"
+    },
+    {
+      "id": "family_eefbdcc246785717",
+      "display_name": "中山田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "中山田氏"
+    },
+    {
+      "id": "family_ef9adb05ee684774",
+      "display_name": "中条家（三浦党）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "中条氏#中条氏（三浦党）"
+    },
+    {
+      "id": "family_efb892c6b25e4e1a",
+      "display_name": "真野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "真野氏"
+    },
+    {
+      "id": "family_f035287153cdd793",
+      "display_name": "千々石家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "千々石氏"
+    },
+    {
+      "id": "family_f0b1382556eacadf",
+      "display_name": "蜂須賀家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "蜂須賀氏"
+    },
+    {
+      "id": "family_f0d1ccd66c87d614",
+      "display_name": "浅野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "浅野氏"
+    },
+    {
+      "id": "family_f18bf52d811b4d8e",
+      "display_name": "熊谷家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "熊谷氏"
+    },
+    {
+      "id": "family_f1fcd91b79fd008a",
+      "display_name": "安部家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "安部氏"
+    },
+    {
+      "id": "family_f200976b80dc1be1",
+      "display_name": "岩出山伊達家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "岩出山伊達家"
+    },
+    {
+      "id": "family_f25db8105f666253",
+      "display_name": "行松家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "行松氏"
+    },
+    {
+      "id": "family_f40699a8b4bb52dd",
+      "display_name": "西郷家（三河）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "西郷氏#三河西郷氏"
+    },
+    {
+      "id": "family_f40f9a1edc1e9847",
+      "display_name": "藤井松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "藤井松平家"
+    },
+    {
+      "id": "family_f460cffa524ae5c2",
+      "display_name": "米沢藩家（平侍・約70戸）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "米沢藩#平侍（約70戸）"
+    },
+    {
+      "id": "family_f488fa91b2b59843",
+      "display_name": "蒲池家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "蒲池氏"
+    },
+    {
+      "id": "family_f56296700bd116ac",
+      "display_name": "石成家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "石成氏"
+    },
+    {
+      "id": "family_f5de5423474ff4bf",
+      "display_name": "梶原家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "梶原氏"
+    },
+    {
+      "id": "family_f5f2aea28ec009c1",
+      "display_name": "三河牧野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "三河牧野氏"
+    },
+    {
+      "id": "family_f60c0c285d433704",
+      "display_name": "越智家（大和国）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "越智氏 (大和国)"
+    },
+    {
+      "id": "family_f61efba33d24ad1c",
+      "display_name": "北畠家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "北畠家"
+    },
+    {
+      "id": "family_f64768dc01fe585b",
+      "display_name": "加藤家（道長流）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "加藤氏#道長流加藤氏"
+    },
+    {
+      "id": "family_f6e4845a16b24ce0",
+      "display_name": "磯野家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "磯野氏"
+    },
+    {
+      "id": "family_f768910fb42ff360",
+      "display_name": "由布家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "由布氏"
+    },
+    {
+      "id": "family_f7837ea5de9ffb19",
+      "display_name": "一色家（幸手一色家・宮内一色家分家、関東）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "一色氏#幸手一色家（宮内一色家分家、関東一色氏）"
+    },
+    {
+      "id": "family_f78afa534fb07d15",
+      "display_name": "浅賀家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "浅賀氏"
+    },
+    {
+      "id": "family_f7b77f296ddf6e49",
+      "display_name": "青木家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "青木氏"
+    },
+    {
+      "id": "family_f7c809df1bd6273d",
+      "display_name": "新発田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "新発田氏"
+    },
+    {
+      "id": "family_f8993a193642b591",
+      "display_name": "冷泉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "冷泉氏"
+    },
+    {
+      "id": "family_f92029249ffced45",
+      "display_name": "深溝松平家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "深溝松平家"
+    },
+    {
+      "id": "family_f97f1912cdec14e5",
+      "display_name": "堀尾家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "堀尾氏"
+    },
+    {
+      "id": "family_fa82bb5812a77a1a",
+      "display_name": "横山家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "横山氏"
+    },
+    {
+      "id": "family_fb7141037277a462",
+      "display_name": "秋元家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "秋元氏"
+    },
+    {
+      "id": "family_fbce3b41d5d00eeb",
+      "display_name": "伊達家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "伊達氏"
+    },
+    {
+      "id": "family_fcd1480127315c23",
+      "display_name": "祁答院家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "祁答院氏"
+    },
+    {
+      "id": "family_fcec687a7c130e6e",
+      "display_name": "杉家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "杉氏"
+    },
+    {
+      "id": "family_fcf7452bb382de7d",
+      "display_name": "伊勢家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "伊勢氏"
+    },
+    {
+      "id": "family_fe1e0ea9a569a5b5",
+      "display_name": "米田家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "米田氏"
+    },
+    {
+      "id": "family_fe6d5ba8eb015362",
+      "display_name": "蠣崎家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "蠣崎氏"
+    },
+    {
+      "id": "family_fe85f81647a9f62b",
+      "display_name": "畠山家（能登）",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "畠山氏#能登畠山氏"
+    },
+    {
+      "id": "family_fec6368f34fce6e0",
+      "display_name": "大国家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "大国氏"
+    },
+    {
+      "id": "family_ff095118fe4cb949",
+      "display_name": "千秋家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "千秋家"
+    },
+    {
+      "id": "family_ff67f343577e14d9",
+      "display_name": "諏訪家",
+      "description": "氏族の明記に基づく家名分類。近親・嫡流の確定ではない。",
+      "classification": "source_catalog",
+      "source_family_target": "諏訪氏"
+    },
+    {
+      "id": "hojo_sagami",
+      "display_name": "北条家（相模・後北条）",
+      "description": "後北条氏の家名分類。玉縄・高橋からの入家と越後の北条氏は別に保持。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hojo_takahashi",
+      "display_name": "北条家（高橋系）",
+      "description": "高橋氏出自の後北条氏一門。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hojo_tamanawa",
+      "display_name": "北条家（玉縄）",
+      "description": "玉縄北条家。綱成の福島氏からの入家を記録。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "honda_hirotaka",
+      "display_name": "本多家（広孝系）",
+      "description": "広孝の系統。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "honda_masanobu",
+      "display_name": "本多家（正信系）",
+      "description": "正信の系統。忠勝系とは別に表示。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "honda_shigetsugu",
+      "display_name": "本多家（重次系）",
+      "description": "作左衛門家の系統として分類。富正との血縁の詳細は家譜の照合を残す。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "honda_tadakatsu",
+      "display_name": "本多家（忠勝系）",
+      "description": "忠勝につながる平八郎家の系統。正信・広孝の系統とは分離。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hosokawa_awa",
+      "display_name": "細川家（阿波）",
+      "description": "阿波守護家（讃州家）。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hosokawa_fujitaka",
+      "display_name": "細川家（藤孝系・肥後）",
+      "description": "藤孝を祖とする近世の家系分類。藤孝の三淵・刑部家・長岡の履歴を保持し、1546年の肥後領有は意味しない。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hosokawa_izumi_kami",
+      "display_name": "細川家（和泉上守護）",
+      "description": "和泉上守護家（刑部家）。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hosokawa_izumi_shimo",
+      "display_name": "細川家（和泉下守護）",
+      "description": "和泉下守護家。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hosokawa_keicho",
+      "display_name": "細川家（京兆）",
+      "description": "京兆家。藤孝系や他の守護家とは表示を分ける。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hosokawa_tenkyu",
+      "display_name": "細川家（典厩）",
+      "description": "典厩家。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hosokawa_yashu",
+      "display_name": "細川家（野州）",
+      "description": "野州家とする系譜上の分類。人物の実在性の留保を解消したものではない。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "hosokawa_yatabe",
+      "display_name": "細川家（谷田部）",
+      "description": "藤孝系の分家・谷田部（茂木）家。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "ishikawa_iyo",
+      "display_name": "石川家（伊予）",
+      "description": "伊予石川氏。三河・陸奥の石川氏とは分離。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "ishikawa_mikawa",
+      "display_name": "石川家（三河）",
+      "description": "三河石川氏。忠総の大久保家からの養子入りを含む。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "itakura_mikawa",
+      "display_name": "板倉家（三河）",
+      "description": "三河の板倉氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "ito_date",
+      "display_name": "伊東家（陸奥・伊達家臣）",
+      "description": "伊達家臣の伊東氏。日向伊東氏の領主家へ統合しない。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "ito_hyuga",
+      "display_name": "伊東家（日向）",
+      "description": "日向伊東氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "ito_iwami",
+      "display_name": "伊藤家（石見）",
+      "description": "石見吉見氏の庶流とする伊藤氏。日向伊東家とは別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "kitajo_echigo",
+      "display_name": "北条家（越後）",
+      "description": "きたじょう氏。大江姓毛利氏流の越後北条氏で、小田原の後北条氏と別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "mori_aki",
+      "display_name": "毛利家（安芸）",
+      "description": "大江姓毛利氏。尾張の森・毛利諸家とは分離。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "mori_hideyori",
+      "display_name": "毛利家（尾張・秀頼系）",
+      "description": "斯波氏出自とする説を含む尾張の毛利家。勝永・広盛系との近親関係は断定しない。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "mori_hiromori",
+      "display_name": "毛利家（尾張・広盛系）",
+      "description": "尾張毛利氏の広盛の系統。安芸毛利家とは別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "mori_katsunaga",
+      "display_name": "毛利家（尾張・勝永系）",
+      "description": "森姓から毛利姓を称した勝永の家。安芸毛利家や尾張源氏系諸家と統合しない。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "mori_yoshikatsu",
+      "display_name": "毛利家（尾張・良勝系）",
+      "description": "織田家臣の良勝。安芸毛利氏との同族関係を設定しない。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "murakami_kurushima",
+      "display_name": "村上家（来島）",
+      "description": "来島村上氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "murakami_noshima",
+      "display_name": "村上家（能島）",
+      "description": "能島村上氏。来島・因島と区別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "murakami_shinano",
+      "display_name": "村上家（信濃）",
+      "description": "信濃村上氏。村上水軍諸家と分離。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "nagano_buzen",
+      "display_name": "長野家（豊前）",
+      "description": "豊前長野氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "nagano_ise",
+      "display_name": "長野家（伊勢）",
+      "description": "伊勢長野工藤氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "nagano_kozuke",
+      "display_name": "長野家（上野）",
+      "description": "上野長野氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "nakamikado",
+      "display_name": "中御門家",
+      "description": "出生は中御門家。今川氏親との婚姻による今川家との関係は所属家欄と区別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "ogasawara_fuchu",
+      "display_name": "小笠原家（信濃・府中）",
+      "description": "信濃府中系。近世の分家は詳細の資料を参照。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "ogasawara_iwami",
+      "display_name": "小笠原家（石見）",
+      "description": "石見小笠原氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "ogasawara_kyoto",
+      "display_name": "小笠原家（京都）",
+      "description": "京都小笠原氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "ogasawara_totomi",
+      "display_name": "小笠原家（遠江）",
+      "description": "遠江小笠原氏。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "rokkaku",
+      "display_name": "六角家",
+      "description": "六角氏の家名分類。定治の宗家継承説や一部人物の実在性は別途留保し、血縁・嫡流を確定しない。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "saito_dosan",
+      "display_name": "斎藤家（美濃・道三系）",
+      "description": "道三からの家系。土岐・長井・一色等との関係は留保付きで保持。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "saito_echigo",
+      "display_name": "斎藤家（越後）",
+      "description": "越後の斎藤氏。美濃諸家とは分離。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "saito_toshimitsu",
+      "display_name": "斎藤家（美濃・利三系）",
+      "description": "美濃斎藤氏の利三の家。道三系と同じ近親集団にはしない。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "sakai_saemon",
+      "display_name": "酒井家（左衛門尉系）",
+      "description": "左衛門尉家の系統。雅楽頭系とは区別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "sakai_tanba",
+      "display_name": "酒井家（丹波）",
+      "description": "丹波酒井氏。三河酒井の両家と区別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "sakai_utanokami",
+      "display_name": "酒井家（雅楽頭系）",
+      "description": "雅楽頭家の系統。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "tachibana_dosetsu",
+      "display_name": "立花家（戸次・道雪系）",
+      "description": "道雪・誾千代から宗茂へつながる家。道雪は戸次氏、宗茂は高橋氏からの養子入り。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "takeda_aki",
+      "display_name": "武田家（安芸）",
+      "description": "安芸武田氏。信実の若狭からの移動を含む。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "takeda_kai",
+      "display_name": "武田家（甲斐）",
+      "description": "甲斐武田家。勝頼の諏訪氏からの家督継承は出生・入家履歴で区別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "takeda_wakasa",
+      "display_name": "武田家（若狭）",
+      "description": "若狭武田氏。甲斐・安芸の家と表示を分ける。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "tokugawa",
+      "display_name": "徳川家",
+      "description": "家康からの徳川家。安祥松平家からの改姓を記録。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "uesugi_echigo_nagao",
+      "display_name": "上杉家（越後・長尾系）",
+      "description": "謙信以後の家。謙信は長尾氏から上杉憲政の家を継承。景虎は後北条氏からの養子。出生家と区別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "uesugi_echigo_shugo",
+      "display_name": "上杉家（越後守護）",
+      "description": "越後守護家。上条家から入った定実を含み、謙信以後の長尾系上杉家と区別。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "uesugi_ogigayatsu",
+      "display_name": "上杉家（扇谷）",
+      "description": "扇谷上杉家。山内家とは別系統。",
+      "classification": "editorial_family_branch"
+    },
+    {
+      "id": "uesugi_yamanouchi",
+      "display_name": "上杉家（山内）",
+      "description": "関東管領を務めた山内家。謙信以後の越後の家とは表示を分ける。",
+      "classification": "editorial_family_branch"
+    }
+  ]
+}

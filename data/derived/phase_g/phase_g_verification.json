@@ -1,0 +1,65 @@
+{
+  "phase": "G",
+  "all_passed": true,
+  "checks": {
+    "seven_source_contracts_explicit": {
+      "passed": true
+    },
+    "no_unapproved_data_invented": {
+      "passed": true
+    },
+    "master_land_preserved_as_unassigned": {
+      "passed": true
+    },
+    "only_unassigned_vector_layer_materialized": {
+      "passed": true,
+      "layers": [
+        "unassigned_land"
+      ]
+    },
+    "river_road_shared_transform_and_land_clipping": {
+      "passed": true,
+      "linear_clipped": true,
+      "shared_transform_exact": true,
+      "accepted_castles": [
+        "inside"
+      ],
+      "rejected_castles": [
+        "outside"
+      ]
+    },
+    "castle_geographic_only_contract": {
+      "passed": true
+    },
+    "terrain_classification_shares_phase_c_mask": {
+      "passed": true
+    },
+    "land_containment_policy": {
+      "passed": true
+    },
+    "no_persisted_oblique_coordinates": {
+      "passed": true
+    },
+    "geopackage_integrity": {
+      "passed": true,
+      "result": "ok"
+    },
+    "deterministic_regeneration": {
+      "passed": true,
+      "first": {
+        "phase_g_layers.gpkg": "9B7E2472A51F5DEBF4748A780A6E905BA9129442950F322CDF987B671779CAB4",
+        "phase_g_registry.json": "B4F1EF5822EAF41DF8D601E627A130DB338025B26A49F56EB9612033680D0320",
+        "terrain_classification_8192.png": "D01510CFDA453BDB4361401FE9642DCF261C68924CAB1E27FE8326F4FCCA70E3",
+        "terrain_codes.json": "656CAF32E90CCD788F65C848078332A70169553F489AD9451436E8A62B52117F",
+        "phase_g_manifest.json": "BCBDC540687D928F64757F8CF282C21CD0A38767BFC80B3D8C826BF489C8D7A3"
+      },
+      "second": {
+        "phase_g_layers.gpkg": "9B7E2472A51F5DEBF4748A780A6E905BA9129442950F322CDF987B671779CAB4",
+        "phase_g_registry.json": "B4F1EF5822EAF41DF8D601E627A130DB338025B26A49F56EB9612033680D0320",
+        "terrain_classification_8192.png": "D01510CFDA453BDB4361401FE9642DCF261C68924CAB1E27FE8326F4FCCA70E3",
+        "terrain_codes.json": "656CAF32E90CCD788F65C848078332A70169553F489AD9451436E8A62B52117F",
+        "phase_g_manifest.json": "BCBDC540687D928F64757F8CF282C21CD0A38767BFC80B3D8C826BF489C8D7A3"
+      }
+    }
+  }
+}

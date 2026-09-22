@@ -1,0 +1,431 @@
+{
+  "retrieved_utc": "2026-09-12T11:14:25Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 6165678,
+    "ns": 0,
+    "title": "Q6355220",
+    "lastrevid": 2385072915,
+    "modified": "2025-07-28T00:56:20Z",
+    "type": "item",
+    "id": "Q6355220",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Kamachi Akimori"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "蒲池鑑盛"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese warrior"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "戦国時代から安土桃山時代にかけての武将"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "蒲池宗雪"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6355220$F5098583-4CF1-4C9C-B4C5-BAEE15F7BE60",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6355220$97B5C579-417D-45CF-AC4B-0810CA4BFA2F",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "76fcfed06239909e35fa9428130a5bbabd791aaa",
+            "datavalue": {
+              "value": {
+                "time": "+1520-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q6355220$8DF6427E-51F6-4D4A-8250-1F31A802FADC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "4c9f7434fa2365fc982b98402c55f51c587d5de0",
+            "datavalue": {
+              "value": {
+                "time": "+1578-12-07T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q6355220$9ACE3D59-9839-4258-8408-4C053CC7AE77",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "a8f0d8b6ca2a2e05b74135bebcfe3420df1bfc15",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11621324,
+                "id": "Q11621324"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6355220$D2A8DE25-7409-41CC-8B1C-8754EFF0762A",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6355220$206e2458-2a7e-4ca3-bee2-cd84df352f1c",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "1cf5f51620ad39f089b04eb9d52dc1fabf35d371",
+            "datavalue": {
+              "value": "/m/04y6k5g",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q6355220$1BC19767-2A79-422C-9C5A-8EEC450E614B",
+          "rank": "normal"
+        }
+      ],
+      "P3368": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3368",
+            "hash": "11f65d9eb3380169dd9e6fe139277c586b70faf4",
+            "datavalue": {
+              "value": "2295276",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q6355220$A316B11A-6534-4BB2-ABB0-6243FA3A8DB3",
+          "rank": "normal"
+        }
+      ],
+      "P53": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P53",
+            "hash": "6c2b0c6619bd84ac6be5f34b8eed69c826df6341",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11621309,
+                "id": "Q11621309"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6355220$7f1fabda-4333-7350-5321-9e5c196be957",
+          "rank": "normal"
+        }
+      ],
+      "P40": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "6848af3facd882d4b18eb88c246c324d870f02f1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11621319,
+                "id": "Q11621319"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6355220$e16d7d3f-41d0-86ad-2dd2-8595c3204c75",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "5e2a3cc7b884907c4d4374dc740574178a767465",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11621312,
+                "id": "Q11621312"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6355220$f252f0d1-4ca5-96c3-1a33-30fd45998c5d",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "afb7abeb221938adbd7b7a15b995015a8bc93498",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11621323,
+                "id": "Q11621323"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6355220$caa4da1f-4c8f-f121-9759-62d72366b3df",
+          "rank": "normal"
+        }
+      ],
+      "P119": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P119",
+            "hash": "64b5003701bfb8bd74bd1d1f27d3ad75462a74f1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11477085,
+                "id": "Q11477085"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6355220$1a38d298-46be-17f6-c702-eb63973f5d6e",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Kamachi Akimori",
+        "badges": []
+      },
+      "ffwiki": {
+        "site": "ffwiki",
+        "title": "Kamachi Akimori",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "蒲池鑑盛",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "蒲池鑑盛",
+        "badges": []
+      }
+    }
+  }
+}

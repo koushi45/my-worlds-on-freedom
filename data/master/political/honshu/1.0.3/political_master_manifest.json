@@ -1,0 +1,26 @@
+{
+  "status": "approved",
+  "version": "1.0.3",
+  "scope": "honshu",
+  "approval": {
+    "approved_by": "user",
+    "recorded_at_utc": "2026-09-10T14:35:15.986493+00:00",
+    "instruction": "領域02は陸奥国に統合して下さい。ビルドもお願いします。"
+  },
+  "candidate_sha256": "ddbe57b84a911d8a0543d515adbc4038c90b93795317b954e28483645570dbac",
+  "name_status": "Region 02 merged into Mutsu; 1 unresolved name remains",
+  "canonical_hashes": {
+    "data/base/japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data/derived/coastline/coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf"
+  },
+  "files": {
+    "approved_input_edits.json": "ddbe57b84a911d8a0543d515adbc4038c90b93795317b954e28483645570dbac",
+    "cleanup_report.json": "8f1207c95ac2e7e8967b9822353e667a5b5e637b35507093b724e5f3246f8a2e",
+    "merge_report.json": "6f3927feb7b962904b7403b0b3e634a9a4c8ce0b6984926f23a21ef9834e53e5",
+    "name_resolution.json": "378f458428c9ff7edfaea377f50ebf3f413d41b3f0dc02a164a0e8501fd7ba6a",
+    "name_review.json": "912419ae9775f4163ca88f2c0222b4ea0175381eb445b441b4ee688416fb9bbf",
+    "political_regions_master.gpkg": "6d1912c5c925dadba0a27b6ffa494451a7726e96838467ec6a28d990531624e5",
+    "political_registry_master.json": "2ab0b1fc39e36a27bc066e244217b80fbb8e53d8a2b6bf9ced8e7527bd28eb75",
+    "split_report.json": "8db87fdf7849ca9890829c2f658fe2931eacf05098235e87b3bd82ab91a07f95"
+  }
+}

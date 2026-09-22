@@ -1,0 +1,60 @@
+{
+  "phase": "A",
+  "status": "approved",
+  "acquired_on": "2026-09-06",
+  "canonical_dataset_created": false,
+  "candidates": [
+    {
+      "id": "mlit_n03_2026",
+      "name": "国土数値情報 行政区域データ",
+      "provider": "国土交通省",
+      "version": "N03-20260101（2026年1月1日時点）",
+      "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html",
+      "download_url": "https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2026/N03-20260101_GML.zip",
+      "raw_file": "data/sources/candidates/mlit_n03_2026/raw/N03-20260101_GML.zip",
+      "raw_sha256": "1F714FCA019E22E6F84012DBA420384FC7B49C6AD8BD0A867AB1CFB593A78477",
+      "raw_bytes": 803201348,
+      "crs": "JGD2011 geographic latitude/longitude (EPSG:6668)",
+      "license": "CC BY 4.0 compatible government terms; attribution and modification notice required",
+      "commercial_use": true,
+      "modification": true,
+      "redistribution": true,
+      "attribution_required": true,
+      "share_alike_required": false,
+      "survey_act_gate": "The dataset page says GSI application may be required; written confirmation or approval is required before commercial bundling approval."
+    },
+    {
+      "id": "natural_earth_10m_land_only",
+      "name": "Natural Earth 1:10m Land",
+      "provider": "Natural Earth",
+      "version": "Land 5.1.1",
+      "source_url": "https://www.naturalearthdata.com/downloads/10m-physical-vectors/",
+      "download_urls": [
+        "https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_land.zip"
+      ],
+      "raw_files": [
+        {
+          "path": "data/sources/candidates/natural_earth_10m/raw/ne_10m_land.zip",
+          "sha256": "E547D749445EAA0964ABA76738090EC88F5E63C4585122170F98C67A7EA922DC",
+          "bytes": 3269070
+        }
+      ],
+      "crs": "WGS 84 geographic latitude/longitude (EPSG:4326)",
+      "nominal_scale": "1:10,000,000",
+      "license": "Public domain",
+      "commercial_use": true,
+      "modification": true,
+      "redistribution": true,
+      "attribution_required": false,
+      "share_alike_required": false
+    }
+  ],
+  "decision": {
+    "adopted": "natural_earth_10m_land_only",
+    "approved_on": "2026-09-06",
+    "approved_by": "user",
+    "reason": "The Sengoku game scope does not require the Nansei Islands; public-domain Land 5.1.1 was explicitly selected.",
+    "minor_islands_adopted": false,
+    "supersedes_previous_recommendation": true
+  }
+}

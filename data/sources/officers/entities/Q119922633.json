@@ -1,0 +1,262 @@
+{
+  "retrieved_utc": "2026-09-12T11:12:53Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 114391001,
+    "ns": 0,
+    "title": "Q119922633",
+    "lastrevid": 2309644637,
+    "modified": "2025-02-10T13:25:03Z",
+    "type": "item",
+    "id": "Q119922633",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "真野助宗"
+      },
+      "en": {
+        "language": "en",
+        "value": "Mano Sukemune"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "安土桃山時代の武将、大名"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119922633$4C9FB560-888D-4606-A7D3-DAE203F0F8AE",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119922633$2968584E-E08D-48CF-84FD-AC8BB5E18646",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "20398936fac52f99e60dbb82872920f60008b214",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "2f859e6ec7f1a2cd628dcc9d56bf3c9f0298529b",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-07-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "63ce8dcefa3a198a1ff159d704fd7933db29890a",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E7%9C%9F%E9%87%8E%E5%8A%A9%E5%AE%97&oldid=88918874",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P40": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "be5456f0dbb6ce19216f8cbbee1f4a0ee20cd572",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11583585,
+                "id": "Q11583585"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119922633$45F43A41-D5D3-4341-841E-95DB4F354064",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "20398936fac52f99e60dbb82872920f60008b214",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "2f859e6ec7f1a2cd628dcc9d56bf3c9f0298529b",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-07-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "63ce8dcefa3a198a1ff159d704fd7933db29890a",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E7%9C%9F%E9%87%8E%E5%8A%A9%E5%AE%97&oldid=88918874",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119922633$c680d693-431a-dc48-a7ec-70ccfb407e32",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "8ebc3bb24e7bc02bebcfc9dd2773d2e2585cd524",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 26437780,
+                "id": "Q26437780"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q119922633$f298e623-411b-2b13-1ae7-7e1c09715d1b",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "真野助宗",
+        "badges": []
+      }
+    }
+  }
+}

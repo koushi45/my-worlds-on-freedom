@@ -1,0 +1,27 @@
+# Godot generated files
+.godot/
+
+# Exported builds and QA previews
+builds/
+exports/
+
+# Platform-generated files and signing credentials
+android/build/
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+export_credentials.cfg
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tmp
+*.log
+__pycache__/
+*.py[cod]
+
+# Downloaded source caches must be added explicitly after license review.
+data/sources/cache/

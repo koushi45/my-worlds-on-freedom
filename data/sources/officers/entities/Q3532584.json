@@ -1,0 +1,930 @@
+{
+  "retrieved_utc": "2026-09-12T11:13:51Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 3363222,
+    "ns": 0,
+    "title": "Q3532584",
+    "lastrevid": 2543944737,
+    "modified": "2026-09-11T11:51:57Z",
+    "type": "item",
+    "id": "Q3532584",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Tosa Mitsumoto"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "土佐光元"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese painter (1530-1569)"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "日本の画家 (1530-1569)"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3532584$BA5CDFFE-3CDB-4F87-AAB2-4B2D8FF954A3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3532584$732EEF2F-9C7B-4C09-ACF4-4B5EFFFBAC7A",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "491e125fd54422355e873ab9e2696cca80b96c15",
+            "datavalue": {
+              "value": {
+                "time": "+1530-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q3532584$F878B37E-B1C5-4F8F-B7B3-1068AD27CB49",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "63d1e61be6b1b18b91288303b8d0f58066e1a762",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a58cf22cebf547a4ba960082af38f04e3b77bbf1",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 24255573,
+                        "id": "Q24255573"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P2843": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2843",
+                    "hash": "0321fb66504fdabe01bd6b481bac14447996e88a",
+                    "datavalue": {
+                      "value": "B00123598",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "0e70f2958caf84053892e7a16354b68a5e4d3a31",
+                    "datavalue": {
+                      "value": "Mitsumoto",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2017-10-09T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P2843",
+                "P1810",
+                "P813"
+              ]
+            },
+            {
+              "hash": "182e1e70efe6d631bd9373fd73cc69f6b7f2ea8f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "02af8692181c5677d0b894a50eca3415f3efc5e5",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 22907130,
+                        "id": "Q22907130"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P6578": [
+                  {
+                    "snaktype": "value",
+                    "property": "P6578",
+                    "hash": "074f3e1e1397e4939db8f63fae8b93005f12c25f",
+                    "datavalue": {
+                      "value": "9741361A81A78879",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "e3e4884e180d92f491d782fc8fb3b86cfce3db32",
+                    "datavalue": {
+                      "value": "Mitsumoto Tosa",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2017-10-09T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P6578",
+                "P1810",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "bfd14f22ad1f97c1354843c5bce781458f2d0edd",
+            "datavalue": {
+              "value": {
+                "time": "+1569-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q3532584$3D7E72E0-32F4-4354-9D12-2DEE5BF84480",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "63d1e61be6b1b18b91288303b8d0f58066e1a762",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a58cf22cebf547a4ba960082af38f04e3b77bbf1",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 24255573,
+                        "id": "Q24255573"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P2843": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2843",
+                    "hash": "0321fb66504fdabe01bd6b481bac14447996e88a",
+                    "datavalue": {
+                      "value": "B00123598",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "0e70f2958caf84053892e7a16354b68a5e4d3a31",
+                    "datavalue": {
+                      "value": "Mitsumoto",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2017-10-09T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P2843",
+                "P1810",
+                "P813"
+              ]
+            },
+            {
+              "hash": "182e1e70efe6d631bd9373fd73cc69f6b7f2ea8f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "02af8692181c5677d0b894a50eca3415f3efc5e5",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 22907130,
+                        "id": "Q22907130"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P6578": [
+                  {
+                    "snaktype": "value",
+                    "property": "P6578",
+                    "hash": "074f3e1e1397e4939db8f63fae8b93005f12c25f",
+                    "datavalue": {
+                      "value": "9741361A81A78879",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "e3e4884e180d92f491d782fc8fb3b86cfce3db32",
+                    "datavalue": {
+                      "value": "Mitsumoto Tosa",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e5f60ab0b03700bb883efce38f8022d023bc49fb",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2017-10-09T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P6578",
+                "P1810",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "15a797df5f0bcaa24a6ade2e80203480db7a5b8c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1028181,
+                "id": "Q1028181"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3532584$624C90A1-9FFB-40AE-980C-DFF387E3F26E",
+          "rank": "normal"
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "442eed7751165909dcf1eb3e23702fbd4f08a258",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3532584$030AC6C4-272B-4105-A056-F04CBFE5ADC5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "e0a2a07ea95211153cf3cc14924b0ead21d4f6ad",
+            "datavalue": {
+              "value": "Ashikaga yoshiteru2.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3532584$D9FE0786-8455-4DF6-80A4-48C56FEFBC23",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "59dded88c3c87ad2fbc81249349b41e538b64d92",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3532583,
+                "id": "Q3532583"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3532584$71088b2a-4afc-0c41-9f43-65b5efaa931d",
+          "rank": "normal"
+        }
+      ],
+      "P3782": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3782",
+            "hash": "64ebae277cc8ace8037048355b156b1c73135eac",
+            "datavalue": {
+              "value": "tosa-mitsumoto",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3532584$A37AA934-F906-44AA-8F53-D97B138F9564",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b27c8ead384e9cebdf5223553c0e2bc81177debc",
+            "datavalue": {
+              "value": "Tosa Mitsumoto",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3532584$65F75D82-2890-4531-90B7-471B0EF66BE8",
+          "rank": "normal"
+        }
+      ],
+      "P1711": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1711",
+            "hash": "1d6820b70570394964f0d5d483d9a60d71009be1",
+            "datavalue": {
+              "value": "3911",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3532584$B6BAAA16-F99C-43B9-9E89-5DAD3E4D970B",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "7ab472fffdbb4af008de43930d840c360b100030",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 27242830,
+                "id": "Q27242830"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3532584$49855b82-4553-f6dd-ae14-dcf450ed72c7",
+          "rank": "normal"
+        }
+      ],
+      "P6578": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6578",
+            "hash": "074f3e1e1397e4939db8f63fae8b93005f12c25f",
+            "datavalue": {
+              "value": "9741361A81A78879",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3532584$243E8A7E-9DCD-4AA4-9086-2704C644A58D",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "b67ff5105543bc2594d89e6420656d6615affae5",
+            "datavalue": {
+              "value": {
+                "text": "土佐光元",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3532584$4E41790C-D2E5-4E1C-BD52-901093E0658A",
+          "rank": "normal"
+        }
+      ],
+      "P2843": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2843",
+            "hash": "0321fb66504fdabe01bd6b481bac14447996e88a",
+            "datavalue": {
+              "value": "B00123598",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3532584$7DA36471-DD8B-43EE-B4EE-89E684A76BBB",
+          "rank": "normal"
+        }
+      ],
+      "P7763": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7763",
+            "hash": "670802caae082ed6e6ec9edbce73ad7a1faf80eb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 71887839,
+                "id": "Q71887839"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1001": [
+              {
+                "snaktype": "value",
+                "property": "P1001",
+                "hash": "d05ce56e71c243776229b47008f66a57af660841",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 13780930,
+                    "id": "Q13780930"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1001"
+          ],
+          "id": "Q3532584$dde185c3-8823-45f3-b222-a61296e3329a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3aeb4eaf17838dc1b263c57c5f085333da1e23d4",
+              "snaks": {
+                "P887": [
+                  {
+                    "snaktype": "value",
+                    "property": "P887",
+                    "hash": "82ee8708360e24e0d7da74519735af3a9d617f44",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 96095092,
+                        "id": "Q96095092"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "19791858ccbe5112cd62e2b23297ae16113f3e59",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-12-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P887",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "ad91cdb0758e3d37d3794d26541b5dd3eb83563f",
+            "datavalue": {
+              "value": "/g/11x7vtw7h",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3532584$1A736C4D-C542-4D72-A152-8C3BC4D3F170",
+          "rank": "normal"
+        }
+      ],
+      "P6379": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6379",
+            "hash": "f6279fd562ba544e1dbe4e32303dc1ac7685cd20",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 653433,
+                "id": "Q653433"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3532584$42B3DB71-F7F9-4DDB-9218-FE792ADF2FF1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "11846bdfae532cf29fc8881d1f7c8b12f732f883",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "e3048382b68e93b3727234db07e34ab365055a57",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15623976,
+                        "id": "Q15623976"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "1575ca49a8251d397510ba63a1aa39bcb4661a88",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-02-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Tosa Mitsumoto",
+        "badges": []
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Tosa Mitsumoto",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "土佐光元",
+        "badges": []
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Тоса Міцумото",
+        "badges": []
+      }
+    }
+  }
+}

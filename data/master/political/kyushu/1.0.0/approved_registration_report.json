@@ -1,0 +1,121 @@
+{
+  "triangle_count": 150,
+  "reversed_triangles": 0,
+  "determinant_min": 7.927184273033005,
+  "status": "pending_user_review",
+  "scope": "Kyushu main island; offshore islands unassigned",
+  "spec_sha256": "8e0b0dca3cf3388a28d3cdc5bc54406d90a365631a2f83c3589f98ada06d59aa",
+  "generator_sha256": "b0b75ed2aecb9adf485ecde085bc2e26d79809dbc247cfa1721cc4fa1471a104",
+  "coordinate_spaces": {
+    "source_boundaries_px": "Source image pixels, x-right y-down, no geographic CRS",
+    "layers_8192": "Canonical game-plane units, x-right y-down, NOT EPSG:4326",
+    "geographic_crs": "EPSG:4326 (unchanged land source)",
+    "game_transform_definition": "tools/build_japan_land_base.py:game_transform_definition",
+    "game_transform_module_sha256": "a9ed968f4becb67cfeb47157e3869e2ff76a4e1cfe460f0b580edd4baed071bd"
+  },
+  "source_hash": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d",
+  "immutable_hashes_before": {
+    "data\\base\\japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data\\derived\\coastline\\coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+    "data\\work\\political\\coast_alignment_v2\\source_rgba.png": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d"
+  },
+  "immutable_hashes_after": {
+    "data\\base\\japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data\\derived\\coastline\\coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+    "data\\work\\political\\coast_alignment_v2\\source_rgba.png": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d"
+  },
+  "counts": {
+    "controls": 62,
+    "shared_boundaries": 15,
+    "regions": 9,
+    "coast_arcs": 9
+  },
+  "topology": {
+    "gap_area_game_px2": 0.0,
+    "overlap_area_game_px2": -2.3283064365386963e-10,
+    "outside_area_game_px2": 0.0,
+    "border_outside_length_game_px": 2.0605188520445493e-12,
+    "invalid_regions": 0
+  },
+  "coastal_endpoint_review": [
+    {
+      "node_id": "west",
+      "original_game": [
+        1232.2832208349798,
+        6263.3171113250755
+      ],
+      "coast_intersection_game": [
+        1262.738029778224,
+        6265.564015488809
+      ],
+      "trim_game_px": 30.53758284623241,
+      "status": "pending"
+    },
+    {
+      "node_id": "ariake_n",
+      "original_game": [
+        1330.11114418271,
+        6413.325822835951
+      ],
+      "coast_intersection_game": [
+        1342.4381012294148,
+        6416.049610174113
+      ],
+      "trim_game_px": 12.624297505003454,
+      "status": "pending"
+    },
+    {
+      "node_id": "ariake_e",
+      "original_game": [
+        1403.5424221288608,
+        6462.448715580384
+      ],
+      "coast_intersection_game": [
+        1403.9086646866315,
+        6465.776976785484
+      ],
+      "trim_game_px": 3.348351274956207,
+      "status": "pending"
+    },
+    {
+      "node_id": "bay_e",
+      "original_game": [
+        1654.623183118936,
+        7270.352579360162
+      ],
+      "coast_intersection_game": [
+        1658.678618663004,
+        7273.98333599398
+      ],
+      "trim_game_px": 5.443248220144505,
+      "status": "pending"
+    }
+  ],
+  "leave_one_out_control_error_game_px": {
+    "median": 22.356233745356576,
+    "p95": 53.07180839414163,
+    "max": 63.53020064012702,
+    "meaning": "Held-out visual correspondence prediction error; not independently surveyed accuracy"
+  },
+  "source_trace_distance_to_ink_px": {
+    "median": 0.0146484375,
+    "p95": 0.375,
+    "max": 1.0
+  },
+  "limitations": [
+    "Approximate visual control points; user approval pending.",
+    "Coastline detail differs between raster and Natural Earth; raster coast is not replaced by canonical arcs in registration QA.",
+    "Offshore islands remain unassigned. The image is not evidence of daimyo control at a particular date.",
+    "Distance to ink is a tracing sanity check, not centerline accuracy or historical accuracy."
+  ],
+  "libraries": {
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "shapely": "2.1.2"
+  },
+  "outputs_sha256": {
+    "kyushu_candidate.gpkg": "94dfffd03adba553b4c5abd08b2cf7bbc81f3aafb4693296608f9c3d5fda5e37",
+    "warped_raster.png": "51b22d3d9a993e7172441f374ae3d8fa3f813b901062bafd149912e3b32156a3",
+    "review_layer.json": "aef2f22f18bad0b240a1b52211ddbe5437b03f70d21d9d75506ddb47a9e3ccc9"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "phase": "P2",
+  "status": "pass_pending_manual_review",
+  "checks": {
+    "required_regional_units": "pass",
+    "control_attributes_and_dual_coordinates": "pass",
+    "regional_residual_targets": "pass",
+    "piecewise_mesh_no_inversion": "pass",
+    "p1_identity_and_geometry_counts": "pass",
+    "canonical_inputs_immutable": "pass",
+    "no_global_affine_adoption": "pass",
+    "no_mechanical_sea_snap": "pass",
+    "tps_compared_when_required": "pass"
+  },
+  "counts": {
+    "accepted_controls": 226,
+    "boundaries": 104,
+    "junction_nodes": 217,
+    "probable_non_simple_source_lines": 4,
+    "sea_endpoint_reviews": 3
+  },
+  "manual_review_required": {
+    "probable_non_simple_boundary_ids": [
+      "img-boundary-0006",
+      "img-boundary-0056",
+      "img-boundary-0077",
+      "img-boundary-0090"
+    ],
+    "sea_excursion_items": [
+      {
+        "boundary_id": "img-boundary-0023",
+        "status": "endpoint_review",
+        "outside_samples": 1
+      },
+      {
+        "boundary_id": "img-boundary-0042",
+        "status": "endpoint_review",
+        "outside_samples": 1
+      },
+      {
+        "boundary_id": "img-boundary-0074",
+        "status": "endpoint_review",
+        "outside_samples": 1
+      }
+    ]
+  }
+}

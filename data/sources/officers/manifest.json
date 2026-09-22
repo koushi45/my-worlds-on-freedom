@@ -1,0 +1,9 @@
+{
+  "retrieved_utc": "2026-09-12T11:03:12Z",
+  "query": "SELECT DISTINCT ?person ?personLabel ?personDescription ?birth ?death WHERE {\n  VALUES ?occupation { wd:Q38142 wd:Q61982 wd:Q5384684 }\n  ?person wdt:P31 wd:Q5; wdt:P106 ?occupation .\n  OPTIONAL { ?person wdt:P569 ?birth }\n  OPTIONAL { ?person wdt:P570 ?death }\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"ja,en\". }\n}",
+  "endpoint": "https://query.wikidata.org/sparql",
+  "license": "CC0-1.0",
+  "sha256": "1237934973d8c9e7f2805ecc505af42797b0f76c6332ac41824c2d7fee214126",
+  "rows": 1555,
+  "scope": "samurai・daimyo・Sengoku daimyoの直接職業登録で探索。 網羅を保証しない。採用前に日付の精度と人物同定を確認する。"
+}

@@ -1,0 +1,78 @@
+{
+  "generated_at_utc": "2026-09-06T10:27:13.116475+00:00",
+  "scope": "source audit only; no repairs, dissolves, simplification or canonical export",
+  "sources": {
+    "mlit_n03_2026": {
+      "feature_count": 125130,
+      "bbox_wgs84": [
+        122.932606368,
+        20.422746414,
+        153.986675123,
+        45.557243414
+      ],
+      "vertex_count": 15722602,
+      "ring_count": 125319,
+      "invalid_feature_count": 0,
+      "invalid_reasons": {},
+      "empty_feature_count": 0,
+      "zero_area_feature_count": 0,
+      "exact_duplicate_geometry_count": 0,
+      "region_bbox_feature_hits": {
+        "mainland": 109817,
+        "hokkaido": 9896,
+        "okinawa_nansei": 7990,
+        "ogasawara": 4794,
+        "minamitorishima": 11
+      },
+      "note": "bbox hits prove source geometry is present in the test window; they do not certify legal territory or historical accuracy"
+    },
+    "natural_earth_10m": {
+      "feature_count": 11,
+      "bbox_wgs84": [
+        -179.99999999999991,
+        -89.99999999999994,
+        180.0,
+        83.63410065300008
+      ],
+      "vertex_count": 446175,
+      "ring_count": 6838,
+      "invalid_feature_count": 0,
+      "invalid_reasons": {},
+      "empty_feature_count": 0,
+      "zero_area_feature_count": 0,
+      "exact_duplicate_geometry_count": 0,
+      "region_bbox_feature_hits": {
+        "mainland": 10,
+        "hokkaido": 10,
+        "okinawa_nansei": 10,
+        "ogasawara": 10,
+        "minamitorishima": 10
+      },
+      "note": "bbox hits prove source geometry is present in the test window; they do not certify legal territory or historical accuracy"
+    },
+    "natural_earth_10m_minor_islands": {
+      "feature_count": 2795,
+      "bbox_wgs84": [
+        -179.9576309889999,
+        -76.12184010199991,
+        179.50464928500003,
+        81.34483470300006
+      ],
+      "vertex_count": 35512,
+      "ring_count": 2795,
+      "invalid_feature_count": 0,
+      "invalid_reasons": {},
+      "empty_feature_count": 0,
+      "zero_area_feature_count": 0,
+      "exact_duplicate_geometry_count": 0,
+      "region_bbox_feature_hits": {
+        "mainland": 155,
+        "hokkaido": 6,
+        "okinawa_nansei": 22,
+        "ogasawara": 3,
+        "minamitorishima": 0
+      },
+      "note": "bbox hits prove source geometry is present in the test window; they do not certify legal territory or historical accuracy"
+    }
+  }
+}

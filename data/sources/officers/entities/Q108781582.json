@@ -1,0 +1,202 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:11Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 104020065,
+    "ns": 0,
+    "title": "Q108781582",
+    "lastrevid": 2496641060,
+    "modified": "2026-05-24T04:19:37Z",
+    "type": "item",
+    "id": "Q108781582",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "小林房実"
+      },
+      "en": {
+        "language": "en",
+        "value": "Kobayashi Fusazane"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Japanese military commander"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781582$FD0BBFF8-4641-404B-8573-910C44660F3D",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781582$CB319D2D-542D-438D-B8E9-B257B85F6C08",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a8106915a3c65147b7c75a93c0a00093e6197c71",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a69bf06577b822d732c77d401cfa7b0a96b1dcf6",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-10-14T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "b5ea1adddeadf63ae971b1885c789f8e04ddd83b",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E5%B0%8F%E6%9E%97%E6%88%BF%E5%AE%9F&oldid=84797888",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781582$fa39fa47-4768-4ceb-6584-e869866e9d01",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "4cdc9f7041ed37c532f7186cc1410a9789d78ab3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 947991,
+                "id": "Q947991"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q108781582$bdff4081-441c-1926-1ba6-bee8a351eacc",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "2286952ca6400f138fb2a13f1767e558c94d8918",
+            "datavalue": {
+              "value": {
+                "text": "小林房実",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q108781582$52554968-45b4-82e3-f12f-d531fc627c94",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "小林房実",
+        "badges": []
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "retrieved_utc": "2026-09-12T11:10:13Z",
+  "query": "SELECT DISTINCT ?person ?personLabel ?personDescription ?birth ?death WHERE {\n  VALUES ?occupation { wd:Q11545923 wd:Q1402561 }\n  ?person wdt:P31 wd:Q5; wdt:P106 ?occupation .\n  OPTIONAL { ?person wdt:P569 ?birth }\n  OPTIONAL { ?person wdt:P570 ?death }\n  FILTER((!BOUND(?birth) || ?birth < \"1547-01-01T00:00:00Z\"^^xsd:dateTime) && (!BOUND(?death) || ?death >= \"1546-01-01T00:00:00Z\"^^xsd:dateTime))\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"ja,en\". }\n}",
+  "endpoint": "https://query.wikidata.org/sparql",
+  "license": "CC0-1.0",
+  "sha256": "881b193b41b8868e757476d7433e559769afe2530534ee73ead9c68e73e5441b",
+  "rows": 5226,
+  "scope": "世界全体の軍事指揮者・軍事指導者。日付なし又は1546年と重なる候補。外国・異時代を含む。 網羅を保証しない。採用前に日付の精度と人物同定を確認する。"
+}

@@ -1,0 +1,155 @@
+{
+  "retrieved_utc": "2026-09-12T11:17:56Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12363528,
+    "ns": 0,
+    "title": "Q11193652",
+    "lastrevid": 2356958029,
+    "modified": "2025-06-04T21:42:14Z",
+    "type": "item",
+    "id": "Q11193652",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "藤林長門守"
+      },
+      "en": {
+        "language": "en",
+        "value": "Fujibayashi Nagato-no-kami"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "ninja"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11193652$631CFD6D-566E-43A2-A512-A42EB70E826E",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "d2a1a1a00d113e11b62faa4c36603087d2865ce1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9402,
+                "id": "Q9402"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11193652$4cd8d0cb-9c0f-4a2e-82e0-855dd0ce8e93",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0ee3b3ba1c958f4c3dcba7ed8091fe4b57311348",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "cb49f6fa327b245e4a5aaf48c44b3f503bcd4265",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 30239,
+                        "id": "Q30239"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11193652$398CE2D4-5E00-42C3-B27F-8E25BCE4112D",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "8137b004b6648425e3ac5d9f745d7bf8b44303e3",
+            "datavalue": {
+              "value": "/g/1212rzkj",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11193652$F08B6183-5D8E-4EE3-8549-1C60928D7E23",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Fujibayashi Nagato-no-kami",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "藤林長門守",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "藤林保豐",
+        "badges": []
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-09-19T07:31:08.693320+00:00",
+  "status": "passed",
+  "double_precision_tolerances": {
+    "length": 1e-07,
+    "area_floor": 1e-05,
+    "area_relative": 1e-09
+  },
+  "runtime_float32_coordinate_tolerance": 0.001,
+  "input_hash_baseline": "data/work/districts/coast_alignment/baseline_20260919/input_hashes.json",
+  "district_sha256": "2bc92a0b4fea4913a0c823e2d676915c099c626d3507ea0cf028d5161ec22d81",
+  "registry_sha256": "e8e8ef0b76d4990619ff3ebe80f2f8a0e5514dff65e8e2f8922a73e5ee7c2aa0",
+  "district_count": 656,
+  "coastal_interval_count": 321,
+  "unresolved_registry_items": [],
+  "coastlines": {
+    "jp-coast-103576025d905fd4": {
+      "length": 26059.881665609137,
+      "reference_count": 211,
+      "gap_length": 5.638867150992155e-11,
+      "overlap_length": 0.0,
+      "boundary_difference_length": 0.0
+    },
+    "jp-coast-e4e520d341c65420": {
+      "length": 9124.181269200959,
+      "reference_count": 66,
+      "gap_length": 8.29913915367797e-12,
+      "overlap_length": 0.0,
+      "boundary_difference_length": 0.0
+    },
+    "jp-coast-d6bda8f108065a05": {
+      "length": 4726.991119156635,
+      "reference_count": 38,
+      "gap_length": 1.2846612662542611e-11,
+      "overlap_length": 0.0,
+      "boundary_difference_length": 0.0
+    },
+    "jp-coast-c48b7a8a750c53fa": {
+      "length": 714.5631820427574,
+      "reference_count": 1,
+      "gap_length": 0.0,
+      "overlap_length": 0.0,
+      "boundary_difference_length": 0.0
+    },
+    "jp-coast-1f241e9ef00c51d0": {
+      "length": 402.87040181843406,
+      "reference_count": 1,
+      "gap_length": 4.547473508864641e-13,
+      "overlap_length": 0.0,
+      "boundary_difference_length": 0.0
+    },
+    "jp-coast-7827b9f3fcc75d56": {
+      "length": 94.37925981623937,
+      "reference_count": 1,
+      "gap_length": 1.4210854715202004e-13,
+      "overlap_length": 0.0,
+      "boundary_difference_length": 0.0
+    },
+    "jp-coast-5c7d0c23da8653b5": {
+      "length": 122.6844024353662,
+      "reference_count": 1,
+      "gap_length": 0.0,
+      "overlap_length": 0.0,
+      "boundary_difference_length": 0.0
+    },
+    "jp-coast-896e652f5b5657d4": {
+      "length": 156.45119437346378,
+      "reference_count": 1,
+      "gap_length": 0.0,
+      "overlap_length": 0.0,
+      "boundary_difference_length": 0.0
+    },
+    "jp-coast-5a8606adb3c65cba": {
+      "length": 598.0277906425611,
+      "reference_count": 1,
+      "gap_length": 3.410605131648481e-13,
+      "overlap_length": 0.0,
+      "boundary_difference_length": 0.0
+    }
+  },
+  "mainland_area": 5452135.947742452,
+  "mainland_unassigned_area": 2.6149173668482457e-05,
+  "district_sea_excess_area": 0.0,
+  "overlap_area": 0.0,
+  "overlap_pairs": [],
+  "invalid_districts": [],
+  "curated_island_failures": [],
+  "failures": []
+}

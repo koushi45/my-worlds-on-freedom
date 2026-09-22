@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "phase": "C",
+  "status": "generated",
+  "generation_record": "deterministic_from_approved_source",
+  "source_approved_at": "2026-09-06T11:36:00.7127872Z",
+  "source_master_version": "1.0.0",
+  "source_master_sha256": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+  "rules": {
+    "coastline_source": "exterior rings of approved japan_land only",
+    "coordinate_inference": false,
+    "shared_transform": true,
+    "normal_and_selection_share_registry": true
+  },
+  "counts": {
+    "land_features": 154,
+    "coastline_rings": 154,
+    "coastline_points": 7499,
+    "inner_rings": 0
+  },
+  "outputs": {
+    "coastline_geopackage": {
+      "file": "data/derived/coastline/coastline_master.gpkg",
+      "sha256": "099F8CFB8175BCC5B217900FCCC5663FD858D31F2DEE372F1FB13BC4B66A0BAF",
+      "layers": [
+        "coastline_master",
+        "coastline_8192"
+      ]
+    },
+    "land_mask_8192": {
+      "file": "data/derived/land_masks/land_mask_8192.png",
+      "sha256": "03A737232236FF1046CEDB20984DB14BD3D85CB8A3494AA174D3F82358291117"
+    },
+    "land_master_8192": {
+      "file": "data/derived/land_masks/land_master_8192.json",
+      "sha256": "C504CC36CDDD8E7D854E08A14BCAF2CE8D0D9F4865004C05A4A45C842D5897FC"
+    }
+  },
+  "tools": {
+    "python": "3.14.3",
+    "geopandas": "1.1.4",
+    "pyogrio": "0.13.0",
+    "shapely": "2.1.2",
+    "pillow": "12.0.0",
+    "script": "tools/build_phase_c_coastline_mask.py"
+  }
+}

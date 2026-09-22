@@ -1,0 +1,349 @@
+{
+  "retrieved_utc": "2026-09-13T01:31:45Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 11856781,
+    "ns": 0,
+    "title": "Q10565602",
+    "lastrevid": 2063342246,
+    "modified": "2024-01-27T20:34:57Z",
+    "type": "item",
+    "id": "Q10565602",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Mizuno Mototsuna"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "水野元綱"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "江戸時代初期の武士 (1601-1665)。三河新城藩の第2代藩主。上野安中藩の初代藩主"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "みずの もとつな"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565602$F7AFF1E4-1A8D-4321-9677-95AB9D60D4B5",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "de57cfa07937dfd96f6127ee6e55f2a1c72ab5d7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16877259,
+                "id": "Q16877259"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565602$78D63383-D504-48C2-BB69-F3FEC9E9137F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565602$31EAA1D1-91F1-4782-8034-AE3CB9DF7FBD",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "698bf647b8a89e779527a366c16db7173d63b60c",
+            "datavalue": {
+              "value": {
+                "time": "+1601-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q10565602$6C09559B-294D-4B30-A09B-8E723B3EC587",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "d4c1c1f945f0d8cd479df54674c3fce53f022636",
+            "datavalue": {
+              "value": {
+                "time": "+1665-06-29T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q10565602$026594EF-8882-4F01-93F1-FD8458ACECCD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "442eed7751165909dcf1eb3e23702fbd4f08a258",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565602$78223EC6-EE1A-46F9-AD9E-240746DC12D3",
+          "rank": "normal"
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "00bac8048ad6947e840fa678f67afc8f02cf3593",
+            "datavalue": {
+              "value": {
+                "text": "水野 元綱",
+                "language": "ja"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1814": [
+              {
+                "snaktype": "value",
+                "property": "P1814",
+                "hash": "c6c8d2bebbe007767da7bcc43d58ab8fad5f043d",
+                "datavalue": {
+                  "value": "みずの もとつな",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P2125": [
+              {
+                "snaktype": "value",
+                "property": "P2125",
+                "hash": "5dfaf2feeba3f3db20495b73b2bbdbcba29fae43",
+                "datavalue": {
+                  "value": "Mizuno Mototsuna",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1814",
+            "P2125"
+          ],
+          "id": "Q10565602$A91A776D-35E0-46F7-9C3B-5B8603CCB73C",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "e1a9741eaf2c1bf8ca7263ef9585b7a490de8794",
+            "datavalue": {
+              "value": "/g/121g7pw6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q10565602$C2983D48-C879-4C66-8B67-7D3EF5B969A7",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "efe44f9e908736fceeb4fd8979d90d2e060b8206",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 115565673,
+                "id": "Q115565673"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10565602$e5fb21ef-4fc0-ed5a-62d9-55ce02f887fc",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "水野元綱",
+        "badges": []
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "미즈노 모토쓰나",
+        "badges": []
+      }
+    }
+  }
+}

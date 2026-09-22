@@ -1,0 +1,145 @@
+{
+  "retrieved_utc": "2026-09-12T11:13:02Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 115769219,
+    "ns": 0,
+    "title": "Q121355897",
+    "lastrevid": 2385371628,
+    "modified": "2025-07-28T16:42:21Z",
+    "type": "item",
+    "id": "Q121355897",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "神吉頼定"
+      },
+      "en": {
+        "language": "en",
+        "value": "Kanki Yorisada"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "日本の武将"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q121355897$E3CC6D52-7EDE-49FB-A517-127C7403A51A",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q121355897$EB42AD6B-DBB9-4539-AF54-02BA397AF9FD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "294b438aa87f8b8949a2adc3651d4d9e2428d9e9",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "088152e1f11fb56421f429b2ed9f811b50620bf0",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-08-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "94ee53bbbb187700d7308e6ed32f8fdfa15ee3d5",
+                    "datavalue": {
+                      "value": "https://ja.wikipedia.org/w/index.php?title=%E7%A5%9E%E5%90%89%E9%A0%BC%E5%AE%9A&oldid=95958401",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "fawiki": {
+        "site": "fawiki",
+        "title": "کانکی یوریسادا",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "神吉頼定",
+        "badges": []
+      }
+    }
+  }
+}

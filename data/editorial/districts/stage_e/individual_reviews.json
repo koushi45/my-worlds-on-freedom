@@ -1,0 +1,37 @@
+{
+  "reviews": [
+    {
+      "site_id": "ishiyama_honganji",
+      "status": "held_affiliation_geometry_conflict",
+      "source_affiliation": "摂津国東成郡生玉荘内",
+      "source_evidence_id": "ishiyama-higashinari-apedia",
+      "geometry_candidate": "district-candidate-g05001",
+      "geometry_candidate_name": "西成郡",
+      "location_assessment": "登録位置は後世の大坂城跡の地域代表点。石山本願寺の正確な本堂や旧寺域の点ではない。後世の比較郡境も1582年位置が未確定。",
+      "decision": "東成郡の文献記述と西成郡の面判定を併記する。どちらに合わせても座標・境界を移動しない。",
+      "next_evidence_needed": "石山本願寺の推定寺域と郡境の時代差を、発掘調査図と文献上の生玉荘の位置から照合する。",
+      "automatic_assignment": false
+    },
+    {
+      "site_id": "tsutsui_castle",
+      "status": "held_indirect_lead_disagreement",
+      "source_affiliation_lead": "筒井郷、(添下)というデータベースの暫定比定",
+      "source_evidence_id": "tsutsui-soejimo-mura-lead",
+      "geometry_candidate": "district-candidate-g02003",
+      "geometry_candidate_name": "平群郡",
+      "location_assessment": "登録位置はCODH城跡項目の地域代表点。郷の暫定所属を城そのものの所属と即断できない。",
+      "decision": "直接的な史料所属の矛盾とはまだ判定せず、添下郡の調査候補と平群郡の面判定を併記する。",
+      "next_evidence_needed": "引用先の橿原市史2 p.410と大乗院寺社雑事記を確認し、筒井郷・城域・郡境の位置関係を調べる。",
+      "automatic_assignment": false
+    },
+    {
+      "site_id": "kishiwada_castle",
+      "status": "held_target_year_continuity",
+      "source_evidence_id": "kishiwada-minami-genroku-map",
+      "geometry_candidate": "district-candidate-g04003",
+      "geometry_candidate_name": "南郡",
+      "decision": "元禄図の比較所属と面判定は一致。1582年までの継続と登録位置精度は未確認のため採用保留。",
+      "automatic_assignment": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "batch": "affiliation_batch11_65",
+  "unit_tests": 118,
+  "all_passed": true,
+  "html_rows": 65,
+  "search_and_clear": "node_mock_dom_pass",
+  "visual_browser_check": "not_performed",
+  "regeneration_deterministic": true,
+  "output_sha256": {
+    "data/master/officers/affiliations_1546.json": "aa5c26d44b3245f3853f11dbcef9ea5b7a44fd69373d84d0a02bfaf22d60a66f",
+    "data/master/officers/house_placement_pools_1546.json": "9b25396d810079b811c2044a528314eb263ed01a5b55cd03698c43650c824617",
+    "data/master/officers/affiliation_batch11_research.json": "b451e1d2364f818ff580c17f46b874ea43a8c149d2594f6899f3d7cfccb805a7",
+    "data/derived/officers/officers_1546.json": "35c971fb084f175c86befee7d9dd63136b6db25d5540b4b922bf6bbee0b83405",
+    "docs/officers/officers_1546.html": "6d48ab3d696f5b6d2a5164afd613af203d0c57686acd252e57ee99a6cfe17a7a",
+    "docs/officers/affiliation_research_remaining_65.html": "e48cc09c637d99e4aee3da9ebdb580a33f7b3203500e67eed4bcd2e60e665c71"
+  },
+  "godot_smoke": {
+    "failures": [],
+    "map_year": 1582.0,
+    "memory_static_bytes": 345278005,
+    "registered": 1598,
+    "start_year": 1546.0
+  },
+  "unchanged_other_officers": 1533,
+  "future_reservations_inactive_at_start": 3,
+  "reference_placements_inactive_at_start": 62
+}

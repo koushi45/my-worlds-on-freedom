@@ -1,0 +1,24 @@
+{
+  "status": "approved",
+  "version": "1.0.1",
+  "scope": "honshu",
+  "approval": {
+    "approved_by": "user",
+    "recorded_at_utc": "2026-09-10T14:07:43.014653+00:00",
+    "instruction": "この画像で国名を判断できる箇所の国名を埋めて下さい。国名が不明な個所は赤色で塗りつぶして下さい。その後ビルドをお願いします。"
+  },
+  "candidate_sha256": "ddbe57b84a911d8a0543d515adbc4038c90b93795317b954e28483645570dbac",
+  "name_status": "8 names resolved from supplied map; 3 unresolved regions shown in red",
+  "canonical_hashes": {
+    "data/base/japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data/derived/coastline/coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf"
+  },
+  "files": {
+    "approved_input_edits.json": "ddbe57b84a911d8a0543d515adbc4038c90b93795317b954e28483645570dbac",
+    "cleanup_report.json": "8f1207c95ac2e7e8967b9822353e667a5b5e637b35507093b724e5f3246f8a2e",
+    "name_resolution.json": "378f458428c9ff7edfaea377f50ebf3f413d41b3f0dc02a164a0e8501fd7ba6a",
+    "name_review.json": "932ca16885e46d3be53006fbbb3d86f423feb916656b98f020935490044c91b8",
+    "political_regions_master.gpkg": "0e945c187081c386aaebe75bad52e69006785d1e79379521a3f4155072d0aaa9",
+    "political_registry_master.json": "dc81b4f3fdfd7136bd00c50ad74fcbe5ce425d1095301be34f4a89a6b4c50648"
+  }
+}

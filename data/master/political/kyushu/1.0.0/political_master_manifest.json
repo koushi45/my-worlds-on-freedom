@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "version": "1.0.0",
+  "status": "approved",
+  "scope": "Kyushu main island, 9 provinces; offshore island ownership remains unconfirmed",
+  "approval": {
+    "approved_by": "user",
+    "recorded_at_utc": "2026-09-09T03:11:54.376019+00:00",
+    "instruction": "問題ないので、本番マップに組み込み＆windowsビルドをお願いします。"
+  },
+  "candidate_sha256": "94dfffd03adba553b4c5abd08b2cf7bbc81f3aafb4693296608f9c3d5fda5e37",
+  "candidate_spec_sha256": "8e0b0dca3cf3388a28d3cdc5bc54406d90a365631a2f83c3589f98ada06d59aa",
+  "canonical_hashes": {
+    "data\\base\\japan_land.gpkg": "258bae08b94ebc870de0cf59779780b4a623ca5b7d56e8539eec6cd749e12b59",
+    "data\\derived\\coastline\\coastline_master.gpkg": "099f8cfb8175bcc5b217900fccc5663fd858d31f2dee372f1fb13bc4b66a0baf",
+    "data\\work\\political\\coast_alignment_v2\\source_rgba.png": "119e88fde4245025f5450b9d26f226ecaaaf8a5fcf242cc41ada671e9c07a75d"
+  },
+  "files": {
+    "political_regions_master.gpkg": "4b2fd60d3e719e8f6a9728f6c76302ff82e6f7ed5baad5a628695e9e97a628b2",
+    "political_registry_master.json": "d7cf502e530d1a1a95cfe91abbbd529963081708062b8b3900e49897b7361fce",
+    "approved_registration_report.json": "72c687ee065367ace5f613bffb4e312a9d2fbc5cd18659c03341f6bfa53da2cd"
+  }
+}

@@ -1,0 +1,2882 @@
+{
+  "schema_version": 2,
+  "year": 1546,
+  "houses": [
+    {
+      "id": "hojo",
+      "display_name": "北条家",
+      "head_reference": "北条氏康",
+      "pool": [
+        "sagami/candidate-district-candidate-g15001",
+        "sagami/merged-f953c50bb6b68769",
+        "sagami/candidate-district-candidate-g15002",
+        "sagami/candidate-district-candidate-g15008",
+        "izu/candidate-district-candidate-g14003"
+      ],
+      "district_names": [
+        "相模国・足柄上郡",
+        "相模国・大住郡",
+        "相模国・足柄下郡",
+        "相模国・鎌倉郡",
+        "伊豆国・田方郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "小田原・相模と伊豆の本拠圏。河越合戦の前後で変わる武蔵北部は配置候補にしない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E6%B0%8F%E5%BA%B7"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "otomo",
+      "display_name": "大友家",
+      "head_reference": "大友義鑑",
+      "pool": [
+        "bungo/candidate-district-candidate-g66008",
+        "bungo/candidate-district-candidate-g66004",
+        "bungo/candidate-district-candidate-g66003",
+        "bungo/candidate-district-candidate-g66007"
+      ],
+      "district_names": [
+        "豊後国・大野郡",
+        "豊後国・大分郡",
+        "豊後国・速見郡",
+        "豊後国・直入郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "豊後の本拠圏。後年に拡大する筑前等は使わない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%8F%8B%E7%BE%A9%E9%91%91"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "oda_nobuhide",
+      "display_name": "織田家（信秀系）",
+      "head_reference": "織田信秀",
+      "pool": [
+        "owari/candidate-district-candidate-g09001",
+        "owari/candidate-district-candidate-g09008",
+        "owari/candidate-district-candidate-g09009"
+      ],
+      "district_names": [
+        "尾張国・愛知郡",
+        "尾張国・海東郡",
+        "尾張国・海西郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "熱田・那古野・津島方面の拠点圏。尾張全域の統一前。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E7%B9%94%E7%94%B0%E4%BF%A1%E7%A7%80"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "oda_iwakura",
+      "display_name": "織田家（岩倉系）",
+      "head_reference": "織田信安",
+      "pool": [
+        "owari/merged-132e9d6a8bdd0bfe"
+      ],
+      "district_names": [
+        "尾張国・丹羽郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "岩倉の拠点圏。信秀系と分離。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "oda_kiyosu",
+      "display_name": "織田家（清洲系）",
+      "head_reference": "織田達勝",
+      "pool": [
+        "owari/candidate-district-candidate-g09003"
+      ],
+      "district_names": [
+        "尾張国・西春日井郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "清洲守護代家の拠点圏。信秀系と分離。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "imagawa",
+      "display_name": "今川家",
+      "head_reference": "今川義元",
+      "pool": [
+        "suruga/candidate-district-candidate-g12003",
+        "suruga/candidate-district-candidate-g12005",
+        "suruga/candidate-district-candidate-g12004",
+        "suruga/candidate-district-candidate-g12001",
+        "suruga/candidate-district-candidate-g12002",
+        "totomi/candidate-district-candidate-g11009",
+        "totomi/candidate-district-candidate-g11008"
+      ],
+      "district_names": [
+        "駿河国・安倍郡",
+        "駿河国・富士郡",
+        "駿河国・庵原郡",
+        "駿河国・志太郡",
+        "駿河国・有度郡",
+        "遠江国・周智郡",
+        "遠江国・山名郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "駿府を中心とする領国の配置候補。三河は一律に含めない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%BB%8A%E5%B7%9D%E7%BE%A9%E5%85%83"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "takeda",
+      "display_name": "武田家（甲斐）",
+      "head_reference": "武田信玄",
+      "pool": [
+        "kai/unresolved-d4fdd4c924cdbc20",
+        "kai/unresolved-ffdb3c4007cda493",
+        "kai/unresolved-b48d2f62146c8828",
+        "kai/unresolved-cd2be55f925d6adb",
+        "kai/unresolved-ecfc292ae0476f16",
+        "kai/unresolved-1daff391d7d465f8",
+        "kai/unresolved-c32fd7e7f6a3b40c",
+        "kai/unresolved-9b61530a41070de6",
+        "kai/unresolved-42cfaa8c657745ea",
+        "kai/unresolved-c074c2107bc1fabe"
+      ],
+      "district_names": [
+        "甲斐国・巨摩郡周辺（仮3）",
+        "甲斐国・巨摩郡周辺（仮4）",
+        "甲斐国・都留郡周辺（仮1）",
+        "甲斐国・都留郡周辺（仮2）",
+        "甲斐国・山梨郡周辺（仮2）",
+        "甲斐国・巨摩郡周辺（仮1）",
+        "甲斐国・八代郡周辺（仮2）",
+        "甲斐国・八代郡周辺（仮1）",
+        "甲斐国・巨摩郡周辺（仮2）",
+        "甲斐国・山梨郡周辺（仮1）"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "甲斐の本拠圏。現在の郡レイヤーでは仮称区画を含む。1546年以後の信濃攻略地を使わない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%AD%A6%E7%94%B0%E4%BF%A1%E7%8E%84"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "nagao",
+      "display_name": "長尾家（越後）",
+      "head_reference": "長尾晴景",
+      "pool": [
+        "echigo/candidate-district-candidate-g39014",
+        "echigo/candidate-district-candidate-g39015",
+        "echigo/candidate-district-candidate-g39003"
+      ],
+      "district_names": [
+        "越後国・中頸城郡",
+        "越後国・西頸城郡",
+        "越後国・古志郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "春日山・栃尾の拠点圏。景虎の越後守護代継承は1548年。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=109579529"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "uesugi_yamanouchi",
+      "display_name": "上杉家（山内）",
+      "head_reference": "上杉憲政",
+      "pool": [
+        "kozuke/merged-f070fbb272c2ce29",
+        "kozuke/candidate-district-candidate-g25001",
+        "kozuke/candidate-district-candidate-g25010"
+      ],
+      "district_names": [
+        "上野国・西群馬郡",
+        "上野国・碓氷郡",
+        "上野国・緑野郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "上野平井城を中心にする配置候補。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%86%B2%E6%94%BF"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "uesugi_ogigayatsu",
+      "display_name": "上杉家（扇谷）",
+      "head_reference": "上杉朝定",
+      "pool": [
+        "musashi/candidate-district-candidate-g16010",
+        "musashi/candidate-district-candidate-g16012"
+      ],
+      "district_names": [
+        "武蔵国・入間郡",
+        "武蔵国・比企郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "1546年河越合戦で当主が没するため年内前後に留保。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%9C%9D%E5%AE%9A_%28%E6%89%87%E8%B0%B7%E4%B8%8A%E6%9D%89%E6%B0%8F%29"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "uesugi_echigo",
+      "display_name": "上杉家（越後守護）",
+      "head_reference": "上杉定実",
+      "pool": [
+        "echigo/candidate-district-candidate-g39014"
+      ],
+      "district_names": [
+        "越後国・中頸城郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "越後守護家。長尾家と同郡内に拠点を持つため郡全域の排他的所有とは扱わない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%9A%E5%AE%9F"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "saito",
+      "display_name": "斎藤家（美濃）",
+      "head_reference": "斎藤道三",
+      "pool": [
+        "mino/candidate-district-candidate-g22006",
+        "mino/candidate-district-candidate-g22016",
+        "mino/candidate-district-candidate-g22014",
+        "mino/candidate-district-candidate-g22015"
+      ],
+      "district_names": [
+        "美濃国・山県郡",
+        "美濃国・各務郡",
+        "美濃国・方県郡",
+        "美濃国・厚見郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "稲葉山城周辺の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%96%8E%E8%97%A4%E9%81%93%E4%B8%89"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "asakura",
+      "display_name": "朝倉家",
+      "head_reference": "朝倉孝景 (10代当主)",
+      "pool": [
+        "echizen/candidate-district-candidate-g35004",
+        "echizen/candidate-district-candidate-g35003",
+        "echizen/candidate-district-candidate-g35005",
+        "echizen/candidate-district-candidate-g35001",
+        "echizen/candidate-district-candidate-g35002"
+      ],
+      "district_names": [
+        "越前国・南條郡",
+        "越前国・丹生郡",
+        "越前国・今立郡",
+        "越前国・敦賀郡",
+        "越前国・足羽郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "一乗谷を中心とする越前領国。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "rokkaku",
+      "display_name": "六角家",
+      "head_reference": "六角定頼",
+      "pool": [
+        "omi/candidate-district-candidate-g21006",
+        "omi/candidate-district-candidate-g21003",
+        "omi/candidate-district-candidate-g21007",
+        "omi/candidate-district-candidate-g21005"
+      ],
+      "district_names": [
+        "近江国・蒲生郡",
+        "近江国・栗太郡",
+        "近江国・神崎郡",
+        "近江国・野洲郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "観音寺城と南近江の拠点圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=108052734"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "azai",
+      "display_name": "浅井家",
+      "head_reference": "浅井久政",
+      "pool": [
+        "omi/candidate-district-candidate-g21012",
+        "omi/candidate-district-candidate-g21010",
+        "omi/candidate-district-candidate-g21011"
+      ],
+      "district_names": [
+        "近江国・伊香郡",
+        "近江国・東浅井郡",
+        "近江国・西浅井郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "小谷を中心にした北近江の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=109427795"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "matsudaira",
+      "display_name": "松平家（三河）",
+      "head_reference": "松平広忠",
+      "pool": [
+        "mikawa/candidate-district-candidate-g10002",
+        "mikawa/candidate-district-candidate-g10001"
+      ],
+      "district_names": [
+        "三河国・額田郡",
+        "三河国・碧海郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "岡崎の本拠圏。家康の後年の領国は使用しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%BA%83%E5%BF%A0"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "mizuno",
+      "display_name": "水野家",
+      "head_reference": "水野信元",
+      "pool": [
+        "mikawa/candidate-district-candidate-g10001",
+        "owari/candidate-district-candidate-g09002"
+      ],
+      "district_names": [
+        "三河国・碧海郡",
+        "尾張国・知多郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "刈谷・緒川の拠点圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=109995564"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ouchi",
+      "display_name": "大内家",
+      "head_reference": "大内義隆",
+      "pool": [
+        "suo/candidate-district-candidate-g55005",
+        "suo/candidate-district-candidate-g55003",
+        "suo/candidate-district-candidate-g55002",
+        "suo/candidate-district-candidate-g55001",
+        "nagato/candidate-district-candidate-g56006",
+        "nagato/candidate-district-candidate-g56005"
+      ],
+      "district_names": [
+        "周防国・玖珂郡",
+        "周防国・都濃郡",
+        "周防国・佐波郡",
+        "周防国・吉敷郡",
+        "長門国・豊浦郡",
+        "長門国・厚狭郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "山口・周防長門の中核部。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%86%85%E7%BE%A9%E9%9A%86"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "mori",
+      "display_name": "毛利家",
+      "head_reference": "毛利元就",
+      "pool": [
+        "aki/candidate-district-candidate-g54006"
+      ],
+      "district_names": [
+        "安芸国・高田郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "1546年の吉田郡山の本拠圏。中国地方全域を与えない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%AF%9B%E5%88%A9%E5%85%83%E5%B0%B1"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kobayakawa",
+      "display_name": "小早川家（竹原）",
+      "head_reference": "小早川隆景",
+      "pool": [
+        "aki/candidate-district-candidate-g54001"
+      ],
+      "district_names": [
+        "安芸国・豊田郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "竹原小早川の本拠圏。沼田家統合は1550年のため一括しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%97%A9%E5%B7%9D%E9%9A%86%E6%99%AF"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kikkawa",
+      "display_name": "吉川家",
+      "head_reference": "吉川興経",
+      "pool": [
+        "aki/candidate-district-candidate-g54008"
+      ],
+      "district_names": [
+        "安芸国・山縣郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "1546年当主は興経。元春の養子入り以前。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=108354434"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "amago",
+      "display_name": "尼子家",
+      "head_reference": "尼子晴久",
+      "pool": [
+        "izumo/candidate-district-candidate-g46010",
+        "izumo/candidate-district-candidate-g46009",
+        "izumo/candidate-district-candidate-g46001",
+        "izumo/candidate-district-candidate-g46002",
+        "izumo/candidate-district-candidate-g46008"
+      ],
+      "district_names": [
+        "出雲国・飯石郡",
+        "出雲国・仁多郡",
+        "出雲国・能義郡",
+        "出雲国・意宇郡",
+        "出雲国・大原郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "月山富田を中心にした出雲本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%B0%BC%E5%AD%90%E6%99%B4%E4%B9%85"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "miyoshi",
+      "display_name": "三好家",
+      "head_reference": "三好長慶",
+      "pool": [
+        "awa_shikoku/candidate-district-candidate-g59007",
+        "settsu/merged-63e8d60c157e0c0b"
+      ],
+      "district_names": [
+        "阿波国・三好郡",
+        "摂津国・豊島郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "阿波の基盤と越水方面。細川晴元との関係を別途注記。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%89%E5%A5%BD%E9%95%B7%E6%85%B6"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "hosokawa",
+      "display_name": "細川家（京兆）",
+      "head_reference": "細川晴元",
+      "pool": [
+        "settsu/merged-ec1a78bc41e8d6a6",
+        "yamashiro/candidate-district-candidate-g01003"
+      ],
+      "district_names": [
+        "摂津国・島下郡",
+        "山城国・乙訓郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "摂津・山城の拠点圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E7%B4%B0%E5%B7%9D%E6%99%B4%E5%85%83"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ashikaga",
+      "display_name": "足利将軍家",
+      "head_reference": "足利義晴",
+      "pool": [
+        "yamashiro/candidate-district-candidate-g01002",
+        "yamashiro/candidate-district-candidate-g01001",
+        "omi/candidate-district-candidate-g21001"
+      ],
+      "district_names": [
+        "山城国・愛宕郡",
+        "山城国・葛野郡",
+        "近江国・滋賀郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "京都・近江の居所候補。1546年末の将軍交代は年内前後を注記。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%99%B4"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "shiba",
+      "display_name": "斯波家（尾張）",
+      "head_reference": "斯波義統",
+      "pool": [
+        "owari/candidate-district-candidate-g09003"
+      ],
+      "district_names": [
+        "尾張国・西春日井郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "清洲周辺の守護家。郡全域を独占する意味ではない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%96%AF%E6%B3%A2%E7%BE%A9%E7%B5%B1"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "toki",
+      "display_name": "土岐家",
+      "head_reference": "土岐頼芸",
+      "pool": [
+        "mino/merged-2c24e4258362e1fa"
+      ],
+      "district_names": [
+        "美濃国・羽栗郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "守護家の残存基盤。斎藤氏との争いのため配置は仮案。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%9C%9F%E5%B2%90%E9%A0%BC%E8%8A%B8"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kitabatake",
+      "display_name": "北畠家",
+      "head_reference": "北畠晴具",
+      "pool": [
+        "ise/candidate-district-candidate-g07009",
+        "ise/candidate-district-candidate-g07012",
+        "ise/candidate-district-candidate-g07010"
+      ],
+      "district_names": [
+        "伊勢国・一志郡",
+        "伊勢国・多気郡",
+        "伊勢国・飯高郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "多気御所と南伊勢の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110540886"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kitashirakawa",
+      "display_name": "長野家（伊勢）",
+      "head_reference": "長野稙藤",
+      "pool": [
+        "ise/candidate-district-candidate-g07008",
+        "ise/candidate-district-candidate-g07007"
+      ],
+      "district_names": [
+        "伊勢国・安濃郡",
+        "伊勢国・安芸郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "安濃・安芸の在地基盤。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110527649"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "jinbo",
+      "display_name": "神保家",
+      "head_reference": "神保長職",
+      "pool": [
+        "etchu/candidate-district-candidate-g38003"
+      ],
+      "district_names": [
+        "越中国・婦負郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "富山方面の拠点圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "shiina",
+      "display_name": "椎名家",
+      "head_reference": "椎名康胤",
+      "pool": [
+        "etchu/candidate-district-candidate-g38001"
+      ],
+      "district_names": [
+        "越中国・下新川郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "松倉城方面の拠点圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%A4%8E%E5%90%8D%E5%BA%B7%E8%83%A4"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "hatakeyama_noto",
+      "display_name": "畠山家（能登）",
+      "head_reference": "畠山義続",
+      "pool": [
+        "noto/candidate-district-candidate-g37003",
+        "noto/candidate-district-candidate-g37001",
+        "noto/candidate-district-candidate-g37002"
+      ],
+      "district_names": [
+        "能登国・鳳至郡",
+        "能登国・羽咋郡",
+        "能登国・鹿島郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "七尾の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "hatakeyama_kawachi",
+      "display_name": "畠山家（河内）",
+      "head_reference": "畠山稙長",
+      "pool": [
+        "kawachi/candidate-district-candidate-g03013",
+        "kawachi/merged-17f71891f5bb383a"
+      ],
+      "district_names": [
+        "河内国・石川郡",
+        "河内国・丹南郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "高屋城方面。1546年の家督交代は年内前後に留保。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "takeda_wakasa",
+      "display_name": "武田家（若狭）",
+      "head_reference": "武田信豊 (若狭武田氏)",
+      "pool": [],
+      "district_names": [],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "現行親国レジストリに若狭の表示区画がないため郡未配置。甲斐へ代置しない。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "isshiki",
+      "display_name": "一色家",
+      "head_reference": "一色義幸",
+      "pool": [
+        "tango/candidate-district-candidate-g42001",
+        "tango/candidate-district-candidate-g42002"
+      ],
+      "district_names": [
+        "丹後国・加佐郡",
+        "丹後国・与謝郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "丹後の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "yamana",
+      "display_name": "山名家（但馬）",
+      "head_reference": "山名祐豊",
+      "pool": [
+        "tajima/candidate-district-candidate-g43007",
+        "tajima/candidate-district-candidate-g43004",
+        "tajima/candidate-district-candidate-g43002",
+        "tajima/candidate-district-candidate-g43001"
+      ],
+      "district_names": [
+        "但馬国・養父郡",
+        "但馬国・出石郡",
+        "但馬国・気多郡",
+        "但馬国・城崎郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "出石を中心とする但馬本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%90%8D%E7%A5%90%E8%B1%8A"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "yamana_inaba",
+      "display_name": "山名家（因幡）",
+      "head_reference": "山名誠通",
+      "pool": [
+        "inaba/candidate-district-candidate-g44004",
+        "inaba/candidate-district-candidate-g44002",
+        "inaba/candidate-district-candidate-g44003"
+      ],
+      "district_names": [
+        "因幡国・高草郡",
+        "因幡国・法美郡",
+        "因幡国・邑美郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "因幡の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "akamatsu",
+      "display_name": "赤松家",
+      "head_reference": "赤松晴政",
+      "pool": [
+        "harima/candidate-district-candidate-g49005",
+        "harima/candidate-district-candidate-g49004"
+      ],
+      "district_names": [
+        "播磨国・飾西郡",
+        "播磨国・飾東郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "置塩周辺からの勢力圏の仮案。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=98799073"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "bessho",
+      "display_name": "別所家",
+      "head_reference": "別所就治",
+      "pool": [
+        "harima/candidate-district-candidate-g49006"
+      ],
+      "district_names": [
+        "播磨国・美嚢郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "三木の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "uragami",
+      "display_name": "浦上家",
+      "head_reference": "浦上政宗",
+      "pool": [
+        "bizen/candidate-district-candidate-g51004",
+        "bizen/candidate-district-candidate-g51001"
+      ],
+      "district_names": [
+        "備前国・和気郡",
+        "備前国・邑久郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "浦上兄弟の分立を含む備前東部の拠点圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ukita",
+      "display_name": "宇喜多家",
+      "head_reference": "宇喜多興家",
+      "pool": [
+        "bizen/candidate-district-candidate-g51001"
+      ],
+      "district_names": [
+        "備前国・邑久郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "再興前後の浦上配下の在地家。直家の後年の領国を使わない。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "mimura",
+      "display_name": "三村家",
+      "head_reference": "三村家親",
+      "pool": [
+        "bitchu/candidate-district-candidate-g52008"
+      ],
+      "district_names": [
+        "備中国・上房郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "備中の在地基盤。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%9D%91%E5%AE%B6%E8%A6%AA"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "chosokabe",
+      "display_name": "長宗我部家",
+      "head_reference": "長宗我部国親",
+      "pool": [
+        "tosa/candidate-district-candidate-g62003"
+      ],
+      "district_names": [
+        "土佐国・長岡郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "岡豊の本拠圏。土佐統一前。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%AE%97%E6%88%91%E9%83%A8%E5%9B%BD%E8%A6%AA"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ichijo",
+      "display_name": "一条家（土佐）",
+      "head_reference": "一条房基",
+      "pool": [
+        "tosa/candidate-district-candidate-g62007"
+      ],
+      "district_names": [
+        "土佐国・幡多郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "中村の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%80%E6%9D%A1%E6%88%BF%E5%9F%BA"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "motoyama",
+      "display_name": "本山家",
+      "head_reference": "本山茂宗",
+      "pool": [
+        "tosa/candidate-district-candidate-g62004"
+      ],
+      "district_names": [
+        "土佐国・土佐郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "本山の在地基盤。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%9C%AC%E5%B1%B1%E6%B8%85%E8%8C%82"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "aki_tosa",
+      "display_name": "安芸家（土佐）",
+      "head_reference": "安芸元泰",
+      "pool": [
+        "tosa/candidate-district-candidate-g62001"
+      ],
+      "district_names": [
+        "土佐国・安芸郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "土佐安芸の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kono",
+      "display_name": "河野家",
+      "head_reference": "河野通直",
+      "pool": [
+        "iyo/candidate-district-candidate-g61007",
+        "iyo/candidate-district-candidate-g61009"
+      ],
+      "district_names": [
+        "伊予国・風早郡",
+        "伊予国・温泉郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "湯築の本拠圏。複数同名当主に注意。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "saionji",
+      "display_name": "西園寺家（伊予）",
+      "head_reference": "西園寺実充",
+      "pool": [
+        "iyo/candidate-district-candidate-g61015"
+      ],
+      "district_names": [
+        "伊予国・東宇和郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "伊予西園寺氏の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "murakami_noshima",
+      "display_name": "村上家（能島）",
+      "head_reference": "村上義忠",
+      "pool": [
+        "iyo/candidate-district-candidate-g61005"
+      ],
+      "district_names": [
+        "伊予国・越智郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "芸予諸島の拠点を含む郡。海を渡る経路は追加しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%9D%91%E4%B8%8A%E7%BE%A9%E5%BF%A0"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kagawa",
+      "display_name": "香川家（讃岐）",
+      "head_reference": "香川之景",
+      "pool": [
+        "sanuki/candidate-district-candidate-g60008",
+        "sanuki/candidate-district-candidate-g60009"
+      ],
+      "district_names": [
+        "讃岐国・那珂郡",
+        "讃岐国・多度郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "天霧城方面の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "sogo",
+      "display_name": "十河家",
+      "head_reference": "十河景滋",
+      "pool": [
+        "sanuki/candidate-district-candidate-g60004"
+      ],
+      "district_names": [
+        "讃岐国・山田郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "十河城の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=101275451"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "shimazu",
+      "display_name": "島津家",
+      "head_reference": "島津貴久",
+      "pool": [
+        "satsuma/candidate-district-candidate-g71008",
+        "satsuma/candidate-district-candidate-g71007"
+      ],
+      "district_names": [
+        "薩摩国・日置郡",
+        "薩摩国・阿多郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "伊作・田布施方面。鹿児島内城への移転は1550年のため配置先に含めない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110821441"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ito",
+      "display_name": "伊東家",
+      "head_reference": "伊東義祐",
+      "pool": [
+        "hyuga/candidate-district-candidate-g69003",
+        "hyuga/candidate-district-candidate-g69008"
+      ],
+      "district_names": [
+        "日向国・児湯郡",
+        "日向国・宮崎郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "都於郡城方面の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110436904"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kimotsuki",
+      "display_name": "肝付家",
+      "head_reference": "肝付兼続",
+      "pool": [
+        "osumi/candidate-district-candidate-g70006"
+      ],
+      "district_names": [
+        "大隅国・肝属郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "高山の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E8%82%9D%E4%BB%98%E5%85%BC%E7%B6%9A"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "sagara",
+      "display_name": "相良家",
+      "head_reference": "相良晴広",
+      "pool": [
+        "higo/candidate-district-candidate-g68014",
+        "higo/candidate-district-candidate-g68013"
+      ],
+      "district_names": [
+        "肥後国・球摩郡",
+        "肥後国・葦北郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "人吉を中心とした本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=103440485"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "aso",
+      "display_name": "阿蘇家",
+      "head_reference": "阿蘇惟豊",
+      "pool": [
+        "higo/candidate-district-candidate-g68004",
+        "higo/candidate-district-candidate-g68009"
+      ],
+      "district_names": [
+        "肥後国・阿蘇郡",
+        "肥後国・上益城郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "阿蘇・矢部方面の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=90048260"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "shoni",
+      "display_name": "少弐家",
+      "head_reference": "少弐冬尚",
+      "pool": [
+        "hizen/merged-3051a6f57adaff58"
+      ],
+      "district_names": [
+        "肥前国・神崎郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "肥前東部の残存基盤。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ryuzoji",
+      "display_name": "龍造寺家",
+      "head_reference": "龍造寺家兼",
+      "pool": [
+        "hizen/candidate-district-candidate-g67005"
+      ],
+      "district_names": [
+        "肥前国・佐賀郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "佐賀の本拠圏。1546年の家兼没と復帰過程に留保。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "arima",
+      "display_name": "有馬家（肥前）",
+      "head_reference": "有馬晴純",
+      "pool": [
+        "hizen/candidate-district-candidate-g67010"
+      ],
+      "district_names": [
+        "肥前国・南高来郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "島原半島の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110288780"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "omura",
+      "display_name": "大村家",
+      "head_reference": "大村純前",
+      "pool": [
+        "hizen/candidate-district-candidate-g67012"
+      ],
+      "district_names": [
+        "肥前国・東彼杵郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "大村の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "matsuura",
+      "display_name": "松浦家（平戸）",
+      "head_reference": "松浦隆信",
+      "pool": [
+        "hizen/candidate-district-candidate-g67015"
+      ],
+      "district_names": [
+        "肥前国・北松浦郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "平戸の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%9D%BE%E6%B5%A6%E9%9A%86%E4%BF%A1"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "akizuki",
+      "display_name": "秋月家",
+      "head_reference": "秋月文種",
+      "pool": [
+        "chikuzen/merged-efad3c15cc7a3e86",
+        "chikuzen/candidate-district-candidate-g63012"
+      ],
+      "district_names": [
+        "筑前国・夜須郡",
+        "筑前国・上座郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "秋月の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E7%A7%8B%E6%9C%88%E6%96%87%E7%A8%AE"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "munakata",
+      "display_name": "宗像家",
+      "head_reference": "宗像正氏",
+      "pool": [
+        "chikuzen/candidate-district-candidate-g63013"
+      ],
+      "district_names": [
+        "筑前国・宗像郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "宗像の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=101265909"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "date",
+      "display_name": "伊達家",
+      "head_reference": "伊達晴宗",
+      "pool": [
+        "honshu-area-09/candidate-district-candidate-g28010",
+        "honshu-area-09/candidate-district-candidate-g28009",
+        "honshu-area-06/candidate-district-candidate-g32002"
+      ],
+      "district_names": [
+        "岩代国・伊達郡",
+        "岩代国・信夫郡",
+        "羽前国・東置賜郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "天文の乱の父子対立中。父子を同一郡の排他的所有者として確定しない配置枠。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%99%B4%E5%AE%97"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ashina",
+      "display_name": "蘆名家",
+      "head_reference": "蘆名盛氏",
+      "pool": [
+        "honshu-area-09/candidate-district-candidate-g28003",
+        "honshu-area-09/candidate-district-candidate-g28004",
+        "honshu-area-09/candidate-district-candidate-g28002"
+      ],
+      "district_names": [
+        "岩代国・大沼郡",
+        "岩代国・河沼郡",
+        "岩代国・北会津郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "会津黒川の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=107531674"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "soma",
+      "display_name": "相馬家",
+      "head_reference": "相馬顕胤",
+      "pool": [
+        "honshu-area-08/candidate-district-candidate-g27009",
+        "honshu-area-08/candidate-district-candidate-g27010"
+      ],
+      "district_names": [
+        "磐城国・行方郡",
+        "磐城国・宇多郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "小高の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "satake",
+      "display_name": "佐竹家",
+      "head_reference": "佐竹義昭",
+      "pool": [
+        "hitachi/candidate-district-candidate-g20011",
+        "hitachi/candidate-district-candidate-g20010"
+      ],
+      "district_names": [
+        "常陸国・久慈郡",
+        "常陸国・那珂郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "常陸太田の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%BD%90%E7%AB%B9%E7%BE%A9%E6%98%AD"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "satomi",
+      "display_name": "里見家",
+      "head_reference": "里見義堯",
+      "pool": [
+        "honshu-area-30/candidate-district-candidate-g17003",
+        "honshu-area-30/candidate-district-candidate-g17001",
+        "honshu-area-30/candidate-district-candidate-g17002"
+      ],
+      "district_names": [
+        "安房国・長狭郡",
+        "安房国・平郡",
+        "安房国・安房郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "安房の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E9%87%8C%E8%A6%8B%E7%BE%A9%E5%A0%AF"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "chiba",
+      "display_name": "千葉家",
+      "head_reference": "千葉利胤",
+      "pool": [
+        "shimosa/candidate-district-candidate-g19009",
+        "shimosa/candidate-district-candidate-g19001"
+      ],
+      "district_names": [
+        "下総国・印旛郡",
+        "下総国・千葉郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "本佐倉の本拠圏。1546年の当主交代に留保。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=108232667"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "yuki",
+      "display_name": "結城家",
+      "head_reference": "結城政勝",
+      "pool": [
+        "shimosa/candidate-district-candidate-g19004"
+      ],
+      "district_names": [
+        "下総国・結城郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "下総結城の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E7%B5%90%E5%9F%8E%E6%94%BF%E5%8B%9D"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "oyama",
+      "display_name": "小山家",
+      "head_reference": "小山高朝",
+      "pool": [
+        "shimotsuke/merged-5e050977ef66e7ce"
+      ],
+      "district_names": [
+        "下野国・下都賀郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "小山の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "utsunomiya",
+      "display_name": "宇都宮家",
+      "head_reference": "宇都宮尚綱",
+      "pool": [
+        "shimotsuke/candidate-district-candidate-g26006",
+        "shimotsuke/candidate-district-candidate-g26007"
+      ],
+      "district_names": [
+        "下野国・河内郡",
+        "下野国・芳賀郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "宇都宮の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "nasu",
+      "display_name": "那須家",
+      "head_reference": "那須高資",
+      "pool": [
+        "shimotsuke/candidate-district-candidate-g26009"
+      ],
+      "district_names": [
+        "下野国・那須郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "那須の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "sano",
+      "display_name": "佐野家",
+      "head_reference": "佐野泰綱",
+      "pool": [
+        "shimotsuke/candidate-district-candidate-g26001"
+      ],
+      "district_names": [
+        "下野国・安蘇郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "唐沢山の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=109117139"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "koga",
+      "display_name": "足利家（古河公方）",
+      "head_reference": "足利晴氏",
+      "pool": [
+        "shimosa/candidate-district-candidate-g19003",
+        "shimosa/candidate-district-candidate-g19014"
+      ],
+      "district_names": [
+        "下総国・猿島郡",
+        "下総国・西葛飾郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "古河の拠点圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110434860"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "mogami",
+      "display_name": "最上家",
+      "head_reference": "最上義守",
+      "pool": [
+        "honshu-area-06/candidate-district-candidate-g32007",
+        "honshu-area-06/candidate-district-candidate-g32008"
+      ],
+      "district_names": [
+        "羽前国・南村山郡",
+        "羽前国・東村山郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "山形の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110586341"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "nanbu",
+      "display_name": "南部家",
+      "head_reference": "南部晴政",
+      "pool": [
+        "honshu-area-01/candidate-district-candidate-g31003",
+        "honshu-area-01/candidate-district-candidate-g31004"
+      ],
+      "district_names": [
+        "陸奥国・三戸郡",
+        "陸奥国・二戸郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "三戸の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%8D%97%E9%83%A8%E6%99%B4%E6%94%BF"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ando",
+      "display_name": "安東家",
+      "head_reference": "安東舜季",
+      "pool": [
+        "honshu-area-03/candidate-district-candidate-g33009",
+        "honshu-area-03/candidate-district-candidate-g33007"
+      ],
+      "district_names": [
+        "羽後国・山本郡",
+        "羽後国・南秋田郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "檜山方面の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%AE%89%E6%9D%B1%E8%88%9C%E5%AD%A3"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "tozawa",
+      "display_name": "戸沢家",
+      "head_reference": "戸沢道盛",
+      "pool": [
+        "honshu-area-03/candidate-district-candidate-g33005"
+      ],
+      "district_names": [
+        "羽後国・仙北郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "角館方面の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "onodera",
+      "display_name": "小野寺家",
+      "head_reference": "小野寺稙道",
+      "pool": [
+        "honshu-area-03/candidate-district-candidate-g33003",
+        "honshu-area-03/candidate-district-candidate-g33004"
+      ],
+      "district_names": [
+        "羽後国・雄勝郡",
+        "羽後国・平鹿郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "横手・稲庭の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=80893839"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "osaki",
+      "display_name": "大崎家",
+      "head_reference": "大崎義直",
+      "pool": [
+        "honshu-area-05/candidate-district-candidate-g29005",
+        "honshu-area-05/candidate-district-candidate-g29006",
+        "honshu-area-05/candidate-district-candidate-g29009"
+      ],
+      "district_names": [
+        "陸前国・加美郡",
+        "陸前国・玉造郡",
+        "陸前国・志田郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "大崎の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kasai",
+      "display_name": "葛西家",
+      "head_reference": "葛西晴胤",
+      "pool": [
+        "honshu-area-05/candidate-district-candidate-g29012",
+        "honshu-area-04/candidate-district-candidate-g30002"
+      ],
+      "district_names": [
+        "陸前国・登米郡",
+        "陸中国・東磐井郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "寺池方面の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "nihonmatsu",
+      "display_name": "二本松家",
+      "head_reference": "二本松家泰",
+      "pool": [
+        "honshu-area-09/candidate-district-candidate-g28008"
+      ],
+      "district_names": [
+        "岩代国・安達郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "二本松の本拠圏。同名・系譜は人物側で保留。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%BA%8C%E6%9C%AC%E6%9D%BE%E5%AE%B6%E6%B3%B0"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "tamura",
+      "display_name": "田村家",
+      "head_reference": "田村隆顕",
+      "pool": [
+        "honshu-area-08/candidate-district-candidate-g27014"
+      ],
+      "district_names": [
+        "磐城国・田村郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "三春の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "iwaki",
+      "display_name": "岩城家",
+      "head_reference": "岩城重隆",
+      "pool": [
+        "honshu-area-08/candidate-district-candidate-g27005",
+        "honshu-area-08/candidate-district-candidate-g27006"
+      ],
+      "district_names": [
+        "磐城国・磐前郡",
+        "磐城国・磐城郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "飯野平の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "shirakawa",
+      "display_name": "結城家（白河）",
+      "head_reference": "結城晴綱",
+      "pool": [
+        "honshu-area-08/candidate-district-candidate-g27001"
+      ],
+      "district_names": [
+        "磐城国・西白河郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "白河の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "murakami_shinano",
+      "display_name": "村上家（信濃）",
+      "head_reference": "村上義清",
+      "pool": [
+        "shinano/candidate-district-candidate-g24010",
+        "shinano/candidate-district-candidate-g24013"
+      ],
+      "district_names": [
+        "信濃国・更科郡",
+        "信濃国・埴科郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "葛尾の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%9D%91%E4%B8%8A%E7%BE%A9%E6%B8%85"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ogasawara",
+      "display_name": "小笠原家（信濃）",
+      "head_reference": "小笠原長時",
+      "pool": [
+        "shinano/candidate-district-candidate-g24002"
+      ],
+      "district_names": [
+        "信濃国・東筑摩郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "林城・筑摩の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=109585403"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kiso",
+      "display_name": "木曾家",
+      "head_reference": "木曾義康",
+      "pool": [
+        "shinano/candidate-district-candidate-g24001"
+      ],
+      "district_names": [
+        "信濃国・西筑摩郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "木曽の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%9B%BE%E7%BE%A9%E5%BA%B7"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "takanashi",
+      "display_name": "高梨家",
+      "head_reference": "高梨政頼",
+      "pool": [
+        "shinano/candidate-district-candidate-g24012"
+      ],
+      "district_names": [
+        "信濃国・下高井郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "中野の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%A2%A8%E6%94%BF%E9%A0%BC"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "murayama",
+      "display_name": "村山家",
+      "head_reference": "",
+      "pool": [],
+      "district_names": [],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "領地対応未確認。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "aizu_nagano",
+      "display_name": "長野家（上野）",
+      "head_reference": "長野業正",
+      "pool": [
+        "kozuke/merged-f070fbb272c2ce29"
+      ],
+      "district_names": [
+        "上野国・西群馬郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "箕輪の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110620281"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "tsutsui",
+      "display_name": "筒井家",
+      "head_reference": "筒井順昭",
+      "pool": [
+        "yamato/candidate-district-candidate-g02001",
+        "yamato/candidate-district-candidate-g02002"
+      ],
+      "district_names": [
+        "大和国・添上郡",
+        "大和国・添下郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "筒井城の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E7%AD%92%E4%BA%95%E9%A0%86%E6%98%AD"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ochi",
+      "display_name": "越智家",
+      "head_reference": "越智家増",
+      "pool": [
+        "yamato/candidate-district-candidate-g02009"
+      ],
+      "district_names": [
+        "大和国・高市郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "高取方面の拠点圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E8%B6%8A%E6%99%BA%E5%AE%B6%E5%A2%97"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "hatano",
+      "display_name": "波多野家",
+      "head_reference": "波多野秀忠",
+      "pool": [
+        "tanba/candidate-district-candidate-g41005"
+      ],
+      "district_names": [
+        "丹波国・多紀郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "八上の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "akai",
+      "display_name": "赤井家",
+      "head_reference": "赤井時家",
+      "pool": [
+        "tanba/candidate-district-candidate-g41006"
+      ],
+      "district_names": [
+        "丹波国・氷上郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "氷上の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "bessho_honganji",
+      "display_name": "本願寺",
+      "head_reference": "証如",
+      "pool": [
+        "settsu/merged-54dee703a135cb2b",
+        "kaga/candidate-district-candidate-g36004"
+      ],
+      "district_names": [
+        "摂津国・西成郡",
+        "加賀国・石川郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "石山本願寺と加賀門徒の配置候補。門徒領有を郡全域の直接支配とは扱わない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E8%A8%BC%E5%A6%82"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "negoro",
+      "display_name": "根来寺",
+      "head_reference": "",
+      "pool": [
+        "kii/candidate-district-candidate-g57003"
+      ],
+      "district_names": [
+        "紀伊国・那賀郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "根来の寺領拠点圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "saika",
+      "display_name": "雑賀衆",
+      "head_reference": "",
+      "pool": [
+        "kii/candidate-district-candidate-g57001",
+        "kii/candidate-district-candidate-g57002"
+      ],
+      "district_names": [
+        "紀伊国・名草郡",
+        "紀伊国・海部郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "紀伊の雑賀衆の拠点圏。人物同定は別途判定。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "miki",
+      "display_name": "三木家（飛騨）",
+      "head_reference": "三木直頼",
+      "pool": [
+        "hida/candidate-district-candidate-g23002",
+        "hida/candidate-district-candidate-g23001"
+      ],
+      "district_names": [
+        "飛騨国・大野郡",
+        "飛騨国・益田郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "桜洞方面の本拠圏。姉小路家名継承以前。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%9C%A8%E7%9B%B4%E9%A0%BC"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kodera",
+      "display_name": "小寺家",
+      "head_reference": "小寺政職",
+      "pool": [
+        "harima/candidate-district-candidate-g49005",
+        "harima/candidate-district-candidate-g49004"
+      ],
+      "district_names": [
+        "播磨国・飾西郡",
+        "播磨国・飾東郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "御着周辺の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%AF%BA%E6%94%BF%E8%81%B7"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ota",
+      "display_name": "太田家（岩付）",
+      "head_reference": "太田資頼",
+      "pool": [
+        "musashi/candidate-district-candidate-g16008"
+      ],
+      "district_names": [
+        "武蔵国・南埼玉郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "岩付の本拠圏。北条家へ一律にまとめない。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "narita",
+      "display_name": "成田家",
+      "head_reference": "成田親泰",
+      "pool": [
+        "musashi/candidate-district-candidate-g16009"
+      ],
+      "district_names": [
+        "武蔵国・北埼玉郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "忍城の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "oda_hitachi",
+      "display_name": "小田家（常陸）",
+      "head_reference": "小田政治",
+      "pool": [
+        "hitachi/candidate-district-candidate-g20009",
+        "hitachi/candidate-district-candidate-g20001"
+      ],
+      "district_names": [
+        "常陸国・新治郡",
+        "常陸国・筑波郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "常陸小田城の本拠圏。尾張織田氏とは別。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=105710295"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "yura",
+      "display_name": "由良家",
+      "head_reference": "由良成繁",
+      "pool": [
+        "kozuke/candidate-district-candidate-g25016"
+      ],
+      "district_names": [
+        "上野国・新田郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "金山城の本拠圏。改姓前後を含む表示。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "iwamatsu",
+      "display_name": "岩松家",
+      "head_reference": "岩松守純",
+      "pool": [
+        "kozuke/candidate-district-candidate-g25016"
+      ],
+      "district_names": [
+        "上野国・新田郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "上野新田の拠点圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "daihoji",
+      "display_name": "大宝寺家",
+      "head_reference": "大宝寺晴時",
+      "pool": [
+        "honshu-area-06/candidate-district-candidate-g32004",
+        "honshu-area-06/candidate-district-candidate-g32005"
+      ],
+      "district_names": [
+        "羽前国・東田川郡",
+        "羽前国・西田川郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "庄内大宝寺の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "nikaido",
+      "display_name": "二階堂家",
+      "head_reference": "二階堂照行",
+      "pool": [
+        "honshu-area-09/candidate-district-candidate-g28006"
+      ],
+      "district_names": [
+        "岩代国・岩瀬郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "須賀川の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ishikawa_mutsu",
+      "display_name": "石川家（陸奥）",
+      "head_reference": "石川晴光",
+      "pool": [
+        "honshu-area-08/candidate-district-candidate-g27003"
+      ],
+      "district_names": [
+        "磐城国・石川郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "陸奥石川の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "miura_mimasaka",
+      "display_name": "三浦家（美作）",
+      "head_reference": "三浦貞久",
+      "pool": [
+        "mimasaka/candidate-district-candidate-g50012"
+      ],
+      "district_names": [
+        "美作国・眞島郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "美作高田の拠点圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%B5%A6%E8%B2%9E%E4%B9%85"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "itami",
+      "display_name": "伊丹家",
+      "head_reference": "伊丹親興",
+      "pool": [
+        "settsu/merged-48f4626a9b864685"
+      ],
+      "district_names": [
+        "摂津国・川辺郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "摂津伊丹の拠点圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "iinoya",
+      "display_name": "井伊家",
+      "head_reference": "井伊直盛",
+      "pool": [
+        "totomi/candidate-district-candidate-g11004"
+      ],
+      "district_names": [
+        "遠江国・引佐郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "井伊谷の本拠圏。今川との従属関係は家の所属と別に考える。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%BA%95%E4%BC%8A%E7%9B%B4%E7%9B%9B"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "masuda",
+      "display_name": "益田家（石見）",
+      "head_reference": "益田藤兼",
+      "pool": [
+        "iwami/candidate-district-candidate-g47005"
+      ],
+      "district_names": [
+        "石見国・美濃郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "石見益田の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E7%9B%8A%E7%94%B0%E8%97%A4%E5%85%BC"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kikkawa_ogasawara",
+      "display_name": "小笠原家（石見）",
+      "head_reference": "小笠原長雄",
+      "pool": [
+        "iwami/candidate-district-candidate-g47003"
+      ],
+      "district_names": [
+        "石見国・邑智郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "石見の温湯城周辺。信濃小笠原とは分離。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=105204399"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "tsuwano",
+      "display_name": "吉見家（石見）",
+      "head_reference": "吉見正頼",
+      "pool": [
+        "iwami/candidate-district-candidate-g47006"
+      ],
+      "district_names": [
+        "石見国・鹿足郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "津和野の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%90%89%E8%A6%8B%E6%AD%A3%E9%A0%BC"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kuki",
+      "display_name": "九鬼家",
+      "head_reference": "九鬼定隆",
+      "pool": [],
+      "district_names": [],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "志摩国の親国・郡レイヤーが現行データにないため郡未配置。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "so",
+      "display_name": "宗家（対馬）",
+      "head_reference": "宗将盛",
+      "pool": [],
+      "district_names": [],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "対馬の表示郡が未収録のため郡未配置。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kakizaki",
+      "display_name": "蠣崎家",
+      "head_reference": "蠣崎季広",
+      "pool": [],
+      "district_names": [],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "道南の郡レイヤー未収録。別の国へ代置しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=109108615"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "chito",
+      "display_name": "千葉家（肥前）",
+      "head_reference": "千葉胤連",
+      "pool": [
+        "hizen/candidate-district-candidate-g67006"
+      ],
+      "district_names": [
+        "肥前国・小城郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "肥前小城の千葉家。下総千葉家と別。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "hongo",
+      "display_name": "北郷家",
+      "head_reference": "北郷忠相",
+      "pool": [
+        "hyuga/merged-849bc727ff99800e"
+      ],
+      "district_names": [
+        "日向国・北諸県郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "都城の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "ito_hyuga_tsuchimochi",
+      "display_name": "土持家",
+      "head_reference": "土持親佐",
+      "pool": [
+        "hyuga/candidate-district-candidate-g69001"
+      ],
+      "district_names": [
+        "日向国・東臼杵郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "日向北部の在地基盤。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kii",
+      "display_name": "城井家",
+      "head_reference": "城井長房",
+      "pool": [
+        "buzen/candidate-district-candidate-g65005"
+      ],
+      "district_names": [
+        "豊前国・築城郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "城井谷の本拠圏。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "shibuya",
+      "display_name": "入来院家",
+      "head_reference": "入来院重朝",
+      "pool": [
+        "satsuma/candidate-district-candidate-g71010"
+      ],
+      "district_names": [
+        "薩摩国・薩摩郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "薩摩入来の本拠圏。島津の統一前。",
+      "source_urls": [],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "kedo",
+      "display_name": "祁答院家",
+      "head_reference": "祁答院重武",
+      "pool": [
+        "satsuma/candidate-district-candidate-g71010"
+      ],
+      "district_names": [
+        "薩摩国・薩摩郡"
+      ],
+      "basis": "1546年頃の本拠圏を使ったゲーム用配置候補。郡全域の排他的領有確定ではない。",
+      "note": "薩摩祁答院の本拠圏。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=69874927"
+      ],
+      "status": "editorial_core_area_draft"
+    },
+    {
+      "id": "takenoya",
+      "display_name": "松平家（竹谷）",
+      "head_reference": "松平清善",
+      "pool": [
+        "mikawa/candidate-district-candidate-g10006"
+      ],
+      "district_names": [
+        "三河国・宝飯郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "竹谷城を本拠とする家。岡崎松平家との血縁だけで同一勢力にしない。",
+      "source_urls": [
+        "https://www.city.gamagori.lg.jp/site/museum/g-sengoku-timeline.html",
+        "https://www.city.gamagori.lg.jp/site/gamagoriseibushogakko/kaminogou-udono.html",
+        "https://ja.wikipedia.org/w/index.php?oldid=110879939",
+        "https://ja.wikipedia.org/w/index.php?oldid=105612186"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "toda_tahara",
+      "display_name": "戸田家（田原）",
+      "head_reference": "戸田康光",
+      "pool": [
+        "mikawa/candidate-district-candidate-g10010"
+      ],
+      "district_names": [
+        "三河国・渥美郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "田原城の本拠圏。1550年頃の今川接収との前後を区別。",
+      "source_urls": [
+        "https://www.city.tahara.aichi.jp/seisaku/1010835/1004852/1007515/1007559/1007566.html",
+        "https://www.city.tahara.aichi.jp/kankou/kankou/1002671.html",
+        "https://ja.wikipedia.org/w/index.php?oldid=110375355",
+        "https://ja.wikipedia.org/w/index.php?oldid=104920718"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "hisamatsu_agui",
+      "display_name": "久松家（阿久比）",
+      "head_reference": "久松俊勝",
+      "pool": [
+        "owari/candidate-district-candidate-g09002"
+      ],
+      "district_names": [
+        "尾張国・知多郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "阿久比の本拠圏。1562年以降の上ノ郷領は含めない。",
+      "source_urls": [
+        "https://www.city.gamagori.lg.jp/site/gamagoriseibushogakko/kaminogou-udono.html",
+        "https://ja.wikipedia.org/wiki/%E4%B9%85%E6%9D%BE%E4%BF%8A%E5%8B%9D"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "tagaya",
+      "display_name": "多賀谷家（下妻）",
+      "head_reference": "多賀谷家重",
+      "pool": [
+        "hitachi/candidate-district-candidate-g20006"
+      ],
+      "district_names": [
+        "常陸国・真壁郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "下妻の本拠圏。家重・政経の継承年次は留保。",
+      "source_urls": [
+        "https://www.city.shimotsuma.lg.jp/shogaigakushu-bunka-sports/bunka/rekishi/page002675.html",
+        "https://adeac.jp/iwasebunko/catalog/mp01275600",
+        "https://ja.wikipedia.org/w/index.php?oldid=108706994",
+        "https://ja.wikipedia.org/wiki/%E5%A4%9A%E8%B3%80%E8%B0%B7%E6%94%BF%E7%B5%8C"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "minagawa",
+      "display_name": "皆川家",
+      "head_reference": "皆川俊宗",
+      "pool": [
+        "shimotsuke/merged-5e050977ef66e7ce"
+      ],
+      "district_names": [
+        "下野国・下都賀郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "皆川城の本拠圏。継承時期は天文年間の幅を保持。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=108281029"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "mariyatsu_shiizu",
+      "display_name": "真里谷家（椎津）",
+      "head_reference": "真里谷信隆",
+      "pool": [
+        "kazusa/candidate-district-candidate-g18004"
+      ],
+      "district_names": [
+        "上総国・市原郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "椎津城の支配を扱い、北条支援を直接奉公と同一視しない。",
+      "source_urls": [
+        "https://www.imuseum.jp/material/files/group/3/c045natumeduka.pdf",
+        "https://ja.wikipedia.org/w/index.php?oldid=110318989",
+        "https://ja.wikipedia.org/wiki/%E7%9C%9F%E9%87%8C%E8%B0%B7%E4%BF%A1%E6%94%BF"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "kokubun_miyagi",
+      "display_name": "国分家（陸奥）",
+      "head_reference": "国分盛氏（一門）",
+      "pool": [
+        "honshu-area-05/candidate-district-candidate-g29003"
+      ],
+      "district_names": [
+        "陸前国・宮城郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "国分氏本拠圏。現行マップの陸前・宮城表記で配置し、盛氏を1546年当主とはしない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=95933771"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "rusu",
+      "display_name": "留守家",
+      "head_reference": "留守景宗",
+      "pool": [
+        "honshu-area-05/candidate-district-candidate-g29003"
+      ],
+      "district_names": [
+        "陸前国・宮城郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "岩切の留守家本拠圏。天文の乱の晴宗方。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=109443153"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "osaki_yoshinobu",
+      "display_name": "大崎家（義宣・不動堂）",
+      "head_reference": "大崎義宣（養嗣子）",
+      "pool": [
+        "honshu-area-05/candidate-district-candidate-g29009"
+      ],
+      "district_names": [
+        "陸前国・志田郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "不動堂の本拠圏。稙宗方の義宣を、晴宗方の義直と別IDで扱う。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110639106"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "shimazu_hoshu",
+      "display_name": "島津家（豊州）",
+      "head_reference": "島津忠広 (豊州家)",
+      "pool": [
+        "hyuga/candidate-district-candidate-g69009"
+      ],
+      "district_names": [
+        "日向国・南那珂郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "飫肥の本拠圏。現行マップの後世郡名を使用し、1546年の郡制度再現ではない。",
+      "source_urls": [
+        "https://www.city.shibushi.lg.jp/uploaded/attachment/4479.pdf",
+        "https://sitereports.nabunken.go.jp/files/attach/4/4109/3053_1_%E9%A3%AB%E8%82%A5%E5%9F%8E%E8%B7%A1.pdf",
+        "https://ja.wikipedia.org/w/index.php?oldid=103225458"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "shimazu_sasshu",
+      "display_name": "島津家（薩州）",
+      "head_reference": "島津実久",
+      "pool": [
+        "satsuma/candidate-district-candidate-g71013"
+      ],
+      "district_names": [
+        "薩摩国・出水郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "出水・野田の本拠圏。宗家の勝久（忠兼）と人物・家を分離。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=103225273"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "kuroki",
+      "display_name": "黒木家（筑後）",
+      "head_reference": "黒木家永（一門）",
+      "pool": [
+        "chikugo/candidate-district-candidate-g64007"
+      ],
+      "district_names": [
+        "筑後国・上妻郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "猫尾城の本拠圏。大友への1564年降伏以前を分離。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=110646969"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "yamauchi_bingo",
+      "display_name": "山内家（備後）",
+      "head_reference": "山内氏（継承要照合）",
+      "pool": [
+        "bingo/candidate-district-candidate-g53014"
+      ],
+      "district_names": [
+        "備後国・恵蘇郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "甲山城本拠圏。豊通・隆通・直通の継承は留保し、直通は隠居配置。",
+      "source_urls": [
+        "https://www.city.shobara.hiroshima.jp/main/education/shogaigakushu/cat02/02/post_187.html",
+        "https://ja.wikipedia.org/w/index.php?oldid=104205539"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "ikeda_settsu",
+      "display_name": "池田家（摂津）",
+      "head_reference": "池田信正",
+      "pool": [
+        "settsu/merged-63e8d60c157e0c0b"
+      ],
+      "district_names": [
+        "摂津国・豊島郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "池田城本拠圏。1546年の晴元方から氏綱方への陣営変更は別に記録。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E4%BF%A1%E6%AD%A3"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "takayama_settsu",
+      "display_name": "高山家（摂津）",
+      "head_reference": "高山飛騨守（友照）",
+      "pool": [
+        "settsu/merged-48f4626a9b864685"
+      ],
+      "district_names": [
+        "摂津国・川辺郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "能勢郡高山荘は現行マップで川辺郡へ合併済み。現行表示郡を採り、川辺郡全域の領有を意味しない。",
+      "source_urls": [
+        "https://kansai-u.repo.nii.ac.jp/record/22160/files/KU-1100-20220318-06.pdf",
+        "https://ja.wikipedia.org/w/index.php?oldid=108496215"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "hosokawa_izumi",
+      "display_name": "細川家（和泉上守護）",
+      "head_reference": "細川晴貞（継承時期留保）",
+      "pool": [
+        "izumi/candidate-district-candidate-g04001"
+      ],
+      "district_names": [
+        "和泉国・大鳥郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "和泉上守護家の北部本拠圏。京都居住の元常の実際の居所ではない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E7%B4%B0%E5%B7%9D%E5%85%83%E5%B8%B8"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "tsuda_ogura",
+      "display_name": "津田家（紀伊小倉）",
+      "head_reference": "津田算長",
+      "pool": [
+        "kii/candidate-district-candidate-g57003"
+      ],
+      "district_names": [
+        "紀伊国・那賀郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "小倉荘の在地家。根来寺との協力を直接の主従関係とは断定しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%B4%A5%E7%94%B0%E7%AE%97%E9%95%B7",
+        "https://ja.wikipedia.org/wiki/%E6%B4%A5%E7%94%B0%E7%AE%97%E6%AD%A3"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "ogino_kuroi",
+      "display_name": "荻野家（黒井）",
+      "head_reference": "荻野秋清",
+      "pool": [
+        "tanba/candidate-district-candidate-g41006"
+      ],
+      "district_names": [
+        "丹波国・氷上郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "黒井城本拠圏。赤井直正による1554年継承以前。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=101220784"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "tarao_shigaraki",
+      "display_name": "多羅尾家（信楽）",
+      "head_reference": "多羅尾氏（当主時期未確定）",
+      "pool": [
+        "omi/candidate-district-candidate-g21004"
+      ],
+      "district_names": [
+        "近江国・甲賀郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "信楽荘小川の本拠圏。後年の徳川・織田奉公は遡及しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=100921140"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "kasahara_shiga",
+      "display_name": "笠原家（信濃志賀）",
+      "head_reference": "笠原清繁",
+      "pool": [
+        "shinano/candidate-district-candidate-g24016"
+      ],
+      "district_names": [
+        "信濃国・北佐久郡"
+      ],
+      "basis": "史料・紹介資料の本拠を現行表示郡に対応させたゲーム配置候補。郡全域の排他的領有の証明ではない。",
+      "note": "志賀城の本拠圏。1547年の上杉援軍を1546年の直属所属にはしない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E7%AC%A0%E5%8E%9F%E6%B8%85%E7%B9%81"
+      ],
+      "status": "editorial_core_area_draft",
+      "research_batch": "affiliation_1546_research_100_v1"
+    },
+    {
+      "id": "oda_nobutsugu",
+      "display_name": "織田家（信次）",
+      "head_reference": "織田信次",
+      "pool": [
+        "owari/candidate-district-candidate-g09008"
+      ],
+      "district_names": [
+        "尾張国・海東郡"
+      ],
+      "basis": "ユーザー指定の独立家中。初期の深田城を位置の手掛かりとするゲーム設定。",
+      "note": "信次は信秀の弟。深田城の記録は1552年、守山入城は1555年。1546年への領地設定はゲーム上の採用で、同年支配の確証ではない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E7%B9%94%E7%94%B0%E4%BF%A1%E6%AC%A1"
+      ],
+      "status": "user_scenario_setting",
+      "parent_house_id": "oda_nobuhide"
+    },
+    {
+      "id": "honjo_echigo",
+      "display_name": "本庄家（越後）",
+      "head_reference": null,
+      "family_reference": "本庄繁長",
+      "pool": [
+        "echigo/candidate-district-candidate-g39001"
+      ],
+      "district_names": [
+        "越後国・岩舩郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "小泉荘の本庄氏。実権は小川長資が保持しており、繁長は幼少。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%9C%AC%E5%BA%84%E7%B9%81%E9%95%B7"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "oyamada_gunnai",
+      "display_name": "小山田家（郡内）",
+      "head_reference": null,
+      "family_reference": "小山田信茂",
+      "pool": [
+        "kai/unresolved-b48d2f62146c8828"
+      ],
+      "district_names": [
+        "甲斐国・都留郡周辺（仮1）"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "郡内小山田氏の本拠圏。現行マップの都留郡周辺の仮区画で表現。武田氏との主従関係とは別に家中の単位を記録。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=109389813"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "suwa_shrine",
+      "display_name": "諏訪家（大祝）",
+      "head_reference": null,
+      "family_reference": "諏訪頼忠",
+      "pool": [
+        "shinano/candidate-district-candidate-g24007"
+      ],
+      "district_names": [
+        "信濃国・諏訪郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "諏訪大社大祝の祭祀家。諏訪頼重の旧領全体を保有する設定ではない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E8%AB%8F%E8%A8%AA%E9%A0%BC%E5%BF%A0"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "kunohe",
+      "display_name": "九戸家",
+      "head_reference": null,
+      "family_reference": "九戸政実",
+      "pool": [
+        "honshu-area-01/candidate-district-candidate-g31004"
+      ],
+      "district_names": [
+        "陸奥国・二戸郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "九戸城付近を現行郡台帳の二戸郡で表す。九戸という氏名から九戸郡を機械選択しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B9%9D%E6%88%B8%E6%94%BF%E5%AE%9F"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "ashikaga_hirashima",
+      "display_name": "足利家（平島公方）",
+      "head_reference": null,
+      "family_reference": "足利義栄",
+      "pool": [
+        "awa_shikoku/candidate-district-candidate-g59009"
+      ],
+      "district_names": [
+        "阿波国・那賀郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "足利義維の阿波平島の家中。義栄は1546年時点では幼少。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%A0%84"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "kumabe",
+      "display_name": "隈部家",
+      "head_reference": null,
+      "family_reference": "隈部親永",
+      "pool": [
+        "higo/candidate-district-candidate-g68008"
+      ],
+      "district_names": [
+        "肥後国・山鹿郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "隈部氏の永野・山鹿の本拠圏。1546年の当主は父親家とする推定。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E9%9A%88%E9%83%A8%E8%A6%AA%E6%B0%B8"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "nejime",
+      "display_name": "禰寝家",
+      "head_reference": null,
+      "family_reference": "禰寝重長",
+      "pool": [
+        "osumi/candidate-district-candidate-g70007"
+      ],
+      "district_names": [
+        "大隅国・南大隅郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "禰寝氏の本拠圏。肝付・島津への後年の帰属を遡及しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=91516815"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "hachinohe",
+      "display_name": "八戸家",
+      "head_reference": null,
+      "family_reference": "八戸政栄",
+      "pool": [
+        "honshu-area-01/candidate-district-candidate-g31003"
+      ],
+      "district_names": [
+        "陸奥国・三戸郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "八戸氏とその庶流の家族配置。三戸南部本家への一括所属はしない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=106498791"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "shiokawa",
+      "display_name": "塩川家（摂津）",
+      "head_reference": null,
+      "family_reference": "塩川長満",
+      "pool": [
+        "settsu/merged-48f4626a9b864685"
+      ],
+      "district_names": [
+        "摂津国・川辺郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "山下・一庫を本拠とする塩川氏の圏域。1546年の三好家従属は未確定。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E5%A1%A9%E5%B7%9D%E9%95%B7%E6%BA%80"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "kobayakawa_numata",
+      "display_name": "小早川家（沼田）",
+      "head_reference": null,
+      "family_reference": "小早川繁平",
+      "pool": [
+        "aki/candidate-district-candidate-g54001"
+      ],
+      "district_names": [
+        "安芸国・豊田郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "沼田荘・高山城の圏域。安芸沼田郡との同名混同を避ける。竹原家とは別家中。",
+      "source_urls": [
+        "https://ja.wikipedia.org/w/index.php?oldid=100436155"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "miki_aga",
+      "display_name": "三木家（英賀）",
+      "head_reference": null,
+      "family_reference": "三木通秋",
+      "pool": [
+        "harima/candidate-district-candidate-g49005"
+      ],
+      "district_names": [
+        "播磨国・飾西郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "英賀城の三木氏。飛騨三木氏と同姓だが別の家中。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%9C%A8%E9%80%9A%E7%A7%8B"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "mita_musashi",
+      "display_name": "三田家（武蔵）",
+      "head_reference": null,
+      "family_reference": "三田綱秀",
+      "pool": [
+        "musashi/candidate-district-candidate-g16023"
+      ],
+      "district_names": [
+        "武蔵国・西多摩郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "勝沼・辛垣の本拠圏。山内上杉から北条への転属年は未確定。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%89%E7%94%B0%E7%B6%B1%E7%A7%80"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "misawa_izumo",
+      "display_name": "三沢家（出雲）",
+      "head_reference": null,
+      "family_reference": "三沢為清",
+      "pool": [
+        "izumo/candidate-district-candidate-g46009"
+      ],
+      "district_names": [
+        "出雲国・仁多郡"
+      ],
+      "basis": "個別の在地家中・家族配置の暫定本拠圏",
+      "note": "出雲三沢氏の本拠圏。1543年以後は尼子方に復帰した家中として扱う。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%B2%A2%E7%82%BA%E6%B8%85"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch2_100"
+    },
+    {
+      "id": "matsudaira_goi",
+      "display_name": "松平家（五井）",
+      "head_reference": "松平元心",
+      "pool": [
+        "mikawa/candidate-district-candidate-g10006"
+      ],
+      "district_names": [
+        "三河国・宝飯郡"
+      ],
+      "basis": "系譜と本拠地による家中単位の暫定設定",
+      "note": "同姓の安祥松平家と家中を区別。本拠圏1郡はゲーム配置候補であり郡全域の史実支配を認定しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%85%83%E5%BF%83"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch3_100"
+    },
+    {
+      "id": "matsudaira_nomi",
+      "display_name": "松平家（能見）",
+      "head_reference": "松平重吉",
+      "pool": [
+        "mikawa/candidate-district-candidate-g10002"
+      ],
+      "district_names": [
+        "三河国・額田郡"
+      ],
+      "basis": "系譜と本拠地による家中単位の暫定設定",
+      "note": "同姓の安祥松平家と家中を区別。本拠圏1郡はゲーム配置候補であり郡全域の史実支配を認定しない。",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%87%8D%E5%90%89"
+      ],
+      "status": "scenario_provisional",
+      "scenario_batch": "affiliation_batch3_100"
+    }
+  ]
+}

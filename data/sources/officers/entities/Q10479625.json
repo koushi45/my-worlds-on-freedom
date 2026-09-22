@@ -1,0 +1,180 @@
+{
+  "retrieved_utc": "2026-09-12T11:11:07Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 11775041,
+    "ns": 0,
+    "title": "Q10479625",
+    "lastrevid": 2277511641,
+    "modified": "2024-11-20T14:41:51Z",
+    "type": "item",
+    "id": "Q10479625",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "羌瘣"
+      },
+      "en": {
+        "language": "en",
+        "value": "Qiang Hui"
+      }
+    },
+    "descriptions": {
+      "ja": {
+        "language": "ja",
+        "value": "中国の戦国時代の秦の武将"
+      },
+      "en": {
+        "language": "en",
+        "value": "Chinese military general from the state of Qin during the Warring States period"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "羌カイ"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Jiang Hui"
+        },
+        {
+          "language": "en",
+          "value": "Qiang Lei"
+        },
+        {
+          "language": "en",
+          "value": "Jiang Lei"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10479625$7D3FA9C7-F354-4E03-A6A6-781CF222179B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "dae34c4dddcf7c14c843f1f55c7f950c147427ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11545923,
+                "id": "Q11545923"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10479625$30efea5b-4696-c66a-a0f1-08db90a1f5b4",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10479625$47116940-4615-1d64-58b0-8edf9a26ae84",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "4b1296e2c5ad0041b02db3227a87da8eb97041a9",
+            "datavalue": {
+              "value": "/g/121w6r9l",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q10479625$90EE6DC3-21C3-430C-9599-028603F931D8",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "羌瘣",
+        "badges": []
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Khương Hối",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "羌瘣",
+        "badges": []
+      }
+    }
+  }
+}

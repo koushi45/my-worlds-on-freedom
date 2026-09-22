@@ -1,0 +1,228 @@
+{
+  "retrieved_utc": "2026-09-12T18:39:49Z",
+  "license": "CC0-1.0",
+  "entity": {
+    "pageid": 12659904,
+    "ns": 0,
+    "title": "Q11520052",
+    "lastrevid": 2492454761,
+    "modified": "2026-05-16T08:25:42Z",
+    "type": "item",
+    "id": "Q11520052",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "本多政朝"
+      },
+      "en": {
+        "language": "en",
+        "value": "Honda Masatomo"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "[本多政朝] Daimyo in the early Edo period; grandson of Honda Tadakatsu"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "江戸時代前期の大名。本多忠勝の孫。大多喜藩・龍野藩を経て姫路藩主"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520052$D94B1931-4449-492F-8BF1-6A663F8AA0B2",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520052$B12F2124-C897-4F2F-A9A2-928F208D006F",
+          "rank": "normal"
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "7440ddcd43a0ba58c8e016ddffa2f7b000064d93",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131353680,
+                "id": "Q131353680"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520052$16BA2AE7-8C7E-4C77-BDCA-92D9663C6059",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "73272204f4295239a21cc4844511fdedcfe06673",
+            "datavalue": {
+              "value": {
+                "time": "+1638-12-25T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q11520052$65A36F28-A9DF-46FE-8E6D-90ACBE0519CB",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "cebd8e781271eaedb545cf23fbf93a6792a22a4d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6782731,
+                "id": "Q6782731"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11520052$7F56BB17-DA80-4800-9083-438C7327984C",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "7dd842deedbbdd531528bffcc20ff63b397e1390",
+            "datavalue": {
+              "value": {
+                "time": "+1599-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q11520052$7C57C090-5F99-47FA-862D-BF8C52E8C3A2",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "8ea927d73d4344d052494d0f223342edc1046aa4",
+            "datavalue": {
+              "value": "/g/12168kt8",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11520052$170BE3E3-282C-4B2B-B0C2-3DAB2204300A",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "jawiki": {
+        "site": "jawiki",
+        "title": "本多政朝",
+        "badges": []
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "혼다 마사토모 (1599년)",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "本多政朝",
+        "badges": []
+      }
+    }
+  }
+}

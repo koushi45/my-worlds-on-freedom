@@ -1,0 +1,9 @@
+{
+  "retrieved_utc": "2026-09-12T11:06:19Z",
+  "query": "SELECT DISTINCT ?person ?personLabel ?personDescription ?birth ?death WHERE {\n  ?person wdt:P31 wd:Q5; wdt:P569 ?birth; wdt:P570 ?death .\n  FILTER(?birth < \"1547-01-01T00:00:00Z\"^^xsd:dateTime && ?death >= \"1546-01-01T00:00:00Z\"^^xsd:dateTime)\n  { ?person wdt:P27 wd:Q17 } UNION { ?person wdt:P19/wdt:P17 wd:Q17 }\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"ja,en\". }\n}",
+  "endpoint": "https://query.wikidata.org/sparql",
+  "license": "CC0-1.0",
+  "sha256": "f06e679553e148863b9dcaba770e023e2af415750c1a7b30887c5f93761ef42d",
+  "rows": 546,
+  "scope": "日本との国籍・出生地の関係と生没年で探索。職業未限定。 網羅を保証しない。採用前に日付の精度と人物同定を確認する。"
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "phase": "D",
+  "status": "generated",
+  "generation_record": "deterministic_from_approved_source",
+  "source_master_version": "1.0.0",
+  "source_master_sha256": "258BAE08B94EBC870DE0CF59779780B4A623CA5B7D56E8539EEC6CD749E12B59",
+  "lod_definitions": [
+    {
+      "level": 0,
+      "name": "national",
+      "simplify_tolerance_px": 4.0,
+      "visible_min_area_km2": 100.0
+    },
+    {
+      "level": 1,
+      "name": "regional",
+      "simplify_tolerance_px": 2.0,
+      "visible_min_area_km2": 25.0
+    },
+    {
+      "level": 2,
+      "name": "subregional",
+      "simplify_tolerance_px": 1.0,
+      "visible_min_area_km2": 10.0
+    },
+    {
+      "level": 3,
+      "name": "local",
+      "simplify_tolerance_px": 0.5,
+      "visible_min_area_km2": 2.0
+    },
+    {
+      "level": 4,
+      "name": "detailed",
+      "simplify_tolerance_px": 0.0,
+      "visible_min_area_km2": 0.0
+    }
+  ],
+  "rules": {
+    "source": "approved japan_land master only",
+    "simplification": "Nested detailed-to-coarse Shapely Douglas-Peucker with preserve_topology=True in common 8192 coordinates",
+    "land_and_coast_share_geometry": true,
+    "normal_and_selection_share_point_registry": true,
+    "small_islands_are_not_deleted": true
+  },
+  "outputs": {
+    "geopackage": {
+      "file": "data/derived/lod/japan_lod.gpkg",
+      "sha256": "C91086697AE7E1F87C4BEDE2F412EA93F11FD9AA24C7BFC2DAC31A7027DAB8DD",
+      "layers": [
+        "land_lod0",
+        "coastline_lod0",
+        "land_lod1",
+        "coastline_lod1",
+        "land_lod2",
+        "coastline_lod2",
+        "land_lod3",
+        "coastline_lod3",
+        "land_lod4",
+        "coastline_lod4"
+      ]
+    },
+    "json": {
+      "file": "data/derived/lod/japan_lod.json",
+      "sha256": "CF12E223AACE1CD4553CD1845F3A866C61562DABD55205FBD90D7D256666FD14"
+    },
+    "previews": [
+      "data/derived/lod/preview/lod0_national.png",
+      "data/derived/lod/preview/lod1_regional.png",
+      "data/derived/lod/preview/lod2_subregional.png",
+      "data/derived/lod/preview/lod3_local.png",
+      "data/derived/lod/preview/lod4_detailed.png"
+    ]
+  },
+  "tools": {
+    "python": "3.14.3",
+    "geopandas": "1.1.4",
+    "pyogrio": "0.13.0",
+    "shapely": "2.1.2",
+    "pillow": "12.0.0",
+    "script": "tools/build_phase_d_lod.py"
+  }
+}
