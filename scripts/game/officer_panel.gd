@@ -1,10 +1,14 @@
 extends Node
 
+signal closed
+
 const STATUS_NAMES := {"alive":"年代上対象", "same_year_ambiguous":"1546年内の前後不明", "unresolved":"年代要調査", "unborn":"開始時は未誕生"}
 const FILTERS := ["all", "alive", "same_year_ambiguous", "unresolved", "child", "unborn"]
 const COHORTS := ["all", "next_60", "major_60", "notable", "third_60", "fourth_100", "fifth_100", "sixth_100", "seventh_100", "eighth_100", "ninth_100", "tenth_100", "eleventh_100", "twelfth_100", "thirteenth_100", "fourteenth_100", "fifteenth_100", "sixteenth_100", "seventeenth_100", "remaining_40"]
 const ABILITIES := {"command":"統率", "tactics":"武勇", "strategy":"知略", "politics":"政治", "trust":"人望"}
+const Portraits = preload("res://scripts/game/officer_portraits.gd")
 var main: Node2D
+var standalone := false
 var registry = preload("res://scripts/game/officer_registry.gd").new()
 var browser: AcceptDialog
 var search: LineEdit
@@ -14,11 +18,15 @@ var sort_order: OptionButton
 var rated: CheckButton
 var count_label: Label
 var items: ItemList
+var portrait: TextureRect
 var details: RichTextLabel
 var matches: Array[String] = []
 
 func _ready() -> void:
 	var result: Error = registry.load_data()
+	if standalone:
+		if result != OK: push_error(registry.last_error)
+		return
 	var host: VBoxContainer = main.get_node("Interface/InfoPanel/Margin/VBox")
 	var title := Label.new()
 	title.text = "開始：1546年（信長元服）｜地図：1582年"
@@ -36,15 +44,19 @@ func _ready() -> void:
 func show_browser() -> void:
 	if browser == null: _create_browser()
 	refresh_list()
-	browser.popup_centered(Vector2i(1080, 580))
+	browser.popup_centered(Vector2i(1180, 650))
 	search.grab_focus()
 
 func _create_browser() -> void:
 	browser = AcceptDialog.new()
 	browser.title = "1546年の武将台帳 ／ 能力は生涯評価の初稿"
-	main.get_node("Interface").add_child(browser)
+	if standalone: add_child(browser)
+	else: main.get_node("Interface").add_child(browser)
+	browser.confirmed.connect(func(): closed.emit())
+	browser.canceled.connect(func(): closed.emit())
+	browser.close_requested.connect(func(): closed.emit())
 	var content := VBoxContainer.new()
-	content.custom_minimum_size = Vector2(1000, 500)
+	content.custom_minimum_size = Vector2(1100, 560)
 	browser.add_child(content)
 	var note := Label.new()
 	note.text = "年代不詳・幼少者も収録。評価済み1598人・各30点、総合150点満点。未誕生の著名人物も名簿に収録。"
@@ -63,7 +75,9 @@ func _create_browser() -> void:
 	row.add_child(filter)
 	cohort = OptionButton.new()
 	for text in ["全グループ", "第2組60人", "第1組60人", "生年不問の著名人物", "第3組60人", "第4組100人", "第5組100人", "第6組100人", "第7組100人", "第8組100人", "第9組100人", "第10組100人", "第11組100人", "第12組100人", "第13組100人", "第14組100人", "第15組100人", "第16組100人", "第17組100人", "今回の評価18人（残件整理）"]: cohort.add_item(text)
-	cohort.select(19)
+	# The in-game dictionary opens on the principal 60 officers, which includes
+	# every portrait currently available. Keep the editorial view's prior default.
+	cohort.select(2 if standalone else 19)
 	cohort.item_selected.connect(func(index: int):
 		if index == 3: rated.set_pressed_no_signal(false)
 		refresh_list())
@@ -86,15 +100,28 @@ func _create_browser() -> void:
 	split.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	content.add_child(split)
 	items = ItemList.new()
-	items.custom_minimum_size = Vector2(345, 390)
+	items.custom_minimum_size = Vector2(365, 440)
+	items.fixed_icon_size = Vector2i(58, 58)
 	items.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	items.item_selected.connect(select_index)
 	split.add_child(items)
+	var detail_area := HBoxContainer.new()
+	detail_area.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	detail_area.add_theme_constant_override("separation", 14)
+	split.add_child(detail_area)
+	portrait = TextureRect.new()
+	portrait.custom_minimum_size = Vector2(185, 260)
+	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	portrait.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	portrait.hide()
+	detail_area.add_child(portrait)
 	details = RichTextLabel.new()
-	details.custom_minimum_size = Vector2(625, 390)
+	details.custom_minimum_size = Vector2(515, 440)
 	details.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	details.bbcode_enabled = false
-	split.add_child(details)
+	detail_area.add_child(details)
 
 func refresh_list() -> void:
 	if items == null: return
@@ -106,15 +133,20 @@ func refresh_list() -> void:
 		var suffix: String = "［幼少］" if officer["life_stage"] == "child" else ""
 		if officer["life_stage"] == "genpuku_recorded": suffix = "［元服］"
 		if officer["temporal_status"] != "alive": suffix += "［" + STATUS_NAMES[officer["temporal_status"]] + "］"
-		items.add_item(str(officer["display_name"]) + "  総合 " + _total_text(officer) + suffix)
+		items.add_item(str(officer["display_name"]) + "  総合 " + _total_text(officer) + suffix, Portraits.texture_for(id))
 		var affiliation: Dictionary = officer.get("affiliation_1546", {})
 		items.set_item_tooltip(items.item_count - 1, items.get_item_text(items.item_count - 1) + "\n家系：" + str(officer.get("lineage", {}).get("display_name", "家系未確認")) + "\n所属家：" + str(affiliation.get("house_display", "所属不明")) + " ／ " + str(affiliation.get("role", "立場不明")) + " ／ " + str(affiliation.get("district_display", "未配置")))
 	count_label.text = "%d人を表示 ／ 名簿%d人 ／ 年代上対象%d人" % [matches.size(), registry.lookup.size(), registry.data["stats"].get("alive", 0)]
 	details.text = "名前を選ぶと能力案と評価理由を表示します。\n\n幼少者の能力は、生涯の実績による評価案です。\n所属家・立場・郡配置の案を詳細に表示します。郡は家の本拠圏内へのゲーム用分散配置です。\n1546年内の前後不明・年代要調査は、開始時の存命確定とは分けています。\n\n人望は家臣の定着・登用人材の活用で評価します。本人の主君への忠義や一般的人気とは区別します。"
+	portrait.texture = null
+	portrait.hide()
 
 func select_index(index: int) -> void:
 	if index < 0 or index >= matches.size(): return
-	var officer: Dictionary = registry.lookup[matches[index]]
+	var officer_id := matches[index]
+	var officer: Dictionary = registry.lookup[officer_id]
+	portrait.texture = Portraits.texture_for(officer_id)
+	portrait.visible = portrait.texture != null
 	var assessment: Dictionary = officer["assessment"]
 	var birth_text := str(officer["birth_display"]) + ("（推定）" if officer.get("birth_year_estimated", false) else "")
 	var death_text := str(officer["death_display"]) + ("（推定）" if officer.get("death_year_estimated", false) else "")

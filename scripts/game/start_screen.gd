@@ -10,6 +10,7 @@ var house_ids: Array = []
 var chosen := ""
 var busy := false
 var options: Control
+var officer_dictionary: Node
 
 func _ready() -> void:
 	var background := TextureRect.new()
@@ -34,12 +35,18 @@ func _ready() -> void:
 	UI.label("",menu,10)
 	UI.button("スタート",menu,show_houses).grab_focus()
 	UI.button("ロード",menu,show_load)
-	var dictionary := UI.button("辞典",menu)
-	dictionary.disabled = true
-	dictionary.tooltip_text = "準備中"
+	UI.button("辞典",menu,show_dictionary)
 	UI.button("オプション",menu,show_options)
-	UI.label("辞典は準備中です",menu,13)
 	if "--developer-ui" in OS.get_cmdline_user_args(): GameSession.new_game.call_deferred("oda_nobuhide")
+
+func show_dictionary() -> void:
+	menu.hide()
+	if officer_dictionary == null:
+		officer_dictionary = preload("res://scripts/game/officer_panel.gd").new()
+		officer_dictionary.standalone = true
+		officer_dictionary.closed.connect(menu.show)
+		add_child(officer_dictionary)
+	officer_dictionary.show_browser()
 
 func show_load() -> void:
 	var slots := preload("res://scripts/game/save_slots.gd").new()

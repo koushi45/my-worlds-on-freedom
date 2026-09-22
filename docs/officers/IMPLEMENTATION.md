@@ -7,6 +7,7 @@
 
 - `data/derived/scenarios/default_scenario.json`：既定の開始設定。元服の月日は未固定。
 - `data/derived/officers/officers_1546.json`：人物ID、通用名・別名、生没年幅、年代判定、幼少分類、生涯能力案、参照元。
+- `data/derived/officers/officers_1546.csv`：全1598名を1行ずつ収録したUTF-8 BOM付きCSV。辞書はドット区切りの列に展開し、配列はJSON文字列で保持する。
 - `scripts/game/officer_registry.gd`：名簿の読み込み、別名検索、開始時の年代判定、未評価をnullで返す能力参照。
 - `scripts/game/officer_panel.gd`：マップ左上の「武将一覧・生涯能力案」。検索、年代・幼少者の絞り込み、詳細。
 - `docs/officers/officers_1546.html`：独立した検索・並べ替え付き一覧。外部ライブラリ・地図・画像を読み込まない。
@@ -60,6 +61,7 @@ Wikidataの職業指定による探索、日本との関連・生没年による
 
 ```powershell
 python -X utf8 tools/officers/build_roster.py
+python -X utf8 tools/officers/export_officers_csv.py
 python -X utf8 -m unittest discover -s tests/officers -v
 python -X utf8 tools/officers/check_html.py
 # Godot実行ファイルのパスを環境に合わせる

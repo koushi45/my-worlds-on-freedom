@@ -10,6 +10,7 @@ var zoom_label: Label
 var last_zoom := -1.0
 var action := ""
 var options: Control
+var officer_dictionary: Node
 
 func _ready() -> void:
 	layer = 30
@@ -62,9 +63,7 @@ func _ready() -> void:
 	UI.label("ゲームメニュー",rows,28)
 	UI.button("セーブ",rows,show_slots.bind(true))
 	UI.button("ロード",rows,show_slots.bind(false))
-	var dictionary := UI.button("辞典",rows)
-	dictionary.disabled = true
-	dictionary.tooltip_text = "準備中"
+	UI.button("辞典",rows,show_dictionary)
 	UI.button("オプション",rows,show_options)
 	UI.button("スタートメニューに戻る",rows,confirm_action.bind("title"))
 	UI.button("ゲーム終了",rows,confirm_action.bind("quit"))
@@ -110,6 +109,15 @@ func show_options() -> void:
 	options.closed.connect(modal.show)
 	shade.add_child(options)
 
+func show_dictionary() -> void:
+	modal.hide()
+	if officer_dictionary == null:
+		officer_dictionary = preload("res://scripts/game/officer_panel.gd").new()
+		officer_dictionary.standalone = true
+		officer_dictionary.closed.connect(modal.show)
+		add_child(officer_dictionary)
+	officer_dictionary.show_browser()
+
 func confirm_action(value: String) -> void:
 	action = value
 	confirmation.dialog_text = "未保存の進行は失われます。" + ("ゲームを終了しますか？" if value == "quit" else "スタートメニューに戻りますか？")
@@ -118,6 +126,9 @@ func confirm_action(value: String) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
 		if confirmation.visible: confirmation.hide()
+		elif is_instance_valid(officer_dictionary) and is_instance_valid(officer_dictionary.browser) and officer_dictionary.browser.visible:
+			officer_dictionary.browser.hide()
+			modal.show()
 		elif is_instance_valid(options): options._close()
 		elif is_instance_valid(slots):
 			if slots.confirmation.visible: slots.confirmation.hide()
