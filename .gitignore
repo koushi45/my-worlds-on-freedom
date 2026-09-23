@@ -5,6 +5,9 @@
 builds/
 exports/
 
+# Temporary working files and generated reference imports
+tmp/
+
 # Platform-generated files and signing credentials
 android/build/
 *.keystore
@@ -25,3 +28,7 @@ __pycache__/
 
 # Downloaded source caches must be added explicitly after license review.
 data/sources/cache/
+
+# Large downloaded/extracted candidate datasets are reproducible local caches.
+data/sources/candidates/*/raw/
+data/sources/candidates/*/extracted/
