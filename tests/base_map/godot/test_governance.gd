@@ -36,6 +36,9 @@ func run() -> void:
 		check(r.agriculture_development >= 1 and r.agriculture_development <= 5, "initial development stays in the requested range")
 		development_counts[r.agriculture_development] += 1
 	check(development_counts == {1:522, 2:78, 3:33, 4:13, 5:7}, "80 percent of districts start at development 1")
+	var population_ranked: Array = registry.districts.values()
+	population_ranked.sort_custom(func(a,b): return a.population > b.population)
+	check(population_ranked[0].agriculture_development == 5 and population_ranked[-1].agriculture_development == 1, "higher population/productive concentration receives the higher initial tier")
 	var commerce_at_one := 0
 	var agriculture_at_one := 0
 	for r in registry.districts.values():
@@ -57,6 +60,12 @@ func run() -> void:
 		main.district_economy.develop(growth_probe, "agriculture")
 		main.district_economy.develop(growth_probe, "commerce")
 	check(growth_probe.agriculture_development == 30 and growth_probe.commerce_development == 30, "politics 30 reaches both maxima in 15 years")
+	var resource_house: String = registry.districts.values()[0].house_id
+	main.district_economy.on_day_advanced(1546, 8, 1)
+	check(main.district_economy.house_resources[resource_house].money > 0, "commerce income is collected on a monthly first day")
+	check(main.district_economy.house_resources.values().all(func(v): return v.provisions == 0), "agriculture is not collected outside September")
+	main.district_economy.on_day_advanced(1546, 9, 1)
+	check(main.district_economy.house_resources.values().any(func(v): return v.provisions > 0), "agriculture income is collected on September 1")
 	check(registry.sites.size() == 257, "accepted and deferred sites remain available internally")
 	check(main.get_node_or_null("GovernancePanel") == null, "governance information has no visible panel")
 	check(not main.district_info.panel.visible,"district-name window starts hidden")

@@ -52,6 +52,15 @@ func politics_for(officer_id: Variant) -> int:
 	return clampi(int(value), 0, 30) if value != null else 0
 
 
+func assign_developer(district_id: String, kind: String, officer_id: Variant) -> Error:
+	if not registry.districts.has(district_id) or kind not in ["agriculture", "commerce"]:
+		return ERR_INVALID_PARAMETER
+	if officer_id != null and (not officer_id is String or not officers.is_present_at_start(officer_id)):
+		return ERR_INVALID_DATA
+	registry.districts[district_id][kind + "_developer_id"] = officer_id
+	return OK
+
+
 func develop(record: Dictionary, kind: String) -> void:
 	var development_key := kind + "_development"
 	var progress_key := kind + "_progress"

@@ -53,6 +53,16 @@ const PATH_BY_OFFICER_ID := {
 	"officer_q11355703": "res://assets/officers/portraits/miki_michiaki.png",
 	"officer_q11355719": "res://assets/officers/portraits/miki_akitsuna.png",
 	"officer_q6862455": "res://assets/officers/portraits/mimura_iechika.png",
+	"officer_q2436811": "res://assets/officers/portraits/saegusa_masasada.png",
+	"officer_q11355934": "res://assets/officers/portraits/saegusa_torayoshi.png",
+	"officer_q45829921": "res://assets/officers/portraits/misawa_tamekiyo.png",
+	"officer_q11356537": "res://assets/officers/portraits/miura_yoshinari.png",
+	"officer_q11356568": "res://assets/officers/portraits/miura_sadahisa.png",
+	"officer_q11356567": "res://assets/officers/portraits/miura_sadakatsu.png",
+	"officer_q11356569": "res://assets/officers/portraits/miura_sadahiro.png",
+	"officer_q11356570": "res://assets/officers/portraits/miura_sadamori.png",
+	"officer_q11356601": "res://assets/officers/portraits/miura_takasuke.png",
+	"officer_q11356604": "res://assets/officers/portraits/mitsubuchi_harukazu.png",
 }
 
 static func texture_for(officer_id: String) -> Texture2D:

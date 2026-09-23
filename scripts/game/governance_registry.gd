@@ -97,7 +97,7 @@ func apply_initial_development() -> void:
 	# population rank is its reproducible district-level proxy.  Keep 80% at 1.
 	var ranked: Array = districts.keys()
 	ranked.sort_custom(func(a, b):
-		var difference: int = int(districts[b].population) - int(districts[a].population)
+		var difference: int = int(districts[a].population) - int(districts[b].population)
 		return difference > 0 or (difference == 0 and str(a) < str(b)))
 	var count := ranked.size()
 	for index in count:
