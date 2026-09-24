@@ -1,0 +1,22 @@
+# Officer portraits, batch 07
+
+Each portrait is an original ImageGen raster illustration. The first input was the person-specific source below (or the clearly identified visual fallback); the second input was this game's `oda_nobunaga.png` for finish consistency. Prompts required a square bust, transparent PNG, no lettering or frame, and avoided complex visible hands. Source images are research references, not shipped assets.
+
+| Officer | Game asset | Visual source | Reference features deliberately carried through |
+| --- | --- | --- | --- |
+| 上杉景虎 | `uesugi_kagetora.png` | [Nobunaga's Ambition portrait, Altema](https://altema.jp/nobunagashinsei/busyo/323) | Young narrow face, high topknot, yellow robe and pale patterned underrobe; tilted three-quarter gaze. |
+| 上杉朝定 | `uesugi_tomosada.png` | [Nobunaga's Ambition portrait, Altema](https://altema.jp/nobunagashinsei/busyo/329) | Angular young face, pointed black eboshi, dark plum robe, white collar; direct stare. |
+| 上杉謙信 | `uesugi_kenshin_v3.png` | [Uesugi Museum catalog](https://www.denkoku-no-mori.yonezawa.yamagata.jp/togodb/capt.php?ID=26452&lib_flg=0) | Historic warrior painting's angular white headcloth, tan face, dark armor, red lacing and a small light floral breast panel, reimagined with a younger sharp-featured face, dynamic three-quarter pose and streamlined modern game-design armor. The museum marks the sitter identification as tentative (上杉謙信ヵ); this is a visual reference, not a certain likeness. |
+| 上条政繁 | `jojo_masashige.png` | [Named modern reconstruction, Deep Sengoku](https://deep-sengoku.net/?page=page-bushou-%E4%B8%8A%E6%9D%A1%E6%94%BF%E7%B9%81) | Long face, narrow eyes, thin moustache and pointed goatee, rounded dark cap and olive-gold robes. This is not an attested historical portrait. |
+| 上林政重 | `kanbayashi_masashige.png` | [Nobunaga's Ambition face gallery](https://ameblo.jp/tetu522/entry-12753153735.html) | Bald crown, back-gathered hair, slender facial hair, sage-green haori over ochre robe; chin-resting hand omitted. Fallback image, not verified as this individual. |
+| 上泉信綱 | `kamiizumi_nobutsuna.png` | [Nobunaga's Ambition portrait, Altema](https://altema.jp/nobunagashinsei/busyo/672) | Weathered face, intense eyes, short beard, windswept topknot, slate martial robe; hand and sword omitted. |
+| 下曾根出羽守 | `shimosone_dewanokami.png` | [Nobunaga's Ambition face gallery](https://ameblo.jp/tetu522/entry-12753202145.html) | Angular elder, high silver topknot, white beard, violet underlayer and gold brocade. Fallback image, not verified as this individual. |
+| 下曾根浄喜 | `shimosone_joki.png` | [Nobunaga's Ambition face gallery](https://ameblo.jp/tetu522/entry-12753199791.html) | Shaved head, strong brows, full dark beard, burgundy monk-warrior robe. Fallback image, not verified as this individual. |
+| 下田直久 | `shimoda_naohisa.png` | [Nobunaga's Ambition face gallery](https://ameblo.jp/tetu522/entry-12753155276.html) | Tall ribbed black kabuto with gold crescent, russet mantle, silver plates and dark armor. Fallback image, not verified as this individual. |
+| 下間仲世 | `shimotsuma_nakayo.png` | [Nobunaga's Ambition Honganji gallery](https://ameblo.jp/tetu522/entry-12862090397.html) | Shaved head and warm ochre/saffron temple robes; altered to a younger, narrower face. Fallback milieu reference, not an attested likeness. |
+
+Prompt pattern: `Create an original 1:1 square, true-transparent PNG game bust. Base the individual's facial structure, headgear, costume palette and fabric silhouette on Image 1 [the row-specific features above]. Use Image 2 only for the established modern painterly finish. Vary the row-specific head angle and expression. No background, lettering, frame, extra limbs, visible hands or weapons. Keep head, neck and shoulders anatomically coherent.`
+
+`uesugi_kenshin.png` and `uesugi_kenshin_v2.png` were preserved; the game now selects `uesugi_kenshin_v3.png`.
+
+Kenshin v3 refinement prompt: `Use the historical painting as the primary design source and oda_nobunaga.png for project finish only. Preserve a narrow angular white battle headcloth, tan face, indigo-black lamellar armor, red lacing, restrained gold edging and a small ivory floral insert. Reinterpret as an athletic 35-40-year-old charismatic commander with sharp features, a three-quarter upward gaze, wind-tossed headcloth, sleek asymmetrical armor and cinematic lighting. Avoid the v2 stiff front-facing pose and oversized ornamentation. Square, true-transparent PNG, no writing, flags, background, hands or weapons.` Built-in ImageGen mode.

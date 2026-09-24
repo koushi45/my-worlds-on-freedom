@@ -6,6 +6,8 @@ var data: Dictionary = {}
 var districts: Dictionary = {}
 var sites: Dictionary = {}
 var houses: Dictionary = {}
+var technology_tree: Node
+var district_economy: Node
 var last_error := ""
 
 
@@ -86,6 +88,7 @@ func apply_initial_population() -> Error:
 			return ERR_INVALID_DATA
 		districts[id].initial_population = int(population)
 		districts[id].population = int(population)
+		districts[id].security = 50
 		districts[id].population_model_version = parsed.get("model_version", "unknown")
 	apply_initial_development()
 	return OK
@@ -178,9 +181,10 @@ func describe(record: Dictionary) -> String:
 		result += "座標上の包含・近傍候補であり、史料上の所属郡の確定ではありません。\n"
 	else:
 		var economy := preload("res://scripts/game/district_economy.gd")
-		var agriculture_income := roundi((economy.BASE_VALUE + int(record.agriculture_development)) * int(record.population) * economy.AGRICULTURE_POPULATION_FACTOR)
-		var commerce_income := roundi((economy.BASE_VALUE + int(record.commerce_development)) * int(record.population) * economy.COMMERCE_POPULATION_FACTOR)
-		result += "\n【人口・開発】\n人口：%d人\n農業開発度：%d / %d（9月1日見込兵糧：%d）\n商工業開発度：%d / %d（毎月1日見込金銭：%d）\n" % [int(record.population), int(record.agriculture_development), economy.MAX_DEVELOPMENT, agriculture_income, int(record.commerce_development), economy.MAX_DEVELOPMENT, commerce_income]
+		var agriculture_income: int = district_economy.income_for(record, "agriculture") if district_economy != null else roundi((economy.BASE_VALUE + int(record.agriculture_development)) * int(record.population) * economy.AGRICULTURE_POPULATION_FACTOR)
+		var commerce_income: int = district_economy.income_for(record, "commerce") if district_economy != null else roundi((economy.BASE_VALUE + int(record.commerce_development)) * int(record.population) * economy.COMMERCE_POPULATION_FACTOR)
+		var security_value: int = technology_tree.security_for(record) if technology_tree != null else int(record.get("security", 50))
+		result += "\n【人口・開発】\n人口：%d人\n治安：%d / 100\n農業開発度：%d / %d（9月1日見込兵糧：%d）\n商工業開発度：%d / %d（毎月1日見込金銭：%d）\n" % [int(record.population), security_value, int(record.agriculture_development), economy.MAX_DEVELOPMENT, agriculture_income, int(record.commerce_development), economy.MAX_DEVELOPMENT, commerce_income]
 		result += "\n【郡内の拠点候補】\n"
 		for id in record.get("site_ids", []):
 			if sites.has(id): result += "%s：%s / %s\n" % [sites[id].name, house_name(sites[id]), governor_name(sites[id])]

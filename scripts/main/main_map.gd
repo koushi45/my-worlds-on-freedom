@@ -68,6 +68,9 @@ var district_click_serial := 0
 var officer_panel: Node
 var scenario: Dictionary = {}
 var officer_registry: RefCounted
+var retainer_management: Node
+var technology_tree: Node
+var house_prestige: Node
 var game_clock: Node
 var time_hud: CanvasLayer
 var governance_registry: RefCounted
@@ -201,9 +204,29 @@ func _ready() -> void:
 	district_economy.name = "DistrictEconomy"
 	district_economy.setup(governance_registry, officer_registry)
 	add_child(district_economy)
+	retainer_management = preload("res://scripts/game/retainer_management.gd").new()
+	retainer_management.name = "RetainerManagement"
+	retainer_management.setup(governance_registry, officer_registry, district_economy)
+	add_child(retainer_management)
+	technology_tree = preload("res://scripts/game/technology_tree.gd").new()
+	technology_tree.name = "TechnologyTree"
+	technology_tree.setup(governance_registry, retainer_management)
+	add_child(technology_tree)
+	technology_tree.research_completed.connect(_on_research_completed)
+	retainer_management.technology_tree = technology_tree
+	district_economy.technology_tree = technology_tree
+	governance_registry.technology_tree = technology_tree
+	governance_registry.district_economy = district_economy
+	house_prestige = preload("res://scripts/game/house_prestige.gd").new()
+	house_prestige.name = "HousePrestige"
+	house_prestige.setup(governance_registry.houses.keys())
+	add_child(house_prestige)
+	retainer_management.prestige = house_prestige
+	house_prestige.prestige_changed.connect(func(_house_id: String, _value: int, _reason: String): retainer_management.updated.emit())
 	var restoring: bool = not GameSession.pending.is_empty()
 	GameSession.apply_to(self)
 	game_clock.day_advanced.connect(district_economy.on_day_advanced)
+	game_clock.day_advanced.connect(retainer_management.on_day_advanced)
 	if not restoring and not GameSession.player_house.is_empty():
 		for r in governance_registry.districts.values():
 			if r.house_id == GameSession.player_house:
@@ -215,6 +238,7 @@ func _ready() -> void:
 	territory_borders.main = self
 	add_child(territory_borders)
 	kamon_layer.territory_borders = territory_borders
+	retainer_management.loyalty_crisis.connect(_on_loyalty_crisis)
 	kamon_layer.update_view(get_visible_world_rect().grow(2.0),camera.zoom.x)
 	kamon_layer.queue_redraw()
 	game_menu = preload("res://scripts/game/game_menu.gd").new()
@@ -227,6 +251,15 @@ func _ready() -> void:
 	set_process(true)
 	MapDiagnostics.main = self
 	MapDiagnostics.record("map_ready")
+
+func _on_loyalty_crisis(_officer_id: String, _house_id: String, outcome: String) -> void:
+	if outcome == "領地を独立" and is_instance_valid(territory_borders):
+		territory_borders.rebuild.call_deferred()
+		kamon_layer.queue_redraw.call_deferred()
+
+func _on_research_completed(_house_id: String, _branch: String, _technology_id: String) -> void:
+	if district_info != null and district_info.panel.visible and not district_layer.selected_key.is_empty():
+		show_district_info(district_layer.selected_key)
 
 func _setup_bgm() -> void:
 	bgm_player = AudioStreamPlayer.new()
@@ -837,7 +870,8 @@ func show_district_info(key: String) -> void:
 		return
 	var district_record: Dictionary = governance_registry.districts.get(key,{})
 	var ruler_name: String = governance_registry.ruler_name(district_record) if not district_record.is_empty() else "支配者未詳"
-	district_info.show_district(str(district_layer.records[key].name),ruler_name)
+	var security: int = technology_tree.security_for(district_record) if not district_record.is_empty() else -1
+	district_info.show_district(str(district_layer.records[key].name),ruler_name,security)
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_PAUSED:

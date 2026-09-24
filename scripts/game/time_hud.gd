@@ -58,6 +58,7 @@ func _ready() -> void:
 	rate_label.add_theme_color_override("font_color", Color("#c8d2d3"))
 	rows.add_child(rate_label)
 	clock.day_advanced.connect(_on_day_advanced)
+	clock.state_restored.connect(_on_day_advanced)
 	clock.speed_changed.connect(_on_speed_changed)
 	clock.pause_changed.connect(_on_pause_changed)
 	_on_day_advanced(clock.year, clock.month, clock.day)

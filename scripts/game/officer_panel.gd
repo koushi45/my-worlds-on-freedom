@@ -184,6 +184,10 @@ func select_index(index: int) -> void:
 	if affiliation.get("availability", "") in ["deceased", "not_born"]:
 		details.text += "開始時対象外：" + ("故人" if affiliation["availability"] == "deceased" else "未誕生") + "\n"
 	details.text += "後年を含む参考所属：" + str(affiliation.get("reference_house_display", "未確認")) + "\n"
+	var loyalty: Dictionary = registry.loyalty_data[officer.id]
+	details.text += "\n【忠誠・ゲーム初期設定】\n初期忠誠：%d / 100\n初期必要忠誠：%d / 70（成長上限90）\n" % [int(loyalty.initial_loyalty), int(loyalty.initial_required_loyalty)]
+	if loyalty.has("note"):
+		details.text += str(loyalty.note) + "\n" + str(loyalty.source_url) + "\n"
 	for url in affiliation.get("source_urls", []): details.text += str(url) + "\n"
 	details.text += "\n【生涯の能力案：30点満点・1点刻み】\n"
 	details.text += "総合能力：" + _total_text(officer) + " / 150（5能力の合計）\n"

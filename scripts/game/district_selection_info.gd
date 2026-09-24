@@ -6,6 +6,7 @@ const UI = preload("res://scripts/game/menu_style.gd")
 var panel: PanelContainer
 var name_label: Button
 var ruler_label: Label
+var security_label: Label
 var copy_status: Label
 
 func _ready() -> void:
@@ -22,9 +23,9 @@ func _ready() -> void:
 	panel.anchor_right = 0.0
 	panel.anchor_bottom = 0.5
 	panel.offset_left = 24.0
-	panel.offset_top = -64.0
+	panel.offset_top = -76.0
 	panel.offset_right = 354.0
-	panel.offset_bottom = 64.0
+	panel.offset_bottom = 76.0
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	panel.add_theme_stylebox_override("panel",UI.panel())
 	root_control.add_child(panel)
@@ -45,13 +46,16 @@ func _ready() -> void:
 	rows.add_child(name_label)
 	ruler_label = UI.label("",rows,16)
 	ruler_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	security_label = UI.label("",rows,16)
+	security_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	copy_status = UI.label("郡名をクリックでコピー",rows,12)
 	copy_status.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	panel.hide()
 
-func show_district(district_name: String, ruler_name: String) -> void:
+func show_district(district_name: String, ruler_name: String, security: int = -1) -> void:
 	name_label.text = district_name
 	ruler_label.text = "支配者：%s" % ruler_name
+	security_label.text = "治安：%d / 100" % security if security >= 0 else ""
 	copy_status.text = "郡名をクリックでコピー"
 	panel.show()
 

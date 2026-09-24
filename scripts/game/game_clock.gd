@@ -3,6 +3,7 @@ extends Node
 ## Consumers can subscribe to day_advanced for daily simulation updates at every speed.
 
 signal day_advanced(year: int, month: int, day: int)
+signal state_restored(year: int, month: int, day: int)
 signal speed_changed(speed: int)
 signal pause_changed(paused: bool)
 
@@ -96,6 +97,6 @@ func restore_state(state: Dictionary) -> void:
 	paused = state.paused
 	_day_fraction = float(state.fraction)
 	_last_tick_usec = Time.get_ticks_usec()
-	day_advanced.emit(year,month,day)
+	state_restored.emit(year,month,day)
 	speed_changed.emit(speed)
 	pause_changed.emit(paused)

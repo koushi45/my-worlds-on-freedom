@@ -16,6 +16,7 @@ const AGRICULTURE_POPULATION_FACTOR := 0.000267204543547695
 
 var registry: RefCounted
 var officers: RefCounted
+var technology_tree: Node
 var house_resources: Dictionary = {}
 
 
@@ -30,7 +31,11 @@ func setup(governance_registry: RefCounted, officer_registry: RefCounted) -> voi
 func income_for(record: Dictionary, kind: String) -> int:
 	var development := int(record.agriculture_development if kind == "agriculture" else record.commerce_development)
 	var factor := AGRICULTURE_POPULATION_FACTOR if kind == "agriculture" else COMMERCE_POPULATION_FACTOR
-	return maxi(0, roundi((BASE_VALUE + development) * int(record.population) * factor))
+	var multiplier := 1.0
+	if technology_tree != null:
+		var modifiers: Dictionary = technology_tree.modifiers(record.house_id)
+		multiplier = float(modifiers.provisions if kind == "agriculture" else modifiers.money)
+	return maxi(0, roundi((BASE_VALUE + development) * int(record.population) * factor * multiplier))
 
 
 func collect_income(kind: String) -> int:

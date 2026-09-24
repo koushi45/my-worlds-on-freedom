@@ -1,0 +1,22 @@
+# Officer portraits, batch 08
+
+Ten original officer busts were generated separately with built-in ImageGen. For each, Image 1 was the web-searched reference listed below; Image 2 was the project's `oda_nobunaga.png` used only for a consistent modern painterly finish. The wide Altema banners have tiny central portraits: prompts explicitly used only those portrait rectangles, not the banner or lettering. Reference screenshots are not shipped with the game.
+
+Search for historical portraits and exact named Nobunaga's Ambition faces found exact game portraits for three officers, but no verified historical likeness for the group. For the other seven, the source is clearly a **different game officer used as a visual fallback**, not an assertion that the source depicts the requested person. In-game images are original reinterpretations, not copies.
+
+| Requested officer | Registry ID | Output PNG | Primary reference and status | Deliberately retained visual anchors |
+| --- | --- | --- | --- | --- |
+| 下間真頼 | `officer_q6606038` | `shimotsuma_sanrai.png` | [Nobunaga's Ambition: Shimotsuma Sanrai](https://altema.jp/nobunagashinsei/busyo/1075), exact game face | Bald young face, tan-gold robe, plum shoulder drape, oversized russet prayer beads; direct gaze. |
+| 下間頼亮 | `officer_q11361416` | `shimotsuma_yorisuke.png` | [Nobunaga's Ambition: Shimotsuma Rairyu](https://altema.jp/nobunagashinsei/busyo/1079), same-family fallback, **not the requested officer** | Mature bald head, gaunt cheek, gray-green robe, sidelong eyes; turned shoulder pose. |
+| 下間頼廉 | `officer_q7497031` | `shimotsuma_rairen.png` | [Nobunaga's Ambition: Shimotsuma Rairen](https://altema.jp/nobunagashinsei/busyo/1080), exact game face | White wrapped hood, narrow black band, fierce eyes, dark tunic and prayer beads; omitted complex hands and sword. |
+| 下間頼照 | `officer_q6606120` | `shimotsuma_raisho.png` | [Nobunaga's Ambition: Shimotsuma Raisho](https://altema.jp/nobunagashinsei/busyo/1078), exact game face | Older bald head, long lined face, small moustache, ash-beige robes and purple drape; downcast gaze. |
+| 中原善左衛門 | `officer_q11363126` | `nakahara_zenzaemon.png` | [Nobunaga's Ambition: Nagato Hiroeki](https://altema.jp/nobunagashinsei/busyo/1483), **different-person fallback** | Black lacquer kabuto, upward gold crescent, compact moustached face, burgundy cuirass and green armor. |
+| 中山勝政 | `officer_q11364066` | `nakayama_katsumasa.png` | [Nobunaga's Ambition: Nakayama Ienori](https://altema.jp/nobunagashinsei/busyo/1498), **different-person fallback** | Slim young face, high topknot, fine moustache, dark blue robe; lowered sideways gaze. |
+| 中山勝時 | `officer_q11364086` | `nakayama_katsutoki.png` | [Nobunaga's Ambition: Nakayama Nobumasa](https://altema.jp/nobunagashinsei/busyo/1500), **different-person fallback** | Receding shaved crown, strong moustache, mature narrow face, brown robe; watchful rightward gaze. |
+| 中山田泰吉 | `officer_q20041913` | `nakayamada_yasuyoshi.png` | [Nobunaga's Ambition: Nakayama Terumori](https://altema.jp/nobunagashinsei/busyo/1499), **different-person fallback** | Short high topknot, arched brows, narrow moustache, black steel armor and green collar; lower camera angle. |
+| 中島可之助 | `officer_q11364434` | `nakajima_kanosuke.png` | [Nobunaga's Ambition: Nakajima Teruyuki](https://altema.jp/nobunagashinsei/busyo/1480), **different-person fallback** | Fine young profile, tall black eboshi, teal outer robe and plum inner robe; leftward gaze. |
+| 中島正時 | `officer_q11364532` | `nakajima_masatoki.png` | [Nobunaga's Ambition: Nakajima Motoyuki](https://altema.jp/nobunagashinsei/busyo/1481), **different-person fallback** | White headband, upright tuft, broad moustache, weathered blue armor; rightward gaze. |
+
+Shared final prompt pattern: `Use case: stylized-concept. Asset type: modern historical strategy-game bust icon. Use Image 1's *central portrait only* for the row-specific facial structure, age, hair or headgear, clothing, palette and expression; ignore its banner, name, interface and background. Image 2 (`oda_nobunaga.png`) sets painterly quality only. Use a distinct row-specific three-quarter angle and expression. Draw a new character portrait with face, neck and shoulders aligned; omit complex hands and weapons. Output one 1:1 square transparent-alpha PNG, with no Japanese or other text, UI, frame, backdrop, halo or logo.`
+
+Fallback portraits are design references only. Neither the fallback art nor the generated output should be presented as a verified historical likeness of the requested officer.

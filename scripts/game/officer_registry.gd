@@ -2,8 +2,10 @@ extends RefCounted
 ## Historical roster is independent of the map reference year and future service rules.
 
 const SCENARIO_PATH := "res://data/derived/scenarios/default_scenario.json"
+const LOYALTY_PATH := "res://data/derived/officers/loyalty_1546.json"
 var scenario: Dictionary = {}
 var data: Dictionary = {}
+var loyalty_data: Dictionary = {}
 var lookup: Dictionary = {}
 var last_error := ""
 
@@ -29,6 +31,19 @@ func load_data() -> Error:
 			lookup.clear()
 			return ERR_INVALID_DATA
 		lookup[officer["id"]] = officer
+	var loyalty_parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(LOYALTY_PATH))
+	if not loyalty_parsed is Dictionary or loyalty_parsed.get("schema_version") != 1 or not loyalty_parsed.get("officers") is Dictionary or loyalty_parsed.officers.size() != lookup.size():
+		last_error = "武将忠誠台帳を読み込めません"
+		return ERR_INVALID_DATA
+	loyalty_data = loyalty_parsed.officers
+	for officer_id in lookup:
+		if not loyalty_data.has(officer_id):
+			last_error = "武将忠誠台帳に欠落があります"
+			return ERR_INVALID_DATA
+		var values: Dictionary = loyalty_data[officer_id]
+		if values.get("initial_loyalty") != 40 or not values.get("initial_required_loyalty") is float and not values.get("initial_required_loyalty") is int or int(values.initial_required_loyalty) < 0 or int(values.initial_required_loyalty) > 70:
+			last_error = "武将忠誠台帳の値が不正です"
+			return ERR_INVALID_DATA
 	return OK
 
 func is_present_at_start(id: String) -> bool:
