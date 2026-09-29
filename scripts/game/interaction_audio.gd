@@ -2,9 +2,12 @@ extends Node
 ## Plays the shared operation sound for clickable UI and map selections.
 
 const CLICK_STREAM := preload("res://assets/audio/ui_click_breviceps.ogg")
+const INCOME_STREAM := preload("res://assets/audio/income_coins_kenney.ogg")
 
 var player: AudioStreamPlayer
+var income_player: AudioStreamPlayer
 var play_count := 0
+var income_play_count := 0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -12,6 +15,10 @@ func _ready() -> void:
 	player.name = "InteractionClick"
 	player.stream = CLICK_STREAM
 	add_child(player)
+	income_player = AudioStreamPlayer.new()
+	income_player.name = "MonthlyIncome"
+	income_player.stream = INCOME_STREAM
+	add_child(income_player)
 	DisplaySettings.sfx_volume_changed.connect(_set_volume)
 	_set_volume(DisplaySettings.sfx_volume)
 	get_tree().node_added.connect(_hook_control)
@@ -21,8 +28,13 @@ func play_click() -> void:
 	play_count += 1
 	player.play()
 
+func play_income() -> void:
+	income_play_count += 1
+	income_player.play()
+
 func _set_volume(value: float) -> void:
 	if player != null: player.volume_linear = value
+	if income_player != null: income_player.volume_linear = value
 
 func _hook_existing_controls() -> void:
 	_hook_descendants(get_tree().root)

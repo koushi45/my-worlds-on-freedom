@@ -1,8 +1,11 @@
 extends CanvasLayer
 const UI = preload("res://scripts/game/menu_style.gd")
+const DistrictStyle = preload("res://scripts/game/district_panel_style.gd")
 var main: Node
 var shade: ColorRect
-var modal: PanelContainer
+var modal: Control
+var council_menu: Control
+var council_origin := false
 var slots: Control
 var confirmation: ConfirmationDialog
 var territory_fill_toggle: CheckButton
@@ -11,8 +14,9 @@ var last_zoom := -1.0
 var action := ""
 var options: Control
 var officer_dictionary: Node
-var retainer_panel: AcceptDialog
-var technology_panel: AcceptDialog
+var retainer_panel: Control
+var technology_panel: Control
+var diplomacy_panel: Control
 var prestige_label: Label
 var crisis_label: Label
 
@@ -80,20 +84,32 @@ func _ready() -> void:
 	shade.color = Color(0,0,0,0.65)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	overlay.add_child(shade)
-	modal = UI.centered(shade,Vector2(420,590))
-	var rows := VBoxContainer.new()
-	rows.add_theme_constant_override("separation",10)
-	modal.add_child(rows)
-	UI.label("ゲームメニュー",rows,28)
-	UI.button("セーブ",rows,show_slots.bind(true))
-	UI.button("ロード",rows,show_slots.bind(false))
-	UI.button("辞典",rows,show_dictionary)
-	UI.button("役職ツリー・配下管理",rows,show_retainers)
-	UI.button("技術ツリー",rows,show_technology)
-	UI.button("オプション",rows,show_options)
-	UI.button("スタートメニューに戻る",rows,confirm_action.bind("title"))
-	UI.button("ゲーム終了",rows,confirm_action.bind("quit"))
-	UI.button("ゲームに戻る",rows,toggle)
+	modal = _framed_menu(shade, Vector2(420, 550), true)
+	modal.name = "GameMenuPanel"
+	var rows := _menu_rows(modal)
+	rows.add_theme_constant_override("separation",8)
+	DistrictStyle.heading("ゲームメニュー", rows, 23).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_menu_button("セーブ", rows, show_slots.bind(true))
+	_menu_button("ロード", rows, show_slots.bind(false))
+	_menu_button("辞典", rows, show_dictionary)
+	_menu_button("オプション", rows, show_options)
+	_menu_button("開発者モード", rows, func(): _close_all(); main.developer_tools.open())
+	DistrictStyle.heading("終える", rows, 15).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_menu_button("スタートメニューに戻る", rows, confirm_action.bind("title"))
+	_menu_button("ゲーム終了", rows, confirm_action.bind("quit"))
+	DistrictStyle.heading("戻る", rows, 15).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_menu_button("ゲームに戻る", rows, toggle)
+	council_menu = _framed_menu(shade, Vector2(380, 300), false)
+	council_menu.name = "CouncilMenuPanel"
+	council_menu.position = Vector2(20, 188)
+	var council_rows := _menu_rows(council_menu)
+	council_rows.add_theme_constant_override("separation", 10)
+	DistrictStyle.heading("評定", council_rows, 22).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_menu_button("役職ツリー・配下管理", council_rows, show_retainers)
+	_menu_button("技術ツリー", council_rows, show_technology)
+	_menu_button("外交", council_rows, show_diplomacy)
+	_menu_button("閉じる", council_rows, toggle_council)
+	council_menu.hide()
 	shade.hide()
 	confirmation = ConfirmationDialog.new()
 	confirmation.title = "確認"
@@ -118,28 +134,89 @@ func _show_loyalty_crisis(officer_id: String, house_id: String, outcome: String)
 	if house_id != GameSession.player_house: return
 	crisis_label.text = "%s：%s" % [main.officer_registry.lookup[officer_id].display_name, outcome]
 
+func _framed_menu(parent: Control, dimensions: Vector2, centered: bool) -> Control:
+	var panel := Control.new()
+	panel.custom_minimum_size = dimensions
+	panel.size = dimensions
+	panel.mouse_filter = Control.MOUSE_FILTER_STOP
+	parent.add_child(panel)
+	if centered:
+		panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+		panel.offset_left = -dimensions.x * 0.5
+		panel.offset_right = dimensions.x * 0.5
+		panel.offset_top = -dimensions.y * 0.5
+		panel.offset_bottom = dimensions.y * 0.5
+	DistrictStyle.frame(panel)
+	return panel
+
+func _menu_rows(panel: Control) -> VBoxContainer:
+	var rows := VBoxContainer.new()
+	rows.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	rows.offset_left = 35
+	rows.offset_right = -35
+	rows.offset_top = 35
+	rows.offset_bottom = -35
+	panel.add_child(rows)
+	return rows
+
+func _menu_button(caption: String, parent: Control, action_callback: Callable) -> Button:
+	var button := DistrictStyle.button(caption, parent, action_callback)
+	button.custom_minimum_size = Vector2(290, 38)
+	return button
+
 func toggle() -> void:
+	if shade.visible:
+		_close_all()
+		return
+	_open_menu(false)
+
+func toggle_council() -> void:
+	if shade.visible:
+		_close_all()
+		return
+	if main.district_info.panel.visible: main.district_info.hide_info()
+	_open_menu(true)
+
+func _open_menu(council: bool) -> void:
+	council_origin = council
+	modal.visible = not council
+	council_menu.visible = council
+	shade.show()
+	main.dragging = false
+	main.district_click_serial += 1
+	get_tree().paused = true
+
+func _close_all() -> void:
 	if is_instance_valid(slots): slots.queue_free()
 	if is_instance_valid(options): options.queue_free()
 	confirmation.hide()
-	shade.visible = not shade.visible
-	modal.show()
+	if is_instance_valid(retainer_panel): retainer_panel.hide()
+	if is_instance_valid(technology_panel): technology_panel.hide()
+	if is_instance_valid(diplomacy_panel): diplomacy_panel.hide()
+	if is_instance_valid(officer_dictionary) and is_instance_valid(officer_dictionary.browser): officer_dictionary.browser.hide()
+	shade.hide()
+	modal.hide()
+	council_menu.hide()
 	main.dragging = false
 	main.district_click_serial += 1
-	get_tree().paused = shade.visible
+	get_tree().paused = false
+
+func _restore_parent_menu() -> void:
+	if council_origin: council_menu.show()
+	else: modal.show()
 
 func show_slots(saving: bool) -> void:
 	modal.hide()
 	slots = preload("res://scripts/game/save_slots.gd").new()
 	slots.main = main
 	slots.saving = saving
-	slots.closed.connect(modal.show)
+	slots.closed.connect(_restore_parent_menu)
 	shade.add_child(slots)
 
 func show_options() -> void:
 	modal.hide()
 	options = preload("res://scripts/game/display_options.gd").new()
-	options.closed.connect(modal.show)
+	options.closed.connect(_restore_parent_menu)
 	shade.add_child(options)
 
 func show_dictionary() -> void:
@@ -147,31 +224,39 @@ func show_dictionary() -> void:
 	if officer_dictionary == null:
 		officer_dictionary = preload("res://scripts/game/officer_panel.gd").new()
 		officer_dictionary.standalone = true
-		officer_dictionary.closed.connect(modal.show)
+		officer_dictionary.closed.connect(_restore_parent_menu)
 		add_child(officer_dictionary)
 	officer_dictionary.show_browser()
 
 func show_retainers() -> void:
 	modal.hide()
+	council_menu.hide()
 	if not is_instance_valid(retainer_panel):
 		retainer_panel = preload("res://scripts/game/retainer_panel.gd").new()
 		retainer_panel.main = main
-		retainer_panel.confirmed.connect(modal.show)
-		retainer_panel.canceled.connect(modal.show)
-		retainer_panel.close_requested.connect(modal.show)
+		retainer_panel.closed.connect(_restore_parent_menu)
 		add_child(retainer_panel)
 	retainer_panel.open()
 
 func show_technology() -> void:
 	modal.hide()
+	council_menu.hide()
 	if not is_instance_valid(technology_panel):
 		technology_panel = preload("res://scripts/game/technology_panel.gd").new()
 		technology_panel.main = main
-		technology_panel.confirmed.connect(modal.show)
-		technology_panel.canceled.connect(modal.show)
-		technology_panel.close_requested.connect(modal.show)
+		technology_panel.closed.connect(_restore_parent_menu)
 		add_child(technology_panel)
 	technology_panel.open()
+
+func show_diplomacy() -> void:
+	modal.hide()
+	council_menu.hide()
+	if not is_instance_valid(diplomacy_panel):
+		diplomacy_panel = preload("res://scripts/game/diplomacy_panel.gd").new()
+		diplomacy_panel.main = main
+		diplomacy_panel.closed.connect(_restore_parent_menu)
+		add_child(diplomacy_panel)
+	diplomacy_panel.open()
 
 func confirm_action(value: String) -> void:
 	action = value
@@ -180,19 +265,30 @@ func confirm_action(value: String) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
-		if confirmation.visible: confirmation.hide()
-		elif is_instance_valid(officer_dictionary) and is_instance_valid(officer_dictionary.browser) and officer_dictionary.browser.visible:
-			officer_dictionary.browser.hide()
-			modal.show()
-		elif is_instance_valid(retainer_panel) and retainer_panel.visible:
-			retainer_panel.hide()
-			modal.show()
-		elif is_instance_valid(technology_panel) and technology_panel.visible:
-			technology_panel.hide()
-			modal.show()
-		elif is_instance_valid(options): options._close()
-		elif is_instance_valid(slots):
-			if slots.confirmation.visible: slots.confirmation.hide()
-			else: slots.queue_free(); modal.show()
-		else: toggle()
+		_cancel_topmost()
 		get_viewport().set_input_as_handled()
+
+func _cancel_topmost() -> void:
+	if confirmation.visible: confirmation.hide()
+	elif is_instance_valid(officer_dictionary) and is_instance_valid(officer_dictionary.browser) and officer_dictionary.browser.visible:
+		officer_dictionary.browser.hide()
+		_restore_parent_menu()
+	elif is_instance_valid(retainer_panel) and retainer_panel.visible:
+		retainer_panel.hide()
+		_restore_parent_menu()
+	elif is_instance_valid(technology_panel) and technology_panel.visible:
+		technology_panel.hide()
+		_restore_parent_menu()
+	elif is_instance_valid(diplomacy_panel) and diplomacy_panel.visible:
+		diplomacy_panel.hide()
+		_restore_parent_menu()
+	elif is_instance_valid(options): options._close()
+	elif is_instance_valid(slots):
+		if slots.confirmation.visible: slots.confirmation.hide()
+		else: slots.queue_free(); _restore_parent_menu()
+	elif shade.visible: _close_all()
+	elif main.district_info.building_confirmation.visible: main.district_info.building_confirmation.hide()
+	elif main.district_info.governor_dialog.visible: main.district_info.governor_dialog.hide()
+	elif main.district_info.building_dialog.visible: main.district_info.building_dialog.hide()
+	elif main.district_info.panel.visible: main.district_info.hide_info()
+	else: _open_menu(false)

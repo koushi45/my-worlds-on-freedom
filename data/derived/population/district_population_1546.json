@@ -4235,59 +4235,6 @@
       "model_version": "population-1546-v1",
       "boundary_version": "district-connectivity-1546@d60a386b"
     },
-    "chikugo/unresolved-42cfaa8c657745ea": {
-      "district_id": "chikugo/unresolved-42cfaa8c657745ea",
-      "name": "三瀦郡周辺（仮）",
-      "province": "筑後国",
-      "scenario_year": 1546,
-      "population_estimate": 403,
-      "population_low": 329,
-      "population_high": 608,
-      "population_low_raw": 328.64646464646466,
-      "population_estimate_raw": 403.3484848484849,
-      "population_high_raw": 607.9949494949495,
-      "population_definition": "男女・子供・高齢者、農村・都市・港・寺社・武家を含む総居住人口",
-      "method": "regional_allocation",
-      "adoption_status": "provisional",
-      "evidence_grade": "C",
-      "temporal_confidence": {
-        "grade": "low",
-        "reason": "郡内配分指標が幕末期村落分布で、1546年との差が大きい。"
-      },
-      "boundary_confidence": {
-        "grade": "medium",
-        "reason": "村落代表点を現行ゲーム境界へ空間対応。"
-      },
-      "source_ids": [
-        "ipss_population_statistics_2026",
-        "maddison_world_economy_2006",
-        "keicho_kokudaka_transcription",
-        "rekihaku_kyudaka_database",
-        "honda_kyudaka_agrivillage_v2_01",
-        "game_boundary_1546"
-      ],
-      "observation_ids": [
-        "obs_distribution_chikugo__unresolved-42cfaa8c657745ea"
-      ],
-      "assumption_ids": [
-        "assumption_national_backcast_0018",
-        "assumption_province_kokudaka_share",
-        "assumption_district_village_points",
-        "assumption_zero_koku_islands",
-        "assumption_largest_remainder"
-      ],
-      "allocation_group_ids": [
-        "筑後国"
-      ],
-      "crosswalk_ids": [
-        "crosswalk_chikugo__unresolved-42cfaa8c657745ea"
-      ],
-      "urban_population_included": "総人口に包含。都市人口を分離できないため別枠加算なし。",
-      "notes": "史料と明示した仮定によるゲーム用推定。整数値は1人単位の史実精度を意味しない。",
-      "review_status": "automatic_checks_passed",
-      "model_version": "population-1546-v1",
-      "boundary_version": "district-connectivity-1546@d60a386b"
-    },
     "chikuzen/candidate-district-candidate-g63001": {
       "district_id": "chikuzen/candidate-district-candidate-g63001",
       "name": "志摩郡",
@@ -4970,59 +4917,6 @@
       ],
       "crosswalk_ids": [
         "crosswalk_chikuzen__merged-efad3c15cc7a3e86"
-      ],
-      "urban_population_included": "総人口に包含。都市人口を分離できないため別枠加算なし。",
-      "notes": "史料と明示した仮定によるゲーム用推定。整数値は1人単位の史実精度を意味しない。",
-      "review_status": "automatic_checks_passed",
-      "model_version": "population-1546-v1",
-      "boundary_version": "district-connectivity-1546@d60a386b"
-    },
-    "chikuzen/unresolved-42cfaa8c657745ea": {
-      "district_id": "chikuzen/unresolved-42cfaa8c657745ea",
-      "name": "遠賀郡周辺（仮）",
-      "province": "筑前国",
-      "scenario_year": 1546,
-      "population_estimate": 1568,
-      "population_low": 1278,
-      "population_high": 2364,
-      "population_low_raw": 1277.7365406643755,
-      "population_estimate_raw": 1568.160366552119,
-      "population_high_raw": 2363.8029782359677,
-      "population_definition": "男女・子供・高齢者、農村・都市・港・寺社・武家を含む総居住人口",
-      "method": "regional_allocation",
-      "adoption_status": "provisional",
-      "evidence_grade": "C",
-      "temporal_confidence": {
-        "grade": "low",
-        "reason": "郡内配分指標が幕末期村落分布で、1546年との差が大きい。"
-      },
-      "boundary_confidence": {
-        "grade": "medium",
-        "reason": "村落代表点を現行ゲーム境界へ空間対応。"
-      },
-      "source_ids": [
-        "ipss_population_statistics_2026",
-        "maddison_world_economy_2006",
-        "keicho_kokudaka_transcription",
-        "rekihaku_kyudaka_database",
-        "honda_kyudaka_agrivillage_v2_01",
-        "game_boundary_1546"
-      ],
-      "observation_ids": [
-        "obs_distribution_chikuzen__unresolved-42cfaa8c657745ea"
-      ],
-      "assumption_ids": [
-        "assumption_national_backcast_0018",
-        "assumption_province_kokudaka_share",
-        "assumption_district_village_points",
-        "assumption_zero_koku_islands",
-        "assumption_largest_remainder"
-      ],
-      "allocation_group_ids": [
-        "筑前国"
-      ],
-      "crosswalk_ids": [
-        "crosswalk_chikuzen__unresolved-42cfaa8c657745ea"
       ],
       "urban_population_included": "総人口に包含。都市人口を分離できないため別枠加算なし。",
       "notes": "史料と明示した仮定によるゲーム用推定。整数値は1人単位の史実精度を意味しない。",
@@ -6251,7 +6145,7 @@
     },
     "echizen/unresolved-42cfaa8c657745ea": {
       "district_id": "echizen/unresolved-42cfaa8c657745ea",
-      "name": "敦賀郡周辺（仮）",
+      "name": "敦賀郡",
       "province": "越前国",
       "scenario_year": 1546,
       "population_estimate": 47166,
@@ -9646,14 +9540,14 @@
       "name": "神崎郡",
       "province": "肥前国",
       "scenario_year": 1546,
-      "population_estimate": 19862,
-      "population_low": 16184,
-      "population_high": 29940,
-      "population_low_raw": 16183.571065989847,
-      "population_estimate_raw": 19862.083756345175,
-      "population_high_raw": 29939.596446700507,
+      "population_estimate": 21833,
+      "population_low": 17791,
+      "population_high": 32912,
+      "population_low_raw": 17789.954071300686,
+      "population_estimate_raw": 21833.592607745777,
+      "population_high_raw": 32911.394374431424,
       "population_definition": "男女・子供・高齢者、農村・都市・港・寺社・武家を含む総居住人口",
-      "method": "regional_allocation",
+      "method": "regional_allocation_then_requested_merge",
       "adoption_status": "provisional",
       "evidence_grade": "C",
       "temporal_confidence": {
@@ -9665,34 +9559,44 @@
         "reason": "村落代表点を現行ゲーム境界へ空間対応。"
       },
       "source_ids": [
-        "ipss_population_statistics_2026",
-        "maddison_world_economy_2006",
-        "keicho_kokudaka_transcription",
-        "rekihaku_kyudaka_database",
+        "game_boundary_1546",
         "honda_kyudaka_agrivillage_v2_01",
-        "game_boundary_1546"
+        "ipss_population_statistics_2026",
+        "keicho_kokudaka_transcription",
+        "maddison_world_economy_2006",
+        "rekihaku_kyudaka_database"
       ],
       "observation_ids": [
+        "obs_distribution_chikugo__unresolved-42cfaa8c657745ea",
+        "obs_distribution_chikuzen__unresolved-42cfaa8c657745ea",
         "obs_distribution_hizen__merged-3051a6f57adaff58"
       ],
       "assumption_ids": [
+        "assumption_district_village_points",
+        "assumption_largest_remainder",
         "assumption_national_backcast_0018",
         "assumption_province_kokudaka_share",
-        "assumption_district_village_points",
-        "assumption_zero_koku_islands",
-        "assumption_largest_remainder"
+        "assumption_zero_koku_islands"
       ],
       "allocation_group_ids": [
+        "筑前国",
+        "筑後国",
         "肥前国"
       ],
       "crosswalk_ids": [
+        "crosswalk_chikugo__unresolved-42cfaa8c657745ea",
+        "crosswalk_chikuzen__unresolved-42cfaa8c657745ea",
         "crosswalk_hizen__merged-3051a6f57adaff58"
       ],
       "urban_population_included": "総人口に包含。都市人口を分離できないため別枠加算なし。",
       "notes": "史料と明示した仮定によるゲーム用推定。整数値は1人単位の史実精度を意味しない。",
       "review_status": "automatic_checks_passed",
       "model_version": "population-1546-v1",
-      "boundary_version": "district-connectivity-1546@d60a386b"
+      "boundary_version": "district-connectivity-1546@d60a386b",
+      "merged_district_ids": [
+        "chikuzen/unresolved-42cfaa8c657745ea",
+        "chikugo/unresolved-42cfaa8c657745ea"
+      ]
     },
     "hoki/candidate-district-candidate-g45001": {
       "district_id": "hoki/candidate-district-candidate-g45001",
@@ -18865,7 +18769,7 @@
     },
     "kai/unresolved-1daff391d7d465f8": {
       "district_id": "kai/unresolved-1daff391d7d465f8",
-      "name": "巨摩郡周辺（仮1）",
+      "name": "田富郡",
       "province": "甲斐国",
       "scenario_year": 1546,
       "population_estimate": 22308,
@@ -18918,7 +18822,7 @@
     },
     "kai/unresolved-9b61530a41070de6": {
       "district_id": "kai/unresolved-9b61530a41070de6",
-      "name": "八代郡周辺（仮1）",
+      "name": "御坂郡",
       "province": "甲斐国",
       "scenario_year": 1546,
       "population_estimate": 19121,
@@ -18971,17 +18875,17 @@
     },
     "kai/unresolved-b48d2f62146c8828": {
       "district_id": "kai/unresolved-b48d2f62146c8828",
-      "name": "都留郡周辺（仮1）",
+      "name": "都留郡",
       "province": "甲斐国",
       "scenario_year": 1546,
-      "population_estimate": 8852,
-      "population_low": 7213,
-      "population_high": 13343,
-      "population_low_raw": 7212.759067357512,
-      "population_estimate_raw": 8852.20207253886,
-      "population_high_raw": 13343.588082901553,
+      "population_estimate": 9023,
+      "population_low": 7352,
+      "population_high": 13601,
+      "population_low_raw": 7352.081648002673,
+      "population_estimate_raw": 9023.191808609241,
+      "population_high_raw": 13601.332950936743,
       "population_definition": "男女・子供・高齢者、農村・都市・港・寺社・武家を含む総居住人口",
-      "method": "regional_allocation",
+      "method": "regional_allocation_then_requested_merge",
       "adoption_status": "provisional",
       "evidence_grade": "C",
       "temporal_confidence": {
@@ -18993,38 +18897,44 @@
         "reason": "村落代表点を現行ゲーム境界へ空間対応。"
       },
       "source_ids": [
-        "ipss_population_statistics_2026",
-        "maddison_world_economy_2006",
-        "keicho_kokudaka_transcription",
-        "rekihaku_kyudaka_database",
+        "game_boundary_1546",
         "honda_kyudaka_agrivillage_v2_01",
-        "game_boundary_1546"
+        "ipss_population_statistics_2026",
+        "keicho_kokudaka_transcription",
+        "maddison_world_economy_2006",
+        "rekihaku_kyudaka_database"
       ],
       "observation_ids": [
-        "obs_distribution_kai__unresolved-b48d2f62146c8828"
+        "obs_distribution_kai__unresolved-b48d2f62146c8828",
+        "obs_distribution_sagami__unresolved-42cfaa8c657745ea"
       ],
       "assumption_ids": [
+        "assumption_district_village_points",
+        "assumption_largest_remainder",
         "assumption_national_backcast_0018",
         "assumption_province_kokudaka_share",
-        "assumption_district_village_points",
-        "assumption_zero_koku_islands",
-        "assumption_largest_remainder"
+        "assumption_zero_koku_islands"
       ],
       "allocation_group_ids": [
-        "甲斐国"
+        "甲斐国",
+        "相模国"
       ],
       "crosswalk_ids": [
-        "crosswalk_kai__unresolved-b48d2f62146c8828"
+        "crosswalk_kai__unresolved-b48d2f62146c8828",
+        "crosswalk_sagami__unresolved-42cfaa8c657745ea"
       ],
       "urban_population_included": "総人口に包含。都市人口を分離できないため別枠加算なし。",
       "notes": "史料と明示した仮定によるゲーム用推定。整数値は1人単位の史実精度を意味しない。",
       "review_status": "automatic_checks_passed",
       "model_version": "population-1546-v1",
-      "boundary_version": "district-connectivity-1546@d60a386b"
+      "boundary_version": "district-connectivity-1546@d60a386b",
+      "merged_district_ids": [
+        "sagami/unresolved-42cfaa8c657745ea"
+      ]
     },
     "kai/unresolved-c074c2107bc1fabe": {
       "district_id": "kai/unresolved-c074c2107bc1fabe",
-      "name": "山梨郡周辺（仮1）",
+      "name": "甲府郡",
       "province": "甲斐国",
       "scenario_year": 1546,
       "population_estimate": 14341,
@@ -19077,7 +18987,7 @@
     },
     "kai/unresolved-c32fd7e7f6a3b40c": {
       "district_id": "kai/unresolved-c32fd7e7f6a3b40c",
-      "name": "八代郡周辺（仮2）",
+      "name": "六郷郡",
       "province": "甲斐国",
       "scenario_year": 1546,
       "population_estimate": 12570,
@@ -19130,17 +19040,17 @@
     },
     "kai/unresolved-cd2be55f925d6adb": {
       "district_id": "kai/unresolved-cd2be55f925d6adb",
-      "name": "都留郡周辺（仮2）",
+      "name": "上野原郡",
       "province": "甲斐国",
       "scenario_year": 1546,
-      "population_estimate": 9560,
-      "population_low": 7790,
-      "population_high": 14411,
-      "population_low_raw": 7789.779792746114,
-      "population_estimate_raw": 9560.37823834197,
-      "population_high_raw": 14411.075129533678,
+      "population_estimate": 13286,
+      "population_low": 10826,
+      "population_high": 20027,
+      "population_low_raw": 10825.709035065693,
+      "population_estimate_raw": 13286.381874648638,
+      "population_high_raw": 20027.54701818394,
       "population_definition": "男女・子供・高齢者、農村・都市・港・寺社・武家を含む総居住人口",
-      "method": "regional_allocation",
+      "method": "regional_allocation_then_requested_merge",
       "adoption_status": "provisional",
       "evidence_grade": "C",
       "temporal_confidence": {
@@ -19152,38 +19062,44 @@
         "reason": "村落代表点を現行ゲーム境界へ空間対応。"
       },
       "source_ids": [
-        "ipss_population_statistics_2026",
-        "maddison_world_economy_2006",
-        "keicho_kokudaka_transcription",
-        "rekihaku_kyudaka_database",
+        "game_boundary_1546",
         "honda_kyudaka_agrivillage_v2_01",
-        "game_boundary_1546"
+        "ipss_population_statistics_2026",
+        "keicho_kokudaka_transcription",
+        "maddison_world_economy_2006",
+        "rekihaku_kyudaka_database"
       ],
       "observation_ids": [
-        "obs_distribution_kai__unresolved-cd2be55f925d6adb"
+        "obs_distribution_kai__unresolved-cd2be55f925d6adb",
+        "obs_distribution_musashi__unresolved-42cfaa8c657745ea"
       ],
       "assumption_ids": [
+        "assumption_district_village_points",
+        "assumption_largest_remainder",
         "assumption_national_backcast_0018",
         "assumption_province_kokudaka_share",
-        "assumption_district_village_points",
-        "assumption_zero_koku_islands",
-        "assumption_largest_remainder"
+        "assumption_zero_koku_islands"
       ],
       "allocation_group_ids": [
+        "武蔵国",
         "甲斐国"
       ],
       "crosswalk_ids": [
-        "crosswalk_kai__unresolved-cd2be55f925d6adb"
+        "crosswalk_kai__unresolved-cd2be55f925d6adb",
+        "crosswalk_musashi__unresolved-42cfaa8c657745ea"
       ],
       "urban_population_included": "総人口に包含。都市人口を分離できないため別枠加算なし。",
       "notes": "史料と明示した仮定によるゲーム用推定。整数値は1人単位の史実精度を意味しない。",
       "review_status": "automatic_checks_passed",
       "model_version": "population-1546-v1",
-      "boundary_version": "district-connectivity-1546@d60a386b"
+      "boundary_version": "district-connectivity-1546@d60a386b",
+      "merged_district_ids": [
+        "musashi/unresolved-42cfaa8c657745ea"
+      ]
     },
     "kai/unresolved-d4fdd4c924cdbc20": {
       "district_id": "kai/unresolved-d4fdd4c924cdbc20",
-      "name": "巨摩郡周辺（仮3）",
+      "name": "鰍沢郡",
       "province": "甲斐国",
       "scenario_year": 1546,
       "population_estimate": 14163,
@@ -19236,7 +19152,7 @@
     },
     "kai/unresolved-ecfc292ae0476f16": {
       "district_id": "kai/unresolved-ecfc292ae0476f16",
-      "name": "山梨郡周辺（仮2）",
+      "name": "勝沼郡",
       "province": "甲斐国",
       "scenario_year": 1546,
       "population_estimate": 16288,
@@ -19289,7 +19205,7 @@
     },
     "kai/unresolved-ffdb3c4007cda493": {
       "district_id": "kai/unresolved-ffdb3c4007cda493",
-      "name": "巨摩郡周辺（仮4）",
+      "name": "韮崎郡",
       "province": "甲斐国",
       "scenario_year": 1546,
       "population_estimate": 19475,
@@ -25064,59 +24980,6 @@
       "model_version": "population-1546-v1",
       "boundary_version": "district-connectivity-1546@d60a386b"
     },
-    "musashi/unresolved-42cfaa8c657745ea": {
-      "district_id": "musashi/unresolved-42cfaa8c657745ea",
-      "name": "秩父郡周辺（仮）",
-      "province": "武蔵国",
-      "scenario_year": 1546,
-      "population_estimate": 3726,
-      "population_low": 3036,
-      "population_high": 5616,
-      "population_low_raw": 3035.9292423195784,
-      "population_estimate_raw": 3726.0036363066683,
-      "population_high_raw": 5616.471888650264,
-      "population_definition": "男女・子供・高齢者、農村・都市・港・寺社・武家を含む総居住人口",
-      "method": "analogue_fallback",
-      "adoption_status": "provisional",
-      "evidence_grade": "D",
-      "temporal_confidence": {
-        "grade": "low",
-        "reason": "郡内配分指標が幕末期村落分布で、1546年との差が大きい。"
-      },
-      "boundary_confidence": {
-        "grade": "low",
-        "reason": "村落代表点を現行ゲーム境界へ空間対応。"
-      },
-      "source_ids": [
-        "ipss_population_statistics_2026",
-        "maddison_world_economy_2006",
-        "keicho_kokudaka_transcription",
-        "rekihaku_kyudaka_database",
-        "honda_kyudaka_agrivillage_v2_01",
-        "game_boundary_1546"
-      ],
-      "observation_ids": [
-        "obs_distribution_musashi__unresolved-42cfaa8c657745ea"
-      ],
-      "assumption_ids": [
-        "assumption_national_backcast_0018",
-        "assumption_province_kokudaka_share",
-        "assumption_district_village_points",
-        "assumption_zero_koku_islands",
-        "assumption_largest_remainder"
-      ],
-      "allocation_group_ids": [
-        "武蔵国"
-      ],
-      "crosswalk_ids": [
-        "crosswalk_musashi__unresolved-42cfaa8c657745ea"
-      ],
-      "urban_population_included": "総人口に包含。都市人口を分離できないため別枠加算なし。",
-      "notes": "史料と明示した仮定によるゲーム用推定。整数値は1人単位の史実精度を意味しない。",
-      "review_status": "automatic_checks_passed",
-      "model_version": "population-1546-v1",
-      "boundary_version": "district-connectivity-1546@d60a386b"
-    },
     "nagato/candidate-district-candidate-g56001": {
       "district_id": "nagato/candidate-district-candidate-g56001",
       "name": "阿武郡",
@@ -27502,59 +27365,6 @@
       "model_version": "population-1546-v1",
       "boundary_version": "district-connectivity-1546@d60a386b"
     },
-    "sagami/unresolved-42cfaa8c657745ea": {
-      "district_id": "sagami/unresolved-42cfaa8c657745ea",
-      "name": "三浦郡周辺（仮）",
-      "province": "相模国",
-      "scenario_year": 1546,
-      "population_estimate": 171,
-      "population_low": 139,
-      "population_high": 258,
-      "population_low_raw": 139.32258064516128,
-      "population_estimate_raw": 170.98973607038124,
-      "population_high_raw": 257.7448680351906,
-      "population_definition": "男女・子供・高齢者、農村・都市・港・寺社・武家を含む総居住人口",
-      "method": "regional_allocation",
-      "adoption_status": "provisional",
-      "evidence_grade": "C",
-      "temporal_confidence": {
-        "grade": "low",
-        "reason": "郡内配分指標が幕末期村落分布で、1546年との差が大きい。"
-      },
-      "boundary_confidence": {
-        "grade": "medium",
-        "reason": "村落代表点を現行ゲーム境界へ空間対応。"
-      },
-      "source_ids": [
-        "ipss_population_statistics_2026",
-        "maddison_world_economy_2006",
-        "keicho_kokudaka_transcription",
-        "rekihaku_kyudaka_database",
-        "honda_kyudaka_agrivillage_v2_01",
-        "game_boundary_1546"
-      ],
-      "observation_ids": [
-        "obs_distribution_sagami__unresolved-42cfaa8c657745ea"
-      ],
-      "assumption_ids": [
-        "assumption_national_backcast_0018",
-        "assumption_province_kokudaka_share",
-        "assumption_district_village_points",
-        "assumption_zero_koku_islands",
-        "assumption_largest_remainder"
-      ],
-      "allocation_group_ids": [
-        "相模国"
-      ],
-      "crosswalk_ids": [
-        "crosswalk_sagami__unresolved-42cfaa8c657745ea"
-      ],
-      "urban_population_included": "総人口に包含。都市人口を分離できないため別枠加算なし。",
-      "notes": "史料と明示した仮定によるゲーム用推定。整数値は1人単位の史実精度を意味しない。",
-      "review_status": "automatic_checks_passed",
-      "model_version": "population-1546-v1",
-      "boundary_version": "district-connectivity-1546@d60a386b"
-    },
     "sanuki/candidate-district-candidate-g60001": {
       "district_id": "sanuki/candidate-district-candidate-g60001",
       "name": "大内郡",
@@ -28776,7 +28586,7 @@
     },
     "satsuma/unresolved-42cfaa8c657745ea": {
       "district_id": "satsuma/unresolved-42cfaa8c657745ea",
-      "name": "川邊郡周辺（仮）",
+      "name": "川邊郡周辺",
       "province": "薩摩国",
       "scenario_year": 1546,
       "population_estimate": 7303,

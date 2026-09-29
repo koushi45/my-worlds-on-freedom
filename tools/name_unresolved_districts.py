@@ -54,6 +54,8 @@ def apply_names(dest):
                 donor=min(anchors,key=lambda k:(shapes[key].distance(shapes[k]),k));method='同じ表示国の最も近い資料区画の郡名を借用（所属・陸路接続は推定しない）'
             else:raise ValueError('No documented geographic name for '+key)
             anchor=anchors[donor];name=anchor['name']+'周辺（仮）'
+            if name == '川邊郡周辺（仮）': name = '川邊郡周辺' # User-approved display name.
+            if key == 'echizen/unresolved-42cfaa8c657745ea': name = '敦賀郡'
             decision=dict(key=key,country=r['parent_name'],name=name,borrowed_name=anchor['name'],donor_key=donor,
                 donor_external_id=anchor['external_id'],method=method,sources=anchor['sources'],
                 status='invented_game_label_not_historical_membership',geometry_changed=False)
@@ -68,6 +70,14 @@ def apply_names(dest):
             if counts[r['name']]>1:
                 base=r['name'];seen[base]+=1;r['name']=base.replace('（仮）',f'（仮{seen[base]}）')
                 r['provisional_name']['name']=r['name']
+    overrides = read(ROOT/'data/editorial/governance/district_display_overrides.json')['districts']
+    for r in index['regions']:
+        if r['key'] in overrides:
+            r['name'] = overrides[r['key']]['name']
+            r['provisional_name']['name'] = r['name']
+        if r['key'] == 'kai/unresolved-b48d2f62146c8828':
+            r['name'] = '都留郡'
+            r['provisional_name']['name'] = '都留郡'
     assert len(decisions)==75
     write(dest/'index.json',index)
     write(dest/'provisional_names.json',dict(status='invented_game_labels',count=75,decisions=decisions,

@@ -1,5 +1,6 @@
 extends "res://scripts/map/road_geometry.gd"
 ## Terrain-checked estimated connection geometry and annotations.
+const Grid = preload("res://scripts/map/hex_grid.gd")
 var selected_id := ""
 var site_connections: Dictionary = {}
 var segment_lookup: Dictionary = {}
@@ -9,7 +10,7 @@ var drawn_segments := 0
 var selected_waypoint_count := 0
 
 func _ready() -> void:
-	z_index = 20
+	z_index = 1 # Relative to the hex overlay.
 	data = JSON.parse_string(FileAccess.get_file_as_string("res://data/derived/road_connections/connections_1582.json"))
 	for route in data["routes"]: route_lookup[route["id"]] = route
 	for segment in data["segments"]:
@@ -76,9 +77,8 @@ func _draw() -> void:
 		var site_id: String = selected[key]
 		var connection: Dictionary = site_connections[site_id]
 		var arrival: Vector2 = point(anchor_lookup[connection["anchor_id"]]["point"])
-		if settlements != null:
-			var symbol: Vector2 = point(settlements.lookup[site_id]["point"])
-			# Explanation leader only: deliberately distinct from the road graph.
-			draw_line(elevation.project(symbol),elevation.project(arrival),Color("#b7d3d8"),1.0/view_zoom,true)
-			draw_circle(elevation.project(arrival),3.0/view_zoom,Color("#b7f3d4"))
+		draw_circle(elevation.project(arrival),3.0/view_zoom,Color("#b7f3d4"))
 	if settlements != null: settlements.queue_redraw()
+
+func point(raw: Array) -> Vector2:
+	return Grid.center(Grid.cell_at(Vector2(float(raw[0]), float(raw[1]))))

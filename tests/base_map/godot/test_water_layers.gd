@@ -65,5 +65,19 @@ func _initialize() -> void:
 		await process_frame
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png("res://builds/qa/water_biwa_flat.png")
+		var outlet: Dictionary = {}
+		for record in main.river_layer.records:
+			if record.get("source_index",-1)==1155:
+				outlet=record
+				break
+		check(not outlet.is_empty() and outlet.get("visible_by_default",false),"Biwa outlet visible")
+		if not outlet.is_empty():
+			var raw: Array=outlet["points"]
+			var mid: Array=raw[int(raw.size()/2)]
+			main.camera.position=main.elevation.project(Vector2(float(mid[0]),float(mid[1])))
+			main._refresh_visible_tiles()
+			await preload("res://tests/base_map/godot/wait_map.gd").settled(main)
+			await RenderingServer.frame_post_draw
+			root.get_texture().get_image().save_png("res://builds/qa/water_biwa_outlet.png")
 	if failures.is_empty(): print("PASS: rivers, lakes, Biwa focus, independent toggles, terrain conformity, 5 LODs")
 	quit(0 if failures.is_empty() else 1)

@@ -72,7 +72,7 @@ func run() -> void:
 		main.district_layer.select_key(island)
 		var label: Array = main.district_layer.records[island].label
 		main.set_map_zoom(2.2)
-		main.camera.position = main.elevation.project(Vector2(label[0],label[1]))
+		main.camera.position = main.elevation.project(main.district_office_layer.office_point(island))
 		main._clamp_camera()
 		main._refresh_visible_tiles()
 		await preload("res://tests/base_map/godot/wait_map.gd").settled(main)
@@ -83,7 +83,7 @@ func run() -> void:
 		var island_asset: String = main.kamon_layer.kamon_by_house.get(island_house,{}).get("asset","")
 		check(not island_asset.is_empty() and main.kamon_layer.kamon_textures.has(island_asset),"curated island house has a loaded kamon")
 		check(main.kamon_layer.view_rect.has_point(Vector2(label[0],label[1])),"curated island anchor is in the kamon view")
-		check(island in main.kamon_layer.drawn_keys,"curated island draws its own kamon")
+		check(island in main.district_office_layer.drawn_kamon_houses,"curated island office draws its own kamon")
 		root.get_texture().get_image().save_png("res://builds/qa/enclave_island.png")
 	main.queue_free()
 	await process_frame

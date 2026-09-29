@@ -46,6 +46,7 @@ func path_for(slot: int) -> String:
 	return save_directory.path_join("slot_%d.json" % slot)
 
 func capture(main: Node) -> Dictionary:
+	main.retainer_management.reconcile_officer_placements()
 	main.governance_registry.recount_assignments()
 	var territories := {}
 	for kind in ["districts", "sites"]:
@@ -54,20 +55,24 @@ func capture(main: Node) -> Dictionary:
 			var r: Dictionary = main.governance_registry[kind][id]
 			territories[kind][id] = {"house_id":r.house_id,"governor":r.governor,"ruler":r.ruler}
 			if kind == "districts":
-				for field in ["population", "security", "agriculture_development", "commerce_development", "agriculture_progress", "commerce_progress", "agriculture_developer_id", "commerce_developer_id"]:
+				for field in ["population", "security", "agriculture_development", "commerce_development", "agriculture_progress", "commerce_progress", "agriculture_developer_id", "commerce_developer_id", "infrastructure", "devastation", "autonomy", "defense", "sortie_troops"]:
 					territories[kind][id][field] = r[field]
 	var c: Node = main.game_clock
-	return {"version":8,"saved_at":Time.get_datetime_string_from_system(),"player_house":player_house,
+	return {"version":15,"saved_at":Time.get_datetime_string_from_system(),"player_house":player_house,
 		"clock":{"year":c.year,"month":c.month,"day":c.day,"elapsed_days":c.elapsed_days,"speed":c.speed,"paused":c.paused,"fraction":c._day_fraction},
 		"camera":{"x":main.camera.position.x,"y":main.camera.position.y,"zoom":main.camera.zoom.x,"oblique":main.elevation.enabled},
-		"relations":relations.duplicate(true),"territories":territories,
+		"relations":relations.duplicate(true),"diplomacy":main.diplomacy.save_state(),"territories":territories,
 		"economy":{"house_resources":main.district_economy.house_resources.duplicate(true)},
+		"buildings":main.district_buildings.state.duplicate(true),
+		"building_history":main.district_buildings.history.duplicate(true),
 		"retainers":{"appointments":main.retainer_management.appointments.duplicate(true),"technology":main.retainer_management.technology.duplicate(true),
 			"loyalty_state":main.retainer_management.loyalty_state.duplicate(true), "house_members":main.retainer_management.house_members.duplicate(true),
 			"district_governors":main.retainer_management.district_governors.duplicate(true), "province_governors":main.retainer_management.province_governors.duplicate(true),
+			"officer_districts":main.retainer_management.officer_districts.duplicate(true),
 			"rebel_houses":main.retainer_management.rebel_houses.duplicate(true)},
 		"prestige":main.house_prestige.values.duplicate(true),
-		"research":main.technology_tree.researched.duplicate(true)}
+		"research":main.technology_tree.researched.duplicate(true),
+		"armies":{"units":main.army_campaign.units.duplicate(true),"garrisons":main.army_campaign.garrisons.duplicate(true),"office_defenses":main.army_campaign.office_defenses.duplicate(true),"next_id":main.army_campaign.next_id}}
 
 func valid_number(v: Variant, minimum: float, maximum: float) -> bool:
 	return (v is int or v is float) and is_finite(float(v)) and float(v) >= minimum and float(v) <= maximum
@@ -81,7 +86,7 @@ func valid_person(v: Variant) -> bool:
 	return v.get("officer_id") == null or (v.officer_id is String and v.officer_id in catalog.officer_ids)
 
 func validate(d: Variant) -> bool:
-	if not d is Dictionary or not valid_integer(d.get("version"),1,8): return false
+	if not d is Dictionary or not valid_integer(d.get("version"),15,15): return false
 	var version := int(d.version)
 	var known_houses: Dictionary = catalog.houses.duplicate()
 	if version >= 6:
@@ -106,6 +111,21 @@ func validate(d: Variant) -> bool:
 	for key in d.relations:
 		var ids: PackedStringArray = str(key).split("|")
 		if ids.size()!=2 or not known_houses.has(ids[0]) or not known_houses.has(ids[1]) or ids[0]>=ids[1] or d.relations[key] not in ["ally","enemy","neutral"]: return false
+	if version >= 12:
+		if not d.get("diplomacy") is Dictionary: return false
+		for field in ["opinions", "envoys", "truces", "last_actions"]:
+			if not d.diplomacy.get(field) is Dictionary: return false
+		for key in d.diplomacy.opinions:
+			var ids: PackedStringArray = str(key).split(">")
+			if ids.size() != 2 or ids[0] == ids[1] or not known_houses.has(ids[0]) or not known_houses.has(ids[1]) or not valid_integer(d.diplomacy.opinions[key], -100, 100): return false
+		for actor in d.diplomacy.envoys:
+			if not known_houses.has(actor) or not known_houses.has(d.diplomacy.envoys[actor]) or actor == d.diplomacy.envoys[actor]: return false
+		for key in d.diplomacy.truces:
+			var ids: PackedStringArray = str(key).split("|")
+			if ids.size() != 2 or ids[0] >= ids[1] or not known_houses.has(ids[0]) or not known_houses.has(ids[1]) or not valid_integer(d.diplomacy.truces[key], 0, 3100000): return false
+		for key in d.diplomacy.last_actions:
+			var ids: PackedStringArray = str(key).split(">")
+			if ids.size() != 2 or ids[0] == ids[1] or not known_houses.has(ids[0]) or not known_houses.has(ids[1]) or not valid_integer(d.diplomacy.last_actions[key], 0, int(c.elapsed_days)): return false
 	for kind in ["districts", "sites"]:
 		var ids: Array = catalog.district_ids if kind == "districts" else catalog.site_ids
 		if kind == "districts" and d.territories.get(kind) is Dictionary:
@@ -131,6 +151,10 @@ func validate(d: Variant) -> bool:
 					if not valid_number(r.get(field),0,5400): return false
 				for field in ["agriculture_developer_id", "commerce_developer_id"]:
 					if r.get(field) != null and (not r.get(field) is String or r.get(field) not in catalog.officer_ids): return false
+				if version >= 10:
+					if not valid_integer(r.get("infrastructure"),1,10) or not valid_integer(r.get("devastation"),0,100) or not valid_integer(r.get("autonomy"),0,100) or not valid_integer(r.get("defense"),1,10): return false
+					if version >= 13 and not valid_integer(r.get("sortie_troops"),0,2000000000): return false
+					if version < 13 and not valid_integer(r.get("levied"),0,2000000000): return false
 			if r.governor != null and r.governor.get("appointment") not in ["existing_office","historical_office","scenario_direct","scenario_appointment","reference_direct"]: return false
 	if version >= 3:
 		if not d.get("economy") is Dictionary or not d.economy.get("house_resources") is Dictionary: return false
@@ -138,6 +162,34 @@ func validate(d: Variant) -> bool:
 			var resources: Variant = d.economy.house_resources[house_id]
 			if not known_houses.has(house_id) or not resources is Dictionary: return false
 			if not valid_number(resources.get("money"),0,2000000000) or not valid_integer(resources.get("provisions"),0,2000000000): return false
+	if version >= 9:
+		if not d.get("buildings") is Dictionary or d.buildings.size() != catalog.district_ids.size(): return false
+		if not d.get("building_history") is Array or d.building_history.size() > 2000: return false
+		var definitions: Dictionary = preload("res://scripts/game/district_buildings.gd").DEFINITIONS
+		for event in d.building_history:
+			if not event is Dictionary or event.get("event") not in ["start", "cancel", "complete"]: return false
+			if event.get("district_id") not in catalog.district_ids or not definitions.has(event.get("building_id")) or not known_houses.has(event.get("house_id")): return false
+			if not valid_integer(event.get("money_change"),-2000000000,2000000000): return false
+			if not valid_integer(event.get("year"),1546,9999) or not valid_integer(event.get("month"),1,12): return false
+			if not valid_integer(event.get("day"),1,preload("res://scripts/game/game_clock.gd").days_in_month(int(event.year),int(event.month))): return false
+		for district_id in catalog.district_ids:
+			var entry: Variant = d.buildings.get(district_id)
+			if not entry is Dictionary or not entry.get("built") is Array or not entry.has("construction"): return false
+			var seen := {}
+			for building_id in entry.built:
+				if not building_id is String or not definitions.has(building_id) or seen.has(building_id): return false
+				seen[building_id] = true
+			var construction: Variant = entry.construction
+			if construction == null: continue
+			if not construction is Dictionary or not definitions.has(construction.get("building_id")) or seen.has(construction.building_id): return false
+			if not known_houses.has(construction.get("payer_house_id")): return false
+			if not valid_integer(construction.get("paid_cost"),0,2000000000): return false
+			for prefix in ["start", "finish"]:
+				if not valid_integer(construction.get(prefix + "_year"),1546,9999) or not valid_integer(construction.get(prefix + "_month"),1,12): return false
+				if not valid_integer(construction.get(prefix + "_day"),1,preload("res://scripts/game/game_clock.gd").days_in_month(int(construction[prefix + "_year"]),int(construction[prefix + "_month"]))): return false
+			if construction.finish_day != 1: return false
+			var expected_finish: Dictionary = preload("res://scripts/game/district_buildings.gd").completion_date(int(construction.start_year),int(construction.start_month),int(construction.start_day),int(definitions[construction.building_id].months))
+			if construction.finish_year != expected_finish.year or construction.finish_month != expected_finish.month: return false
 	if version >= 4:
 		if not d.get("retainers") is Dictionary or not d.retainers.get("appointments") is Dictionary or not d.retainers.get("technology") is Dictionary: return false
 		for house_id in d.retainers.appointments:
@@ -171,6 +223,14 @@ func validate(d: Variant) -> bool:
 			if district_id not in catalog.district_ids or retainers.district_governors[district_id] not in catalog.officer_ids: return false
 		for key in retainers.province_governors:
 			if not key is String or retainers.province_governors[key] not in catalog.officer_ids: return false
+		if not retainers.get("officer_districts") is Dictionary: return false
+		for officer_id in retainers.officer_districts:
+			var district_id: Variant = retainers.officer_districts[officer_id]
+			if officer_id not in catalog.officer_ids or district_id not in catalog.district_ids: return false
+			var owner: String = d.territories.districts[district_id].house_id
+			var ruler: Variant = d.territories.districts[district_id].ruler
+			var is_ruler: bool = ruler is Dictionary and ruler.get("officer_id") == officer_id
+			if officer_id not in retainers.house_members.get(owner, []) and not is_ruler: return false
 	if version >= 7:
 		if not d.get("research") is Dictionary or d.research.size() != known_houses.size(): return false
 		var tree = preload("res://scripts/game/technology_tree.gd")
@@ -182,7 +242,33 @@ func validate(d: Variant) -> bool:
 				if not unlocked is Array or unlocked.size() > tree.BRANCHES[branch].size(): return false
 				for index in unlocked.size():
 					if unlocked[index] != tree.BRANCHES[branch][index]: return false
+	if version >= 11:
+		if not d.get("armies") is Dictionary or not d.armies.get("units") is Dictionary or not d.armies.get("garrisons") is Dictionary or not valid_integer(d.armies.get("next_id"),1,100000000): return false
+		if not d.armies.get("office_defenses") is Dictionary or d.armies.office_defenses.size() != catalog.district_ids.size(): return false
+		for district_id in d.armies.office_defenses:
+			if district_id not in catalog.district_ids or not valid_integer(d.armies.office_defenses[district_id],0,2000000000): return false
+		for site_id in d.armies.garrisons:
+			if site_id not in catalog.site_ids or not valid_integer(d.armies.garrisons[site_id],0,2000000000): return false
+		for id in d.armies.units:
+			var unit: Variant = d.armies.units[id]
+			if not id is String or not unit is Dictionary or unit.get("id") != id: return false
+			if not known_houses.has(unit.get("house_id")): return false
+			if not valid_army_node(unit.get("origin"), version) or not valid_army_node(unit.get("site_id"), version): return false
+			if unit.get("next_site") != "" and not valid_army_node(unit.get("next_site"), version): return false
+			if not valid_number(unit.get("progress"),0,1) or not valid_integer(unit.get("soldiers"),1,2000000000) or not valid_integer(unit.get("supply_days"),-100000,120): return false
+			if not unit.get("orders") is Array or not unit.get("officers") is Array or unit.officers.is_empty() or unit.officers.size()>3: return false
+			if not unit.get("horses") is bool or not unit.get("guns") is bool: return false
+			for site_id in unit.orders:
+				if not valid_army_node(site_id, version): return false
+			for officer_id in unit.officers:
+				if officer_id not in catalog.officer_ids: return false
 	return true
+
+func valid_army_node(value: Variant, version: int) -> bool:
+	if not value is String: return false
+	if preload("res://scripts/map/hex_grid.gd").valid(value): return true
+	if value in catalog.site_ids: return true
+	return version >= 13 and value.begins_with("district:") and value.trim_prefix("district:") in catalog.district_ids
 
 func save_game(main: Node, slot: int) -> Error:
 	last_error = ""
@@ -254,10 +340,13 @@ func apply_to(main: Node) -> void:
 		for id in d.territories[kind]:
 			for field in ["house_id","ruler","governor"]: main.governance_registry[kind][id][field] = d.territories[kind][id][field]
 			if kind == "districts":
-				for field in ["population", "security", "agriculture_development", "commerce_development", "agriculture_progress", "commerce_progress", "agriculture_developer_id", "commerce_developer_id"]:
+				for field in ["population", "security", "agriculture_development", "commerce_development", "agriculture_progress", "commerce_progress", "agriculture_developer_id", "commerce_developer_id", "infrastructure", "devastation", "autonomy", "defense", "sortie_troops"]:
 					if d.territories[kind][id].has(field): main.governance_registry.districts[id][field] = d.territories[kind][id][field]
 	if int(d.version) >= 3:
 		main.district_economy.house_resources = d.economy.house_resources.duplicate(true)
+	if int(d.version) >= 9:
+		main.district_buildings.state = d.buildings.duplicate(true)
+		main.district_buildings.history = d.building_history.duplicate(true)
 	if int(d.version) >= 4:
 		main.retainer_management.appointments = d.retainers.appointments.duplicate(true)
 		main.retainer_management.technology = d.retainers.technology.duplicate(true)
@@ -271,6 +360,7 @@ func apply_to(main: Node) -> void:
 			main.retainer_management.house_members = d.retainers.house_members.duplicate(true)
 			main.retainer_management.district_governors = d.retainers.district_governors.duplicate(true)
 			main.retainer_management.province_governors = d.retainers.province_governors.duplicate(true)
+			main.retainer_management.officer_districts = d.retainers.officer_districts.duplicate(true)
 			main.retainer_management.rebel_houses = d.retainers.rebel_houses.duplicate(true)
 	else:
 		main.retainer_management.appointments.clear()
@@ -290,8 +380,15 @@ func apply_to(main: Node) -> void:
 		main.house_prestige.values = d.prestige.duplicate(true)
 	else:
 		main.house_prestige.setup(main.governance_registry.houses.keys())
+	if int(d.version) >= 12: main.diplomacy.restore_state(d.diplomacy)
 	if int(d.version) < 6:
 		main.retainer_management.advance_service_year(int(d.clock.year))
+	if int(d.version) >= 11:
+		main.army_campaign.units = d.armies.units.duplicate(true)
+		main.army_campaign.garrisons = d.armies.garrisons.duplicate(true)
+		main.army_campaign.office_defenses = d.armies.office_defenses.duplicate(true)
+		main.army_campaign.next_id = int(d.armies.next_id)
+	main.retainer_management.reconcile_officer_placements()
 	main.governance_registry.recount_assignments()
 	main.game_clock.restore_state(d.clock)
 	if main.elevation.enabled != d.camera.oblique: main.set_oblique(d.camera.oblique)

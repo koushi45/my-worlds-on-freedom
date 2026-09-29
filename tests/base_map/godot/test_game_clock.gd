@@ -82,7 +82,7 @@ func integration() -> void:
 	main.time_hud.faster_button.pressed.emit()
 	check(main.game_clock.speed == 8, "acceleration button")
 	press_key(KEY_SPACE)
-	check(main.game_clock.paused and main.time_hud.playback_button.text == "再生", "space pauses and shows play")
+	check(main.game_clock.paused and main.time_hud.playback_icon.texture.resource_path.contains("play_"), "space pauses and shows play icon")
 	before = main.game_clock.elapsed_days
 	await create_timer(1.1).timeout
 	check(main.game_clock.elapsed_days == before, "paused real time does not advance date")
@@ -91,7 +91,7 @@ func integration() -> void:
 	press_key(KEY_SPACE, true)
 	check(main.game_clock.paused, "held space ignored")
 	main.time_hud.playback_button.pressed.emit()
-	check(not main.game_clock.paused and main.time_hud.playback_button.text == "停止", "button resumes and shows stop")
+	check(not main.game_clock.paused and main.time_hud.playback_icon.texture.resource_path.contains("pause_"), "button resumes and shows pause icon")
 	press_key(KEY_SPACE)
 	press_key(KEY_SPACE)
 	check(not main.game_clock.paused, "space resumes")
@@ -105,6 +105,8 @@ func integration() -> void:
 	var panel_rect: Rect2 = main.time_hud.panel.get_global_rect()
 	check(absf(panel_rect.end.x - (root.get_visible_rect().size.x - 16)) < 2, "HUD anchored at right edge")
 	check(panel_rect.position.y == 16, "HUD anchored at top")
+	check(main.time_hud.date_label.get_global_rect().end.x <= panel_rect.end.x - 16, "date stays inside time panel")
+	check(main.time_hud.faster_button.get_global_rect().end.x <= panel_rect.end.x - 16, "speed controls stay inside time panel")
 	if "--capture" in OS.get_cmdline_user_args():
 		await create_timer(2.0).timeout
 		await RenderingServer.frame_post_draw

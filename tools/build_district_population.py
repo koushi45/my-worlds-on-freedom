@@ -18,9 +18,9 @@ GOVERNANCE = ROOT / "data/derived/governance/governance_1546.json"
 OUTPUT = ROOT / "data/derived/population/district_population_1546.json"
 MANIFEST = ROOT / "data/derived/population/manifest_1546.json"
 EXPECTED_HASHES = {
-    CONNECTIVITY: "d60a386bbce2a68ba6744d6fe2b1144a38e8c1b108e3412255ea57e0519e12f0",
-    HOUSE_SELECTION: "aec8f8f1789e15abf2270f52429da017617fefeb8f0312c7b653cc8f30f4b1e9",
-    GEOMETRY: "01be430754943567f2f057bab4c6745fd4af8b3fa5271a93ff535505df8408fd",
+    CONNECTIVITY: "b182d185aa5019fa746ec33d66235dfc1df0412d8aa758a2194e2996294413db",
+    HOUSE_SELECTION: "323081a11c517fdfa03fd1a58c6dfbe64f2a07e5ecdad22912e555b598eea116",
+    GEOMETRY: "2e47ab9c62b5803b18632e26a771ba47a60fa748d828fa1d6750ed1f2a3a5a45",
 }
 
 
@@ -96,13 +96,15 @@ def main() -> None:
     active_ids = connectivity["active_district_ids"]
     if set(active_ids) != set(house_selection["district_ids"]) or set(active_ids) != set(geometry["regions"]):
         raise SystemExit("scenario district ID sets differ")
-    records = district_records(connectivity, governance)
+    merges = connectivity.get("requested_district_merges", {})
+    allocation_ids = sorted(set(active_ids) | set(merges))
+    records = district_records(dict(connectivity, active_district_ids=allocation_ids), governance)
     crosswalk_by_district = {row["district_id"]: row for row in crosswalk_data["crosswalks"].values()}
-    if set(crosswalk_by_district) != set(active_ids):
+    if set(crosswalk_by_district) != set(allocation_ids):
         raise SystemExit("crosswalk does not cover active districts exactly")
 
     districts_by_group = defaultdict(list)
-    for district_id in active_ids:
+    for district_id in allocation_ids:
         row = crosswalk_by_district[district_id]
         districts_by_group[row["allocation_group_id"]].append(district_id)
     group_koku = effective_group_kokudaka(controls, set(districts_by_group))
@@ -134,7 +136,7 @@ def main() -> None:
         "honda_kyudaka_agrivillage_v2_01",
         "game_boundary_1546",
     ]
-    for district_id in active_ids:
+    for district_id in allocation_ids:
         crosswalk = crosswalk_by_district[district_id]
         observation_id = "obs_distribution_" + district_id.replace("/", "__")
         observation = observations["observations"][observation_id]
@@ -173,6 +175,19 @@ def main() -> None:
             "model_version": assumptions["model_version"],
             "boundary_version": assumptions["boundary_version"],
         }
+
+    # Preserve the locked regional estimates, then transfer the populations of
+    # user-merged districts. Cross-province unions must not discard residents.
+    for source, target in merges.items():
+        old = output_districts.pop(source)
+        recipient = output_districts[target]
+        for field in ("population_low", "population_estimate", "population_high",
+                      "population_low_raw", "population_estimate_raw", "population_high_raw"):
+            recipient[field] += old[field]
+        for field in ("source_ids", "observation_ids", "assumption_ids", "allocation_group_ids", "crosswalk_ids"):
+            recipient[field] = sorted(set(recipient[field]) | set(old[field]))
+        recipient.setdefault("merged_district_ids", []).append(source)
+        recipient["method"] = "regional_allocation_then_requested_merge"
 
     output = {
         "schema_version": 1,

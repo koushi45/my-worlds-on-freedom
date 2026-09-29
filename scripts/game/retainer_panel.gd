@@ -1,146 +1,272 @@
-extends AcceptDialog
-## Player-house role tree and appointment editor.
+extends Control
+## Select a role first, then choose an officer with a portrait and ability scores.
 
 const UI = preload("res://scripts/game/menu_style.gd")
+const DistrictStyle = preload("res://scripts/game/district_panel_style.gd")
+const Portraits = preload("res://scripts/game/officer_portraits.gd")
 const ROLE_NAMES := ["直臣", "侍大将", "軍師", "家老", "所司代"]
+const ROLE_ICONS := {
+	"直臣": "res://assets/ui/district/house",
+	"侍大将": "res://assets/ui/hud/military",
+	"軍師": "res://assets/ui/hud/diplomacy",
+	"家老": "res://assets/ui/hud/governance",
+	"所司代": "res://assets/ui/hud/castle",
+}
+const ABILITIES := {
+	"command": ["統率", "res://assets/ui/hud/military"],
+	"tactics": ["武勇", "res://assets/ui/hud/spears"],
+	"strategy": ["知略", "res://assets/ui/hud/diplomacy"],
+	"politics": ["政治", "res://assets/ui/hud/governance"],
+	"trust": ["人望", "res://assets/ui/hud/fan"],
+}
+signal closed
+
 var main: Node
-var tree: RichTextLabel
-var roster: ItemList
-var role_choice: OptionButton
+var selected_role := ""
+var selected_officer_id := ""
+var role_buttons: Dictionary = {}
+var role_values: Dictionary = {}
+var officer_buttons: Dictionary = {}
+var overview_values: Dictionary = {}
+var roster_rows: VBoxContainer
 var wage_input: SpinBox
-var district_choice: OptionButton
-var province_choice: OptionButton
-var summary: Label
+var appoint_button: Button
+var wage_button: Button
 var status: Label
-var member_ids: Array = []
-var district_ids: Array = []
-var province_names: Array = []
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	title = "役職ツリー・配下管理"
-	ok_button_text = "閉じる"
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	var panel := Control.new()
+	panel.name = "RetainerWindow"
+	panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	panel.offset_left = -510
+	panel.offset_right = 510
+	panel.offset_top = -325
+	panel.offset_bottom = 325
+	panel.mouse_filter = Control.MOUSE_FILTER_STOP
+	add_child(panel)
+	DistrictStyle.frame(panel)
 	var body := VBoxContainer.new()
-	body.custom_minimum_size = Vector2(850, 550)
+	body.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	body.offset_left = 35
+	body.offset_right = -35
+	body.offset_top = 35
+	body.offset_bottom = -35
 	body.add_theme_constant_override("separation", 8)
-	add_child(body)
-	summary = UI.label("", body, 17)
-	tree = RichTextLabel.new()
-	tree.custom_minimum_size = Vector2(810, 125)
-	tree.fit_content = false
-	tree.scroll_active = true
-	body.add_child(tree)
-	UI.label("配下一覧（武将を選択して役職を変更）", body, 18)
-	roster = ItemList.new()
-	roster.custom_minimum_size = Vector2(810, 180)
-	roster.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	roster.item_selected.connect(_select_member)
-	body.add_child(roster)
-	var row := HBoxContainer.new()
-	body.add_child(row)
-	role_choice = OptionButton.new()
-	for role in ROLE_NAMES: role_choice.add_item(role)
-	row.add_child(role_choice)
-	UI.button("任命する", row, _appoint).custom_minimum_size = Vector2(160, 40)
-	UI.label("基礎俸禄", row, 16)
+	panel.add_child(body)
+	var header := HBoxContainer.new()
+	body.add_child(header)
+	DistrictStyle.heading("役職ツリー・配下管理", header, 21).size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var close_button := DistrictStyle.button("×", header, close_panel)
+	close_button.custom_minimum_size = Vector2(40, 38)
+	var overview := HBoxContainer.new()
+	overview.add_theme_constant_override("separation", 8)
+	body.add_child(overview)
+	for entry in [
+		["prestige", "威信", "res://assets/ui/hud/fan"],
+		["money", "金銭", "res://assets/ui/hud/koban"],
+		["governance", "統治", "res://assets/ui/hud/governance"],
+		["military", "軍事", "res://assets/ui/hud/military"],
+		["diplomacy", "外交", "res://assets/ui/hud/diplomacy"],
+	]:
+		var cell := HBoxContainer.new()
+		cell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		overview.add_child(cell)
+		DistrictStyle.icon(cell, entry[2])
+		var value := UI.label("", cell, 15)
+		value.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		value.tooltip_text = entry[1]
+		overview_values[entry[0]] = value
+	DistrictStyle.heading("役職を選ぶ", body, 18)
+	var role_row := HBoxContainer.new()
+	role_row.add_theme_constant_override("separation", 8)
+	body.add_child(role_row)
+	var role_group := ButtonGroup.new()
+	for role in ROLE_NAMES:
+		var card := DistrictStyle.button("", role_row, _select_role.bind(role))
+		card.name = "Role_%s" % role
+		card.custom_minimum_size = Vector2(0, 92)
+		card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		card.toggle_mode = true
+		card.button_group = role_group
+		role_buttons[role] = card
+		var contents := HBoxContainer.new()
+		contents.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		contents.offset_left = 8
+		contents.offset_right = -8
+		contents.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		card.add_child(contents)
+		DistrictStyle.icon(contents, ROLE_ICONS[role])
+		var labels := VBoxContainer.new()
+		labels.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		labels.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		contents.add_child(labels)
+		var name_label := UI.label(role, labels, 17)
+		name_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var value_label := UI.label("", labels, 13)
+		value_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		value_label.clip_text = true
+		role_values[role] = value_label
+	DistrictStyle.heading("配下武将を選ぶ", body, 18)
+	var scroll := ScrollContainer.new()
+	scroll.custom_minimum_size.y = 195
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	DistrictStyle.field(scroll)
+	body.add_child(scroll)
+	roster_rows = VBoxContainer.new()
+	roster_rows.custom_minimum_size.x = 920
+	roster_rows.add_theme_constant_override("separation", 6)
+	scroll.add_child(roster_rows)
+	var actions := HBoxContainer.new()
+	actions.add_theme_constant_override("separation", 10)
+	body.add_child(actions)
+	appoint_button = DistrictStyle.button("選択した役職に任命", actions, _appoint)
+	appoint_button.custom_minimum_size = Vector2(260, 42)
+	var wage_label := UI.label("基礎俸禄", actions, 16)
+	wage_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	wage_input = SpinBox.new()
 	wage_input.min_value = 0.1
 	wage_input.max_value = 10.0
 	wage_input.step = 0.1
 	wage_input.value = 0.1
-	row.add_child(wage_input)
-	UI.button("俸禄を設定", row, _set_wage).custom_minimum_size = Vector2(160, 40)
-	var governor_row := HBoxContainer.new()
-	body.add_child(governor_row)
-	district_choice = OptionButton.new()
-	district_choice.custom_minimum_size.x = 210
-	governor_row.add_child(district_choice)
-	UI.button("郡代に任命", governor_row, _appoint_district).custom_minimum_size = Vector2(155, 40)
-	province_choice = OptionButton.new()
-	province_choice.custom_minimum_size.x = 210
-	governor_row.add_child(province_choice)
-	UI.button("国代に任命", governor_row, _appoint_province).custom_minimum_size = Vector2(155, 40)
-	status = UI.label("", body, 15)
+	wage_input.custom_minimum_size.x = 115
+	actions.add_child(wage_input)
+	wage_button = DistrictStyle.button("俸禄を設定", actions, _set_wage)
+	wage_button.custom_minimum_size = Vector2(160, 42)
+	status = UI.label("上の役職と下の武将を選択してください。", body, 15)
 	main.retainer_management.updated.connect(refresh)
 	main.house_prestige.prestige_changed.connect(func(_house_id: String, _value: int, _reason: String): refresh())
+	get_window().size_changed.connect(refresh)
+	hide()
 
 func open() -> void:
 	refresh()
-	popup_centered(Vector2i(900, 640))
+	show()
+
+func close_panel() -> void:
+	hide()
+	closed.emit()
 
 func refresh() -> void:
 	var house_id: String = GameSession.player_house
 	if house_id.is_empty(): return
 	var management: Node = main.retainer_management
-	var house: Dictionary = main.governance_registry.houses[house_id]
-	var ruler_name := str(house.ruler.get("name", "当主未詳")) if house.ruler is Dictionary else "当主未詳"
-	var growth: Dictionary = management.monthly_growth(house_id)
 	var progress: Dictionary = management.technology[house_id]
-	summary.text = "%s　威信 %d/100　俸禄 %.1f/月　金銭 %.1f\n技術：統治 %.1f (+%.1f/月)　外交 %.1f (+%.1f/月)　軍事 %.1f (+%.1f/月)" % [house.get("name", house_id), main.house_prestige.value_for(house_id), management.monthly_stipend(house_id), float(main.district_economy.house_resources[house_id].money), progress.governance, growth.governance, progress.diplomacy, growth.diplomacy, progress.military, growth.military]
-	var slots := {"軍師": "未任命", "家老": "未任命", "所司代": "未任命"}
-	var samurai := 0
-	var direct := 0
+	var growth: Dictionary = management.monthly_growth(house_id)
+	overview_values.prestige.text = "%d / 100" % main.house_prestige.value_for(house_id)
+	overview_values.money.text = "%.1f" % float(main.district_economy.house_resources[house_id].money)
+	for key in ["governance", "military", "diplomacy"]:
+		overview_values[key].text = "%.1f" % float(progress[key])
+		overview_values[key].tooltip_text = "%s：+%.1f / 月" % [key, float(growth[key])]
+	var counts := {"直臣": 0, "侍大将": 0}
+	var incumbents := {"軍師": "未任命", "家老": "未任命", "所司代": "未任命"}
 	for officer_id in management.house_members[house_id]:
 		var role: String = management.role_of(house_id, officer_id)
-		if role in slots: slots[role] = str(main.officer_registry.lookup[officer_id].display_name)
-		elif role == "侍大将": samurai += 1
-		else: direct += 1
-	tree.text = "大名　%s（俸禄なし）\n├ 軍師　%s（俸禄2.0/月・軍事技術）\n├ 家老　%s（俸禄2.0/月・統治技術）\n├ 所司代　%s（俸禄2.0/月・外交技術）\n├ 侍大将　%d人（俸禄0.1/月）\n└ 直臣　%d人（俸禄0.1/月）" % [ruler_name, slots["軍師"], slots["家老"], slots["所司代"], samurai, direct]
-	var selected_id := ""
-	var selected := roster.get_selected_items()
-	if not selected.is_empty() and selected[0] < member_ids.size(): selected_id = member_ids[selected[0]]
-	roster.clear()
-	member_ids.clear()
-	district_choice.clear()
-	district_ids.clear()
-	province_choice.clear()
-	province_names.clear()
-	for district_id in main.governance_registry.districts:
-		var district: Dictionary = main.governance_registry.districts[district_id]
-		if district.house_id != house_id: continue
-		district_ids.append(district_id)
-		district_choice.add_item("%s・%s" % [district.province, district.name])
-		if district.province not in province_names:
-			province_names.append(district.province)
-			province_choice.add_item(district.province)
+		if counts.has(role): counts[role] += 1
+		elif incumbents.has(role): incumbents[role] = str(main.officer_registry.lookup[officer_id].display_name)
+	for role in ROLE_NAMES:
+		role_values[role].text = "%d 人" % counts[role] if counts.has(role) else incumbents[role]
+		role_buttons[role].set_pressed_no_signal(role == selected_role)
+	for child in roster_rows.get_children():
+		roster_rows.remove_child(child)
+		child.queue_free()
+	officer_buttons.clear()
+	var officer_group := ButtonGroup.new()
 	for officer_id in management.house_members[house_id]:
-		var officer: Dictionary = main.officer_registry.lookup[officer_id]
-		var role: String = management.role_of(house_id, officer_id)
-		member_ids.append(officer_id)
-		var state: Dictionary = management.loyalty_state[officer_id]
-		roster.add_item("%s　%s　忠誠 %d / 必要 %d　基礎 %.1f・支払 %.1f（要求基礎 %.1f）/月" % [officer.display_name, role, management.loyalty_for(house_id, officer_id), management.required_loyalty_for(officer_id), float(state.base_wage_tenths) * 0.1, management.stipend_for(house_id, officer_id), float(state.required_wage_tenths) * 0.1])
-		if officer_id == selected_id: roster.select(member_ids.size() - 1)
-	if not roster.get_selected_items().is_empty(): _select_member(roster.get_selected_items()[0])
+		_add_officer_row(house_id, officer_id, officer_group)
+	if not selected_officer_id.is_empty() and not officer_buttons.has(selected_officer_id): selected_officer_id = ""
+	if officer_buttons.has(selected_officer_id): officer_buttons[selected_officer_id].set_pressed_no_signal(true)
+	_update_actions()
 
-func _select_member(index: int) -> void:
-	if index < 0 or index >= member_ids.size(): return
-	var role: String = main.retainer_management.role_of(GameSession.player_house, member_ids[index])
-	role_choice.select(ROLE_NAMES.find(role))
-	wage_input.value = float(main.retainer_management.loyalty_state[member_ids[index]].base_wage_tenths) * 0.1
-	status.text = ""
+func _add_officer_row(house_id: String, officer_id: String, group: ButtonGroup) -> void:
+	var officer: Dictionary = main.officer_registry.lookup[officer_id]
+	var management: Node = main.retainer_management
+	var row := DistrictStyle.button("", roster_rows, _select_officer.bind(officer_id))
+	row.name = "Officer_%s" % officer_id
+	row.custom_minimum_size = Vector2(0, 100)
+	row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	row.toggle_mode = true
+	row.button_group = group
+	officer_buttons[officer_id] = row
+	var content := HBoxContainer.new()
+	content.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	content.offset_left = 8
+	content.offset_right = -8
+	content.add_theme_constant_override("separation", 7)
+	content.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(content)
+	var portrait := TextureRect.new()
+	portrait.custom_minimum_size = Vector2(68, 76)
+	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	portrait.texture = Portraits.texture_for(officer_id)
+	if portrait.texture == null: portrait.texture = preload("res://assets/ui/hud/samurai.png")
+	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	content.add_child(portrait)
+	var identity := VBoxContainer.new()
+	identity.custom_minimum_size.x = 160
+	identity.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	content.add_child(identity)
+	UI.label(str(officer.display_name), identity, 18).mouse_filter = Control.MOUSE_FILTER_IGNORE
+	UI.label(management.role_of(house_id, officer_id), identity, 14).mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var loyalty := HBoxContainer.new()
+	loyalty.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	loyalty.tooltip_text = "忠誠 / 必要忠誠"
+	identity.add_child(loyalty)
+	DistrictStyle.icon(loyalty, "res://assets/ui/hud/fan")
+	var loyalty_value := UI.label("%d / %d" % [management.loyalty_for(house_id, officer_id), management.required_loyalty_for(officer_id)], loyalty, 13)
+	loyalty_value.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	loyalty_value.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var scores: Dictionary = officer.get("assessment", {}).get("scores", {})
+	for key in ["command", "tactics", "strategy", "politics", "trust"]:
+		var cell := VBoxContainer.new()
+		cell.custom_minimum_size.x = 78
+		cell.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		cell.tooltip_text = ABILITIES[key][0]
+		content.add_child(cell)
+		DistrictStyle.icon(cell, ABILITIES[key][1])
+		var score: Variant = scores.get(key)
+		var score_text := "―" if score == null else str(score)
+		if score_text.ends_with(".0"): score_text = score_text.trim_suffix(".0")
+		var value := UI.label(score_text, cell, 15)
+		value.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		value.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var stipend_cell := HBoxContainer.new()
+	stipend_cell.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	stipend_cell.tooltip_text = "月額俸禄"
+	content.add_child(stipend_cell)
+	DistrictStyle.icon(stipend_cell, "res://assets/ui/hud/koban")
+	var stipend := UI.label("%.1f / 月" % management.stipend_for(house_id, officer_id), stipend_cell, 14)
+	stipend.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	stipend.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.tooltip_text = "%s：%s／忠誠 %d、必要 %d／俸禄 %.1f / 月" % [officer.display_name, management.role_of(house_id, officer_id), management.loyalty_for(house_id, officer_id), management.required_loyalty_for(officer_id), management.stipend_for(house_id, officer_id)]
+
+func _select_role(role: String) -> void:
+	selected_role = role
+	_update_actions()
+	status.text = "%s：任命する武将を下から選んでください。" % role
+
+func _select_officer(officer_id: String) -> void:
+	selected_officer_id = officer_id
+	wage_input.value = float(main.retainer_management.loyalty_state[officer_id].base_wage_tenths) * 0.1
+	_update_actions()
+	status.text = "%sを選択しました。" % main.officer_registry.lookup[officer_id].display_name
+
+func _update_actions() -> void:
+	appoint_button.disabled = selected_role.is_empty() or selected_officer_id.is_empty()
+	wage_button.disabled = selected_officer_id.is_empty()
 
 func _appoint() -> void:
-	var selected := roster.get_selected_items()
-	if selected.is_empty(): status.text = "武将を選択してください。"; return
-	var result: Error = main.retainer_management.assign_role(GameSession.player_house, member_ids[selected[0]], ROLE_NAMES[role_choice.selected])
+	if selected_role.is_empty() or selected_officer_id.is_empty(): return
+	var result: Error = main.retainer_management.assign_role(GameSession.player_house, selected_officer_id, selected_role)
 	if result == ERR_ALREADY_EXISTS: status.text = "この役職には既に任命されています。先に解任してください。"
 	elif result != OK: status.text = "任命できません。"
-	else: status.text = "任命しました。"
+	else: status.text = "%sを%sに任命しました。" % [main.officer_registry.lookup[selected_officer_id].display_name, selected_role]
 
 func _set_wage() -> void:
-	var selected := roster.get_selected_items()
-	if selected.is_empty(): status.text = "武将を選択してください。"; return
-	var result: Error = main.retainer_management.set_base_stipend(GameSession.player_house, member_ids[selected[0]], wage_input.value)
+	if selected_officer_id.is_empty(): return
+	var result: Error = main.retainer_management.set_base_stipend(GameSession.player_house, selected_officer_id, wage_input.value)
 	status.text = "俸禄を設定しました。" if result == OK else "俸禄を設定できません。"
-
-func _appoint_district() -> void:
-	var selected := roster.get_selected_items()
-	if selected.is_empty() or district_ids.is_empty(): status.text = "武将と郡を選択してください。"; return
-	var result: Error = main.retainer_management.appoint_district_governor(GameSession.player_house, member_ids[selected[0]], district_ids[district_choice.selected])
-	status.text = "郡代に任命しました。" if result == OK else "侍大将以上の武将を選択してください。"
-
-func _appoint_province() -> void:
-	var selected := roster.get_selected_items()
-	if selected.is_empty() or province_names.is_empty(): status.text = "武将と国を選択してください。"; return
-	var result: Error = main.retainer_management.appoint_province_governor(GameSession.player_house, member_ids[selected[0]], province_names[province_choice.selected])
-	status.text = "国代に任命しました。" if result == OK else "侍大将以上の武将を選択してください。"

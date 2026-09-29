@@ -2,6 +2,7 @@ extends Node2D
 
 const MapTileCatalogScript = preload("res://scripts/map/map_tile_catalog.gd")
 const PoliticalLayerScript = preload("res://scripts/map/political_boundary_layer.gd")
+const HexGridScript = preload("res://scripts/map/hex_grid.gd")
 
 const WORLD_SIZE := Vector2(8192.0, 8192.0)
 const MIN_ZOOM := 0.5
@@ -24,6 +25,9 @@ var loaded_tiles: Dictionary = {}
 var lod_level := 0
 var base_zoom := 0.1
 var dragging := false
+var drag_button := 0
+var drag_army_id := ""
+var drag_route: Array[String] = []
 var initialized := false
 var political_layer: Node2D
 var river_layer: Node2D
@@ -72,9 +76,19 @@ var retainer_management: Node
 var technology_tree: Node
 var house_prestige: Node
 var game_clock: Node
+var hex_tile_layer: Node2D
+var district_office_layer: Node2D
+var developer_tools: CanvasLayer
+var army_campaign: Node2D
+var diplomacy: Node
+var army_panel: CanvasLayer
 var time_hud: CanvasLayer
+var house_status_hud: CanvasLayer
 var governance_registry: RefCounted
 var district_economy: Node
+var last_income_sound_month := -1
+var district_buildings: Node
+var district_actions: Node
 var game_menu: CanvasLayer
 var territory_borders: Node2D
 var bgm_player: AudioStreamPlayer
@@ -139,15 +153,24 @@ func _ready() -> void:
 	settlement_layer.elevation = elevation
 	add_child(settlement_layer)
 	district_layer.settlements = settlement_layer
+	hex_tile_layer = preload("res://scripts/map/hex_tile_layer.gd").new()
+	hex_tile_layer.name = "HexTiles"
+	hex_tile_layer.main = self
+	add_child(hex_tile_layer)
+	district_office_layer = preload("res://scripts/map/district_office_layer.gd").new()
+	district_office_layer.name = "DistrictOffices"
+	district_office_layer.main = self
+	hex_tile_layer.add_child(district_office_layer)
 	connection_layer = preload("res://scripts/map/road_connection_layer.gd").new()
 	connection_layer.elevation = elevation
 	connection_layer.settlements = settlement_layer
-	add_child(connection_layer)
+	hex_tile_layer.add_child(connection_layer)
 	shared_road_layer = preload("res://scripts/map/shared_road_layer.gd").new()
 	shared_road_layer.elevation = elevation
 	shared_road_layer.cpu_jobs = cpu_jobs
 	shared_road_layer.game_connections = connection_layer
-	add_child(shared_road_layer)
+	shared_road_layer.name = "HexRoads"
+	hex_tile_layer.add_child(shared_road_layer)
 	connection_layer.shared_renderer = shared_road_layer
 	settlement_layer.roads = connection_layer
 	if developer_ui:
@@ -182,7 +205,8 @@ func _ready() -> void:
 	_apply_lod(false)
 	if DisplayServer.get_name() != "headless":
 		var warmup=preload("res://scripts/map/map_label_warmup.gd").new()
-		for site in settlement_layer.data.sites:warmup.labels.append({"text":site.display_name,"size":16,"outline":5})
+		for site in settlement_layer.data.sites:
+			if settlement_layer.eligible(site): warmup.labels.append({"text":site.display_name,"size":16,"outline":5})
 		add_child(warmup)
 		await warmup.finished
 	# Both projection backdrops exist before input is accepted.
@@ -204,6 +228,9 @@ func _ready() -> void:
 	district_economy.name = "DistrictEconomy"
 	district_economy.setup(governance_registry, officer_registry)
 	add_child(district_economy)
+	district_economy.income_collected.connect(func(_kind: String, _total: int): district_info.refresh_if_open())
+	district_economy.house_income_collected.connect(_on_house_income_collected)
+	district_economy.development_updated.connect(func(): district_info.refresh_if_open())
 	retainer_management = preload("res://scripts/game/retainer_management.gd").new()
 	retainer_management.name = "RetainerManagement"
 	retainer_management.setup(governance_registry, officer_registry, district_economy)
@@ -215,6 +242,21 @@ func _ready() -> void:
 	technology_tree.research_completed.connect(_on_research_completed)
 	retainer_management.technology_tree = technology_tree
 	district_economy.technology_tree = technology_tree
+	district_buildings = preload("res://scripts/game/district_buildings.gd").new()
+	district_buildings.name = "DistrictBuildings"
+	district_buildings.setup(governance_registry, district_economy, technology_tree)
+	district_buildings.clock = game_clock
+	add_child(district_buildings)
+	district_economy.district_buildings = district_buildings
+	district_actions = preload("res://scripts/game/district_actions.gd").new()
+	district_actions.name = "DistrictActions"
+	district_actions.buildings = district_buildings
+	district_actions.setup(governance_registry, district_economy)
+	add_child(district_actions)
+	district_actions.changed.connect(_on_buildings_changed)
+	technology_tree.district_buildings = district_buildings
+	district_info.main = self
+	district_buildings.changed.connect(_on_buildings_changed)
 	governance_registry.technology_tree = technology_tree
 	governance_registry.district_economy = district_economy
 	house_prestige = preload("res://scripts/game/house_prestige.gd").new()
@@ -223,10 +265,33 @@ func _ready() -> void:
 	add_child(house_prestige)
 	retainer_management.prestige = house_prestige
 	house_prestige.prestige_changed.connect(func(_house_id: String, _value: int, _reason: String): retainer_management.updated.emit())
+	army_campaign = preload("res://scripts/game/army_campaign.gd").new()
+	army_campaign.name = "ArmyCampaign"
+	add_child(army_campaign)
+	army_campaign.setup(self)
+	army_campaign.changed.connect(func(): district_info.refresh_if_open())
+	retainer_management.army_campaign = army_campaign
+	diplomacy = preload("res://scripts/game/diplomacy.gd").new()
+	diplomacy.name = "Diplomacy"
+	add_child(diplomacy)
+	diplomacy.setup(self)
+	diplomacy.changed.connect(army_campaign.queue_redraw)
 	var restoring: bool = not GameSession.pending.is_empty()
 	GameSession.apply_to(self)
+	army_panel = preload("res://scripts/game/army_panel.gd").new()
+	army_panel.name = "ArmyPanel"
+	army_panel.main = self
+	add_child(army_panel)
+	house_status_hud = preload("res://scripts/game/house_status_hud.gd").new()
+	house_status_hud.name = "HouseStatusHUD"
+	house_status_hud.main = self
+	add_child(house_status_hud)
+	game_clock.day_advanced.connect(district_buildings.on_day_advanced)
 	game_clock.day_advanced.connect(district_economy.on_day_advanced)
 	game_clock.day_advanced.connect(retainer_management.on_day_advanced)
+	game_clock.day_advanced.connect(army_campaign.on_day_advanced)
+	game_clock.day_advanced.connect(district_actions.on_day_advanced)
+	game_clock.day_advanced.connect(diplomacy.on_day_advanced)
 	if not restoring and not GameSession.player_house.is_empty():
 		for r in governance_registry.districts.values():
 			if r.house_id == GameSession.player_house:
@@ -241,6 +306,9 @@ func _ready() -> void:
 	retainer_management.loyalty_crisis.connect(_on_loyalty_crisis)
 	kamon_layer.update_view(get_visible_world_rect().grow(2.0),camera.zoom.x)
 	kamon_layer.queue_redraw()
+	developer_tools = preload("res://scripts/game/developer_tools.gd").new()
+	developer_tools.main = self
+	add_child(developer_tools)
 	game_menu = preload("res://scripts/game/game_menu.gd").new()
 	game_menu.main = self
 	add_child(game_menu)
@@ -252,14 +320,30 @@ func _ready() -> void:
 	MapDiagnostics.main = self
 	MapDiagnostics.record("map_ready")
 
+func _on_house_income_collected(house_id: String, _kind: String, amount: int) -> void:
+	if GameSession.player_house.is_empty() or house_id != GameSession.player_house or amount <= 0:
+		return
+	var month_key: int = int(game_clock.year) * 12 + int(game_clock.month)
+	if month_key == last_income_sound_month:
+		return
+	last_income_sound_month = month_key
+	InteractionAudio.play_income()
+
 func _on_loyalty_crisis(_officer_id: String, _house_id: String, outcome: String) -> void:
-	if outcome == "領地を独立" and is_instance_valid(territory_borders):
-		territory_borders.rebuild.call_deferred()
-		kamon_layer.queue_redraw.call_deferred()
+	if outcome == "領地を独立":
+		district_buildings.reconcile_owners()
+		if is_instance_valid(territory_borders):
+			territory_borders.rebuild.call_deferred()
+			kamon_layer.queue_redraw.call_deferred()
+			district_office_layer.queue_redraw.call_deferred()
 
 func _on_research_completed(_house_id: String, _branch: String, _technology_id: String) -> void:
 	if district_info != null and district_info.panel.visible and not district_layer.selected_key.is_empty():
 		show_district_info(district_layer.selected_key)
+
+func _on_buildings_changed(district_id: String) -> void:
+	if district_info != null and district_info.panel.visible and district_layer.selected_key == district_id:
+		show_district_info(district_id)
 
 func _setup_bgm() -> void:
 	bgm_player = AudioStreamPlayer.new()
@@ -368,6 +452,49 @@ func _process(delta: float) -> void:
 		if coverage_missing_frames == 1: MapDiagnostics.record("map_coverage_error")
 
 
+func _input(event: InputEvent) -> void:
+	# GUI controls can consume the release after a map press. Clear that stale
+	# drag after GUI and unhandled input have had their chance to process it.
+	if event is InputEventMouseButton and not event.pressed and event.button_index == drag_button and dragging:
+		_reset_stale_drag.call_deferred()
+
+func _reset_stale_drag() -> void:
+	if dragging and drag_button != 0 and not Input.is_mouse_button_pressed(drag_button):
+		_end_map_drag()
+
+func _end_map_drag() -> void:
+	dragging = false
+	drag_button = 0
+	drag_moved = false
+	drag_army_id = ""
+	drag_route.clear()
+	if army_campaign != null: army_campaign.clear_route_preview()
+
+func _begin_map_drag(event: InputEventMouseButton) -> void:
+	dragging = true
+	drag_button = event.button_index
+	press_position = event.position
+	drag_moved = false
+	drag_army_id = ""
+	drag_route.clear()
+	if event.button_index != MOUSE_BUTTON_LEFT: return
+	var picked: String = army_campaign.pick(event.position)
+	if picked.is_empty() or army_campaign.units[picked].house_id != GameSession.player_house: return
+	drag_army_id = picked
+	var unit: Dictionary = army_campaign.units[picked]
+	var anchor: String = unit.next_site if not unit.next_site.is_empty() else unit.site_id
+	drag_route.append(HexGridScript.key(HexGridScript.cell_at(army_campaign.node_point(anchor))))
+
+func _extend_army_drag(screen: Vector2) -> void:
+	if drag_army_id.is_empty() or drag_route.is_empty(): return
+	var cell: Vector2i = HexGridScript.cell_at(_screen_to_world(screen))
+	if not hex_tile_layer.visible_cells.has(cell): return
+	var steps: Array = HexGridScript.path(HexGridScript.parse(drag_route.back()), cell)
+	for step in steps:
+		if drag_route.size() >= 512: break
+		if step != drag_route.back(): drag_route.append(step)
+	army_campaign.set_route_preview(drag_army_id, drag_route)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not initialized:
 		return
@@ -380,16 +507,54 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 		elif event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_MIDDLE:
 			if event.pressed:
-				press_position = event.position
-				drag_moved = false
-			elif dragging and event.button_index == MOUSE_BUTTON_LEFT and not drag_moved:
+				_begin_map_drag(event)
+				get_viewport().set_input_as_handled()
+				return
+			if not dragging or event.button_index != drag_button: return
+			if drag_moved:
+				if not drag_army_id.is_empty():
+					_extend_army_drag(event.position)
+					if drag_route.size() > 1:
+						var drawn: Array[String] = drag_route.slice(1)
+						army_campaign.order_path(drag_army_id, drawn)
+					army_panel.show_unit(drag_army_id)
+				_end_map_drag()
+				get_viewport().set_input_as_handled()
+				return
+			_end_map_drag()
+			if event.button_index == MOUSE_BUTTON_LEFT:
+				if developer_tools != null and developer_tools.click_world(_screen_to_world(event.position)):
+					get_viewport().set_input_as_handled()
+					return
+				if army_panel.choosing_target or (event.shift_pressed and army_campaign.units.has(army_panel.unit_id)):
+					var target: String = army_campaign.target_at(_screen_to_world(event.position))
+					if not target.is_empty(): army_panel.handle_node_click(target, event.shift_pressed)
+					get_viewport().set_input_as_handled()
+					return
+				var picked_army: String = army_campaign.pick(event.position)
+				if not picked_army.is_empty():
+					army_panel.show_unit(picked_army)
+					get_viewport().set_input_as_handled()
+					return
+				if army_campaign.units.has(army_panel.unit_id) and army_campaign.units[army_panel.unit_id].house_id == GameSession.player_house:
+					var hex_target: String = army_campaign.target_at(_screen_to_world(event.position))
+					if not hex_target.is_empty() and army_panel.handle_node_click(hex_target, event.shift_pressed):
+						get_viewport().set_input_as_handled()
+						return
+				var office_district: String = district_office_layer.pick(_screen_to_world(event.position))
+				if not office_district.is_empty():
+					show_district_info(office_district)
+					get_viewport().set_input_as_handled()
+					return
 				if district_selection_mode:
-					_select_district_async(event.position)
-					dragging = false
+					_select_district_async(event.position, event.shift_pressed)
 					get_viewport().set_input_as_handled()
 					return
 				var site_id: String = settlement_layer.pick(event.position)
 				if not site_id.is_empty():
+					if army_panel.handle_site_click(site_id, event.shift_pressed):
+						get_viewport().set_input_as_handled()
+						return
 					district_click_serial += 1
 					InteractionAudio.play_click()
 					district_info.hide_info()
@@ -397,14 +562,15 @@ func _unhandled_input(event: InputEvent) -> void:
 					settlement_layer.queue_redraw()
 					if developer_ui: settlement_panel.show_site(site_id)
 				elif territory_borders != null and territory_borders.country_mode: select_country(_screen_to_world(event.position))
-				else: _select_district_async(event.position)
-			dragging = event.pressed
+				else: _select_district_async(event.position, event.shift_pressed)
 			get_viewport().set_input_as_handled()
 	elif event is InputEventMouseMotion and dragging:
 		drag_moved = drag_moved or event.position.distance_to(press_position) > 4.0
 		if drag_moved:
-			camera.position -= event.relative / camera.zoom.x
-		_clamp_camera()
+			if not drag_army_id.is_empty(): _extend_army_drag(event.position)
+			else:
+				camera.position -= event.relative / camera.zoom.x
+				_clamp_camera()
 		get_viewport().set_input_as_handled()
 
 
@@ -461,6 +627,10 @@ func _refresh_visible_tiles() -> void:
 	var view_rect := get_visible_world_rect().grow(2.0)
 	if political_layer != null:
 		political_layer.update_view(view_rect, camera.zoom.x)
+	if hex_tile_layer != null: hex_tile_layer.update_view(view_rect, camera.zoom.x)
+	if district_office_layer != null: district_office_layer.update_view(view_rect, camera.zoom.x)
+	if developer_tools != null and developer_tools.network_active: developer_tools.road_layer.update_view(view_rect, camera.zoom.x)
+	if army_campaign != null: army_campaign.queue_redraw()
 	if district_layer != null: district_layer.update_view(view_rect,camera.zoom.x)
 	if kamon_layer != null: kamon_layer.update_view(view_rect,camera.zoom.x)
 	if river_layer != null:
@@ -603,6 +773,7 @@ func set_relief_visible(value: bool) -> void:
 
 
 func set_oblique(value: bool) -> void:
+	if developer_tools != null and developer_tools.contour_mode: value = false
 	if tilt_toggle != null: tilt_toggle.set_pressed_no_signal(value)
 	var center: Vector2 = elevation.unproject(camera.position)
 	elevation.enabled = value
@@ -834,7 +1005,7 @@ func _pump_tiles() -> void:
 func has_pending_map_work() -> bool:
 	return not initialized or not pending_tiles.is_empty() or asset_stream.has_pending() or not district_layer.waiting_parents.is_empty() or not cpu_jobs.jobs.is_empty() or district_layer.has_pending_batches() or not river_layer.upload_queue.is_empty() or not lake_layer.upload_queue.is_empty() or political_layer.projection_cache.size()<2 or shared_road_layer.projection_cache.size()<2 or river_layer.projection_cache.size()<2 or lake_layer.projection_cache.size()<2
 
-func _select_district_async(screen_point: Vector2) -> void:
+func _select_district_async(screen_point: Vector2, shift_pressed := false) -> void:
 	district_click_serial+=1
 	var serial:=district_click_serial
 	var ground:=_screen_to_world(screen_point)
@@ -855,6 +1026,7 @@ func _select_district_async(screen_point: Vector2) -> void:
 			return
 	var candidates: Array=await district_layer.pick_async(ground)
 	if serial!=district_click_serial or camera.position!=camera_before or camera.zoom!=zoom_before or (developer_ui and not district_selection_mode):return
+	if not candidates.is_empty() and army_panel.handle_district_click(candidates[0], shift_pressed): return
 	if not candidates.is_empty(): InteractionAudio.play_click()
 	show_district_info(candidates[0] if not candidates.is_empty() else "")
 	if developer_ui: district_panel.show_candidates(candidates)
@@ -869,9 +1041,9 @@ func show_district_info(key: String) -> void:
 		district_info.hide_info()
 		return
 	var district_record: Dictionary = governance_registry.districts.get(key,{})
-	var ruler_name: String = governance_registry.ruler_name(district_record) if not district_record.is_empty() else "支配者未詳"
 	var security: int = technology_tree.security_for(district_record) if not district_record.is_empty() else -1
-	district_info.show_district(str(district_layer.records[key].name),ruler_name,security)
+	district_info.show_district(str(district_layer.records[key].name),security)
+	district_info.set_district(key)
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_PAUSED:

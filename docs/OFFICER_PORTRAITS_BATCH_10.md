@@ -1,0 +1,20 @@
+# Officer portraits, batch 10
+
+Ten original modern strategy-game bust icons were generated separately with built-in ImageGen. Each call used the web-searched primary source below as Image 1 and the project's `assets/officers/portraits/oda_nobunaga.png` as Image 2 solely for a consistent painterly finish. For game banners, the prompt explicitly used only the tiny central officer face, never the banner, interface or text. No downloaded reference artwork is included in the game.
+
+Historical portraits are later depictions, not established lifetime likenesses. Where neither a historical depiction nor the exact officer's Nobunaga's Ambition face was found, a **different named game officer** was used as an explicit visual fallback, not as a claimed portrait of the requested officer.
+
+| Officer | Registry ID | Output PNG | Searched primary reference | Specific visual anchors |
+| --- | --- | --- | --- | --- |
+| 中条景資 | `officer_q11366154` | `chujou_kagesuke.png` | [Nagao Kagehiro game face](https://altema.jp/nobunagashinsei/busyo/1459), **different-person fallback** | High forehead, small knot, severe eyes, ochre robe and violet collar. |
+| 中条藤資 | `officer_q11366171` | `chujou_fujisuke.png` | [Chujo Fujisuke game face](https://altema.jp/nobunagashinsei/busyo/1482), exact-name game source | Older bearded face, black kabuto with pale-gold crescent, light shoulder armor. |
+| 中西元如 | `officer_q124483507` | `nakanishi_motoyuki.png` | [Nagato Hiroeki game face](https://altema.jp/nobunagashinsei/busyo/1483), **different-person fallback** | Dark helmet with gold crescent, angular face, burgundy cuirass and green armor. |
+| 中野一安 | `officer_q124426163` | `nakano_kazuyasu.png` | [Nagano Narifuji game face](https://altema.jp/nobunagashinsei/busyo/1485), **different-person fallback** | Wrinkled smiling older face, gray knot, pale robe and muted blue collar. |
+| 中野宗時 | `officer_q11367555` | `nakano_munetoki.png` | [Nakano Munetoki game face](https://altema.jp/nobunagashinsei/busyo/1484), exact-name game source | Black eboshi, narrow mature face and short beard, sage-green robe. |
+| 丸尾義清 | `officer_q108459152` | `maruo_yoshikiyo.png` | [Nagakura Sukemasa game face](https://altema.jp/nobunagashinsei/busyo/1473), **different-person fallback** | Black folded cap, broad smiling cheeks, red-plum armor. |
+| 丸毛光兼 | `officer_q123415498` | `marumo_mitsukane.png` | [Nagasawa Mitsukuni game face](https://altema.jp/nobunagashinsei/busyo/1479), **different-person fallback** | Young narrow stern face, compact knot, dark armor and steel neck plates. |
+| 丸目長恵 | `officer_q10877248` | `marume_nagayoshi.png` | [19th-century portrait of Marume Nagayoshi](https://commons.wikimedia.org/wiki/File:Marume_Kurando.jpg), historical depiction | Balding older swordsman, sparse facial hair, wide eyes, gray-green robes; calligraphy excluded. |
+| 丹羽氏勝 | `officer_q11368644` | `niwa_ujikatsu.png` | [Niwa Nagashige game face](https://altema.jp/nobunagashinsei/busyo/1581), **different-person fallback** | Young clean-shaven face, level brows, topknot, rust-brown robe and red collar. |
+| 丹羽長秀 | `officer_q2900560` | `niwa_nagahide.png` | [Dairinji historical portrait, Nihonmatsu City](https://www.city.nihonmatsu.lg.jp/bunka_sports_syo/bunka_rekishi/shitei_bunka/nihonmatsu/page001289.html) | Small restrained face, short topknot, wide black court robe with pale motifs and white collar. |
+
+Shared prompt set: `Use case: stylized-concept. Asset type: modern Sengoku game officer bust. Image 1 is the primary likeness/design reference; preserve the row-specific facial geometry, age, hair, gaze, expression, costume colors and silhouette. Image 2 only defines modern painterly finish, never identity or pose. Keep head, neck and shoulders aligned. Crop above hands and weapons. Deliver one 1:1 square true-transparent PNG without Japanese or other text, UI, border, halo or background.` Each officer prompt additionally listed its own anchors in the final column and explicitly identified whether Image 1 was historical, exact-game, or different-person fallback.

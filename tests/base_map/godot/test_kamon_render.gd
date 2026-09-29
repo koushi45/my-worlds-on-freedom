@@ -95,7 +95,7 @@ func run() -> void:
 	check(not main.territory_borders.country_mode and not main.political_layer.visible and main.district_layer.boundaries_enabled,"district borders replace country borders above 200 percent")
 	if DisplayServer.get_name() != "headless": root.get_texture().get_image().save_png("res://builds/qa/district_borders_inward.png")
 	check(main.kamon_layer != main.district_layer, "kamon markers use a dedicated map layer")
-	check(main.kamon_layer.label_count > 0, "kamon markers draw in the detailed view")
+	check(main.kamon_layer.label_count == 0 and not main.district_office_layer.drawn_kamon_houses.is_empty(), "detailed crests draw only on offices")
 	check(main.kamon_layer.z_index > main.settlement_layer.z_index, "kamon layer has priority over settlement names")
 	check(main.territory_borders.independent_fill_files.size() == main.district_layer.records.size(), "all current district fill meshes are registered")
 	var smallest := ""

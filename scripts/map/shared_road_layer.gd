@@ -5,13 +5,18 @@ var drawn_strokes := 0
 var active_strokes := 0
 var stroke_meshes: Dictionary = {}
 const LineBatch=preload("res://scripts/map/line_mesh_batch.gd")
+const Grid=preload("res://scripts/map/hex_grid.gd")
 
 func _ready() -> void:
-	z_index = 19
+	z_index = 0 # Relative to HexTiles; visibility inherits its 200% threshold.
 	data = JSON.parse_string(FileAccess.get_file_as_string("res://data/derived/road_connections/shared_display.json"))
 	for stroke in data["strokes"]:
-		var b: Array = stroke["bounds"]
-		stroke["draw_bounds"] = Rect2(point([b[0],b[1]]),point([b[2]-b[0],b[3]-b[1]])).grow(2)
+		stroke["points"] = Grid.snap_polyline(stroke["points"])
+		var bounds := Rect2()
+		if not stroke.points.is_empty():
+			bounds = Rect2(point(stroke.points[0]), Vector2.ZERO)
+			for p in stroke.points: bounds = bounds.expand(point(p))
+		stroke["draw_bounds"] = bounds.grow(2)
 	game_connections.visibility_changed.connect(queue_redraw)
 
 func _draw_content() -> void:

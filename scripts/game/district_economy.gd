@@ -2,6 +2,7 @@ extends Node
 ## District agriculture, commerce, income, and monthly development simulation.
 
 signal income_collected(kind: String, total: int)
+signal house_income_collected(house_id: String, kind: String, amount: int)
 signal development_updated
 
 const MIN_DEVELOPMENT := 1
@@ -17,6 +18,7 @@ const AGRICULTURE_POPULATION_FACTOR := 0.000267204543547695
 var registry: RefCounted
 var officers: RefCounted
 var technology_tree: Node
+var district_buildings: Node
 var house_resources: Dictionary = {}
 
 
@@ -28,25 +30,35 @@ func setup(governance_registry: RefCounted, officer_registry: RefCounted) -> voi
 		house_resources[house_id] = {"money": 0, "provisions": 0}
 
 
-func income_for(record: Dictionary, kind: String) -> int:
+func income_for(record: Dictionary, kind: String, preview_building_id: String = "") -> int:
 	var development := int(record.agriculture_development if kind == "agriculture" else record.commerce_development)
 	var factor := AGRICULTURE_POPULATION_FACTOR if kind == "agriculture" else COMMERCE_POPULATION_FACTOR
 	var multiplier := 1.0
 	if technology_tree != null:
 		var modifiers: Dictionary = technology_tree.modifiers(record.house_id)
 		multiplier = float(modifiers.provisions if kind == "agriculture" else modifiers.money)
-	return maxi(0, roundi((BASE_VALUE + development) * int(record.population) * factor * multiplier))
+	var facility_multiplier: float = district_buildings.income_multiplier(record.id, kind) if district_buildings != null else 1.0
+	if district_buildings != null and preview_building_id in ["irrigation", "farm_estate", "market", "workshop", "temple"] and not district_buildings.state[record.id].built.has(preview_building_id):
+		if kind == "agriculture": facility_multiplier += {"irrigation":0.10, "farm_estate":0.15}.get(preview_building_id, 0.0)
+		elif kind == "commerce": facility_multiplier += {"market":0.10, "workshop":0.15, "temple":0.05}.get(preview_building_id, 0.0)
+	var local_multiplier := (1.0 + 0.05 * float(int(record.get("infrastructure", 1)) - 1)) * (1.0 - float(record.get("devastation", 0)) / 200.0) * (1.0 - float(record.get("autonomy", 0)) / 200.0)
+	return maxi(0, roundi((BASE_VALUE + development) * int(record.population) * factor * facility_multiplier * multiplier * local_multiplier))
 
 
 func collect_income(kind: String) -> int:
 	var resource := "provisions" if kind == "agriculture" else "money"
 	var total := 0
+	var house_totals := {}
 	for record in registry.districts.values():
 		var amount := income_for(record, kind)
 		var house_id: String = record.house_id
 		if not house_resources.has(house_id): house_resources[house_id] = {"money": 0, "provisions": 0}
 		house_resources[house_id][resource] += amount
+		house_totals[house_id] = int(house_totals.get(house_id, 0)) + amount
 		total += amount
+	for house_id in house_totals:
+		if int(house_totals[house_id]) > 0:
+			house_income_collected.emit(house_id, kind, int(house_totals[house_id]))
 	income_collected.emit(kind, total)
 	return total
 

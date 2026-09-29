@@ -47,7 +47,7 @@ class HydrographyTests(unittest.TestCase):
             self.assertLess(line.difference(land).length,1e-5)
             self.assertLess(line.intersection(water).length,1e-5)
 
-    def test_main_stems_only_and_hidden_data_retained(self):
+    def test_selected_major_rivers_and_hidden_data_retained(self):
         report=json.loads((ROOT/'data/derived/hydrography/major_rivers_selection.json').read_text(encoding='utf-8'))
         self.assertEqual(len(self.data['rivers']),4581)
         self.assertEqual(len(self.data['lakes']),804)
@@ -57,9 +57,16 @@ class HydrographyTests(unittest.TestCase):
             chosen.update(stem['selected_source_indices'])
         for river in self.data['rivers']:
             self.assertEqual(river['visible_by_default'],river['source_index'] in chosen)
-            if river['name'] in ['KINU G.','EDO G.','KATSURA G.','WATARASE G.','TADAMI G.']:
+            if river['name'] in ['EDO G.','KATSURA G.','WATARASE G.','TADAMI G.']:
                 self.assertFalse(river['visible_by_default'],river['id'])
-        for name in ['TONE G.','CHIKUGO G.','KISO G.','YODO G.','SHINANO G.']:
+        for name in ['TONE G.','CHIKUGO G.','KISO G.','YODO G.','SHINANO G.',
+                     'KINU G.','YONESHIRO G.']:
             self.assertTrue(any(r['name']==name and r['visible_by_default'] for r in self.data['rivers']),name)
+        naka=[r for r in self.data['rivers'] if r['name']=='NAKA G.']
+        self.assertTrue(any(r['visible_by_default'] for r in naka))
+        self.assertTrue(any(not r['visible_by_default'] for r in naka))
+        yodo=next(s for s in report['main_stems'] if s['name_ja']=='淀川・宇治川・瀬田川')
+        self.assertEqual(yodo['editorial_source_indices'],[1155])
+        self.assertTrue(any(r['source_index']==1155 and r['visible_by_default'] for r in self.data['rivers']))
 
 if __name__=='__main__':unittest.main()

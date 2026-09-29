@@ -49,6 +49,9 @@ func _initialize() -> void:
 	main.focus_kyushu()
 	main.select_country(Vector2(1900,6500))
 	check(main.political_layer.selected_id=="bungo","exported Bungo selection failed")
+	var tile_deadline := Time.get_ticks_msec() + 10000
+	while main.get_loaded_tile_count() == 0 and Time.get_ticks_msec() < tile_deadline:
+		await process_frame
 	check(main.get_loaded_tile_count()>0,"Kyushu tiles not loaded")
 	main.focus_region("chugoku")
 	main.select_country(Vector2(2870,5550))

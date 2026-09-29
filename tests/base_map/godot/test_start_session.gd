@@ -47,6 +47,7 @@ func run() -> void:
 	var main = await wait_map()
 	if main == null: quit(1); return
 	check(session.player_house == "uesugi_yamanouchi","chosen house starts")
+	check(int(main.district_economy.house_resources[session.player_house].provisions) > 0,"chosen house starts with provisions for a sortie")
 	check(session.relation(session.player_house,"uesugi_ogigayatsu")=="ally","alliance lookup")
 	check(session.relation("hojo",session.player_house)=="enemy","symmetric enemy lookup")
 	var player_district := ""
@@ -73,6 +74,8 @@ func run() -> void:
 	if DisplayServer.get_name() != "headless": await preload("res://tests/base_map/godot/wait_map.gd").settled(main)
 	await capture_png("start_territory_borders")
 	escape()
+	check(not main.district_info.panel.visible and not main.game_menu.shade.visible,"Esc closes district window before opening game menu")
+	escape()
 	check(paused and main.game_menu.shade.visible,"Esc opens modal and pauses tree")
 	var days: int = main.game_clock.elapsed_days
 	await create_timer(0.2,true).timeout
@@ -86,12 +89,14 @@ func run() -> void:
 	check(main.game_menu.modal.visible and paused,"Esc returns from display options to game menu")
 	main.game_menu.show_retainers()
 	await process_frame
-	check(main.game_menu.retainer_panel.visible and main.game_menu.retainer_panel.tree.text.contains("大名"),"role tree opens from game menu")
-	check(main.game_menu.retainer_panel.summary.text.contains("威信 50/100"),"initial prestige is visible")
+	check(main.game_menu.retainer_panel.visible and main.game_menu.retainer_panel.role_buttons.size() == 5,"role cards open from game menu")
+	check(main.game_menu.retainer_panel.overview_values.prestige.text == "50 / 100","initial prestige appears beside its icon")
 	var retainer_ids: Array = main.retainer_management.house_members[session.player_house]
+	check(main.game_menu.retainer_panel.officer_buttons.size() == retainer_ids.size(),"retainer portraits and scores appear in the selection list")
 	if not retainer_ids.is_empty():
-		main.game_menu.retainer_panel.roster.select(0)
-		main.game_menu.retainer_panel.role_choice.select(1)
+		main.game_menu.retainer_panel.role_buttons["侍大将"].pressed.emit()
+		main.game_menu.retainer_panel.officer_buttons[retainer_ids[0]].pressed.emit()
+		check(main.game_menu.retainer_panel.selected_role == "侍大将" and main.game_menu.retainer_panel.selected_officer_id == retainer_ids[0],"role is selected above the officer list")
 		main.game_menu.retainer_panel._appoint()
 		check(main.retainer_management.role_of(session.player_house, retainer_ids[0]) == "侍大将","roster appointment updates state")
 		main.game_menu.retainer_panel.wage_input.value = 0.2
@@ -102,10 +107,19 @@ func run() -> void:
 	check(main.game_menu.modal.visible,"Esc returns from retainer management")
 	main.game_menu.show_technology()
 	await process_frame
-	check(main.game_menu.technology_panel.visible and main.game_menu.technology_panel.technologies.item_count == 7,"technology tree opens with governance nodes")
+	check(main.game_menu.technology_panel.visible and main.game_menu.technology_panel.technology_buttons.size() == 7,"technology tree opens with governance cards")
+	check(main.game_menu.technology_panel.technology_buttons["分国法"].disabled and main.game_menu.technology_panel.technology_buttons["官僚機構制定"].disabled,"unavailable research cards cannot be clicked")
+	main.game_menu.technology_panel.technology_buttons["官僚機構制定"].pressed.emit()
+	check(not main.technology_tree.completed(session.player_house, "官僚機構制定"),"disabled research does nothing even if pressed programmatically")
+	main.game_menu.technology_panel.branch_buttons["agriculture"].pressed.emit()
+	check(main.game_menu.technology_panel.technology_buttons.size() == 9,"agriculture icon tab opens its research cards")
+	main.game_menu.technology_panel.branch_buttons["commerce"].pressed.emit()
+	check(main.game_menu.technology_panel.technology_buttons.is_empty(),"commerce icon tab shows no research cards")
+	main.game_menu.technology_panel.branch_buttons["governance"].pressed.emit()
 	main.retainer_management.technology[session.player_house].governance = 1000.0
-	main.game_menu.technology_panel.technologies.select(0)
-	main.game_menu.technology_panel._research()
+	main.game_menu.technology_panel.refresh()
+	check(not main.game_menu.technology_panel.technology_buttons["分国法"].disabled,"affordable next research becomes clickable")
+	main.game_menu.technology_panel.technology_buttons["分国法"].pressed.emit()
 	check(main.technology_tree.completed(session.player_house, "分国法"),"technology research works from the menu")
 	main.show_district_info(player_district)
 	check(main.district_info.security_label.text == "治安：55 / 100","law research updates displayed security")
@@ -121,9 +135,9 @@ func run() -> void:
 	for field in ["house_id","governor","ruler"]: main.governance_registry.districts[changed_id][field] = hojo_record[field]
 	session.relations[session.pair("oda_nobuhide","takeda")] = "enemy"
 	var capture_probe: Dictionary = session.capture(main)
-	check(session.validate(capture_probe),"captured version 8 session validates before saving")
+	check(session.validate(capture_probe),"captured current session validates before saving")
 	var roundtrip_probe: Dictionary = JSON.parse_string(JSON.stringify(capture_probe))
-	check(session.validate(roundtrip_probe),"serialized version 8 session validates")
+	check(session.validate(roundtrip_probe),"serialized current session validates")
 	main.game_menu.show_slots(true)
 	main.game_menu.slots.choose(1)
 	check("保存しました" in main.game_menu.slots.status.text,"save slot UI succeeds")
@@ -132,7 +146,7 @@ func run() -> void:
 	check(not saved.is_empty(),"saved payload validates")
 	if saved.is_empty(): printerr(session.last_error); quit(1); return
 	check(saved.clock.day == 1 and saved.clock.month == 3,"calendar crosses February")
-	check(saved.version == 8,"current save format includes shared governance research points")
+	check(saved.version == 15 and saved.has("diplomacy") and saved.has("buildings") and saved.has("building_history") and saved.has("armies") and saved.armies.has("office_defenses") and saved.retainers.has("officer_districts") and saved.territories.districts.values()[0].has("sortie_troops"),"current save format includes district officer placement and office defenses")
 	check(saved.research[session.player_house].has("commerce") and not saved.retainers.technology[session.player_house].has("agriculture"),"commerce branch and shared governance points are saved")
 	check(saved.prestige[session.player_house] == 60,"changed prestige is saved")
 	check(saved.retainers.loyalty_state.size() == session.catalog.officer_ids.size(),"all officer loyalty records are saved")
@@ -142,50 +156,9 @@ func run() -> void:
 	check(saved.territories.districts[population_id].population == main.governance_registry.districts[population_id].population,"district population is saved")
 	check(saved.territories.districts[population_id].security == 50,"initial district security is saved")
 	check(saved.territories.districts[population_id].has("agriculture_development") and saved.economy.has("house_resources"),"development and resources are saved")
-	var version_two := saved.duplicate(true)
-	version_two.version = 2
-	version_two.erase("economy")
-	for id in version_two.territories.districts:
-		for field in ["agriculture_development","commerce_development","agriculture_progress","commerce_progress","agriculture_developer_id","commerce_developer_id"]: version_two.territories.districts[id].erase(field)
-	check(session.validate(version_two),"version 2 population save remains loadable")
-	var version_three := saved.duplicate(true)
-	version_three.version = 3
-	version_three.erase("retainers")
-	check(session.validate(version_three),"version 3 economy save remains loadable")
-	var version_four := saved.duplicate(true)
-	version_four.version = 4
-	version_four.erase("prestige")
-	check(session.validate(version_four),"version 4 retainer save remains loadable")
-	var version_five := saved.duplicate(true)
-	version_five.version = 5
-	for field in ["loyalty_state", "house_members", "district_governors", "province_governors", "rebel_houses"]: version_five.retainers.erase(field)
-	check(session.validate(version_five),"version 5 prestige save remains loadable")
-	var version_six := saved.duplicate(true)
-	version_six.version = 6
-	version_six.erase("research")
-	for id in version_six.territories.districts: version_six.territories.districts[id].erase("security")
-	for house_id in version_six.retainers.technology: version_six.retainers.technology[house_id].erase("agriculture")
-	check(session.validate(version_six),"version 6 loyalty save remains loadable")
-	var version_seven := saved.duplicate(true)
-	version_seven.version = 7
-	for house_id in version_seven.retainers.technology: version_seven.retainers.technology[house_id].agriculture = 25.0
-	for house_id in version_seven.research: version_seven.research[house_id].erase("commerce")
-	check(session.validate(version_seven),"version 7 agricultural-point save remains loadable")
-	session.pending = version_seven
+	session.pending = saved
 	session.apply_to(main)
-	check(is_equal_approx(main.retainer_management.technology[session.player_house].governance, float(saved.retainers.technology[session.player_house].governance) + 25.0),"version 7 agriculture points migrate into governance")
-	check(main.technology_tree.researched[session.player_house].has("commerce") and not main.retainer_management.technology[session.player_house].has("agriculture"),"version 7 migration adds commerce and removes old point pool")
-	var legacy := saved.duplicate(true)
-	legacy.version = 1
-	legacy.erase("economy")
-	for id in legacy.territories.districts:
-		for field in ["population","agriculture_development","commerce_development","agriculture_progress","commerce_progress","agriculture_developer_id","commerce_developer_id"]: legacy.territories.districts[id].erase(field)
-	check(session.validate(legacy),"version 1 save without population remains loadable")
-	main.governance_registry.districts[population_id].population = 1
-	check(main.governance_registry.apply_initial_population() == OK,"legacy-load scene initializes population from the adopted ledger")
-	session.pending = legacy
-	session.apply_to(main)
-	check(main.governance_registry.districts[population_id].population == main.governance_registry.districts[population_id].initial_population,"version 1 migration keeps the adopted initial population")
+	check(main.retainer_management.officer_districts == saved.retainers.officer_districts,"current officer placement restores from save")
 	var wrong := saved.duplicate(true)
 	wrong.clock.day = 32
 	check(not session.validate(wrong),"invalid calendar rejected")

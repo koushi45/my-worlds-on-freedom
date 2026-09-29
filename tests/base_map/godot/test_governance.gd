@@ -74,7 +74,46 @@ func run() -> void:
 	check(registry.sites["site_1582_shima_108"].house_id == "kitabatake","Toba in Shima belongs to Kitabatake")
 	main.show_district_info("iga/merged-dff55b62903ec44f")
 	check(main.district_info.panel.visible and main.district_info.name_label.text == "阿拝郡","district click window shows the district name")
-	check(main.district_info.ruler_label.text == "支配者：六角定頼","district click window shows its ruler below the district name")
+	check(main.district_info.details_rows.get_child_count() == 6, "district details have three titled groups")
+	check(main.district_info.details_rows.get_child(1).get_child_count() == 2, "house and governor share one grid")
+	check(main.district_info.details_rows.get_child(3).get_child_count() == 2, "provisions and money share one grid")
+	check(main.district_info.details_rows.get_child(5).get_child_count() == 6, "population and safety statistics share one grid")
+	var district_record: Dictionary = registry.districts["iga/merged-dff55b62903ec44f"]
+	var governor_row: HBoxContainer = main.district_info.details_rows.find_child("Info_governor", true, false).get_child(0)
+	check(governor_row.get_child(1).text == registry.governor_name(district_record), "district window shows its governor once")
+	check(main.district_info.crest_rect.custom_minimum_size == Vector2(64, 64), "crest uses a small fixed display size")
+	var district_icon: TextureRect = main.district_info.details_rows.find_child("Info_house", true, false).get_child(0).get_child(0).get_child(0)
+	check(district_icon.texture.get_size() == Vector2(main.district_info.info_icon_size, main.district_info.info_icon_size), "district icon uses a prepared size")
+	check(is_equal_approx(district_icon.scale.x * main.district_info.icon_scale, 1.0), "district icon is drawn at physical 100 percent")
+	var district_icon_target: Control = district_icon.get_parent()
+	district_icon_target.mouse_entered.emit()
+	check(main.district_info.icon_hint.visible and main.district_info.icon_hint.caption.text == "支配家", "district icon label appears immediately on hover")
+	if DisplayServer.get_name() != "headless":
+		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://builds/qa"))
+		await RenderingServer.frame_post_draw
+		check(root.get_texture().get_image().save_png("res://builds/qa/district_icon_hint_window.png") == OK, "district icon label capture saved")
+	district_icon_target.mouse_exited.emit()
+	check(not main.district_info.icon_hint.visible, "district icon label closes on mouse exit")
+	var income_value: Label = main.district_info.details_rows.find_child("Info_rice", true, false).get_child(0).get_child(1)
+	income_value.mouse_entered.emit()
+	check(main.district_info.icon_hint.visible and main.district_info.icon_hint.caption.text.begins_with("兵糧収入："), "income text label appears immediately on hover")
+	income_value.mouse_exited.emit()
+	main.district_info.icon_hint.touch_mode = true
+	var icon_tap := InputEventScreenTouch.new()
+	icon_tap.pressed = true
+	district_icon_target.gui_input.emit(icon_tap)
+	check(main.district_info.icon_hint.visible and main.district_info.icon_hint.caption.text == "支配家", "district icon tap shows its label")
+	main.district_info.icon_hint.touch_mode = false
+	main.district_info.icon_hint.clear()
+	var hud_icon_target: Control = main.house_status_hud.metric_icons["money"].get_parent()
+	hud_icon_target.mouse_entered.emit()
+	check(main.house_status_hud.icon_hint.visible and main.house_status_hud.icon_hint.caption.text == "所持金銭", "top HUD icon label appears immediately on hover")
+	hud_icon_target.mouse_exited.emit()
+	check(not main.house_status_hud.icon_hint.visible, "top HUD icon label closes on mouse exit")
+	var hud_value: Label = main.house_status_hud.values["money"]
+	hud_value.mouse_entered.emit()
+	check(main.house_status_hud.icon_hint.visible and main.house_status_hud.icon_hint.caption.text == "所持金銭", "top HUD value label appears immediately on hover")
+	hud_value.mouse_exited.emit()
 	if DisplayServer.get_name() != "headless":
 		var previous_clipboard := DisplayServer.clipboard_get()
 		main.district_info.name_label.pressed.emit()
@@ -84,6 +123,38 @@ func run() -> void:
 		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://builds/qa"))
 		await RenderingServer.frame_post_draw
 		check(root.get_texture().get_image().save_png("res://builds/qa/district_name_window.png") == OK,"district-name window capture saved")
+	var previous_house: String = root.get_node("GameSession").player_house
+	root.get_node("GameSession").player_house = "rokkaku"
+	main.show_district_info("iga/merged-dff55b62903ec44f")
+	governor_row = main.district_info.details_rows.find_child("Info_governor", true, false).get_child(0)
+	check(governor_row.get_child(1) is Button, "own governor value opens appointment control")
+	governor_row.get_child(1).mouse_entered.emit()
+	check(main.district_info.icon_hint.visible and main.district_info.icon_hint.caption.text.begins_with("郡代："), "editable text button label appears immediately on hover")
+	governor_row.get_child(1).mouse_exited.emit()
+	var building_grid: GridContainer = main.district_info.facilities_rows.get_child(3)
+	check(building_grid.get_child_count() == main.district_buildings.slot_capacity(district_record), "building slots use a grid")
+	check(building_grid.get_child(0).get_child(0).get_child(0) is TextureButton, "own empty building slot is clickable")
+	var upgrade_button: TextureButton = main.district_info.facilities_rows.get_child(1).get_child(2).get_child(0)
+	var infrastructure_before: int = district_record.infrastructure
+	main.district_info.icon_hint.touch_mode = true
+	upgrade_button.pressed.emit()
+	check(main.district_info.icon_hint.visible and main.district_info.icon_hint.caption.text.begins_with("インフラ上昇"), "first tap on an action icon shows its label")
+	check(district_record.infrastructure == infrastructure_before, "first tap on an action icon does not execute the action")
+	main.district_info.icon_hint.touch_mode = false
+	main.district_info.icon_hint.clear()
+	if DisplayServer.get_name() != "headless":
+		await RenderingServer.frame_post_draw
+		check(root.get_texture().get_image().save_png("res://builds/qa/district_owned_window.png") == OK, "owned district window capture saved")
+	var rokkaku_members: Array = main.retainer_management.house_members.rokkaku
+	if not rokkaku_members.is_empty():
+		check(main.retainer_management.assign_role("rokkaku", rokkaku_members[0], "侍大将") == OK, "appointable district officer prepared")
+		main.district_info._open_governor_dialog()
+		check(main.district_info.governor_choice.item_count > 0, "governor selection opens from value button")
+		if DisplayServer.get_name() != "headless":
+			await RenderingServer.frame_post_draw
+			check(root.get_texture().get_image().save_png("res://builds/qa/district_governor_dialog.png") == OK, "governor dialog capture saved")
+		main.district_info.governor_dialog.hide()
+	root.get_node("GameSession").player_house = previous_house
 	main.select_country(Vector2(-1,-1))
 	check(not main.district_info.panel.visible,"country or empty selection hides the district-name window")
 	var ruler_matches: Array = registry.search("district", "織田信秀")

@@ -97,7 +97,7 @@ def main():
               'source':'GSI Global Map Japan v2 hydrography (2011)',
               'rivers':river_records,'lakes':lake_records}
     save(OUT/'water_registry.json',registry)
-    save(OUT/'major_rivers_selection.json',{'policy':'Explicit main-stem names; only unnamed connecting edges; no named tributaries.',
+    save(OUT/'major_rivers_selection.json',{'policy':'Explicit major rivers; unnamed internal connectors; one verified Biwa outlet edge.',
         'main_stems':selection_report,'visible_river_parts':sum(r['visible_by_default'] for r in river_records),
         'hidden_river_parts':sum(not r['visible_by_default'] for r in river_records),
         'visible_river_surfaces':sum(l['source_type']==1 and l['visible_by_default'] for l in lake_records)})

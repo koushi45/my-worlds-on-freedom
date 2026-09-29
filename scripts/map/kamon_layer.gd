@@ -1,5 +1,5 @@
 extends Node2D
-## Family crests are a dedicated overlay anchored at each district's representative point.
+## Shared crest assets and country overview markers. District crests live on offices.
 const KAMON_INDEX := "res://assets/kamon/index.json"
 const KAMON_SCREEN_SIZE := 28.0
 const KAMON_MIN_SCREEN_SIZE := 24.0
@@ -85,7 +85,7 @@ func _draw() -> void:
 	label_count = 0
 	drawn_keys.clear()
 	if district_layer == null or not district_layer.initialized: return
-	if view_zoom <= 2.0 and territory_borders != null:
+	if view_zoom < 2.0 and territory_borders != null:
 		for country_id in territory_borders.country_records:
 			var country: Dictionary = territory_borders.country_records[country_id]
 			var anchor: Vector2 = country.anchor
@@ -94,12 +94,6 @@ func _draw() -> void:
 			if not governance_registry.districts.has(representative): continue
 			_draw_kamon("country:"+str(country_id),anchor,governance_registry.districts[representative].house_id,34.0)
 		return
-	for key in visible_keys:
-		var record: Dictionary = district_layer.records[key]
-		var anchor := Vector2(record["label"][0],record["label"][1])
-		if not view_rect.has_point(anchor): continue
-		if governance_registry == null or not governance_registry.districts.has(key): continue
-		_draw_kamon(key,anchor,governance_registry.districts[key].get("house_id", ""),kamon_screen_size(key))
 
 func _draw_kamon(key: String, anchor: Vector2, house_id: String, screen_size: float) -> void:
 	var point: Vector2 = elevation.project(anchor)

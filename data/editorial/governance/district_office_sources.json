@@ -1,0 +1,65 @@
+{
+  "scenario_year": 1546,
+  "policy": "郡奉行所の1546年の所在地を確定できる史料は未確認。以下は中世の統治拠点を参考にした推定配置であり、郡奉行所の実在・所在地を証明するものではない。地理参照には既存拠点台帳の概略座標を使う。後世の役所を1546年の施設として採用しない。",
+  "references": [
+    {
+      "id": "kofu_governance",
+      "site_id": "kofu_town",
+      "name": "武田氏館・古府中周辺",
+      "kind": "medieval_governance_reference",
+      "source_url": "https://www.city.kofu.yamanashi.jp/bunkashinko/kyoiku/bunka/zai/documents/documents/takeda3rd10-1.pdf",
+      "source_title": "甲府市・史跡武田氏館跡第3次整備基本計画",
+      "evidence": "1519年からの武田氏居館と城下町。郡奉行所の所在地は未確認。"
+    },
+    {
+      "id": "funai_governance",
+      "site_id": "otomo_yakata",
+      "name": "大友氏館・府内周辺",
+      "kind": "medieval_governance_reference",
+      "source_url": "https://www.city.oita.oita.jp/o204/bunkasports/rekishi/1118118836045.html",
+      "source_title": "大分市・大友氏遺跡事業",
+      "evidence": "中世大友氏の館と都市遺跡。郡奉行所の所在地は未確認。"
+    },
+    {
+      "id": "yamaguchi_governance",
+      "site_id": "site_1582_suo_181",
+      "name": "大内氏館・山口周辺",
+      "kind": "medieval_governance_reference",
+      "source_url": "https://www.city.yamaguchi.lg.jp/rs/rekibunshigen/r1062.html",
+      "source_title": "山口市・大内氏遺跡附凌雲寺跡",
+      "evidence": "大内氏館は中世に政務を執った場所。既存の山口概略座標から付近を参考にする。郡奉行所の所在地は未確認。"
+    },
+    {
+      "id": "odawara_governance",
+      "site_id": "odawara_castle",
+      "name": "北条氏の小田原城下周辺",
+      "kind": "medieval_governance_reference",
+      "source_url": "https://www.city.odawara.kanagawa.jp/field/lifelong/property/cultural/historic/s-odawarazyou.html",
+      "source_title": "小田原市・史跡小田原城跡",
+      "evidence": "1496年以降の北条氏本城・城下を参考にする。郡奉行所の所在地は未確認。"
+    },
+    {
+      "id": "koga_governance",
+      "site_id": "site_1582_shimosa_051",
+      "name": "古河公方の城下周辺",
+      "kind": "medieval_governance_reference",
+      "source_url": "https://www.city.ibaraki-koga.lg.jp/soshiki/rekihaku/tenji/kogakubouasikagasi.html",
+      "source_title": "古河市歴史博物館・古河公方足利氏",
+      "evidence": "古河公方が形成した政治・文化の都市空間。古河城の概略座標を参考にする。郡奉行所の所在地は未確認。"
+    }
+  ],
+  "excluded_later_offices": [
+    {
+      "name": "安芸郡郡奉行所跡（田野町）",
+      "source_url": "https://tanocho.jp/kanko/",
+      "reason": "公式案内は嘉永6年（1853）の設置とするため1546年の確定地点として採用しない。"
+    },
+    {
+      "name": "仙台藩町奉行所跡",
+      "source_url": "https://www.city.sendai.jp/bunkazai-kanri/setumeibann.html",
+      "reason": "町奉行所であり郡奉行所とは異なる。固定施設は嘉永年間以降とされるため採用しない。"
+    }
+  ],
+  "boundary_exceptions": {},
+  "omit_districts": {}
+}

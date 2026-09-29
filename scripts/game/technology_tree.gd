@@ -20,6 +20,7 @@ const DESCRIPTIONS := {
 
 var registry: RefCounted
 var retainers: Node
+var district_buildings: Node
 var researched: Dictionary = {}
 
 func setup(governance_registry: RefCounted, retainer_management: Node) -> void:
@@ -94,7 +95,8 @@ func modifiers(house_id: String) -> Dictionary:
 	return result
 
 func security_for(district: Dictionary) -> int:
-	return clampi(int(district.get("security", 50)) + int(modifiers(district.house_id).security), 0, 100)
+	var building_bonus: int = district_buildings.security_bonus(district.id) if district_buildings != null else 0
+	return clampi(int(district.get("security", 50)) + int(modifiers(district.house_id).security) + building_bonus, 0, 100)
 
 func population_growth_for(house_id: String, base_growth: float) -> float:
 	return base_growth * float(modifiers(house_id).population_growth)

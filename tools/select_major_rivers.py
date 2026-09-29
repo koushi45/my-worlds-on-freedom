@@ -1,25 +1,31 @@
-"""Explicit named main stems. Retain all source geometry; change visibility only."""
+"""Explicit major rivers. Retain all source geometry; change visibility only."""
 import networkx as nx
 
 # Editorial major-river selection, not a guessed flow/width classification.
-# Aliases describe the SAME main stem; tributaries such as Kinu/Edogawa are excluded.
+# Aliases describe the same river. Kinu is an explicitly selected tributary.
 MAIN_STEMS = [
     ('天塩川',['TESHIO G.']),('石狩川',['ISHIKARI G.']),('十勝川',['TOKACHI G.']),('釧路川',['KUSHIRO G.']),
     ('岩木川',['IWAKI G.']),('馬淵川',['MABECHI G.']),('北上川',['KITAKAMI G.']),
     ('雄物川',['OMONO G.']),('最上川',['MOGAMI G.']),('阿武隈川',['ABUKUMA G.']),
     ('利根川',['TONE G.']),('荒川',['ARA K.'],[138.5,35.5,140.1,36.5]),
+    ('鬼怒川',['KINU G.']),('那珂川（関東）',['NAKA G.'],[139.5,36.0,141.0,37.5]),
     ('多摩川',['TAMA G.']),('相模川',['SAGAMI G.']),
     ('信濃川・千曲川',['SHINANO G.','CHIKUMA G.']),('阿賀野川',['AGANO G.']),
     ('富士川・釜無川',['FUJI K.','FUJI G.','KAMANASHI G.']),('天竜川',['TENRYU G.']),('大井川',['OI G.']),
     ('木曽川',['KISO G.']),('長良川',['NAGARA G.']),('揖斐川',['IBI G.']),
     ('神通川',['JINZU G.']),('庄川',['SHO K.']),('九頭竜川',['KUZURYU G.']),
-    ('淀川・宇治川',['YODO G.','UJI G.']),
+    ('淀川・宇治川・瀬田川',['YODO G.','UJI G.']),
     ('紀の川',['KINO G.','YOSHINO G.'],[135.0,33.5,136.5,34.6]),
     ('高梁川',['TAKAHASHI G.']),('旭川',['ASAHI G.']),('江の川',['ENO K.','GONO G.']),('太田川',['OTA G.']),
     ('吉野川',['YOSHINO G.'],[132.5,33.0,134.9,34.5]),('四万十川',['SHIMANTO G.']),
     ('仁淀川',['NIYODO G.']),('肱川',['HIJI G.']),
     ('筑後川',['CHIKUGO G.']),('遠賀川',['ONGA G.']),('球磨川',['KUMA G.']),
-    ('川内川',['SENDAI G.'],[129.5,31.4,131.2,32.5]),('大野川',['ONO G.']),('大淀川',['OYODO G.'])]
+    ('川内川',['SENDAI G.'],[129.5,31.4,131.2,32.5]),('大野川',['ONO G.']),('大淀川',['OYODO G.']),
+    ('米代川',['YONESHIRO G.'])]
+
+# The GSI source calls the Biwa outlet UNK. Original edge 1155 connects
+# the south shore of BIWA KO directly to the upstream endpoint of UJI G.
+BIWA_OUTLET_SOURCE_INDEX = 1155
 
 def matches(row, stem):
     if str(row['nam']).strip() not in stem[1]: return False
@@ -45,6 +51,7 @@ def select(rivers, waters):
         seeds={int(i) for i,r in rivers.iterrows() if matches(r,stem)}
         assert seeds,stem[0]
         selected=set(seeds)
+        editorial=set()
         # Connect named portions only through unnamed parts of their original network.
         # Named tributaries and distributaries are never used as shortcuts.
         allowed=[i for i,r in rivers.iterrows() if i in seeds or str(r['nam']).strip()=='UNK']
@@ -58,9 +65,18 @@ def select(rivers, waters):
             _,paths=nx.single_source_dijkstra(routing,targets[0],weight='weight')
             for target in targets[1:]:
                 for a,b in zip(paths[target],paths[target][1:]): selected.add(routing[a][b]['index'])
+        if stem[0]=='淀川・宇治川・瀬田川':
+            outlet=rivers.loc[BIWA_OUTLET_SOURCE_INDEX]
+            biwa=waters[waters['nam']=='BIWA KO']
+            assert len(biwa)==1 and str(outlet['nam']).strip()=='UNK'
+            assert outlet.geometry.intersects(biwa.geometry.iloc[0])
+            assert any(set(endpoints[BIWA_OUTLET_SOURCE_INDEX]) & set(endpoints[i]) for i in seeds if str(rivers.loc[i,'nam']).strip()=='UJI G.')
+            editorial.add(BIWA_OUTLET_SOURCE_INDEX)
+            selected.update(editorial)
         for index in selected: chosen.setdefault(index,[]).append(stem[0])
         report.append({'name_ja':stem[0],'source_names':stem[1],'geographic_bounds':stem[2] if len(stem)>2 else None,
-            'named_source_indices':sorted(seeds),'connecting_source_indices':sorted(selected-seeds),
+            'named_source_indices':sorted(seeds),'connecting_source_indices':sorted(selected-seeds-editorial),
+            'editorial_source_indices':sorted(editorial),
             'selected_source_indices':sorted(selected)})
     # Area representations of rivers belong to the river toggle, not the lake toggle.
     surfaces={}

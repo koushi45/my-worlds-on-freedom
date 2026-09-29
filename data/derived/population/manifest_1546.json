@@ -2,7 +2,7 @@
   "schema_version": 1,
   "scenario_year": 1546,
   "model_version": "population-1546-v1",
-  "git_commit_at_input_lock": "0cebba92f76ce5e6dd053d51e6ec4fb15e5f7ea6",
+  "git_commit_at_input_lock": "0ccc30bf3cb1e069e99cfa1b05437f3cfa113826",
   "retrieved_on": "2026-09-22",
   "active_district_ids": [
     "aki/candidate-district-candidate-g54001",
@@ -81,7 +81,6 @@
     "chikugo/candidate-district-candidate-g64010",
     "chikugo/merged-51b95a7f1202c48d",
     "chikugo/merged-c685b1ab5bb0d80a",
-    "chikugo/unresolved-42cfaa8c657745ea",
     "chikuzen/candidate-district-candidate-g63001",
     "chikuzen/candidate-district-candidate-g63002",
     "chikuzen/candidate-district-candidate-g63003",
@@ -95,7 +94,6 @@
     "chikuzen/candidate-district-candidate-g63015",
     "chikuzen/merged-e3451d53567162b9",
     "chikuzen/merged-efad3c15cc7a3e86",
-    "chikuzen/unresolved-42cfaa8c657745ea",
     "echigo/candidate-district-candidate-g39001",
     "echigo/candidate-district-candidate-g39002",
     "echigo/candidate-district-candidate-g39003",
@@ -474,7 +472,6 @@
     "musashi/candidate-district-candidate-g16027",
     "musashi/candidate-district-candidate-g16028",
     "musashi/merged-d94f6522d3efe430",
-    "musashi/unresolved-42cfaa8c657745ea",
     "nagato/candidate-district-candidate-g56001",
     "nagato/candidate-district-candidate-g56003",
     "nagato/candidate-district-candidate-g56004",
@@ -520,7 +517,6 @@
     "sagami/candidate-district-candidate-g15008",
     "sagami/candidate-district-candidate-g15009",
     "sagami/merged-f953c50bb6b68769",
-    "sagami/unresolved-42cfaa8c657745ea",
     "sanuki/candidate-district-candidate-g60001",
     "sanuki/candidate-district-candidate-g60002",
     "sanuki/candidate-district-candidate-g60003",
@@ -665,9 +661,9 @@
     "壱岐国"
   ],
   "input_sha256": {
-    "data/derived/scenarios/district_connectivity_1546.json": "d60a386bbce2a68ba6744d6fe2b1144a38e8c1b108e3412255ea57e0519e12f0",
-    "data/derived/scenarios/house_selection_1546.json": "aec8f8f1789e15abf2270f52429da017617fefeb8f0312c7b653cc8f30f4b1e9",
-    "data/derived/scenarios/independent_districts_1546.json": "01be430754943567f2f057bab4c6745fd4af8b3fa5271a93ff535505df8408fd",
+    "data/derived/scenarios/district_connectivity_1546.json": "b182d185aa5019fa746ec33d66235dfc1df0412d8aa758a2194e2996294413db",
+    "data/derived/scenarios/house_selection_1546.json": "323081a11c517fdfa03fd1a58c6dfbe64f2a07e5ecdad22912e555b598eea116",
+    "data/derived/scenarios/independent_districts_1546.json": "2e47ab9c62b5803b18632e26a771ba47a60fa748d828fa1d6750ed1f2a3a5a45",
     "data/work/population/assumptions_1546.json": "5e3dc8055052944aa0cf15038b95c90ccafdc4178e9dbaf8b5ac74fe753a4d66",
     "data/work/population/controls_1546.json": "e927042ec0684eda92ce7a5eedb546dbb09d4d46a04e9aa8be1ac57b538c733c",
     "data/work/population/district_crosswalk.json": "fe710856d0fb9a4bd37f79c275ee7f32e5654d52d171640b1f9b92da2ee0c1ad",
@@ -675,9 +671,9 @@
     "data/work/population/sources.json": "bc8840a0a583875f1cdbfc77dc4039a01777a514d7b7cd730e9e86770019c004"
   },
   "output_sha256": {
-    "data/derived/population/district_population_1546.json": "c3732855c3c165b3a4f535829fb84913368e1c1e54eca7f3a93c0efcb4efcc85"
+    "data/derived/population/district_population_1546.json": "e09e9e79dedb6afe3990c6fbf4b99bfb49aedeff058208017182c7c09a5e1e40"
   },
-  "district_count": 653,
+  "district_count": 649,
   "case_totals": {
     "low": 9050987,
     "adopted": 11108276,
@@ -686,7 +682,7 @@
   "evidence_grade_counts": {
     "A": 0,
     "B": 0,
-    "C": 652,
-    "D": 1
+    "C": 649,
+    "D": 0
   }
 }

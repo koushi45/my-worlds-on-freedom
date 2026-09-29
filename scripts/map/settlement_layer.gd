@@ -27,6 +27,8 @@ func point(raw: Array) -> Vector2:
 	return Vector2(float(raw[0]),float(raw[1]))
 
 func eligible(site: Dictionary) -> bool:
+	# Castles and ports are district buildings, never independent map markers.
+	if "castle" in site["roles"] or "port" in site["roles"]: return false
 	if site["point"] == null or site["adoption_status"] == "excluded": return false
 	if site["adoption_status"] == "deferred" and not show_deferred: return false
 	for role in site["roles"]:

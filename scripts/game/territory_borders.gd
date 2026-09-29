@@ -36,9 +36,16 @@ var fill_enabled := false
 var fill_meshes: Dictionary = {}
 var independent_fill_files: Dictionary = {}
 var coastline_only_ids: Dictionary = {}
+var review_highlights: Array = []
+var review_color := Color(1.0, 0.0, 0.0, 0.5)
+var disconnected_offices: Dictionary = {}
 
 func _ready() -> void:
 	z_index = 22
+	var review: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/derived/scenarios/district_review_highlights.json"))
+	review_highlights = review.district_ids
+	review_color = Color(review.get("color", "#ff0000"))
+	review_color.a = float(review.get("opacity", 0.5))
 	neutral_style = ShaderMaterial.new()
 	neutral_style.shader = preload("res://scripts/map/line_mesh.gdshader")
 	neutral_style.set_shader_parameter("dashed",true)
@@ -318,6 +325,11 @@ func _draw() -> void:
 				else:
 					var mesh := fill_mesh_for(str(id))
 					if mesh != null: draw_mesh(mesh,null,Transform2D.IDENTITY,fill_color)
+	# Developer-only connectivity overlay, including at country overview zoom.
+	for id in disconnected_offices:
+		if not bounds.has(id) or not bounds[id].intersects(visible_rect): continue
+		var mesh := fill_mesh_for(str(id))
+		if mesh != null: draw_mesh(mesh,null,Transform2D.IDENTITY,Color(1.0,0.0,0.0,0.2))
 	_draw_selection_pulse(active_projected)
 	for state in ["neutral","enemy","ally","self"]:
 		for id in active_projected:
@@ -327,6 +339,13 @@ func _draw() -> void:
 				for ring in r.rings:
 					if ring.size()<2: continue
 					draw_polyline(ring,BORDER_COLOR,DISTRICT_BORDER_WIDTH/scale_value,true)
+	# Review districts use translucent red at every zoom, independently of owner fills.
+	for id in review_highlights:
+		if not bounds.has(id) or not bounds[id].intersects(visible_rect): continue
+		var mesh := fill_mesh_for(str(id))
+		if mesh != null: draw_mesh(mesh, null, Transform2D.IDENTITY, review_color)
+		for ring in projected[id].rings:
+			if ring.size() >= 2: draw_polyline(ring, review_color, 2.0/scale_value, true)
 
 func _draw_selection_pulse(active_projected: Dictionary) -> void:
 	var selected: String = main.political_layer.selected_id if country_mode else main.district_layer.selected_key

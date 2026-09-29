@@ -49,6 +49,9 @@ def build():
     data,coast_report=align_mainlands(data)
     from curate_island_districts import curate
     data=curate(data)
+    from merge_kanzaki_districts import merge as merge_kanzaki, refresh_related
+    data=merge_kanzaki(data)
+    refresh_related(data)
     from align_district_coastlines import build_reference_registry
     coast_registry=build_reference_registry(data)
     dest=ROOT/'data/derived/scenarios/independent_districts_1546.json'

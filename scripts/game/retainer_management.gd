@@ -18,12 +18,14 @@ var economy: Node
 var appointments: Dictionary = {}
 var technology: Dictionary = {}
 var house_members: Dictionary = {}
+var officer_districts: Dictionary = {} # Sortie placement only; unrelated to governorships.
 var loyalty_state: Dictionary = {}
 var district_governors: Dictionary = {}
 var province_governors: Dictionary = {}
 var rebel_houses: Dictionary = {}
 var prestige: Node
 var technology_tree: Node
+var army_campaign: Node
 
 func setup(governance_registry: RefCounted, officer_registry: RefCounted, district_economy: Node) -> void:
 	governance = governance_registry
@@ -32,6 +34,7 @@ func setup(governance_registry: RefCounted, officer_registry: RefCounted, distri
 	appointments.clear()
 	technology.clear()
 	house_members.clear()
+	officer_districts.clear()
 	loyalty_state.clear()
 	district_governors.clear()
 	province_governors.clear()
@@ -46,6 +49,50 @@ func setup(governance_registry: RefCounted, officer_registry: RefCounted, distri
 		var house_id: Variant = affiliation.get("house_id")
 		if house_id is String and house_members.has(house_id) and affiliation.get("can_serve_at_start", false):
 			if officer.id != ruler_id(house_id): house_members[house_id].append(officer.id)
+			var district_id: String = str(affiliation.get("district_key", ""))
+			if governance.districts.has(district_id) and governance.districts[district_id].house_id == house_id:
+				officer_districts[officer.id] = district_id
+	for house_id in governance.houses:
+		var ruler_officer_id := ruler_id(house_id)
+		if ruler_officer_id.is_empty() or not officers.lookup.has(ruler_officer_id): continue
+		var ruler_affiliation: Dictionary = officers.lookup[ruler_officer_id].get("affiliation_1546", {})
+		var ruler_district: String = str(ruler_affiliation.get("district_key", ""))
+		if governance.districts.has(ruler_district) and governance.districts[ruler_district].house_id == house_id:
+			officer_districts[ruler_officer_id] = ruler_district
+
+func can_place_officer(house_id: String, officer_id: String) -> bool:
+	return officer_id == ruler_id(house_id) and officers.lookup.has(officer_id) or officer_id in house_members.get(house_id, [])
+
+func officers_in_district(house_id: String, district_id: String) -> Array[String]:
+	var result: Array[String] = []
+	if not governance.districts.has(district_id) or governance.districts[district_id].house_id != house_id: return result
+	for officer_id in officer_districts:
+		if officer_districts[officer_id] == district_id and can_place_officer(house_id, officer_id): result.append(officer_id)
+	result.sort_custom(func(a: String, b: String):
+		var av: Variant = officers.ability(a, "command")
+		var bv: Variant = officers.ability(b, "command")
+		return float(av if av != null else 0) > float(bv if bv != null else 0))
+	return result
+
+func place_officer(house_id: String, officer_id: String, district_id: String) -> Error:
+	if not can_place_officer(house_id, officer_id): return ERR_INVALID_PARAMETER
+	if not district_id.is_empty() and (not governance.districts.has(district_id) or governance.districts[district_id].house_id != house_id): return ERR_UNAUTHORIZED
+	if army_campaign != null:
+		for unit in army_campaign.units.values():
+			if officer_id in unit.officers: return ERR_BUSY
+	if district_id.is_empty(): officer_districts.erase(officer_id)
+	else: officer_districts[officer_id] = district_id
+	updated.emit()
+	return OK
+
+func reconcile_officer_placements() -> void:
+	var changed := false
+	for officer_id in officer_districts.keys():
+		var district_id: String = officer_districts[officer_id]
+		if not governance.districts.has(district_id) or not can_place_officer(governance.districts[district_id].house_id, officer_id):
+			officer_districts.erase(officer_id)
+			changed = true
+	if changed: updated.emit()
 
 func ruler_id(house_id: String) -> String:
 	var ruler: Variant = governance.houses.get(house_id, {}).get("ruler")
@@ -173,6 +220,7 @@ func transfer_service(officer_id: String, from_house: String, to_house: String, 
 	if not house_members.has(from_house) or not house_members.has(to_house) or officer_id not in house_members[from_house] or from_house == to_house: return ERR_INVALID_PARAMETER
 	_remove_governorships(officer_id)
 	house_members[from_house].erase(officer_id)
+	officer_districts.erase(officer_id)
 	appointments.get(from_house, {}).erase(officer_id)
 	house_members[to_house].append(officer_id)
 	var state: Dictionary = loyalty_state[officer_id]
@@ -262,6 +310,7 @@ func declare_independence(house_id: String, officer_id: String, holdings: Array)
 	if prestige != null: prestige.values[rebel_id] = 50
 	_remove_governorships(officer_id)
 	house_members[house_id].erase(officer_id)
+	officer_districts.erase(officer_id)
 	appointments.get(house_id, {}).erase(officer_id)
 	for district_id in holdings:
 		var district: Dictionary = governance.districts[district_id]
