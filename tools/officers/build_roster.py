@@ -1,6 +1,10 @@
 """Rebuild the roster offline from immutable discovery snapshots and editorial decisions."""
 import collections, hashlib, html, json, re
 from pathlib import Path
+try:
+    from tools.officers.reassess import apply_policy
+except ModuleNotFoundError:
+    from reassess import apply_policy
 
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/'data/sources/officers'
@@ -229,6 +233,10 @@ def main():
         provenance.append({'external_id':q,'name':row['name'],'revision':entity.get('lastrevid'),
             'source_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'birth_claims':birth_claims,'death_claims':death_claims,
             'result':temporal,'reason':note,'editorial_decision':decision})
+    reviews=read(MASTER/'major_failure_reviews.json')
+    score_report=apply_policy(records, reviews=reviews)
+    sources += [s for s in reviews['sources'] if s['id'] not in {s['id'] for s in sources}]
+    write(DOCS/'ability_distribution.json',score_report)
     # Stable order independent of SPARQL result ordering.
     records.sort(key=lambda r:(r['display_name'],r['id'])); excluded.sort(key=lambda r:(r['display_name'],r['id']))
     stats=dict(collections.Counter(r['temporal_status'] for r in records+excluded))
@@ -241,7 +249,7 @@ def main():
         'assessment_basis':'lifetime','completeness':'open_catalog_not_complete_census',
         'coverage_note':'今回の収集台帳内の対象を全件登録。史実上の全武将の網羅は未保証。生年は幅の下限、没年は上限をゲーム値に採用し、欠落値は参照台帳または再現可能な推定で補完。原値と推定フラグを併記。',
         'attribute_names':ATTRS,'score_scale':{'min':1,'max':30,'step':1,'unknown':None},
-        'total_scale':{'min':5,'max':150,'method':'sum_of_five','unknown':None},'stats':stats,'sources':sources,'officers':records,
+        'total_scale':{'min':5,'max':150,'method':'sum_of_five','unknown':None},'score_policy':score_report['policy_id'],'score_calibration':score_report['calibration'],'stats':stats,'sources':sources,'officers':records,
         'affiliation_stats':affiliation_data['stats'],'lineage_stats':lineage_data['stats'],'relationship_stats':relationship_data['stats']}
     write(OUTPUT/'officers_1546.json',data)
     write(DOCS/'excluded_candidates.json',excluded)
@@ -271,6 +279,7 @@ def main():
     render_major_sixty(data, "fifteenth_100", "FIFTEENTH_100.md", "追加の著名武将100人・生涯能力評価（第15組）")
     render_major_sixty(data, "sixteenth_100", "SIXTEENTH_100.md", "追加の著名武将100人・生涯能力評価（第16組）")
     render_major_sixty(data, "seventeenth_100", "SEVENTEENTH_100.md", "未評価から選定した100人・生涯能力評価（第17組）")
+    render_major_sixty(data, "remaining_40", "REMAINING_40.md", "残件整理で登録した18人・現行の生涯能力評価")
     render_notable(data)
     write(DOCS/'validation_summary.json',{'stats':stats,'all_candidates_classified':len(records)+len(excluded)==len(index),
         'unique_ids':len({r['id'] for r in records})==len(records),'scoring_is_editorial':True,
@@ -294,9 +303,9 @@ def render_markdown(data):
         '- 政治：領国運営・政策の実施と継続。制定しただけの法と実効を区別する。',
         '- 人望：家臣の定着、登用した人材の活用、組織内の支持。本人の主君への忠義や一般的人気と区別する。',
         '', '1〜30点、1点刻みの編集評価。数値は出典の記載ではない。資料の短い要約とゲーム上の推定を別欄に保存した。',
-        '第2〜第16組は成否不明12前後・失敗のみ5前後、任務参加のみは標準遂行と解釈して重要性と責任を評価する。既存の評価は保持。',
+        '全員を平均15点を目標とする共通尺度で再評価。明確な功績・失敗を残し、成否材料なしは15前後を中心とする固定補完、任務参加は役割・責任から遂行を推定する。重大な失態・挽回なしは個別の確認後に全能力3〜9点。詳しくは SCORE_POLICY_MEAN15.md を参照。',
         '総合能力は5能力の単純合計（最大150）。一項目でも未評価なら総合も未評価。',
-        '未評価は `null`。0点・一律の中間値・ランダム値には置き換えない。幼少者も生涯能力案を表示するが、出仕可能とは扱わない。',
+        '未評価は `null`。評価済みの成否材料なし項目は、武将ID・能力別に再現可能なゲーム用補完値を持つ。史料の記載とは区別する。幼少者も生涯能力案を表示するが、出仕可能とは扱わない。',
         '幼少の絞り込みは満年齢上限15歳未満の便宜的分類であり、一律の元服年齢や出仕年齢ではない。信長は開始の契機となる元服を個別に記録する。',
         '', '## 能力一覧','', '| 武将 | 生年 | 没年 | 開始時 | 統率 | 武勇 | 知略 | 政治 | 人望 | 総合 |', '|---|---|---|---|---:|---:|---:|---:|---:|---:|']
     for r in data['officers']:
@@ -320,9 +329,9 @@ def render_major_sixty(data, cohort="major_60", filename="MAJOR_60.md", title="�
         '統率＝大軍の運用、武勇＝直属部隊の戦術成果、知略＝外交・戦略、政治＝統治・政策、人望＝部下の定着と登用人材の活用。',
         '目安：1〜5は非常に限定的、6〜10は限定的、11〜15は小規模・補助的、16〜20は一定の成果、21〜25は有力、26〜29は特に顕著、30は今回の比較で最上位。資料不足の項目には暫定推定を置くため、この目安を歴史的事実の証明には使いません。',
         '', '| 武将 | 統率 | 武勇 | 知略 | 政治 | 人望 | 総合 | 開始時の年代判定 |', '|---|---:|---:|---:|---:|---:|---:|---|']
-    if cohort in ('next_60','third_60','fourth_100','fifth_100','sixth_100','seventh_100','eighth_100','ninth_100','tenth_100','eleventh_100','twelfth_100','thirteenth_100','fourteenth_100','fifteenth_100','sixteenth_100','seventeenth_100'):
-        lines[6:6]=['新基準：成否の材料なしは12前後、参照範囲で失敗のみの項目は5前後。任務参加が確認でき目立つ失策が伝わらない場合は標準遂行と解釈し、戦域・規模・責任に応じ14〜24点。成果・失敗の記録があれば個別に加減する。参加から標準遂行への推定はユーザー指定のゲーム上の解釈。既存の評価は再査定していない。','']
-        lines=[line for line in lines if not line.startswith('目安：')]
+    lines[3]='登録時の組分け・選定順・史料は調査履歴として保持。能力値は全員を現行の平均15点方針で再評価した。1546年の存命・出仕判定と生涯能力は別に扱う。'
+    lines[5]='共通尺度：標準遂行は14〜16点前後、明確な成果は17〜21点、顕著な成果は22〜26点、卓越した成果は27〜30点。参加のみの場合は成果を断定せず補助的・小規模の役割も含め10〜18点内で遂行を推定する。'
+    lines[6:6]=['現行基準：全員を平均15点中心の尺度で再評価。成否材料なしは中心15前後・標準偏差3の固定補完。任務参加は責任別の遂行推定。重大な失態・挽回なしは個別判定後に全能力3〜9点。組の選定記録と旧評価は調査入力として保存し、以下の能力値には現行方針を適用する。','']
     for r in people:
         a=r['assessment']
         lines.append('| '+' | '.join([r['display_name']]+[str(a['scores'][k]) for k in ATTRS]+[str(r['total_ability']),STATUS[r['temporal_status']]])+' |')
@@ -331,7 +340,7 @@ def render_major_sixty(data, cohort="major_60", filename="MAJOR_60.md", title="�
     for r in people:
         a=r['assessment'];lines+=['', '### '+r['display_name'],'',a['evidence'],'']
         for k,label in ATTRS.items():
-            confidence=({'achievement':'功績あり','mixed':'功績・失敗を比較','participation_standard':'参加実績から標準遂行と解釈','no_record':'成否材料なし','failure_only':'参照範囲で失敗のみ'}.get(a.get('score_basis',{}).get(k)) or ('暫定推定' if a['score_confidence'][k]=='limited_evidence' else '編集評価'))
+            confidence=({'achievement':'功績あり','mixed':'功績・失敗を比較','participation_standard':'参加実績から遂行を推定','no_record':'成否材料なし・ゲーム用補完','failure_only':'参照範囲で失敗のみ','major_unrecovered_failure':'重大な失態・挽回なし','historical_editorial':'史実に基づく編集評価'}.get(a.get('score_basis',{}).get(k)) or ('暫定推定' if a['score_confidence'][k]=='limited_evidence' else '編集評価'))
             lines.append(f"- {label} {a['scores'][k]}：{a['score_reasons'][k]}（{confidence}）")
         lines+=['',a['caveat'],'']
         lines += [f"- [{sources[ref]['title']}]({sources[ref]['url']})" for ref in a['source_refs']]

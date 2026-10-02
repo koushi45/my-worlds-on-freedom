@@ -32,6 +32,14 @@ func run() -> void:
 	var army = main.army_campaign
 	army.set_process(false)
 	var grid_script = preload("res://scripts/map/hex_grid.gd")
+	var detail_definition: Dictionary = main.catalog.detail_tiles[0]
+	var original_zoom: Vector2 = main.camera.zoom
+	main.camera.zoom = Vector2.ONE * 2.49
+	var normal_texture_path: String = main._tile_path(detail_definition)
+	main.camera.zoom = Vector2.ONE * 2.5
+	var close_texture_path: String = main._tile_path(detail_definition)
+	main.camera.zoom = original_zoom
+	if not require(normal_texture_path.ends_with(".res") and close_texture_path == normal_texture_path.replace(".res", "_close.res"), "250 percent selects the dedicated close terrain resource"): return
 	if not require(main.shared_road_layer.get_parent() == main.hex_tile_layer and main.connection_layer.get_parent() == main.hex_tile_layer, "roads are children of hex layer"): return
 	for stroke in main.shared_road_layer.data.strokes:
 		var previous: Variant = null
@@ -103,14 +111,15 @@ func run() -> void:
 	if not require(session.read_save(1).armies.units.has(unit_id), "marching army reads from save"): return
 	var grid = preload("res://scripts/map/hex_grid.gd")
 	var terrain = preload("res://scripts/map/hex_terrain.gd")
-	if not require(terrain.name_for(terrain.PLAIN) == "平地" and terrain.name_for(terrain.MOUNTAIN) == "山地" and terrain.name_for(terrain.RIVER) == "川" and terrain.name_for(terrain.HIGH_MOUNTAIN) == "高山地", "all terrain classes have tile names"): return
-	if not require(terrain.days_for(terrain.PLAIN, true) == 1.0 and terrain.days_for(terrain.PLAIN, false) == 1.2 and terrain.days_for(terrain.MOUNTAIN, true) == terrain.days_for(terrain.PLAIN, false) and terrain.days_for(terrain.MOUNTAIN, false) == 2.5 and terrain.days_for(terrain.RIVER, true) == 5.0 and terrain.days_for(terrain.HIGH_MOUNTAIN, true) == 10.0, "terrain and road travel times follow the requested ordering"): return
+	if not require(terrain.name_for(terrain.PLAIN) == "平地" and terrain.name_for(terrain.MOUNTAIN) == "山地" and terrain.name_for(terrain.RIVER) == "川" and terrain.name_for(terrain.HIGH_MOUNTAIN) == "高山地" and terrain.name_for(terrain.NO_LAND) == "陸地なし", "all terrain classes have tile names"): return
+	if not require(terrain.days_for(terrain.PLAIN, true) == 1.0 and terrain.days_for(terrain.PLAIN, false) == 1.5 and terrain.days_for(terrain.MOUNTAIN, true) == 1.5 and terrain.days_for(terrain.MOUNTAIN, false) == 2.5 and terrain.days_for(terrain.RIVER, true) == 1.5 and terrain.days_for(terrain.RIVER, false) == 5.0 and is_inf(terrain.days_for(terrain.HIGH_MOUNTAIN, true)) and is_inf(terrain.days_for(terrain.NO_LAND, true)), "terrain and road travel times follow the requested values"): return
+	if not require(main.hex_tile_layer.terrain_for(Vector2i(-1000, -1000)) == terrain.NO_LAND, "outside coverage is impassable"): return
 	var mountain_cell := Vector2i.ZERO
 	var mountain_neighbor := Vector2i.ZERO
 	for cell in main.hex_tile_layer.visible_cells:
 		if main.hex_tile_layer.terrain_for(cell) != terrain.MOUNTAIN: continue
 		var neighbor: Vector2i = cell + Vector2i(1, 0)
-		if main.hex_tile_layer.visible_cells.has(neighbor):
+		if main.hex_tile_layer.can_enter(neighbor):
 			mountain_cell = cell
 			mountain_neighbor = neighbor
 			break
@@ -123,12 +132,114 @@ func run() -> void:
 	road.cells[mountain_neighbor] = true
 	road.cells[mountain_cell] = true
 	road.excluded_edges.erase(edge)
-	if not require(is_equal_approx(army.travel_days_for_leg(grid.key(mountain_neighbor), grid.key(mountain_cell)), 1.2), "connected road permits plain-speed mountain travel"): return
+	if not require(is_equal_approx(army.travel_days_for_leg(grid.key(mountain_neighbor), grid.key(mountain_cell)), 1.5), "connected road permits plain-speed mountain travel"): return
 	road.excluded_edges[edge] = true
 	if not require(is_equal_approx(army.travel_days_for_leg(grid.key(mountain_neighbor), grid.key(mountain_cell)), 2.5), "disconnected road does not accelerate mountain travel"): return
 	if not old_from: road.cells.erase(mountain_neighbor)
 	if not old_to: road.cells.erase(mountain_cell)
 	if not old_excluded: road.excluded_edges.erase(edge)
+	var river_cell := Vector2i.ZERO
+	var river_neighbor := Vector2i.ZERO
+	for cell in main.hex_tile_layer.visible_cells:
+		if main.hex_tile_layer.terrain_for(cell) != terrain.RIVER: continue
+		var neighbor: Vector2i = cell + Vector2i(1, 0)
+		if main.hex_tile_layer.can_enter(neighbor):
+			river_cell = cell
+			river_neighbor = neighbor
+			break
+	if not require(river_cell != Vector2i.ZERO, "mapped river tile exists"): return
+	var river_from_road: bool = road.cells.has(river_neighbor)
+	var river_to_road: bool = road.cells.has(river_cell)
+	var river_edge: Vector4i = road.edge_key(river_neighbor, river_cell)
+	var river_excluded: bool = road.excluded_edges.has(river_edge)
+	road.cells[river_neighbor] = true
+	road.cells[river_cell] = true
+	road.excluded_edges.erase(river_edge)
+	if not require(is_equal_approx(army.travel_days_for_leg(grid.key(river_neighbor), grid.key(river_cell)), 1.5), "bridge permits river crossing in 1.5 days"): return
+	road.excluded_edges[river_edge] = true
+	if not require(is_equal_approx(army.travel_days_for_leg(grid.key(river_neighbor), grid.key(river_cell)), 5.0), "river without a connected bridge remains slow"): return
+	if not river_from_road: road.cells.erase(river_neighbor)
+	if not river_to_road: road.cells.erase(river_cell)
+	if not river_excluded: road.excluded_edges.erase(river_edge)
+	var high_cell := Vector2i.ZERO
+	var detour_from := Vector2i.ZERO
+	var detour_to := Vector2i.ZERO
+	for cell in main.hex_tile_layer.high_mountain_cells:
+		for delta in grid.NEIGHBORS:
+			var from_cell: Vector2i = cell - delta
+			var to_cell: Vector2i = cell + delta
+			if main.hex_tile_layer.can_enter(from_cell) and main.hex_tile_layer.can_enter(to_cell):
+				high_cell = cell
+				detour_from = from_cell
+				detour_to = to_cell
+				break
+		if high_cell != Vector2i.ZERO: break
+	if not require(high_cell != Vector2i.ZERO, "high mountain with passable neighboring tiles exists"): return
+	if DisplayServer.get_name() != "headless" and "--capture" in OS.get_cmdline_user_args():
+		var preview_high := high_cell
+		var best_neighbors := -1
+		for candidate in main.hex_tile_layer.high_mountain_cells:
+			var neighbor_count := 0
+			for delta in grid.NEIGHBORS:
+				if main.hex_tile_layer.high_mountain_cells.has(candidate + delta): neighbor_count += 1
+			if neighbor_count > best_neighbors or (neighbor_count == best_neighbors and candidate.x < preview_high.x):
+				preview_high = candidate
+				best_neighbors = neighbor_count
+		var original_camera_position: Vector2 = main.camera.position
+		var original_camera_zoom: Vector2 = main.camera.zoom
+		main.camera.position = main.elevation.project(grid.center(preview_high))
+		main.set_map_zoom(3.0)
+		main.camera.force_update_scroll()
+		for frame in 120: await process_frame
+		if not require(main.detail_active, "mountain preview uses detailed terrain"): return
+		var has_detail_tile := false
+		for tile_id in main.loaded_tiles:
+			if str(tile_id).begins_with("detail-"):
+				has_detail_tile = true
+				break
+		if not require(has_detail_tile, "mountain preview streamed detailed texture"): return
+		for tile_id in main.loaded_tiles:
+			if str(tile_id).begins_with("detail-") and not require(str(main.loaded_tiles[tile_id].get_meta("path")).ends_with("_close.res"), "300 percent displays the close terrain texture"): return
+		await capture("hex_high_mountain")
+		main.camera.position = original_camera_position
+		main.set_map_zoom(original_camera_zoom.x)
+		main.camera.force_update_scroll()
+	if not require(not army.order(unit_id, grid.key(high_cell)) and army.last_error == "高山地は通行できません。", "high mountain cannot be ordered as a target"): return
+	var original_site: String = army.units[unit_id].site_id
+	army.units[unit_id].site_id = grid.key(detour_from)
+	var blocked_route: Array[String] = [grid.key(high_cell)]
+	if not require(not army.order_path(unit_id, blocked_route) and army.last_error == "高山地は通行できません。", "hand-drawn route cannot enter an adjacent high mountain"): return
+	army.units[unit_id].site_id = original_site
+	var detour: Array = army.route(grid.key(detour_from), grid.key(detour_to))
+	if not require(not detour.is_empty() and detour.back() == grid.key(detour_to), "click route finds a high-mountain detour"): return
+	var detour_previous := detour_from
+	for node_id in detour:
+		var next_cell: Vector2i = grid.parse(node_id)
+		if not require(grid.distance(detour_previous, next_cell) == 1 and not main.hex_tile_layer.high_mountain_cells.has(next_cell), "detour stays on adjacent passable tiles"): return
+		detour_previous = next_cell
+	army.units[unit_id].next_site = grid.key(high_cell)
+	army._march_step(1.0)
+	if not require(army.units[unit_id].site_id == army.units[unit_id].origin and army.units[unit_id].next_site.is_empty(), "march guard does not enter a high mountain"): return
+	var no_land_cell := Vector2i.ZERO
+	var shore_cell := Vector2i.ZERO
+	for cell in main.hex_tile_layer.visible_cells:
+		if main.hex_tile_layer.terrain_for(cell) != terrain.NO_LAND: continue
+		for delta in grid.NEIGHBORS:
+			if main.hex_tile_layer.can_enter(cell + delta):
+				no_land_cell = cell
+				shore_cell = cell + delta
+				break
+		if no_land_cell != Vector2i.ZERO: break
+	if not require(no_land_cell != Vector2i.ZERO, "land-free tile beside a shore exists"): return
+	if not require(not army.order(unit_id, grid.key(no_land_cell)) and army.last_error == "陸地のないタイルは通行できません。", "land-free target cannot be ordered"): return
+	if not require(army.route(grid.key(shore_cell), grid.key(no_land_cell)).is_empty(), "route cannot end on water"): return
+	army.units[unit_id].site_id = grid.key(shore_cell)
+	var water_route: Array[String] = [grid.key(no_land_cell)]
+	if not require(not army.order_path(unit_id, water_route) and army.last_error == "陸地のないタイルは通行できません。", "hand-drawn route cannot enter water"): return
+	army.units[unit_id].site_id = original_site
+	army.units[unit_id].next_site = grid.key(no_land_cell)
+	army._march_step(1.0)
+	if not require(army.units[unit_id].site_id == army.units[unit_id].origin and army.units[unit_id].next_site.is_empty(), "march guard does not enter water"): return
 	var origin_cell: Vector2i = grid.cell_at(army.node_point(army.units[unit_id].origin))
 	for color in ["blue", "green", "red", "neutral"]:
 		for side in [64, 96, 128, 192, 256]:
@@ -235,11 +346,13 @@ func run() -> void:
 	main.camera.zoom = Vector2.ONE * 2.0
 	main.hex_tile_layer.update_view(main.get_visible_world_rect(), main.camera.zoom.x)
 	if not require(main.hex_tile_layer.visible, "hex grid shown at 200 percent"): return
+	if not require(main.hex_tile_layer.terrain_legend.visible, "terrain legend shown at 200 percent"): return
 	if not require(main.shared_road_layer.is_visible_in_tree() or main.developer_tools.road_layer.is_visible_in_tree(), "roads visible at 200 percent"): return
 	await process_frame
 	await capture("hex_tiles")
 	main.hex_tile_layer.update_view(main.get_visible_world_rect(), 1.99)
 	if not require(not main.hex_tile_layer.visible, "zooming out hides the grid again"): return
+	if not require(not main.hex_tile_layer.terrain_legend.visible, "terrain legend hidden below 200 percent"): return
 	main.hex_tile_layer.update_view(main.get_visible_world_rect(), main.camera.zoom.x)
 	main.camera.position.y -= 400
 	main.hex_tile_layer.update_view(main.get_visible_world_rect(), main.camera.zoom.x)

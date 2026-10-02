@@ -47,6 +47,16 @@ func _initialize() -> void:
 			var key:String=tile["tile_id"]+("_tilt" if tilt else "_flat")
 			var path:=output+"tiles/"+key+".res"
 			save_chunk(chunk,path);manifest["tiles"][key]=path
+			for tier in ["close", "high"]:
+				if not tile.has(tier+"_density"): continue
+				var close_chunk=Chunk.new()
+				close_chunk.mesh=chunk.mesh
+				close_chunk.coasts=chunk.coasts
+				close_chunk.textures.append(load("res://"+tile["files"]["relief_"+tier]))
+				var side: int=tile[tier+"_output_size"][0]
+				close_chunk.resident_bytes=chunk.resident_bytes-1032*1032*4+side*side*4
+				var close_path: String = output+"tiles/"+key+"_"+tier+".res"
+				save_chunk(close_chunk,close_path);manifest["tiles"][key+"_"+tier]=close_path
 		surface.mesh_cache.clear()
 		surface.cache_costs.clear();surface.cache_bytes=0
 	print("Baked tiles: ",tiles.size())

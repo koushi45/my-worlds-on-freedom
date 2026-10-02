@@ -40,3 +40,10 @@ textures/vram_compression/import_etc2_astc=true
 [gui]
 
 theme/default_font_multichannel_signed_distance_field=true
+
+[shader_globals]
+
+terrain_haze_strength={
+"type": "float",
+"value": 0.0
+}

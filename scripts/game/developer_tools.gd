@@ -109,7 +109,7 @@ func set_contour_mode(value: bool) -> void:
 	main.dragging = false
 	main.district_click_serial += 1
 	if value:
-		previous_oblique = main.elevation.enabled
+		previous_oblique = main.is_oblique()
 		previous_basemap_visible = main.tile_root.visible
 		main.set_oblique(false)
 		if contour_layer == null:

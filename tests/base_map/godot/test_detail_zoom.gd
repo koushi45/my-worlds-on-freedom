@@ -7,11 +7,16 @@ func frames() -> void:
 	await process_frame
 	await process_frame
 	await preload("res://tests/base_map/godot/wait_map.gd").settled(root.get_child(root.get_child_count()-1))
+	# Replaced tiles remain for two frames to cover the handover.
+	await process_frame
+	await process_frame
 	if "--capture" in OS.get_cmdline_user_args(): await RenderingServer.frame_post_draw
 
 func _initialize() -> void:
 	var main = load("res://scenes/main/main.tscn").instantiate()
 	root.add_child(main)
+	main.set_process_unhandled_input(false)
+	root.gui_disable_input = true
 	await process_frame
 	check(main.WORLD_SIZE == Vector2(8192,8192),"world coordinates unchanged")
 	check(main.catalog.detail_tiles.size() == 211,"national detail coverage loaded")
@@ -20,22 +25,22 @@ func _initialize() -> void:
 	main.focus_road_region("site:kishiwada_castle")
 	var anchor := Vector2(760,370)
 	for i in range(30): main._zoom_at(main.camera.zoom.x*1.3,anchor)
-	check(is_equal_approx(main.camera.zoom.x,4),"wheel stops at 400 percent")
+	check(is_equal_approx(main.camera.zoom.x,8),"wheel stops at 800 percent")
 	var ground: Vector2 = main._screen_to_world(anchor)
 	main._zoom_at(3,anchor)
 	check(ground.distance_to(main._screen_to_world(anchor))<.01,"zoom preserves pointer ground position")
 	main.set_map_zoom(999)
-	check(is_equal_approx(main.camera.zoom.x,4),"central zoom cap")
+	check(is_equal_approx(main.camera.zoom.x,8),"central zoom cap")
 	main._on_viewport_size_changed()
-	check(is_equal_approx(main.camera.zoom.x,4),"resize retains capped zoom")
+	check(is_equal_approx(main.camera.zoom.x,8),"resize retains capped zoom")
 	for id in ["kishiwada_castle","tsutsui_castle"]:
 		main.focus_road_region("site:"+id)
-		check(main.camera.zoom.x<=4,"site focus cap")
+		check(main.camera.zoom.x<=8,"site focus cap")
 	for route in main.connection_layer.data["routes"]:
 		if route["id"] == "link_284":
 			main.connection_panel.current_id=route["id"]
 			main.connection_panel.focus_current()
-			check(main.camera.zoom.x<=4,"short route focus cap")
+			check(main.camera.zoom.x<=8,"short route focus cap")
 	main.connection_layer.select_route("")
 	main.connection_panel.current_id=""
 	for oblique in [false,true]:
@@ -49,7 +54,7 @@ func _initialize() -> void:
 		check(main.loaded_tiles.size()==expected.size(),"visible-set matches loaded set")
 		for id in main.loaded_tiles:
 			check(id.begins_with("detail-"),"detail tile selected at 400 percent")
-			check(main.loaded_tiles[id].relief.get_width()==1032,"4x terrain texture loaded")
+			check(main.loaded_tiles[id].relief.get_width()==2064,"8x terrain texture loaded at 400 percent")
 		if "--capture" in OS.get_cmdline_user_args():
 			root.get_texture().get_image().save_png("res://builds/detail_400_%s.png" % ("oblique" if oblique else "flat"))
 			var saved: Array = main.catalog.detail_tiles

@@ -8,10 +8,20 @@ ROOT=Path(__file__).resolve().parents[2]
 spec=importlib.util.spec_from_file_location('roster',ROOT/'tools/officers/build_roster.py')
 roster=importlib.util.module_from_spec(spec);spec.loader.exec_module(roster)
 
-class RosterTests(unittest.TestCase):
+class HistoricalRosterInputTests(unittest.TestCase):
+    """Validate archived research/cohort invariants against the historical input.
+
+    Current game scores are covered separately by test_reassessment.py. The old
+    cohort hashes document research provenance, not a requirement to retain the
+    pre-reassessment gameplay numbers.
+    """
     @classmethod
     def setUpClass(cls):
         cls.data=json.loads((ROOT/'data/derived/officers/officers_1546.json').read_text(encoding='utf-8'))
+        historical=json.loads((ROOT/'data/master/officers/assessments.json').read_text(encoding='utf-8'))
+        for record in cls.data['officers']:
+            record['assessment']=historical[record['external_id']]
+            record['total_ability']=roster.total_ability(record['assessment']['scores'])
         cls.records={r['external_id']:r for r in cls.data['officers']}
 
     def test_date_precision_is_not_fabricated(self):

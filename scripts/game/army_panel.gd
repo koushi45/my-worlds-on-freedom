@@ -208,7 +208,8 @@ func _build_unit() -> void:
 	if not unit.next_site.is_empty():
 		var cell: Vector2i = preload("res://scripts/map/hex_grid.gd").cell_at(main.army_campaign.node_point(unit.next_site))
 		var terrain = preload("res://scripts/map/hex_terrain.gd")
-		_label("進入先：%s（1タイル %.1f日）" % [terrain.name_for(main.hex_tile_layer.terrain_for(cell)), main.army_campaign.travel_days_for_leg(unit.site_id, unit.next_site)], 13)
+		var days: float = main.army_campaign.travel_days_for_leg(unit.site_id, unit.next_site)
+		_label("進入先：%s（%s）" % [terrain.name_for(main.hex_tile_layer.terrain_for(cell)), "通行不可" if is_inf(days) else "1タイル %.1f日" % days], 13)
 	var destination: String = main.army_campaign.node_name(unit.orders.back()) if not unit.orders.is_empty() else (main.army_campaign.node_name(unit.next_site) if not unit.next_site.is_empty() else ("占領中" if main.army_campaign._hostile_office(unit) else ("攻城中" if main.army_campaign._hostile_castle(unit) else "待機中")))
 	if unit.house_id == GameSession.player_house:
 		_button("目標：%s" % destination, func(): choosing_target = true; append_target = false; status.text = "地図上の六角形をクリックしてください。")

@@ -17,6 +17,7 @@ var label_offsets: Dictionary = {}
 var last_layout_ms := -150
 var last_selected := ""
 var layout_pending := true
+var map_view: Node3D
 
 func _ready() -> void:
 	z_index = 24
@@ -51,12 +52,16 @@ func pick(screen: Vector2) -> String:
 	var best := ""
 	var distance := 14.0
 	for id in drawn_ids:
-		var p: Vector2 = get_global_transform_with_canvas()*elevation.project(point(lookup[id]["display_point"]))
+		var p: Vector2 = map_view.project(point(lookup[id]["display_point"])) if map_view != null else get_global_transform_with_canvas()*elevation.project(point(lookup[id]["display_point"]))
 		var d := screen.distance_to(p)
 		if d < distance: distance = d; best = id
 	return best
 
 func _draw() -> void:
+	if map_view != null:
+		layout_pending = false
+		map_view.markers.queue_redraw()
+		return
 	drawn_ids.clear(); label_rects.clear(); labeled_ids.clear()
 	if data == null: return
 	var rebuild_layout := Time.get_ticks_msec()-last_layout_ms>=120 or last_selected!=selected_id

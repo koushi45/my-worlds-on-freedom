@@ -17,6 +17,7 @@ var view_rect := Rect2()
 var view_zoom := 1.0
 var label_count := 0
 var drawn_keys: Array = []
+var map_view: Node3D
 
 func _ready() -> void:
 	# Crests remain readable above settlement names (settlements use 24).
@@ -82,6 +83,9 @@ func kamon_background_color(house_id: String) -> Color:
 	return color
 
 func _draw() -> void:
+	if map_view != null:
+		map_view.markers.queue_redraw()
+		return
 	label_count = 0
 	drawn_keys.clear()
 	if district_layer == null or not district_layer.initialized: return

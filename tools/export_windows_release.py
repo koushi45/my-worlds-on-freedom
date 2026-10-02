@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import subprocess
@@ -24,9 +25,12 @@ def sha256(path: Path) -> str:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Export and record the Windows release.")
+    parser.add_argument("--godot", default="godot_console", help="Godot console executable or absolute path")
+    args = parser.parse_args()
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     command = [
-        "godot_console",
+        args.godot,
         "--headless",
         "--path",
         str(ROOT),

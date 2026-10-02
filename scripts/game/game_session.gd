@@ -60,7 +60,7 @@ func capture(main: Node) -> Dictionary:
 	var c: Node = main.game_clock
 	return {"version":15,"saved_at":Time.get_datetime_string_from_system(),"player_house":player_house,
 		"clock":{"year":c.year,"month":c.month,"day":c.day,"elapsed_days":c.elapsed_days,"speed":c.speed,"paused":c.paused,"fraction":c._day_fraction},
-		"camera":{"x":main.camera.position.x,"y":main.camera.position.y,"zoom":main.camera.zoom.x,"oblique":main.elevation.enabled},
+		"camera":{"x":main.camera.position.x,"y":main.camera.position.y,"zoom":main.camera.zoom.x,"oblique":main.is_oblique(),"manual_angle":main.map_view.manual_angle,"yaw":main.map_view.yaw},
 		"relations":relations.duplicate(true),"diplomacy":main.diplomacy.save_state(),"territories":territories,
 		"economy":{"house_resources":main.district_economy.house_resources.duplicate(true)},
 		"buildings":main.district_buildings.state.duplicate(true),
@@ -107,7 +107,9 @@ func validate(d: Variant) -> bool:
 	for m in range(1,int(c.month)): expected += preload("res://scripts/game/game_clock.gd").days_in_month(int(c.year),m)
 	if expected+int(c.day)-1 != int(c.elapsed_days): return false
 	var view: Dictionary = d.camera
-	if not valid_number(view.get("x"),-20000,20000) or not valid_number(view.get("y"),-20000,20000) or not valid_number(view.get("zoom"),0.001,4) or not view.get("oblique") is bool: return false
+	if not valid_number(view.get("manual_angle",-1.0),-1.0,90.0) or not valid_number(view.get("yaw",0.0),-180.0,180.0): return false
+	if float(view.get("manual_angle",-1.0)) != -1.0 and float(view.get("manual_angle",-1.0)) < 15.0: return false
+	if not valid_number(view.get("x"),-20000,20000) or not valid_number(view.get("y"),-20000,20000) or not valid_number(view.get("zoom"),0.001,8) or not view.get("oblique") is bool: return false
 	for key in d.relations:
 		var ids: PackedStringArray = str(key).split("|")
 		if ids.size()!=2 or not known_houses.has(ids[0]) or not known_houses.has(ids[1]) or ids[0]>=ids[1] or d.relations[key] not in ["ally","enemy","neutral"]: return false
@@ -391,9 +393,12 @@ func apply_to(main: Node) -> void:
 	main.retainer_management.reconcile_officer_placements()
 	main.governance_registry.recount_assignments()
 	main.game_clock.restore_state(d.clock)
-	if main.elevation.enabled != d.camera.oblique: main.set_oblique(d.camera.oblique)
+	main.map_view.manual_angle = float(d.camera.get("manual_angle",-1.0))
+	main.map_view.yaw = float(d.camera.get("yaw",0.0))
+	main.set_oblique(d.camera.oblique)
 	main.set_map_zoom(float(d.camera.zoom))
 	main.camera.position = Vector2(d.camera.x,d.camera.y)
 	main._clamp_camera()
 	main._refresh_visible_tiles()
+	if is_instance_valid(main.house_status_hud): main.house_status_hud.invalidate()
 	pending = {}

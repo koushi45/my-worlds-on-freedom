@@ -1,0 +1,16 @@
+{
+  "source": "assets/map/elevation/elevation_m.png",
+  "source_sha256": "6e13ba9700766facc7ae3bf99779a04187fb20d21bdd800cace3f952f5c98444",
+  "output": "assets/map/elevation/terrain_lighting.png",
+  "output_sha256": "09b56ccb116101f284a7e3fbe6cbe68fd3bfdf0b9a1435d22fce6c30250f7667",
+  "size": [
+    4096,
+    4096
+  ],
+  "encoding": "luminance / 255 = broad shadow attenuation; sampled by the offline texture baker only",
+  "sun": "northwest, 32 degrees; 3x vertical exaggeration for horizon shadows",
+  "shadows": "measured DEM horizon and valley ambient occlusion",
+  "shadow_strength": 0.15,
+  "occlusion_strength": 0.08,
+  "fine_illumination": "computed per detail texture from zoom 11 DEM; linear light baked into PNG"
+}

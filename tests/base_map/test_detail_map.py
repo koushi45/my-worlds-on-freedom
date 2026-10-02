@@ -64,4 +64,42 @@ class DetailMap(unittest.TestCase):
                 a,b=(image[:,-8:],other[:,:8]) if dx else (image[-8:],other[:8])
                 self.assertLessEqual(np.abs(a.astype(int)-b.astype(int)).max(),1,(x,y,dx,dy))
 
+    def test_close_terrain_is_complete_and_seamless(self):
+        self.assertEqual(self.d['close_zoom_threshold'],2.5)
+        tiles={tuple(t['global_viewport'][:2]):t for t in self.d['tiles']}
+        for (x,y),tile in tiles.items():
+            self.assertEqual(tile['close_density'],6)
+            self.assertEqual(tile['close_gutter'],6)
+            self.assertEqual(tile['close_output_size'],[1548,1548])
+            path=ROOT/tile['files']['relief_close']
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),tile['hashes']['relief_close'])
+            image=np.asarray(Image.open(path))
+            self.assertEqual(image.shape,(1548,1548,3))
+            for dx,dy in [(256,0),(0,256)]:
+                neighbor=tiles.get((x+dx,y+dy))
+                if neighbor is None: continue
+                other=np.asarray(Image.open(ROOT/neighbor['files']['relief_close']))
+                a,b=(image[:,-12:],other[:,:12]) if dx else (image[-12:],other[:12])
+                self.assertLessEqual(np.abs(a.astype(int)-b.astype(int)).max(),1,(x,y,dx,dy))
+
+    def test_coastal_water_uses_the_same_land_boundary(self):
+        self.assertEqual(self.d['water_mesh_gutter_world_units'],16)
+        samples=[tile for tile in self.d['tiles'] if tile['tile_id'] in {
+            'detail-r21-c13', 'detail-r22-c12', 'detail-r23-c12',
+            'detail-r24-c08', 'detail-r25-c05',
+        }]
+        self.assertEqual(len(samples),5)
+        for tile in samples:
+            path=ROOT/tile['files']['geometry']
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),tile['hashes']['geometry'])
+            geometry=read(tile['files']['geometry'])
+            vertices=geometry['water_vertices']
+            indices=geometry['water_indices']
+            triangles=[Polygon([vertices[j] for j in indices[i:i+3]]) for i in range(0,len(indices),3)]
+            self.assertTrue(triangles,tile['tile_id'])
+            water=unary_union(triangles)
+            x0,y0,x1,y1=tile['global_viewport']
+            expected=box(max(0,x0-16),max(0,y0-16),min(8192,x1+16),min(8192,y1+16)).difference(self.land)
+            self.assertLess(water.symmetric_difference(expected).area,1e-4,tile['tile_id'])
+
 if __name__=='__main__': unittest.main()

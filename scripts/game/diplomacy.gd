@@ -116,7 +116,7 @@ func act(action: String, actor: String, target: String) -> Error:
 
 func _set_relation(a: String, b: String, status: String) -> void:
 	GameSession.relations[GameSession.pair(a, b)] = status
-	if is_instance_valid(main.territory_borders): main.territory_borders.rebuild.call_deferred()
+	if is_instance_valid(main.territory_borders): main.territory_borders.refresh_relations()
 
 func on_hostile_attack(actor: String, target: String) -> void:
 	if GameSession.relation(actor, target) != "neutral" or truce_remaining(actor, target) > 0: return

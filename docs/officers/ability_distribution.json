@@ -1,0 +1,1386 @@
+{
+  "policy_id": "historical_mean15_v3",
+  "population": 1598,
+  "calibration": {
+    "command": {
+      "shift": -0.0625,
+      "fixed_count": 481,
+      "estimated_count": 1117
+    },
+    "tactics": {
+      "shift": -0.5,
+      "fixed_count": 707,
+      "estimated_count": 891
+    },
+    "strategy": {
+      "shift": 0.40539855,
+      "fixed_count": 636,
+      "estimated_count": 962
+    },
+    "politics": {
+      "shift": -0.61816406,
+      "fixed_count": 379,
+      "estimated_count": 1219
+    },
+    "trust": {
+      "shift": 0.34004226,
+      "fixed_count": 220,
+      "estimated_count": 1378
+    }
+  },
+  "dimensions": [
+    {
+      "key": "command",
+      "label": "統率",
+      "n": 1598,
+      "mean": 15,
+      "median": 15.0,
+      "sd": 3.3220920169693544,
+      "minimum": 3,
+      "maximum": 30,
+      "before_mean": 19.09136420525657,
+      "before_at12": 338,
+      "at12": 117,
+      "at60": 0,
+      "mode": 15,
+      "mode_percent": 15.832290362953692,
+      "bins": [
+        {
+          "value": 3,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 4,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 5,
+          "count": 7,
+          "percent": 0.4380475594493116
+        },
+        {
+          "value": 6,
+          "count": 49,
+          "percent": 3.0663329161451816
+        },
+        {
+          "value": 7,
+          "count": 2,
+          "percent": 0.1251564455569462
+        },
+        {
+          "value": 8,
+          "count": 5,
+          "percent": 0.31289111389236546
+        },
+        {
+          "value": 9,
+          "count": 17,
+          "percent": 1.0638297872340425
+        },
+        {
+          "value": 10,
+          "count": 20,
+          "percent": 1.2515644555694618
+        },
+        {
+          "value": 11,
+          "count": 38,
+          "percent": 2.3779724655819776
+        },
+        {
+          "value": 12,
+          "count": 117,
+          "percent": 7.321652065081351
+        },
+        {
+          "value": 13,
+          "count": 177,
+          "percent": 11.076345431789736
+        },
+        {
+          "value": 14,
+          "count": 240,
+          "percent": 15.018773466833542
+        },
+        {
+          "value": 15,
+          "count": 253,
+          "percent": 15.832290362953692
+        },
+        {
+          "value": 16,
+          "count": 225,
+          "percent": 14.080100125156445
+        },
+        {
+          "value": 17,
+          "count": 178,
+          "percent": 11.13892365456821
+        },
+        {
+          "value": 18,
+          "count": 126,
+          "percent": 7.88485607008761
+        },
+        {
+          "value": 19,
+          "count": 15,
+          "percent": 0.9386733416770964
+        },
+        {
+          "value": 20,
+          "count": 57,
+          "percent": 3.566958698372966
+        },
+        {
+          "value": 21,
+          "count": 35,
+          "percent": 2.1902377972465583
+        },
+        {
+          "value": 22,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 23,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 24,
+          "count": 21,
+          "percent": 1.3141426783479349
+        },
+        {
+          "value": 25,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 26,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 27,
+          "count": 7,
+          "percent": 0.4380475594493116
+        },
+        {
+          "value": 28,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 29,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 30,
+          "count": 1,
+          "percent": 0.0625782227784731
+        }
+      ]
+    },
+    {
+      "key": "tactics",
+      "label": "武勇",
+      "n": 1598,
+      "mean": 15,
+      "median": 15.0,
+      "sd": 4.079006971352271,
+      "minimum": 5,
+      "maximum": 30,
+      "before_mean": 18.29474342928661,
+      "before_at12": 441,
+      "at12": 126,
+      "at60": 0,
+      "mode": 14,
+      "mode_percent": 11.389236545682103,
+      "bins": [
+        {
+          "value": 5,
+          "count": 44,
+          "percent": 2.753441802252816
+        },
+        {
+          "value": 6,
+          "count": 49,
+          "percent": 3.0663329161451816
+        },
+        {
+          "value": 7,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 8,
+          "count": 5,
+          "percent": 0.31289111389236546
+        },
+        {
+          "value": 9,
+          "count": 18,
+          "percent": 1.1264080100125156
+        },
+        {
+          "value": 10,
+          "count": 24,
+          "percent": 1.5018773466833542
+        },
+        {
+          "value": 11,
+          "count": 81,
+          "percent": 5.068836045056321
+        },
+        {
+          "value": 12,
+          "count": 126,
+          "percent": 7.88485607008761
+        },
+        {
+          "value": 13,
+          "count": 182,
+          "percent": 11.389236545682103
+        },
+        {
+          "value": 14,
+          "count": 182,
+          "percent": 11.389236545682103
+        },
+        {
+          "value": 15,
+          "count": 165,
+          "percent": 10.32540675844806
+        },
+        {
+          "value": 16,
+          "count": 175,
+          "percent": 10.951188986232792
+        },
+        {
+          "value": 17,
+          "count": 170,
+          "percent": 10.638297872340425
+        },
+        {
+          "value": 18,
+          "count": 159,
+          "percent": 9.949937421777221
+        },
+        {
+          "value": 19,
+          "count": 19,
+          "percent": 1.1889862327909888
+        },
+        {
+          "value": 20,
+          "count": 81,
+          "percent": 5.068836045056321
+        },
+        {
+          "value": 21,
+          "count": 58,
+          "percent": 3.6295369211514394
+        },
+        {
+          "value": 22,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 23,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 24,
+          "count": 31,
+          "percent": 1.9399249061326658
+        },
+        {
+          "value": 25,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 26,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 27,
+          "count": 11,
+          "percent": 0.688360450563204
+        },
+        {
+          "value": 28,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 29,
+          "count": 10,
+          "percent": 0.6257822277847309
+        },
+        {
+          "value": 30,
+          "count": 1,
+          "percent": 0.0625782227784731
+        }
+      ]
+    },
+    {
+      "key": "strategy",
+      "label": "知略",
+      "n": 1598,
+      "mean": 15,
+      "median": 15.0,
+      "sd": 3.7034976533792663,
+      "minimum": 5,
+      "maximum": 30,
+      "before_mean": 17.080100125156445,
+      "before_at12": 584,
+      "at12": 135,
+      "at60": 0,
+      "mode": 16,
+      "mode_percent": 13.704630788485607,
+      "bins": [
+        {
+          "value": 5,
+          "count": 13,
+          "percent": 0.8135168961201502
+        },
+        {
+          "value": 6,
+          "count": 53,
+          "percent": 3.3166458072590737
+        },
+        {
+          "value": 7,
+          "count": 5,
+          "percent": 0.31289111389236546
+        },
+        {
+          "value": 8,
+          "count": 17,
+          "percent": 1.0638297872340425
+        },
+        {
+          "value": 9,
+          "count": 14,
+          "percent": 0.8760951188986232
+        },
+        {
+          "value": 10,
+          "count": 40,
+          "percent": 2.5031289111389237
+        },
+        {
+          "value": 11,
+          "count": 55,
+          "percent": 3.44180225281602
+        },
+        {
+          "value": 12,
+          "count": 135,
+          "percent": 8.448060075093867
+        },
+        {
+          "value": 13,
+          "count": 145,
+          "percent": 9.073842302878598
+        },
+        {
+          "value": 14,
+          "count": 200,
+          "percent": 12.515644555694617
+        },
+        {
+          "value": 15,
+          "count": 201,
+          "percent": 12.57822277847309
+        },
+        {
+          "value": 16,
+          "count": 219,
+          "percent": 13.704630788485607
+        },
+        {
+          "value": 17,
+          "count": 181,
+          "percent": 11.32665832290363
+        },
+        {
+          "value": 18,
+          "count": 125,
+          "percent": 7.822277847309136
+        },
+        {
+          "value": 19,
+          "count": 34,
+          "percent": 2.127659574468085
+        },
+        {
+          "value": 20,
+          "count": 72,
+          "percent": 4.505632040050062
+        },
+        {
+          "value": 21,
+          "count": 48,
+          "percent": 3.0037546933667083
+        },
+        {
+          "value": 22,
+          "count": 7,
+          "percent": 0.4380475594493116
+        },
+        {
+          "value": 23,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 24,
+          "count": 16,
+          "percent": 1.0012515644555695
+        },
+        {
+          "value": 25,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 26,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 27,
+          "count": 11,
+          "percent": 0.688360450563204
+        },
+        {
+          "value": 28,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 29,
+          "count": 5,
+          "percent": 0.31289111389236546
+        },
+        {
+          "value": 30,
+          "count": 2,
+          "percent": 0.1251564455569462
+        }
+      ]
+    },
+    {
+      "key": "politics",
+      "label": "政治",
+      "n": 1598,
+      "mean": 15,
+      "median": 14.0,
+      "sd": 3.613353068896067,
+      "minimum": 5,
+      "maximum": 30,
+      "before_mean": 19.74217772215269,
+      "before_at12": 276,
+      "at12": 175,
+      "at60": 0,
+      "mode": 13,
+      "mode_percent": 16.33291614518148,
+      "bins": [
+        {
+          "value": 5,
+          "count": 5,
+          "percent": 0.31289111389236546
+        },
+        {
+          "value": 6,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 7,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 8,
+          "count": 6,
+          "percent": 0.37546933667083854
+        },
+        {
+          "value": 9,
+          "count": 13,
+          "percent": 0.8135168961201502
+        },
+        {
+          "value": 10,
+          "count": 47,
+          "percent": 2.9411764705882355
+        },
+        {
+          "value": 11,
+          "count": 88,
+          "percent": 5.506883604505632
+        },
+        {
+          "value": 12,
+          "count": 175,
+          "percent": 10.951188986232792
+        },
+        {
+          "value": 13,
+          "count": 261,
+          "percent": 16.33291614518148
+        },
+        {
+          "value": 14,
+          "count": 247,
+          "percent": 15.456821026282853
+        },
+        {
+          "value": 15,
+          "count": 211,
+          "percent": 13.204005006257823
+        },
+        {
+          "value": 16,
+          "count": 149,
+          "percent": 9.32415519399249
+        },
+        {
+          "value": 17,
+          "count": 99,
+          "percent": 6.195244055068836
+        },
+        {
+          "value": 18,
+          "count": 94,
+          "percent": 5.882352941176471
+        },
+        {
+          "value": 19,
+          "count": 12,
+          "percent": 0.7509386733416771
+        },
+        {
+          "value": 20,
+          "count": 68,
+          "percent": 4.25531914893617
+        },
+        {
+          "value": 21,
+          "count": 50,
+          "percent": 3.1289111389236544
+        },
+        {
+          "value": 22,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 23,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 24,
+          "count": 28,
+          "percent": 1.7521902377972465
+        },
+        {
+          "value": 25,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 26,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 27,
+          "count": 27,
+          "percent": 1.6896120150187734
+        },
+        {
+          "value": 28,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 29,
+          "count": 12,
+          "percent": 0.7509386733416771
+        },
+        {
+          "value": 30,
+          "count": 1,
+          "percent": 0.0625782227784731
+        }
+      ]
+    },
+    {
+      "key": "trust",
+      "label": "人望",
+      "n": 1598,
+      "mean": 15,
+      "median": 15.0,
+      "sd": 3.402310927819789,
+      "minimum": 5,
+      "maximum": 29,
+      "before_mean": 13.934918648310388,
+      "before_at12": 1170,
+      "at12": 130,
+      "at60": 0,
+      "mode": 14,
+      "mode_percent": 12.453066332916146,
+      "bins": [
+        {
+          "value": 5,
+          "count": 18,
+          "percent": 1.1264080100125156
+        },
+        {
+          "value": 6,
+          "count": 16,
+          "percent": 1.0012515644555695
+        },
+        {
+          "value": 7,
+          "count": 11,
+          "percent": 0.688360450563204
+        },
+        {
+          "value": 8,
+          "count": 17,
+          "percent": 1.0638297872340425
+        },
+        {
+          "value": 9,
+          "count": 24,
+          "percent": 1.5018773466833542
+        },
+        {
+          "value": 10,
+          "count": 48,
+          "percent": 3.0037546933667083
+        },
+        {
+          "value": 11,
+          "count": 66,
+          "percent": 4.130162703379224
+        },
+        {
+          "value": 12,
+          "count": 130,
+          "percent": 8.135168961201503
+        },
+        {
+          "value": 13,
+          "count": 154,
+          "percent": 9.637046307884857
+        },
+        {
+          "value": 14,
+          "count": 199,
+          "percent": 12.453066332916146
+        },
+        {
+          "value": 15,
+          "count": 199,
+          "percent": 12.453066332916146
+        },
+        {
+          "value": 16,
+          "count": 197,
+          "percent": 12.3279098873592
+        },
+        {
+          "value": 17,
+          "count": 177,
+          "percent": 11.076345431789736
+        },
+        {
+          "value": 18,
+          "count": 133,
+          "percent": 8.32290362953692
+        },
+        {
+          "value": 19,
+          "count": 72,
+          "percent": 4.505632040050062
+        },
+        {
+          "value": 20,
+          "count": 69,
+          "percent": 4.317897371714643
+        },
+        {
+          "value": 21,
+          "count": 34,
+          "percent": 2.127659574468085
+        },
+        {
+          "value": 22,
+          "count": 13,
+          "percent": 0.8135168961201502
+        },
+        {
+          "value": 23,
+          "count": 5,
+          "percent": 0.31289111389236546
+        },
+        {
+          "value": 24,
+          "count": 12,
+          "percent": 0.7509386733416771
+        },
+        {
+          "value": 25,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 26,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 27,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 28,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 29,
+          "count": 1,
+          "percent": 0.0625782227784731
+        }
+      ]
+    },
+    {
+      "key": "total",
+      "label": "総合",
+      "n": 1598,
+      "mean": 75,
+      "median": 74.0,
+      "sd": 11.794389960620217,
+      "minimum": 26,
+      "maximum": 141,
+      "before_mean": 88.1433041301627,
+      "before_at12": 0,
+      "at12": 0,
+      "at60": 12,
+      "mode": 74,
+      "mode_percent": 5.7571964956195245,
+      "bins": [
+        {
+          "value": 26,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 27,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 28,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 29,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 30,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 31,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 32,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 33,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 34,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 35,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 36,
+          "count": 2,
+          "percent": 0.1251564455569462
+        },
+        {
+          "value": 37,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 38,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 39,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 40,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 41,
+          "count": 5,
+          "percent": 0.31289111389236546
+        },
+        {
+          "value": 42,
+          "count": 4,
+          "percent": 0.2503128911138924
+        },
+        {
+          "value": 43,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 44,
+          "count": 7,
+          "percent": 0.4380475594493116
+        },
+        {
+          "value": 45,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 46,
+          "count": 5,
+          "percent": 0.31289111389236546
+        },
+        {
+          "value": 47,
+          "count": 2,
+          "percent": 0.1251564455569462
+        },
+        {
+          "value": 48,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 49,
+          "count": 2,
+          "percent": 0.1251564455569462
+        },
+        {
+          "value": 50,
+          "count": 4,
+          "percent": 0.2503128911138924
+        },
+        {
+          "value": 51,
+          "count": 4,
+          "percent": 0.2503128911138924
+        },
+        {
+          "value": 52,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 53,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 54,
+          "count": 7,
+          "percent": 0.4380475594493116
+        },
+        {
+          "value": 55,
+          "count": 8,
+          "percent": 0.5006257822277848
+        },
+        {
+          "value": 56,
+          "count": 9,
+          "percent": 0.5632040050062578
+        },
+        {
+          "value": 57,
+          "count": 7,
+          "percent": 0.4380475594493116
+        },
+        {
+          "value": 58,
+          "count": 7,
+          "percent": 0.4380475594493116
+        },
+        {
+          "value": 59,
+          "count": 10,
+          "percent": 0.6257822277847309
+        },
+        {
+          "value": 60,
+          "count": 12,
+          "percent": 0.7509386733416771
+        },
+        {
+          "value": 61,
+          "count": 14,
+          "percent": 0.8760951188986232
+        },
+        {
+          "value": 62,
+          "count": 10,
+          "percent": 0.6257822277847309
+        },
+        {
+          "value": 63,
+          "count": 26,
+          "percent": 1.6270337922403004
+        },
+        {
+          "value": 64,
+          "count": 34,
+          "percent": 2.127659574468085
+        },
+        {
+          "value": 65,
+          "count": 32,
+          "percent": 2.002503128911139
+        },
+        {
+          "value": 66,
+          "count": 48,
+          "percent": 3.0037546933667083
+        },
+        {
+          "value": 67,
+          "count": 43,
+          "percent": 2.690863579474343
+        },
+        {
+          "value": 68,
+          "count": 55,
+          "percent": 3.44180225281602
+        },
+        {
+          "value": 69,
+          "count": 55,
+          "percent": 3.44180225281602
+        },
+        {
+          "value": 70,
+          "count": 79,
+          "percent": 4.943679599499374
+        },
+        {
+          "value": 71,
+          "count": 74,
+          "percent": 4.630788485607009
+        },
+        {
+          "value": 72,
+          "count": 74,
+          "percent": 4.630788485607009
+        },
+        {
+          "value": 73,
+          "count": 62,
+          "percent": 3.8798498122653315
+        },
+        {
+          "value": 74,
+          "count": 92,
+          "percent": 5.7571964956195245
+        },
+        {
+          "value": 75,
+          "count": 58,
+          "percent": 3.6295369211514394
+        },
+        {
+          "value": 76,
+          "count": 87,
+          "percent": 5.444305381727159
+        },
+        {
+          "value": 77,
+          "count": 81,
+          "percent": 5.068836045056321
+        },
+        {
+          "value": 78,
+          "count": 55,
+          "percent": 3.44180225281602
+        },
+        {
+          "value": 79,
+          "count": 67,
+          "percent": 4.192740926157697
+        },
+        {
+          "value": 80,
+          "count": 46,
+          "percent": 2.8785982478097623
+        },
+        {
+          "value": 81,
+          "count": 54,
+          "percent": 3.379224030037547
+        },
+        {
+          "value": 82,
+          "count": 42,
+          "percent": 2.6282853566958697
+        },
+        {
+          "value": 83,
+          "count": 44,
+          "percent": 2.753441802252816
+        },
+        {
+          "value": 84,
+          "count": 32,
+          "percent": 2.002503128911139
+        },
+        {
+          "value": 85,
+          "count": 25,
+          "percent": 1.5644555694618272
+        },
+        {
+          "value": 86,
+          "count": 22,
+          "percent": 1.376720901126408
+        },
+        {
+          "value": 87,
+          "count": 25,
+          "percent": 1.5644555694618272
+        },
+        {
+          "value": 88,
+          "count": 18,
+          "percent": 1.1264080100125156
+        },
+        {
+          "value": 89,
+          "count": 5,
+          "percent": 0.31289111389236546
+        },
+        {
+          "value": 90,
+          "count": 9,
+          "percent": 0.5632040050062578
+        },
+        {
+          "value": 91,
+          "count": 11,
+          "percent": 0.688360450563204
+        },
+        {
+          "value": 92,
+          "count": 8,
+          "percent": 0.5006257822277848
+        },
+        {
+          "value": 93,
+          "count": 9,
+          "percent": 0.5632040050062578
+        },
+        {
+          "value": 94,
+          "count": 8,
+          "percent": 0.5006257822277848
+        },
+        {
+          "value": 95,
+          "count": 11,
+          "percent": 0.688360450563204
+        },
+        {
+          "value": 96,
+          "count": 7,
+          "percent": 0.4380475594493116
+        },
+        {
+          "value": 97,
+          "count": 9,
+          "percent": 0.5632040050062578
+        },
+        {
+          "value": 98,
+          "count": 6,
+          "percent": 0.37546933667083854
+        },
+        {
+          "value": 99,
+          "count": 7,
+          "percent": 0.4380475594493116
+        },
+        {
+          "value": 100,
+          "count": 2,
+          "percent": 0.1251564455569462
+        },
+        {
+          "value": 101,
+          "count": 4,
+          "percent": 0.2503128911138924
+        },
+        {
+          "value": 102,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 103,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 104,
+          "count": 4,
+          "percent": 0.2503128911138924
+        },
+        {
+          "value": 105,
+          "count": 2,
+          "percent": 0.1251564455569462
+        },
+        {
+          "value": 106,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 107,
+          "count": 2,
+          "percent": 0.1251564455569462
+        },
+        {
+          "value": 108,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 109,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 110,
+          "count": 2,
+          "percent": 0.1251564455569462
+        },
+        {
+          "value": 111,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 112,
+          "count": 3,
+          "percent": 0.18773466833541927
+        },
+        {
+          "value": 113,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 114,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 115,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 116,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 117,
+          "count": 2,
+          "percent": 0.1251564455569462
+        },
+        {
+          "value": 118,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 119,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 120,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 121,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 122,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 123,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 124,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 125,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 126,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 127,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 128,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 129,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 130,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 131,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 132,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 133,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 134,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 135,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 136,
+          "count": 1,
+          "percent": 0.0625782227784731
+        },
+        {
+          "value": 137,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 138,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 139,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 140,
+          "count": 0,
+          "percent": 0.0
+        },
+        {
+          "value": 141,
+          "count": 1,
+          "percent": 0.0625782227784731
+        }
+      ]
+    }
+  ],
+  "major_unrecovered_failure_ids": [
+    "Q1135700",
+    "Q11374462",
+    "Q11409811",
+    "Q11596987",
+    "Q5354141",
+    "Q5996119"
+  ],
+  "historical_inputs": "data/master/officers/assessments.json",
+  "raw_assessments_unchanged": true
+}

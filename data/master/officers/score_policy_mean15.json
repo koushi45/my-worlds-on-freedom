@@ -1,0 +1,13 @@
+{
+  "id": "historical_mean15_v3",
+  "target_mean": 15.0,
+  "acceptable_mean_range": [14.5, 15.5],
+  "seed": "officers-lifetime-mean15-v3",
+  "evidence_scale_anchors": [[1,1],[5,5],[10,8],[15,10],[20,14],[24,18],[26,21],[27,24],[28,27],[29,29],[30,30]],
+  "participation": {"old_anchor": 14, "center": 11, "responsibility_step": 0.5, "sd": 1.5, "bounds": [10,18]},
+  "unrecorded": {"center": 15, "sd": 3, "bounds": [6,24], "related_evidence_weight": 0.15, "related_adjustment_limit": 1},
+  "calibration_shift_limit": 2,
+  "major_unrecovered_failure_bounds": [3,9],
+  "major_failure_rule": "本人の判断・行動に帰属する重大な失態と、その後の挽回なしを個別の出典で確認した場合に全能力を低評価枠へ入れる。敗戦・落城・改易という結果、資料不足、病気、家族の失策だけでは発動しない。",
+  "imputation_note": "記録なしと参加からの遂行推定はゲーム用補完。固定シードによる個人差を史料の記載と区別し、中心・幅・関連根拠・校正量を保存する。"
+}

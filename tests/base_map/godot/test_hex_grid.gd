@@ -18,6 +18,19 @@ func _initialize() -> void:
 			if not check(previous == target, "route destination"): return
 	for bad in ["hex:", "hex:cat:1", "hex:1:2:3", "hex:99999:1"]:
 		if not check(not Grid.valid(bad), "reject invalid saved cell"): return
+	var blocked := {Vector2i(11, 10): true}
+	var detour: Array = Grid.path_avoiding(Vector2i(10, 10), Vector2i(12, 10), blocked, {})
+	if not check(detour.size() == 3 and Grid.parse(detour.back()) == Vector2i(12, 10), "route around an impassable hex"): return
+	var previous := Vector2i(10, 10)
+	for step in detour:
+		var next: Vector2i = Grid.parse(step)
+		if not check(Grid.distance(previous, next) == 1 and not blocked.has(next), "detour keeps adjacent passable steps"): return
+		previous = next
+	var surrounded := {}
+	for delta in Grid.NEIGHBORS: surrounded[Vector2i(12, 10) + delta] = true
+	if not check(Grid.path_avoiding(Vector2i(10, 10), Vector2i(12, 10), surrounded, {}).is_empty(), "inaccessible hex has no route"): return
+	var allowed := {Vector2i(10, 10): true, Vector2i(12, 10): true}
+	if not check(Grid.path_avoiding(Vector2i(10, 10), Vector2i(12, 10), {}, allowed).is_empty(), "route cannot cross cells outside land coverage"): return
 	print("Hex geometry, picking, adjacency and route tests passed")
 	quit(0)
 

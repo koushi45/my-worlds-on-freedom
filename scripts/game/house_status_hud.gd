@@ -47,6 +47,9 @@ var refresh_elapsed := 0.0
 var council_button: Button
 var council_icon: TextureRect
 var icon_hint
+var refresh_dirty := false
+var refresh_count := 0
+var last_ruler_id := "__uninitialized__"
 
 
 func _ready() -> void:
@@ -136,6 +139,16 @@ func _ready() -> void:
 	if get_window() != get_viewport(): get_window().size_changed.connect(_resize)
 	_resize()
 	_refresh()
+	main.retainer_management.updated.connect(invalidate)
+	main.army_campaign.changed.connect(invalidate)
+	main.diplomacy.changed.connect(invalidate)
+	main.district_economy.development_updated.connect(invalidate)
+	main.district_economy.income_collected.connect(func(_kind, _amount): invalidate())
+	main.district_actions.changed.connect(func(_id): invalidate())
+	main.district_buildings.changed.connect(func(_id): invalidate())
+	main.technology_tree.research_completed.connect(func(_house, _branch, _id): invalidate())
+	main.house_prestige.prestige_changed.connect(func(_house, _value, _reason): invalidate())
+	main.game_clock.day_advanced.connect(func(_year, _month, _day): invalidate())
 
 
 func _frame_texture() -> Texture2D:
@@ -218,23 +231,28 @@ func _process(delta: float) -> void:
 	# the OS window changes size, so the viewport signal alone is insufficient.
 	if DisplayServer.get_name() != "headless" and DisplayServer.window_get_size() != last_window_size:
 		_resize()
-	refresh_elapsed += delta
-	if refresh_elapsed >= 0.5:
-		refresh_elapsed = 0.0
+	if refresh_dirty:
+		refresh_dirty = false
 		_refresh()
+
+func invalidate() -> void:
+	refresh_dirty = true
 
 
 func _refresh() -> void:
 	if main == null or GameSession.player_house.is_empty(): return
+	refresh_count += 1
 	var house_id: String = GameSession.player_house
 	var house: Dictionary = main.governance_registry.houses.get(house_id, {})
 	var ruler: Dictionary = house.get("ruler", {})
 	var ruler_id: String = str(ruler.get("officer_id", ""))
 	house_label.text = str(house.get("display_name", house_id))
 	ruler_label.text = str(ruler.get("name", "当主不明"))
-	var face: Texture2D = Portraits.texture_for(ruler_id)
-	portrait.texture = face if face != null else preload("res://assets/ui/hud/samurai.png")
-	portrait.tooltip_text = ruler_label.text if face != null else ruler_label.text + "（肖像未収録）"
+	if last_ruler_id != ruler_id:
+		last_ruler_id = ruler_id
+		var face: Texture2D = Portraits.texture_for(ruler_id)
+		portrait.texture = face if face != null else preload("res://assets/ui/hud/samurai.png")
+		portrait.tooltip_text = ruler_label.text if face != null else ruler_label.text + "（肖像未収録）"
 	var crest_entry: Dictionary = main.kamon_layer.kamon_by_house.get(house_id, {})
 	var crest_asset: String = str(crest_entry.get("asset", ""))
 	crest.texture = main.kamon_layer.kamon_textures.get(crest_asset)

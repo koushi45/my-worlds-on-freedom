@@ -1,0 +1,29 @@
+{
+  "reviewed_on": "2026-09-30",
+  "rule": "重大な失態の本人責任と、その後の挽回なしを個別に確認する。参照範囲で失敗のみという旧ラベルから自動認定しない。",
+  "sources": [
+    {"id":"mean15_ikoma_rule","title":"由利本荘市・生駒氏の治政時代","url":"https://www.city.yurihonjo.lg.jp/yashima/kinenkan/ikoma01.htm","accessed":"2026-09-30","use":"お家取締り不行届きと讃岐没収を参照。数値はゲーム上の編集判断。"},
+    {"id":"mean15_ikoma_later","title":"由利本荘市・初代生駒高俊","url":"https://www.city.yurihonjo.lg.jp/yashima/kinenkan/ikoma03.htm","accessed":"2026-09-30","use":"移封後の家臣処遇と死去までの経過を参照。神社再建は記録し、統治破綻の挽回とは区別。"},
+    {"id":"mean15_tadanaga","title":"高崎市・徳川忠長の墓","url":"https://www.city.takasaki.gunma.jp/site/cultural-assets/5667.html","accessed":"2026-09-30","use":"乱行による幽閉、赦免不成立、自刃を参照。猿狩りなど細部の逸話は採用しない。"},
+    {"id":"mean15_kyogoku","title":"宮津市・栄照院と京極氏の家臣団","url":"https://www.city.miyazu.kyoto.jp/site/citypro/5093.html","accessed":"2026-09-30","use":"高広・高国父子の不和と改易を参照。父子それぞれの事績を区別。"},
+    {"id":"mean15_otomo","title":"別府市教育委員会・べっぷの文化財44 石垣原合戦","url":"https://www.city.beppu.oita.jp/doc/gakusyuu/bunkazai/booklet/no44.pdf","accessed":"2026-09-30","use":"本文2頁の援軍要請への不応と豊後没収、石垣原での再興失敗を参照。"},
+    {"id":"mean15_harada","title":"伊達市・伊達八百年の歴史","url":"https://www.city.fukushima-date.lg.jp/img/kanko/k01_date800.pdf","accessed":"2026-09-30","use":"1671年の幕府審問時の刃傷を参照。小説の善悪像や藩乗取り説は採用しない。"},
+    {"id":"mean15_kasugai","title":"春日井市・郷土誌かすがい42号","url":"https://www.city.kasugai.lg.jp/bunka/bunkazai/1023948/kyodoshikasugai/1004429/kyodoshi42.html","accessed":"2026-09-30","use":"洲賀才蔵への射撃命令を記す異なる所伝を参照。独断の誤射と断定しない。"},
+    {"id":"mean15_yamada","title":"香美市広報・山田元義の紹介","url":"https://www.city.kami.lg.jp/uploaded/attachment/27130.pdf","accessed":"2026-09-30","use":"家臣への処分等が伝承として記される点を参照。伝承を確定事実に置き換えない。"}
+  ],
+  "officers": {
+    "Q5996119": {"name":"生駒高俊","status":"major_unrecovered_failure","personal_responsibility":"当主として家中の対立を収拾できず、お家取締り不行届きによって讃岐を失った。","recovery_review":"矢島移封後も江戸参府を許されないまま死去。神社再建の記録はあるが、家中統制・失領の挽回とは認定しない。","source_refs":["mean15_ikoma_rule","mean15_ikoma_later"],"confidence":"institutional_biography","caveat":"幼少時の家臣施策は本人の功績にしない。"},
+    "Q1135700": {"name":"徳川忠長","status":"major_unrecovered_failure","personal_responsibility":"高崎市の文化財解説が乱行を幽閉の理由として記す。側近への加害記録も従来の評価資料にある。","recovery_review":"赦免の嘆願は認められず幽閉中に自刃し、処分後の復帰はない。","source_refs":["mean15_tadanaga","b15_bio_q1135700"],"confidence":"institutional_biography","caveat":"将軍後継争い・猿狩りの細部や精神状態の推測は判断根拠にしない。台帳の没年は今回変更しない。"},
+    "Q11374462": {"name":"京極高広","status":"major_unrecovered_failure","personal_responsibility":"隠居後も高国との父子対立を収拾できず、宮津市の解説が家の改易につながった不和として記す。","recovery_review":"1666年の改易後、宮津の支配回復・父子対立を挽回した成果を確認できず、1677年に死去。城下再建は事件以前の功績として残す。","source_refs":["mean15_kyogoku","b14_bio_q11374462"],"confidence":"institutional_biography","caveat":"息子高国の行為をすべて父へ移さず、高広自身の不和への関与を対象にする。"},
+    "Q5354141": {"name":"大友義統","status":"major_unrecovered_failure","personal_responsibility":"小西行長の援軍要請に応じず撤退し、豊後の領国没収に至った判断失敗。","recovery_review":"1600年に再興を試みたが石垣原で降伏。再興の試みと成功を分け、失領を挽回したとは認定しない。","source_refs":["mean15_otomo","b4_bio_q5354141"],"confidence":"institutional_history","caveat":"他の武将にも撤退があったことや処分の不均衡を留保し、本人の一生を失敗だけとは記述しない。"},
+    "Q11409811": {"name":"原田宗輔","status":"major_unrecovered_failure","personal_responsibility":"幕府審問の場での刃傷によって伊達宗重を殺害し、紛争調整を破綻させた。","recovery_review":"同事件で本人も死亡し、事件後の挽回はない。伊達藩自体の存続を本人による事件後の挽回に数えない。","source_refs":["mean15_harada","b16_bio_q11409811"],"confidence":"institutional_timeline_and_existing_biography","caveat":"忠臣・逆臣の小説上の人物像や乗取り密約説を採用せず、審問時の刃傷に限定する。"},
+    "Q11596987": {"name":"稲葉通重","status":"major_unrecovered_failure","personal_responsibility":"京都での婦女への乱暴と従者への威迫を理由に改易されたと人物伝に記される。","recovery_review":"筑波へ流され、1618年に配所で死去。関ヶ原後の所領安堵は事件以前の成果であり、改易後の挽回ではない。","source_refs":["b16_bio_q11596987"],"confidence":"existing_biography_provisional","caveat":"既存人物伝の再確認による暫定判定。原史料の追加照合で修正可能。"},
+    "Q7450595": {"name":"仙石秀久","status":"recovered","personal_responsibility":"戸次川での軍令違反と惨敗。","recovery_review":"小田原で戦功を挙げ小諸に復帰し、城と城下町を整備したことを小諸市が記す。全能力の低評価を発動しない。","source_refs":["b3_sengoku"],"confidence":"institutional_biography"},
+    "Q11556549": {"name":"洲賀才蔵","status":"responsibility_uncertain","personal_responsibility":"秀孝殺害の事件はあるが、春日井市には主君信次の命令による射撃という所伝があり、独断の不注意と断定できない。","recovery_review":"責任関係が不確かなので、後続実績の不足だけで全能力低評価にしない。","source_refs":["mean15_kasugai","b14_bio_q11556549"],"confidence":"conflicting_accounts"},
+    "Q109595759": {"name":"山田元義","status":"responsibility_uncertain","personal_responsibility":"諫言排除・政務放棄は軍記・伝承を含む。香美市の紹介も処分を伝承として記す。","recovery_review":"重大失態の史実性が未確定のため、軍記上の最期だけで全能力低評価を発動しない。","source_refs":["mean15_yamada","b13_bio_q109595759"],"confidence":"legend_not_confirmed"},
+    "Q8012693": {"name":"加藤明成","status":"responsibility_uncertain","personal_responsibility":"会津騒動と領地返上は記録されるが、個別の加害・統治失敗の責任と事情には異説がある。","recovery_review":"重大な失態の本人責任を今回の参照資料だけで確定できないため、全能力低評価は保留。","source_refs":["b14_bio_q8012693"],"confidence":"existing_biography_provisional"},
+    "Q837217": {"name":"六角義治","status":"responsibility_uncertain","personal_responsibility":"観音寺騒動による支持喪失は従来の人望評価に反映済み。共同統治と式目の成立を区別する。","recovery_review":"騒動後の和解・式目・活動があり、挽回なしの条件を一律には認定しない。","source_refs":["b4_bio_q837217"],"confidence":"recovery_scope_uncertain"},
+    "Q111305261": {"name":"天野元景","status":"responsibility_uncertain","personal_responsibility":"父景泰との挙兵・没落の結果だけでは本人の独立した重大失態を確定できない。","recovery_review":"父の判断責任を本人へ移さず、旧failure_onlyからの自動認定はしない。","source_refs":["b12_bio_q111305261"],"confidence":"personal_responsibility_uncertain"},
+    "Q839124": {"name":"松平忠直","status":"responsibility_uncertain","personal_responsibility":"家中不統一と処分は従来の評価にあるが、後世の暴君説には留保がある。","recovery_review":"暴君説の細部を史実と断定して全能力低評価を発動しない。","source_refs":["b15_bio_q839124"],"confidence":"personal_responsibility_uncertain"}
+  }
+}

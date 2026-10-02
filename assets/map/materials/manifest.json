@@ -1,0 +1,109 @@
+{
+  "generator": "built-in image_gen; offline Godot material compiler",
+  "materials": [
+    "grass",
+    "forest",
+    "rock",
+    "snow"
+  ],
+  "sources": {
+    "forest": {
+      "path": "res://assets/map/materials/source/forest.png",
+      "sha256": "8ca5adff9df12607de4d83ec37d7b35bdbecf6e6ae78ce9152f860b17ed291cb",
+      "size": 1254
+    },
+    "grass": {
+      "path": "res://assets/map/materials/source/grass.png",
+      "sha256": "ae9acfa7e43a8f0f3c5388aaf7061404a6a2b830344b29a0ad0ffc27819536f2",
+      "size": 1254
+    },
+    "rock": {
+      "path": "res://assets/map/materials/source/rock.png",
+      "sha256": "c930a5ae795207f818a15e9918a57f7ffea13192d622e524f47e984d0a57df33",
+      "size": 1254
+    },
+    "snow": {
+      "path": "res://assets/map/materials/source/snow.png",
+      "sha256": "0067f16c85db6caa039be5a216a425ca60ea8e147869d8e87c4af79de3896190",
+      "size": 1254
+    }
+  },
+  "tiers": {
+    "100": {
+      "albedo": {
+        "forest": "res://assets/map/materials/zoom/forest_100.png",
+        "grass": "res://assets/map/materials/zoom/grass_100.png",
+        "rock": "res://assets/map/materials/zoom/rock_100.png",
+        "snow": "res://assets/map/materials/zoom/snow_100.png"
+      },
+      "normal": {
+        "forest": "res://assets/map/materials/zoom/forest_100_normal.png",
+        "grass": "res://assets/map/materials/zoom/grass_100_normal.png",
+        "rock": "res://assets/map/materials/zoom/rock_100_normal.png",
+        "snow": "res://assets/map/materials/zoom/snow_100_normal.png"
+      },
+      "size": 192
+    },
+    "200": {
+      "albedo": {
+        "forest": "res://assets/map/materials/zoom/forest_200.png",
+        "grass": "res://assets/map/materials/zoom/grass_200.png",
+        "rock": "res://assets/map/materials/zoom/rock_200.png",
+        "snow": "res://assets/map/materials/zoom/snow_200.png"
+      },
+      "normal": {
+        "forest": "res://assets/map/materials/zoom/forest_200_normal.png",
+        "grass": "res://assets/map/materials/zoom/grass_200_normal.png",
+        "rock": "res://assets/map/materials/zoom/rock_200_normal.png",
+        "snow": "res://assets/map/materials/zoom/snow_200_normal.png"
+      },
+      "size": 384
+    },
+    "400": {
+      "albedo": {
+        "forest": "res://assets/map/materials/zoom/forest_400.png",
+        "grass": "res://assets/map/materials/zoom/grass_400.png",
+        "rock": "res://assets/map/materials/zoom/rock_400.png",
+        "snow": "res://assets/map/materials/zoom/snow_400.png"
+      },
+      "normal": {
+        "forest": "res://assets/map/materials/zoom/forest_400_normal.png",
+        "grass": "res://assets/map/materials/zoom/grass_400_normal.png",
+        "rock": "res://assets/map/materials/zoom/rock_400_normal.png",
+        "snow": "res://assets/map/materials/zoom/snow_400_normal.png"
+      },
+      "size": 768
+    },
+    "600": {
+      "albedo": {
+        "forest": "res://assets/map/materials/zoom/forest_600.png",
+        "grass": "res://assets/map/materials/zoom/grass_600.png",
+        "rock": "res://assets/map/materials/zoom/rock_600.png",
+        "snow": "res://assets/map/materials/zoom/snow_600.png"
+      },
+      "normal": {
+        "forest": "res://assets/map/materials/zoom/forest_600_normal.png",
+        "grass": "res://assets/map/materials/zoom/grass_600_normal.png",
+        "rock": "res://assets/map/materials/zoom/rock_600_normal.png",
+        "snow": "res://assets/map/materials/zoom/snow_600_normal.png"
+      },
+      "size": 1024
+    },
+    "800": {
+      "albedo": {
+        "forest": "res://assets/map/materials/zoom/forest_800.png",
+        "grass": "res://assets/map/materials/zoom/grass_800.png",
+        "rock": "res://assets/map/materials/zoom/rock_800.png",
+        "snow": "res://assets/map/materials/zoom/snow_800.png"
+      },
+      "normal": {
+        "forest": "res://assets/map/materials/zoom/forest_800_normal.png",
+        "grass": "res://assets/map/materials/zoom/grass_800_normal.png",
+        "rock": "res://assets/map/materials/zoom/rock_800_normal.png",
+        "snow": "res://assets/map/materials/zoom/snow_800_normal.png"
+      },
+      "size": 1254
+    }
+  },
+  "tiling_world": 24.0
+}

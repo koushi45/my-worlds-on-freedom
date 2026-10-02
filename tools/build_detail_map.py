@@ -1,4 +1,4 @@
-"""4 texels/world-unit display tiles; exact land clipped to the existing terrain mesh.
+"""Detailed terrain tiles; exact land clipped to the existing terrain mesh.
 
 Display-only Terrarium z11. Neither routing DEM, map coordinates nor displacement
 mesh changes. Adjacent tiles sample identical global coordinates with 4px gutters.
@@ -13,10 +13,11 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 from PIL import Image
 from pyproj import Transformer
-from scipy.ndimage import map_coordinates, gaussian_filter, median_filter
+from scipy.ndimage import map_coordinates, median_filter
 from shapely.geometry import shape, box, Polygon
 from shapely.ops import transform, unary_union
 from shapely import constrained_delaunay_triangles
+from terrain_texture import render as render_terrain
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'assets/map/detail'
@@ -97,12 +98,7 @@ def main():
         xx,yy=np.meshgrid(x+axis,y+axis);tx,ty=source_coords(xx,yy)
         height=np.maximum(0,map_coordinates(mosaic,[(ty-sy)*256-.5,(tx-sx)*256-.5],order=1,mode='nearest'))
         assert np.isfinite(height).all() and height.max()<4500, (tile['tile_id'],height.max())
-        dy,dx=np.gradient(gaussian_filter(height,.65),1/DENSITY/scale)
-        shade=np.clip(.64+(.55*dx+.65*dy+.75)/np.sqrt(dx*dx+dy*dy+1)*.48,.43,1.15)
-        stops=[0,100,300,700,1200,1800,2500,3800]
-        colors=np.array([[190,204,153],[168,192,130],[136,169,111],[113,145,99],[141,153,113],[165,158,132],[189,183,167],[238,233,219]])
-        color=np.stack([np.interp(height,stops,colors[:,c]) for c in range(3)],axis=-1)
-        image=np.clip(color*shade[:,:,None],0,255).astype(np.uint8)[4:-4,4:-4]
+        image=render_terrain(height,x+axis,y+axis,1/DENSITY/scale)[4:-4,4:-4]
         path=OUT/(tile['tile_id']+'.png');Image.fromarray(image).save(path)
         # Identical source triangle planes to elevation_surface.mesh_for, then
         # intersect with the original polygon. Holes and islands survive clipping.
@@ -135,9 +131,18 @@ def main():
             finished.append(t)
             if i%10==0: print(f'Rendered {i+1}/{len(tiles)}',flush=True)
     inputs=['data/base/japan_land.geojson','data/base/japan_land_manifest.json','assets/map/elevation/mesh_height.png']
-    write(META/'manifest.json',dict(schema_version=1,world_size=[8192,8192],maximum_zoom=4,density=DENSITY,tile_span=SPAN,
+    write(META/'manifest.json',dict(schema_version=1,world_size=[8192,8192],maximum_zoom=8,density=DENSITY,tile_span=SPAN,
         source_zoom=ZOOM,source='AWS Terrain Tiles / Mapzen Terrarium',tiles=finished,sources=sorted(sources,key=lambda s:s['file']),
-        input_hashes={p:sha(ROOT/p) for p in inputs},note='Display only; original land geometry and terrain displacement preserved. Native DEM resolution varies; 4 texels/world-unit does not imply surveyed 56m accuracy.'))
+        input_hashes={p:sha(ROOT/p) for p in inputs},
+        texture_style='grass, forest, rock and summit snow; deterministic world-coordinate texture over measured relief',
+        note='Display only; original land geometry and terrain displacement preserved. Native DEM resolution varies; 4 texels/world-unit does not imply surveyed 56m accuracy.'))
+    from build_detail_water_meshes import main as build_water_meshes
+    build_water_meshes()
+    # Every native tier must use the same baked fine light and broad shadows.
+    from build_terrain_relief import main as build_broad_shadows
+    build_broad_shadows()
+    from restyle_terrain import detail_tiles as restyle_tiles
+    restyle_tiles(base=True, close=True, high=True, workers=2, variant='albedo')
     print('Detail map complete',flush=True)
 
 if __name__=='__main__': main()

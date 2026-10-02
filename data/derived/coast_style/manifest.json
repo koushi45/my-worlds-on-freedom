@@ -1,0 +1,16 @@
+{
+  "purpose": "display_only",
+  "world_size": 8192,
+  "size": 2048,
+  "channels": {
+    "r": "water_distance_0_to_128_world_units",
+    "g": "inferred_coastal_cliff_factor",
+    "b": "approved_land_coverage",
+    "a": "128_plus_land_distance_0_to_32_world_units_on_127_steps"
+  },
+  "inputs": {
+    "data/derived/land_masks/land_mask_8192.png": "03a737232236ff1046cedb20984db14bd3d85cb8a3494aa174d3f82358291117",
+    "assets/map/elevation/elevation_m.png": "6e13ba9700766facc7ae3bf99779a04187fb20d21bdd800cace3f952f5c98444"
+  },
+  "output_sha256": "7b37fe902b6378ebefbccc725a2f63f58f9f63cfe4f7a502903274425ceca3c0"
+}

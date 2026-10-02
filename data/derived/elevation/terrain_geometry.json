@@ -1,0 +1,90 @@
+{
+  "source": "assets/map/elevation/elevation_m.png",
+  "source_sha256": "6e13ba9700766facc7ae3bf99779a04187fb20d21bdd800cace3f952f5c98444",
+  "grid": 4097,
+  "step_world": 2,
+  "encoding": "little-endian uint16 metres",
+  "height_scale": 0.00882632187962517,
+  "vertical_exaggeration": 2.0,
+  "smoothing": "none; bilinear measured DEM only",
+  "far_step_world": 16,
+  "near_step_world": 2,
+  "sha256": "f781087445dc4e87fef1188806996d5c2b071a4c3d70bbebeae50ad455c9e219",
+  "fuji_detail": {
+    "file": "data/derived/elevation/fuji_vertices.bin",
+    "origin": [
+      4704.0,
+      5376.0
+    ],
+    "span": 128,
+    "grid": 513,
+    "step_world": 0.25,
+    "sample_spacing_m": 56.64873849142172,
+    "source": "Mapzen / AWS Terrain Tiles (Terrarium, zoom 11)",
+    "sources": [
+      {
+        "file": "data/sources/elevation/terrarium/11/1812/807.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1812/807.png",
+        "sha256": "201e671de028f2bb74d5198d2ae118fd99ae90399725fa4b19e64c5b623280e5"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1812/808.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1812/808.png",
+        "sha256": "4dbd9911e69b2ccc81dda83fa2e4cc9b7d2609305e6b474b48c7d388b9d4c001"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1812/809.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1812/809.png",
+        "sha256": "923291bf25daf91ed5a325f35f0ccc2d2bb7b401407c4251a297210a38cc0f90"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1812/810.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1812/810.png",
+        "sha256": "effdb36a0a6deaa4a4ae9ed6725890145d91e81671e8845a19efbffadeb621fa"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1813/807.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1813/807.png",
+        "sha256": "cfd72a07dd2e75e4077a19210aa4384dae689e58b351d834ded06fde2c4972d0"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1813/808.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1813/808.png",
+        "sha256": "26520b549f9db78ade6a57b7e7e7d26d1fa678a13338531d7d9de99b89c97ea7"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1813/809.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1813/809.png",
+        "sha256": "91f538ed3a3a1576fd0fe3a03bdda5af9803ee40c4b8ef7f7d40715fe1ff028a"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1813/810.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1813/810.png",
+        "sha256": "8e0247f274a2dd66872871d10692127135709b30ca44854b126ff0facb7add0f"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1814/807.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1814/807.png",
+        "sha256": "d2d5a525d0250251daf187c3df5e232c0bc66d2c51d96db05de0020ae7082bf1"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1814/808.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1814/808.png",
+        "sha256": "8f9a2e408d3ac530ad59c78d297a1df444cfeaa50ff2cf5cb40fb84e5cdfb1f7"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1814/809.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1814/809.png",
+        "sha256": "3f88de984af5b49107aec94a48dc83601285726fd9dd13d712d90dde7a113efc"
+      },
+      {
+        "file": "data/sources/elevation/terrarium/11/1814/810.png",
+        "url": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/11/1814/810.png",
+        "sha256": "954004a60b05e99f2a1c6cd32be387c132ff4dab42798aa73351b866fd758a97"
+      }
+    ],
+    "smoothing": "none; bilinear measured DEM only",
+    "maximum_elevation_m": 3737.679443359375,
+    "sha256": "ad01dbc87c5a9c74212480754ea38f07754c2f671111b45a4a79afebf21ceab9"
+  }
+}

@@ -9,7 +9,9 @@ var council_origin := false
 var slots: Control
 var confirmation: ConfirmationDialog
 var territory_fill_toggle: CheckButton
-var zoom_label: Label
+const ZOOM_PERCENTAGES := [50, 100, 200, 400, 600, 800]
+var zoom_label: Button
+var zoom_choices: PopupMenu
 var last_zoom := -1.0
 var action := ""
 var options: Control
@@ -55,12 +57,29 @@ func _ready() -> void:
 	crisis_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	crisis_label.add_theme_color_override("font_color", Color("#ffc4aa"))
 	main.retainer_management.loyalty_crisis.connect(_show_loyalty_crisis)
-	zoom_label = UI.label("",overlay,15)
+	zoom_label = DistrictStyle.button("",overlay,_show_zoom_choices)
+	zoom_label.custom_minimum_size = Vector2(240,32)
+	zoom_label.add_theme_font_size_override("font_size",15)
 	zoom_label.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
 	zoom_label.offset_left = 20
+	zoom_label.offset_right = 260
 	zoom_label.offset_top = -44
 	zoom_label.offset_bottom = -12
-	zoom_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	zoom_label.focus_mode = Control.FOCUS_NONE
+	zoom_choices = PopupMenu.new()
+	zoom_choices.name = "MapZoomChoices"
+	var zoom_background := StyleBoxFlat.new()
+	zoom_background.bg_color = Color("#10131bf5")
+	zoom_background.border_color = DistrictStyle.GOLD
+	zoom_background.set_border_width_all(1)
+	zoom_background.set_content_margin_all(8)
+	zoom_choices.add_theme_stylebox_override("panel",zoom_background)
+	zoom_choices.add_theme_color_override("font_color",DistrictStyle.PAPER)
+	zoom_choices.add_theme_color_override("font_hover_color",DistrictStyle.GOLD)
+	for percent in ZOOM_PERCENTAGES:
+		zoom_choices.add_radio_check_item("%d%%" % percent,percent)
+	zoom_choices.id_pressed.connect(_select_zoom)
+	add_child(zoom_choices)
 	zoom_label.add_theme_color_override("font_shadow_color",Color.BLACK)
 	zoom_label.add_theme_constant_override("shadow_offset_x",2)
 	zoom_label.add_theme_constant_override("shadow_offset_y",2)
@@ -122,6 +141,17 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not is_equal_approx(last_zoom,main.camera.zoom.x): _update_zoom_label()
+
+func _show_zoom_choices() -> void:
+	for index in range(ZOOM_PERCENTAGES.size()):
+		zoom_choices.set_item_checked(index,is_equal_approx(main.camera.zoom.x,ZOOM_PERCENTAGES[index]/100.0))
+	zoom_choices.reset_size()
+	zoom_choices.position = Vector2i(zoom_label.get_global_rect().position) - Vector2i(0,zoom_choices.size.y)
+	zoom_choices.popup()
+
+func _select_zoom(percent: int) -> void:
+	main._zoom_at(percent/100.0,main.get_viewport_rect().size*0.5)
+	_update_zoom_label()
 
 func _update_zoom_label() -> void:
 	last_zoom = main.camera.zoom.x

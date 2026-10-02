@@ -26,7 +26,11 @@
 
 ## 再生成と検証
 
-`python tools/build_detail_map.py` で描画専用データを生成。入力・元タイルのハッシュ、座標系、補正記録を `data/derived/detail_map/manifest.json` に保存する。元タイルのキャッシュは `data/sources/elevation/terrarium/11/`。従来の道路用 `elevation_m.png` や表示変位用 `mesh_height.png` を上書きしない。
+`python tools/build_detail_map.py` で描画専用データを生成し、同じ正本ポリゴンから海側の補完メッシュも続けて生成する。入力・元タイルのハッシュ、座標系、補正記録を `data/derived/detail_map/manifest.json` に保存する。元タイルのキャッシュは `data/sources/elevation/terrarium/11/`。従来の道路用 `elevation_m.png` や表示変位用 `mesh_height.png` を上書きしない。
+
+海色用の `assets/map/coast_style_field.png` は `python tools/build_coast_style_field.py` で既存の8192陸地マスクと標高から生成する。岸までの距離で近海を明るくし、岸の陸側の標高差から砂浜寄り・崖寄りの見た目を推定する。水面には `assets/map/ocean_surface_v2.png` の波模様を貼り、タイル境界をシェーダーで混合してゆっくり動かす。浅瀬でも波の明暗を残す。泡・砂浜帯と崖の暗い接地影は描画だけに使い、海陸形状とクリック判定は正本ポリゴンのまま。推定した岸種は史実の海浜分類ではない。水深データは現在の着色には使わない。
+
+正本陸地を将来更新するときは、Phase C の海岸線・陸地マスク、Phase D のLOD、Phase E の地図画像、Phase F の境界参照、郡海側境界、詳細タイル、海色用距離データ、Godotランタイムパックを同じ更新単位で再生成する。郡海側境界は `tools/align_district_coastlines.py` を使用する。海色用距離データだけを再生成して輪郭を変更しない。
 
 `test_detail_map.py` は陸地面積・ポリゴン一致・立体三角形への一致・海岸線・隣接画像の余白・入力ハッシュを検査する。Godotの `test_detail_zoom.gd` は通常操作・拠点・路線選択の上限、画面内だけの読込、切替・パン・400%の平面／立体描画を確認する。
 

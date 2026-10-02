@@ -4,6 +4,7 @@ const RADIUS := 6.0
 const MIN_DRAW_ZOOM := 2.0
 const ROOT_3 := 1.7320508075688772
 const WORLD := Rect2(0, 0, 8192, 8192)
+const NEIGHBORS := [Vector2i(1, 0), Vector2i(0, 1), Vector2i(-1, 1), Vector2i(-1, 0), Vector2i(0, -1), Vector2i(1, -1)]
 
 static func center(cell: Vector2i) -> Vector2:
 	return Vector2(ROOT_3 * RADIUS * (cell.x + cell.y * 0.5), RADIUS * 1.5 * cell.y)
@@ -39,6 +40,48 @@ static func path(a: Vector2i, b: Vector2i) -> Array:
 	for i in range(1, count+1):
 		result.append(key(cell_at(center(a).lerp(center(b), float(i)/count))))
 	return result
+
+static func path_avoiding(a: Vector2i, b: Vector2i, blocked: Dictionary, allowed: Dictionary) -> Array:
+	if a == b or blocked.has(b) or (not allowed.is_empty() and (not allowed.has(a) or not allowed.has(b))): return []
+	var has_approach := false
+	for delta in NEIGHBORS:
+		if not blocked.has(b + delta) and WORLD.has_point(center(b + delta)) and (allowed.is_empty() or allowed.has(b + delta)):
+			has_approach = true
+			break
+	if not has_approach: return []
+	var frontier: Array[Vector2i] = [a]
+	var cost: Dictionary = {a: 0}
+	var previous: Dictionary = {}
+	var closed: Dictionary = {}
+	while not frontier.is_empty():
+		if closed.size() > maxi(4000, distance(a, b) * 40): return []
+		var best_index := 0
+		var best_score := 2147483647
+		var best_distance := 2147483647
+		for i in frontier.size():
+			var remaining := distance(frontier[i], b)
+			var score := int(cost[frontier[i]]) + remaining
+			if score < best_score or (score == best_score and remaining < best_distance):
+				best_index = i
+				best_score = score
+				best_distance = remaining
+		var current: Vector2i = frontier.pop_at(best_index)
+		if current == b:
+			var result := []
+			while current != a:
+				result.push_front(key(current))
+				current = previous[current]
+			return result
+		closed[current] = true
+		for delta in NEIGHBORS:
+			var neighbor: Vector2i = current + delta
+			if closed.has(neighbor) or blocked.has(neighbor) or not WORLD.has_point(center(neighbor)) or (not allowed.is_empty() and not allowed.has(neighbor)): continue
+			var next_cost := int(cost[current]) + 1
+			if not cost.has(neighbor) or next_cost < int(cost[neighbor]):
+				cost[neighbor] = next_cost
+				previous[neighbor] = current
+				if not frontier.has(neighbor): frontier.append(neighbor)
+	return []
 
 static func polygon(cell: Vector2i) -> PackedVector2Array:
 	var points := PackedVector2Array()

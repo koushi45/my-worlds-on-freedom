@@ -26,6 +26,7 @@ var last_operation: Dictionary = {}
 var previous_tick := 0
 var last_sample := 0
 var last_slow := 0
+var last_snapshot := -1000
 var maximum_frame_ms := 0.0
 var frames_over_100ms := 0
 
@@ -115,10 +116,24 @@ func _process(_delta: float) -> void:
 	previous_tick = now
 	maximum_frame_ms = maxf(maximum_frame_ms, ms)
 	if ms > 100.0: frames_over_100ms += 1
+	lock.lock()
+	heartbeat_ms = now
+	lock.unlock()
+	if now-last_snapshot>=100 or ms>250.0:
+		last_snapshot = now
+		_capture_state()
+	if ms > 250.0 and now-last_slow >= 1000:
+		last_slow = now
+		record("slow_frame", {"frame_ms": ms})
+	if now-last_sample >= (1000 if enabled else 10000):
+		last_sample = now
+		record("sample")
+
+func _capture_state() -> void:
 	var state: Dictionary = {}
 	if is_instance_valid(main) and main.initialized:
 		state = {"zoom": main.camera.zoom.x, "camera": [main.camera.position.x, main.camera.position.y], "lod": main.lod_level,
-			"oblique": main.elevation.enabled, "tiles": main.loaded_tiles.size(), "pending_tiles": main.pending_tiles.size(),
+			"oblique": main.is_oblique(), "view_angle":main.map_view.angle if main.map_view != null else 90.0, "tiles": main.loaded_tiles.size(), "pending_tiles": main.pending_tiles.size(),
 			"asset_queue": main.asset_stream.queued.size(), "asset_running": main.asset_stream.running.keys(),
 			"asset_failed": main.asset_stream.failed.size(), "asset_cache_bytes": main.asset_stream.resident_bytes,
 			"asset_budget_bytes": main.asset_stream.budget_bytes, "asset_reserved_bytes":main.asset_stream.reserved_bytes,
@@ -131,15 +146,8 @@ func _process(_delta: float) -> void:
 			"draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME),
 			"maximum_frame_ms": maximum_frame_ms, "frames_over_100ms": frames_over_100ms}
 	lock.lock()
-	heartbeat_ms = now
 	snapshot = state
 	lock.unlock()
-	if ms > 250.0 and now-last_slow >= 1000:
-		last_slow = now
-		record("slow_frame", {"frame_ms": ms})
-	if now-last_sample >= (1000 if enabled else 10000):
-		last_sample = now
-		record("sample")
 
 func _watch() -> void:
 	var reported := false

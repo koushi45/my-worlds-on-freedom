@@ -8,6 +8,7 @@ import numpy as np
 from PIL import Image
 from pyproj import Transformer
 from scipy.ndimage import map_coordinates, gaussian_filter, median_filter
+from restyle_terrain import render_overview
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'data/derived/elevation'
@@ -86,22 +87,13 @@ def main():
     gx, gy = np.meshgrid(coords,coords)
     nodes = np.rint(map_coordinates(display,[gy,gx],order=1,mode='nearest')).astype(np.uint16)
     max_dy = np.abs(np.diff(nodes.astype(float),axis=0)).max()/16
-    exaggeration = min(0.028, 0.60/max(max_dy,0.001))
+    exaggeration = min(0.035, 0.75/max(max_dy,0.001))
     rgb = np.zeros((513,513,3),np.uint8)
     rgb[:,:,0] = nodes//256
     rgb[:,:,1] = nodes%256
     Image.fromarray(rgb).save(ASSETS/'mesh_height.png')
-    # Hillshade uses actual metre spacing, independent of display exaggeration.
-    softened = gaussian_filter(height,0.65)
-    dy, dx = np.gradient(softened, 8192/SIZE/scale)
-    light = (0.55*dx+0.65*dy+0.75)/np.sqrt(dx*dx+dy*dy+1)
-    shade = np.clip(0.64+light*0.48,0.43,1.15)
-    stops = [0,100,300,700,1200,1800,2500,3800]
-    colors = np.array([[190,204,153],[168,192,130],[136,169,111],[113,145,99],
-                       [141,153,113],[165,158,132],[189,183,167],[238,233,219]])
-    color = np.stack([np.interp(height,stops,colors[:,c]) for c in range(3)],axis=-1)
-    color = np.clip(color*shade[:,:,None],0,255).astype(np.uint8)
-    relief = Image.fromarray(color)
+    # The overview and close-up use the same continuous world-coordinate style.
+    relief = render_overview(height, scale)
     tiles = json.loads((ROOT/'data/derived/map_images/map_images_manifest.json').read_text())['tiles']
     outputs = {}
     for tile in tiles:
@@ -120,7 +112,7 @@ def main():
     manifest = {'schema_version':1,'source':'Mapzen / AWS Terrain Tiles (Terrarium, zoom 8)',
         'accessed':'2026-09-11','source_registry':'https://registry.opendata.aws/terrain-tiles/',
         'attribution':'Mapzen; SRTM and GMTED2010 courtesy of USGS; ETOPO1 courtesy of NOAA.',
-        'modifications':'LCC reprojection; approved polygon clipping; hillshade and hypsometric tint; smoothed display mesh.',
+        'modifications':'LCC reprojection; approved polygon clipping; measured hillshade and textured grass, forest, rock and summit snow; smoothed display mesh.',
         'source_master_sha256':master['canonical_sha256'],'game_transform':definition,
         'height_size':SIZE,'height_units':'metres','mesh_step':16,'mesh_encoding':'R*256+G metres',
         'display_height_scale':exaggeration,'max_display_y_derivative':float(max_dy*exaggeration),
