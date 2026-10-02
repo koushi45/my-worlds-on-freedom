@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`chujou_fujisuke.png`, `chujou_kagesuke.png`, `marumo_mitsukane.png`, `maruo_yoshikiyo.png`, `nakanishi_motoyuki.png`, `nakano_kazuyasu.png`, `nakano_munetoki.png`, `niwa_ujikatsu.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits, batch 10
 
 Ten original modern strategy-game bust icons were generated separately with built-in ImageGen. Each call used the web-searched primary source below as Image 1 and the project's `assets/officers/portraits/oda_nobunaga.png` as Image 2 solely for a consistent painterly finish. For game banners, the prompt explicitly used only the tiny central officer face, never the banner, interface or text. No downloaded reference artwork is included in the game.

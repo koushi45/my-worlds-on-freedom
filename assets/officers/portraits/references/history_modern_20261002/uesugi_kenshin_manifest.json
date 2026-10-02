@@ -1,0 +1,138 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "type": "Manifest",
+  "id": "https://rmda.kulib.kyoto-u.ac.jp/iiif/metadata_manifest/RB00033866/manifest.json",
+  "label": {
+    "ja": [
+      "上杉謙信像(模本)"
+    ]
+  },
+  "viewingDirection": "right-to-left",
+  "metadata": [
+    {
+      "label": {
+        "ja": [
+          "タイトル / 著者"
+        ]
+      },
+      "value": {
+        "ja": [
+          "<a href=\"https://rmda.kulib.kyoto-u.ac.jp/item/RB00033866\"><strong>上杉謙信像(模本)</strong></a>"
+        ]
+      }
+    },
+    {
+      "label": {
+        "ja": [
+          "レコードID"
+        ]
+      },
+      "value": {
+        "ja": [
+          "RB00033866"
+        ]
+      }
+    },
+    {
+      "label": {
+        "ja": [
+          "コレクション"
+        ]
+      },
+      "value": {
+        "ja": [
+          "総合博物館所蔵"
+        ]
+      }
+    }
+  ],
+  "requiredStatement": {
+    "label": {
+      "ja": [
+        "所蔵"
+      ]
+    },
+    "value": {
+      "ja": [
+        "京都大学総合博物館 The Kyoto University Museum, Kyoto University"
+      ]
+    }
+  },
+  "rights": "https://rmda.kulib.kyoto-u.ac.jp/license_icon/free-license",
+  "logo": [
+    {
+      "id": "https://rmda.kulib.kyoto-u.ac.jp/sites/default/files/2018-04/license_free.jpg",
+      "type": "Image",
+      "format": "image/jpeg",
+      "height": 100,
+      "width": 120
+    }
+  ],
+  "homepage": [
+    {
+      "id": "https://rmda.kulib.kyoto-u.ac.jp/reuse",
+      "type": "Text",
+      "format": "text/html",
+      "label": {
+        "ja": [
+          "https://rmda.kulib.kyoto-u.ac.jp/reuse"
+        ]
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "https://rmda.kulib.kyoto-u.ac.jp/iiif/RB00033866/canvas/p1",
+      "type": "Canvas",
+      "label": {
+        "ja": [
+          "1"
+        ]
+      },
+      "height": 8984,
+      "width": 6732,
+      "thumbnail": [
+        {
+          "id": "https://rmda.kulib.kyoto-u.ac.jp/iiif/3/RB00033866%2FRB00033866_00001_0.ptif/full/160,/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://rmda.kulib.kyoto-u.ac.jp/iiif/RB00033866/canvas/p1/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://rmda.kulib.kyoto-u.ac.jp/iiif/RB00033866/annotation/p1-image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://rmda.kulib.kyoto-u.ac.jp/iiif/3/RB00033866%2FRB00033866_00001_0.ptif/full/2000,/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 8984,
+                "width": 6732,
+                "service": [
+                  {
+                    "id": "https://rmda.kulib.kyoto-u.ac.jp/iiif/3/RB00033866%2FRB00033866_00001_0.ptif",
+                    "type": "ImageService3",
+                    "profile": "level2"
+                  }
+                ]
+              },
+              "target": "https://rmda.kulib.kyoto-u.ac.jp/iiif/RB00033866/canvas/p1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "https://rmda.kulib.kyoto-u.ac.jp/iiif/RB00033866/canvas/p1/annopage-1",
+          "type": "AnnotationPage",
+          "items": []
+        }
+      ]
+    }
+  ]
+}

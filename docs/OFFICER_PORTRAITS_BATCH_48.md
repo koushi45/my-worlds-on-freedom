@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`odachi_hisauji.png`, `oishi_sadahisa.png`, `oishi_sadanaka.png`, `oishi_yoshinobu.png`, `okouchi_hidetsuna.png`, `okuma_tomohide.png`, `omura_sumitada.png`, `osawa_mototane.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # 武将肖像・第48組
 
 2026-09-30 制作。各画像は正方形・背景透過 PNG。絵柄は現代的な写実表現とし、画像内には文字・ロゴ・枠を入れない。参照画像は制作資料のみでゲームには同梱しない。

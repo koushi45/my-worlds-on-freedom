@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`date_munekatsu.png`, `date_munekiyo.png`, `date_muneshige.png`, `date_munetoshi.png`, `date_muneyasu.png`, `date_munezane.png`, `ito_nobutsune.png`, `ito_sanenobu.png`, `ito_shigenobu.png`, `ito_sukeshige.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # 武将肖像 第18組：参照元と生成条件
 
 対象：伊東重信、伊藤信恒・実信・祐重、伊達宗利・宗勝・宗実・宗泰・宗清・宗重。

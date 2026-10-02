@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`futami_mitsuzoin.png`, `inui_kazunobu.png`, `kamei_hidetsuna.png`, `nihonmatsu_harukuni.png`, `nihonmatsu_ieyasu.png`, `nihonmatsu_yoshikuni.png`, `nihonmatsu_yoshiuji.png`, `nikaido_moriyoshi.png`, `ninomiya_naritoki.png`, `ninomiya_toshizane.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits, batch 12
 
 Ten modern strategy-game bust icons were created separately with the built-in ImageGen tool. Image 1 in each call was a web-searched source; Image 2 was the project's `assets/officers/portraits/oda_nobunaga.png` for rendering style only. The subject's facial shape, age, headwear, costume and gaze were instructed from Image 1, specifically the small central officer image in each banner, with banner UI and text excluded. Source images were not copied into the game.

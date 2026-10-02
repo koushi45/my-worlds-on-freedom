@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`naito_ienaga.png`, `naito_nobumasa.png`, `naito_nobunari.png`, `naito_tadaoki.png`, `uchida_sanehisa.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits: batch 24
 
 Ten individually generated, square transparent PNG busts are stored under `assets/officers/portraits/` and linked to the game's officer IDs in `scripts/game/officer_portraits.gd`. No source images are shipped with the game. Five exact-person modern game images were used as direct image inputs. For 信照, no exact-person modern game image was verified, so an authenticated historical portrait was supplied for features only, explicitly *not* as a style reference. The other four are imaginative reconstructions, not claimed likenesses.

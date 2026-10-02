@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`naito_kiyonari.png`, `naito_masanaga.png`, `naito_masanari_shirozaemon.png`, `naito_masatoyo.png`, `naito_okimori.png`, `naito_takaharu.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits: batch 25
 
 Ten individually generated, square transparent PNG busts are stored under `assets/officers/portraits/` and linked to the game's officer IDs in `scripts/game/officer_portraits.gd`. Six exact-person modern game images were found through web image search and supplied directly to generation. The other four portraits are imaginative reconstructions, not claimed likenesses. No reference images are shipped with the game.

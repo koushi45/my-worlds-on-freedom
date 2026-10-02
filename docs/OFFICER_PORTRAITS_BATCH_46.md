@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`okuni_saneyori.png`, `otomo_sorin.png`, `otomo_yoshiaki.png`, `otomo_yoshimune.png`, `otsuka_yozaemon.png`, `ouchi_takahiro.png`, `ouchi_teruhiro.png`, `ouchi_yoshinaga.png`, `ouchi_yoshitaka.png`, `ouchi_yoshitaka_son.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits, batch 46
 
 Ten separate modern realistic 1254 × 1254 RGBA transparent PNG portraits were generated with the built-in image-generation tool and mapped to the game officer IDs. The images contain no writing or visible hands. The searched source images are references only; none is shipped with the game.

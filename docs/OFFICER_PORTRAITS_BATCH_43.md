@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`okubo_tadatoshi.png`, `okubo_tadayo.png`, `tada_sanpachiro.png`, `tako_nagatomo.png`, `tarao_mitsutoshi.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits, batch 43
 
 The ten new officer portraits are original 1254 × 1254 RGBA PNG cutouts with transparent backgrounds. The cited images were consulted before generation; no source image was copied into the game. Old painting technique, game UI, writing, and backgrounds were deliberately excluded from the output.

@@ -333,7 +333,7 @@ func _build_country_geometry() -> void:
     _create_band_nodes(true,country_band_nodes)
 
 
-func _process_profiled(delta: float) -> void:
+func _process(delta: float) -> void:
     if projection_enabled != main.elevation.enabled: rebuild()
     var transform := get_global_transform_with_canvas()
     neutral_style.set_shader_parameter("view_zoom",transform.x.length())
@@ -356,7 +356,7 @@ func _process_profiled(delta: float) -> void:
         last_transform = transform
         queue_redraw()
 
-func _draw_profiled() -> void:
+func _draw() -> void:
     var transform := get_global_transform_with_canvas()
     var visible_rect: Rect2 = transform.affine_inverse() * get_viewport_rect()
     var scale_value := maxf(transform.x.length(),0.001)
@@ -413,14 +413,4 @@ func _draw_selection_pulse(active_projected: Dictionary) -> void:
         var mesh := fill_mesh_for(selected)
         if mesh != null: draw_mesh(mesh,null,Transform2D.IDENTITY,color)
 
-var profile_process_us := 0
-func _process(delta: float) -> void:
-    var start := Time.get_ticks_usec()
-    _process_profiled(delta)
-    profile_process_us = Time.get_ticks_usec()-start
 
-var profile_draw_us := 0
-func _draw() -> void:
-    var start := Time.get_ticks_usec()
-    _draw_profiled()
-    profile_draw_us = Time.get_ticks_usec()-start

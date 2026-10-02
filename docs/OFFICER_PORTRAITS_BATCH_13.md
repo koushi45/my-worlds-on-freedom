@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`godai_tomoyoshi.png`, `ii_naohira.png`, `ii_naokatsu.png`, `ii_naomasa.png`, `ii_naotaka.png`, `inoue_arikage.png`, `inoue_daikuro.png`, `inoue_motokichi.png`, `inoue_nariari.png`, `inoue_yukifusa.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits, batch 13
 
 Ten individual modern strategy-game bust icons were generated with the built-in ImageGen tool, one call per officer. Each call used a web-searched picture as **Image 1, the primary design reference**, and `assets/officers/portraits/oda_nobunaga.png` as **Image 2, rendering-style reference only**. The facial proportions, apparent age, headgear, clothing structure, palette and gaze were directed by Image 1. Hands and weapons were cropped out. Output is square transparent PNG without text, scenery or a frame.

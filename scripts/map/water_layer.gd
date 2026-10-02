@@ -111,7 +111,7 @@ func _draw_content() -> void:
             for ring in surface["rings"]:
                 draw_polyline(ring,Color("#809a9d"),lerpf(0.4,0.85,detail)/view_zoom,true)
 
-func _process_profiled(_delta: float) -> void:
+func _process(_delta: float) -> void:
     if cpu_jobs == null or not initialized:return
     for mode in [elevation.enabled,not elevation.enabled]:
         var key:=kind+":"+str(mode)
@@ -144,7 +144,7 @@ func _process_profiled(_delta: float) -> void:
         if Time.get_ticks_usec()-upload_start>1500:break
 
 var last_slow_draw_ms := -1000
-func _draw_profiled() -> void:
+func _draw() -> void:
     var start := Time.get_ticks_usec()
     _draw_content()
     var duration := Time.get_ticks_usec()-start
@@ -152,14 +152,4 @@ func _draw_profiled() -> void:
         last_slow_draw_ms=Time.get_ticks_msec()
         get_node("/root/MapDiagnostics").record("slow_draw", {"layer":get_script().resource_path,"duration_us":duration})
 
-var profile_process_us := 0
-func _process(delta: float) -> void:
-    var start := Time.get_ticks_usec()
-    _process_profiled(delta)
-    profile_process_us = Time.get_ticks_usec()-start
 
-var profile_draw_us := 0
-func _draw() -> void:
-    var start := Time.get_ticks_usec()
-    _draw_profiled()
-    profile_draw_us = Time.get_ticks_usec()-start

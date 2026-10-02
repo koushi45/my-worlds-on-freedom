@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`hodohara_yukifuji.png`, `hoshina_masanao.png`, `hoshina_masatoshi.png`, `kodama_kagetada.png`, `kodama_narimitsu.png`, `sano_hidetsuna.png`, `sano_toyotsuna.png`, `yoda_nobumasa.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits: batch 22
 
 Ten final square transparent PNGs are saved under `assets/officers/portraits/` and registered by officer ID in `scripts/game/officer_portraits.gd`. Each officer was created with a separate built-in image-generation call. Exact-person historical or game images were supplied as direct visual-reference images where found; source images are not shipped in the game.

@@ -10,7 +10,6 @@ var main: Node2D
 var terrain_legend: CanvasLayer
 var bounds := Rect2()
 var zoom := 1.0
-
 func _ready() -> void:
     z_index = 23
     visible = false
@@ -42,7 +41,7 @@ func update_view(rect: Rect2, view_zoom: float) -> void:
     if terrain_legend != null: terrain_legend.visible = visible
     queue_redraw()
 
-func _draw_profiled() -> void:
+func _draw() -> void:
     if main == null or bounds.size == Vector2.ZERO or zoom < Grid.MIN_DRAW_ZOOM: return
     var alpha := lerpf(0.08, 0.30, smoothstep(5.0, 24.0, Grid.RADIUS * zoom))
     var lines := PackedVector2Array()
@@ -98,8 +97,3 @@ func _build_legend() -> void:
         name.mouse_filter = Control.MOUSE_FILTER_IGNORE
         rows.add_child(name)
 
-var profile_draw_us := 0
-func _draw() -> void:
-    var start := Time.get_ticks_usec()
-    _draw_profiled()
-    profile_draw_us = Time.get_ticks_usec()-start

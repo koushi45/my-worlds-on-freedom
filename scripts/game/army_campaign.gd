@@ -70,7 +70,7 @@ func office_defense_capacity(district_id: String) -> int:
     var level: int = int(district.get("defense", 1)) + int(main.district_buildings.defense_bonus(district_id))
     return clampi(roundi(float(district.get("population", 20000)) * 0.0025) + maxi(0, level - 1) * 25, 50, 1500)
 
-func _process_profiled(delta: float) -> void:
+func _process(delta: float) -> void:
     var side := icon_size()
     var scale := pixel_scale()
     if side != last_icon_size or not is_equal_approx(scale, last_pixel_scale):
@@ -511,7 +511,7 @@ func _draw_route(points: PackedVector2Array, zoom: float, scale: float) -> void:
             _draw_arrow(points[i], segment, 11.0 / (zoom * scale), ROUTE_BLUE)
             since_arrow = 0.0
 
-func _draw_profiled() -> void:
+func _draw() -> void:
     if main != null and main.map_view != null and is_instance_valid(main.map_view.markers.army_markers): main.map_view.markers.army_markers.queue_redraw()
     if main == null: return
     var zoom: float = main.camera.zoom.x
@@ -535,14 +535,4 @@ func _draw_profiled() -> void:
         if id == selected_id: draw_arc(Vector2.ZERO,side * 0.27,0,TAU,32,Color.WHITE,2,true)
         draw_set_transform(Vector2.ZERO)
 
-var profile_process_us := 0
-func _process(delta: float) -> void:
-    var start := Time.get_ticks_usec()
-    _process_profiled(delta)
-    profile_process_us = Time.get_ticks_usec()-start
 
-var profile_draw_us := 0
-func _draw() -> void:
-    var start := Time.get_ticks_usec()
-    _draw_profiled()
-    profile_draw_us = Time.get_ticks_usec()-start

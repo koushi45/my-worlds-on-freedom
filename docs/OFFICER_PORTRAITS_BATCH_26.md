@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`bessho_nagaharu.png`, `bessho_shigemune.png`, `ideura_morikiyo.png`, `reizei_takatoyo.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits: batch 26
 
 Ten individually generated 1:1 genuine-alpha PNG busts are stored in `assets/officers/portraits/` and registered by officer ID in `scripts/game/officer_portraits.gd`. Search and source selection preceded generation. Five exact-person modern game artworks were supplied directly as image references; five portraits without a usable verified exact-person image are imaginative reconstructions, not claimed historical likenesses. Reference images are not shipped with the game.

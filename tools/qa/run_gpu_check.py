@@ -14,11 +14,18 @@ folder = ROOT / "builds/performance_800"
 folder.mkdir(parents=True, exist_ok=True)
 script, label, *args = sys.argv[1:]
 release = "--release" in args
-args = [a for a in args if a != "--release"]
+pack = "--pack" in args
+args = [a for a in args if a not in ("--release", "--pack")]
+if "benchmark" in script:
+    args.append("--qa-output=" + folder.as_posix())
 engine = str(ROOT / "builds/windows-latest/MyWorldsOnFreedom.exe") if release else shutil.which("godot_console")
 command = [engine, "--path", str(ROOT), "--script", str(ROOT / script), "--", *args]
 if release:
-    command = [engine, "--script", str(ROOT / script), "--", *args]
+    if "benchmark" not in script:
+        raise SystemExit("Use --pack for tests. The release template runs benchmarks through --benchmark-map-800.")
+    command = [engine, "--", "--benchmark-map-800", *args]
+elif pack:
+    command = [engine, "--main-pack", str(ROOT / "builds/windows-latest/MyWorldsOnFreedom.pck"), "--script", str(ROOT / script), "--", *args]
 
 class Memory(ctypes.Structure):
     _fields_ = [("cb", wintypes.DWORD), ("PageFaultCount", wintypes.DWORD)] + [
@@ -56,7 +63,8 @@ with log_path.open("w", encoding="utf-8") as log:
             times = [wintypes.FILETIME() for _ in range(4)]
             if k.GetProcessTimes(handle, *[ctypes.byref(t) for t in times]):
                 cpu = sum((t.dwHighDateTime << 32) | t.dwLowDateTime for t in times[2:]) / 1e7
-                samples.append({"wall_seconds":time.monotonic()-start,"cpu_seconds":cpu,"working_bytes":m.WorkingSetSize,"private_bytes":m.PagefileUsage})
+                phases = re.findall(r"BENCH800_PHASE ([^\r\n]+)", contents)
+                samples.append({"wall_seconds":time.monotonic()-start,"cpu_seconds":cpu,"working_bytes":m.WorkingSetSize,"private_bytes":m.PagefileUsage,"phase":phases[-1] if phases else "startup"})
         errors = any(line.startswith(("SCRIPT ERROR:","ERROR:","FAIL:")) for line in contents.splitlines())
         if time.monotonic()-start > 240 or errors:
             timed_out = time.monotonic()-start > 240

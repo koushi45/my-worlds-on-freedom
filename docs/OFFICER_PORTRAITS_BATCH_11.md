@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`hisamatsu_sadamasu.png`, `hisamatsu_toshikatsu.png`, `kuno_muneyoshi.png`, `kunohe_masazane.png`, `kunohe_sanechika.png`, `nomi_kageoki.png`, `nomi_kagetsugu.png`, `otobe_hachibe.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits, batch 11
 
 Ten modern game bust portraits were generated with built-in ImageGen, one call per officer. Each call supplied the web-searched source as Image 1 and the project's `assets/officers/portraits/oda_nobunaga.png` as Image 2 (style only). For game banners, only the central character face was used; banner lettering and interface were explicitly excluded. Reference downloads were not copied into the game.

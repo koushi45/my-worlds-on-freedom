@@ -36,7 +36,7 @@ func run() -> void:
     main=current_scene
     main.game_clock.set_process(false)
     main.set_process_input(false);main.set_process_unhandled_input(false);root.gui_disable_input=true
-    check(main.map_view.surface.mesh.get_surface_count()==1,"real 3D terrain")
+    check(main.map_view.terrain_chunks.far_nodes.size()>0 if main.map_view.chunked_terrain else main.map_view.surface.mesh.get_surface_count()==1,"real 3D terrain")
     check(main.map_view.view_camera.current,"3D camera current")
     check(not main.camera.enabled,"control camera does not transform HUD")
     check(main.shared_road_layer.get_parent()==main.hex_tile_layer,"roads stay children of hex layer")
@@ -70,7 +70,11 @@ func run() -> void:
             if zoom==8.0:
                 check(not main._screen_to_world(Vector2(640,0)).is_finite(),"800 percent exposes sky above the horizon")
                 check(main.map_view.fine_surface.visible,"near measured geometry active")
-                check(main.map_view.fine_surface.mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX].size()>130000,"near terrain subdivided")
+                var near_vertices := 0
+                if main.map_view.chunked_terrain:
+                    for node in main.map_view.terrain_chunks.near_nodes.values(): near_vertices+=node.mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX].size()
+                else: near_vertices=main.map_view.fine_surface.mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX].size()
+                check(near_vertices>60000 if main.map_view.adaptive_terrain else near_vertices>130000,"near terrain retains dense detail and boundary samples")
             check(main.asset_stream.failed.is_empty(),"no failed assets")
             check(main.asset_stream.resident_bytes<=main.asset_stream.budget_bytes,"stream budget")
             var timings: Array = []
@@ -100,7 +104,10 @@ func run() -> void:
         max_anchor_pixels=maxf(max_anchor_pixels,error)
         check(error<1.0,"cursor anchor through zoom and angle animation")
     check(is_equal_approx(main.camera.zoom.x,8.0),"zoom reaches latest requested target")
-    check(main.map_view.surface.mesh.surface_get_arrays(0)[Mesh.ARRAY_NORMAL].size()==513*513,"lighting uses geometry normals")
+    if main.map_view.chunked_terrain:
+        for node in main.map_view.terrain_chunks.far_nodes.values():
+            check(node.mesh.surface_get_arrays(0)[Mesh.ARRAY_NORMAL].size()<=65*65,"lighting uses tiled geometry normals")
+    else: check(main.map_view.surface.mesh.surface_get_arrays(0)[Mesh.ARRAY_NORMAL].size()==513*513,"lighting uses geometry normals")
     # Test the actual raster path as well as the camera/ray mathematics.
     var probe_screen := Vector2(780,440)
     var probe = preload("res://tests/base_map/godot/map_projection_probe.gd").new()

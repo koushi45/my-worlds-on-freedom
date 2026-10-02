@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`hachinohe_masahide.png`, `kanematsu_masayoshi.png`, `nyuta_chikazane.png`, `rokkaku_sadayori.png`, `rokkaku_yoshiharu.png`, `rokkaku_yoshikata.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits: batch 23
 
 Ten square transparent PNG portraits are saved under `assets/officers/portraits/` and registered by officer ID in `scripts/game/officer_portraits.gd`. Each was created with its own built-in image-generation call. The six verified exact-person game faces were supplied directly as image references; reference images are not shipped with the game. The other four portraits are explicitly imaginative reconstructions, not claimed historical likenesses.

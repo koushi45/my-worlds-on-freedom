@@ -48,7 +48,7 @@ func run() -> void:
         check(view.terrain_materials.stream.waiting.size()<=2,"bounded texture requests")
         check(view.terrain_materials.stream.resident_bytes+view.terrain_materials.stream.reserved_bytes<=view.terrain_materials.stream.budget_bytes,"bounded texture reservation")
         check(main.cpu_jobs.reserved_bytes<=main.cpu_jobs.budget_bytes,"bounded CPU jobs")
-        check(view.fine_cache.size()<=2,"bounded near mesh cache")
+        check(view.terrain_chunks.near_cache.size()<=64 if view.chunked_terrain else view.fine_cache.size()<=2,"bounded near mesh cache")
     view.yaw=0
     for i in 30: await process_frame
     var draws: int = view.markers.draw_count

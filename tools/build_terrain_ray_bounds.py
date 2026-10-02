@@ -39,6 +39,7 @@ def main():
     (FOLDER / "terrain_ray_bounds.json").write_text(json.dumps({
         "terrain_sha256":hashlib.sha256(raw).hexdigest(),
         "fuji_sha256":hashlib.sha256(fuji_raw).hexdigest(),
+        "geometry_sha256":hashlib.sha256((FOLDER / "terrain_geometry.json").read_bytes()).hexdigest(),
         "tiers":tiers,"bytes":len(payload)
     },indent=2)+"\n",encoding="utf-8")
     print("Exact terrain ray bounds:",len(payload),"bytes")

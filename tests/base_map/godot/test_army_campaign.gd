@@ -20,6 +20,9 @@ func mouse_button(point: Vector2, pressed: bool) -> InputEventMouseButton:
 	return event
 
 func map_screen(main: Node2D, point: Vector2) -> Vector2:
+	if main.map_view != null:
+		main.map_view.sync(true)
+		return main.map_view.project(point)
 	return (main.elevation.project(point) - main.camera.position) * main.camera.zoom.x + main.get_viewport_rect().size * 0.5
 
 func run() -> void:
@@ -28,6 +31,7 @@ func run() -> void:
 	while Time.get_ticks_msec() < deadline and (current_scene == null or not current_scene.initialized): await process_frame
 	if not require(current_scene != null and current_scene.initialized, "map initialized"): return
 	var main = current_scene
+	main.set_oblique(false)
 	main.game_clock.set_process(false)
 	var army = main.army_campaign
 	army.set_process(false)

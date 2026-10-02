@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`ii_naochika.png`, `ii_naomori.png`, `ii_naotora.png`, `kyogoku_takahiro.png`, `kyogoku_takayoshi.png`, `watari_motomune.png`, `watari_shigemune.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits, batch 14
 
 Ten individual officer busts were generated with the built-in ImageGen tool, one call per officer. A web-searched image of the named officer was supplied as the **primary reference**. Only visible facial, headwear, clothing and color features were borrowed; the requested rendering was a contemporary, realistic game portrait, not a historical painting. Existing game portraits were supplementary **style references only**. Each output is a 1254 × 1254 transparent PNG without text, scenery, hands or a frame. A named reconstruction is not a documented historical likeness.

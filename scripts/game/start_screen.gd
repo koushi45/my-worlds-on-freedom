@@ -13,6 +13,10 @@ var options: Control
 var officer_dictionary: Node
 
 func _ready() -> void:
+	if "--benchmark-map-800" in OS.get_cmdline_user_args():
+		var probe := preload("res://scripts/map/map_performance_probe.gd").new()
+		get_tree().root.add_child.call_deferred(probe)
+		return
 	var background := TextureRect.new()
 	background.texture = preload("res://assets/ui/title_landscape.svg")
 	background.expand_mode = TextureRect.EXPAND_IGNORE_SIZE

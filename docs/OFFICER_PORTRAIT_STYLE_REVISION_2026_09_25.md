@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム由来の画風参照を含むこの旧修正は撤回。下記9素材の実ファイル・キャッシュ・登録を削除対象とし、再利用しない。
+
 # Historical-source portrait style revision
 
 The nine listed game assets were regenerated individually with built-in ImageGen and replaced in place. Their existing images were inspected first, then used as **Image 1 (feature and costume guide / edit target)**. `ii_naokatsu.png` and `uesugi_kenshin_v3.png` were Images 2 and 3, respectively, **modern game-rendering references only**. This pass retains person-specific face shape, age, headwear, garment structure, and colors but rejects the flat pictorial style of historical paintings and woodblock art. The historical-source references and their caveats remain documented in the linked batch documents.

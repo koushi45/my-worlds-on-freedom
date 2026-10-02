@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`ijuin_tadaaki.png`, `ijuin_tadamune.png`, `ijuin_tadazane.png`, `sakuma_nobuharu.png`, `sakuma_nobumori.png`, `sase_masakatsu.png`, `sase_motoyoshi.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits: batch 20
 
 Ten final square, transparent PNGs live in `assets/officers/portraits/`. Generation used the built-in image tool, one new image-generation call per officer. The prompt set demanded contemporary photorealistic faces and materials, no scroll-painting style, no writing, no background, and no visible hands. For exact-person artwork, the image was supplied directly as the primary visual reference. Relative artwork was used only as a supporting clothing/era reference, never asserted to show the subject.

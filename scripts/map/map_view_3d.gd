@@ -59,6 +59,9 @@ var fine_worker: Node3D
 var fine_key := ""
 var fine_serial := 0
 var fine_cache: Dictionary = {}
+var terrain_chunks: RefCounted
+var chunked_terrain := true
+var adaptive_terrain := true
 var fine_shader_state: Array = []
 var obsolete_fine_jobs := 0
 var sun: DirectionalLight3D
@@ -67,14 +70,15 @@ var terrain_materials: RefCounted
 var ray_bounds := PackedByteArray()
 var ray_tiers: Array = []
 var ray_bounds_enabled := true
-var skip_marker_occlusion := false
 var ray_cells_tested := 0
 var ray_blocks_skipped := 0
 var terrain_hash := ""
 var fuji_hash := ""
+var geometry_hash := ""
 
 func _exit_tree() -> void:
-    if fine_job >= 0 and is_instance_valid(main.cpu_jobs): main.cpu_jobs.drain(fine_key)
+    if terrain_chunks!=null: terrain_chunks.shutdown()
+    if fine_job >= 0 and not chunked_terrain and is_instance_valid(main.cpu_jobs): main.cpu_jobs.drain(fine_key)
     if is_instance_valid(fine_worker): fine_worker.free()
     if terrain_materials!=null: terrain_materials.shutdown()
 
@@ -87,6 +91,7 @@ static func angle_for_zoom(zoom: float) -> float:
     return ANGLES[-1]
 
 func _ready() -> void:
+    adaptive_terrain="--uniform-terrain" not in OS.get_cmdline_user_args() and "--legacy-terrain" not in OS.get_cmdline_user_args()
     source_view = SubViewport.new()
     source_view.name = "GeographicSurface"
     source_view.world_2d = World2D.new()
@@ -120,13 +125,20 @@ func _ready() -> void:
     fuji_step = float(detail.step_world)
     terrain_hash = bytes_sha256(height_data)
     fuji_hash = bytes_sha256(fuji_data)
+    geometry_hash = bytes_sha256(FileAccess.get_file_as_bytes("res://data/derived/elevation/terrain_geometry.json"))
     _load_ray_bounds()
     surface = MeshInstance3D.new()
-    var far_chunk := _baked_terrain("far",Rect2(0,0,8192,8192),STEP)
-    if far_chunk!=null:
-        surface.mesh = far_chunk.mesh
-        max_height = maxf(float(far_chunk.data.max_height),4000.0*height_scale)
-    else: surface.mesh = _build_mesh()
+    terrain_chunks = preload("res://scripts/map/terrain_chunk_set.gd").new()
+    terrain_chunks.view = self
+    chunked_terrain = "--legacy-terrain" not in OS.get_cmdline_user_args() and terrain_chunks.load_manifest()
+    if chunked_terrain:
+        max_height = maxf(float(terrain_chunks.manifest.max_height),4000.0*height_scale)
+    else:
+        var far_chunk := _baked_terrain("far",Rect2(0,0,8192,8192),STEP)
+        if far_chunk!=null:
+            surface.mesh = far_chunk.mesh
+            max_height = maxf(float(far_chunk.data.max_height),4000.0*height_scale)
+        else: surface.mesh = _build_mesh()
     surface.material_override = surface_material
     add_child(surface)
     fine_material = surface_material.duplicate() as ShaderMaterial
@@ -297,10 +309,11 @@ func _vertex_height(point: Vector2, region: Rect2) -> float:
         if edge<band: height = lerpf(_triangle_height(point,parent_step),height,smoothstep(0.0,band,edge))
     return height
 
-func _geometry_arrays(region: Rect2, step: float, fine: bool) -> Array:
+func _geometry_arrays(region: Rect2, step: float, fine: bool, morph_region: Rect2 = Rect2()) -> Array:
     var columns := int(region.size.x/step)+1
     var rows := int(region.size.y/step)+1
-    var morph := region if fine else Rect2()
+    var reduce_grid := adaptive_terrain and fine and step==2.0 and region!=fuji_rect and (columns-1)%2==0 and (rows-1)%2==0
+    var morph := (morph_region if morph_region.has_area() else region) if fine else Rect2()
     var vertices := PackedVector3Array()
     var normals := PackedVector3Array()
     var uv := PackedVector2Array()
@@ -324,19 +337,23 @@ func _geometry_arrays(region: Rect2, step: float, fine: bool) -> Array:
             vertices[y*columns+x] = Vector3(point.x-CENTER.x,h,point.y-CENTER.y)
             normals[y*columns+x] = Vector3(-dx,2.0*step,-dz).normalized()
             uv[y*columns+x] = point/8192.0
-    indices.resize((columns-1)*(rows-1)*6)
-    for y in rows-1:
-        for x in columns-1:
-            var a := y*columns+x
-            var i := (y*(columns-1)+x)*6
-            indices[i]=a;indices[i+1]=a+1;indices[i+2]=a+columns
-            indices[i+3]=a+1;indices[i+4]=a+columns+1;indices[i+5]=a+columns
+    heights=PackedFloat64Array()
+    if not reduce_grid:
+        indices.resize((columns-1)*(rows-1)*6)
+        for y in rows-1:
+            for x in columns-1:
+                var a := y*columns+x
+                var i := (y*(columns-1)+x)*6
+                indices[i]=a;indices[i+1]=a+1;indices[i+2]=a+columns
+                indices[i+3]=a+1;indices[i+4]=a+columns+1;indices[i+5]=a+columns
     var arrays := []
     arrays.resize(Mesh.ARRAY_MAX)
     arrays[Mesh.ARRAY_VERTEX] = vertices
     arrays[Mesh.ARRAY_NORMAL] = normals
     arrays[Mesh.ARRAY_TEX_UV] = uv
     arrays[Mesh.ARRAY_INDEX] = indices
+    if reduce_grid:
+        return preload("res://scripts/map/terrain_grid_lod.gd").simplify(arrays,columns,rows,step,height_scale*3.0,0.97,0.01,fuji_rect.grow(32)).arrays
     return arrays
 
 func _desired_fine_rect() -> Rect2:
@@ -352,6 +369,10 @@ func _apply_fine_mesh(mesh: ArrayMesh, region: Rect2) -> void:
     last_state = []
 
 func _update_fine() -> void:
+    if get_meta("probe_freeze_near",false): return
+    if chunked_terrain:
+        terrain_chunks.update_near()
+        return
     var active: bool = oblique and main.camera.zoom.x>=4.0
     var desired := _desired_fine_rect()
     if fine_job>=0 and main.cpu_jobs.is_complete(fine_key):
@@ -386,6 +407,7 @@ func _update_fine() -> void:
     var worker: Node3D = get_script().new()
     worker.height_data = height_data
     worker.height_scale = height_scale
+    worker.adaptive_terrain = adaptive_terrain
     worker.fuji_data = fuji_data
     worker.fuji_rect = fuji_rect
     worker.fuji_step = fuji_step
@@ -399,7 +421,7 @@ func _update_fine() -> void:
     fine_job = fine_serial
     fine_serial += 1
 
-func advance_profiled(delta: float) -> void:
+func advance(delta: float) -> void:
     _update_fine()
     var zoom_before: float = main.camera.zoom.x
     if not is_equal_approx(zoom_before,requested_zoom):
@@ -459,6 +481,9 @@ func sync(force: bool = false, pose_only: bool = false) -> void:
     var pixel_scale: float = float(main.get_viewport().size.x)/size.x
     var atlas_zoom := zoom*pixel_scale
     var atlas_size := Vector2i((Vector2(size.x+32,size.y*3.5+max_height*8.0+32)*pixel_scale).ceil()).min(Vector2i(4096,4096))
+    var probe_scale: float = get_meta("probe_atlas_scale",1.0)
+    atlas_size = Vector2i((Vector2(atlas_size)*probe_scale).ceil())
+    atlas_zoom *= probe_scale
     source_view.size = atlas_size
     source_camera.position = main.camera.position+Vector2(0,-minf(60.0,height_shift*0.25)).rotated(-heading)
     source_camera.rotation = -heading
@@ -478,6 +503,7 @@ func sync(force: bool = false, pose_only: bool = false) -> void:
         material.set_shader_parameter("haze_strength",0.28 if oblique else 0.0)
         material.set_shader_parameter("height_factor",1.0 if oblique else 0.0)
         material.set_shader_parameter("material_strength",clampf(0.36+log(zoom)/log(2.0)*0.17,0.26,0.87))
+    if chunked_terrain: terrain_chunks.update_visibility()
     markers.invalidate()
 
 func project(world: Vector2) -> Vector2:
@@ -574,7 +600,7 @@ func _load_ray_bounds() -> void:
     if not FileAccess.file_exists(path): return
     var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
     if not data is Dictionary: return
-    if terrain_hash!=data.get("terrain_sha256","") or fuji_hash!=data.get("fuji_sha256",""): return
+    if terrain_hash!=data.get("terrain_sha256","") or fuji_hash!=data.get("fuji_sha256","") or geometry_hash!=data.get("geometry_sha256",""): return
     var bytes := FileAccess.get_file_as_bytes("res://data/derived/elevation/terrain_ray_bounds.bin")
     if bytes.size()!=int(data.get("bytes",0)): return
     ray_bounds = bytes
@@ -592,7 +618,7 @@ func _baked_terrain(name: String, region: Rect2, step: float) -> Resource:
     var chunk := load(path)
     if chunk==null or chunk.mesh==null: return null
     var data: Dictionary = chunk.data
-    if int(data.get("version",0))!=1 or data.get("terrain_sha256","")!=terrain_hash or data.get("fuji_sha256","")!=fuji_hash: return null
+    if int(data.get("version",0))!=1 or data.get("terrain_sha256","")!=terrain_hash or data.get("fuji_sha256","")!=fuji_hash or data.get("geometry_sha256","")!=geometry_hash: return null
     if data.region!=region or not is_equal_approx(data.step,step) or not is_equal_approx(data.height_scale,height_scale) or not is_equal_approx(data.fuji_step,fuji_step): return null
     return chunk
 
@@ -642,14 +668,9 @@ func marker_visible(world: Vector2) -> bool:
     if not world.is_finite(): return false
     var screen := project(world)
     if not main.get_viewport_rect().grow(-4).has_point(screen): return false
-    if skip_marker_occlusion: return true
+    if get_meta("probe_no_occlusion",false): return true
     if marker_visibility.has(world): return marker_visibility[world]
     var visible := not view_camera.is_position_behind(position_for(world)) and pick(screen).distance_squared_to(world)<0.01
     marker_visibility[world] = visible
     return visible
 
-var profile_advance_us := 0
-func advance(delta: float) -> void:
-    var start := Time.get_ticks_usec()
-    advance_profiled(delta)
-    profile_advance_us = Time.get_ticks_usec()-start

@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`hori_naomasa.png`, `hori_naoyori.png`, `horio_tadaharu.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits batch 41 — Hori and Horio
 
 These ten assets were created as original modern realistic 1:1 PNG portraits with transparent backgrounds. Reference images were inspected before generation. Historical images supplied person-specific facial and clothing features, not an antique art style. The game portraits were used for visual traits only, not copied directly.

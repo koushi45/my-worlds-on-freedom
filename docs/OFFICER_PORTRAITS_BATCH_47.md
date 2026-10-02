@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`okawa_tadahide.png`, `omura_yoshiaki.png`, `ooka_tadakatsu.png`, `osaki_katsunaga.png`, `osaki_yoshinobu.png`, `otsuka_yagiuemon.png`, `oyama_hoki.png`, `oyama_mitsutaka.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # 武将肖像・第47組
 
 2026-09-30 制作。画像はいずれも正方形の背景透過 PNG。絵柄は現代的な写実表現で、画像内に文字は入れない。参照画像は調査・制作にのみ使用し、ゲームには同梱しない。

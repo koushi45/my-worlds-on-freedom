@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`hanawa_naoyuki.png`, `mashita_nagamori.png`, `natsume_yoshinobu.png`, `shioya_akisada.png`, `tako_fusamoto.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits batch 42
 
 Ten original modern-realistic, square transparent PNG officer portraits. Each available person-specific image was inspected before generation and used as a visual reference; historical brushwork, image backgrounds, lettering, and game UI were not reproduced. The four entries without a verified individual portrait or named game image are explicitly interpretive portraits, not historical likenesses and not based on another person's face.

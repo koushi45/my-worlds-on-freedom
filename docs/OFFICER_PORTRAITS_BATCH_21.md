@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`sada_kurozaemon.png`, `sado_nagashige.png`, `sakuma_morishige.png`, `sakuma_nobutatsu.png`, `sano_yasutsuna.png`, `satake_yoshiaki.png`, `satake_yoshishige.png`, `satake_yoshitaka.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits: batch 21
 
 Ten final, square transparent PNGs are in `assets/officers/portraits/` and are registered in `scripts/game/officer_portraits.gd`. Each officer received one separate built-in image-generation call. For verified historical or exact-person game images, a local copy of the source image was supplied directly to the image tool as its primary visual reference. The original source images are not shipped with the game.

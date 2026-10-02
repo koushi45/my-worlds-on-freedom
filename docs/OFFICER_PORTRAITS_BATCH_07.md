@@ -1,3 +1,5 @@
+> 2026-10-02：商用ゲーム画像を参照した旧素材は使用を取り消し、該当する実ファイル・キャッシュ・ゲーム登録を削除した。この文書は過去の制作経緯の記録であり、再生成・再採用の指示ではない。対象：`kamiizumi_nobutsuna.png`, `kanbayashi_masashige.png`, `shimoda_naohisa.png`, `shimosone_dewanokami.png`, `shimosone_joki.png`, `shimotsuma_nakayo.png`, `uesugi_kagetora.png`, `uesugi_tomosada.png`。独立に作り直した `_oil_` 版の採用記録は別文書を参照。
+
 # Officer portraits, batch 07
 
 Each portrait is an original ImageGen raster illustration. The first input was the person-specific source below (or the clearly identified visual fallback); the second input was this game's `oda_nobunaga.png` for finish consistency. Prompts required a square bust, transparent PNG, no lettering or frame, and avoided complex visible hands. Source images are research references, not shipped assets.
