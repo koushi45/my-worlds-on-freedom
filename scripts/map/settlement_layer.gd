@@ -52,6 +52,7 @@ func pick(screen: Vector2) -> String:
 	var best := ""
 	var distance := 14.0
 	for id in drawn_ids:
+		if map_view != null and not map_view.marker_visible(point(lookup[id]["display_point"]),id==selected_id,"site:"+id,true): continue
 		var p: Vector2 = map_view.project(point(lookup[id]["display_point"])) if map_view != null else get_global_transform_with_canvas()*elevation.project(point(lookup[id]["display_point"]))
 		var d := screen.distance_to(p)
 		if d < distance: distance = d; best = id
@@ -60,7 +61,8 @@ func pick(screen: Vector2) -> String:
 func _draw() -> void:
 	if map_view != null:
 		layout_pending = false
-		map_view.markers.queue_redraw()
+		if map_view.get_meta("probe_single_marker_redraw",true): map_view.markers.invalidate()
+		else: map_view.markers.queue_redraw()
 		return
 	drawn_ids.clear(); label_rects.clear(); labeled_ids.clear()
 	if data == null: return

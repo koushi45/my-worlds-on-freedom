@@ -480,11 +480,11 @@ func pick(screen: Vector2) -> String:
     # When units share a tile, make the player's unit easiest to select.
     for id in units:
         if units[id].house_id != GameSession.player_house: continue
-        if main.map_view != null and not main.map_view.marker_visible(unit_position(units[id])): continue
+        if main.map_view != null and not main.map_view.marker_visible(unit_position(units[id]),id==selected_id,"army:"+str(id),true): continue
         var own_position: Vector2 = main.world_to_screen(unit_position(units[id]))
         if own_position.distance_to(screen) <= 18: return id
     for id in units:
-        if main.map_view != null and not main.map_view.marker_visible(unit_position(units[id])): continue
+        if main.map_view != null and not main.map_view.marker_visible(unit_position(units[id]),id==selected_id,"army:"+str(id),true): continue
         var p: Vector2 = main.world_to_screen(unit_position(units[id]))
         if p.distance_to(screen) <= 18: return id
     return ""
@@ -512,7 +512,7 @@ func _draw_route(points: PackedVector2Array, zoom: float, scale: float) -> void:
             since_arrow = 0.0
 
 func _draw() -> void:
-    if main != null and main.map_view != null and is_instance_valid(main.map_view.markers.army_markers): main.map_view.markers.army_markers.queue_redraw()
+    if main != null and main.map_view != null and is_instance_valid(main.map_view.markers.army_markers): main.map_view.markers.army_markers.invalidate()
     if main == null: return
     var zoom: float = main.camera.zoom.x
     var scale := pixel_scale()

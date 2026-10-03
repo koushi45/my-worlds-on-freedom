@@ -84,7 +84,8 @@ func kamon_background_color(house_id: String) -> Color:
 
 func _draw() -> void:
 	if map_view != null:
-		map_view.markers.queue_redraw()
+		if map_view.get_meta("probe_single_marker_redraw",true): map_view.markers.invalidate()
+		else: map_view.markers.queue_redraw()
 		return
 	label_count = 0
 	drawn_keys.clear()

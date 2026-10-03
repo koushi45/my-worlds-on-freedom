@@ -1,0 +1,74 @@
+{
+  "officers": 88,
+  "historical_image_references": 14,
+  "independent_creative_appearances": 74,
+  "rgba512_transparent_unique_sha256_verified": true,
+  "source_ui": true,
+  "release_pack_ui": true,
+  "contact_sheets_viewed": 22,
+  "ui_captures": 88,
+  "retained_portraits": 50,
+  "prior55_source_ui": true,
+  "withdrawn_resource_paths_absent": 310,
+  "historical_reference_images_excluded": 14,
+  "attribution_in_pack": true,
+  "release_executable_launch_exit_code": 0,
+  "logs": {
+    "builds/qa/history88_ui.log": [
+      "HISTORICAL_MODERN_PORTRAITS_88_OK"
+    ],
+    "builds/qa/history88_backgrounds.log": [
+      "BACKGROUND_CONTACT_SHEETS_22_OK"
+    ],
+    "builds/qa/history88_prior55.log": [
+      "HISTORICAL_MODERN_PORTRAITS_55_OK"
+    ],
+    "builds/qa/history88_withdrawal.log": [
+      "RETAINED_PORTRAITS_50_OK",
+      "WITHDRAWN_PORTRAIT_RESOURCES_310_OK"
+    ],
+    "builds/windows-latest/history88_pack.log": [
+      "HISTORICAL_MODERN_PORTRAITS_88_OK",
+      "REFERENCE_IMAGES_EXCLUDED_14_OK"
+    ],
+    "builds/windows-latest/history88_withdrawal_pack.log": [
+      "RETAINED_PORTRAITS_50_OK",
+      "WITHDRAWN_PORTRAIT_RESOURCES_310_OK"
+    ]
+  },
+  "windows_export": {
+    "generated_utc": "2026-10-03T06:15:19.740950+00:00",
+    "command": [
+      "godot_console",
+      "--headless",
+      "--path",
+      "C:\\Users\\nanoa\\projects\\my-worlds-on-freedom",
+      "--export-release",
+      "Windows",
+      "C:\\Users\\nanoa\\projects\\my-worlds-on-freedom\\builds\\windows-latest\\MyWorldsOnFreedom.exe"
+    ],
+    "exit_code": 0,
+    "artifacts": {
+      "MyWorldsOnFreedom.exe": {
+        "bytes": 109127680,
+        "modified_utc": "2026-10-03T06:15:00.225301+00:00",
+        "sha256": "4a9eaded8955ef789ab02651ed9d2dde80328fbb342bd2a6db4db33e86305668"
+      },
+      "MyWorldsOnFreedom.pck": {
+        "bytes": 1947053792,
+        "modified_utc": "2026-10-03T06:15:13.603303+00:00",
+        "sha256": "9065d554dc3c2d3eb62b0cd711ac8f7c5e1afac6fa3a049f3cc1fcfd80662588"
+      }
+    },
+    "log": "builds/windows-latest/export.log",
+    "error_lines": [
+      "ERROR: Failed to read the root certificate store.",
+      "ERROR: Cannot save file 'C:/Users/nanoa/AppData/Roaming/Godot/editor_settings-4.7.tres'.",
+      "ERROR: Error saving editor settings to C:/Users/nanoa/AppData/Roaming/Godot/editor_settings-4.7.tres"
+    ],
+    "resource_shortage_detected": false
+  },
+  "environment_notes": [
+    "証明書ストア読み取り、Roaming配下のエディター設定・マップ診断の書き込みに環境由来の警告。肖像読み込みと起動検証は成功。"
+  ]
+}

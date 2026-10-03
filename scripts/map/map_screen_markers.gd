@@ -7,6 +7,8 @@ var army_markers: Node2D
 var widths: Dictionary = {}
 var draw_count := 0
 var last_draw_us := 0
+var total_draw_us := 0
+var invalidated_frame := -1
 
 func _ready() -> void:
     if armies_only: return
@@ -14,18 +16,26 @@ func _ready() -> void:
     army_markers.main = main
     army_markers.armies_only = true
     add_child(army_markers)
-    main.army_campaign.changed.connect(army_markers.queue_redraw)
-    main.diplomacy.changed.connect(army_markers.queue_redraw)
-    main.settlement_layer.visibility_changed.connect(queue_redraw)
+    main.army_campaign.changed.connect(army_markers.invalidate)
+    main.diplomacy.changed.connect(army_markers.invalidate)
+    main.settlement_layer.visibility_changed.connect(invalidate)
+    main.district_layer.selection_changed.connect(invalidate)
 
 func invalidate() -> void:
+    if main.map_view.get_meta("probe_single_marker_redraw",true):
+        var frame := Engine.get_process_frames()
+        if invalidated_frame == frame: return
+        invalidated_frame = frame
     queue_redraw()
-    if is_instance_valid(army_markers): army_markers.queue_redraw()
+    if is_instance_valid(army_markers): army_markers.invalidate()
 
 func text_width(font: Font, name: String, size: int) -> float:
     var key := str(size)+":"+name
     if not widths.has(key): widths[key] = font.get_string_size(name,HORIZONTAL_ALIGNMENT_LEFT,-1,size).x
     return widths[key]
+
+func office_selected(id: String) -> bool:
+    return id == main.district_layer.selected_key or (main.district_info != null and main.district_info.panel.visible and id == main.district_info.district_id)
 
 func _draw() -> void:
     if main == null or main.map_view == null: return
@@ -53,11 +63,11 @@ func _draw() -> void:
         var offices: Node2D = main.district_office_layer
         for id in offices.records:
             var point: Vector2 = offices.office_point(id)
-            if not view.marker_visible(point): continue
+            if not view.marker_visible(point,office_selected(id),"office:"+str(id)): continue
             var screen: Vector2 = view.project(point)
             var house: String = str(main.governance_registry.districts.get(id,{}).get("house_id",""))
             _crest(house,screen,minf(24.0,main.HexGridScript.RADIUS*zoom*1.1))
-            if zoom < 3.0: continue
+            if zoom < 3.0 or view.get_meta("probe_no_marker_text",false): continue
             var name: String = offices.records[id].name
             var width := text_width(font,name,12)
             var offset := Vector2(-width*0.5,main.HexGridScript.RADIUS*zoom*sin(deg_to_rad(view.angle))+16)
@@ -65,7 +75,7 @@ func _draw() -> void:
             var crowded := false
             for other in labels:
                 if box.intersects(other): crowded = true;break
-            if crowded: continue
+            if crowded and not office_selected(id): continue
             labels.append(box)
             draw_string_outline(font,screen+offset,name,HORIZONTAL_ALIGNMENT_LEFT,-1,12,4,Color("#24180c"))
             draw_string(font,screen+offset,name,HORIZONTAL_ALIGNMENT_LEFT,-1,12,Color("#fff0bc"))
@@ -76,24 +86,26 @@ func _draw() -> void:
         if not sites.visible or not sites.eligible(site): continue
         if zoom < 0.2 and int(site.importance)>1 and site.id!=sites.selected_id: continue
         var point := Vector2(site.display_point[0],site.display_point[1])
-        if not view.marker_visible(point): continue
+        if not view.marker_visible(point,site.id == sites.selected_id,"site:"+str(site.id)): continue
         sites.drawn_ids.append(site.id)
         var screen: Vector2 = view.project(point)
         draw_circle(screen,9,Color("#253634"))
         draw_circle(screen,5,Color("#e4e8ba"))
         if site.id == sites.selected_id: draw_arc(screen,12,0,TAU,32,Color.WHITE,2,true)
+        if view.get_meta("probe_no_marker_text",false): continue
         var name: String = site.display_name
         var width := text_width(font,name,16)
         var box := Rect2(screen+Vector2(14,-29),Vector2(width,22))
         var crowded := false
         for other in labels:
             if box.intersects(other): crowded = true;break
-        if crowded: continue
+        if crowded and site.id != sites.selected_id: continue
         labels.append(box)
         sites.labeled_ids.append(site.id)
         draw_string_outline(font,screen+Vector2(14,-12),name,HORIZONTAL_ALIGNMENT_LEFT,-1,16,5,Color("#27342d"))
         draw_string(font,screen+Vector2(14,-12),name,HORIZONTAL_ALIGNMENT_LEFT,-1,16,Color("#e4e8ba"))
     last_draw_us = Time.get_ticks_usec()-started
+    total_draw_us += last_draw_us
 
 func _draw_armies() -> void:
     var view: Node3D = main.map_view
@@ -104,7 +116,7 @@ func _draw_armies() -> void:
     for id in armies.units:
         var unit: Dictionary = armies.units[id]
         var point: Vector2 = armies.unit_position(unit)
-        if not view.marker_visible(point): continue
+        if not view.marker_visible(point,id == armies.selected_id,"army:"+str(id)): continue
         var screen: Vector2 = view.project(point)
         var icon: Texture2D = armies.ARMY_ICONS[armies.icon_color_key(unit)][side]
         draw_set_transform(screen,armies.facing_angle(unit),Vector2.ONE/scale)
@@ -113,6 +125,7 @@ func _draw_armies() -> void:
         draw_set_transform(Vector2.ZERO)
 
 func _crest(house: String, screen: Vector2, size: float) -> void:
+    if main.map_view.get_meta("probe_no_crests",false): return
     var entry: Dictionary = main.kamon_layer.kamon_by_house.get(house,{})
     var texture: Texture2D = main.kamon_layer.kamon_textures.get(entry.get("asset",""))
     if texture != null:

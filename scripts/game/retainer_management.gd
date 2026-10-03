@@ -52,6 +52,15 @@ func setup(governance_registry: RefCounted, officer_registry: RefCounted, distri
 			var district_id: String = str(affiliation.get("district_key", ""))
 			if governance.districts.has(district_id) and governance.districts[district_id].house_id == house_id:
 				officer_districts[officer.id] = district_id
+	# Scenario governorships also establish service, even when biography-based
+	# starting eligibility is unresolved. Keep sortie placement independent.
+	for district in governance.districts.values():
+		var governor: Variant = district.get("governor")
+		if not governor is Dictionary: continue
+		var officer_id: String = str(governor.get("officer_id", ""))
+		var house_id: String = district.house_id
+		if not house_members.has(house_id) or not officers.lookup.has(officer_id) or officer_id == ruler_id(house_id): continue
+		if officer_id not in house_members[house_id]: house_members[house_id].append(officer_id)
 	for house_id in governance.houses:
 		var ruler_officer_id := ruler_id(house_id)
 		if ruler_officer_id.is_empty() or not officers.lookup.has(ruler_officer_id): continue

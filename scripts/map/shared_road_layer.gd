@@ -24,6 +24,7 @@ func _draw_content() -> void:
 	active_strokes = 0
 	for batch in stroke_meshes.values():batch.visible=false
 	if data == null or not game_connections.visible: return
+	if get_meta("probe_no_roads",false): return
 	var batches: Dictionary = {}
 	for stroke in data["strokes"]:
 		if not view_rect.intersects(stroke["draw_bounds"]): continue

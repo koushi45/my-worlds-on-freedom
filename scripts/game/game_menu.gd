@@ -19,7 +19,10 @@ var officer_dictionary: Node
 var retainer_panel: Control
 var technology_panel: Control
 var diplomacy_panel: Control
-var prestige_label: Label
+const Compact = preload("res://scripts/game/compact_hud_style.gd")
+var council_tabs: Array[Button] = []
+var council_content: VBoxContainer
+var council_tab := 0
 var crisis_label: Label
 
 func _ready() -> void:
@@ -29,24 +32,6 @@ func _ready() -> void:
 	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(overlay)
-	var open := UI.button("メニュー  Esc",overlay,toggle)
-	open.custom_minimum_size = Vector2(170,36)
-	open.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
-	open.offset_left = -190
-	open.offset_right = -16
-	open.offset_top = 154
-	open.offset_bottom = 190
-	open.focus_mode = Control.FOCUS_NONE
-	prestige_label = UI.label("", overlay, 18)
-	prestige_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	prestige_label.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
-	prestige_label.offset_left = -190
-	prestige_label.offset_right = -16
-	prestige_label.offset_top = 198
-	prestige_label.offset_bottom = 226
-	prestige_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	main.house_prestige.prestige_changed.connect(func(_house_id: String, _value: int, _reason: String): _update_prestige())
-	_update_prestige()
 	crisis_label = UI.label("", overlay, 15)
 	crisis_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	crisis_label.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
@@ -118,16 +103,30 @@ func _ready() -> void:
 	_menu_button("ゲーム終了", rows, confirm_action.bind("quit"))
 	DistrictStyle.heading("戻る", rows, 15).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_menu_button("ゲームに戻る", rows, toggle)
-	council_menu = _framed_menu(shade, Vector2(380, 300), false)
+	council_menu = Control.new()
 	council_menu.name = "CouncilMenuPanel"
-	council_menu.position = Vector2(20, 188)
-	var council_rows := _menu_rows(council_menu)
-	council_rows.add_theme_constant_override("separation", 10)
-	DistrictStyle.heading("評定", council_rows, 22).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_menu_button("役職ツリー・配下管理", council_rows, show_retainers)
-	_menu_button("技術ツリー", council_rows, show_technology)
-	_menu_button("外交", council_rows, show_diplomacy)
-	_menu_button("閉じる", council_rows, toggle_council)
+	council_menu.mouse_filter = Control.MOUSE_FILTER_STOP
+	shade.add_child(council_menu)
+	Compact.frame(council_menu, "council")
+	var tab_names := ["役職", "配下", "技術", "外交"]
+	var tab_icons := ["castle", "people", "governance", "diplomacy"]
+	for index in range(tab_names.size()):
+		var tab := Compact.button(council_menu, tab_names[index], _select_council_tab.bind(index))
+		tab.name = "CouncilTab_%d" % index
+		tab.toggle_mode = true
+		Compact.icon(tab, tab_icons[index])
+		council_tabs.append(tab)
+	var close := Compact.button(council_menu, "閉じる（Esc）", _close_all)
+	close.name = "CouncilClose"
+	close.text = "×"
+	close.add_theme_color_override("font_color", DistrictStyle.GOLD)
+	council_content = VBoxContainer.new()
+	council_content.name = "CouncilContent"
+	council_content.add_theme_constant_override("separation", 6)
+	council_menu.add_child(council_content)
+	get_viewport().size_changed.connect(_resize_council)
+	_resize_council()
+	_select_council_tab(0)
 	council_menu.hide()
 	shade.hide()
 	confirmation = ConfirmationDialog.new()
@@ -156,9 +155,6 @@ func _select_zoom(percent: int) -> void:
 func _update_zoom_label() -> void:
 	last_zoom = main.camera.zoom.x
 	zoom_label.text = "マップ拡大率：%d%%" % int(round(last_zoom*100.0))
-
-func _update_prestige() -> void:
-	prestige_label.text = "威信 %d / 100" % main.house_prestige.value_for(GameSession.player_house)
 
 func _show_loyalty_crisis(officer_id: String, house_id: String, outcome: String) -> void:
 	if house_id != GameSession.player_house: return
@@ -209,6 +205,10 @@ func toggle_council() -> void:
 
 func _open_menu(council: bool) -> void:
 	council_origin = council
+	shade.color = Color(0,0,0,0) if council else Color(0,0,0,0.65)
+	if council:
+		_resize_council()
+		_select_council_tab(council_tab)
 	modal.visible = not council
 	council_menu.visible = council
 	shade.show()
@@ -232,7 +232,9 @@ func _close_all() -> void:
 	get_tree().paused = false
 
 func _restore_parent_menu() -> void:
-	if council_origin: council_menu.show()
+	if council_origin:
+		_select_council_tab(council_tab)
+		council_menu.show()
 	else: modal.show()
 
 func show_slots(saving: bool) -> void:
@@ -322,3 +324,63 @@ func _cancel_topmost() -> void:
 	elif main.district_info.building_dialog.visible: main.district_info.building_dialog.hide()
 	elif main.district_info.panel.visible: main.district_info.hide_info()
 	else: _open_menu(false)
+
+
+func _resize_council() -> void:
+	if council_menu == null: return
+	Compact.update_frame(council_menu, "council")
+	var u := Compact.unit(council_menu)
+	council_menu.position = main.house_status_hud.council_popup_position() if is_instance_valid(main.house_status_hud) else Vector2(140, 106)
+	for index in range(council_tabs.size()):
+		var tab := council_tabs[index]
+		tab.position = Vector2(12 + 57*index, 12) * u
+		tab.size = Vector2(48, 30) * u
+		var picture: TextureRect = tab.get_child(0)
+		Compact.update_icon(picture, ["castle", "people", "governance", "diplomacy"][index])
+		picture.position.x += 10*u
+	var close: Button = council_menu.get_node("CouncilClose")
+	close.position = Vector2(277, 12)*u
+	close.size = Vector2(28, 30)*u
+	council_content.position = Vector2(14, 52)*u
+	council_content.size = Vector2(292, 242)*u
+
+func _select_council_tab(index: int) -> void:
+	council_tab = index
+	for i in range(council_tabs.size()): council_tabs[i].set_pressed_no_signal(i == index)
+	for child in council_content.get_children():
+		council_content.remove_child(child)
+		child.queue_free()
+	var house_id: String = GameSession.player_house
+	var management: Node = main.retainer_management
+	if index == 0:
+		var house: Dictionary = main.governance_registry.houses.get(house_id, {})
+		UI.label(str(house.get("ruler", {}).get("name", "当主不明")), council_content, 13)
+		for entry in [["家老", "governance"], ["軍師", "diplomacy"], ["侍大将", "military"], ["所司代", "castle"]]:
+			var names: Array[String] = []
+			for officer_id in management.house_members.get(house_id, []):
+				if management.role_of(house_id, officer_id) == entry[0]: names.append(str(main.officer_registry.lookup[officer_id].display_name))
+			_council_value(entry[1], "―" if names.is_empty() else "・".join(names), entry[0], _open_council_role.bind(entry[0]))
+	elif index == 1:
+		var members: Array = management.house_members.get(house_id, [])
+		UI.label("配下 %d人" % members.size(), council_content, 13)
+		_council_value("people", "配下管理を開く", "配下武将の配置・役職・俸禄", show_retainers)
+	elif index == 2:
+		_council_value("governance", "技術ツリーを開く", "研究の選択と進行状況", show_technology)
+	else:
+		_council_value("diplomacy", "外交を開く", "大名家との関係・交渉", show_diplomacy)
+
+func _council_value(icon_name: String, value: String, hint: String, action_callback: Callable) -> void:
+	var row := Compact.button(council_content, hint, action_callback)
+	var u := Compact.unit(council_menu)
+	row.custom_minimum_size = Vector2(0, 43)*u
+	Compact.icon(row, icon_name).position += Vector2(7, 7)*u
+	var caption := UI.label(value + "  ›", row, roundi(13*u))
+	caption.position = Vector2(42, 0)*u
+	caption.size = Vector2(240, 43)*u
+	caption.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	caption.clip_text = true
+	caption.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func _open_council_role(role: String) -> void:
+	show_retainers()
+	retainer_panel._select_role(role)

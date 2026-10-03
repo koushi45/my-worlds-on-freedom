@@ -68,18 +68,18 @@ func integration() -> void:
 	root.add_child(main)
 	while not main.initialized:
 		await process_frame
-	check(main.time_hud.visible and main.time_hud.date_label.text.begins_with("1546年"), "normal game date visible")
+	check(main.time_hud.visible and main.time_hud.date_label.text.begins_with("1546."), "normal game date visible")
 	var before: int = main.game_clock.elapsed_days
 	await create_timer(1.1).timeout
 	check(main.game_clock.elapsed_days - before in [1, 2], "clock runs automatically")
 	for index in range(4):
 		press_key(KEY_1 + index)
 		check(main.game_clock.speed == Clock.SPEEDS[index], "number key selects speed")
-		check(main.time_hud.rate_label.text.begins_with("%d倍速" % Clock.SPEEDS[index]), "HUD displays speed")
-	check(main.time_hud.faster_button.disabled, "8x disables acceleration")
-	main.time_hud.slower_button.pressed.emit()
+		check(main.time_hud.rate_label.text == "%d×" % Clock.SPEEDS[index], "HUD displays speed")
+	check(main.time_hud.speed_buttons[3].button_pressed, "8x lights the highest speed indicator")
+	main.time_hud.speed_buttons[2].pressed.emit()
 	check(main.game_clock.speed == 4, "deceleration button")
-	main.time_hud.faster_button.pressed.emit()
+	main.time_hud.speed_buttons[3].pressed.emit()
 	check(main.game_clock.speed == 8, "acceleration button")
 	press_key(KEY_SPACE)
 	check(main.game_clock.paused and main.time_hud.playback_icon.texture.resource_path.contains("play_"), "space pauses and shows play icon")
@@ -100,13 +100,13 @@ func integration() -> void:
 	before = main.game_clock.elapsed_days
 	main.game_clock.advance_real_seconds(1)
 	check(main.game_clock.elapsed_days == before + 8, "HUD 8x advances eight days")
-	check(main.time_hud.date_label.text == main.game_clock.date_text(), "HUD date updates")
+	check(main.time_hud.date_label.tooltip_text == main.game_clock.date_text(), "HUD date updates")
 	await process_frame
 	var panel_rect: Rect2 = main.time_hud.panel.get_global_rect()
-	check(absf(panel_rect.end.x - (root.get_visible_rect().size.x - 16)) < 2, "HUD anchored at right edge")
-	check(panel_rect.position.y == 16, "HUD anchored at top")
-	check(main.time_hud.date_label.get_global_rect().end.x <= panel_rect.end.x - 16, "date stays inside time panel")
-	check(main.time_hud.faster_button.get_global_rect().end.x <= panel_rect.end.x - 16, "speed controls stay inside time panel")
+	check(absf(panel_rect.end.x - (root.get_visible_rect().size.x - 12)) < 2, "HUD anchored at right edge")
+	check(panel_rect.position.y == 12, "HUD anchored at top")
+	check(main.time_hud.date_label.get_global_rect().end.x <= panel_rect.end.x - 12, "date stays inside time panel")
+	check(main.time_hud.speed_buttons.back().get_global_rect().end.x <= panel_rect.end.x - 12, "speed controls stay inside time panel")
 	if "--capture" in OS.get_cmdline_user_args():
 		await create_timer(2.0).timeout
 		await RenderingServer.frame_post_draw

@@ -19,6 +19,18 @@ func run() -> void:
 	economy.setup(governance, officers)
 	var management = preload("res://scripts/game/retainer_management.gd").new()
 	management.setup(governance, officers, economy)
+	var oda_members: Array = management.house_members["oda_nobuhide"]
+	for officer_id in ["officer_q171411", "officer_q707587"]:
+		check(not officers.lookup[officer_id].affiliation_1546.can_serve_at_start, "regression officer excluded by biography eligibility")
+		check(oda_members.count(officer_id) == 1, "Oda governor appears once in retainer roster: " + officer_id)
+		check(management.set_base_stipend("oda_nobuhide", officer_id, 0.1) == OK, "governor supports retainer actions")
+		check(not management.officer_districts.has(officer_id), "governorship does not set sortie placement")
+	for district in governance.districts.values():
+		var governor: Variant = district.get("governor")
+		if not governor is Dictionary: continue
+		var officer_id: String = str(governor.get("officer_id", ""))
+		if not officers.lookup.has(officer_id) or officer_id == management.ruler_id(district.house_id): continue
+		check(management.house_members[district.house_id].count(officer_id) == 1, "every registered governor appears once in owning house roster")
 	var house := "takeda"
 	var members: Array = management.house_members[house]
 	check(members.size() >= 3, "house has eligible retainers")
@@ -48,4 +60,6 @@ func run() -> void:
 	check(is_equal_approx(management.technology[house].governance, growth.governance), "first of month grows technology")
 	check(is_equal_approx(economy.house_resources[house].money, 100.0 - management.monthly_stipend(house)), "first of month deducts stipend")
 	print("retainer management failures: ", failures)
+	management.free()
+	economy.free()
 	quit(0 if failures == 0 else 1)

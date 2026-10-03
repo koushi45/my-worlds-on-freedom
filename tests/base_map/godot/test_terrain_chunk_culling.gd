@@ -20,15 +20,11 @@ func run() -> void:
     main.set_process_unhandled_input(false)
     root.gui_disable_input=true
     var view: Node=main.map_view
-    var far := MeshInstance3D.new()
-    far.mesh=view._baked_terrain("far",Rect2(0,0,8192,8192),16).mesh
-    far.material_override=view.surface_material
-    far.visible=false
-    view.add_child(far)
-    var near := MeshInstance3D.new()
-    near.material_override=view.fine_material
-    near.visible=false
-    view.add_child(near)
+    # Compare culling against the same geometry with every tile enabled. This
+    # isolates missing ground/shadows from intentional LOD or seam changes.
+    var reference := Node3D.new()
+    reference.hide()
+    view.add_child(reference)
     var cases: Array=[]
     for center in [Vector2(4480,5504),Vector2(4768,5440),Vector2(5500,4100)]:
         for heading in [0.0,90.0,180.0,270.0]: cases.append({"center":center,"heading":heading,"zoom":8.0,"angle":15.0})
@@ -45,16 +41,31 @@ func run() -> void:
         await settle()
         main.set_process(false)
         view.source_view.render_target_update_mode=SubViewport.UPDATE_DISABLED
+        for child in reference.get_children(): child.free()
+        for tile in view.terrain_chunks.manifest.chunks:
+            var key: String=tile.path
+            var mesh: ArrayMesh
+            if view.terrain_chunks.far_nodes.has(key): mesh=view.terrain_chunks.far_nodes[key].mesh
+            else:
+                var path: String=tile.path
+                if tile.has("coarse_path") and view.terrain_chunks._coarse_pixel_error(Rect2(tile.x,tile.y,1024,1024),tile.coarse_error)<=0.35: path=tile.coarse_path
+                mesh=load(path).mesh
+            var node := MeshInstance3D.new()
+            node.mesh=mesh
+            node.material_override=view.surface_material
+            reference.add_child(node)
         if view.fine_surface.visible:
-            near.mesh=ArrayMesh.new()
-            near.mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,view._geometry_arrays(view.fine_rect,2.0,true))
+            for original in view.terrain_chunks.near_nodes.values():
+                var node := MeshInstance3D.new()
+                node.mesh=original.mesh
+                node.material_override=view.fine_material
+                reference.add_child(node)
         for j in 2: await RenderingServer.frame_post_draw
         var tiled: Image=root.get_texture().get_image()
         var fine_active: bool=view.fine_surface.visible
         view.surface.hide()
         view.fine_surface.hide()
-        far.show()
-        near.visible=fine_active
+        reference.show()
         for j in 2: await RenderingServer.frame_post_draw
         var original: Image=root.get_texture().get_image()
         var identical := tiled.get_data()==original.get_data()
@@ -64,8 +75,7 @@ func run() -> void:
             original.save_png("res://builds/performance_800/chunk_culling/%d_original.png" % i)
             failures+=1
             printerr("FAIL: terrain frustum/shadow raster differs at pose ",i)
-        far.hide()
-        near.hide()
+        reference.hide()
         view.surface.show()
         view.fine_surface.visible=fine_active
         view.source_view.render_target_update_mode=SubViewport.UPDATE_ALWAYS

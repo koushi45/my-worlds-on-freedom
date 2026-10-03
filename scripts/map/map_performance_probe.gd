@@ -9,6 +9,8 @@ var fps_limit := 60
 var material_tier := 800
 var atlas_scale := 1.0
 var options: PackedStringArray
+var marker_radius := 0.0
+var occlusion_interval := 0
 
 func _ready() -> void:
     options = OS.get_cmdline_user_args()
@@ -19,6 +21,8 @@ func _ready() -> void:
         if arg.begins_with("--fps-limit="): fps_limit = maxi(0,int(arg.trim_prefix("--fps-limit=")))
         if arg.begins_with("--material-tier="): material_tier = int(arg.trim_prefix("--material-tier="))
         if arg.begins_with("--atlas-scale="): atlas_scale = clampf(float(arg.trim_prefix("--atlas-scale=")),0.125,1.0)
+        if arg.begins_with("--marker-radius="): marker_radius = maxf(0.0,float(arg.trim_prefix("--marker-radius=")))
+        if arg.begins_with("--occlusion-interval="): occlusion_interval = maxi(0,int(arg.trim_prefix("--occlusion-interval=")))
     frames=maxi(10,frames)
     call_deferred("run")
 
@@ -38,6 +42,19 @@ func measure(label: String, center: Vector2, mode: String) -> void:
     var samples: Array[float] = []
     var updates: Array[float] = []
     var marker_times: Array[float] = []
+    var hex_times: Array[float] = []
+    var marker_count: int = main.map_view.markers.draw_count
+    var hex_count: int = main.hex_tile_layer.draw_count
+    var draw_start: int = marker_count
+    var marker_total: int = main.map_view.markers.total_draw_us
+    var occlusion_total: int = main.map_view.marker_occlusion_us
+    var occlusion_calls: int = main.map_view.marker_occlusion_calls
+    var near_total: int = main.map_view.near_update_us
+    var far_total: int = main.map_view.terrain_chunks.visibility_update_us
+    var marker_frame_times: Array[float] = []
+    var occlusion_times: Array[float] = []
+    var near_times: Array[float] = []
+    var far_times: Array[float] = []
     var process_times: Array[float] = []
     var source_cpu: Array[float] = []
     var source_gpu: Array[float] = []
@@ -53,10 +70,29 @@ func measure(label: String, center: Vector2, mode: String) -> void:
         var now := Time.get_ticks_usec()
         if i<2:
             previous=now
+            draw_start = main.map_view.markers.draw_count
+            marker_total = main.map_view.markers.total_draw_us
+            occlusion_total = main.map_view.marker_occlusion_us
+            occlusion_calls = main.map_view.marker_occlusion_calls
+            near_total = main.map_view.near_update_us
+            far_total = main.map_view.terrain_chunks.visibility_update_us
             continue
         samples.append(float(now-previous)/1000.0)
         updates.append(float(main.main_update_us)/1000.0)
-        if "last_draw_us" in main.map_view.markers: marker_times.append(float(main.map_view.markers.last_draw_us)/1000.0)
+        marker_frame_times.append(float(main.map_view.markers.total_draw_us-marker_total)/1000.0)
+        marker_total = main.map_view.markers.total_draw_us
+        occlusion_times.append(float(main.map_view.marker_occlusion_us-occlusion_total)/1000.0)
+        occlusion_total = main.map_view.marker_occlusion_us
+        near_times.append(float(main.map_view.near_update_us-near_total)/1000.0)
+        near_total = main.map_view.near_update_us
+        far_times.append(float(main.map_view.terrain_chunks.visibility_update_us-far_total)/1000.0)
+        far_total = main.map_view.terrain_chunks.visibility_update_us
+        if main.map_view.markers.draw_count != marker_count:
+            marker_times.append(float(main.map_view.markers.last_draw_us)/1000.0)
+            marker_count = main.map_view.markers.draw_count
+        if main.hex_tile_layer.draw_count != hex_count:
+            hex_times.append(float(main.hex_tile_layer.last_draw_us)/1000.0)
+            hex_count = main.hex_tile_layer.draw_count
         process_times.append(Performance.get_monitor(Performance.TIME_PROCESS)*1000.0)
         source_cpu.append(RenderingServer.viewport_get_measured_render_time_cpu(main.map_view.source_view.get_viewport_rid()))
         source_gpu.append(RenderingServer.viewport_get_measured_render_time_gpu(main.map_view.source_view.get_viewport_rid()))
@@ -66,6 +102,8 @@ func measure(label: String, center: Vector2, mode: String) -> void:
     samples.sort()
     updates.sort()
     marker_times.sort()
+    hex_times.sort()
+    marker_frame_times.sort(); occlusion_times.sort(); near_times.sort(); far_times.sort()
     process_times.sort()
     source_cpu.sort(); source_gpu.sort(); root_cpu.sort(); root_gpu.sort()
     var sum := 0.0
@@ -104,7 +142,16 @@ func measure(label: String, center: Vector2, mode: String) -> void:
         entry["far_vertices"]=far_vertices
         entry["near_vertices"]=near_vertices
         entry["far_coarse_tiles"]=coarse_tiles
-    if not marker_times.is_empty(): entry["markers_p95_ms"] = marker_times[int(frames*0.95)]
+    entry["marker_redraw_samples"] = marker_times.size()
+    entry["marker_redraw_count"] = main.map_view.markers.draw_count-draw_start
+    entry["marker_frame_p95_ms"] = marker_frame_times[int(frames*0.95)]
+    entry["occlusion_p95_ms"] = occlusion_times[int(frames*0.95)]
+    entry["occlusion_calls"] = main.map_view.marker_occlusion_calls-occlusion_calls
+    entry["near_update_p95_ms"] = near_times[int(frames*0.95)]
+    entry["far_visibility_p95_ms"] = far_times[int(frames*0.95)]
+    entry["hex_redraw_samples"] = hex_times.size()
+    if not marker_times.is_empty(): entry["markers_p95_ms"] = marker_times[mini(marker_times.size()-1,int(marker_times.size()*0.95))]
+    if not hex_times.is_empty(): entry["hex_p95_ms"] = hex_times[mini(hex_times.size()-1,int(hex_times.size()*0.95))]
     results.append(entry)
     print("BENCH800 ",JSON.stringify(entry))
     print("BENCH800_PHASE loading")
@@ -120,8 +167,29 @@ func run() -> void:
     while (get_tree().current_scene==null or not get_tree().current_scene.get("initialized")) and Time.get_ticks_msec()<deadline: await get_tree().process_frame
     if get_tree().current_scene==null or not get_tree().current_scene.get("initialized"): get_tree().quit(1); return
     main = get_tree().current_scene
+    for arg in options:
+        if arg.begins_with("--terrain-load="):
+            var level := clampi(int(arg.trim_prefix("--terrain-load=")),0,2)
+            get_tree().root.get_node("DisplaySettings").set_terrain_options(level,level,level,false)
     main.map_view.set_meta("probe_atlas_scale",atlas_scale)
     main.map_view.set_meta("probe_no_occlusion","--no-occlusion" in options)
+    main.map_view.set_meta("probe_no_hex","--no-hex" in options)
+    main.map_view.set_meta("probe_cache_far","--cache-far" in options)
+    main.map_view.set_meta("probe_no_marker_text","--no-marker-text" in options)
+    main.map_view.set_meta("probe_no_crests","--no-crests" in options)
+    main.map_view.set_meta("probe_no_hex_lines","--no-hex-lines" in options)
+    main.shared_road_layer.set_meta("probe_no_roads","--no-roads" in options)
+    main.map_view.set_meta("probe_single_marker_redraw","--single-marker-redraw" in options or "--production-overlays" in options)
+    main.map_view.set_meta("probe_marker_radius",512.0 if "--production-overlays" in options else marker_radius)
+    main.map_view.set_meta("probe_occlusion_interval",100 if "--production-overlays" in options else occlusion_interval)
+    main.map_view.set_meta("probe_hex_noaa","--hex-noaa" in options)
+    main.map_view.set_meta("probe_hex_mesh","--hex-mesh" in options or "--production-overlays" in options)
+    if "--simple-surface" in options:
+        var shader := Shader.new()
+        var source := FileAccess.get_file_as_string("res://scripts/map/map_surface_3d.gdshader")
+        var begin := source.find("    float distance_to_focus")
+        shader.code = source.substr(0,begin)+"    ALBEDO = colour;\n    ROUGHNESS = 1.0;\n}\n"
+        for material in [main.map_view.surface_material,main.map_view.fine_material,main.map_view.fuji_material]: material.shader = shader
     if material_tier != 800:
         if not main.map_view.terrain_materials.manifest.tiers.has(str(material_tier)):
             printerr("Invalid material tier"); get_tree().quit(1); return
@@ -148,6 +216,7 @@ func run() -> void:
         main.camera.position = center
         main.map_view.yaw = 0.0
         main.map_view.set_meta("probe_freeze_near",false)
+        main.map_view.fine_shader_state = []
         if not await settle(): printerr("BENCH800 settle timeout: ",label); get_tree().quit(1); return
         if "--freeze-near" in options or "--no-near" in options:
             main.map_view.set_meta("probe_freeze_near",true)

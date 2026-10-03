@@ -62,5 +62,7 @@ func run() -> void:
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png("res://builds/qa/display_options_1920x1080.png")
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(display.settings_path))
+	options._close()
+	for i in 2: await process_frame
 	print("Display option tests: %d failures" % failures)
 	quit(1 if failures else 0)

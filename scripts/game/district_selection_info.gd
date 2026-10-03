@@ -168,6 +168,7 @@ func show_district(district_name: String, security: int = -1) -> void:
 func set_district(value: String) -> void:
 	district_id = value
 	_refresh_full()
+	if main != null and main.map_view != null: main.map_view.markers.invalidate()
 
 func hide_info() -> void:
 	district_id = ""
@@ -176,6 +177,7 @@ func hide_info() -> void:
 	governor_dialog.hide()
 	building_confirmation.hide()
 	panel.hide()
+	if main != null and main.map_view != null: main.map_view.markers.invalidate()
 
 func _clear_rows(target: VBoxContainer) -> void:
 	icon_hint.clear()

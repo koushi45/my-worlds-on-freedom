@@ -17,6 +17,7 @@ var touched: Dictionary = {}
 var resident_bytes := 0
 var reserved_bytes := 0
 var budget_bytes := 176*1024*1024
+var limit := 2
 var hits := 0
 var misses := 0
 var evictions := 0
@@ -115,7 +116,7 @@ func _advance_stream() -> void:
 		changed=true
 	if changed: arrived.emit()
 	queued.sort_custom(func(a,b):return int(priorities.get(a,3))<int(priorities.get(b,3)))
-	while running.size()<2 and not queued.is_empty():
+	while running.size()<limit and not queued.is_empty():
 		var path: String=queued.pop_front()
 		if cache.has(path):continue
 		var reservation:=request_cost(path)

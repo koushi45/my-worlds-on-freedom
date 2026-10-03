@@ -30,6 +30,7 @@ var projected: Dictionary = {}
 var view_rect := Rect2()
 var view_zoom := 1.0
 var boundaries_enabled := true
+signal selection_changed
 var selected_key := ""
 var selected_mesh: ArrayMesh
 var active_keys: Array = []
@@ -392,6 +393,7 @@ func select_key(key: String) -> void:
 		load_parent(records[key]["parent"])
 		if not loaded.has(records[key]["parent"]): return
 	selected_key = key
+	selection_changed.emit()
 	selected_mesh = null
 	queue_redraw()
 

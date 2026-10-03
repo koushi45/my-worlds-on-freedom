@@ -33,7 +33,9 @@ func pick(world: Vector2) -> String:
 	return str(cell_districts.get(Grid.cell_at(world), ""))
 
 func _draw() -> void:
-	if main != null and main.map_view != null: main.map_view.markers.queue_redraw()
+	if main != null and main.map_view != null:
+		if main.map_view.get_meta("probe_single_marker_redraw",true): main.map_view.markers.invalidate()
+		else: main.map_view.markers.queue_redraw()
 	drawn_ids.clear()
 	drawn_kamon_houses.clear()
 	if main == null or view_zoom < Grid.MIN_DRAW_ZOOM: return

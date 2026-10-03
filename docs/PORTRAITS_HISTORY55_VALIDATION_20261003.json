@@ -1,0 +1,59 @@
+{
+  "officers": 55,
+  "rgba512_transparent_unique_sha256_verified": true,
+  "source_ui": true,
+  "release_pack_ui": true,
+  "retained_portraits": 50,
+  "withdrawn_resource_paths_absent": 310,
+  "historical_reference_images_excluded": 8,
+  "attribution_in_pack": true,
+  "release_executable_launch_exit_code": 0,
+  "logs": {
+    "builds/history55_ui_test.log": [
+      "HISTORICAL_MODERN_PORTRAITS_55_OK"
+    ],
+    "builds/history55_retained_test.log": [
+      "RETAINED_PORTRAITS_50_OK",
+      "WITHDRAWN_PORTRAIT_RESOURCES_310_OK"
+    ],
+    "builds/windows-latest/history55_pack_test.log": [
+      "HISTORICAL_MODERN_PORTRAITS_55_OK",
+      "REFERENCE_IMAGES_EXCLUDED_8_OK"
+    ],
+    "builds/windows-latest/history55_retained_pack_test.log": [
+      "RETAINED_PORTRAITS_50_OK",
+      "WITHDRAWN_PORTRAIT_RESOURCES_310_OK"
+    ]
+  },
+  "windows_export": {
+    "generated_utc": "2026-10-02T16:07:59.788436+00:00",
+    "command": [
+      "godot_console",
+      "--headless",
+      "--path",
+      "C:\\Users\\nanoa\\projects\\my-worlds-on-freedom",
+      "--export-release",
+      "Windows",
+      "C:\\Users\\nanoa\\projects\\my-worlds-on-freedom\\builds\\windows-latest\\MyWorldsOnFreedom.exe"
+    ],
+    "exit_code": 0,
+    "artifacts": {
+      "MyWorldsOnFreedom.exe": {
+        "bytes": 109127680,
+        "modified_utc": "2026-10-02T16:07:44.780910+00:00",
+        "sha256": "4a9eaded8955ef789ab02651ed9d2dde80328fbb342bd2a6db4db33e86305668"
+      },
+      "MyWorldsOnFreedom.pck": {
+        "bytes": 1928225616,
+        "modified_utc": "2026-10-02T16:07:53.555683+00:00",
+        "sha256": "95945e6979135bce3f36f8af900d48502037459f9c20e9e6efdba81948b39739"
+      }
+    },
+    "log": "builds/windows-latest/export.log",
+    "error_lines": [],
+    "resource_shortage_detected": false
+  },
+  "environment_notes": [
+    "起動ログには環境由来の証明書ストア読み取りとマップ診断ファイル書き込みの警告がある。起動・肖像表示の検証は成功。"
+  ]
+}

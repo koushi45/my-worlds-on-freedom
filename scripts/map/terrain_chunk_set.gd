@@ -21,6 +21,81 @@ var far_lod_switches := 0
 var last_visibility: Array = []
 var wanted_region := Rect2()
 var wanted_active := false
+var visibility_update_us := 0
+var prefetch_wanted: Dictionary = {}
+var far_cache: Dictionary = {}
+var far_touched: Dictionary = {}
+var far_costs: Dictionary = {}
+var far_requests: Dictionary = {}
+var near_cache_limit := CACHE_LIMIT
+var far_prefetch_pose: Array = []
+var near_prefetch_state: Array = []
+
+func _mesh_bytes(mesh: ArrayMesh) -> int:
+    var arrays := mesh.surface_get_arrays(0)
+    return arrays[Mesh.ARRAY_VERTEX].size()*32+arrays[Mesh.ARRAY_INDEX].size()*4
+
+func _poll_far() -> void:
+    for path in far_requests.keys():
+        var status := ResourceLoader.load_threaded_get_status(path)
+        if status==ResourceLoader.THREAD_LOAD_IN_PROGRESS: continue
+        far_requests.erase(path)
+        if status==ResourceLoader.THREAD_LOAD_LOADED:
+            var resource := ResourceLoader.load_threaded_get(path)
+            if DisplaySettings.terrain_prefetch_level>0 and resource!=null:
+                far_cache[path]=resource.mesh
+                far_costs[path]=_mesh_bytes(resource.mesh)*2
+                far_touched[path]=Time.get_ticks_msec()
+    if DisplaySettings.terrain_prefetch_level==0:
+        far_cache.clear()
+        far_touched.clear()
+        far_costs.clear()
+        far_prefetch_pose.clear()
+        return
+    var pinned := {}
+    for node in far_nodes.values(): pinned[node.get_meta("selected_path","")]=true
+    var bytes := 0
+    for cost in far_costs.values(): bytes += cost
+    var budget: int = [0,128,256][DisplaySettings.terrain_prefetch_level]*1024*1024
+    var paths := far_cache.keys()
+    paths.sort_custom(func(a,b): return far_touched.get(a,0)<far_touched.get(b,0))
+    for path in paths:
+        if bytes<=budget: break
+        if pinned.has(path): continue
+        bytes -= int(far_costs[path])
+        far_cache.erase(path)
+        far_touched.erase(path)
+        far_costs.erase(path)
+
+func _prefetch_far(planes: Array[Plane]) -> void:
+    var level: int = DisplaySettings.terrain_prefetch_level
+    if level==0: return
+    var pose := [view.view_camera.global_transform,view.view_camera.fov,view.fine_rect,level]
+    if pose==far_prefetch_pose or far_requests.size()>=[0,2,4][level]: return
+    var focus: Vector3 = view.position_for(view.main.camera.position)
+    var rotated: Array = []
+    for direction in [-1,1]:
+        var basis := Basis(Vector3.UP,deg_to_rad([0.0,40.0,80.0][level])*direction)
+        var transform := Transform3D(basis,focus-basis*focus)
+        var predicted: Array[Plane] = []
+        for plane in planes: predicted.append(transform*plane)
+        rotated.append(predicted)
+    var lead: Vector2 = (view.main.view_velocity*[0.0,0.5,0.8][level]).limit_length([0.0,512.0,1024.0][level])
+    var translated: Array[Plane] = []
+    var move := Transform3D(Basis.IDENTITY,Vector3(lead.x,0,lead.y))
+    for plane in planes: translated.append(move*plane)
+    rotated.append(translated)
+    var entries: Array = manifest.chunks.duplicate()
+    entries.sort_custom(func(a,b): return Vector2(a.x,a.y).distance_squared_to(view.main.camera.position)<Vector2(b.x,b.y).distance_squared_to(view.main.camera.position))
+    for entry in entries:
+        var region := Rect2(Vector2(entry.x,entry.y),Vector2.ONE*FAR_SIDE)
+        if not _visible(region,rotated[0]) and not _visible(region,rotated[1]) and not _visible(region,rotated[2]): continue
+        for path in [entry.path,entry.get("coarse_path",entry.path)]:
+            if far_cache.has(path) or far_requests.has(path): continue
+            if far_requests.size()>=[0,2,4][level]: return
+            if ResourceLoader.load_threaded_request(path,"",false,ResourceLoader.CACHE_MODE_IGNORE)==OK:
+                far_requests[path]=true
+    far_prefetch_pose=pose
 
 func load_manifest() -> bool:
     var path := "res://data/derived/elevation/terrain_chunks/manifest.json"
@@ -78,6 +153,7 @@ func _visible(region: Rect2, planes: Array[Plane]) -> bool:
 func update_visibility(force: bool = false) -> void:
     var state := [view.view_camera.global_transform,view.view_camera.fov,view.view_camera.size,view.main.get_viewport_rect().size,view.oblique,view.fine_rect,view.fine_surface.visible,view.fuji_surface.visible]
     if not force and state==last_visibility: return
+    var probe_started := Time.get_ticks_usec()
     last_visibility=state
     var planes: Array[Plane] = view.view_camera.get_frustum()
     var required := {}
@@ -86,6 +162,9 @@ func update_visibility(force: bool = false) -> void:
         if not _visible(region,planes): continue
         var key: String = entry.path
         required[key]=true
+        if view.get_meta("probe_cache_far",false) and far_nodes.has(key):
+            far_nodes[key].show()
+            continue
         var selected := key
         var coarse := false
         if entry.has("coarse_path"):
@@ -96,9 +175,13 @@ func update_visibility(force: bool = false) -> void:
         if far_nodes.has(key) and far_nodes[key].get_meta("selected_path",key)==selected: continue
         # Small baked tiles load before the frame draws, avoiding missing ground
         # during fast turns. No nationwide mesh or cache is retained alongside.
-        var resource: Resource = ResourceLoader.load(selected,"",ResourceLoader.CACHE_MODE_IGNORE)
         var mesh: ArrayMesh
-        if resource!=null: mesh=resource.mesh
+        if far_cache.has(selected):
+            mesh=far_cache[selected]
+            far_touched[selected]=Time.get_ticks_msec()
+        else:
+            var resource: Resource = ResourceLoader.load(selected,"",ResourceLoader.CACHE_MODE_IGNORE)
+            if resource!=null: mesh=resource.mesh
         if mesh==null:
             mesh=ArrayMesh.new()
             mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,view._geometry_arrays(region,view.STEP,false))
@@ -110,6 +193,10 @@ func update_visibility(force: bool = false) -> void:
             node=MeshInstance3D.new()
             view.surface.add_child(node)
         node.mesh=mesh
+        if DisplaySettings.terrain_prefetch_level>0:
+            far_cache[selected]=mesh
+            if not far_costs.has(selected): far_costs[selected]=_mesh_bytes(mesh)*2
+            far_touched[selected]=Time.get_ticks_msec()
         node.material_override=view.surface_material
         node.set_meta("selected_path",selected)
         node.set_meta("coarse",coarse)
@@ -117,34 +204,36 @@ func update_visibility(force: bool = false) -> void:
         far_loads+=1
     for key in far_nodes.keys():
         if not required.has(key):
+            if view.get_meta("probe_cache_far",false):
+                far_nodes[key].hide()
+                continue
             far_nodes[key].free()
             far_nodes.erase(key)
             far_releases+=1
     for key in near_nodes:
         near_nodes[key].visible=_visible(active_keys[key],planes)
+    _prefetch_far(planes)
+    visibility_update_us += Time.get_ticks_usec()-probe_started
 
 func _near_tiles(region: Rect2) -> Dictionary:
     var result := {}
     for y in range(int(region.position.y),int(region.end.y),NEAR_SIDE):
         for x in range(int(region.position.x),int(region.end.x),NEAR_SIDE):
             var tile := Rect2(x,y,minf(NEAR_SIDE,region.end.x-x),minf(NEAR_SIDE,region.end.y-y))
-            # Normals use a 2-unit halo. Only tiles touching an outer morph band
-            # vary with that edge; interior tile geometry is independent of it.
-            var mask := 0
-            if x-region.position.x<34.0: mask|=1
-            if region.end.x-tile.end.x<34.0: mask|=2
-            if y-region.position.y<34.0: mask|=4
-            if region.end.y-tile.end.y<34.0: mask|=8
-            var key := "%d:%d:%d:%d:%d" % [x,y,int(tile.size.x),int(tile.size.y),mask]
+            # Immutable measured tiles; the GPU handles the moving outer seam.
+            var key := "%d:%d:%d:%d" % [x,y,int(tile.size.x),int(tile.size.y)]
             result[key]=tile
     return result
 
 func _trim_cache() -> void:
     for key in near_cache.keys():
-        if near_cache.size()<=CACHE_LIMIT: break
-        if not active_keys.has(key) and not wanted.has(key): near_cache.erase(key)
+        if near_cache.size()<=near_cache_limit: break
+        if not active_keys.has(key) and not wanted.has(key) and not prefetch_wanted.has(key): near_cache.erase(key)
 
 func update_near() -> void:
+    _poll_far()
+    if DisplaySettings.terrain_prefetch_level>0: _prefetch_far(view.view_camera.get_frustum())
+    near_cache_limit = [64,128,256][DisplaySettings.terrain_cache_level]
     var active: bool = view.oblique and view.main.camera.zoom.x>=4.0
     var desired: Rect2 = view._desired_fine_rect()
     if active!=wanted_active or active and desired!=wanted_region:
@@ -158,19 +247,40 @@ func update_near() -> void:
         var arrays: Array = view.main.cpu_jobs.take(job.id)
         job.worker.free()
         jobs.erase(key)
-        if not wanted.has(key):
+        if not active:
             view.obsolete_fine_jobs+=1
             continue
         var mesh := ArrayMesh.new()
-        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+        var flags := (Mesh.ARRAY_CUSTOM_RGBA_FLOAT << Mesh.ARRAY_FORMAT_CUSTOM0_SHIFT) | (Mesh.ARRAY_CUSTOM_RGBA_FLOAT << Mesh.ARRAY_FORMAT_CUSTOM1_SHIFT)
+        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays,[],{},flags)
         near_cache[key]=mesh
         near_builds+=1
         view.geometry_builds+=1
-    for key in wanted:
+    var prefetch_state := [active,desired,view.fine_rect,near_cache_limit,DisplaySettings.terrain_prefetch_level]
+    if prefetch_state!=near_prefetch_state:
+        near_prefetch_state=prefetch_state
+        prefetch_wanted.clear()
+    if prefetch_wanted.is_empty() and active and DisplaySettings.terrain_prefetch_level>0:
+        var ring: float = [0.0,128.0,256.0][DisplaySettings.terrain_prefetch_level]
+        var extra := _near_tiles(desired.grow(ring).intersection(Rect2(0,0,8192,8192)))
+        var protected := wanted.duplicate()
+        protected.merge(active_keys)
+        var candidates := extra.keys()
+        var lead: Vector2 = (view.main.view_velocity*0.5).limit_length(ring)
+        var focus: Vector2 = view.main.camera.position+lead
+        candidates.sort_custom(func(a,b): return extra[a].get_center().distance_squared_to(focus)<extra[b].get_center().distance_squared_to(focus))
+        for key in candidates:
+            if wanted.has(key): continue
+            if prefetch_wanted.size()>=maxi(0,near_cache_limit-protected.size()): break
+            prefetch_wanted[key]=extra[key]
+    var requested := wanted.duplicate()
+    requested.merge(prefetch_wanted)
+    for key in requested:
         if near_cache.has(key): continue
-        complete=false
+        if wanted.has(key): complete=false
         if jobs.has(key): continue
-        if jobs.size()>=mini(2,view.main.cpu_jobs.limit) or view.main.cpu_jobs.jobs.size()>=view.main.cpu_jobs.limit: continue
+        var parallel: int = [2,4,8][DisplaySettings.terrain_parallel_level]
+        if jobs.size()>=mini(parallel,view.main.cpu_jobs.limit) or view.main.cpu_jobs.jobs.size()>=view.main.cpu_jobs.limit: continue
         var worker: Node3D = view.get_script().new()
         worker.height_data=view.height_data
         worker.height_scale=view.height_scale
@@ -180,7 +290,7 @@ func update_near() -> void:
         worker.fuji_step=view.fuji_step
         var id := "near-tile:%d:%d" % [view.get_instance_id(),serial]
         serial+=1
-        if not view.main.cpu_jobs.submit(id,worker._geometry_arrays.bind(wanted[key],2.0,true,desired),JOB_BYTES,serial):
+        if not view.main.cpu_jobs.submit(id,worker._geometry_arrays.bind(requested[key],2.0,true,Rect2(),true),JOB_BYTES,serial):
             worker.free()
             continue
         jobs[key]={"id":id,"worker":worker}
@@ -215,6 +325,7 @@ func update_near() -> void:
             material.set_shader_parameter("fuji_rect",Vector4(view.fuji_rect.position.x,view.fuji_rect.position.y,view.fuji_rect.end.x,view.fuji_rect.end.y))
         view.surface_material.set_shader_parameter("fine_active",view.fine_surface.visible)
         view.surface_material.set_shader_parameter("fine_rect",Vector4(view.fine_rect.position.x,view.fine_rect.position.y,view.fine_rect.end.x,view.fine_rect.end.y))
+        view.fine_material.set_shader_parameter("fine_rect",Vector4(view.fine_rect.position.x,view.fine_rect.position.y,view.fine_rect.end.x,view.fine_rect.end.y))
         view.last_state=[]
         view.marker_visibility.clear()
     _trim_cache()
@@ -232,3 +343,7 @@ func shutdown() -> void:
             job.worker.free()
     jobs.clear()
     near_cache.clear()
+    for path in far_requests: ResourceLoader.load_threaded_get(path)
+    far_requests.clear()
+    far_cache.clear()
+    far_costs.clear()

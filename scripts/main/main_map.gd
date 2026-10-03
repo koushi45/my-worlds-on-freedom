@@ -119,6 +119,8 @@ func _ready() -> void:
 	add_child(asset_stream)
 	cpu_jobs = preload("res://scripts/map/map_cpu_jobs.gd").new()
 	add_child(cpu_jobs)
+	DisplaySettings.terrain_options_changed.connect(_apply_terrain_options)
+	_apply_terrain_options()
 	_setup_overviews()
 	if overviews.size()!=2:
 		MapDiagnostics.record("startup_map_failed", {"reason":"resident_backdrop_missing"})
@@ -1038,6 +1040,17 @@ func _retire_tiles() -> void:
 		if not retain:
 			node.queue_free();loaded_tiles.erase(id)
 
+func _apply_terrain_options() -> void:
+	map_memory_budget_mib = [320,640,1024][DisplaySettings.terrain_cache_level] if not OS.has_feature("android") else 128
+	cpu_jobs.limit = [4,6,10][DisplaySettings.terrain_parallel_level] if not OS.has_feature("android") else 2
+	cpu_jobs.budget_bytes = [16,32,48][DisplaySettings.terrain_parallel_level]*1024*1024
+	prefetch_limit = [24,48,96][DisplaySettings.terrain_prefetch_level]
+	if asset_stream != null: asset_stream.limit = [2,4,6][DisplaySettings.terrain_prefetch_level]
+	if map_view != null:
+		map_view.last_state = []
+		map_view.sync(true)
+	last_view_state = []
+
 func _plan_prefetch(rect: Rect2) -> void:
 	var now:=Time.get_ticks_msec()
 	if previous_view_time>0 and now>previous_view_time:
@@ -1048,7 +1061,8 @@ func _plan_prefetch(rect: Rect2) -> void:
 	var lead: Vector2=(view_velocity*clampf(asset_stream.latency_ms/1000.0,0.3,0.5)).limit_length(512.0)
 	# Projected motion approximates source motion conservatively; the ring covers turns.
 	var ahead := Rect2(rect.position+lead,rect.size)
-	var neighbors := _desired_tiles(rect.grow(256.0).merge(ahead))
+	var ring: float = [256.0,512.0,1024.0][DisplaySettings.terrain_prefetch_level]
+	var neighbors := _desired_tiles(rect.grow(ring).merge(ahead))
 	neighbors.sort_custom(func(a,b):
 		var av: Array=a["global_viewport"];var bv: Array=b["global_viewport"]
 		return Vector2(av[0],av[1]).distance_squared_to(ahead.get_center()) < Vector2(bv[0],bv[1]).distance_squared_to(ahead.get_center()))

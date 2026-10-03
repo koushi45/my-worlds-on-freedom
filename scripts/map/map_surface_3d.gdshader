@@ -19,6 +19,7 @@ uniform float source_heading = 0.0;
 uniform vec4 fine_rect;
 uniform bool fine_active = false;
 uniform bool is_fine = false;
+uniform bool boundary_morph = false;
 uniform vec4 fuji_rect;
 uniform bool fuji_active = false;
 uniform bool is_fuji = false;
@@ -28,7 +29,19 @@ uniform float height_factor = 1.0;
 varying vec3 map_position;
 varying vec3 slope_normal;
 
+float boundary_weight(vec2 world) {
+    vec2 edge = min(world-fine_rect.xy,fine_rect.zw-world);
+    return smoothstep(0.0,32.0,min(edge.x,edge.y));
+}
+
 void vertex() {
+    if (boundary_morph) {
+        vec2 world = VERTEX.xz + vec2(4096.0);
+        VERTEX.y = mix(UV2.x,VERTEX.y,boundary_weight(world));
+        vec4 weights = vec4(boundary_weight(world-vec2(2.0,0.0)),boundary_weight(world+vec2(2.0,0.0)),boundary_weight(world-vec2(0.0,2.0)),boundary_weight(world+vec2(0.0,2.0)));
+        vec4 heights = mix(CUSTOM1,CUSTOM0,weights);
+        NORMAL = normalize(vec3(heights.x-heights.y,4.0,heights.z-heights.w));
+    }
     VERTEX.y *= height_factor;
     if (height_factor < 0.5) NORMAL = vec3(0.0, 1.0, 0.0);
     TANGENT = normalize(vec3(1.0,0.0,0.0)-NORMAL*NORMAL.x);

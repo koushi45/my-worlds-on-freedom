@@ -72,6 +72,13 @@ var ray_tiers: Array = []
 var ray_bounds_enabled := true
 var ray_cells_tested := 0
 var ray_blocks_skipped := 0
+var marker_occlusion_us := 0
+var marker_occlusion_calls := 0
+const MARKER_RADIUS := 512.0
+const MARKER_OCCLUSION_INTERVAL := 100
+var temporal_visibility: Dictionary = {}
+var marker_refresh_at := 0
+var near_update_us := 0
 var terrain_hash := ""
 var fuji_hash := ""
 var geometry_hash := ""
@@ -143,6 +150,7 @@ func _ready() -> void:
     add_child(surface)
     fine_material = surface_material.duplicate() as ShaderMaterial
     fine_material.set_shader_parameter("is_fine",true)
+    fine_material.set_shader_parameter("boundary_morph",chunked_terrain)
     fine_surface = MeshInstance3D.new()
     fine_surface.material_override = fine_material
     fine_surface.visible = false
@@ -150,6 +158,7 @@ func _ready() -> void:
     fuji_material = surface_material.duplicate() as ShaderMaterial
     fuji_material.set_shader_parameter("is_fine",true)
     fuji_material.set_shader_parameter("is_fuji",true)
+    fuji_material.set_shader_parameter("boundary_morph",false)
     fuji_surface = MeshInstance3D.new()
     var fuji_chunk := _baked_terrain("fuji",fuji_rect,fuji_step)
     var fuji_mesh: ArrayMesh
@@ -309,10 +318,10 @@ func _vertex_height(point: Vector2, region: Rect2) -> float:
         if edge<band: height = lerpf(_triangle_height(point,parent_step),height,smoothstep(0.0,band,edge))
     return height
 
-func _geometry_arrays(region: Rect2, step: float, fine: bool, morph_region: Rect2 = Rect2()) -> Array:
+func _geometry_arrays(region: Rect2, step: float, fine: bool, morph_region: Rect2 = Rect2(), canonical: bool = false) -> Array:
     var columns := int(region.size.x/step)+1
     var rows := int(region.size.y/step)+1
-    var reduce_grid := adaptive_terrain and fine and step==2.0 and region!=fuji_rect and (columns-1)%2==0 and (rows-1)%2==0
+    var reduce_grid := not canonical and adaptive_terrain and fine and step==2.0 and region!=fuji_rect and (columns-1)%2==0 and (rows-1)%2==0
     var morph := (morph_region if morph_region.has_area() else region) if fine else Rect2()
     var vertices := PackedVector3Array()
     var normals := PackedVector3Array()
@@ -326,7 +335,8 @@ func _geometry_arrays(region: Rect2, step: float, fine: bool, morph_region: Rect
     heights.resize(stride*(rows+2))
     for y in range(-1,rows+1):
         for x in range(-1,columns+1):
-            heights[(y+1)*stride+x+1] = _vertex_height(region.position+Vector2(x,y)*step,morph)
+            var point := region.position+Vector2(x,y)*step
+            heights[(y+1)*stride+x+1] = _node_height(point) if canonical else _vertex_height(point,morph)
     for y in rows:
         for x in columns:
             var point := region.position+Vector2(x,y)*step
@@ -337,7 +347,13 @@ func _geometry_arrays(region: Rect2, step: float, fine: bool, morph_region: Rect
             vertices[y*columns+x] = Vector3(point.x-CENTER.x,h,point.y-CENTER.y)
             normals[y*columns+x] = Vector3(-dx,2.0*step,-dz).normalized()
             uv[y*columns+x] = point/8192.0
-    heights=PackedFloat64Array()
+    var coarse: PackedFloat64Array
+    var coarse_columns := int(region.size.x/16.0)+3
+    if canonical:
+        coarse.resize(coarse_columns*(int(region.size.y/16.0)+3))
+        for y in int(region.size.y/16.0)+3:
+            for x in coarse_columns:
+                coarse[y*coarse_columns+x] = _node_height(region.position+Vector2(x-1,y-1)*16.0)
     if not reduce_grid:
         indices.resize((columns-1)*(rows-1)*6)
         for y in rows-1:
@@ -352,13 +368,57 @@ func _geometry_arrays(region: Rect2, step: float, fine: bool, morph_region: Rect
     arrays[Mesh.ARRAY_NORMAL] = normals
     arrays[Mesh.ARRAY_TEX_UV] = uv
     arrays[Mesh.ARRAY_INDEX] = indices
+    if canonical:
+        var parent_heights := PackedVector2Array()
+        var fine_neighbors := PackedFloat32Array()
+        var coarse_neighbors := PackedFloat32Array()
+        parent_heights.resize(vertices.size())
+        fine_neighbors.resize(vertices.size()*4)
+        coarse_neighbors.resize(vertices.size()*4)
+        var parent_samples := PackedFloat32Array()
+        parent_samples.resize(stride*(rows+2))
+        for y in range(-1,rows+1):
+            for x in range(-1,columns+1):
+                parent_samples[(y+1)*stride+x+1] = _cached_coarse_height(region.position+Vector2(x,y)*step,region.position,coarse,coarse_columns)
+        for y in rows:
+            for x in columns:
+                var index := y*columns+x
+                var sample_index := (y+1)*stride+x+1
+                parent_heights[index] = Vector2(parent_samples[sample_index],0)
+                var first := index*4
+                fine_neighbors[first] = heights[sample_index-1]
+                fine_neighbors[first+1] = heights[sample_index+1]
+                fine_neighbors[first+2] = heights[sample_index-stride]
+                fine_neighbors[first+3] = heights[sample_index+stride]
+                coarse_neighbors[first] = parent_samples[sample_index-1]
+                coarse_neighbors[first+1] = parent_samples[sample_index+1]
+                coarse_neighbors[first+2] = parent_samples[sample_index-stride]
+                coarse_neighbors[first+3] = parent_samples[sample_index+stride]
+        arrays[Mesh.ARRAY_TEX_UV2] = parent_heights
+        arrays[Mesh.ARRAY_CUSTOM0] = fine_neighbors
+        arrays[Mesh.ARRAY_CUSTOM1] = coarse_neighbors
     if reduce_grid:
         return preload("res://scripts/map/terrain_grid_lod.gd").simplify(arrays,columns,rows,step,height_scale*3.0,0.97,0.01,fuji_rect.grow(32)).arrays
     return arrays
 
+func _cached_coarse_height(point: Vector2, origin: Vector2, heights: PackedFloat64Array, columns: int) -> float:
+    if point.x<0 or point.y<0 or point.x>8192 or point.y>8192: return 0.0
+    var cell := ((point/16.0).floor()*16.0).min(Vector2(8176,8176))
+    var grid := Vector2i((cell-origin)/16.0)+Vector2i.ONE
+    var f := (point-cell)/16.0
+    var index := grid.y*columns+grid.x
+    var a := heights[index]
+    var b := heights[index+1]
+    var c := heights[index+columns]
+    var d := heights[index+columns+1]
+    return a+(b-a)*f.x+(c-a)*f.y if f.x+f.y<=1.0 else d+(c-d)*(1.0-f.x)+(b-d)*(1.0-f.y)
+
 func _desired_fine_rect() -> Rect2:
     var center: Vector2 = (main.camera.position/128.0).floor()*128.0
     var desired := Rect2((center-Vector2(256,768)).max(Vector2.ZERO),Vector2(512,1024))
+    if DisplaySettings.terrain_cache_level>0:
+        var extent := Vector2(1024,1536) if DisplaySettings.terrain_cache_level==1 else Vector2(1536,1536)
+        desired = Rect2((center-extent*0.5).max(Vector2.ZERO),extent)
     desired.size = desired.size.min(Vector2(8192,8192)-desired.position)
     return desired
 
@@ -371,7 +431,9 @@ func _apply_fine_mesh(mesh: ArrayMesh, region: Rect2) -> void:
 func _update_fine() -> void:
     if get_meta("probe_freeze_near",false): return
     if chunked_terrain:
+        var probe_started := Time.get_ticks_usec()
         terrain_chunks.update_near()
+        near_update_us += Time.get_ticks_usec()-probe_started
         return
     var active: bool = oblique and main.camera.zoom.x>=4.0
     var desired := _desired_fine_rect()
@@ -423,6 +485,10 @@ func _update_fine() -> void:
 
 func advance(delta: float) -> void:
     _update_fine()
+    if marker_refresh_at > 0 and Time.get_ticks_msec() >= marker_refresh_at:
+        marker_refresh_at = 0
+        marker_visibility.clear()
+        markers.invalidate()
     var zoom_before: float = main.camera.zoom.x
     if not is_equal_approx(zoom_before,requested_zoom):
         var zoom := lerpf(zoom_before,requested_zoom,1.0-exp(-24.0*delta))
@@ -664,13 +730,33 @@ func pin_anchor() -> void:
         sync(true,true)
     sync(true)
 
-func marker_visible(world: Vector2) -> bool:
+func marker_visible(world: Vector2, priority: bool = false, cache_id: String = "", force_exact: bool = false) -> bool:
     if not world.is_finite(): return false
+    # At 800% use 512 world units; widen the radius when zooming out.
+    var radius: float = get_meta("probe_marker_radius",MARKER_RADIUS*8.0/main.camera.zoom.x if main.camera.zoom.x >= 2.0 else 0.0)
+    if not priority and radius > 0.0 and world.distance_squared_to(main.camera.position)>radius*radius: return false
     var screen := project(world)
     if not main.get_viewport_rect().grow(-4).has_point(screen): return false
     if get_meta("probe_no_occlusion",false): return true
-    if marker_visibility.has(world): return marker_visibility[world]
+    if not priority and not force_exact and marker_visibility.has(world): return marker_visibility[world]
+    var interval: int = get_meta("probe_occlusion_interval",MARKER_OCCLUSION_INTERVAL)
+    var now := Time.get_ticks_msec()
+    var key: Variant = world if cache_id.is_empty() else cache_id
+    var geometry: Array = [fine_rect,fine_surface.visible,fuji_surface.visible,oblique,main.get_viewport_rect().size]
+    if not priority and not force_exact and interval > 0 and temporal_visibility.has(key):
+        var cached: Dictionary = temporal_visibility[key]
+        if now-cached.time < interval and world.distance_squared_to(cached.world)<4.0 and geometry==cached.geometry and main.camera.position.distance_squared_to(cached.center)<4096.0 and absf(wrapf(yaw-cached.yaw,-180.0,180.0))<10.0 and is_equal_approx(angle,cached.angle) and is_equal_approx(main.camera.zoom.x,cached.zoom):
+            marker_visibility[world] = cached.visible
+            var expires: int = cached.time+interval
+            marker_refresh_at = expires if marker_refresh_at==0 else mini(marker_refresh_at,expires)
+            return cached.visible
+    var probe_started := Time.get_ticks_usec()
     var visible := not view_camera.is_position_behind(position_for(world)) and pick(screen).distance_squared_to(world)<0.01
+    marker_occlusion_us += Time.get_ticks_usec()-probe_started
+    marker_occlusion_calls += 1
     marker_visibility[world] = visible
+    if interval > 0:
+        temporal_visibility[key] = {"time":now,"world":world,"geometry":geometry,"center":main.camera.position,"yaw":yaw,"angle":angle,"zoom":main.camera.zoom.x,"visible":visible}
+        while temporal_visibility.size()>512: temporal_visibility.erase(temporal_visibility.keys()[0])
     return visible
 
