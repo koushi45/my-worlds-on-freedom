@@ -30,6 +30,8 @@ func run() -> void:
 	var target := "takeda"
 	var diplomacy: Node = main.diplomacy
 	main.game_clock.set_process(false)
+	# Keep individual diplomacy commands isolated from autonomous CPU peace decisions.
+	main.cpu_controller.enabled = false
 	check(diplomacy.opinion(target, actor) == 0, "unknown relation starts neutral")
 	main.game_menu.toggle_council()
 	main.game_menu.show_diplomacy()
@@ -40,8 +42,7 @@ func run() -> void:
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png("res://builds/qa/diplomacy_panel.png")
 	main.game_menu.diplomacy_panel.close_panel()
-	check(main.game_menu.council_menu.visible, "close returns to council")
-	main.game_menu.toggle_council()
+	check(not main.game_menu.council_menu.visible and not paused, "close dismisses council management")
 	check(diplomacy.act("ally", actor, target) == ERR_UNAVAILABLE, "alliance needs acceptance")
 	check(diplomacy.act("envoy", actor, target) == OK, "envoy assigned")
 	diplomacy.on_day_advanced(1546, 2, 1)
@@ -52,7 +53,7 @@ func run() -> void:
 	check(diplomacy.opinion(target, actor) == 25, "gift raises target opinion")
 	check(is_equal_approx(float(main.district_economy.house_resources[actor].money), 200.0), "gift deducts money")
 	check(diplomacy.act("gift", actor, target) == ERR_UNAVAILABLE, "diplomatic cooldown")
-	main.game_clock.advance_real_seconds(30.0)
+	await advance_days(main.game_clock, 30)
 	diplomacy.change_opinion(target, actor, 20)
 	check(diplomacy.act("ally", actor, target) == OK, "alliance forms above threshold")
 	check(session.relation(actor, target) == "ally", "alliance uses map relation")
@@ -61,13 +62,13 @@ func run() -> void:
 	diplomacy.change_opinion(target, actor, -30)
 	diplomacy.restore_state(saved.diplomacy)
 	check(diplomacy.opinion(target, actor) == int(saved.diplomacy.opinions[target + ">" + actor]), "diplomacy state restores")
-	main.game_clock.advance_real_seconds(30.0)
+	await advance_days(main.game_clock, 30)
 	check(diplomacy.act("break_ally", actor, target) == OK, "alliance can be broken")
 	check(session.relation(actor, target) == "neutral", "broken alliance is neutral")
-	main.game_clock.advance_real_seconds(30.0)
+	await advance_days(main.game_clock, 30)
 	check(diplomacy.act("war", actor, target) == OK, "war declaration")
 	check(session.relation(actor, target) == "enemy", "war is visible as enemy")
-	main.game_clock.advance_real_seconds(30.0)
+	await advance_days(main.game_clock, 30)
 	diplomacy.change_opinion(target, actor, 100)
 	check(diplomacy.act("peace", actor, target) == OK, "peace succeeds after relations improve")
 	check(session.relation(actor, target) == "neutral" and diplomacy.truce_remaining(actor, target) > 0, "peace establishes truce")
@@ -79,3 +80,10 @@ func run() -> void:
 	check(not loaded.is_empty() and int(loaded.diplomacy.opinions[target + ">" + actor]) == diplomacy.opinion(target, actor) and int(loaded.diplomacy.truces[session.pair(actor, target)]) == int(diplomacy.truces[session.pair(actor, target)]), "diplomacy loads from disk")
 	print("diplomacy failures: %d" % failures)
 	quit(1 if failures else 0)
+
+func advance_days(clock: Node, count: int) -> void:
+	for index in range(count):
+		var previous: int = clock.elapsed_days
+		while clock.elapsed_days == previous:
+			clock.advance_real_seconds(1.0 / clock.speed)
+			await process_frame

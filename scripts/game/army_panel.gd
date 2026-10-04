@@ -204,7 +204,11 @@ func _build_unit() -> void:
 	Style.heading("部隊　%s" % names[0], body, 20)
 	_label("大将・副将：" + " / ".join(names), 13)
 	_label("兵数 %d人　腰兵糧 %d日" % [unit.soldiers, maxi(0, unit.supply_days)])
+	_label("部隊武勇：%.1f（大将・副将の平均）" % main.army_campaign.unit_valor(unit), 13)
 	_label("現在：%s%s" % [main.army_campaign.node_name(unit.site_id), " → " + main.army_campaign.node_name(unit.next_site) if not unit.next_site.is_empty() else ""])
+	var in_melee: bool = main.army_campaign.melee_engagements().has(unit_id)
+	_label("接近戦中：人数と武勇で攻撃" if in_melee else "弓射程：1.5マス　%s" % ("静止射撃" if unit.next_site.is_empty() or unit.get("movement_hold", false) else "移動射撃"), 13)
+	_label("敵軍を狙って射撃。射線上の自軍・味方にも命中。", 12)
 	if not unit.next_site.is_empty():
 		var cell: Vector2i = preload("res://scripts/map/hex_grid.gd").cell_at(main.army_campaign.node_point(unit.next_site))
 		var terrain = preload("res://scripts/map/hex_terrain.gd")
@@ -222,7 +226,7 @@ func _build_unit() -> void:
 		_button("経由点を追加", func(): choosing_target = true; append_target = true; status.text = "経由するタイルをクリックしてください。")
 		_button("帰郡", func():
 			if not main.army_campaign.return_home(unit_id): status.text = main.army_campaign.last_error)
-		status = _label("六角形をクリックで移動。部隊からドラッグで経路を描けます。Shift＋クリックで経由点を追加。", 12)
+		status = _label("クリックで経由点追加。同じ目的地を再クリックで取消。\nドラッグで戻ると区間取消。\nホイール・二本指回転でその場の向き替え。\n右クリックで選択解除。", 12)
 	_button("閉じる", hide_panel)
 
 func handle_site_click(id: String, shift: bool) -> bool:
@@ -233,7 +237,7 @@ func handle_district_click(id: String, shift: bool) -> bool:
 
 func handle_node_click(id: String, shift: bool) -> bool:
 	if not main.army_campaign.units.has(unit_id) or main.army_campaign.units[unit_id].house_id != GameSession.player_house: return false
-	if not main.army_campaign.order(unit_id, id, (append_target if choosing_target else false) or shift):
+	if not main.army_campaign.order_from_click(unit_id, id, (append_target if choosing_target else true) or shift):
 		status.text = main.army_campaign.last_error
 	else:
 		choosing_target = false

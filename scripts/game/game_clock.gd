@@ -1,8 +1,10 @@
 extends Node
 ## Game calendar: proleptic Gregorian dates, starting in Nobunaga's coming-of-age year.
-## Consumers can subscribe to day_advanced for daily simulation updates at every speed.
+## Start current-day work once; advance the date only after simulation and display settle.
 
 signal day_advanced(year: int, month: int, day: int)
+signal day_started(year: int, month: int, day: int)
+signal simulation_advanced(game_days: float)
 signal state_restored(year: int, month: int, day: int)
 signal speed_changed(speed: int)
 signal pause_changed(paused: bool)
@@ -17,6 +19,9 @@ var speed := 1
 var paused := false
 var _day_fraction := 0.0
 var _last_tick_usec := 0
+var work_started := false
+var day_work_pending: Callable
+var _completion_frame := -1
 
 
 func _ready() -> void:
@@ -36,7 +41,7 @@ func _sync_elapsed_time() -> void:
 	var now := Time.get_ticks_usec()
 	var seconds := float(now - _last_tick_usec) / 1000000.0
 	_last_tick_usec = now
-	advance_real_seconds(seconds)
+	advance_real_seconds(minf(seconds, 0.1))
 
 
 func set_speed(value: int) -> void:
@@ -52,18 +57,42 @@ func set_speed(value: int) -> void:
 func advance_real_seconds(seconds: float) -> void:
 	if paused or not is_finite(seconds) or seconds <= 0.0:
 		return
-	_day_fraction += seconds * speed
-	while _day_fraction >= 1.0:
-		_day_fraction -= 1.0
-		day += 1
-		if day > days_in_month(year, month):
-			day = 1
-			month += 1
-			if month > 12:
-				month = 1
-				year += 1
-		elapsed_days += 1
-		day_advanced.emit(year, month, day)
+	if not work_started:
+		work_started = true
+		day_started.emit(year, month, day)
+	# Consume time only within this day. Stalls never create a catch-up backlog.
+	var accepted := minf(seconds * speed, maxf(0.0, 1.0 - _day_fraction))
+	if accepted > 0.0:
+		simulation_advanced.emit(accepted)
+		_day_fraction = minf(1.0, _day_fraction + accepted)
+		_completion_frame = -1
+	if _day_fraction < 1.0:
+		return
+	if day_work_pending.is_valid() and day_work_pending.call():
+		_completion_frame = -1
+		return
+	if is_inside_tree():
+		if _completion_frame < 0:
+			_completion_frame = Engine.get_process_frames()
+			_last_tick_usec = Time.get_ticks_usec()
+			return
+		# Leave a complete frame for input, HUD and map drawing before changing date.
+		if Engine.get_process_frames() <= _completion_frame + 1:
+			_last_tick_usec = Time.get_ticks_usec()
+			return
+	_day_fraction = 0.0
+	work_started = false
+	_completion_frame = -1
+	day += 1
+	if day > days_in_month(year, month):
+		day = 1
+		month += 1
+		if month > 12:
+			month = 1
+			year += 1
+	elapsed_days += 1
+	_last_tick_usec = Time.get_ticks_usec()
+	day_advanced.emit(year, month, day)
 
 
 func toggle_paused() -> void:
@@ -96,6 +125,8 @@ func restore_state(state: Dictionary) -> void:
 	speed = int(state.speed)
 	paused = state.paused
 	_day_fraction = float(state.fraction)
+	work_started = bool(state.work_started)
+	_completion_frame = -1
 	_last_tick_usec = Time.get_ticks_usec()
 	state_restored.emit(year,month,day)
 	speed_changed.emit(speed)

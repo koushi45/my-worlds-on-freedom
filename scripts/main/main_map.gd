@@ -34,6 +34,9 @@ var dragging := false
 var drag_button := 0
 var drag_army_id := ""
 var drag_route: Array[String] = []
+var map_touch_points: Dictionary = {}
+var suppress_touch_mouse := false
+var rotating_army_id := ""
 var initialized := false
 var political_layer: Node2D
 var river_layer: Node2D
@@ -91,6 +94,7 @@ var district_office_layer: Node2D
 var developer_tools: CanvasLayer
 var army_campaign: Node2D
 var diplomacy: Node
+var cpu_controller: Node
 var army_panel: CanvasLayer
 var time_hud: CanvasLayer
 var house_status_hud: CanvasLayer
@@ -292,8 +296,11 @@ func _ready() -> void:
 	add_child(diplomacy)
 	diplomacy.setup(self)
 	diplomacy.changed.connect(army_campaign.queue_redraw)
+	cpu_controller = preload("res://scripts/game/cpu_controller.gd").new()
+	cpu_controller.name = "CpuController"
+	add_child(cpu_controller)
+	cpu_controller.setup(self)
 	var restoring: bool = not GameSession.pending.is_empty()
-	GameSession.apply_to(self)
 	army_panel = preload("res://scripts/game/army_panel.gd").new()
 	army_panel.name = "ArmyPanel"
 	army_panel.main = self
@@ -302,12 +309,9 @@ func _ready() -> void:
 	house_status_hud.name = "HouseStatusHUD"
 	house_status_hud.main = self
 	add_child(house_status_hud)
-	game_clock.day_advanced.connect(district_buildings.on_day_advanced)
-	game_clock.day_advanced.connect(district_economy.on_day_advanced)
-	game_clock.day_advanced.connect(retainer_management.on_day_advanced)
-	game_clock.day_advanced.connect(army_campaign.on_day_advanced)
-	game_clock.day_advanced.connect(district_actions.on_day_advanced)
-	game_clock.day_advanced.connect(diplomacy.on_day_advanced)
+	game_clock.day_started.connect(cpu_controller.begin_day)
+	game_clock.day_work_pending = _has_pending_day_work
+	game_clock.simulation_advanced.connect(army_campaign.advance_simulation)
 	if not restoring and not GameSession.player_house.is_empty():
 		for r in governance_registry.districts.values():
 			if r.house_id == GameSession.player_house:
@@ -325,6 +329,7 @@ func _ready() -> void:
 	developer_tools = preload("res://scripts/game/developer_tools.gd").new()
 	developer_tools.main = self
 	add_child(developer_tools)
+	developer_tools.network.changed.connect(cpu_controller.invalidate_routes)
 	game_menu = preload("res://scripts/game/game_menu.gd").new()
 	game_menu.main = self
 	add_child(game_menu)
@@ -336,6 +341,8 @@ func _ready() -> void:
 	settlement_layer.map_view = map_view
 	kamon_layer.map_view = map_view
 	add_child(map_view)
+	GameSession.apply_to(self)
+	if restoring: territory_borders.rebuild()
 	# Geometry preparation is loading time, not elapsed simulation time.
 	game_clock._last_tick_usec = Time.get_ticks_usec()
 	game_clock.set_process(true)
@@ -343,6 +350,13 @@ func _ready() -> void:
 	set_process(true)
 	MapDiagnostics.main = self
 	MapDiagnostics.record("map_ready")
+	if "--cpu-release-check" in OS.get_cmdline_user_args():
+		var release_check := preload("res://scripts/game/cpu_release_check.gd").new()
+		release_check.main = self
+		add_child(release_check)
+
+func _has_pending_day_work() -> bool:
+	return cpu_controller.has_pending_work() or (is_instance_valid(house_status_hud) and house_status_hud.refresh_dirty)
 
 func _on_house_income_collected(house_id: String, _kind: String, amount: int) -> void:
 	if GameSession.player_house.is_empty() or house_id != GameSession.player_house or amount <= 0:
@@ -481,10 +495,58 @@ func _process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			if map_touch_points.is_empty(): suppress_touch_mouse = false
+			map_touch_points[event.index] = event.position
+			if map_touch_points.size() >= 2:
+				suppress_touch_mouse = true
+				_end_map_drag()
+				rotating_army_id = _selected_rotatable_army()
+		else:
+			map_touch_points.erase(event.index)
+			if map_touch_points.size() < 2: rotating_army_id = ""
+	if event is InputEventScreenDrag and map_touch_points.has(event.index):
+		if map_touch_points.size() == 2 and not rotating_army_id.is_empty():
+			var indices := map_touch_points.keys()
+			var before: Vector2 = map_touch_points[indices[1]] - map_touch_points[indices[0]]
+			map_touch_points[event.index] = event.position
+			var after: Vector2 = map_touch_points[indices[1]] - map_touch_points[indices[0]]
+			if before.length() >= 10.0 and after.length() >= 10.0:
+				army_campaign.rotate_unit(rotating_army_id, before.angle_to(after))
+			get_viewport().set_input_as_handled()
+			return
+		map_touch_points[event.index] = event.position
+	if event is InputEventMouseButton and event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP, MOUSE_BUTTON_WHEEL_DOWN]:
+		var id := _selected_rotatable_army()
+		if not id.is_empty():
+			_end_map_drag()
+			army_campaign.rotate_unit(id, deg_to_rad(15.0) * (-1.0 if event.button_index == MOUSE_BUTTON_WHEEL_UP else 1.0) * event.factor)
+			get_viewport().set_input_as_handled()
+			return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		if _cancel_army_selection():
+			get_viewport().set_input_as_handled()
+			return
+	if suppress_touch_mouse and (event is InputEventMouseButton or event is InputEventMouseMotion) and event.device == InputEvent.DEVICE_ID_EMULATION:
+		get_viewport().set_input_as_handled()
+		return
 	# GUI controls can consume the release after a map press. Clear that stale
 	# drag after GUI and unhandled input have had their chance to process it.
 	if event is InputEventMouseButton and not event.pressed and event.button_index == drag_button and dragging:
 		_reset_stale_drag.call_deferred()
+
+func _selected_rotatable_army() -> String:
+	if army_campaign == null: return ""
+	var id: String = army_campaign.selected_id
+	return id if army_campaign.units.has(id) and army_campaign.units[id].house_id == GameSession.player_house else ""
+
+func _cancel_army_selection() -> bool:
+	if army_panel == null or army_campaign == null: return false
+	var selected: bool = not army_panel.unit_id.is_empty() or not army_campaign.selected_id.is_empty() or not drag_army_id.is_empty()
+	_end_map_drag()
+	if selected: army_panel.hide_panel()
+	return selected
 
 func _reset_stale_drag() -> void:
 	if dragging and drag_button != 0 and not Input.is_mouse_button_pressed(drag_button):
@@ -521,8 +583,11 @@ func _extend_army_drag(screen: Vector2) -> void:
 	if not hex_tile_layer.visible_cells.has(cell): return
 	var steps: Array = HexGridScript.path(HexGridScript.parse(drag_route.back()), cell)
 	for step in steps:
-		if drag_route.size() >= 512: break
-		if step != drag_route.back(): drag_route.append(step)
+		var previous_index := drag_route.find(step)
+		if previous_index >= 0:
+			drag_route.resize(previous_index + 1)
+		elif drag_route.size() < 512:
+			drag_route.append(step)
 	army_campaign.set_route_preview(drag_army_id, drag_route)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -548,6 +613,8 @@ func _unhandled_input(event: InputEvent) -> void:
 					if drag_route.size() > 1:
 						var drawn: Array[String] = drag_route.slice(1)
 						accepted = army_campaign.order_path(drag_army_id, drawn)
+					else:
+						accepted = army_campaign.cancel_movement(drag_army_id)
 					army_panel.show_unit(drag_army_id)
 					if not accepted: army_panel.status.text = army_campaign.last_error
 				_end_map_drag()
@@ -1139,16 +1206,17 @@ func _select_district_async(screen_point: Vector2, shift_pressed := false) -> vo
 	if not candidates.is_empty(): InteractionAudio.play_click()
 	show_district_info(candidates[0] if not candidates.is_empty() else "")
 	if developer_ui: district_panel.show_candidates(candidates)
-	else:
-		political_layer.selected_id = ""
-		political_layer.queue_redraw()
-		district_layer.select_key(candidates[0] if not candidates.is_empty() else "")
 
 func show_district_info(key: String) -> void:
 	if district_info == null: return
+	# Office clicks and region clicks must update the same selection and fill.
+	political_layer.selected_id = ""
+	political_layer.queue_redraw()
 	if key.is_empty() or not district_layer.records.has(key):
+		district_layer.select_key("")
 		district_info.hide_info()
 		return
+	if district_layer.selected_key != key: district_layer.select_key(key)
 	var district_record: Dictionary = governance_registry.districts.get(key,{})
 	var security: int = technology_tree.security_for(district_record) if not district_record.is_empty() else -1
 	district_info.show_district(str(district_layer.records[key].name),security)

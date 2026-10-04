@@ -48,18 +48,15 @@ func run() -> void:
 	var main := current_scene
 	check(main.house_status_hud.council_button != null, "council icon is in the header")
 	main.house_status_hud.council_button.pressed.emit()
-	check(main.game_menu.council_menu.visible and main.game_menu.shade.visible, "council icon opens council menu")
+	check(main.game_menu.council_menu.visible and main.game_menu.shade.visible and main.game_menu.retainer_panel.visible, "council icon directly opens retainers")
 	await capture("council_menu")
 	main.game_menu.show_retainers()
 	await process_frame
 	check(main.game_menu.retainer_panel.visible, "council opens retainer management")
 	await capture("council_retainers")
-	escape()
+	main.game_menu.council_tabs[2].pressed.emit()
 	await process_frame
-	check(main.game_menu.council_menu.visible and not main.game_menu.retainer_panel.visible, "Escape closes retainer management")
-	main.game_menu.show_technology()
-	await process_frame
-	check(main.game_menu.technology_panel.visible, "council opens technology tree")
+	check(main.game_menu.technology_panel.visible and not main.game_menu.retainer_panel.visible and main.game_menu.council_menu.visible, "tab directly switches to technology tree")
 	await capture("council_technology")
 	main.retainer_management.technology[root.get_node("GameSession").player_house].governance = 1000.0
 	main.game_menu.technology_panel.refresh()
@@ -69,16 +66,13 @@ func run() -> void:
 	main.game_menu.technology_panel.refresh()
 	escape()
 	await process_frame
-	check(main.game_menu.council_menu.visible and not main.game_menu.technology_panel.visible, "Escape closes technology tree")
+	check(not main.game_menu.shade.visible and not main.game_menu.technology_panel.visible and not paused, "Escape closes technology management and resumes game")
 	main.game_menu.show_retainers()
 	main.game_menu.retainer_panel.close_panel()
-	check(main.game_menu.council_menu.visible, "retainer close button returns to council")
+	check(not main.game_menu.shade.visible and not paused, "retainer close closes council")
 	main.game_menu.show_technology()
 	main.game_menu.technology_panel.close_panel()
-	check(main.game_menu.council_menu.visible, "technology close button returns to council")
-	escape()
-	await process_frame
-	check(not main.game_menu.shade.visible and not paused, "Escape closes council menu")
+	check(not main.game_menu.shade.visible and not paused, "technology close closes council")
 	var district_id: String = main.governance_registry.districts.keys()[0]
 	main.show_district_info(district_id)
 	main.district_info.building_dialog.popup_centered()

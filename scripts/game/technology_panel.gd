@@ -1,8 +1,8 @@
 extends Control
 ## Icon tabs and research cards using the same native-size Japanese PNG set as the district UI.
 
-const UI = preload("res://scripts/game/menu_style.gd")
-const DistrictStyle = preload("res://scripts/game/district_panel_style.gd")
+const UI = preload("res://scripts/game/council_panel_style.gd")
+const DistrictStyle = preload("res://scripts/game/council_panel_style.gd")
 const BRANCH_IDS := ["governance", "agriculture", "commerce"]
 const BRANCH_NAMES := {"governance": "統治技術", "agriculture": "農業技術", "commerce": "商業技術"}
 const BRANCH_ICONS := {
@@ -45,38 +45,27 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	var panel := Control.new()
 	panel.name = "TechnologyWindow"
-	panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
-	panel.offset_left = -510
-	panel.offset_right = 510
-	panel.offset_top = -325
-	panel.offset_bottom = 325
-	panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	add_child(panel)
-	DistrictStyle.frame(panel)
+	panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	var body := VBoxContainer.new()
 	body.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	body.offset_left = 35
-	body.offset_right = -35
-	body.offset_top = 35
-	body.offset_bottom = -35
 	body.add_theme_constant_override("separation", 10)
 	panel.add_child(body)
 	var title_row := HBoxContainer.new()
 	body.add_child(title_row)
-	DistrictStyle.heading("技術ツリー", title_row, 21).size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	var close_button := DistrictStyle.button("×", title_row, close_panel)
-	close_button.custom_minimum_size = Vector2(40, 38)
+	DistrictStyle.heading("技術ツリー", title_row, 14).size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var points := HBoxContainer.new()
 	points.add_theme_constant_override("separation", 8)
 	body.add_child(points)
 	DistrictStyle.icon(points, "res://assets/ui/hud/governance")
-	points_label = UI.label("", points, 20)
+	points_label = UI.label("", points, 12)
 	points_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	branch_state = UI.label("", points, 15)
+	branch_state = UI.label("", points, 12)
 	branch_state.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	branch_state.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	branch_state.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	DistrictStyle.heading("技術系統を選ぶ", body, 18)
+	DistrictStyle.heading("技術系統を選ぶ", body, 14)
 	var tabs := HBoxContainer.new()
 	tabs.add_theme_constant_override("separation", 10)
 	body.add_child(tabs)
@@ -84,7 +73,7 @@ func _ready() -> void:
 	for branch in BRANCH_IDS:
 		var tab := DistrictStyle.button("", tabs, _select_branch.bind(branch))
 		tab.name = "Branch_%s" % branch
-		tab.custom_minimum_size = Vector2(0, 80)
+		tab.custom_minimum_size = Vector2(0, 46)
 		tab.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		tab.toggle_mode = true
 		tab.button_group = tab_group
@@ -97,10 +86,10 @@ func _ready() -> void:
 		contents.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		tab.add_child(contents)
 		DistrictStyle.icon(contents, BRANCH_ICONS[branch])
-		var title := UI.label(BRANCH_NAMES[branch], contents, 19)
+		var title := UI.label(BRANCH_NAMES[branch], contents, 12)
 		title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		title.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	DistrictStyle.heading("研究項目", body, 18)
+	DistrictStyle.heading("研究項目", body, 14)
 	var scroll := ScrollContainer.new()
 	scroll.custom_minimum_size.y = 275
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -108,13 +97,14 @@ func _ready() -> void:
 	DistrictStyle.field(scroll)
 	body.add_child(scroll)
 	technology_rows = VBoxContainer.new()
-	technology_rows.custom_minimum_size.x = 920
+	technology_rows.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	technology_rows.add_theme_constant_override("separation", 8)
 	scroll.add_child(technology_rows)
-	status = UI.label("研究できる項目を押してください。", body, 15)
+	status = UI.label("研究できる項目を押してください。", body, 12)
 	main.technology_tree.research_completed.connect(func(_house_id: String, _branch: String, _technology_id: String): refresh())
 	main.retainer_management.updated.connect(refresh)
 	get_window().size_changed.connect(refresh)
+	UI.follow_window(self)
 	hide()
 
 func open() -> void:
@@ -150,7 +140,7 @@ func refresh() -> void:
 		var empty := HBoxContainer.new()
 		technology_rows.add_child(empty)
 		DistrictStyle.icon(empty, BRANCH_ICONS[selected_branch])
-		UI.label("商業技術の研究項目は未設定です。", empty, 18).vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		UI.label("商業技術の研究項目は未設定です。", empty, 12).vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		return
 	for technology_id in tree.BRANCHES[selected_branch]:
 		var cost: int = tree.cost_for(house_id, technology_id)
@@ -162,7 +152,7 @@ func _add_technology_row(technology_id: String, cost: int, completed: bool, next
 	var available: bool = next and affordable and not completed
 	var card := DistrictStyle.button("", technology_rows, _research.bind(technology_id))
 	card.name = "Technology_%s" % technology_id
-	card.custom_minimum_size = Vector2(0, 76)
+	card.custom_minimum_size = Vector2(0, 64)
 	card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	card.disabled = not available
 	var disabled_style := StyleBoxFlat.new()
@@ -192,25 +182,28 @@ func _add_technology_row(technology_id: String, cost: int, completed: bool, next
 	card.add_child(contents)
 	DistrictStyle.icon(contents, TECHNOLOGY_ICONS.get(technology_id, BRANCH_ICONS[selected_branch]))
 	var text_stack := VBoxContainer.new()
+	text_stack.alignment = BoxContainer.ALIGNMENT_CENTER
 	text_stack.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	text_stack.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	contents.add_child(text_stack)
-	var name_label := UI.label(technology_id, text_stack, 19)
+	var name_label := UI.label(technology_id, text_stack, 12)
 	name_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var detail := UI.label(main.technology_tree.DESCRIPTIONS[technology_id], text_stack, 15)
+	var detail := UI.label(main.technology_tree.DESCRIPTIONS[technology_id], text_stack, 12)
+	detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	detail.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var state := VBoxContainer.new()
-	state.custom_minimum_size.x = 155
+	state.alignment = BoxContainer.ALIGNMENT_CENTER
+	state.custom_minimum_size.x = 118
 	state.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	contents.add_child(state)
-	var state_label := UI.label("研究済" if completed else ("研究する" if available else ("技術力不足" if next else "前提技術待ち")), state, 18)
+	var state_label := UI.label("研究済" if completed else ("研究する" if available else ("技術力不足" if next else "前提技術待ち")), state, 12)
 	state_label.add_theme_color_override("font_color", Color("#a5d7a1") if completed else (DistrictStyle.GOLD if available else Color("#a2a4a8")))
 	state_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var cost_row := HBoxContainer.new()
 	cost_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	state.add_child(cost_row)
 	DistrictStyle.icon(cost_row, "res://assets/ui/hud/governance")
-	var cost_label := UI.label("%d" % cost, cost_row, 15)
+	var cost_label := UI.label("%d" % cost, cost_row, 12)
 	cost_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	cost_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if not available: contents.modulate = Color(1, 1, 1, 0.72)

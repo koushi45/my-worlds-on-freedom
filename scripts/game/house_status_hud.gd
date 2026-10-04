@@ -62,7 +62,7 @@ func _ready() -> void:
 	council_button = Compact.button(overlay, "評定", func(): main.game_menu.toggle_council())
 	council_button.name = "CouncilButton"
 	council_icon = Compact.icon(council_button, "fan")
-	icon_hint.bind_icon(council_button, "評定（役職・配下／技術／外交）")
+	icon_hint.bind_icon(council_button, "評定（家臣管理・外交・技術）")
 	get_viewport().size_changed.connect(_resize)
 	if get_window() != get_viewport(): get_window().size_changed.connect(_resize)
 	_resize()

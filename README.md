@@ -1,5 +1,7 @@
 # my-worlds-on-freedom
 
+CPU大名家の外交・軍事・内政・人事・研究の判断を実装しました。宣戦への同盟参戦と実際の援軍、弱い家への侵攻、弱い家の強い家との同盟形成に対応しています。[実装と確認](docs/CPU_BEHAVIOR_IMPLEMENTATION.md)・[判断方針](docs/CPU_BEHAVIOR_DESIGN.md)。日ごとのCPU処理と描画が完了してから翌日に進み、月次判断は月内に分散します。保存形式は19です。[CPU対応Windows版](builds/windows-latest/MyWorldsOnFreedom.exe)と同フォルダのPCKを使い、新規ゲームから開始してください。
+
 郡の「出陣可能人数」から出陣でき、その郡へ配置した武将から大将・副将を選べます。自家の凸アイコンは青、友軍は緑、敵軍は赤で進行方向を向きます。部隊選択後の六角形クリックとドラッグ経路指定、青い進路矢印、帰郡命令、奉行所占領・攻城、腰兵糧、セーブに対応しました。[出陣対応Windows版](builds/windows-latest/MyWorldsOnFreedom.exe)と同フォルダのPCKを使ってください。[操作と仕様](docs/ARMY_CAMPAIGN.md)。
 
 [各郡の推定人口設定・作業手順書](docs/DISTRICT_POPULATION_1546_WORK_INSTRUCTIONS.md)を追加しました。1546年を基準に、史料調査、現行郡への対応付け、人口配分と推定幅、ゲーム反映・検証の手順をまとめています。人口値の登録・実装は未実施です。

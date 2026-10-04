@@ -1,8 +1,8 @@
 extends Control
 ## Select a role first, then choose an officer with a portrait and ability scores.
 
-const UI = preload("res://scripts/game/menu_style.gd")
-const DistrictStyle = preload("res://scripts/game/district_panel_style.gd")
+const UI = preload("res://scripts/game/council_panel_style.gd")
+const DistrictStyle = preload("res://scripts/game/council_panel_style.gd")
 const Portraits = preload("res://scripts/game/officer_portraits.gd")
 const ROLE_NAMES := ["直臣", "侍大将", "軍師", "家老", "所司代"]
 const ROLE_ICONS := {
@@ -40,27 +40,16 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	var panel := Control.new()
 	panel.name = "RetainerWindow"
-	panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
-	panel.offset_left = -510
-	panel.offset_right = 510
-	panel.offset_top = -325
-	panel.offset_bottom = 325
-	panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	add_child(panel)
-	DistrictStyle.frame(panel)
+	panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	var body := VBoxContainer.new()
 	body.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	body.offset_left = 35
-	body.offset_right = -35
-	body.offset_top = 35
-	body.offset_bottom = -35
 	body.add_theme_constant_override("separation", 8)
 	panel.add_child(body)
 	var header := HBoxContainer.new()
 	body.add_child(header)
-	DistrictStyle.heading("役職ツリー・配下管理", header, 21).size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	var close_button := DistrictStyle.button("×", header, close_panel)
-	close_button.custom_minimum_size = Vector2(40, 38)
+	DistrictStyle.heading("役職・家臣管理", header, 14).size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var overview := HBoxContainer.new()
 	overview.add_theme_constant_override("separation", 8)
 	body.add_child(overview)
@@ -75,11 +64,11 @@ func _ready() -> void:
 		cell.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		overview.add_child(cell)
 		DistrictStyle.icon(cell, entry[2])
-		var value := UI.label("", cell, 15)
+		var value := UI.label("", cell, 12)
 		value.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		value.tooltip_text = entry[1]
 		overview_values[entry[0]] = value
-	DistrictStyle.heading("役職を選ぶ", body, 18)
+	DistrictStyle.heading("役職を選ぶ", body, 14)
 	var role_row := HBoxContainer.new()
 	role_row.add_theme_constant_override("separation", 8)
 	body.add_child(role_row)
@@ -87,7 +76,7 @@ func _ready() -> void:
 	for role in ROLE_NAMES:
 		var card := DistrictStyle.button("", role_row, _select_role.bind(role))
 		card.name = "Role_%s" % role
-		card.custom_minimum_size = Vector2(0, 92)
+		card.custom_minimum_size = Vector2(0, 52)
 		card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		card.toggle_mode = true
 		card.button_group = role_group
@@ -103,13 +92,13 @@ func _ready() -> void:
 		labels.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		labels.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		contents.add_child(labels)
-		var name_label := UI.label(role, labels, 17)
+		var name_label := UI.label(role, labels, 12)
 		name_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		var value_label := UI.label("", labels, 13)
+		var value_label := UI.label("", labels, 12)
 		value_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		value_label.clip_text = true
 		role_values[role] = value_label
-	DistrictStyle.heading("配下武将を選ぶ", body, 18)
+	DistrictStyle.heading("配下武将を選ぶ", body, 14)
 	var scroll := ScrollContainer.new()
 	scroll.custom_minimum_size.y = 195
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -117,29 +106,32 @@ func _ready() -> void:
 	DistrictStyle.field(scroll)
 	body.add_child(scroll)
 	roster_rows = VBoxContainer.new()
-	roster_rows.custom_minimum_size.x = 920
+	roster_rows.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	roster_rows.add_theme_constant_override("separation", 6)
 	scroll.add_child(roster_rows)
 	var actions := HBoxContainer.new()
 	actions.add_theme_constant_override("separation", 10)
 	body.add_child(actions)
 	appoint_button = DistrictStyle.button("選択した役職に任命", actions, _appoint)
-	appoint_button.custom_minimum_size = Vector2(260, 42)
-	var wage_label := UI.label("基礎俸禄", actions, 16)
+	appoint_button.custom_minimum_size = Vector2(180, 34)
+	var wage_label := UI.label("基礎俸禄", actions, 12)
 	wage_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	wage_input = SpinBox.new()
 	wage_input.min_value = 0.1
 	wage_input.max_value = 10.0
 	wage_input.step = 0.1
 	wage_input.value = 0.1
-	wage_input.custom_minimum_size.x = 115
+	wage_input.custom_minimum_size.x = 90
 	actions.add_child(wage_input)
+	UI.field(wage_input)
 	wage_button = DistrictStyle.button("俸禄を設定", actions, _set_wage)
-	wage_button.custom_minimum_size = Vector2(160, 42)
-	status = UI.label("上の役職と下の武将を選択してください。", body, 15)
+	wage_button.custom_minimum_size = Vector2(110, 34)
+	status = UI.label("上の役職と下の武将を選択してください。", body, 12)
+	status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	main.retainer_management.updated.connect(refresh)
 	main.house_prestige.prestige_changed.connect(func(_house_id: String, _value: int, _reason: String): refresh())
 	get_window().size_changed.connect(refresh)
+	UI.follow_window(self)
 	hide()
 
 func open() -> void:
@@ -186,7 +178,7 @@ func _add_officer_row(house_id: String, officer_id: String, group: ButtonGroup) 
 	var management: Node = main.retainer_management
 	var row := DistrictStyle.button("", roster_rows, _select_officer.bind(officer_id))
 	row.name = "Officer_%s" % officer_id
-	row.custom_minimum_size = Vector2(0, 100)
+	row.custom_minimum_size = Vector2(0, 72)
 	row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.toggle_mode = true
 	row.button_group = group
@@ -199,7 +191,7 @@ func _add_officer_row(house_id: String, officer_id: String, group: ButtonGroup) 
 	content.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	row.add_child(content)
 	var portrait := TextureRect.new()
-	portrait.custom_minimum_size = Vector2(68, 76)
+	portrait.custom_minimum_size = Vector2(52, 60)
 	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	portrait.texture = Portraits.texture_for(officer_id)
@@ -207,23 +199,27 @@ func _add_officer_row(house_id: String, officer_id: String, group: ButtonGroup) 
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	content.add_child(portrait)
 	var identity := VBoxContainer.new()
-	identity.custom_minimum_size.x = 160
+	identity.custom_minimum_size.x = 136
+	identity.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	identity.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	content.add_child(identity)
-	UI.label(str(officer.display_name), identity, 18).mouse_filter = Control.MOUSE_FILTER_IGNORE
-	UI.label(management.role_of(house_id, officer_id), identity, 14).mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var name_label := UI.label(str(officer.display_name), identity, 12)
+	name_label.clip_text = true
+	name_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	UI.label(management.role_of(house_id, officer_id), identity, 12).mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var loyalty := HBoxContainer.new()
 	loyalty.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	loyalty.tooltip_text = "忠誠 / 必要忠誠"
 	identity.add_child(loyalty)
 	DistrictStyle.icon(loyalty, "res://assets/ui/hud/fan")
-	var loyalty_value := UI.label("%d / %d" % [management.loyalty_for(house_id, officer_id), management.required_loyalty_for(officer_id)], loyalty, 13)
+	var loyalty_value := UI.label("%d / %d" % [management.loyalty_for(house_id, officer_id), management.required_loyalty_for(officer_id)], loyalty, 12)
 	loyalty_value.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	loyalty_value.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var scores: Dictionary = officer.get("assessment", {}).get("scores", {})
 	for key in ["command", "tactics", "strategy", "politics", "trust"]:
 		var cell := VBoxContainer.new()
-		cell.custom_minimum_size.x = 78
+		cell.custom_minimum_size.x = 46
+		cell.alignment = BoxContainer.ALIGNMENT_CENTER
 		cell.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		cell.tooltip_text = ABILITIES[key][0]
 		content.add_child(cell)
@@ -231,7 +227,7 @@ func _add_officer_row(house_id: String, officer_id: String, group: ButtonGroup) 
 		var score: Variant = scores.get(key)
 		var score_text := "―" if score == null else str(score)
 		if score_text.ends_with(".0"): score_text = score_text.trim_suffix(".0")
-		var value := UI.label(score_text, cell, 15)
+		var value := UI.label(score_text, cell, 12)
 		value.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		value.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var stipend_cell := HBoxContainer.new()
@@ -239,7 +235,7 @@ func _add_officer_row(house_id: String, officer_id: String, group: ButtonGroup) 
 	stipend_cell.tooltip_text = "月額俸禄"
 	content.add_child(stipend_cell)
 	DistrictStyle.icon(stipend_cell, "res://assets/ui/hud/koban")
-	var stipend := UI.label("%.1f / 月" % management.stipend_for(house_id, officer_id), stipend_cell, 14)
+	var stipend := UI.label("%.1f / 月" % management.stipend_for(house_id, officer_id), stipend_cell, 12)
 	stipend.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	stipend.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	row.tooltip_text = "%s：%s／忠誠 %d、必要 %d／俸禄 %.1f / 月" % [officer.display_name, management.role_of(house_id, officer_id), management.loyalty_for(house_id, officer_id), management.required_loyalty_for(officer_id), management.stipend_for(house_id, officer_id)]

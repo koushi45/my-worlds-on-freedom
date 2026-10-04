@@ -16,20 +16,20 @@ func _initialize() -> void:
 		var clock = Clock.new()
 		clock.set_speed(speed)
 		clock.advance_real_seconds(1.0)
-		check(clock.elapsed_days == speed, "one second at speed %d" % speed)
+		check(clock.elapsed_days == 1, "a long frame advances at most one day at speed %d" % speed)
 		clock.free()
 	var calendar = Clock.new()
 	check(calendar.date_text() == "1546年 1月 1日", "initial date")
 	calendar.day_advanced.connect(func(_y, _m, _d): daily_events += 1)
-	calendar.advance_real_seconds(30)
+	for index in range(30): calendar.advance_real_seconds(1)
 	check(calendar.month == 1 and calendar.day == 31, "January end")
 	calendar.advance_real_seconds(1)
 	check(calendar.month == 2 and calendar.day == 1, "February start")
-	calendar.advance_real_seconds(28)
+	for index in range(28): calendar.advance_real_seconds(1)
 	check(calendar.month == 3 and calendar.day == 1, "non-leap February")
-	calendar.advance_real_seconds(306)
+	for index in range(306): calendar.advance_real_seconds(1)
 	check(calendar.date_text() == "1547年 1月 1日", "year rollover")
-	calendar.advance_real_seconds(365 + 59)
+	for index in range(365 + 59): calendar.advance_real_seconds(1)
 	check(calendar.date_text() == "1548年 2月 29日", "leap day")
 	calendar.advance_real_seconds(1)
 	check(calendar.date_text() == "1548年 3月 1日", "leap day rollover")
@@ -42,18 +42,18 @@ func _initialize() -> void:
 	fractional.advance_real_seconds(0.125)
 	check(fractional.elapsed_days == 1, "partial day survives speed switch")
 	fractional.advance_real_seconds(2.5)
-	check(fractional.elapsed_days == 11, "long frame catches up every day")
+	check(fractional.elapsed_days == 2, "long frame discards excess time")
 	fractional.set_speed(3)
 	fractional.advance_real_seconds(-1)
-	check(fractional.speed == 4 and fractional.elapsed_days == 11, "invalid input ignored")
+	check(fractional.speed == 4 and fractional.elapsed_days == 2, "invalid input ignored")
 	fractional.advance_real_seconds(0.125)
 	fractional.toggle_paused()
 	fractional.set_speed(8)
 	fractional.advance_real_seconds(100)
-	check(fractional.elapsed_days == 11 and fractional.paused, "speed changes preserve pause")
+	check(fractional.elapsed_days == 2 and fractional.paused, "speed changes preserve pause")
 	fractional.toggle_paused()
 	fractional.advance_real_seconds(0.0625)
-	check(fractional.elapsed_days == 12, "resume retains partial day without paused time")
+	check(fractional.elapsed_days == 3, "resume retains partial day without paused time")
 	fractional.change_speed(1)
 	check(fractional.speed == 8, "upper speed limit")
 	fractional.set_speed(1)
@@ -70,8 +70,9 @@ func integration() -> void:
 		await process_frame
 	check(main.time_hud.visible and main.time_hud.date_label.text.begins_with("1546."), "normal game date visible")
 	var before: int = main.game_clock.elapsed_days
-	await create_timer(1.1).timeout
-	check(main.game_clock.elapsed_days - before in [1, 2], "clock runs automatically")
+	var deadline := Time.get_ticks_msec() + 3000
+	while main.game_clock.elapsed_days == before and Time.get_ticks_msec() < deadline: await process_frame
+	check(main.game_clock.elapsed_days == before + 1, "clock runs automatically without skipping dates")
 	for index in range(4):
 		press_key(KEY_1 + index)
 		check(main.game_clock.speed == Clock.SPEEDS[index], "number key selects speed")
@@ -98,8 +99,8 @@ func integration() -> void:
 	press_key(KEY_4)
 	main.game_clock.set_process(false)
 	before = main.game_clock.elapsed_days
-	main.game_clock.advance_real_seconds(1)
-	check(main.game_clock.elapsed_days == before + 8, "HUD 8x advances eight days")
+	await advance_days(main.game_clock, 1)
+	check(main.game_clock.elapsed_days == before + 1, "HUD 8x still waits for one day at a time")
 	check(main.time_hud.date_label.tooltip_text == main.game_clock.date_text(), "HUD date updates")
 	await process_frame
 	var panel_rect: Rect2 = main.time_hud.panel.get_global_rect()
@@ -124,3 +125,10 @@ func press_key(code: int, echo := false) -> void:
 	event.pressed = true
 	event.echo = echo
 	root.push_input(event)
+
+func advance_days(clock: Node, count: int) -> void:
+	for index in range(count):
+		var previous: int = clock.elapsed_days
+		while clock.elapsed_days == previous:
+			clock.advance_real_seconds(1.0 / clock.speed)
+			await process_frame

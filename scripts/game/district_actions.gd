@@ -15,6 +15,7 @@ func setup(governance: RefCounted, district_economy: Node) -> void:
 		record.devastation = 0
 		record.autonomy = 0
 		record.defense = 1
+		record.occupation_stability = 100.0
 		record.sortie_troops = sortie_capacity(record)
 
 func sortie_capacity(record: Dictionary) -> int:
@@ -22,6 +23,7 @@ func sortie_capacity(record: Dictionary) -> int:
 	return maxi(0, floori(float(record.population) * 0.05 * multiplier))
 
 func sortie_available(record: Dictionary) -> int:
+	if float(record.get("occupation_stability", 100.0)) < 100.0: return 0
 	return mini(sortie_capacity(record), int(record.get("sortie_troops", 0)))
 
 func upgrade_cost(record: Dictionary) -> int:
@@ -49,6 +51,7 @@ func on_day_advanced(_year: int, _month: int, day: int) -> void:
 	if day != 1: return
 	for district_id in registry.districts:
 		var record: Dictionary = registry.districts[district_id]
+		if float(record.get("occupation_stability", 100.0)) < 100.0: continue
 		var capacity := sortie_capacity(record)
 		var previous := int(record.sortie_troops)
 		record.sortie_troops = mini(capacity, previous + maxi(1, ceili(capacity * 0.01)))

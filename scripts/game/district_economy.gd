@@ -42,6 +42,7 @@ func income_for(record: Dictionary, kind: String, preview_building_id: String = 
 		if kind == "agriculture": facility_multiplier += {"irrigation":0.10, "farm_estate":0.15}.get(preview_building_id, 0.0)
 		elif kind == "commerce": facility_multiplier += {"market":0.10, "workshop":0.15, "temple":0.05}.get(preview_building_id, 0.0)
 	var local_multiplier := (1.0 + 0.05 * float(int(record.get("infrastructure", 1)) - 1)) * (1.0 - float(record.get("devastation", 0)) / 200.0) * (1.0 - float(record.get("autonomy", 0)) / 200.0)
+	if float(record.get("occupation_stability", 100.0)) < 100.0: local_multiplier *= 0.5
 	return maxi(0, roundi((BASE_VALUE + development) * int(record.population) * factor * facility_multiplier * multiplier * local_multiplier))
 
 

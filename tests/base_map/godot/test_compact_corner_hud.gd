@@ -54,18 +54,28 @@ func run() -> void:
 		hud.invalidate()
 		await capture("compact_hud_%d" % dimensions.x)
 		menu.toggle_council()
-		check(paused and menu.council_menu.visible, "council opens and pauses game")
-		for index in range(4):
+		check(paused and menu.council_menu.visible and menu.retainer_panel.visible, "council directly opens retainers and pauses game")
+		var council_rect: Rect2 = menu.council_menu.get_global_rect()
+		check(council_rect.position.x <= hud.panel.get_global_rect().position.x + 1, "council starts at the left HUD edge")
+		check(council_rect.position.y >= hud.technology_panel.get_global_rect().end.y, "council stays below header")
+		check(council_rect.end.x <= hud.household_panel.get_global_rect().end.x and council_rect.end.y <= main.get_viewport_rect().end.y, "council stays inside requested left-side area")
+		check(menu.council_tabs.size() == 3, "three direct management tabs")
+		for index in range(3):
 			menu.council_tabs[index].pressed.emit()
-			check(menu.council_tab == index and menu.council_tabs[index].button_pressed, "icon tab switches page")
+			check(menu.council_tab == index and menu.council_tabs[index].button_pressed, "management tab switches page")
+			await process_frame
+			var panels: Array = [menu.retainer_panel, menu.diplomacy_panel, menu.technology_panel]
+			for i in range(panels.size()):
+				if not is_instance_valid(panels[i]): continue
+				check(panels[i].visible == (i == index), "only active management page is visible")
+				check(council_rect.encloses(panels[i].get_global_rect()), "management page is inside council frame")
+			await capture("council_direct_%d_%d" % [index, dimensions.x])
 		menu._select_council_tab(0)
 		await capture("compact_council_%d" % dimensions.x)
 		menu._open_council_role("軍師")
 		check(menu.retainer_panel.visible and menu.retainer_panel.selected_role == "軍師", "role value opens real assignment screen")
 		menu.retainer_panel.close_panel()
-		check(menu.council_menu.visible, "closing assignment returns to council")
-		menu._close_all()
-		check(not paused and not menu.council_menu.visible, "council closes and resumes tree")
+		check(not paused and not menu.council_menu.visible, "closing management closes council and resumes tree")
 	main.queue_free()
 	await process_frame
 	await process_frame

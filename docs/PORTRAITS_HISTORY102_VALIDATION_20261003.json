@@ -1,0 +1,71 @@
+{
+  "officers": 102,
+  "historical_image_references": 18,
+  "independent_creative_appearances": 84,
+  "rgba512_transparent_unique_sha256_verified": true,
+  "source_ui": true,
+  "release_pack_ui": true,
+  "contact_sheets_viewed": 26,
+  "ui_captures": 102,
+  "retained_portraits": 50,
+  "prior88_source_ui": true,
+  "prior55_source_ui": true,
+  "withdrawn_resource_paths_absent": 310,
+  "historical_reference_images_excluded": 18,
+  "attribution_in_pack": true,
+  "release_executable_launch_exit_code": 0,
+  "logs": {
+    "builds/qa/history102_ui.log": [
+      "HISTORICAL_MODERN_PORTRAITS_102_OK"
+    ],
+    "builds/qa/history102_backgrounds.log": [
+      "BACKGROUND_CONTACT_SHEETS_26_OK"
+    ],
+    "builds/qa/history102_prior88.log": [
+      "HISTORICAL_MODERN_PORTRAITS_88_OK"
+    ],
+    "builds/qa/history102_prior55.log": [
+      "HISTORICAL_MODERN_PORTRAITS_55_OK"
+    ],
+    "builds/qa/history102_withdrawal.log": [
+      "RETAINED_PORTRAITS_50_OK",
+      "WITHDRAWN_PORTRAIT_RESOURCES_310_OK"
+    ],
+    "builds/windows-latest/history102_pack.log": [
+      "HISTORICAL_MODERN_PORTRAITS_102_OK",
+      "REFERENCE_IMAGES_EXCLUDED_18_OK"
+    ],
+    "builds/windows-latest/history102_withdrawal_pack.log": [
+      "RETAINED_PORTRAITS_50_OK",
+      "WITHDRAWN_PORTRAIT_RESOURCES_310_OK"
+    ]
+  },
+  "windows_export": {
+    "generated_utc": "2026-10-03T10:38:26.628772+00:00",
+    "command": [
+      "godot_console",
+      "--headless",
+      "--path",
+      "C:\\Users\\nanoa\\projects\\my-worlds-on-freedom",
+      "--export-release",
+      "Windows",
+      "C:\\Users\\nanoa\\projects\\my-worlds-on-freedom\\builds\\windows-latest\\MyWorldsOnFreedom.exe"
+    ],
+    "exit_code": 0,
+    "artifacts": {
+      "MyWorldsOnFreedom.exe": {
+        "bytes": 109127680,
+        "modified_utc": "2026-10-03T10:38:03.154301+00:00",
+        "sha256": "4a9eaded8955ef789ab02651ed9d2dde80328fbb342bd2a6db4db33e86305668"
+      },
+      "MyWorldsOnFreedom.pck": {
+        "bytes": 1969710636,
+        "modified_utc": "2026-10-03T10:38:20.775749+00:00",
+        "sha256": "d502a50a2a0135be4fc93a363506f2e2b7f9c5a0caea3f2bc2fd277bfe900a72"
+      }
+    },
+    "log": "builds/windows-latest/export.log",
+    "error_lines": [],
+    "resource_shortage_detected": false
+  }
+}

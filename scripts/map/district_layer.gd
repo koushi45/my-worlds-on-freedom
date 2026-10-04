@@ -344,13 +344,16 @@ func pick(p: Vector2, tolerance_px := 6.0) -> Array:
 	var search_rect := Rect2(p,Vector2.ZERO).grow(source_radius+0.01)
 	var candidates := query(search_rect)
 	var result: Dictionary = {}
+	var interior: Dictionary = {}
 	var seen: Dictionary = {}
 	var display: Vector2 = elevation.project(p)
 	for key in candidates:
 		var pid: String = records[key]["parent"]
 		load_parent(pid)
 		if not loaded.has(pid): continue
-		if contains_point(key,p): result[key] = true
+		if contains_point(key,p):
+			result[key] = true
+			interior[key] = true
 		if seen.has(pid): continue
 		seen[pid] = true
 		for i in nearby_lines(pid,search_rect):
@@ -373,6 +376,8 @@ func pick(p: Vector2, tolerance_px := 6.0) -> Array:
 						break
 	var keys: Array = []
 	for key in result:
+		# Border tolerance must not override the district containing the click.
+		if not interior.is_empty() and not interior.has(key): continue
 		if records.has(key): keys.append(key)
 	keys.sort()
 	if keys.size() <= 1: return keys

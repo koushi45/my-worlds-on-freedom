@@ -58,12 +58,16 @@ func run() -> void:
 	check(session.relation(session.player_house,"takeda")=="neutral","unknown diplomacy remains neutral")
 	check(main.game_menu.zoom_label.text == "マップ拡大率：50%","bottom-left shows the 50% initial map zoom")
 	check("上杉" not in main.game_menu.zoom_label.text and "自領" not in main.game_menu.zoom_label.text and "同盟" not in main.game_menu.zoom_label.text and "敵対" not in main.game_menu.zoom_label.text and "その他" not in main.game_menu.zoom_label.text,"bottom-left omits house and diplomacy legend")
+	# This suite isolates calendar/menu persistence; CPU wars have their own scenario suite.
+	main.cpu_controller.enabled = false
 	var states := {}
 	for r in main.territory_borders.projected.values(): states[r.state]=true
 	check(states.has("self") and states.has("ally") and states.has("enemy"),"three outline classes constructed")
 	main.game_clock.set_process(false)
-	main.game_clock.restore_state({"year":1546,"month":1,"day":1,"elapsed_days":0,"speed":1,"paused":false,"fraction":0.0})
-	main.game_clock.advance_real_seconds(59.375)
+	main.cpu_controller.work_queue.clear()
+	main.game_clock.restore_state({"year":1546,"month":1,"day":1,"elapsed_days":0,"speed":1,"paused":false,"fraction":0.0,"work_started":false})
+	await advance_days(main.game_clock, 59)
+	main.game_clock.advance_real_seconds(0.375)
 	main.game_clock.set_speed(4)
 	main.game_clock.toggle_paused()
 	main.camera.position = Vector2(5000,4800)
@@ -104,7 +108,7 @@ func run() -> void:
 		check(main.retainer_management.loyalty_state[retainer_ids[0]].base_wage_tenths == 2,"roster wage control updates base stipend")
 	escape()
 	await process_frame
-	check(main.game_menu.modal.visible,"Esc returns from retainer management")
+	check(not main.game_menu.retainer_panel.visible and not paused,"Esc closes the current council and resumes the map")
 	main.game_menu.show_technology()
 	await process_frame
 	check(main.game_menu.technology_panel.visible and main.game_menu.technology_panel.technology_buttons.size() == 7,"technology tree opens with governance cards")
@@ -126,7 +130,8 @@ func run() -> void:
 	escape()
 	await process_frame
 	check(main.house_prestige.on_court_appointment(session.player_house) == OK,"court appointment event accepted")
-	check(main.game_menu.prestige_label.text == "威信 60 / 100","prestige display updates after an event")
+	main.house_status_hud._refresh()
+	check(main.house_status_hud.values.prestige.text == "60","prestige display updates after an event")
 	# Mutate real session state so a loader that merely reloads defaults cannot pass.
 	var changed_id: String = main.governance_registry.districts.keys()[0]
 	var hojo_record: Dictionary
@@ -138,6 +143,7 @@ func run() -> void:
 	check(session.validate(capture_probe),"captured current session validates before saving")
 	var roundtrip_probe: Dictionary = JSON.parse_string(JSON.stringify(capture_probe))
 	check(session.validate(roundtrip_probe),"serialized current session validates")
+	main.game_menu.toggle()
 	main.game_menu.show_slots(true)
 	main.game_menu.slots.choose(1)
 	check("保存しました" in main.game_menu.slots.status.text,"save slot UI succeeds")
@@ -146,7 +152,7 @@ func run() -> void:
 	check(not saved.is_empty(),"saved payload validates")
 	if saved.is_empty(): printerr(session.last_error); quit(1); return
 	check(saved.clock.day == 1 and saved.clock.month == 3,"calendar crosses February")
-	check(saved.version == 15 and saved.has("diplomacy") and saved.has("buildings") and saved.has("building_history") and saved.has("armies") and saved.armies.has("office_defenses") and saved.retainers.has("officer_districts") and saved.territories.districts.values()[0].has("sortie_troops"),"current save format includes district officer placement and office defenses")
+	check(saved.version == 19 and saved.has("cpu") and saved.diplomacy.has("wars") and saved.has("buildings") and saved.has("building_history") and saved.has("armies") and saved.armies.has("office_defenses") and saved.retainers.has("officer_districts") and saved.territories.districts.values()[0].has("sortie_troops"),"current save format includes CPU plans and allied war participation")
 	check(saved.research[session.player_house].has("commerce") and not saved.retainers.technology[session.player_house].has("agriculture"),"commerce branch and shared governance points are saved")
 	check(saved.prestige[session.player_house] == 60,"changed prestige is saved")
 	check(saved.retainers.loyalty_state.size() == session.catalog.officer_ids.size(),"all officer loyalty records are saved")
@@ -242,3 +248,10 @@ func run() -> void:
 	await process_frame
 	print("Start/session tests: %d failures" % failures)
 	quit(1 if failures else 0)
+
+func advance_days(clock: Node, count: int) -> void:
+	for index in range(count):
+		var previous: int = clock.elapsed_days
+		while clock.elapsed_days == previous:
+			clock.advance_real_seconds(1.0 / clock.speed)
+			await process_frame

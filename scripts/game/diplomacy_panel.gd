@@ -1,8 +1,8 @@
 extends Control
 ## Council diplomacy: select another house, inspect its opinion, then take an action.
 
-const UI = preload("res://scripts/game/menu_style.gd")
-const Style = preload("res://scripts/game/district_panel_style.gd")
+const UI = preload("res://scripts/game/council_panel_style.gd")
+const Style = preload("res://scripts/game/council_panel_style.gd")
 
 signal closed
 
@@ -20,33 +20,22 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	var panel := Control.new()
 	panel.name = "DiplomacyWindow"
-	panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
-	panel.offset_left = -550
-	panel.offset_right = 550
-	panel.offset_top = -330
-	panel.offset_bottom = 330
-	panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	add_child(panel)
-	Style.frame(panel)
+	panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	var body := VBoxContainer.new()
 	body.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	body.offset_left = 35
-	body.offset_right = -35
-	body.offset_top = 35
-	body.offset_bottom = -35
 	body.add_theme_constant_override("separation", 10)
 	panel.add_child(body)
 	var header := HBoxContainer.new()
 	body.add_child(header)
-	Style.heading("外交", header, 22).size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	var close_button := Style.button("×", header, close_panel)
-	close_button.custom_minimum_size = Vector2(44, 38)
+	Style.heading("外交", header, 14).size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var columns := HBoxContainer.new()
 	columns.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	columns.add_theme_constant_override("separation", 16)
+	columns.add_theme_constant_override("separation", 12)
 	body.add_child(columns)
 	var left := VBoxContainer.new()
-	left.custom_minimum_size.x = 305
+	left.custom_minimum_size.x = 200
 	columns.add_child(left)
 	search = LineEdit.new()
 	search.placeholder_text = "家名で探す"
@@ -66,9 +55,10 @@ func _ready() -> void:
 	details.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	details.add_theme_constant_override("separation", 9)
 	right.add_child(details)
-	status = UI.label("外交行動を選んでください", body, 16)
+	status = UI.label("外交行動を選んでください", body, 12)
 	status.custom_minimum_size.y = 26
 	main.diplomacy.changed.connect(_refresh)
+	UI.follow_window(self)
 
 func open() -> void:
 	show()
@@ -119,14 +109,20 @@ func _refresh() -> void:
 	if selected.is_empty() or not main.governance_registry.houses.has(selected): return
 	var actor: String = GameSession.player_house
 	var name: String = str(main.governance_registry.houses[selected].display_name)
-	Style.heading(name, details, 21)
-	UI.label("関係：%s" % _relation_name(GameSession.relation(actor, selected)), details, 18)
-	UI.label("相手からの友好度：%+d / 100" % main.diplomacy.opinion(selected, actor), details, 17)
-	UI.label("こちらからの友好度：%+d / 100" % main.diplomacy.opinion(actor, selected), details, 17)
+	Style.heading(name, details, 14)
+	var pending: String = main.diplomacy.pending_request(actor, selected)
+	if not pending.is_empty():
+		var aggressor: String = main.diplomacy.wars[pending].attacker
+		UI.label("防衛参戦要請：%sに対抗する援軍を求めています" % str(main.governance_registry.houses[aggressor].display_name), details, 12).autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		_add_action("join_war", "同盟国の防衛戦争に参戦する")
+		_add_action("decline_war", "参戦を辞退する")
+	UI.label("関係：%s" % _relation_name(GameSession.relation(actor, selected)), details, 12)
+	UI.label("相手からの友好度：%+d / 100" % main.diplomacy.opinion(selected, actor), details, 12)
+	UI.label("こちらからの友好度：%+d / 100" % main.diplomacy.opinion(actor, selected), details, 12)
 	var remaining: int = main.diplomacy.truce_remaining(actor, selected)
-	if remaining > 0: UI.label("停戦：残り%d日" % remaining, details, 16)
+	if remaining > 0: UI.label("停戦：残り%d日" % remaining, details, 12)
 	var envoy: String = main.diplomacy.envoy_target(actor)
-	Style.heading("外交行動", details, 17)
+	Style.heading("外交行動", details, 14)
 	var envoy_caption := "関係改善の使節を派遣（毎月+5）"
 	if not envoy.is_empty() and envoy != selected:
 		envoy_caption = "使節を%sから呼び戻して派遣" % str(main.governance_registry.houses[envoy].display_name)
@@ -138,6 +134,7 @@ func _refresh() -> void:
 	_add_action("insult", "侮辱を送る（友好度-25）")
 	_add_action("war", "宣戦する（威信-10）")
 	_add_action("peace", "停戦を提案（友好度-20以上）")
+	if GameSession.relation(actor, selected) == "enemy": _add_action("call_allies", "同盟国に防衛参戦を要請する")
 
 func _add_action(action: String, caption: String) -> void:
 	var button := Style.button(caption, details, _act.bind(action))

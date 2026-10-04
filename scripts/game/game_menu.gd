@@ -21,9 +21,10 @@ var technology_panel: Control
 var diplomacy_panel: Control
 const Compact = preload("res://scripts/game/compact_hud_style.gd")
 var council_tabs: Array[Button] = []
-var council_content: VBoxContainer
+var council_content: Control
 var council_tab := 0
 var crisis_label: Label
+var assistance_button: Button
 
 func _ready() -> void:
 	layer = 30
@@ -42,6 +43,14 @@ func _ready() -> void:
 	crisis_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	crisis_label.add_theme_color_override("font_color", Color("#ffc4aa"))
 	main.retainer_management.loyalty_crisis.connect(_show_loyalty_crisis)
+	assistance_button = DistrictStyle.button("", overlay, _open_assistance)
+	assistance_button.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	assistance_button.offset_left = -370
+	assistance_button.offset_right = -16
+	assistance_button.offset_top = 260
+	assistance_button.offset_bottom = 296
+	main.diplomacy.changed.connect(_refresh_assistance)
+	_refresh_assistance()
 	zoom_label = DistrictStyle.button("",overlay,_show_zoom_choices)
 	zoom_label.custom_minimum_size = Vector2(240,32)
 	zoom_label.add_theme_font_size_override("font_size",15)
@@ -107,26 +116,28 @@ func _ready() -> void:
 	council_menu.name = "CouncilMenuPanel"
 	council_menu.mouse_filter = Control.MOUSE_FILTER_STOP
 	shade.add_child(council_menu)
-	Compact.frame(council_menu, "council")
-	var tab_names := ["役職", "配下", "技術", "外交"]
-	var tab_icons := ["castle", "people", "governance", "diplomacy"]
+	Compact.frame(council_menu, "council_management")
+	var tab_names := ["家臣管理", "外交", "技術"]
+	var tab_icons := ["people", "diplomacy", "governance"]
 	for index in range(tab_names.size()):
 		var tab := Compact.button(council_menu, tab_names[index], _select_council_tab.bind(index))
 		tab.name = "CouncilTab_%d" % index
 		tab.toggle_mode = true
 		Compact.icon(tab, tab_icons[index])
+		var caption := UI.label(tab_names[index], tab, 12)
+		caption.name = "Caption"
+		caption.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		caption.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		council_tabs.append(tab)
 	var close := Compact.button(council_menu, "閉じる（Esc）", _close_all)
 	close.name = "CouncilClose"
 	close.text = "×"
 	close.add_theme_color_override("font_color", DistrictStyle.GOLD)
-	council_content = VBoxContainer.new()
+	council_content = Control.new()
 	council_content.name = "CouncilContent"
-	council_content.add_theme_constant_override("separation", 6)
 	council_menu.add_child(council_content)
 	get_viewport().size_changed.connect(_resize_council)
 	_resize_council()
-	_select_council_tab(0)
 	council_menu.hide()
 	shade.hide()
 	confirmation = ConfirmationDialog.new()
@@ -159,6 +170,22 @@ func _update_zoom_label() -> void:
 func _show_loyalty_crisis(officer_id: String, house_id: String, outcome: String) -> void:
 	if house_id != GameSession.player_house: return
 	crisis_label.text = "%s：%s" % [main.officer_registry.lookup[officer_id].display_name, outcome]
+
+func _refresh_assistance() -> void:
+	var count := 0
+	for war in main.diplomacy.wars.values():
+		if war.requests.get(GameSession.player_house) == "pending": count += 1
+	assistance_button.visible = count > 0
+	assistance_button.text = "同盟国から参戦要請：%d件（外交を開く）" % count
+
+func _open_assistance() -> void:
+	if not shade.visible: _open_menu(false)
+	show_diplomacy()
+	for war in main.diplomacy.wars.values():
+		if war.requests.get(GameSession.player_house) == "pending":
+			diplomacy_panel.selected = war.defender
+			diplomacy_panel._fill_houses()
+			break
 
 func _framed_menu(parent: Control, dimensions: Vector2, centered: bool) -> Control:
 	var panel := Control.new()
@@ -206,15 +233,15 @@ func toggle_council() -> void:
 func _open_menu(council: bool) -> void:
 	council_origin = council
 	shade.color = Color(0,0,0,0) if council else Color(0,0,0,0.65)
-	if council:
-		_resize_council()
-		_select_council_tab(council_tab)
 	modal.visible = not council
 	council_menu.visible = council
 	shade.show()
 	main.dragging = false
 	main.district_click_serial += 1
 	get_tree().paused = true
+	if council:
+		_resize_council()
+		_select_council_tab(council_tab)
 
 func _close_all() -> void:
 	if is_instance_valid(slots): slots.queue_free()
@@ -233,8 +260,7 @@ func _close_all() -> void:
 
 func _restore_parent_menu() -> void:
 	if council_origin:
-		_select_council_tab(council_tab)
-		council_menu.show()
+		_open_menu(true)
 	else: modal.show()
 
 func show_slots(saving: bool) -> void:
@@ -261,34 +287,16 @@ func show_dictionary() -> void:
 	officer_dictionary.show_browser()
 
 func show_retainers() -> void:
-	modal.hide()
-	council_menu.hide()
-	if not is_instance_valid(retainer_panel):
-		retainer_panel = preload("res://scripts/game/retainer_panel.gd").new()
-		retainer_panel.main = main
-		retainer_panel.closed.connect(_restore_parent_menu)
-		add_child(retainer_panel)
-	retainer_panel.open()
-
-func show_technology() -> void:
-	modal.hide()
-	council_menu.hide()
-	if not is_instance_valid(technology_panel):
-		technology_panel = preload("res://scripts/game/technology_panel.gd").new()
-		technology_panel.main = main
-		technology_panel.closed.connect(_restore_parent_menu)
-		add_child(technology_panel)
-	technology_panel.open()
+	council_tab = 0
+	_open_menu(true)
 
 func show_diplomacy() -> void:
-	modal.hide()
-	council_menu.hide()
-	if not is_instance_valid(diplomacy_panel):
-		diplomacy_panel = preload("res://scripts/game/diplomacy_panel.gd").new()
-		diplomacy_panel.main = main
-		diplomacy_panel.closed.connect(_restore_parent_menu)
-		add_child(diplomacy_panel)
-	diplomacy_panel.open()
+	council_tab = 1
+	_open_menu(true)
+
+func show_technology() -> void:
+	council_tab = 2
+	_open_menu(true)
 
 func confirm_action(value: String) -> void:
 	action = value
@@ -306,14 +314,11 @@ func _cancel_topmost() -> void:
 		officer_dictionary.browser.hide()
 		_restore_parent_menu()
 	elif is_instance_valid(retainer_panel) and retainer_panel.visible:
-		retainer_panel.hide()
-		_restore_parent_menu()
+		_close_all()
 	elif is_instance_valid(technology_panel) and technology_panel.visible:
-		technology_panel.hide()
-		_restore_parent_menu()
+		_close_all()
 	elif is_instance_valid(diplomacy_panel) and diplomacy_panel.visible:
-		diplomacy_panel.hide()
-		_restore_parent_menu()
+		_close_all()
 	elif is_instance_valid(options): options._close()
 	elif is_instance_valid(slots):
 		if slots.confirmation.visible: slots.confirmation.hide()
@@ -328,58 +333,53 @@ func _cancel_topmost() -> void:
 
 func _resize_council() -> void:
 	if council_menu == null: return
-	Compact.update_frame(council_menu, "council")
+	Compact.update_frame(council_menu, "council_management")
 	var u := Compact.unit(council_menu)
-	council_menu.position = main.house_status_hud.council_popup_position() if is_instance_valid(main.house_status_hud) else Vector2(140, 106)
+	var hud: Node = main.house_status_hud
+	council_menu.position = Vector2(hud.panel.position.x, hud.council_popup_position().y)
 	for index in range(council_tabs.size()):
 		var tab := council_tabs[index]
-		tab.position = Vector2(12 + 57*index, 12) * u
-		tab.size = Vector2(48, 30) * u
+		tab.position = Vector2(14 + 140*index, 12)*u
+		tab.size = Vector2(132, 30)*u
 		var picture: TextureRect = tab.get_child(0)
-		Compact.update_icon(picture, ["castle", "people", "governance", "diplomacy"][index])
-		picture.position.x += 10*u
+		Compact.update_icon(picture, ["people", "diplomacy", "governance"][index])
+		picture.position += Vector2(5, 1)*u
+		var caption: Label = tab.get_node("Caption")
+		caption.position = Vector2(38, 0)*u
+		caption.size = Vector2(90, 30)*u
+		caption.add_theme_font_size_override("font_size", roundi(12*u))
 	var close: Button = council_menu.get_node("CouncilClose")
-	close.position = Vector2(277, 12)*u
+	close.position = Vector2(council_menu.size.x-42*u, 12*u)
 	close.size = Vector2(28, 30)*u
-	council_content.position = Vector2(14, 52)*u
-	council_content.size = Vector2(292, 242)*u
+	close.add_theme_font_size_override("font_size", roundi(12*u))
+	council_content.position = Vector2(14, 54)*u
+	council_content.size = council_menu.size-Vector2(28, 68)*u
 
 func _select_council_tab(index: int) -> void:
+	if index < 0 or index >= council_tabs.size(): return
 	council_tab = index
 	for i in range(council_tabs.size()): council_tabs[i].set_pressed_no_signal(i == index)
-	for child in council_content.get_children():
-		council_content.remove_child(child)
-		child.queue_free()
-	var house_id: String = GameSession.player_house
-	var management: Node = main.retainer_management
-	if index == 0:
-		var house: Dictionary = main.governance_registry.houses.get(house_id, {})
-		UI.label(str(house.get("ruler", {}).get("name", "当主不明")), council_content, 13)
-		for entry in [["家老", "governance"], ["軍師", "diplomacy"], ["侍大将", "military"], ["所司代", "castle"]]:
-			var names: Array[String] = []
-			for officer_id in management.house_members.get(house_id, []):
-				if management.role_of(house_id, officer_id) == entry[0]: names.append(str(main.officer_registry.lookup[officer_id].display_name))
-			_council_value(entry[1], "―" if names.is_empty() else "・".join(names), entry[0], _open_council_role.bind(entry[0]))
-	elif index == 1:
-		var members: Array = management.house_members.get(house_id, [])
-		UI.label("配下 %d人" % members.size(), council_content, 13)
-		_council_value("people", "配下管理を開く", "配下武将の配置・役職・俸禄", show_retainers)
-	elif index == 2:
-		_council_value("governance", "技術ツリーを開く", "研究の選択と進行状況", show_technology)
-	else:
-		_council_value("diplomacy", "外交を開く", "大名家との関係・交渉", show_diplomacy)
-
-func _council_value(icon_name: String, value: String, hint: String, action_callback: Callable) -> void:
-	var row := Compact.button(council_content, hint, action_callback)
-	var u := Compact.unit(council_menu)
-	row.custom_minimum_size = Vector2(0, 43)*u
-	Compact.icon(row, icon_name).position += Vector2(7, 7)*u
-	var caption := UI.label(value + "  ›", row, roundi(13*u))
-	caption.position = Vector2(42, 0)*u
-	caption.size = Vector2(240, 43)*u
-	caption.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	caption.clip_text = true
-	caption.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for panel in [retainer_panel, diplomacy_panel, technology_panel]:
+		if is_instance_valid(panel): panel.hide()
+	var panel: Control
+	match index:
+		0:
+			if not is_instance_valid(retainer_panel):
+				retainer_panel = preload("res://scripts/game/retainer_panel.gd").new()
+			panel = retainer_panel
+		1:
+			if not is_instance_valid(diplomacy_panel):
+				diplomacy_panel = preload("res://scripts/game/diplomacy_panel.gd").new()
+			panel = diplomacy_panel
+		2:
+			if not is_instance_valid(technology_panel):
+				technology_panel = preload("res://scripts/game/technology_panel.gd").new()
+			panel = technology_panel
+	if panel.get_parent() == null:
+		panel.main = main
+		panel.closed.connect(_close_all)
+		council_content.add_child(panel)
+	panel.open()
 
 func _open_council_role(role: String) -> void:
 	show_retainers()

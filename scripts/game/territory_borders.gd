@@ -338,11 +338,12 @@ func _process(delta: float) -> void:
     var transform := get_global_transform_with_canvas()
     neutral_style.set_shader_parameter("view_zoom",transform.x.length())
     for style in band_styles.values(): style.set_shader_parameter("view_zoom",transform.x.length())
-    country_mode = transform.x.length() <= COUNTRY_MAX_ZOOM
-    for node in neutral_nodes: node.visible = not country_mode and transform.x.length() >= 0.65
+    # The atlas transform includes render-target density; gameplay zoom does not.
+    country_mode = main.camera.zoom.x <= COUNTRY_MAX_ZOOM
+    for node in neutral_nodes: node.visible = not country_mode and main.camera.zoom.x >= 0.65
     for node in district_band_nodes: node.visible = not country_mode
     for node in country_band_nodes: node.visible = country_mode
-    var selected: String = ("country:"+main.political_layer.selected_id) if country_mode and not main.political_layer.selected_id.is_empty() else (("district:"+main.district_layer.selected_key) if not country_mode and not main.district_layer.selected_key.is_empty() else "")
+    var selected: String = ("district:"+main.district_layer.selected_key) if not main.district_layer.selected_key.is_empty() else (("country:"+main.political_layer.selected_id) if country_mode and not main.political_layer.selected_id.is_empty() else "")
     if last_selected != selected:
         last_selected = selected
         selection_pulse_phase = 0.0
@@ -384,7 +385,7 @@ func _draw() -> void:
         if not bounds.has(id) or not bounds[id].intersects(visible_rect): continue
         var mesh := fill_mesh_for(str(id))
         if mesh != null: draw_mesh(mesh,null,Transform2D.IDENTITY,Color(1.0,0.0,0.0,0.2))
-    _draw_selection_pulse(active_projected)
+    _draw_selection_pulse()
     for state in ["neutral","enemy","ally","self"]:
         for id in active_projected:
             var r: Dictionary = active_projected[id]
@@ -400,13 +401,16 @@ func _draw() -> void:
         for ring in projected[id].rings:
             if ring.size() >= 2: draw_polyline(ring, review_color, 2.0/scale_value, true)
 
-func _draw_selection_pulse(active_projected: Dictionary) -> void:
-    var selected: String = main.political_layer.selected_id if country_mode else main.district_layer.selected_key
+func _draw_selection_pulse() -> void:
+    # An office can select a district at the 200 percent country-view boundary.
+    var district_selected: bool = not main.district_layer.selected_key.is_empty()
+    var active_projected: Dictionary = projected if district_selected else country_projected
+    var selected: String = main.district_layer.selected_key if district_selected else (main.political_layer.selected_id if country_mode else "")
     if selected.is_empty() or not active_projected.has(selected) or selection_pulse_alpha <= 0.0: return
     var record: Dictionary = active_projected[selected]
     var color := theme_color(record.house_id)
     color.a = selection_pulse_alpha
-    if country_mode:
+    if not district_selected:
         for polygon in record.polygons:
             if not polygon.is_empty(): draw_colored_polygon(polygon[0],color)
     else:

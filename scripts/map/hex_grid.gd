@@ -49,23 +49,16 @@ static func path_avoiding(a: Vector2i, b: Vector2i, blocked: Dictionary, allowed
 			has_approach = true
 			break
 	if not has_approach: return []
-	var frontier: Array[Vector2i] = [a]
+	var frontier: Array = []
+	_heap_push(frontier, [distance(a, b), distance(a, b), 0, a])
+	var sequence := 1
 	var cost: Dictionary = {a: 0}
 	var previous: Dictionary = {}
 	var closed: Dictionary = {}
 	while not frontier.is_empty():
 		if closed.size() > maxi(4000, distance(a, b) * 40): return []
-		var best_index := 0
-		var best_score := 2147483647
-		var best_distance := 2147483647
-		for i in frontier.size():
-			var remaining := distance(frontier[i], b)
-			var score := int(cost[frontier[i]]) + remaining
-			if score < best_score or (score == best_score and remaining < best_distance):
-				best_index = i
-				best_score = score
-				best_distance = remaining
-		var current: Vector2i = frontier.pop_at(best_index)
+		var current: Vector2i = _heap_pop(frontier)[3]
+		if closed.has(current): continue
 		if current == b:
 			var result := []
 			while current != a:
@@ -80,8 +73,42 @@ static func path_avoiding(a: Vector2i, b: Vector2i, blocked: Dictionary, allowed
 			if not cost.has(neighbor) or next_cost < int(cost[neighbor]):
 				cost[neighbor] = next_cost
 				previous[neighbor] = current
-				if not frontier.has(neighbor): frontier.append(neighbor)
+				var remaining := distance(neighbor, b)
+				_heap_push(frontier, [next_cost + remaining, remaining, sequence, neighbor])
+				sequence += 1
 	return []
+
+static func _heap_less(a: Array, b: Array) -> bool:
+	if a[0] != b[0]: return a[0] < b[0]
+	if a[1] != b[1]: return a[1] < b[1]
+	return a[2] < b[2]
+
+static func _heap_push(heap: Array, item: Array) -> void:
+	heap.append(item)
+	var index := heap.size() - 1
+	while index > 0:
+		var parent: int = (index - 1) / 2
+		if not _heap_less(heap[index], heap[parent]): break
+		var swap: Array = heap[parent]
+		heap[parent] = heap[index]
+		heap[index] = swap
+		index = parent
+
+static func _heap_pop(heap: Array) -> Array:
+	var result: Array = heap[0]
+	var last: Array = heap.pop_back()
+	if heap.is_empty(): return result
+	heap[0] = last
+	var index := 0
+	while index * 2 + 1 < heap.size():
+		var child := index * 2 + 1
+		if child + 1 < heap.size() and _heap_less(heap[child + 1], heap[child]): child += 1
+		if not _heap_less(heap[child], heap[index]): break
+		var swap: Array = heap[index]
+		heap[index] = heap[child]
+		heap[child] = swap
+		index = child
+	return result
 
 static func polygon(cell: Vector2i) -> PackedVector2Array:
 	var points := PackedVector2Array()

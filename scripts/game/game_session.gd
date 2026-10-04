@@ -12,6 +12,7 @@ var save_directory := "user://saves"
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	catalog = JSON.parse_string(FileAccess.get_file_as_string(CATALOG))
+	if "--cpu-release-check" in OS.get_cmdline_user_args(): call_deferred("new_game", "uesugi_yamanouchi")
 
 func relation(a: String, b: String) -> String:
 	if a == b: return "self"
@@ -58,10 +59,10 @@ func capture(main: Node) -> Dictionary:
 				for field in ["population", "security", "agriculture_development", "commerce_development", "agriculture_progress", "commerce_progress", "agriculture_developer_id", "commerce_developer_id", "infrastructure", "devastation", "autonomy", "defense", "sortie_troops"]:
 					territories[kind][id][field] = r[field]
 	var c: Node = main.game_clock
-	return {"version":15,"saved_at":Time.get_datetime_string_from_system(),"player_house":player_house,
-		"clock":{"year":c.year,"month":c.month,"day":c.day,"elapsed_days":c.elapsed_days,"speed":c.speed,"paused":c.paused,"fraction":c._day_fraction},
+	return {"version":19,"saved_at":Time.get_datetime_string_from_system(),"player_house":player_house,
+		"clock":{"year":c.year,"month":c.month,"day":c.day,"elapsed_days":c.elapsed_days,"speed":c.speed,"paused":c.paused,"fraction":c._day_fraction,"work_started":c.work_started},
 		"camera":{"x":main.camera.position.x,"y":main.camera.position.y,"zoom":main.camera.zoom.x,"oblique":main.is_oblique(),"manual_angle":main.map_view.manual_angle,"yaw":main.map_view.yaw},
-		"relations":relations.duplicate(true),"diplomacy":main.diplomacy.save_state(),"territories":territories,
+		"relations":relations.duplicate(true),"diplomacy":main.diplomacy.save_state(),"cpu":main.cpu_controller.save_state(),"territories":territories,
 		"economy":{"house_resources":main.district_economy.house_resources.duplicate(true)},
 		"buildings":main.district_buildings.state.duplicate(true),
 		"building_history":main.district_buildings.history.duplicate(true),
@@ -86,7 +87,7 @@ func valid_person(v: Variant) -> bool:
 	return v.get("officer_id") == null or (v.officer_id is String and v.officer_id in catalog.officer_ids)
 
 func validate(d: Variant) -> bool:
-	if not d is Dictionary or not valid_integer(d.get("version"),15,15): return false
+	if not d is Dictionary or not valid_integer(d.get("version"),19,19): return false
 	var version := int(d.version)
 	var known_houses: Dictionary = catalog.houses.duplicate()
 	if version >= 6:
@@ -101,7 +102,8 @@ func validate(d: Variant) -> bool:
 	var c: Dictionary = d.clock
 	if not valid_integer(c.get("year"),1546,9999) or not valid_integer(c.get("month"),1,12): return false
 	if not valid_integer(c.get("day"),1,preload("res://scripts/game/game_clock.gd").days_in_month(int(c.year),int(c.month))): return false
-	if not valid_integer(c.get("elapsed_days"),0,3100000) or not valid_integer(c.get("speed"),1,8) or int(c.speed) not in [1,2,4,8] or not c.get("paused") is bool or not valid_number(c.get("fraction"),0,0.999999999): return false
+	if not valid_integer(c.get("elapsed_days"),0,3100000) or not valid_integer(c.get("speed"),1,8) or int(c.speed) not in [1,2,4,8] or not c.get("paused") is bool or not valid_number(c.get("fraction"),0,1.0): return false
+	if not c.get("work_started") is bool or (not c.work_started and float(c.fraction) != 0.0): return false
 	var expected := 0
 	for y in range(1546,int(c.year)): expected += 366 if preload("res://scripts/game/game_clock.gd").days_in_month(y,2) == 29 else 365
 	for m in range(1,int(c.month)): expected += preload("res://scripts/game/game_clock.gd").days_in_month(int(c.year),m)
@@ -128,6 +130,52 @@ func validate(d: Variant) -> bool:
 		for key in d.diplomacy.last_actions:
 			var ids: PackedStringArray = str(key).split(">")
 			if ids.size() != 2 or ids[0] == ids[1] or not known_houses.has(ids[0]) or not known_houses.has(ids[1]) or not valid_integer(d.diplomacy.last_actions[key], 0, int(c.elapsed_days)): return false
+		if not d.diplomacy.get("wars") is Dictionary or not valid_integer(d.diplomacy.get("next_war_id"), 1, 2000000000): return false
+		for war_id in d.diplomacy.wars:
+			if not war_id is String or not war_id.begins_with("war_") or not war_id.trim_prefix("war_").is_valid_int(): return false
+			if int(war_id.trim_prefix("war_")) < 1 or int(war_id.trim_prefix("war_")) >= int(d.diplomacy.next_war_id): return false
+			var war: Variant = d.diplomacy.wars[war_id]
+			if not war is Dictionary or not known_houses.has(war.get("attacker")) or not known_houses.has(war.get("defender")) or war.attacker == war.defender: return false
+			if not war.get("defenders") is Array or war.defender not in war.defenders or not war.get("requests") is Dictionary or not war.get("called") is bool: return false
+			if not valid_integer(war.get("started"), 0, int(c.elapsed_days)): return false
+			var seen_defenders := {}
+			for defender in war.defenders:
+				if not defender is String or not known_houses.has(defender) or defender == war.attacker or seen_defenders.has(defender): return false
+				seen_defenders[defender] = true
+			for ally in war.requests:
+				if not known_houses.has(ally) or ally in [war.attacker, war.defender] or war.requests[ally] not in ["pending", "accepted", "declined"]: return false
+				if (war.requests[ally] == "accepted") != (ally in war.defenders): return false
+	if not d.get("cpu") is Dictionary or not d.cpu.get("plans") is Dictionary or not d.cpu.get("missions") is Dictionary or not d.cpu.get("decisions") is Array or d.cpu.decisions.size() > 300: return false
+	if not d.cpu.get("work_queue") is Array or d.cpu.work_queue.size() > 10000: return false
+	if not c.work_started and not d.cpu.work_queue.is_empty(): return false
+	for job in d.cpu.work_queue:
+		if not job is Dictionary or not job.get("target") is String: return false
+		if job.get("kind") == "daily":
+			if job.get("house") != "" or job.target not in ["district_buildings", "district_economy", "retainer_management", "army_campaign", "district_actions", "diplomacy"]: return false
+		elif job.get("kind") == "world":
+			if job.get("house") != "" or job.target != "": return false
+		else:
+			if not known_houses.has(job.get("house")) or job.house == d.player_house: return false
+			if job.get("kind") not in ["officers", "district", "research", "strategy", "army"]: return false
+			if job.kind == "district":
+				if job.target not in catalog.district_ids: return false
+			elif job.target != "": return false
+	for house_id in d.cpu.plans:
+		if not known_houses.has(house_id) or house_id == d.player_house: return false
+		var plan: Variant = d.cpu.plans[house_id]
+		if not plan is Dictionary or plan.get("objective") not in ["develop", "defend", "fight", "invade"] or not plan.get("reason") is String: return false
+		for field in ["target", "alliance_target"]:
+			if not plan.get(field) is String or (plan[field] != "" and not known_houses.has(plan[field])): return false
+		if not valid_integer(plan.get("next_strategy"), 0, 3100007) or not valid_integer(plan.get("last_admin"), -1, 120000): return false
+	for unit_id in d.cpu.missions:
+		if not unit_id is String: return false
+		var mission: Variant = d.cpu.missions[unit_id]
+		if not mission is Dictionary or not mission.get("target") is String or (mission.target != "" and not valid_army_node(mission.target, 18)): return false
+		if not valid_integer(mission.get("initial_soldiers"), 100, 2000000000) or not mission.get("returning") is bool: return false
+	for decision in d.cpu.decisions:
+		if not decision is Dictionary or not known_houses.has(decision.get("house")) or not valid_integer(decision.get("day"), 0, int(c.elapsed_days)): return false
+		for field in ["action", "target", "reason"]:
+			if not decision.get(field) is String: return false
 	for kind in ["districts", "sites"]:
 		var ids: Array = catalog.district_ids if kind == "districts" else catalog.site_ids
 		if kind == "districts" and d.territories.get(kind) is Dictionary:
@@ -257,6 +305,8 @@ func validate(d: Variant) -> bool:
 			if not known_houses.has(unit.get("house_id")): return false
 			if not valid_army_node(unit.get("origin"), version) or not valid_army_node(unit.get("site_id"), version): return false
 			if unit.get("next_site") != "" and not valid_army_node(unit.get("next_site"), version): return false
+			if not valid_number(unit.get("facing"),-TAU,TAU) or not unit.get("movement_hold") is bool: return false
+			if not valid_number(unit.get("bow_reload"),0,10) or not valid_number(unit.get("bow_damage"),0,1) or not valid_number(unit.get("melee_damage"),0,1): return false
 			if not valid_number(unit.get("progress"),0,1) or not valid_integer(unit.get("soldiers"),1,2000000000) or not valid_integer(unit.get("supply_days"),-100000,120): return false
 			if not unit.get("orders") is Array or not unit.get("officers") is Array or unit.officers.is_empty() or unit.officers.size()>3: return false
 			if not unit.get("horses") is bool or not unit.get("guns") is bool: return false
@@ -383,6 +433,7 @@ func apply_to(main: Node) -> void:
 	else:
 		main.house_prestige.setup(main.governance_registry.houses.keys())
 	if int(d.version) >= 12: main.diplomacy.restore_state(d.diplomacy)
+	main.cpu_controller.restore_state(d.cpu)
 	if int(d.version) < 6:
 		main.retainer_management.advance_service_year(int(d.clock.year))
 	if int(d.version) >= 11:
@@ -393,6 +444,7 @@ func apply_to(main: Node) -> void:
 	main.retainer_management.reconcile_officer_placements()
 	main.governance_registry.recount_assignments()
 	main.game_clock.restore_state(d.clock)
+	main.cpu_controller.refresh_world()
 	main.map_view.manual_angle = float(d.camera.get("manual_angle",-1.0))
 	main.map_view.yaw = float(d.camera.get("yaw",0.0))
 	main.set_oblique(d.camera.oblique)
