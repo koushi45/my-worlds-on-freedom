@@ -26,6 +26,19 @@ func right_click() -> void:
 	release.pressed = false
 	root.push_input(release)
 
+func click_control(control: Control) -> void:
+	click_at(control.get_global_rect().get_center())
+
+func click_at(position: Vector2) -> void:
+	var press := InputEventMouseButton.new()
+	press.button_index = MOUSE_BUTTON_LEFT
+	press.pressed = true
+	press.position = position
+	root.push_input(press, true)
+	var release := press.duplicate() as InputEventMouseButton
+	release.pressed = false
+	root.push_input(release, true)
+
 func capture(name: String) -> void:
 	if DisplayServer.get_name() == "headless": return
 	await RenderingServer.frame_post_draw
@@ -47,12 +60,61 @@ func run() -> void:
 		return
 	var main := current_scene
 	check(main.house_status_hud.council_button != null, "council icon is in the header")
+	for tab_index in range(3):
+		for sample in [Vector2(0.5, 0.5), Vector2(0.1, 0.1), Vector2(0.9, 0.1), Vector2(0.1, 0.9), Vector2(0.9, 0.9)]:
+			main.game_menu.toggle_council()
+			main.game_menu._select_council_tab(tab_index)
+			await process_frame
+			await process_frame
+			var close_rect: Rect2 = main.game_menu.council_menu.get_node("CouncilClose").get_global_rect()
+			click_at(close_rect.position + close_rect.size * sample)
+			check(not main.game_menu.shade.visible and not paused, "close button responds across its visible bounds on tab %d at %s" % [tab_index, sample])
+			main.game_menu._close_all()
+	main.game_menu.council_tab = 0
 	main.house_status_hud.council_button.pressed.emit()
 	check(main.game_menu.council_menu.visible and main.game_menu.shade.visible and main.game_menu.retainer_panel.visible, "council icon directly opens retainers")
 	await capture("council_menu")
 	main.game_menu.show_retainers()
 	await process_frame
 	check(main.game_menu.retainer_panel.visible, "council opens retainer management")
+	var retainers: Control = main.game_menu.retainer_panel
+	var house_id: String = root.get_node("GameSession").player_house
+	var members: Array = main.retainer_management.house_members[house_id]
+	check(not members.is_empty(), "preview has eligible officers")
+	if not members.is_empty():
+		var officer_id: String = members[0]
+		var original_wage: float = main.retainer_management.stipend_for(house_id, officer_id)
+		retainers._select_role("軍師")
+		retainers._select_officer(officer_id)
+		await process_frame
+		check(retainers.stipend_after.text == "任命後 2.0 / 月", "senior preview uses actual twenty-times stipend")
+		check(retainers.stipend_delta.text == "増減 +1.9 / 月", "preview shows difference from current wage")
+		check(retainers.effect_value.text.contains("軍事") and retainers.effect_value.text.contains("→"), "selected officer shows actual growth preview")
+		check(main.retainer_management.role_of(house_id, officer_id) == "直臣" and is_equal_approx(main.retainer_management.stipend_for(house_id, officer_id), original_wage), "preview does not mutate appointments or wages")
+		var frame_rect: Rect2 = main.game_menu.council_menu.get_global_rect()
+		for tab in main.game_menu.council_tabs:
+			check(tab.get_global_rect().end.y <= frame_rect.position.y, "council tab is outside frame")
+		check(retainers.left.get_global_rect().end.x <= retainers.roster_scroll.get_global_rect().position.x, "preview and roster split horizontally")
+		check(not retainers.wage_dialog.visible, "wage dialog only opens on amount action")
+		click_control(retainers.officer_buttons[officer_id].get_node("Contents/Identity/StipendButton"))
+		check(retainers.wage_dialog.visible, "current amount opens wage editor")
+		escape()
+		await process_frame
+		check(not retainers.wage_dialog.visible and retainers.visible and paused, "Escape dismisses wage editor and leaves council open")
+		retainers._open_wage(officer_id)
+		retainers.wage_input.value = 0.2
+		retainers.wage_dialog.confirmed.emit()
+		retainers.wage_dialog.hide()
+		check(retainers.stipend_after.text == "任命後 4.0 / 月", "wage edit refreshes preview")
+		retainers._appoint()
+		check(main.retainer_management.role_of(house_id, officer_id) == "軍師", "preview appoint action applies chosen role")
+		check(retainers.stipend_delta.text == "増減 +0.0 / 月", "appointed wage is reflected in preview")
+		if members.size() > 1:
+			retainers._select_officer(members[1])
+			check(retainers.appoint_button.disabled, "occupied senior position disables appointment")
+		main.retainer_management.assign_role(house_id, officer_id, "直臣")
+		main.retainer_management.set_base_stipend(house_id, officer_id, 0.1)
+		retainers._select_officer(officer_id)
 	await capture("council_retainers")
 	main.game_menu.council_tabs[2].pressed.emit()
 	await process_frame

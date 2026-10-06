@@ -18,6 +18,7 @@ func _ready() -> void:
     add_child(army_markers)
     main.army_campaign.changed.connect(army_markers.invalidate)
     main.diplomacy.changed.connect(army_markers.invalidate)
+    main.game_clock.pause_changed.connect(func(_paused: bool): army_markers.invalidate())
     main.settlement_layer.visibility_changed.connect(invalidate)
     main.district_layer.selection_changed.connect(invalidate)
 
@@ -41,6 +42,7 @@ func _draw() -> void:
     if main == null or main.map_view == null: return
     if armies_only:
         _draw_armies()
+        _draw_occupations()
         return
     var started := Time.get_ticks_usec()
     draw_count += 1
@@ -130,3 +132,40 @@ func _crest(house: String, screen: Vector2, size: float) -> void:
     var texture: Texture2D = main.kamon_layer.kamon_textures.get(entry.get("asset",""))
     if texture != null:
         draw_texture_rect(texture,Rect2(screen-Vector2.ONE*size*0.5,Vector2.ONE*size),false)
+
+func occupation_badge_rect(district_id: String) -> Rect2:
+    var point: Vector2 = main.district_office_layer.office_point(district_id)
+    var screen: Vector2 = main.map_view.project(point)
+    var top: float = screen.y
+    for vertex in main.HexGridScript.polygon(main.HexGridScript.cell_at(point)):
+        top = minf(top, main.map_view.project(vertex).y)
+    return Rect2(Vector2(screen.x - 100, top - 82), Vector2(200, 74))
+
+func _draw_occupations() -> void:
+    if main.camera.zoom.x < 2.0: return
+    var army: Node2D = main.army_campaign
+    var view: Node3D = main.map_view
+    var font := ThemeDB.fallback_font
+    var background := StyleBoxFlat.new()
+    background.bg_color = Color("#0c1422f5")
+    background.border_color = Color("#d7ad64")
+    background.set_border_width_all(1)
+    background.set_corner_radius_all(4)
+    for id in army.occupations:
+        if not main.district_office_layer.records.has(id): continue
+        var info: Dictionary = army.occupation_display(id)
+        if info.is_empty(): continue
+        var point: Vector2 = main.district_office_layer.office_point(id)
+        if not view.marker_visible(point, office_selected(id), "office:" + str(id)): continue
+        var box := occupation_badge_rect(id)
+        draw_style_box(background, box)
+        var caption := "%s %.0f%%" % [info.badge, info.progress]
+        var width := text_width(font, caption, 15)
+        draw_string(font, box.position + Vector2((box.size.x-width)*0.5, 22), caption, HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color("#f4e8cd"))
+        var track := Rect2(box.position + Vector2(12, 31), Vector2(176, 10))
+        draw_rect(track, Color("#29303a"))
+        draw_rect(Rect2(track.position, Vector2(track.size.x * float(info.progress) / 100.0, track.size.y)), Color("#d7ad64"))
+        var detail: String = info.estimate if float(info.rate) > 0.0 else info.change
+        if main.game_clock.paused: detail = "時間を進めると再開"
+        width = text_width(font, detail, 13)
+        draw_string(font, box.position + Vector2((box.size.x-width)*0.5, 62), detail, HORIZONTAL_ALIGNMENT_LEFT, -1, 13, Color("#f4e8cd"))

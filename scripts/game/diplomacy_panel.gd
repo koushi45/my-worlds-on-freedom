@@ -13,6 +13,10 @@ var search: LineEdit
 var house_list: ItemList
 var details: VBoxContainer
 var status: Label
+var claim_dialog: ConfirmationDialog
+var claim_choice: OptionButton
+var claim_ids: Array[String] = []
+var claim_target := ""
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -58,6 +62,31 @@ func _ready() -> void:
 	status = UI.label("外交行動を選んでください", body, 12)
 	status.custom_minimum_size.y = 26
 	main.diplomacy.changed.connect(_refresh)
+	claim_dialog = ConfirmationDialog.new()
+	claim_dialog.title = "請求権を捏造する郡（諜報値20）"
+	claim_dialog.ok_button_text = "捏造する"
+	claim_dialog.cancel_button_text = "戻る"
+	var dialog_style := StyleBoxFlat.new()
+	dialog_style.bg_color = Color("#0c1422")
+	dialog_style.border_color = Style.GOLD
+	dialog_style.set_border_width_all(2)
+	dialog_style.set_content_margin_all(14)
+	claim_dialog.add_theme_stylebox_override("panel", dialog_style)
+	var dialog_border := dialog_style.duplicate() as StyleBoxFlat
+	dialog_border.set_expand_margin_all(8)
+	dialog_border.set_expand_margin(SIDE_TOP, 32)
+	claim_dialog.add_theme_stylebox_override("embedded_border", dialog_border)
+	claim_dialog.add_theme_color_override("title_color", Style.GOLD)
+	add_child(claim_dialog)
+	for dialog_button in [claim_dialog.get_ok_button(), claim_dialog.get_cancel_button()]:
+		Style.Base.field(dialog_button)
+		dialog_button.add_theme_font_size_override("font_size", 18)
+		dialog_button.custom_minimum_size = Vector2(100, 36)
+		dialog_button.add_theme_color_override("font_hover_color", Style.GOLD)
+	claim_choice = OptionButton.new()
+	Style.field(claim_choice)
+	claim_dialog.add_child(claim_choice)
+	claim_dialog.confirmed.connect(_confirm_claim)
 	UI.follow_window(self)
 
 func open() -> void:
@@ -73,13 +102,31 @@ func _fill_houses() -> void:
 	house_ids.clear()
 	house_list.clear()
 	var owned := {}
+	var player_points: Array[Vector2] = []
 	for district in main.governance_registry.districts.values(): owned[district.house_id] = true
+	for district in main.governance_registry.districts.values():
+		if district.house_id == GameSession.player_house:
+			player_points.append(Vector2(district.point[0], district.point[1]))
+	var distances := {}
+	for district in main.governance_registry.districts.values():
+		if district.house_id == GameSession.player_house: continue
+		var point := Vector2(district.point[0], district.point[1])
+		var nearest: float = distances.get(district.house_id, INF)
+		for player_point in player_points:
+			nearest = minf(nearest, point.distance_squared_to(player_point))
+		distances[district.house_id] = nearest
 	for house_id in main.governance_registry.houses:
 		if house_id == GameSession.player_house or not owned.has(house_id): continue
 		var name: String = str(main.governance_registry.houses[house_id].display_name)
 		if not search.text.is_empty() and not name.contains(search.text): continue
 		house_ids.append(house_id)
-	house_ids.sort_custom(func(a: String, b: String): return str(main.governance_registry.houses[a].display_name) < str(main.governance_registry.houses[b].display_name))
+	house_ids.sort_custom(func(a: String, b: String):
+		var a_distance: float = distances.get(a, INF)
+		var b_distance: float = distances.get(b, INF)
+		if a_distance != b_distance: return a_distance < b_distance
+		var a_name: String = str(main.governance_registry.houses[a].display_name)
+		var b_name: String = str(main.governance_registry.houses[b].display_name)
+		return a_name < b_name if a_name != b_name else a < b)
 	for house_id in house_ids:
 		var name: String = str(main.governance_registry.houses[house_id].display_name)
 		var relation: String = _relation_name(GameSession.relation(GameSession.player_house, house_id))
@@ -121,20 +168,31 @@ func _refresh() -> void:
 	UI.label("こちらからの友好度：%+d / 100" % main.diplomacy.opinion(actor, selected), details, 12)
 	var remaining: int = main.diplomacy.truce_remaining(actor, selected)
 	if remaining > 0: UI.label("停戦：残り%d日" % remaining, details, 12)
-	var envoy: String = main.diplomacy.envoy_target(actor)
 	Style.heading("外交行動", details, 14)
-	var envoy_caption := "関係改善の使節を派遣（毎月+5）"
-	if not envoy.is_empty() and envoy != selected:
-		envoy_caption = "使節を%sから呼び戻して派遣" % str(main.governance_registry.houses[envoy].display_name)
-	_add_action("envoy", envoy_caption)
-	_add_action("recall", "使節を呼び戻す（派遣先：%s）" % name)
+	UI.label("外交官：派遣中%d / %d人（関係改善・諜報で共通）" % [main.diplomacy.diplomats_used(actor), main.diplomacy.DIPLOMAT_LIMIT], details, 12)
+	for assignment in [[main.diplomacy.envoys, "関係改善"], [main.diplomacy.spies, "諜報"]]:
+		for destination in assignment[0].get(actor, []):
+			UI.label("%s：%s" % [assignment[1], main.governance_registry.houses[destination].display_name], details, 12)
+	_add_action("recall" if main.diplomacy.has_envoy(actor, selected) else "envoy", "関係改善の使節を呼び戻す" if main.diplomacy.has_envoy(actor, selected) else "関係改善の使節を派遣（外交官1人・毎月+5）")
 	_add_action("gift", "贈物を送る（金銭100・友好度+20）")
 	_add_action("ally", "同盟を提案（友好度40以上）")
 	_add_action("break_ally", "同盟を破棄（威信-10）")
 	_add_action("insult", "侮辱を送る（友好度-25）")
-	_add_action("war", "宣戦する（威信-10）")
+	_add_action("war", "請求権を根拠に宣戦（威信減少なし）" if main.diplomacy.has_claim_against(actor, selected) else "理由なく宣戦（威信-%d）" % main.house_prestige.UNJUSTIFIED_WAR_LOSS)
 	_add_action("peace", "停戦を提案（友好度-20以上）")
 	if GameSession.relation(actor, selected) == "enemy": _add_action("call_allies", "同盟国に防衛参戦を要請する")
+	Style.heading("諜報", details, 14)
+	UI.label("この家への諜報値：%d / 100　相手の自家への諜報値：%d" % [main.diplomacy.spy_value(actor, selected), main.diplomacy.spy_value(selected, actor)], details, 12)
+	_add_action("recall_spy" if main.diplomacy.has_spy(actor, selected) else "build_spy_network", "間者を帰還（月初-2）" if main.diplomacy.has_spy(actor, selected) else "間者を派遣（外交官1人・月初+%d）" % main.diplomacy.SPY_MONTHLY_GAIN)
+	for id in main.diplomacy.claims.get(actor, {}):
+		if main.governance_registry.districts.has(id) and main.governance_registry.districts[id].house_id == selected and main.diplomacy.claim_remaining(actor, id) > 0:
+			UI.label("請求権：%s（残り%d日）" % [main.governance_registry.districts[id].get("name", id), main.diplomacy.claim_remaining(actor, id)], details, 12)
+	_add_action("fabricate_claim", "請求権を捏造（諜報20・1825日・郡を選択）")
+	for entry in [["sow_discontent", "不満扇動（諜報60・月初に治安-3・360日）"], ["sabotage_reputation", "評判毀損（諜報50・第三者からの友好度-20・360日）"], ["sabotage_recruitment", "徴兵妨害（諜報50・兵力回復-20%・360日）"], ["slander_merchants", "商人中傷（諜報70・商業収入-25%・360日）"]]:
+		_add_action(entry[0], entry[1])
+		var effect_days: int = main.diplomacy.effect_remaining(entry[0], selected)
+		if effect_days > 0: UI.label("効果中：残り%d日" % effect_days, details, 12)
+	_add_action("counterespionage", "防諜（諜報30・相手の自家への諜報値-30）")
 
 func _add_action(action: String, caption: String) -> void:
 	var button := Style.button(caption, details, _act.bind(action))
@@ -144,6 +202,19 @@ func _add_action(action: String, caption: String) -> void:
 	button.tooltip_text = issue if not issue.is_empty() else caption
 
 func _act(action: String) -> void:
+	if action == "fabricate_claim":
+		claim_target = selected
+		claim_ids = main.diplomacy.claim_candidates(GameSession.player_house, selected)
+		claim_choice.clear()
+		for id in claim_ids: claim_choice.add_item(str(main.governance_registry.districts[id].get("name", id)))
+		if not claim_ids.is_empty(): claim_dialog.popup_centered(Vector2i(480, 140))
+		return
 	main.diplomacy.act(action, GameSession.player_house, selected)
+	status.text = main.diplomacy.last_message
+	_fill_houses()
+
+func _confirm_claim() -> void:
+	if claim_choice.selected < 0 or claim_choice.selected >= claim_ids.size(): return
+	main.diplomacy.act("fabricate_claim", GameSession.player_house, claim_target, claim_ids[claim_choice.selected])
 	status.text = main.diplomacy.last_message
 	_fill_houses()

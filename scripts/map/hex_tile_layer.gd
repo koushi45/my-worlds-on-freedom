@@ -7,7 +7,6 @@ var visible_cells: Dictionary = {}
 var high_mountain_cells: Dictionary = {}
 var impassable_cells: Dictionary = {}
 var main: Node2D
-var terrain_legend: CanvasLayer
 var bounds := Rect2()
 var zoom := 1.0
 var last_draw_us := 0
@@ -32,7 +31,6 @@ func _ready() -> void:
             visible_cells[cell] = kind
             if kind == Terrain.HIGH_MOUNTAIN: high_mountain_cells[cell] = true
             if kind == Terrain.HIGH_MOUNTAIN or kind == Terrain.NO_LAND: impassable_cells[cell] = true
-    _build_legend()
 
 func terrain_for(cell: Vector2i) -> int:
     return int(visible_cells.get(cell, Terrain.NO_LAND))
@@ -44,7 +42,6 @@ func update_view(rect: Rect2, view_zoom: float) -> void:
     bounds = rect.intersection(Grid.WORLD).grow(Grid.RADIUS * 2.0)
     zoom = view_zoom
     visible = zoom >= Grid.MIN_DRAW_ZOOM and not (main.map_view != null and main.map_view.get_meta("probe_no_hex",false))
-    if terrain_legend != null: terrain_legend.visible = visible
     queue_redraw()
 
 func _draw() -> void:
@@ -118,42 +115,4 @@ func _draw_mesh_chunks(alpha: float) -> void:
         if not wanted.has(key):
             mesh_chunks[key].queue_free()
             mesh_chunks.erase(key)
-
-func _build_legend() -> void:
-    terrain_legend = CanvasLayer.new()
-    terrain_legend.layer = 18
-    terrain_legend.visible = false
-    add_child(terrain_legend)
-    var panel := PanelContainer.new()
-    panel.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
-    panel.offset_left = -224
-    panel.offset_right = -16
-    panel.offset_top = -240
-    panel.offset_bottom = -88
-    panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-    var background := StyleBoxFlat.new()
-    background.bg_color = Color("#171311ed")
-    background.border_color = Color("#c5a15f")
-    background.set_border_width_all(2)
-    background.set_corner_radius_all(6)
-    background.set_content_margin_all(11)
-    panel.add_theme_stylebox_override("panel", background)
-    terrain_legend.add_child(panel)
-    var rows := VBoxContainer.new()
-    rows.add_theme_constant_override("separation", 4)
-    rows.mouse_filter = Control.MOUSE_FILTER_IGNORE
-    panel.add_child(rows)
-    var title := Label.new()
-    title.text = "六角形の地形"
-    title.add_theme_color_override("font_color", Color("#d7ad64"))
-    title.add_theme_font_size_override("font_size", 15)
-    title.mouse_filter = Control.MOUSE_FILTER_IGNORE
-    rows.add_child(title)
-    for row in ["草地　平地", "森・岩肌　山地", "雪の峰　高山地・通行不可", "水路　川", "海域　陸地なし・通行不可"]:
-        var name := Label.new()
-        name.text = row
-        name.add_theme_color_override("font_color", Color("#f4e8cd"))
-        name.add_theme_font_size_override("font_size", 13)
-        name.mouse_filter = Control.MOUSE_FILTER_IGNORE
-        rows.add_child(name)
 

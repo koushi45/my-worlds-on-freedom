@@ -8,7 +8,10 @@ static func pixels(control: Control) -> int:
 
 static func pixel_scale(control: Control) -> float:
 	if DisplayServer.get_name() == "headless": return 1.0
-	return float(DisplayServer.window_get_size().x) / maxf(1.0, control.get_viewport_rect().size.x)
+	var physical := float(DisplayServer.window_get_size().x)
+	var logical := control.get_viewport_rect().size.x
+	if physical <= 0.0 or logical <= 0.0: return 1.0
+	return physical / maxf(1.0, logical)
 
 static func unit(control: Control) -> float:
 	return float(pixels(control)) / 64.0 / pixel_scale(control)
@@ -29,6 +32,9 @@ static func update_frame(panel: Control, kind: String) -> void:
 	picture.size = picture.texture.get_size()
 	picture.scale = Vector2.ONE / pixel_scale(panel)
 	panel.size = picture.size * picture.scale
+
+static func council_position(panel: Control, hud: Node) -> Vector2:
+	return Vector2(hud.panel.position.x, hud.council_popup_position().y + 30 * unit(panel))
 
 static func icon(parent: Control, name: String) -> TextureRect:
 	var picture := TextureRect.new()

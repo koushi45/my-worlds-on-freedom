@@ -102,10 +102,13 @@ var governance_registry: RefCounted
 var district_economy: Node
 var last_income_sound_month := -1
 var district_buildings: Node
+var technology_orders: Node
 var district_actions: Node
 var game_menu: CanvasLayer
 var territory_borders: Node2D
 var bgm_player: AudioStreamPlayer
+var bgm_tracks: Array[AudioStreamOggVorbis] = []
+var bgm_track_index := -1
 var district_info: CanvasLayer
 var map_view: Node3D
 var oblique_view := true
@@ -281,20 +284,32 @@ func _ready() -> void:
 	governance_registry.district_economy = district_economy
 	house_prestige = preload("res://scripts/game/house_prestige.gd").new()
 	house_prestige.name = "HousePrestige"
-	house_prestige.setup(governance_registry.houses.keys())
+	house_prestige.setup(governance_registry.houses.keys(), governance_registry)
 	add_child(house_prestige)
 	retainer_management.prestige = house_prestige
-	house_prestige.prestige_changed.connect(func(_house_id: String, _value: int, _reason: String): retainer_management.updated.emit())
+	house_prestige.prestige_changed.connect(func(house_id: String, _value: float, _reason: String):
+		if house_id == GameSession.player_house: retainer_management.updated.emit())
+	house_prestige.baseline_changed.connect(func(house_id: String, _value: float, _reason: String):
+		if house_id == GameSession.player_house: retainer_management.updated.emit())
 	army_campaign = preload("res://scripts/game/army_campaign.gd").new()
 	army_campaign.name = "ArmyCampaign"
 	add_child(army_campaign)
 	army_campaign.setup(self)
+	technology_orders = preload("res://scripts/game/technology_orders.gd").new()
+	technology_orders.main = self
+	add_child(technology_orders)
+	district_economy.technology_orders = technology_orders
+	technology_tree.technology_orders = technology_orders
+	district_actions.technology_orders = technology_orders
+	district_economy.army_campaign = army_campaign
 	army_campaign.changed.connect(func(): district_info.refresh_if_open())
 	retainer_management.army_campaign = army_campaign
 	diplomacy = preload("res://scripts/game/diplomacy.gd").new()
 	diplomacy.name = "Diplomacy"
 	add_child(diplomacy)
 	diplomacy.setup(self)
+	district_economy.diplomacy = diplomacy
+	district_actions.diplomacy = diplomacy
 	diplomacy.changed.connect(army_campaign.queue_redraw)
 	cpu_controller = preload("res://scripts/game/cpu_controller.gd").new()
 	cpu_controller.name = "CpuController"
@@ -311,6 +326,7 @@ func _ready() -> void:
 	add_child(house_status_hud)
 	game_clock.day_started.connect(cpu_controller.begin_day)
 	game_clock.day_work_pending = _has_pending_day_work
+	game_clock.day_wait_reason = cpu_controller.pending_wait_reason
 	game_clock.simulation_advanced.connect(army_campaign.advance_simulation)
 	if not restoring and not GameSession.player_house.is_empty():
 		for r in governance_registry.districts.values():
@@ -329,7 +345,8 @@ func _ready() -> void:
 	developer_tools = preload("res://scripts/game/developer_tools.gd").new()
 	developer_tools.main = self
 	add_child(developer_tools)
-	developer_tools.network.changed.connect(cpu_controller.invalidate_routes)
+	developer_tools.network.changed.connect(cpu_controller._on_roads_changed)
+	developer_tools.network.changed.connect(army_campaign.automation.invalidate_routes)
 	game_menu = preload("res://scripts/game/game_menu.gd").new()
 	game_menu.main = self
 	add_child(game_menu)
@@ -354,9 +371,14 @@ func _ready() -> void:
 		var release_check := preload("res://scripts/game/cpu_release_check.gd").new()
 		release_check.main = self
 		add_child(release_check)
+	elif "--cpu-speed-check" in OS.get_cmdline_user_args() and not get_tree().root.has_node("CpuSpeedCheck"):
+		game_clock.paused = true
+		var speed_check := preload("res://scripts/game/cpu_speed_check.gd").new()
+		speed_check.name = "CpuSpeedCheck"
+		get_tree().root.add_child.call_deferred(speed_check)
 
 func _has_pending_day_work() -> bool:
-	return cpu_controller.has_pending_work() or (is_instance_valid(house_status_hud) and house_status_hud.refresh_dirty)
+	return cpu_controller.has_pending_daily_work()
 
 func _on_house_income_collected(house_id: String, _kind: String, amount: int) -> void:
 	if GameSession.player_house.is_empty() or house_id != GameSession.player_house or amount <= 0:
@@ -386,12 +408,22 @@ func _on_buildings_changed(district_id: String) -> void:
 func _setup_bgm() -> void:
 	bgm_player = AudioStreamPlayer.new()
 	bgm_player.name = "MainMapBGM"
-	var scottish_symphony := preload("res://assets/audio/scottish_symphony_i_andante_con_moto.ogg") as AudioStreamOggVorbis
-	scottish_symphony.loop = true
-	bgm_player.stream = scottish_symphony
+	bgm_tracks.assign([
+		preload("res://assets/audio/scottish_symphony_i_andante_con_moto.ogg"),
+		preload("res://assets/audio/moonlight_sonata_i_adagio_sostenuto.ogg"),
+		preload("res://assets/audio/wagner_bridal_chorus.ogg"),
+	])
+	for track in bgm_tracks: track.loop = false
+	bgm_track_index = -1
 	add_child(bgm_player)
+	bgm_player.finished.connect(_play_next_bgm)
 	DisplaySettings.bgm_volume_changed.connect(_set_bgm_volume)
 	_set_bgm_volume(DisplaySettings.bgm_volume)
+	_play_next_bgm()
+
+func _play_next_bgm() -> void:
+	bgm_track_index = (bgm_track_index + 1) % bgm_tracks.size()
+	bgm_player.stream = bgm_tracks[bgm_track_index]
 	bgm_player.play()
 
 func _set_bgm_volume(value: float) -> void:
@@ -594,7 +626,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not initialized:
 		return
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			_end_map_drag()
+			var ground := _screen_to_world(event.position)
+			if not ground.is_finite(): return
+			var office_district: String = district_office_layer.pick(ground)
+			if not office_district.is_empty(): _open_district_diplomacy(office_district)
+			else: _select_district_async(event.position, false, true)
+			get_viewport().set_input_as_handled()
+		elif event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
 			_zoom_at((map_view.requested_zoom if map_view != null else camera.zoom.x)*1.3, event.position)
 			get_viewport().set_input_as_handled()
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
@@ -633,7 +673,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					return
 				var picked_army: String = army_campaign.pick(event.position)
 				if not picked_army.is_empty():
-					army_panel.show_unit(picked_army)
+					army_panel.show_unit(picked_army, true)
 					get_viewport().set_input_as_handled()
 					return
 				if army_campaign.units.has(army_panel.unit_id) and army_campaign.units[army_panel.unit_id].house_id == GameSession.player_house:
@@ -1180,7 +1220,7 @@ func has_pending_map_work() -> bool:
 	if map_view != null and map_view.fine_job >= 0: return true
 	return not initialized or not pending_tiles.is_empty() or asset_stream.has_pending() or not district_layer.waiting_parents.is_empty() or not cpu_jobs.jobs.is_empty() or district_layer.has_pending_batches() or not river_layer.upload_queue.is_empty() or not lake_layer.upload_queue.is_empty() or political_layer.projection_cache.size()<2 or shared_road_layer.projection_cache.size()<2 or river_layer.projection_cache.size()<2 or lake_layer.projection_cache.size()<2
 
-func _select_district_async(screen_point: Vector2, shift_pressed := false) -> void:
+func _select_district_async(screen_point: Vector2, shift_pressed := false, open_diplomacy := false) -> void:
 	district_click_serial+=1
 	var serial:=district_click_serial
 	var ground:=_screen_to_world(screen_point)
@@ -1196,16 +1236,28 @@ func _select_district_async(screen_point: Vector2, shift_pressed := false) -> vo
 	while not required.keys().all(func(id):return district_layer.loaded.has(id)):
 		if selection_label != null: selection_label.text="郡データを読み込み中…"
 		await get_tree().process_frame
-		if serial!=district_click_serial or camera.position!=camera_before or camera.zoom!=zoom_before or (developer_ui and not district_selection_mode):return
+		if serial!=district_click_serial or camera.position!=camera_before or camera.zoom!=zoom_before or (developer_ui and not district_selection_mode and not open_diplomacy):return
 		if Time.get_ticks_msec()>deadline:
 			if selection_label != null: selection_label.text="郡データを読み込めませんでした"
 			return
 	var candidates: Array=await district_layer.pick_async(ground)
-	if serial!=district_click_serial or camera.position!=camera_before or camera.zoom!=zoom_before or (developer_ui and not district_selection_mode):return
+	if serial!=district_click_serial or camera.position!=camera_before or camera.zoom!=zoom_before or (developer_ui and not district_selection_mode and not open_diplomacy):return
+	if open_diplomacy:
+		if not candidates.is_empty(): _open_district_diplomacy(candidates[0])
+		return
 	if not candidates.is_empty() and army_panel.handle_district_click(candidates[0], shift_pressed): return
 	if not candidates.is_empty(): InteractionAudio.play_click()
 	show_district_info(candidates[0] if not candidates.is_empty() else "")
 	if developer_ui: district_panel.show_candidates(candidates)
+
+func _open_district_diplomacy(key: String) -> void:
+	var district: Dictionary = governance_registry.districts.get(key, {})
+	var house_id: String = district.get("house_id", "")
+	if house_id.is_empty() or house_id == GameSession.player_house or not governance_registry.houses.has(house_id): return
+	district_click_serial += 1
+	InteractionAudio.play_click()
+	district_info.hide_info()
+	game_menu.show_diplomacy(house_id)
 
 func show_district_info(key: String) -> void:
 	if district_info == null: return

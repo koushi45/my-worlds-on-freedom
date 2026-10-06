@@ -4,16 +4,16 @@ extends CanvasLayer
 const Compact = preload("res://scripts/game/compact_hud_style.gd")
 const IconHintPopup = preload("res://scripts/game/icon_hint_popup.gd")
 const ICONS := {
-	"money": "koban",
-	"governance": "governance",
-	"military": "military",
-	"diplomacy": "diplomacy",
-	"security": "security",
-	"population": "people",
-	"troops": "spears",
-	"provisions": "rice",
-	"districts": "castle",
-	"prestige": "fan",
+	"money": "hud_money",
+	"governance": "hud_governance",
+	"military": "hud_military",
+	"diplomacy": "hud_diplomacy",
+	"security": "hud_security",
+	"population": "hud_population",
+	"troops": "hud_troops",
+	"provisions": "hud_provisions",
+	"districts": "hud_districts",
+	"prestige": "hud_prestige",
 }
 const HOUSEHOLD := ["money", "provisions", "population", "troops", "prestige", "security", "districts"]
 const TECHNOLOGY := ["governance", "diplomacy", "military"]
@@ -33,6 +33,8 @@ var icon_variant_size := 0
 var last_window_size := Vector2i.ZERO
 var council_button: Button
 var council_icon: TextureRect
+var district_management_button: Button
+var district_management_icon: TextureRect
 var icon_hint
 var refresh_dirty := false
 var refresh_count := 0
@@ -61,8 +63,12 @@ func _ready() -> void:
 	for key in TECHNOLOGY: _metric(technology_panel, key)
 	council_button = Compact.button(overlay, "評定", func(): main.game_menu.toggle_council())
 	council_button.name = "CouncilButton"
-	council_icon = Compact.icon(council_button, "fan")
-	icon_hint.bind_icon(council_button, "評定（家臣管理・外交・技術）")
+	council_icon = Compact.icon(council_button, "action_council")
+	icon_hint.bind_icon(council_button, "評定（家臣管理・外交・技術・収支）")
+	district_management_button = Compact.button(overlay, "郡一括管理", func(): main.game_menu.toggle_district_management())
+	district_management_button.name = "DistrictManagementButton"
+	district_management_icon = Compact.icon(district_management_button, "action_district_management")
+	icon_hint.bind_icon(district_management_button, "郡一括管理（施設・武将・インフラ・税率）")
 	get_viewport().size_changed.connect(_resize)
 	if get_window() != get_viewport(): get_window().size_changed.connect(_resize)
 	_resize()
@@ -75,7 +81,10 @@ func _ready() -> void:
 	main.district_actions.changed.connect(func(_id): invalidate())
 	main.district_buildings.changed.connect(func(_id): invalidate())
 	main.technology_tree.research_completed.connect(func(_house, _branch, _id): invalidate())
-	main.house_prestige.prestige_changed.connect(func(_house, _value, _reason): invalidate())
+	main.house_prestige.prestige_changed.connect(func(house, _value, _reason):
+		if house == GameSession.player_house: invalidate())
+	main.house_prestige.baseline_changed.connect(func(house, _value, _reason):
+		if house == GameSession.player_house: invalidate())
 	main.game_clock.day_advanced.connect(func(_year, _month, _day): invalidate())
 
 func _panel(parent: Control, title: String, kind: String) -> Control:
@@ -100,7 +109,10 @@ func _metric(parent: Control, key: String) -> void:
 	var cell := Control.new()
 	cell.mouse_filter = Control.MOUSE_FILTER_STOP
 	parent.add_child(cell)
-	icon_hint.bind_icon(cell, HINTS[key])
+	if key == "prestige":
+		icon_hint.bind_dynamic_icon(cell, func() -> String: return main.house_prestige.description_for(GameSession.player_house))
+	else:
+		icon_hint.bind_icon(cell, HINTS[key])
 	metric_cells[key] = cell
 	metric_icons[key] = Compact.icon(cell, ICONS[key])
 	values[key] = _label(cell, 12)
@@ -125,7 +137,10 @@ func _resize() -> void:
 	_layout_metrics(TECHNOLOGY, [76, 76, 76], u)
 	council_button.position = technology_panel.position + Vector2(246, 5) * u
 	council_button.size = Vector2(30, 30) * u
-	Compact.update_icon(council_icon, "fan")
+	Compact.update_icon(council_icon, "action_council")
+	district_management_button.position = council_button.position + Vector2(36, 0) * u
+	district_management_button.size = council_button.size
+	Compact.update_icon(district_management_icon, "action_district_management")
 
 func _layout_metrics(keys: Array, widths: Array, u: float) -> void:
 	var x := 7.0
@@ -189,7 +204,7 @@ func _refresh() -> void:
 	values.troops.text = _grouped(troops)
 	values.provisions.text = _grouped(int(resources.get("provisions", 0)))
 	values.districts.text = "%d" % districts
-	values.prestige.text = "%d" % main.house_prestige.value_for(house_id)
+	values.prestige.text = "%.1f" % main.house_prestige.value_for(house_id)
 
 
 func _grouped(number: int) -> String:

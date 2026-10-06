@@ -6,27 +6,35 @@ const DistrictStyle = preload("res://scripts/game/council_panel_style.gd")
 const BRANCH_IDS := ["governance", "agriculture", "commerce"]
 const BRANCH_NAMES := {"governance": "統治技術", "agriculture": "農業技術", "commerce": "商業技術"}
 const BRANCH_ICONS := {
-	"governance": "res://assets/ui/hud/governance",
-	"agriculture": "res://assets/ui/hud/rice",
-	"commerce": "res://assets/ui/hud/koban",
+	"governance": "res://assets/ui/hud/branch_governance",
+	"agriculture": "res://assets/ui/hud/branch_agriculture",
+	"commerce": "res://assets/ui/hud/branch_commerce",
 }
 const TECHNOLOGY_ICONS := {
-	"分国法": "res://assets/ui/district/security",
-	"官僚機構制定": "res://assets/ui/district/office",
-	"人口台帳": "res://assets/ui/district/people",
-	"城下町制度": "res://assets/ui/hud/castle",
-	"楽市": "res://assets/ui/district/market",
-	"兵農分離": "res://assets/ui/hud/military",
-	"武家諸法度": "res://assets/ui/district/house",
-	"二毛作": "res://assets/ui/district/rice",
-	"鉄製農具配布": "res://assets/ui/district/construction",
-	"近世式用水路": "res://assets/ui/district/irrigation",
-	"共同管理法制定": "res://assets/ui/district/office",
-	"大名介入": "res://assets/ui/district/governor",
-	"灌漑整備": "res://assets/ui/district/infrastructure",
-	"検地": "res://assets/ui/district/people",
-	"石高制制定": "res://assets/ui/hud/rice",
-	"新田開発": "res://assets/ui/district/plus",
+	"分国法": "res://assets/ui/hud/tech_law",
+	"官僚機構制定": "res://assets/ui/hud/tech_bureaucracy",
+	"人口台帳": "res://assets/ui/hud/tech_census",
+	"城下町制度": "res://assets/ui/hud/tech_castle_town",
+	"楽市": "res://assets/ui/hud/tech_free_market",
+	"兵農分離": "res://assets/ui/hud/tech_professional_army",
+	"武家諸法度": "res://assets/ui/hud/tech_warrior_law",
+	"二毛作": "res://assets/ui/hud/tech_double_crop",
+	"鉄製農具配布": "res://assets/ui/hud/tech_iron_tools",
+	"近世式用水路": "res://assets/ui/hud/tech_modern_canals",
+	"共同管理法制定": "res://assets/ui/hud/tech_common_management",
+	"大名介入": "res://assets/ui/hud/tech_daimyo_intervention",
+	"灌漑整備": "res://assets/ui/hud/tech_irrigation_improvement",
+	"検地": "res://assets/ui/hud/tech_land_survey",
+	"石高制制定": "res://assets/ui/hud/tech_kokudaka",
+	"新田開発": "res://assets/ui/hud/tech_new_paddies",
+	"市場整備": "res://assets/ui/hud/tech_market_improvement",
+	"商人保護": "res://assets/ui/hud/tech_merchant_protection",
+	"度量衡整備": "res://assets/ui/hud/tech_weights_measures",
+	"職人誘致": "res://assets/ui/hud/tech_artisan_invitation",
+	"問屋整備": "res://assets/ui/hud/tech_wholesalers",
+	"貨幣流通促進": "res://assets/ui/hud/tech_currency_circulation",
+	"商工業振興": "res://assets/ui/hud/tech_industry_promotion",
+	"商業奉行設置": "res://assets/ui/hud/tech_commerce_magistrate",
 }
 signal closed
 
@@ -58,7 +66,7 @@ func _ready() -> void:
 	var points := HBoxContainer.new()
 	points.add_theme_constant_override("separation", 8)
 	body.add_child(points)
-	DistrictStyle.icon(points, "res://assets/ui/hud/governance")
+	DistrictStyle.icon(points, "res://assets/ui/hud/research_points")
 	points_label = UI.label("", points, 12)
 	points_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	branch_state = UI.label("", points, 12)
@@ -180,7 +188,7 @@ func _add_technology_row(technology_id: String, cost: int, completed: bool, next
 	contents.add_theme_constant_override("separation", 12)
 	contents.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	card.add_child(contents)
-	DistrictStyle.icon(contents, TECHNOLOGY_ICONS.get(technology_id, BRANCH_ICONS[selected_branch]))
+	DistrictStyle.icon(contents, TECHNOLOGY_ICONS[technology_id])
 	var text_stack := VBoxContainer.new()
 	text_stack.alignment = BoxContainer.ALIGNMENT_CENTER
 	text_stack.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -202,7 +210,7 @@ func _add_technology_row(technology_id: String, cost: int, completed: bool, next
 	var cost_row := HBoxContainer.new()
 	cost_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	state.add_child(cost_row)
-	DistrictStyle.icon(cost_row, "res://assets/ui/hud/governance")
+	DistrictStyle.icon(cost_row, "res://assets/ui/hud/research_cost")
 	var cost_label := UI.label("%d" % cost, cost_row, 12)
 	cost_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	cost_label.mouse_filter = Control.MOUSE_FILTER_IGNORE

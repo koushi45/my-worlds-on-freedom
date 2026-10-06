@@ -47,6 +47,7 @@ func run() -> void:
 	var main = await wait_map()
 	if main == null: quit(1); return
 	check(session.player_house == "uesugi_yamanouchi","chosen house starts")
+	check(main.army_campaign.units.is_empty(), "new game begins without deployed load-test armies")
 	check(int(main.district_economy.house_resources[session.player_house].provisions) > 0,"chosen house starts with provisions for a sortie")
 	check(session.relation(session.player_house,"uesugi_ogigayatsu")=="ally","alliance lookup")
 	check(session.relation("hojo",session.player_house)=="enemy","symmetric enemy lookup")
@@ -56,8 +57,9 @@ func run() -> void:
 	main.show_district_info(player_district)
 	check(main.district_info.security_label.text == "治安：50 / 100","owned district begins at security 50")
 	check(session.relation(session.player_house,"takeda")=="neutral","unknown diplomacy remains neutral")
-	check(main.game_menu.zoom_label.text == "マップ拡大率：50%","bottom-left shows the 50% initial map zoom")
-	check("上杉" not in main.game_menu.zoom_label.text and "自領" not in main.game_menu.zoom_label.text and "同盟" not in main.game_menu.zoom_label.text and "敵対" not in main.game_menu.zoom_label.text and "その他" not in main.game_menu.zoom_label.text,"bottom-left omits house and diplomacy legend")
+	check(main.game_menu.find_child("MapZoomChoices", true, false) == null,"zoom selector is removed")
+	check(main.game_menu.get("zoom_label") == null and main.game_menu.get("display_options") == null,"bottom map controls are removed")
+	check(main.hex_tile_layer.get("terrain_legend") == null,"terrain legend is removed")
 	# This suite isolates calendar/menu persistence; CPU wars have their own scenario suite.
 	main.cpu_controller.enabled = false
 	var states := {}
@@ -65,7 +67,7 @@ func run() -> void:
 	check(states.has("self") and states.has("ally") and states.has("enemy"),"three outline classes constructed")
 	main.game_clock.set_process(false)
 	main.cpu_controller.work_queue.clear()
-	main.game_clock.restore_state({"year":1546,"month":1,"day":1,"elapsed_days":0,"speed":1,"paused":false,"fraction":0.0,"work_started":false})
+	main.game_clock.restore_state({"year":1546,"month":1,"day":1,"elapsed_days":0,"speed":1,"paused":false,"fraction":0.0,"work_started":false,"backlog":0.0})
 	await advance_days(main.game_clock, 59)
 	main.game_clock.advance_real_seconds(0.375)
 	main.game_clock.set_speed(4)
@@ -73,7 +75,6 @@ func run() -> void:
 	main.camera.position = Vector2(5000,4800)
 	main.set_map_zoom(0.7)
 	await process_frame
-	check(main.game_menu.zoom_label.text == "マップ拡大率：70%","zoom display follows camera changes")
 	main._refresh_visible_tiles()
 	if DisplayServer.get_name() != "headless": await preload("res://tests/base_map/godot/wait_map.gd").settled(main)
 	await capture_png("start_territory_borders")
@@ -94,7 +95,7 @@ func run() -> void:
 	main.game_menu.show_retainers()
 	await process_frame
 	check(main.game_menu.retainer_panel.visible and main.game_menu.retainer_panel.role_buttons.size() == 5,"role cards open from game menu")
-	check(main.game_menu.retainer_panel.overview_values.prestige.text == "50 / 100","initial prestige appears beside its icon")
+	check(main.game_menu.retainer_panel.overview_values.prestige.text == "50.0 / 100","initial prestige appears beside its icon")
 	var retainer_ids: Array = main.retainer_management.house_members[session.player_house]
 	check(main.game_menu.retainer_panel.officer_buttons.size() == retainer_ids.size(),"retainer portraits and scores appear in the selection list")
 	if not retainer_ids.is_empty():
@@ -118,7 +119,7 @@ func run() -> void:
 	main.game_menu.technology_panel.branch_buttons["agriculture"].pressed.emit()
 	check(main.game_menu.technology_panel.technology_buttons.size() == 9,"agriculture icon tab opens its research cards")
 	main.game_menu.technology_panel.branch_buttons["commerce"].pressed.emit()
-	check(main.game_menu.technology_panel.technology_buttons.is_empty(),"commerce icon tab shows no research cards")
+	check(main.game_menu.technology_panel.technology_buttons.size() == 8,"commerce icon tab shows eight research cards")
 	main.game_menu.technology_panel.branch_buttons["governance"].pressed.emit()
 	main.retainer_management.technology[session.player_house].governance = 1000.0
 	main.game_menu.technology_panel.refresh()
@@ -131,7 +132,15 @@ func run() -> void:
 	await process_frame
 	check(main.house_prestige.on_court_appointment(session.player_house) == OK,"court appointment event accepted")
 	main.house_status_hud._refresh()
-	check(main.house_status_hud.values.prestige.text == "60","prestige display updates after an event")
+	check(main.house_status_hud.values.prestige.text == "%.1f" % main.house_prestige.value_for(session.player_house) and main.house_prestige.baseline_for(session.player_house) >= 60.0,"court award raises baseline and HUD shows fractional prestige")
+	main.house_status_hud.icon_hint.touch_mode = true
+	var prestige_touch := InputEventScreenTouch.new()
+	prestige_touch.pressed = true
+	main.house_status_hud.metric_cells.prestige.gui_input.emit(prestige_touch)
+	check(main.house_status_hud.icon_hint.caption.text == main.house_prestige.description_for(session.player_house), "prestige icon displays the current baseline and its sources")
+	await capture_png("prestige_baseline_hint")
+	main.house_status_hud.icon_hint.clear()
+	main.house_status_hud.icon_hint.touch_mode = false
 	# Mutate real session state so a loader that merely reloads defaults cannot pass.
 	var changed_id: String = main.governance_registry.districts.keys()[0]
 	var hojo_record: Dictionary
@@ -152,9 +161,9 @@ func run() -> void:
 	check(not saved.is_empty(),"saved payload validates")
 	if saved.is_empty(): printerr(session.last_error); quit(1); return
 	check(saved.clock.day == 1 and saved.clock.month == 3,"calendar crosses February")
-	check(saved.version == 19 and saved.has("cpu") and saved.diplomacy.has("wars") and saved.has("buildings") and saved.has("building_history") and saved.has("armies") and saved.armies.has("office_defenses") and saved.retainers.has("officer_districts") and saved.territories.districts.values()[0].has("sortie_troops"),"current save format includes CPU plans and allied war participation")
+	check(saved.version == 30 and saved.has("technology_orders") and saved.has("cpu") and saved.diplomacy.has("wars") and saved.diplomacy.has("spy_networks") and saved.has("buildings") and saved.has("building_history") and saved.has("armies") and saved.armies.has("occupations") and saved.retainers.has("officer_districts") and saved.territories.districts.values()[0].has("occupation_stability"),"current save format includes espionage and occupation progress")
 	check(saved.research[session.player_house].has("commerce") and not saved.retainers.technology[session.player_house].has("agriculture"),"commerce branch and shared governance points are saved")
-	check(saved.prestige[session.player_house] == 60,"changed prestige is saved")
+	check(is_equal_approx(float(saved.prestige[session.player_house]), main.house_prestige.value_for(session.player_house)) and saved.prestige_court_ranks[session.player_house] == 1,"fractional prestige and awarded rank are saved")
 	check(saved.retainers.loyalty_state.size() == session.catalog.officer_ids.size(),"all officer loyalty records are saved")
 	check(saved.research.has(session.player_house),"research state is saved")
 	check(saved.retainers.has("appointments") and saved.retainers.has("technology"),"retainer state is saved")
@@ -212,7 +221,7 @@ func run() -> void:
 	check(session.relations == saved.relations,"diplomacy restored")
 	check(main.retainer_management.appointments == saved.retainers.appointments,"appointments restored")
 	check(main.retainer_management.technology == saved.retainers.technology,"technology restored")
-	check(main.house_prestige.values == saved.prestige,"prestige restored")
+	check(saved.prestige.keys().all(func(id): return is_equal_approx(main.house_prestige.value_for(id), float(saved.prestige[id]))) and saved.prestige_court_ranks.keys().all(func(id): return int(main.house_prestige.court_ranks[id]) == int(saved.prestige_court_ranks[id])),"fractional prestige and awarded ranks restored")
 	check(main.retainer_management.loyalty_state == saved.retainers.loyalty_state,"loyalty state restored")
 	check(main.technology_tree.researched == saved.research,"research state restored")
 	for id in saved.territories.districts:

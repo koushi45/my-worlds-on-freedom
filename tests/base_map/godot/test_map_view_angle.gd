@@ -40,7 +40,6 @@ func run() -> void:
     check(main.map_view.view_camera.current,"3D camera current")
     check(not main.camera.enabled,"control camera does not transform HUD")
     check(main.shared_road_layer.get_parent()==main.hex_tile_layer,"roads stay children of hex layer")
-    check(main.hex_tile_layer.terrain_legend.get_viewport()==root,"legend stays in screen viewport")
     check(main.tile_root.get_viewport()==main.map_view.source_view,"ground layers use source atlas")
     var allocations: Vector2i = main.map_view.source_view.size
     for region in [{"name":"mixed","point":Vector2(4480,5504)},{"name":"mountain","point":Vector2(4740,5504)},{"name":"coast","point":Vector2(3460,5880)}]:
@@ -191,10 +190,9 @@ func run() -> void:
     main.army_campaign.units.erase("view_probe")
     main.camera.position=Vector2(4480,5504)
     for percent in [600,800]:
-        main.game_menu._select_zoom(percent)
+        main._zoom_at(percent/100.0,main.get_viewport_rect().size*0.5)
         for i in 60: await process_frame
-        check(is_equal_approx(main.camera.zoom.x,percent/100.0),"menu zoom reaches selected percentage")
-        check(main.game_menu.zoom_label.text.contains(str(percent)),"menu reflects current zoom")
+        check(is_equal_approx(main.camera.zoom.x,percent/100.0),"map zoom reaches requested percentage")
     var saved: Dictionary = session.capture(main)
     check(saved.camera.oblique,"save stores visible 3D mode")
     main.set_oblique(false);main.set_map_zoom(0.5)

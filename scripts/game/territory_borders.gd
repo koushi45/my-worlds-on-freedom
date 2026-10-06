@@ -41,6 +41,11 @@ var coastline_only_ids: Dictionary = {}
 var review_highlights: Array = []
 var review_color := Color(1.0, 0.0, 0.0, 0.5)
 var disconnected_offices: Dictionary = {}
+var fade_index: Dictionary = {}
+var fade_geometry: Dictionary = {}
+var pending_district_houses: Dictionary = {}
+var pending_country_houses: Dictionary = {}
+var band_update_queued := false
 
 func _ready() -> void:
     z_index = 22
@@ -134,6 +139,9 @@ func fill_mesh_for(id: String) -> ArrayMesh:
     return mesh
 
 func rebuild() -> void:
+    fade_geometry.clear()
+    pending_district_houses.clear()
+    pending_country_houses.clear()
     for node in neutral_nodes: node.queue_free()
     for node in band_nodes: node.queue_free()
     neutral_nodes.clear()
@@ -187,7 +195,8 @@ func rebuild() -> void:
     queue_redraw()
 
 func _create_band_nodes(countries: bool, target: Array[MeshInstance2D], houses: Array[String] = []) -> void:
-    var index: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/derived/scenarios/territory_fades/index.json"))
+    if fade_index.is_empty(): fade_index = JSON.parse_string(FileAccess.get_file_as_string("res://data/derived/scenarios/territory_fades/index.json"))
+    var index := fade_index
     var records: Dictionary = country_projected if countries else projected
     var by_house: Dictionary = country_bands_by_house if countries else district_bands_by_house
     var records_by_house := {}
@@ -206,18 +215,23 @@ func _create_band_nodes(countries: bool, target: Array[MeshInstance2D], houses: 
             if not index.has(key):
                 push_error("Territory fade mesh is missing: " + key)
                 continue
-            var stream := FileAccess.open(index[key],FileAccess.READ)
-            if stream == null:
-                push_error("Cannot open territory fade mesh: " + key)
-                continue
-            var data := stream.get_buffer(stream.get_length()).to_float32_array()
-            var projected_points := {}
-            for i in range(0,data.size(),3):
-                var point := Vector2(data[i],data[i+1])
-                var distance := data[i+2]
-                if not projected_points.has(point): projected_points[point] = main.elevation.project(point)
-                vertices.append(projected_points[point])
-                distances.append(Vector2(distance,0))
+            if not fade_geometry.has(key):
+                var stream := FileAccess.open(index[key],FileAccess.READ)
+                if stream == null:
+                    push_error("Cannot open territory fade mesh: " + key)
+                    continue
+                var data := stream.get_buffer(stream.get_length()).to_float32_array()
+                var projected_points := {}
+                var region_vertices := PackedVector2Array()
+                var region_distances := PackedVector2Array()
+                for i in range(0,data.size(),3):
+                    var point := Vector2(data[i],data[i+1])
+                    if not projected_points.has(point): projected_points[point] = main.elevation.project(point)
+                    region_vertices.append(projected_points[point])
+                    region_distances.append(Vector2(data[i+2],0))
+                fade_geometry[key] = {"vertices":region_vertices, "distances":region_distances}
+            vertices.append_array(fade_geometry[key].vertices)
+            distances.append_array(fade_geometry[key].distances)
             loaded_fade_regions += 1
             region_count += 1
         var band_arrays: Array = []
@@ -231,6 +245,7 @@ func _create_band_nodes(countries: bool, target: Array[MeshInstance2D], houses: 
         band_node.material = _band_style_for(house_id)
         band_node.set_meta("fade_regions", region_count)
         band_node.show_behind_parent = true
+        band_node.visible = countries == country_mode
         add_child(band_node)
         band_nodes.append(band_node)
         target.append(band_node)
@@ -268,15 +283,33 @@ func update_district_owner(district_id: String) -> void:
     if previous_house == house_id: return
     record.house_id = house_id
     record.state = GameSession.relation(GameSession.player_house, house_id)
-    _refresh_band_houses(false, [previous_house, house_id])
+    pending_district_houses[previous_house] = true
+    pending_district_houses[house_id] = true
     for country_id in country_records:
         if country_records[country_id].representative_district != district_id: continue
         country_records[country_id].house_id = house_id
         country_records[country_id].state = record.state
         country_projected[country_id].house_id = house_id
         country_projected[country_id].state = record.state
-        _refresh_band_houses(true, [previous_house, house_id])
+        pending_country_houses[previous_house] = true
+        pending_country_houses[house_id] = true
+    if not band_update_queued:
+        band_update_queued = true
+        _flush_band_updates.call_deferred()
     queue_redraw()
+
+func _flush_band_updates() -> void:
+    band_update_queued = false
+    var stamp := Time.get_ticks_usec()
+    var districts: Array[String] = []
+    districts.assign(pending_district_houses.keys())
+    var countries: Array[String] = []
+    countries.assign(pending_country_houses.keys())
+    pending_district_houses.clear()
+    pending_country_houses.clear()
+    if not districts.is_empty(): _refresh_band_houses(false, districts)
+    if not countries.is_empty(): _refresh_band_houses(true, countries)
+    if is_instance_valid(main.cpu_controller): main.cpu_controller.record_profile("visual:ownership_bands", stamp)
 
 func _country_center(polygons: Array) -> Vector2:
     var weighted := Vector2.ZERO

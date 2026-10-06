@@ -114,6 +114,22 @@ func test_melee(main: Node2D, army: Node2D, template: Dictionary, enemy_house: S
 	high_scores.tactics = old_high; low_scores.tactics = old_low
 	return true
 
+func declare_route_wars(main: Node, army: Node, actor: String, start: String, target: String) -> void:
+	var grid = preload("res://scripts/map/hex_grid.gd")
+	var session: Node = root.get_node("GameSession")
+	for node in army.route(start, target):
+		var owner: String = army.cell_owner(grid.cell_at(army.node_point(node)))
+		if owner.is_empty() or owner == actor or session.relation(actor, owner) == "enemy": continue
+		var prestige: int = main.house_prestige.value_for(actor)
+		main.diplomacy.last_actions.erase(actor + ">" + owner)
+		if session.relation(actor, owner) == "ally":
+			main.diplomacy.act("break_ally", actor, owner)
+			main.diplomacy.last_actions.erase(actor + ">" + owner)
+		main.diplomacy.act("war", actor, owner)
+		# Movement tests isolate loyalty; war penalties are covered by test_war_access.
+		main.house_prestige.values[actor] = prestige
+
+
 func run() -> void:
 	change_scene_to_file("res://scenes/main/main.tscn")
 	var deadline := Time.get_ticks_msec() + 45000
@@ -122,6 +138,7 @@ func run() -> void:
 	var main = current_scene
 	main.set_oblique(false)
 	main.game_clock.set_process(false)
+	main.cpu_controller.enabled = false
 	var army = main.army_campaign
 	army.set_process(false)
 	var grid_script = preload("res://scripts/map/hex_grid.gd")
@@ -189,8 +206,11 @@ func run() -> void:
 	main.army_panel._open_officer_roster(0)
 	if not require(main.army_panel.right_panel.visible, "commander opens right-side officer list"): return
 	await capture("army_commander")
-	(main.army_panel.roster.get_child(0) as Button).pressed.emit()
-	if not require(main.army_panel.selected_officers[0] == officer_ids[0] and not main.army_panel.right_panel.visible, "officer selection closes right-side list"): return
+	var chosen_commander: String = main.army_panel.selected_officers[0]
+	for button in main.army_panel.roster.get_children():
+		if button is Button and button.text.begins_with(main.officer_registry.lookup[chosen_commander].display_name + "　"):
+			button.pressed.emit(); break
+	if not require(main.army_panel.selected_officers[0] == chosen_commander and not main.army_panel.right_panel.visible, "officer selection closes right-side list"): return
 	main.army_panel.hide_panel()
 	main.district_economy.house_resources[house_id].provisions = starting * 5
 	var unit_id: String = army.dispatch(district_id, [officer_ids[0]], 25, false, false)
@@ -345,6 +365,7 @@ func run() -> void:
 	if not require(army.icon_color_key({"house_id":ally_house}) == "green" and army.icon_color_key({"house_id":enemy_house_for_color}) == "red", "allied and enemy units use relation colors"): return
 	if not require(origin_cell == grid.cell_at(main.district_office_layer.office_point(district_id)), "district node is the office tile"): return
 	var tile_target: String = grid.key(origin_cell + Vector2i(3, 0))
+	declare_route_wars(main, army, house_id, army.units[unit_id].site_id, tile_target)
 	if not require(army.order(unit_id, tile_target), "empty tile target accepted"): return
 	var forward: Vector2 = (main.elevation.project(army.node_point(army.units[unit_id].next_site)) - main.elevation.project(army.unit_position(army.units[unit_id]))).normalized()
 	if not require(Vector2.UP.rotated(army.facing_angle(army.units[unit_id])).dot(forward) > 0.99, "totsu faces the marching direction"): return
@@ -367,6 +388,7 @@ func run() -> void:
 	army.units[unit_id].next_site = ""
 	army.units[unit_id].orders.clear()
 	var bend: Array[String] = [grid.key(origin_cell + Vector2i(1, 0)), grid.key(origin_cell + Vector2i(1, 1)), grid.key(origin_cell + Vector2i(2, 1))]
+	for node in bend: declare_route_wars(main, army, house_id, army.units[unit_id].site_id, node)
 	if not require(army.order_path(unit_id, bend), "hand-drawn hex path accepted"): return
 	if not require(army.units[unit_id].next_site == bend[0] and army.units[unit_id].orders[0] == bend[1] and grid.cell_at(army.node_point(army.units[unit_id].orders.back())) == origin_cell + Vector2i(2, 1), "drawn bend is kept instead of replaced by a shortest route"): return
 	if not require(session.save_game(main, 1) == OK and session.read_save(1).armies.units[unit_id].orders == army.units[unit_id].orders, "hand-drawn bends survive save and load"): return
@@ -375,6 +397,13 @@ func run() -> void:
 	army._process(0.02)
 	if not require(is_zero_approx(float(army.units[unit_id].progress)), "visual processing alone does not advance movement"): return
 	main.game_clock.advance_real_seconds(1.0 / 30.0)
+	# Movement now waits for the mandatory current-day state, retaining elapsed time.
+	var cpu: Node = main.cpu_controller
+	cpu.enabled = false
+	while cpu.has_pending_daily_work():
+		cpu._process(0.0)
+		await process_frame
+	main.game_clock.advance_real_seconds(0.0)
 	if not require(army.units[unit_id].site_id == army.units[unit_id].origin and is_equal_approx(float(army.units[unit_id].progress), 1.0 / (30.0 * first_leg_days)), "first 1/30 second applies destination terrain speed"): return
 	main.game_clock.paused = true
 	main.game_clock.advance_real_seconds(0.10)
@@ -505,6 +534,7 @@ func run() -> void:
 	blocker.site_id = shooter.site_id; blocker.next_site = grid.key(origin_cell + Vector2i(0, 1)); blocker.progress = 0.3
 	var partial_hits: Dictionary = army._bow_volley_hits("shooter", "victim", collateral_profile)
 	if not require(partial_hits.has("blocker") and partial_hits.has("victim"), "partial obstruction splits the volley between ally and enemy"): return
+	if not test_bow_spatial_equivalence(army, shooter, enemy_house_for_color, ally_house): return
 	if not test_melee(main, army, shooter, enemy_house_for_color, ally_house): return
 	army.units = original_units
 	army.units[unit_id].melee_damage = 0.375
@@ -573,13 +603,11 @@ func run() -> void:
 	main.camera.zoom = Vector2.ONE * 2.0
 	main.hex_tile_layer.update_view(main.get_visible_world_rect(), main.camera.zoom.x)
 	if not require(main.hex_tile_layer.visible, "hex grid shown at 200 percent"): return
-	if not require(main.hex_tile_layer.terrain_legend.visible, "terrain legend shown at 200 percent"): return
 	if not require(main.shared_road_layer.is_visible_in_tree() or main.developer_tools.road_layer.is_visible_in_tree(), "roads visible at 200 percent"): return
 	await process_frame
 	await capture("hex_tiles")
 	main.hex_tile_layer.update_view(main.get_visible_world_rect(), 1.99)
 	if not require(not main.hex_tile_layer.visible, "zooming out hides the grid again"): return
-	if not require(not main.hex_tile_layer.terrain_legend.visible, "terrain legend hidden below 200 percent"): return
 	main.hex_tile_layer.update_view(main.get_visible_world_rect(), main.camera.zoom.x)
 	main.camera.position.y -= 400
 	main.hex_tile_layer.update_view(main.get_visible_world_rect(), main.camera.zoom.x)
@@ -597,6 +625,7 @@ func run() -> void:
 			break
 	var target: String = army.graph["district:" + district_id][0]
 	main.governance_registry.sites[target].house_id = house_id
+	declare_route_wars(main, army, house_id, army.units[unit_id].site_id, target)
 	if not require(army.order(unit_id, target), "hex target accepted"): return
 	army._march_step(1000.0)
 	if not require(army.units[unit_id].site_id == target, "unit reaches the next site"): return
@@ -613,7 +642,7 @@ func run() -> void:
 		session.relations[session.pair(house_id, enemy_house)] = "enemy"
 		army.garrisons[enemy_site] = 10
 		var attack_id: String = army.dispatch(district_id, [officer_ids[0]], 25, false, false)
-		if not require(not attack_id.is_empty(), "attack unit dispatched"): return
+		if not require(not attack_id.is_empty(), "attack unit dispatched: " + army.last_error): return
 		# Isolate siege arithmetic from route travel, which was tested above.
 		army.units[attack_id].site_id = enemy_site
 		army._besiege(attack_id)
@@ -632,7 +661,7 @@ func run() -> void:
 	if occupation_id.is_empty(): occupation_id = army.dispatch(district_id, [officer_ids[0]], 25, false, false)
 	if not require(not occupation_id.is_empty(), "occupation unit dispatched"): return
 	army.units[occupation_id].site_id = office_node
-	army.office_defenses[enemy_district] = 25
+	army.units[occupation_id].soldiers = 1000
 	army._arrive(occupation_id)
 	if not require(army.occupying_house(enemy_district) == house_id and main.governance_registry.districts[enemy_district].house_id == defender_house, "office arrival starts occupation without immediate capture"): return
 	main.army_panel.show_unit(occupation_id)
@@ -653,14 +682,14 @@ func run() -> void:
 	if not require(not main.dragging, "GUI-consumed mouse release clears stale map dragging"): return
 	main.army_panel.hide_panel()
 	var occupation_save: Dictionary = session.capture(main)
-	if not require(session.validate(occupation_save) and int(occupation_save.armies.office_defenses[enemy_district]) == 25, "occupation defense is saved and validated"): return
-	if not require(session.save_game(main, 1) == OK and int(session.read_save(1).armies.office_defenses[enemy_district]) == 25, "occupation defense round trips through a save file"): return
+	if not require(session.validate(occupation_save) and occupation_save.armies.occupations.has(enemy_district), "occupation claimant and progress are saved and validated"): return
+	if not require(session.save_game(main, 1) == OK and session.read_save(1).armies.occupations.has(enemy_district), "occupation progress round trips through a save file"): return
 	army.on_day_advanced(1546, 2, 2)
-	if not require(int(army.office_defenses[enemy_district]) > 0 and int(army.office_defenses[enemy_district]) < 25 and main.governance_registry.districts[enemy_district].house_id == defender_house, "partial office damage keeps occupation in progress"): return
-	for day in range(3, 10):
-		if int(army.office_defenses[enemy_district]) == 0: break
+	if not require(float(army.occupations[enemy_district].progress) > 0.0 and main.governance_registry.districts[enemy_district].house_id == defender_house, "partial progress keeps occupation in progress"): return
+	for day in range(3, 25):
+		if main.governance_registry.districts[enemy_district].house_id == house_id: break
 		army.on_day_advanced(1546, 2, day)
-	if not require(int(army.office_defenses[enemy_district]) == 0 and main.governance_registry.districts[enemy_district].house_id == house_id, "office defense reaching zero captures the district"): return
+	if not require(main.governance_registry.districts[enemy_district].house_id == house_id and float(main.governance_registry.districts[enemy_district].occupation_stability) == 0.0, "completed control captures the district with unstable governance"): return
 	if not require(army.occupying_house(enemy_district).is_empty(), "occupation ends after capture"): return
 	for site_id in main.governance_registry.districts[enemy_district].get("site_ids", []):
 		if not require(main.governance_registry.sites[site_id].house_id == house_id, "office capture transfers district buildings"): return
@@ -670,3 +699,51 @@ func run() -> void:
 	await process_frame
 	print("Army campaign dispatch, hex movement, return and save passed")
 	quit(0)
+
+func test_bow_spatial_equivalence(army: Node, template: Dictionary, enemy: String, ally: String) -> bool:
+	var previous: Dictionary = army.units
+	var width: float = army.BOW_RANGE + army.BOW_HIT_RADIUS + 0.000001
+	# Straddle positive/negative bucket edges, with near ties, allies and distant
+	# formations. Compare with an exhaustive target scan using the same rules.
+	for origin in [Vector2(-width - 0.001, -0.001), Vector2(width - 0.001, width + 0.001)]:
+		var positions := {}
+		var initial := {}
+		for i in range(36):
+			var id := "spatial_%d" % i
+			var unit: Dictionary = template.duplicate(true)
+			unit.house_id = enemy if i % 3 == 1 else (ally if i % 3 == 2 else template.house_id)
+			unit.soldiers = 1000; unit.bow_reload = 0.0; unit.bow_damage = 0.0
+			unit.facing = float(i) * 0.4
+			initial[id] = unit
+			positions[id] = origin + Vector2((i % 6) - 2, (i / 6) - 2) * width * 0.47
+		army.units = initial.duplicate(true)
+		var engagements: Dictionary = army.melee_engagements(positions)
+		var damage := {}
+		for id in army.units:
+			var unit: Dictionary = army.units[id]
+			if engagements.has(id): continue
+			var target := ""
+			var best := -1.0
+			var profile := {}
+			for other in army.units:
+				if other == id or not army._enemy_armies(unit, army.units[other]): continue
+				var candidate: Dictionary = army._bow_profile_offset(unit, positions[other] - positions[id])
+				if not candidate.in_range: continue
+				var value: float = candidate.accuracy * candidate.arrows / candidate.reload
+				if value > best: best = value; target = other; profile = candidate
+			if target.is_empty(): continue
+			unit.bow_reload = profile.reload
+			var hits: Dictionary = army._bow_volley_hits(id, target, profile, positions)
+			for hit in hits: damage[hit] = float(damage.get(hit, 0.0)) + float(hits[hit])
+		army._apply_combat_damage(damage, "bow_damage")
+		var expected: Dictionary = army.units.duplicate(true)
+		if not require(expected.values().any(func(unit: Dictionary): return float(unit.bow_reload) > 0.0), "spatial equivalence fixture actually fires volleys"):
+			army.units = previous
+			return false
+		army.units = initial.duplicate(true)
+		army._bow_step(army.MOVE_STEP, positions)
+		if not require(army.units == expected, "spatial shooting matches exhaustive target selection across negative and positive bucket edges"):
+			army.units = previous
+			return false
+	army.units = previous
+	return true

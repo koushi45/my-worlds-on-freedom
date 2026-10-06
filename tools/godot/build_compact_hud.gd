@@ -1,21 +1,31 @@
 extends SceneTree
 ## Bake small artwork and complete ornamental frames; never resize them in game.
 const SIZES := [64, 96, 128, 192, 256]
-const FRAMES := {"identity": Vector2i(120, 86), "house": Vector2i(590, 40), "technology": Vector2i(240, 40), "time": Vector2i(246, 48), "council": Vector2i(320, 224), "council_management": Vector2i(712, 606)}
+const FRAMES := {"identity": Vector2i(120, 86), "house": Vector2i(590, 40), "technology": Vector2i(240, 40), "time": Vector2i(246, 48), "council": Vector2i(320, 224), "council_management": Vector2i(712, 576)}
 const DIRECTORY := "res://assets/ui/hud/compact/"
 
 func _initialize() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(DIRECTORY))
+	if "--council-only" in OS.get_cmdline_user_args():
+		_bake_frames(["council_management"])
+		print("Council frame: five native resolutions baked")
+		quit()
+		return
 	for name in ["koban", "rice", "people", "spears", "fan", "security", "castle", "governance", "diplomacy", "military"]:
 		_bake_icon(name, "res://assets/ui/hud/" + name + ".png")
 	for name in ["play", "pause", "slower", "faster"]:
 		_bake_icon(name, "res://assets/ui/time/" + name + "_256.png")
 	for name in ["house", "security", "office", "people", "market", "rice", "construction", "irrigation", "governor", "infrastructure", "plus"]:
 		_bake_icon("district_" + name, "res://assets/ui/district/" + name + "_256.png")
+	_bake_frames(FRAMES.keys())
+	print("Compact HUD and council: 125 icon PNGs and 30 complete frame PNGs baked")
+	quit()
+
+func _bake_frames(names: Array) -> void:
 	var frame := Image.load_from_file("res://assets/ui/hud/frame_256.png")
 	for pixels in SIZES:
 		var factor := float(pixels) / 64.0
-		for name in FRAMES:
+		for name in names:
 			var dimensions: Vector2i = Vector2i(Vector2(FRAMES[name]) * factor)
 			var output := Image.create(dimensions.x, dimensions.y, false, Image.FORMAT_RGBA8)
 			var edge := roundi(10 * factor)
@@ -29,8 +39,6 @@ func _initialize() -> void:
 					piece.resize(xs[x+1]-xs[x], ys[y+1]-ys[y], Image.INTERPOLATE_LANCZOS)
 					output.blit_rect(piece, Rect2i(Vector2i.ZERO, piece.get_size()), Vector2i(xs[x], ys[y]))
 			assert(output.save_png(DIRECTORY + "%s_%d.png" % [name, pixels]) == OK)
-	print("Compact HUD and council: 125 icon PNGs and 30 complete frame PNGs baked")
-	quit()
 
 func _bake_icon(name: String, source_path: String) -> void:
 	var source := Image.load_from_file(source_path)

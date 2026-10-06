@@ -5,17 +5,21 @@ signal changed(district_id: String)
 
 var registry: RefCounted
 var economy: Node
+var technology_orders: Node
 var buildings: Node
+var diplomacy: Node
 
 func setup(governance: RefCounted, district_economy: Node) -> void:
 	registry = governance
 	economy = district_economy
 	for record in registry.districts.values():
 		record.infrastructure = 1
+		record.tax_rate = 40
 		record.devastation = 0
 		record.autonomy = 0
 		record.defense = 1
 		record.occupation_stability = 100.0
+		record.loot_available_day = 0
 		record.sortie_troops = sortie_capacity(record)
 
 func sortie_capacity(record: Dictionary) -> int:
@@ -54,7 +58,9 @@ func on_day_advanced(_year: int, _month: int, day: int) -> void:
 		if float(record.get("occupation_stability", 100.0)) < 100.0: continue
 		var capacity := sortie_capacity(record)
 		var previous := int(record.sortie_troops)
-		record.sortie_troops = mini(capacity, previous + maxi(1, ceili(capacity * 0.01)))
+		var recovery := maxi(1, ceili(capacity * 0.01))
+		if diplomacy != null and diplomacy.effect_active("sabotage_recruitment", record.house_id): recovery = floori(recovery * 0.8)
+		record.sortie_troops = mini(capacity, previous + recovery)
 		if int(record.sortie_troops) != previous: changed.emit(district_id)
 
 func repair(district_id: String, house_id: String) -> Error:
@@ -65,5 +71,13 @@ func repair(district_id: String, house_id: String) -> Error:
 	if float(economy.house_resources[house_id].money) < cost: return ERR_UNAVAILABLE
 	economy.house_resources[house_id].money -= cost
 	record.devastation = 0
+	changed.emit(district_id)
+	return OK
+
+func set_tax_rate(district_id: String, house_id: String, rate: int) -> Error:
+	if not _owned(district_id, house_id): return ERR_UNAUTHORIZED
+	if rate < 20 or rate > 60 or rate % 10 != 0: return ERR_INVALID_PARAMETER
+	if technology_orders != null and rate > technology_orders.tax_limit(district_id): return ERR_UNAVAILABLE
+	registry.districts[district_id].tax_rate = rate
 	changed.emit(district_id)
 	return OK

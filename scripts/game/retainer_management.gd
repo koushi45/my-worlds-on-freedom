@@ -88,7 +88,7 @@ func place_officer(house_id: String, officer_id: String, district_id: String) ->
 	if not district_id.is_empty() and (not governance.districts.has(district_id) or governance.districts[district_id].house_id != house_id): return ERR_UNAUTHORIZED
 	if army_campaign != null:
 		for unit in army_campaign.units.values():
-			if officer_id in unit.officers: return ERR_BUSY
+			if officer_id in army_campaign.officer_pool(unit): return ERR_BUSY
 	if district_id.is_empty(): officer_districts.erase(officer_id)
 	else: officer_districts[officer_id] = district_id
 	updated.emit()
@@ -110,6 +110,20 @@ func ruler_id(house_id: String) -> String:
 func role_of(house_id: String, officer_id: String) -> String:
 	if officer_id == ruler_id(house_id) and not officer_id.is_empty(): return "大名"
 	return appointments.get(house_id, {}).get(officer_id, "直臣")
+
+func officers_for_house(house_id: String) -> Array[String]:
+	var result: Array[String] = []
+	var ruler := ruler_id(house_id)
+	if not ruler.is_empty() and officers.lookup.has(ruler): result.append(ruler)
+	for officer_id in house_members.get(house_id, []):
+		if officer_id not in result and officers.lookup.has(officer_id): result.append(officer_id)
+	return result
+
+func governor_candidates(house_id: String) -> Array[String]:
+	var result: Array[String] = []
+	for officer_id in officers_for_house(house_id):
+		if _can_govern(house_id, officer_id): result.append(officer_id)
+	return result
 
 func assign_role(house_id: String, officer_id: String, role: String) -> Error:
 	if not house_members.has(house_id) or officer_id not in house_members[house_id] or role not in ROLES:
@@ -154,7 +168,7 @@ func loyalty_for(house_id: String, officer_id: String) -> int:
 		if officer_id in province_governors.values(): result += 10
 		elif officer_id in district_governors.values(): result += 5
 		if prestige != null:
-			var prestige_difference: int = prestige.value_for(house_id) - 50
+			var prestige_difference: int = roundi(prestige.value_for(house_id) - 50.0)
 			if prestige_difference != 0:
 				result += signi(prestige_difference) * mini(15, maxi(1, roundi(absi(prestige_difference) * 0.3)))
 		if technology_tree != null:
@@ -165,17 +179,27 @@ func is_disloyal(house_id: String, officer_id: String) -> bool:
 	return loyalty_for(house_id, officer_id) < required_loyalty_for(officer_id)
 
 func _can_govern(house_id: String, officer_id: String) -> bool:
-	return house_members.has(house_id) and officer_id in house_members[house_id] and role_of(house_id, officer_id) != "直臣"
+	return can_place_officer(house_id, officer_id) and role_of(house_id, officer_id) != "直臣"
 
-func appoint_district_governor(house_id: String, officer_id: String, district_id: String) -> Error:
+func appoint_district_governor(house_id: String, officer_id: String, district_id: String, defer_recount := false) -> Error:
 	if not _can_govern(house_id, officer_id) or not governance.districts.has(district_id) or governance.districts[district_id].house_id != house_id: return ERR_INVALID_PARAMETER
 	district_governors[district_id] = officer_id
 	_set_governor(governance.districts[district_id], officer_id, "郡代")
+	if defer_recount: governance.request_assignment_recount()
+	else: governance.recount_assignments()
+	updated.emit()
+	return OK
+
+func clear_district_governor(house_id: String, district_id: String) -> Error:
+	if not governance.districts.has(district_id): return ERR_INVALID_PARAMETER
+	if governance.districts[district_id].house_id != house_id: return ERR_UNAUTHORIZED
+	district_governors.erase(district_id)
+	governance.districts[district_id].governor = null
 	governance.recount_assignments()
 	updated.emit()
 	return OK
 
-func appoint_province_governor(house_id: String, officer_id: String, province: String) -> Error:
+func appoint_province_governor(house_id: String, officer_id: String, province: String, defer_recount := false) -> Error:
 	if not _can_govern(house_id, officer_id): return ERR_INVALID_PARAMETER
 	var found := false
 	for district in governance.districts.values():
@@ -185,7 +209,8 @@ func appoint_province_governor(house_id: String, officer_id: String, province: S
 			_set_governor(district, officer_id, "国代")
 	if not found: return ERR_INVALID_PARAMETER
 	province_governors[house_id + "|" + province] = officer_id
-	governance.recount_assignments()
+	if defer_recount: governance.request_assignment_recount()
+	else: governance.recount_assignments()
 	updated.emit()
 	return OK
 
@@ -287,16 +312,17 @@ func _governed_districts(house_id: String, officer_id: String) -> Array:
 	for district_id in governance.districts:
 		var district: Dictionary = governance.districts[district_id]
 		if district.house_id != house_id: continue
+		if not district.governor is Dictionary or district.governor.get("officer_id") != officer_id: continue
 		if (district_governors.get(district_id) == officer_id if district_governors.has(district_id) else province_governors.get(house_id + "|" + district.province) == officer_id):
 			result.append(district_id)
 	return result
 
 func _preferred_new_house(from_house: String) -> String:
 	var target := ""
-	var best := -1
+	var best := -1.0
 	for house_id in house_members:
 		if house_id == from_house or rebel_houses.has(house_id): continue
-		var value: int = prestige.value_for(house_id) if prestige != null else 50
+		var value: float = prestige.value_for(house_id) if prestige != null else 50.0
 		if value > best or (value == best and (target.is_empty() or house_id < target)):
 			target = house_id
 			best = value
@@ -316,7 +342,7 @@ func declare_independence(house_id: String, officer_id: String, holdings: Array)
 	technology[rebel_id] = {"governance":0.0,"diplomacy":0.0,"military":0.0}
 	if technology_tree != null: technology_tree.researched[rebel_id] = {"governance":[],"agriculture":[],"commerce":[]}
 	economy.house_resources[rebel_id] = {"money":0.0,"provisions":0}
-	if prestige != null: prestige.values[rebel_id] = 50
+	if prestige != null: prestige.register_house(rebel_id)
 	_remove_governorships(officer_id)
 	house_members[house_id].erase(officer_id)
 	officer_districts.erase(officer_id)

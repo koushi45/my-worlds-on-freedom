@@ -20,6 +20,13 @@ func run() -> void:
 	retainers.setup(registry, officers, economy)
 	var tree = preload("res://scripts/game/technology_tree.gd").new()
 	tree.setup(registry, retainers)
+	var baseline_modifiers: Dictionary = tree.modifiers("takeda")
+	check(baseline_modifiers.is_read_only(), "shared research effects cannot be mutated by callers")
+	var saved_research: Dictionary = tree.researched.takeda.duplicate(true)
+	tree.researched.takeda.commerce.append("商人保護")
+	check(is_equal_approx(tree.modifiers("takeda").money, 1.05), "in-place research changes invalidate effect cache")
+	tree.researched.takeda = saved_research
+	check(is_equal_approx(tree.modifiers("takeda").money, 1.0), "loaded or replaced research state invalidates effect cache")
 	retainers.technology_tree = tree
 	economy.technology_tree = tree
 	var house := "takeda"
@@ -45,7 +52,7 @@ func run() -> void:
 	check(tree.research(house, "governance", "武家諸法度") == OK and retainers.loyalty_for(house, officer_id) == 65, "house law adds twenty loyalty")
 	retainers.technology[house].governance = 10000.0
 	check(not retainers.technology[house].has("agriculture"), "agriculture uses governance points instead of a separate pool")
-	check(tree.BRANCHES.commerce.is_empty() and tree.research(house, "commerce", "未設定") == ERR_INVALID_PARAMETER, "commerce branch is present without research nodes")
+	check(tree.BRANCHES.commerce.size() == 8 and tree.research(house, "commerce", "未設定") == ERR_INVALID_PARAMETER, "commerce branch has eight ordered research nodes")
 	var original_food := economy.income_for(district, "agriculture")
 	var original_points: float = retainers.technology[house].governance
 	for technology_id in tree.BRANCHES.agriculture:

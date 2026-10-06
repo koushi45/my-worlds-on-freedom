@@ -4,7 +4,7 @@
 
 Windows版の初回起動サイズは1920×1080。オプションでは1280×720、1920×1080、2560×1440、3840×2160（4K）を選択し、適用時に即座にウィンドウをリサイズする。選択値は `user://display_settings.cfg` に保存して次回起動時に復元する。
 
-メインマップでは Felix Mendelssohn の「Symphony no. 3 'Scottish', Op. 56 - I. Andante con moto」（Musopen Symphony演奏）をループ再生する。MusopenでPublic Domain Mark 1.0が表示された配布音源をOGG Vorbisへ変換して同梱し、曲名・演奏者・配布元・権利表示・改変内容を `assets/audio/scottish_symphony_i_andante_con_moto_LICENSE.txt` に記録する。オプションではBGM音量を0～100%で変更でき、初期値は40%。解像度と同じ設定ファイルへ保存し、再生中にも即時反映する。
+メインマップでは Felix Mendelssohn の「Symphony no. 3 'Scottish', Op. 56 - I. Andante con moto」（Musopen Symphony演奏）と、Ludwig van Beethoven の「月光ソナタ 第1楽章 / Op. 27 No. 2 - I. Adagio sostenuto」（Paul Pitman演奏、Musopen提供）と、Richard Wagner の「婚礼の合唱 / Wagner Bridal Chorus」（Kevin MacLeod制作のパイプオルガン版）を、この順で繰り返し再生する。スコットランド交響曲はMusopenでPublic Domain Mark 1.0が表示された音源をOGG Vorbisへ変換し、月光は録音の商用利用・再配布許諾が確認されたWikimedia CommonsのOGG Vorbisをそのまま同梱する。曲名・演奏者・配布元・権利表示・改変内容・ハッシュは `assets/audio/scottish_symphony_i_andante_con_moto_LICENSE.txt` と `assets/audio/moonlight_sonata_i_adagio_sostenuto_LICENSE.txt` に記録し、オプションにもクレジットと配布元へのリンクを表示する。婚礼の合唱はIncompetechのCC BY 4.0音源をOGG Vorbisへ変換し、クレジット・ライセンス・変換内容・ハッシュを `assets/audio/wagner_bridal_chorus_LICENSE.txt` に記録する。オプションにも作者・配布元・ライセンスへのリンクと変換内容を表示する。オプションではBGM音量を0～100%で変更でき、初期値は40%。解像度と同じ設定ファイルへ保存し、再生中にも即時反映する。
 
 ボタン、一覧項目、スライダー操作と、マップ上の拠点・国・郡の選択には、Breviceps の「Click / Cursor SFX - Scroll through files / folder / cabinet」（Freesound sound ID 445972）を共通の操作音として使う。効果音音量はBGMとは独立して0～100%で変更でき、初期値は100%。CC0によるゲームへの同梱・商用利用が可能であることを確認し、素材名・作者・配布元・ライセンス・ハッシュを `assets/audio/ui_click_breviceps_LICENSE.txt` に記録する。
 

@@ -25,9 +25,17 @@ def sha256(path: Path) -> str:
 
 
 def main() -> int:
+    global OUTPUT_DIR, EXE, PCK, LOG, REPORT
     parser = argparse.ArgumentParser(description="Export and record the Windows release.")
     parser.add_argument("--godot", default="godot_console", help="Godot console executable or absolute path")
+    parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR,
+                        help="Export directory (use a fresh directory when a running executable is locked)")
     args = parser.parse_args()
+    OUTPUT_DIR = args.output_dir.resolve()
+    EXE = OUTPUT_DIR / "MyWorldsOnFreedom.exe"
+    PCK = EXE.with_suffix(".pck")
+    LOG = OUTPUT_DIR / "export.log"
+    REPORT = OUTPUT_DIR / "export_report.json"
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     command = [
         args.godot,
@@ -65,7 +73,7 @@ def main() -> int:
         "command": command,
         "exit_code": result.returncode,
         "artifacts": artifacts,
-        "log": str(LOG.relative_to(ROOT)).replace("\\", "/"),
+        "log": str(LOG).replace("\\", "/"),
         "error_lines": [
             line
             for line in result.stdout.splitlines()
@@ -80,7 +88,9 @@ def main() -> int:
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     print(json.dumps(report, ensure_ascii=False, indent=2))
-    return result.returncode
+    if result.returncode != 0:
+        return result.returncode
+    return 0 if len(artifacts) == 2 and not report["error_lines"] and not report["resource_shortage_detected"] else 1
 
 
 if __name__ == "__main__":

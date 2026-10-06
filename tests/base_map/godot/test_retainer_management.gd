@@ -37,6 +37,17 @@ func run() -> void:
 	if members.size() < 3: quit(1); return
 	var ruler: String = management.ruler_id(house)
 	check(ruler not in members and management.role_of(house, ruler) == "大名", "ruler has no stipend")
+	check(management.officers_for_house(house).count(ruler) == 1, "ruler is one of the house officers without duplicated membership")
+	check(ruler in management.governor_candidates(house), "ruler is eligible for governorship without retainer rank")
+	check(members[0] not in management.governor_candidates(house), "direct retainers still require promotion for governorship")
+	var own_district := ""
+	for district in governance.districts.values():
+		if district.house_id == house: own_district = district.id; break
+	check(not own_district.is_empty(), "house owns a district")
+	if not own_district.is_empty():
+		check(management.appoint_district_governor(house, ruler, own_district) == OK, "ruler can be appointed district governor")
+		check(management.district_governors.get(own_district) == ruler, "ruler governorship is recorded")
+		check(management.appoint_district_governor(house, management.ruler_id("oda_nobuhide"), own_district) == ERR_INVALID_PARAMETER, "foreign ruler cannot govern own district")
 	check(is_equal_approx(management.monthly_stipend(house), members.size() * 0.1), "all retainers start as direct retainers")
 	var original := management.monthly_growth(house)
 	check(is_equal_approx(original.governance, float(officers.ability(ruler, "politics"))), "ruler politics drives governance")

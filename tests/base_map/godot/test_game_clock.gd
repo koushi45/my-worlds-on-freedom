@@ -16,7 +16,7 @@ func _initialize() -> void:
 		var clock = Clock.new()
 		clock.set_speed(speed)
 		clock.advance_real_seconds(1.0)
-		check(clock.elapsed_days == 1, "a long frame advances at most one day at speed %d" % speed)
+		check(clock.elapsed_days == mini(speed, 4), "catch-up is bounded to four completed days per call at speed %d" % speed)
 		clock.free()
 	var calendar = Clock.new()
 	check(calendar.date_text() == "1546年 1月 1日", "initial date")
@@ -41,21 +41,56 @@ func _initialize() -> void:
 	fractional.set_speed(4)
 	fractional.advance_real_seconds(0.125)
 	check(fractional.elapsed_days == 1, "partial day survives speed switch")
-	fractional.advance_real_seconds(2.5)
-	check(fractional.elapsed_days == 2, "long frame discards excess time")
+	var stalled = Clock.new()
+	stalled.speed = 4
+	stalled.advance_real_seconds(2.5)
+	check(stalled.elapsed_days == 4 and stalled.backlog_days == 4.0, "long frame retains a bounded backlog and limits work per call")
+	stalled.advance_real_seconds(0.0)
+	check(stalled.elapsed_days == 8 and is_zero_approx(stalled.backlog_days), "retained time drains without losing calendar days")
+	stalled.free()
+	var measured = Clock.new()
+	measured.profile_enabled = true
+	measured.speed = 8
+	measured.advance_real_seconds(2.0)
+	var measured_report: Dictionary = measured.profile_report()
+	check(is_equal_approx(measured_report.discarded_backlog_days, 8.0), "profile distinguishes backlog time discarded by the cap")
+	check(measured_report.day_events == 4, "profile counts each completed day")
+	measured.reset_profile()
+	check(measured.profile_report().day_events == 0 and measured.profile_report().discarded_backlog_days == 0.0, "profile reset clears all counters")
+	measured.free()
+	var sliced = Clock.new()
+	sliced.speed = 8
+	check(is_equal_approx(sliced.simulation_budget_for_elapsed(1.0 / 60.0), 0.5) and is_equal_approx(sliced.simulation_budget_for_elapsed(1.0 / 30.0), 1.0), "30 FPS catch-up can finish one date without an extra movement frame")
+	sliced.advance_real_seconds(0.125, Clock.MAX_LIVE_SIMULATION_DAYS)
+	check(is_equal_approx(sliced._day_fraction, 0.4) and sliced.elapsed_days == 0, "live catch-up limits movement per frame without advancing the date early")
+	sliced.advance_real_seconds(0.0, Clock.MAX_LIVE_SIMULATION_DAYS)
+	sliced.advance_real_seconds(0.0, Clock.MAX_LIVE_SIMULATION_DAYS)
+	check(sliced.elapsed_days == 1 and is_zero_approx(sliced.backlog_days), "sliced catch-up consumes the full day without dropping simulation time")
+	sliced.free()
+	var accelerated = Clock.new()
+	var accelerated_dates: Array = []
+	accelerated.day_advanced.connect(func(y: int, m: int, d: int): accelerated_dates.append([y, m, d]))
+	accelerated.set_speed(16)
+	check(is_equal_approx(accelerated.simulation_budget_for_elapsed(1.0 / 60.0), 1.0), "16x allows a full-date live slice at 60 FPS")
+	for index in range(4): accelerated.advance_real_seconds(0.25)
+	check(accelerated.elapsed_days == 16 and is_zero_approx(accelerated.backlog_days), "16x processes every date in one second without dropping time")
+	check(accelerated_dates.size() == 16 and accelerated_dates[0] == [1546, 1, 2] and accelerated_dates.back() == [1546, 1, 17], "16x emits all sixteen daily events in order")
+	accelerated.free()
 	fractional.set_speed(3)
 	fractional.advance_real_seconds(-1)
-	check(fractional.speed == 4 and fractional.elapsed_days == 2, "invalid input ignored")
+	check(fractional.speed == 4 and fractional.elapsed_days == 1, "invalid input ignored")
 	fractional.advance_real_seconds(0.125)
 	fractional.toggle_paused()
 	fractional.set_speed(8)
 	fractional.advance_real_seconds(100)
-	check(fractional.elapsed_days == 2 and fractional.paused, "speed changes preserve pause")
+	check(fractional.elapsed_days == 1 and fractional.paused, "speed changes preserve pause")
 	fractional.toggle_paused()
 	fractional.advance_real_seconds(0.0625)
-	check(fractional.elapsed_days == 3, "resume retains partial day without paused time")
+	check(fractional.elapsed_days == 2, "resume retains partial day without paused time")
 	fractional.change_speed(1)
-	check(fractional.speed == 8, "upper speed limit")
+	check(fractional.speed == 16, "acceleration reaches 16x")
+	fractional.change_speed(1)
+	check(fractional.speed == 16, "upper speed limit")
 	fractional.set_speed(1)
 	fractional.change_speed(-1)
 	check(fractional.speed == 1, "lower speed limit")
@@ -64,6 +99,7 @@ func _initialize() -> void:
 
 
 func integration() -> void:
+	root.get_node("GameSession").player_house = "uesugi_yamanouchi"
 	var main = load("res://scenes/main/main.tscn").instantiate()
 	root.add_child(main)
 	while not main.initialized:
@@ -73,11 +109,19 @@ func integration() -> void:
 	var deadline := Time.get_ticks_msec() + 3000
 	while main.game_clock.elapsed_days == before and Time.get_ticks_msec() < deadline: await process_frame
 	check(main.game_clock.elapsed_days == before + 1, "clock runs automatically without skipping dates")
-	for index in range(4):
+	for index in range(Clock.SPEEDS.size()):
 		press_key(KEY_1 + index)
 		check(main.game_clock.speed == Clock.SPEEDS[index], "number key selects speed")
 		check(main.time_hud.rate_label.text == "%d×" % Clock.SPEEDS[index], "HUD displays speed")
-	check(main.time_hud.speed_buttons[3].button_pressed, "8x lights the highest speed indicator")
+	check(main.time_hud.speed_buttons[4].button_pressed, "16x lights the highest speed indicator")
+	main.time_hud.speed_buttons[4].pressed.emit()
+	check(main.game_clock.speed == 16, "16x button")
+	var session: Node = root.get_node("GameSession")
+	var saved: Dictionary = session.capture(main)
+	check(session.validate(saved), "16x save is valid")
+	session.pending = JSON.parse_string(JSON.stringify(saved))
+	session.apply_to(main)
+	check(main.game_clock.speed == 16 and main.time_hud.rate_label.text == "16×", "16x save restores clock and HUD")
 	main.time_hud.speed_buttons[2].pressed.emit()
 	check(main.game_clock.speed == 4, "deceleration button")
 	main.time_hud.speed_buttons[3].pressed.emit()
@@ -109,6 +153,7 @@ func integration() -> void:
 	check(main.time_hud.date_label.get_global_rect().end.x <= panel_rect.end.x - 12, "date stays inside time panel")
 	check(main.time_hud.speed_buttons.back().get_global_rect().end.x <= panel_rect.end.x - 12, "speed controls stay inside time panel")
 	if "--capture" in OS.get_cmdline_user_args():
+		press_key(KEY_5)
 		await create_timer(2.0).timeout
 		await RenderingServer.frame_post_draw
 		DirAccess.make_dir_recursive_absolute("res://builds/qa")

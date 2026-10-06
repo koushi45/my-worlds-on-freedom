@@ -28,7 +28,7 @@ func _ready() -> void:
 	date_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	panel.add_child(date_label)
 	playback_button = Compact.button(panel, "停止／再生（スペース）", clock.toggle_paused)
-	playback_icon = Compact.icon(playback_button, "pause")
+	playback_icon = Compact.icon(playback_button, "time_pause")
 	rate_label = Label.new()
 	rate_label.add_theme_color_override("font_color", Color("#d7bc81"))
 	rate_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -63,12 +63,12 @@ func _resize() -> void:
 	date_label.add_theme_font_size_override("font_size", roundi(14*u))
 	playback_button.position = Vector2(118, 9) * u
 	playback_button.size = Vector2(30, 30) * u
-	Compact.update_icon(playback_icon, "play" if clock.paused else "pause")
+	Compact.update_icon(playback_icon, "time_play" if clock.paused else "time_pause")
 	rate_label.position = Vector2(155, 5) * u
 	rate_label.size = Vector2(65, 18) * u
 	rate_label.add_theme_font_size_override("font_size", roundi(11*u))
 	for index in range(speed_buttons.size()):
-		speed_buttons[index].position = Vector2(157 + index*16, 29) * u
+		speed_buttons[index].position = Vector2(157 + index*13, 29) * u
 		speed_buttons[index].size = Vector2(11, 11) * u
 
 func _process(_delta: float) -> void:
@@ -87,10 +87,10 @@ func _on_pause_changed(_paused: bool) -> void:
 
 func _update_playback() -> void:
 	if playback_icon == null: return
-	Compact.update_icon(playback_icon, "play" if clock.paused else "pause")
+	Compact.update_icon(playback_icon, "time_play" if clock.paused else "time_pause")
 	playback_button.tooltip_text = "再生（スペース）" if clock.paused else "停止（スペース）"
 	rate_label.text = "%d×" % clock.speed
-	rate_label.tooltip_text = "停止中" if clock.paused else "1秒＝%d日" % clock.speed
+	rate_label.tooltip_text = "停止中" if clock.paused else "目標：1秒＝%d日（処理負荷により低下）" % clock.speed
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo:
@@ -100,7 +100,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	match event.keycode:
 		KEY_SPACE:
 			clock.toggle_paused()
-		KEY_1, KEY_2, KEY_3, KEY_4:
+		KEY_1, KEY_2, KEY_3, KEY_4, KEY_5:
 			clock.set_speed(clock.SPEEDS[event.keycode - KEY_1])
 		_:
 			return

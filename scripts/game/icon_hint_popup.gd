@@ -44,8 +44,11 @@ func clear() -> void:
 	hide()
 
 func bind_icon(target: Control, label: String) -> void:
+	bind_dynamic_icon(target, func() -> String: return label)
+
+func bind_dynamic_icon(target: Control, label: Callable) -> void:
 	target.mouse_entered.connect(func():
-		if not touch_mode: show_for(target, label)
+		if not touch_mode: show_for(target, str(label.call()))
 	)
 	target.mouse_exited.connect(func():
 		if not touch_mode: hide_for(target)
@@ -53,9 +56,9 @@ func bind_icon(target: Control, label: String) -> void:
 	target.gui_input.connect(func(event: InputEvent):
 		if not touch_mode: return
 		if event is InputEventScreenTouch and event.pressed:
-			show_for(target, label)
+			show_for(target, str(label.call()))
 		elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			show_for(target, label)
+			show_for(target, str(label.call()))
 	)
 
 func bind_action_icon(target: BaseButton, label: String, action: Callable) -> void:

@@ -20,6 +20,9 @@ func fixture() -> void:
 	main.diplomacy.opinions.clear()
 	main.diplomacy.truces.clear()
 	main.diplomacy.last_actions.clear()
+	main.diplomacy.claims.clear()
+	main.diplomacy.spies.clear()
+	main.diplomacy.spy_networks.clear()
 	main.army_campaign.units.clear()
 	main.army_campaign.route_obstacles.clear()
 	main.cpu_controller.plans.clear()
@@ -85,10 +88,13 @@ func run() -> void:
 	check(diplomacy.act("war", actors[0], "takeda") == OK, "player declares war")
 	check(session.relation(actors[0], "hojo") == "enemy", "defender calls direct CPU ally into war")
 	check(session.relation(actors[0], "imagawa") == "neutral", "alliance requests do not recursively cascade")
+	check(main.game_clock.elapsed_days == 0, "defense test runs on the first day")
 	check(cpu.plan_for("takeda").objective == "defend", "declaration triggers immediate defense purpose")
+	check(cpu.plan_for("hojo").objective == "defend", "allied aid triggers immediate defense purpose")
 	cpu.refresh_world()
 	cpu.choose_strategy("takeda")
 	cpu.choose_strategy("hojo")
+	check(cpu.plan_for("hojo").objective == "defend", "allied aid retains defensive strategy")
 	army.selected_id = "player_selection"
 	var supplies: int = main.district_economy.house_resources.hojo.provisions
 	cpu.command_armies("takeda")
@@ -118,6 +124,11 @@ func run() -> void:
 	var formations_before: int = army.units.size()
 	session.pending = loaded
 	session.apply_to(main)
+	if cpu.save_state() != saved.cpu:
+		for house in saved.cpu.plans:
+			for field in saved.cpu.plans[house]:
+				if cpu.plans[house].get(field) != saved.cpu.plans[house][field]:
+					printerr("CPU_RESTORE_DIFF ", house, " ", field, " saved=", saved.cpu.plans[house][field], " actual=", cpu.plans[house].get(field))
 	check(cpu.save_state() == saved.cpu and diplomacy.save_state() == saved.diplomacy, "plans missions requests and war participants restore exactly")
 	check(army.units.size() == formations_before, "load duplicates no army")
 	var corrupt: Dictionary = saved.duplicate(true)
@@ -128,20 +139,45 @@ func run() -> void:
 	check(not session.validate(corrupt), "invalid CPU scheduling rejected")
 	diplomacy.finish_peace(actors[0], "takeda")
 	check(session.relation(actors[0], "hojo") == "neutral", "root peace also ends allied participation")
+	for elapsed in [0, 364]:
+		fixture()
+		main.game_clock.elapsed_days = elapsed
+		main.governance_registry.districts[homes.hojo].sortie_troops = 500
+		cpu.refresh_world()
+		cpu.choose_strategy("takeda")
+		check(diplomacy.wars.is_empty() and cpu.plan_for("takeda").objective == "develop", "CPU avoids autonomous invasions during first year: day %d" % elapsed)
 	fixture()
+	main.game_clock.elapsed_days = 365
 	main.governance_registry.districts[homes.hojo].sortie_troops = 500
 	cpu.refresh_world()
 	cpu.choose_strategy("takeda")
-	check(session.relation("takeda", "hojo") == "enemy", "strong CPU actively declares war on weaker reachable house")
+	check(session.relation("takeda", "hojo") == "neutral" and diplomacy.has_spy("takeda", "hojo"), "strong CPU builds spy network instead of declaring unjustified war")
+	check(diplomacy.act("war", "takeda", "hojo") == ERR_UNAVAILABLE, "shared command rejects CPU war without justification")
+	for month in 4: diplomacy.advance_spy_month()
+	cpu.choose_strategy("takeda")
+	check(diplomacy.has_claim_against("takeda", "hojo") and session.relation("takeda", "hojo") == "neutral", "CPU spends accumulated espionage on claim before declaration")
+	check(diplomacy.spy_value("takeda", "hojo") == 0, "CPU claim consumes twenty espionage")
+	cpu.choose_strategy("takeda")
+	check(session.relation("takeda", "hojo") == "neutral", "CPU respects diplomatic cooldown after fabrication")
+	diplomacy.last_actions.clear()
+	cpu.choose_strategy("takeda")
+	check(session.relation("takeda", "hojo") == "enemy", "strong CPU declares justified war on weaker reachable house")
 	cpu.refresh_world()
 	cpu.command_armies("takeda")
 	check(not army.units.is_empty(), "CPU offensive dispatches and orders an army")
+	fixture()
+	diplomacy.claims["takeda"] = {homes.hojo:int(main.game_clock.elapsed_days)}
+	check(diplomacy.act("war", "takeda", "hojo") == ERR_UNAVAILABLE, "expired claim cannot justify CPU declaration")
+	diplomacy.claims["takeda"][homes.hojo] = int(main.game_clock.elapsed_days) + 1825
+	main.governance_registry.districts[homes.hojo].house_id = "takeda"
+	check(diplomacy.act("war", "takeda", "hojo") == ERR_UNAVAILABLE, "claim on acquired district cannot justify CPU declaration against former owner")
+	main.governance_registry.districts[homes.hojo].house_id = "hojo"
 	fixture()
 	main.governance_registry.districts[homes.hojo].sortie_troops = 500
 	cpu.refresh_world()
 	cpu.seek_alliance("hojo")
 	var protector: String = cpu.plan_for("hojo").alliance_target
-	check(not protector.is_empty() and diplomacy.envoy_target("hojo") == protector, "weak CPU sends envoy to stronger protector")
+	check(not protector.is_empty() and diplomacy.has_envoy("hojo", protector), "weak CPU sends envoy to stronger protector")
 	check(diplomacy.opinion(protector, "hojo") == 20, "weak CPU pays a gift to improve relations")
 	diplomacy.change_opinion(protector, "hojo", 20)
 	diplomacy.last_actions.clear()
@@ -160,6 +196,7 @@ func run() -> void:
 	check(session.relation(actors[0], "hojo") == "enemy" and session.relation("takeda", "hojo") == "ally", "dual ally honors defense and breaks attacker alliance")
 	fixture()
 	diplomacy._set_relation("takeda", actors[0], "ally")
+	diplomacy.claims["hojo"] = {homes.takeda:int(main.game_clock.elapsed_days) + 1825}
 	check(diplomacy.act("war", "hojo", "takeda") == OK, "CPU attacks player's ally")
 	check(not diplomacy.pending_request(actors[0], "takeda").is_empty(), "player receives an actionable defense request")
 	check(main.game_menu.assistance_button.visible, "pending player request is visible in game")
@@ -178,12 +215,14 @@ func run() -> void:
 	cpu.refresh_world()
 	cpu.manage_house("takeda")
 	check(main.district_buildings.state[homes.takeda].construction != null, "CPU starts paid construction")
-	check(not main.technology_tree.researched.takeda.governance.is_empty(), "CPU researches using shared points and prerequisites")
+	var research: Dictionary = main.technology_tree.researched.takeda
+	check((not research.governance.is_empty() or not research.agriculture.is_empty() or not research.commerce.is_empty()) and main.retainer_management.technology.takeda.governance == 0.0, "CPU researches using shared points and prerequisites")
 	main.district_economy.house_resources.takeda.provisions = 0
 	check(army.dispatch_for_house("takeda", homes.takeda, army.available_officers(homes.takeda).slice(0, 1), 25, false, false).is_empty(), "CPU cannot dispatch without supplies")
 	if DisplayServer.get_name() != "headless" and "--capture" in OS.get_cmdline_user_args():
 		fixture()
 		diplomacy._set_relation("takeda", actors[0], "ally")
+		diplomacy.claims["hojo"] = {homes.takeda:int(main.game_clock.elapsed_days) + 1825}
 		diplomacy.act("war", "hojo", "takeda")
 		main.game_menu._open_menu(false)
 		main.game_menu.show_diplomacy()

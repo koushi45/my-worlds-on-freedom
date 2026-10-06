@@ -2,6 +2,7 @@ extends CanvasLayer
 ## Values appear once; editable values are the controls that open their actions.
 
 const UI = preload("res://scripts/game/menu_style.gd")
+const Compact = preload("res://scripts/game/compact_hud_style.gd")
 const IconHintPopup = preload("res://scripts/game/icon_hint_popup.gd")
 const ICON_DIRECTORY := "res://assets/ui/district/"
 const ICON_LABELS := {
@@ -19,6 +20,7 @@ var name_label: Button
 var security_label: Label # Hidden compatibility readout for older menu checks.
 var copy_status: Label
 var crest_rect: TextureRect
+var columns: HBoxContainer
 var details_rows: VBoxContainer
 var facilities_rows: VBoxContainer
 var building_dialog: AcceptDialog
@@ -46,26 +48,10 @@ func _ready() -> void:
 	add_child(root_control)
 	panel = Control.new()
 	panel.name = "DistrictNameWindow"
-	panel.anchor_left = 0.5
-	panel.anchor_top = 0.5
-	panel.anchor_right = 0.5
-	panel.anchor_bottom = 0.5
-	panel.offset_left = -510
-	panel.offset_top = -310
-	panel.offset_right = 510
-	panel.offset_bottom = 310
 	panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	root_control.add_child(panel)
-	var frame := NinePatchRect.new()
-	frame.texture = preload("res://assets/ui/hud/frame_256.png")
-	frame.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	frame.patch_margin_left = 52
-	frame.patch_margin_top = 52
-	frame.patch_margin_right = 52
-	frame.patch_margin_bottom = 52
-	frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	panel.add_child(frame)
-	var columns := HBoxContainer.new()
+	Compact.frame(panel, "council_management")
+	columns = HBoxContainer.new()
 	columns.add_theme_constant_override("separation", 18)
 	panel.add_child(columns)
 	columns.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -74,11 +60,11 @@ func _ready() -> void:
 	columns.offset_right = -24
 	columns.offset_bottom = -35
 	var left_scroll := ScrollContainer.new()
-	left_scroll.custom_minimum_size = Vector2(475, 550)
+	left_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	left_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	columns.add_child(left_scroll)
 	var left := VBoxContainer.new()
-	left.custom_minimum_size.x = 450
+	left.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	left.add_theme_constant_override("separation", 9)
 	left_scroll.add_child(left)
 	var header := HBoxContainer.new()
@@ -120,11 +106,11 @@ func _ready() -> void:
 	details_rows.add_theme_constant_override("separation", 7)
 	left.add_child(details_rows)
 	var right_scroll := ScrollContainer.new()
-	right_scroll.custom_minimum_size = Vector2(475, 550)
+	right_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	right_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	columns.add_child(right_scroll)
 	facilities_rows = VBoxContainer.new()
-	facilities_rows.custom_minimum_size.x = 450
+	facilities_rows.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	facilities_rows.add_theme_constant_override("separation", 10)
 	right_scroll.add_child(facilities_rows)
 	building_dialog = AcceptDialog.new()
@@ -157,9 +143,22 @@ func _ready() -> void:
 	root_control.add_child(icon_hint)
 	icon_hint.bind_icon(name_label, "郡名をコピー")
 	icon_hint.bind_icon(close_button, "郡の記録を閉じる")
+	get_viewport().size_changed.connect(_resize_panel)
 	panel.hide()
 
+func _resize_panel() -> void:
+	if panel == null or main == null or main.house_status_hud == null: return
+	Compact.update_frame(panel, "council_management")
+	panel.position = Compact.council_position(panel, main.house_status_hud)
+	var u := Compact.unit(panel)
+	columns.offset_left = 14 * u
+	columns.offset_right = -14 * u
+	columns.offset_top = 16 * u
+	columns.offset_bottom = -14 * u
+	columns.add_theme_constant_override("separation", roundi(18 * u))
+
 func show_district(district_name: String, security: int = -1) -> void:
+	_resize_panel()
 	name_label.text = district_name
 	security_label.text = "治安：%d / 100" % security if security >= 0 else ""
 	copy_status.hide()
@@ -198,6 +197,7 @@ func _update_icon_sizes() -> void:
 
 func _on_window_resized() -> void:
 	_update_icon_sizes()
+	_resize_panel()
 	if panel.visible: _refresh_full.call_deferred()
 	if building_dialog.visible: _refresh_buildings.call_deferred()
 
@@ -252,7 +252,7 @@ func _info_grid(title: String) -> GridContainer:
 func _info_row(group: GridContainer, icon_name: String, value: String, action: Callable = Callable(), enabled: bool = true, hint: String = "") -> void:
 	var tile := PanelContainer.new()
 	tile.name = "Info_" + icon_name
-	tile.custom_minimum_size.x = 216
+	tile.custom_minimum_size.x = 0
 	tile.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var tile_style := StyleBoxFlat.new()
 	tile_style.bg_color = Color("#152238dc")
@@ -304,6 +304,9 @@ func _refresh_full() -> void:
 	var governance_grid := _info_grid("支配と統治")
 	_info_row(governance_grid, "house", main.governance_registry.house_name(record))
 	_info_row(governance_grid, "governor", main.governance_registry.governor_name(record), _open_governor_dialog if own else Callable(), true, "郡代を変更" if own else "")
+	var stability_label := UI.label(main.army_campaign.stability_summary(district_id), details_rows, 13)
+	stability_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	stability_label.tooltip_text = "100人以上の駐屯と郡代の政治能力で安定化が早まります。敵部隊の接近中は停止し、無駐屯なら悪化します。"
 	var placed: Array[String] = main.retainer_management.officers_in_district(record.house_id, district_id)
 	var placement_row := HBoxContainer.new()
 	placement_row.add_theme_constant_override("separation", 10)
@@ -321,7 +324,7 @@ func _refresh_full() -> void:
 	_info_row(income_grid, "rice", "%d / 年（九月）" % main.district_economy.income_for(record, "agriculture"))
 	_info_row(income_grid, "coin", "%d / 月" % main.district_economy.income_for(record, "commerce"))
 	var people_grid := _info_grid("人口と治安")
-	_info_row(people_grid, "people", "%d 人" % int(record.population))
+	_info_row(people_grid, "people", "%d 人（+%d / 月）" % [int(record.population), main.district_economy.population_growth_for(record)])
 	var available: int = actions.sortie_available(record)
 	_info_row(people_grid, "levy", "%d 人" % available, _open_sortie if own else Callable(), available >= 100, "この郡から出陣できる人数。出陣すると減り、帰還・毎月の回復で増えます。")
 	_info_row(people_grid, "security", "%d / 100" % main.technology_tree.security_for(record))
@@ -337,19 +340,18 @@ func _refresh_full() -> void:
 	infra_label.mouse_filter = Control.MOUSE_FILTER_STOP
 	icon_hint.bind_icon(infra_label, "インフラレベル：%d / 10" % int(record.infrastructure))
 	if own:
-		var hint := "インフラ上昇：金銭%d・収入+5%%・防御+1" % actions.upgrade_cost(record)
+		var hint := "インフラ上昇：金銭%d・収入+5%%・防御+1・人口増加数+5%%（Lv.1基準）" % actions.upgrade_cost(record)
 		var enabled: bool = int(record.infrastructure) < 10 and float(resources.money) >= actions.upgrade_cost(record)
-		infra_row.add_child(_icon_button("plus", info_icon_size, _upgrade, hint, enabled))
+		infra_row.add_child(_icon_button("infrastructure_upgrade", info_icon_size, _upgrade, hint, enabled))
 	var buildings: Node = main.district_buildings
 	var entry: Dictionary = buildings.state[district_id]
 	var office: Dictionary = main.district_office_layer.records.get(district_id, {})
 	var office_text := "郡奉行所：未配置" if office.is_empty() else "郡奉行所：" + str(office.basis)
 	if not office.is_empty() and main.army_campaign != null:
-		office_text += "　防御 %d" % int(main.army_campaign.office_defenses.get(district_id, 0))
-		var occupier: String = main.army_campaign.occupying_house(district_id)
-		if not occupier.is_empty(): office_text += "　占領中"
+		var occupation: String = main.army_campaign.occupation_summary(district_id)
+		if not occupation.is_empty(): office_text += "\n" + occupation
 	var office_label := UI.label(office_text, facilities_rows, 13)
-	office_label.custom_minimum_size.x = 420
+	office_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	office_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	if not office.is_empty():
 		office_label.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -360,7 +362,7 @@ func _refresh_full() -> void:
 	slots_label.mouse_filter = Control.MOUSE_FILTER_STOP
 	icon_hint.bind_icon(slots_label, "建築枠：%d / %d" % [buildings.slots_used(district_id), buildings.slot_capacity(record)])
 	var grid := GridContainer.new()
-	grid.columns = 4
+	grid.columns = 2
 	grid.add_theme_constant_override("h_separation", 12)
 	grid.add_theme_constant_override("v_separation", 12)
 	facilities_rows.add_child(grid)
@@ -440,13 +442,13 @@ func _open_governor_dialog() -> void:
 	governor_choice.clear()
 	governor_ids.clear()
 	var current: String = str(record.governor.get("officer_id", "")) if record.governor is Dictionary else ""
-	for officer_id in main.retainer_management.house_members.get(GameSession.player_house, []):
-		if main.retainer_management.role_of(GameSession.player_house, officer_id) == "直臣": continue
-		governor_choice.add_item(main.officer_registry.lookup[officer_id].display_name)
+	for officer_id in main.retainer_management.governor_candidates(GameSession.player_house):
+		var role: String = main.retainer_management.role_of(GameSession.player_house, officer_id)
+		governor_choice.add_item("%s（%s）" % [main.officer_registry.lookup[officer_id].display_name, role])
 		governor_ids.append(officer_id)
 		if officer_id == current: governor_choice.select(governor_ids.size() - 1)
 	if governor_ids.is_empty():
-		governor_dialog.dialog_text = "任命できる家臣がいません。家臣画面で侍大将以上に任命してください。"
+		governor_dialog.dialog_text = "任命できる武将がいません。家臣画面で侍大将以上に任命してください。"
 		governor_dialog.get_ok_button().disabled = true
 		governor_choice.hide()
 	else:
@@ -481,10 +483,10 @@ func _refresh_buildings() -> void:
 		var details := VBoxContainer.new()
 		details.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		row.add_child(details)
-		var button := UI.button("%s　金銭%d・%dか月" % [definition.name, buildings.cost_for(district_id, building_id), definition.months], details, _build.bind(building_id))
-		icon_hint.bind_icon(button, "%s：%s" % [definition.name, definition.effect if reason.is_empty() else reason])
+		var button := UI.button("%s　金銭%d・%dか月" % [definition.name, buildings.cost_for(district_id, building_id), buildings.months_for(district_id, building_id)], details, _build.bind(building_id))
+		icon_hint.bind_icon(button, "%s：%s" % [definition.name, buildings.effect_for(district_id, building_id) if reason.is_empty() else reason])
 		button.disabled = not reason.is_empty()
-		var effect := str(definition.effect)
+		var effect: String = buildings.effect_for(district_id, building_id)
 		if building_id in ["irrigation", "farm_estate", "market", "workshop", "temple"]:
 			var kind := "agriculture" if building_id in ["irrigation", "farm_estate"] else "commerce"
 			effect += "　%d → %d" % [main.district_economy.income_for(record, kind), main.district_economy.income_for(record, kind, building_id)]

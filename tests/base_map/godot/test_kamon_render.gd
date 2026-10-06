@@ -28,7 +28,7 @@ func run() -> void:
 	if not main.initialized: quit(1); return
 	check(main.bgm_player != null and main.bgm_player.playing,"main map BGM is playing")
 	check(main.bgm_player.stream.resource_path.ends_with("scottish_symphony_i_andante_con_moto.ogg"),"main map uses Mendelssohn's Scottish Symphony first movement")
-	check(main.bgm_player.stream is AudioStreamOggVorbis and main.bgm_player.stream.loop,"main map BGM loops")
+	check(main.bgm_player.stream is AudioStreamOggVorbis and not main.bgm_player.stream.loop,"individual BGM tracks finish so the playlist can advance")
 	check(is_equal_approx(main.bgm_player.volume_linear,0.4),"main map BGM defaults to 40 percent")
 	display.set_bgm_volume(0.2,false)
 	check(is_equal_approx(main.bgm_player.volume_linear,0.2),"BGM option updates the active player")
@@ -123,10 +123,10 @@ func run() -> void:
 	check(main.territory_borders.projected.values().any(func(record): return record.state == "ally"), "alliance border class exists")
 	check(main.territory_borders.projected.values().any(func(record): return record.state == "enemy"), "enemy border class exists")
 	check(not main.territory_borders.fill_enabled, "territory fill defaults off")
-	main.game_menu.territory_fill_toggle.button_pressed = true
+	main.territory_borders.set_fill_enabled(true)
 	await process_frame
 	await RenderingServer.frame_post_draw
-	check(main.territory_borders.fill_enabled, "bottom-right option enables territory fill")
+	check(main.territory_borders.fill_enabled, "territory renderer supports fill")
 	check(main.territory_borders.fill_mesh_for(smallest) != null, "current district fill mesh loads")
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://builds/qa"))
 	check(root.get_texture().get_image().save_png("res://builds/qa/kamon_territory_fill.png") == OK, "capture saved")

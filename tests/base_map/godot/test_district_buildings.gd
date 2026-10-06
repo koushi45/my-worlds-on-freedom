@@ -30,8 +30,31 @@ func run() -> void:
 	var actions: Node = main.district_actions
 	check(int(record.infrastructure) == 1 and int(record.defense) == 1, "district levels begin at one")
 	check(actions.upgrade(id, "hojo") == ERR_UNAUTHORIZED, "other house cannot upgrade")
+	var initial_income: int = economy.income_for(record, "commerce")
+	var initial_provisions: int = economy.income_for(record, "agriculture")
+	var initial_growth: int = economy.population_growth_for(record)
+	check(initial_growth == roundi(record.population * 0.001), "level one population grows by 0.1 percent monthly")
 	economy.house_resources.takeda.money = 100
 	check(actions.upgrade(id, "takeda") == OK and int(record.infrastructure) == 2 and economy.house_resources.takeda.money == 0, "upgrade pays once and raises level")
+	check(int(record.defense) == 2, "infrastructure upgrade increases defense")
+	check(economy.income_for(record, "commerce") > initial_income and economy.income_for(record, "agriculture") > initial_provisions, "infrastructure increases both income kinds")
+	check(economy.population_growth_for(record) == roundi(record.population * 0.001 * 1.05), "infrastructure increases monthly population growth by five percent of base")
+	var growth_probe: Dictionary = record.duplicate(true)
+	growth_probe.infrastructure = 10
+	check(economy.population_growth_for(growth_probe) == roundi(record.population * 0.001 * 1.45), "level ten gives forty-five percent population growth bonus")
+	main.technology_tree.researched.takeda.agriculture = main.technology_tree.BRANCHES.agriculture.slice(0, 5)
+	check(economy.population_growth_for(record) == roundi(record.population * 0.001 * 1.05 * 1.15), "population growth combines infrastructure and research")
+	main.technology_tree.researched.takeda.agriculture = []
+	growth_probe.population = 1999999999
+	check(economy.population_growth_for(growth_probe) == 1, "growth respects the population save limit")
+	growth_probe.population = 0
+	check(economy.population_growth_for(growth_probe) == 0, "zero population has no natural growth")
+	var population_before: int = record.population
+	economy.on_day_advanced(1546, 2, 2)
+	check(record.population == population_before, "population does not grow outside the first day")
+	var monthly_growth: int = economy.population_growth_for(record)
+	economy.on_day_advanced(1546, 3, 1)
+	check(record.population == population_before + monthly_growth, "monthly simulation applies the displayed population growth")
 	record.devastation = 5
 	economy.house_resources.takeda.money = 10
 	check(actions.repair(id, "takeda") == OK and int(record.devastation) == 0, "repair clears devastation for money")
@@ -75,9 +98,13 @@ func run() -> void:
 	check(saved.territories.districts[id].infrastructure == 2 and saved.territories.districts[id].sortie_troops == record.sortie_troops, "district orders survive save and load")
 	check(buildings.cancel_construction(id, "takeda") == OK, "cancel construction")
 	check(economy.house_resources.takeda.money == 200 and buildings.state[id].construction == null, "refund exact paid amount")
+	record.population = 1
+	record.infrastructure = 1
 	session.pending = saved
 	session.apply_to(main)
+	record = main.governance_registry.districts[id]
 	check(buildings.state[id].construction != null and economy.house_resources.takeda.money == 115 and buildings.history.size() == 3, "loaded construction, balance and history restored")
+	check(record.population == population_before + monthly_growth and economy.population_growth_for(record) == roundi(record.population * 0.001 * 1.05), "current save restores population and infrastructure growth")
 	check(buildings.cancel_construction(id, "takeda") == OK and economy.house_resources.takeda.money == 200, "loaded construction refunds correctly")
 	var before_food: int = economy.income_for(record, "agriculture")
 	check(buildings.start_construction(id, "irrigation", "takeda", 1547, 1, 2) == OK, "restart irrigation")

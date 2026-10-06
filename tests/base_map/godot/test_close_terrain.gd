@@ -56,17 +56,9 @@ func run() -> void:
 				await RenderingServer.frame_post_draw
 				root.get_texture().get_image().save_png("res://builds/qa/high_zoom_%d_%s.png" % [int(state[0]*100),"tilt" if oblique else "flat"])
 	for percent in [600, 800]:
-		main.game_menu._select_zoom(percent)
+		main._zoom_at(percent/100.0,main.get_viewport_rect().size*0.5)
 		for frame in 60: await process_frame
 		check(is_equal_approx(main.camera.zoom.x,percent/100.0))
-		check(main.game_menu.zoom_label.text.contains(str(percent)))
-	main.game_menu.zoom_label.pressed.emit()
-	check(main.game_menu.zoom_choices.visible)
-	check(main.game_menu.zoom_choices.get_item_count() == 6)
-	if "--capture" in OS.get_cmdline_user_args():
-		await RenderingServer.frame_post_draw
-		root.get_texture().get_image().save_png("res://builds/qa/high_zoom_choices.png")
-	main.game_menu.zoom_choices.hide()
 	check(session.save_game(main,1) == OK,session.last_error)
 	var saved: Dictionary = session.read_save(1)
 	check(not saved.is_empty(),session.last_error)

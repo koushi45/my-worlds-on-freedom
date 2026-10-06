@@ -11,10 +11,10 @@ func run() -> void:
 	var started := Time.get_ticks_usec()
 	for index in range(35):
 		var previous_day: int = main.game_clock.elapsed_days
-		# Repeated long elapsed-time reports must not bypass queued work or drawing.
+		# Long reports may finish one date, but cannot bypass the next required rules.
 		main.game_clock.advance_real_seconds(100.0)
 		main.game_clock.advance_real_seconds(100.0)
-		if main.game_clock.elapsed_days != previous_day: failures.append("day barrier")
+		if main.game_clock.elapsed_days > previous_day + 1: failures.append("required-day barrier")
 		if index == 0:
 			var partial: Dictionary = GameSession.capture(main)
 			if not GameSession.validate(partial): failures.append("unfinished-day save")
@@ -43,7 +43,10 @@ func run() -> void:
 	GameSession.save_directory = previous_directory
 	if main.cpu_controller.plans.is_empty(): failures.append("no CPU plans")
 	if main.army_campaign.units.is_empty(): failures.append("no CPU armies")
-	var report := {"ok":failures.is_empty(), "failures":failures, "save_version":19, "game_days":main.game_clock.elapsed_days,
+	for decision in main.cpu_controller.decisions:
+		if decision.action == "war" and int(decision.day) < main.cpu_controller.OFFENSIVE_GRACE_DAYS:
+			failures.append("CPU declaration during first year")
+	var report := {"ok":failures.is_empty(), "failures":failures, "save_version":saved.get("version", 0), "game_days":main.game_clock.elapsed_days,
 		"cpu_houses":main.cpu_controller.plans.size(), "armies":main.army_campaign.units.size(), "wars":main.diplomacy.wars.size(),
 		"maximum_cpu_frame_ms":main.cpu_controller.maximum_frame_usec / 1000.0, "elapsed_ms":(Time.get_ticks_usec() - started) / 1000.0, "executable":OS.get_executable_path()}
 	var output := FileAccess.open(directory.path_join("result.json"), FileAccess.WRITE)

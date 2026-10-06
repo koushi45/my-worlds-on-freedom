@@ -73,12 +73,34 @@ func _ready() -> void:
 	layout.add_child(actions)
 	UI.button("適用",actions,_apply).size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	UI.button("戻る",actions,_close).size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	UI.label("BGM（ループ再生）\nSymphony no. 3 'Scottish', Op. 56 - I. Andante con moto\nFelix Mendelssohn / Musopen Symphony\nPublic Domain Mark 1.0 / 配布音源をOGGへ変換",rows,13)
+	UI.label("BGM（3曲を順番に繰り返し再生）\nSymphony no. 3 'Scottish', Op. 56 - I. Andante con moto\nFelix Mendelssohn / Musopen Symphony\nPublic Domain Mark 1.0 / 配布音源をOGGへ変換",rows,13)
 	var music_source := LinkButton.new()
 	music_source.text = "Musopen 配布元・権利表示"
 	music_source.uri = "https://musopen.org/music/282-symphony-no-3-scottish-op-56/"
 	music_source.add_theme_font_size_override("font_size",13)
 	rows.add_child(music_source)
+	UI.label("月光ソナタ 第1楽章（Op. 27 No. 2 / Adagio sostenuto）\nLudwig van Beethoven / Paul Pitman\n録音提供：Musopen / Public Domain",rows,13)
+	var moonlight_source := LinkButton.new()
+	moonlight_source.text = "Musopen https://musopen.org/"
+	moonlight_source.uri = "https://musopen.org/"
+	moonlight_source.add_theme_font_size_override("font_size",13)
+	rows.add_child(moonlight_source)
+	var moonlight_license := LinkButton.new()
+	moonlight_license.text = "月光ソナタ 配布元・録音の利用許諾"
+	moonlight_license.uri = "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27,_op._27_no._2_-_i._adagio_sostenuto.ogg"
+	moonlight_license.add_theme_font_size_override("font_size",13)
+	rows.add_child(moonlight_license)
+	UI.label("婚礼の合唱（ローエングリンより / パイプオルガン版）\n作曲：Richard Wagner\nWagner Bridal Chorus — Kevin MacLeod (incompetech.com)\nCC BY 4.0 / MP3からOGGへ変換",rows,13)
+	var bridal_source := LinkButton.new()
+	bridal_source.text = "Incompetech 配布元・クレジット"
+	bridal_source.uri = "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100021"
+	bridal_source.add_theme_font_size_override("font_size",13)
+	rows.add_child(bridal_source)
+	var bridal_license := LinkButton.new()
+	bridal_license.text = "Creative Commons Attribution 4.0"
+	bridal_license.uri = "https://creativecommons.org/licenses/by/4.0/"
+	bridal_license.add_theme_font_size_override("font_size",13)
+	rows.add_child(bridal_license)
 
 func _apply() -> void:
 	DisplaySettings.apply_resolution(resolution_selector.selected)

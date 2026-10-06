@@ -69,7 +69,22 @@ func cost_for(district_id: String, building_id: String) -> int:
 	var base: int = DEFINITIONS[building_id].cost
 	if building_id in ["irrigation", "farm_estate"]:
 		return technology_tree.agriculture_building_cost_for(registry.districts[district_id].house_id, base)
-	return base
+	return technology_tree.commerce_building_cost_for(registry.districts[district_id].house_id, building_id, base)
+
+
+func months_for(district_id: String, building_id: String) -> int:
+	return technology_tree.building_months_for(registry.districts[district_id].house_id, building_id, int(DEFINITIONS[building_id].months))
+
+
+func income_bonus(district_id: String, building_id: String) -> float:
+	var bonus: float = {"irrigation":0.10, "farm_estate":0.15, "market":0.10, "workshop":0.15, "temple":0.05}.get(building_id, 0.0)
+	if building_id == "market": bonus += float(technology_tree.modifiers(registry.districts[district_id].house_id).market_income_bonus)
+	return bonus
+
+
+func effect_for(district_id: String, building_id: String) -> String:
+	if building_id == "market": return "金銭収入 +%d%%" % roundi(income_bonus(district_id, building_id) * 100.0)
+	return str(DEFINITIONS[building_id].effect)
 
 
 func reason_for(district_id: String, building_id: String, house_id: String) -> String:
@@ -100,11 +115,12 @@ func start_construction(district_id: String, building_id: String, house_id: Stri
 	if year < 1546 or year > 9998 or month < 1 or month > 12: return ERR_INVALID_PARAMETER
 	if day < 1 or day > preload("res://scripts/game/game_clock.gd").days_in_month(year, month): return ERR_INVALID_PARAMETER
 	var paid := cost_for(district_id, building_id)
-	var finish := completion_date(year, month, day, int(DEFINITIONS[building_id].months))
+	var months := months_for(district_id, building_id)
+	var finish := completion_date(year, month, day, months)
 	economy.house_resources[house_id].money -= paid
 	_record("start", district_id, building_id, house_id, -paid, year, month, day)
 	state[district_id].construction = {"building_id":building_id, "payer_house_id":house_id, "paid_cost":paid,
-		"start_year":year, "start_month":month, "start_day":day,
+		"months":months, "start_year":year, "start_month":month, "start_day":day,
 		"finish_year":finish.year, "finish_month":finish.month, "finish_day":finish.day}
 	changed.emit(district_id)
 	return OK
@@ -163,7 +179,7 @@ func income_multiplier(district_id: String, kind: String) -> float:
 		if built.has("irrigation"): bonus += 0.10
 		if built.has("farm_estate"): bonus += 0.15
 	elif kind == "commerce":
-		if built.has("market"): bonus += 0.10
+		if built.has("market"): bonus += income_bonus(district_id, "market")
 		if built.has("workshop"): bonus += 0.15
 		if built.has("temple"): bonus += 0.05
 	return 1.0 + bonus

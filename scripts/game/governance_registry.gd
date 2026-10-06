@@ -116,7 +116,18 @@ func apply_initial_development() -> void:
 		record.agriculture_developer_id = officer_id
 		record.commerce_developer_id = officer_id
 
+var assignment_recount_pending := false
+
+func request_assignment_recount() -> void:
+	if assignment_recount_pending: return
+	assignment_recount_pending = true
+	call_deferred("flush_assignment_recount")
+
+func flush_assignment_recount() -> void:
+	if assignment_recount_pending: recount_assignments()
+
 func recount_assignments() -> void:
+	assignment_recount_pending = false
 	var counts := {}
 	for r in districts.values()+sites.values():
 		if r.governor is Dictionary and r.governor.get("officer_id") != null:

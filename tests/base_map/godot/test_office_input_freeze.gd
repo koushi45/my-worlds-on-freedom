@@ -18,6 +18,8 @@ func run() -> void:
 	var main = current_scene
 	var army = main.army_campaign
 	var session = root.get_node("GameSession")
+	main.game_clock.paused = true
+	main.cpu_controller.enabled = false
 	var own_district := ""
 	var officer_id := ""
 	for id in main.governance_registry.districts:
@@ -45,13 +47,13 @@ func run() -> void:
 	if not check(not unit_id.is_empty(), "army dispatched"): return
 	var office_node := "district:" + enemy_district
 	army.units[unit_id].site_id = office_node
-	army.office_defenses[enemy_district] = 1500
+	army.units[unit_id].soldiers = 1000
 	army._arrive(unit_id)
 	main.army_panel.show_unit(unit_id)
 	main.camera.position = main.elevation.project(main.district_office_layer.office_point(enemy_district))
 	main.set_map_zoom(2.0)
 	var frame_start := Time.get_ticks_msec()
-	main.game_clock.advance_real_seconds(1.1)
+	army.on_day_advanced(1546, 1, 2)
 	if not check(main.territory_borders.projected[enemy_district].state == "enemy", "attack updates relationship colours"): return
 	if not check(main.territory_borders.country_records[enemy_country].state == "enemy", "attack updates country relationship colours"): return
 	frame_start = Time.get_ticks_msec()
@@ -59,10 +61,16 @@ func run() -> void:
 	if not check(Time.get_ticks_msec() - frame_start < 2000, "attack does not rebuild all territory geometry on the next frame"): return
 	var wheel := InputEventMouseButton.new()
 	wheel.button_index = MOUSE_BUTTON_WHEEL_UP
-	wheel.position = root.get_visible_rect().size * 0.5
+	# Selected armies use the wheel for facing; deselection restores map zoom.
+	wheel.position = Vector2(root.get_visible_rect().size.x - 100.0, root.get_visible_rect().size.y * 0.5)
 	wheel.pressed = true
+	var previous_facing: float = army.units[unit_id].facing
 	root.push_input(wheel, true)
-	if not check(main.camera.zoom.x > 2.0, "mouse wheel zooms while foreign office is occupied"): return
+	if not check(float(army.units[unit_id].facing) != previous_facing, "mouse wheel rotates selected occupying army"): return
+	main.army_panel.hide_panel()
+	root.push_input(wheel, true)
+	if not check(main.map_view.requested_zoom > 2.0, "mouse wheel requests zoom while foreign office is occupied"): return
+	for index in 30: await process_frame
 	var start_position: Vector2 = main.camera.position
 	var start_heading: float = main.map_view.yaw
 	var middle := InputEventMouseButton.new()
@@ -91,9 +99,9 @@ func run() -> void:
 	left.pressed = false
 	root.push_input(left, true)
 	if not check(main.camera.position.x < start_position.x - 20.0, "left drag elsewhere pans during occupation"): return
-	army.office_defenses[enemy_district] = 1
+	army.occupations[enemy_district].progress = 99.9
 	frame_start = Time.get_ticks_msec()
-	main.game_clock.advance_real_seconds(1.1)
+	army.on_day_advanced(1546, 1, 3)
 	if not check(Time.get_ticks_msec() - frame_start < 2000, "capture updates only affected territory bands"): return
 	if not check(main.governance_registry.districts[enemy_district].house_id == session.player_house, "occupation captures the office"): return
 	if not check(main.territory_borders.projected[enemy_district].house_id == session.player_house, "capture updates district territory owner"): return
